@@ -1,0 +1,523 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08775a">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308775a'/><text x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='900' fill='white' text-anchor='middle'>₪</text></svg>">
+<link rel="canonical" href="https://exodus611.github.io/finance-portal/mas-rehisha.html">
+<title>Калькулятор мас рехиша 2026 — налог на покупку квартиры в Израиле</title>
+<meta name="description" content="Точный расчёт налога на покупку квартиры (мас рехиша) по ступеням 2026. Единственная квартира, вторая, репатриант, инвалид. Со ссылками на закон.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Калькулятор мас рехиша — налог на покупку квартиры">
+<meta property="og:description" content="Точный расчёт по ступеням 2026 со ссылками на закон. Сравнивает все доступные маршруты и показывает выгоднейший.">
+<meta property="og:url" content="https://exodus611.github.io/finance-portal/mas-rehisha.html">
+<meta property="og:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="ru_RU">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Калькулятор мас рехиша (налог на покупку недвижимости)",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "description": "Расчёт налога на покупку квартиры в Израиле по ступеням 2026 года: единственная квартира, дополнительная, репатриант, инвалид.",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "ILS"},
+  "inLanguage": "ru"
+}
+</script>
+<style>
+:root{--ink:#15251f;--muted:#5a6660;--paper:#f4f1e9;--card:#fffdf8;--line:#ddd6c7;--green:#08775a;--green2:#0d9671;--gold:#c29b52;--red:#b84b3e;--blue:#30779a;--purple:#7857b8;--shadow:0 16px 40px rgba(26,45,37,.08);--r:18px}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+html{overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.45;overflow-x:hidden;max-width:100vw}
+button,input,select{font:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+.shell{width:min(760px,calc(100% - 28px));margin:auto}
+.top{padding:18px 0}
+.topbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;row-gap:6px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:850}
+.mark{width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,var(--green2),var(--green) 70%);color:#fff;display:grid;place-items:center;font-size:32px;font-weight:900;box-shadow:0 6px 18px rgba(8,119,90,.45);border:2px solid rgba(255,255,255,.55)}
+a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none;white-space:nowrap}
+.hero{padding:30px 0 10px;text-align:center}
+.eyebrow{font-size:12px;color:var(--green);font-weight:900;text-transform:uppercase;letter-spacing:.09em}
+.hero h1{font-size:clamp(26px,5.2vw,40px);line-height:1.1;letter-spacing:-.03em;margin:10px auto 12px;max-width:620px}
+.hero p{font-size:14.5px;color:var(--muted);max-width:580px;margin:0 auto}
+.live{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:16px 0 0}
+.pill{background:#eaf6f0;color:var(--green);border-radius:20px;padding:6px 13px;font-size:12px;font-weight:700}
+.pill.freeze{background:#eaf1f6;color:var(--blue)}
+.pill b{font-weight:900}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;margin:18px 0;box-shadow:var(--shadow)}
+.title{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.num{width:32px;height:32px;border-radius:10px;background:var(--green);color:#fff;font-weight:900;display:grid;place-items:center;flex:0 0 32px;font-size:14px}
+.title h2{margin:0 0 3px;font-size:18px}
+.title p{margin:0;font-size:12.5px;color:var(--muted)}
+.hint{color:var(--muted);font-size:12.5px;margin-bottom:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+.f{margin-bottom:16px}
+.f label{display:block;font-size:12px;font-weight:800;color:var(--muted);margin-bottom:6px}
+.f label .sub{font-weight:500;color:var(--muted);text-transform:none;letter-spacing:0}
+.f input,.f select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:11px;font-size:14px;background:#fff;color:var(--ink)}
+h3{font-size:14px;margin:18px 0 8px}
+.chk{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1px solid var(--line);border-radius:11px;cursor:pointer;background:#faf8f2;margin-bottom:10px}
+.chk input{width:auto;margin-top:3px;flex-shrink:0}
+.chk span{font-size:13px}
+.chk small{display:block;color:var(--muted);font-size:11.5px;margin-top:2px}
+.primary{width:100%;background:var(--green);color:#fff;border:none;border-radius:14px;padding:14px;font-size:14.5px;font-weight:800;cursor:pointer;margin-top:6px}
+.primary:hover{background:var(--green2)}
+.verdict{border-radius:var(--r);padding:22px 20px;margin-bottom:16px;text-align:center;background:#eaf6f0;border:1px solid #b9d8ca}
+.v-lbl{font-size:12.5px;margin-bottom:6px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.v-num{font-size:2.2rem;font-weight:900;letter-spacing:-1px;line-height:1.1;color:var(--green)}
+.v-sub{font-size:13px;margin-top:8px;color:var(--ink);font-weight:700}
+.v-eff{font-size:11.5px;margin-top:4px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{padding:9px 7px;text-align:right;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+th{font-size:10.5px;color:var(--muted);font-weight:800;text-transform:uppercase}
+td.zero{color:var(--muted)}
+tfoot td{font-weight:900;border-bottom:0;border-top:2px solid var(--ink)}
+.route{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.route:last-child{border-bottom:0}
+.route.best{background:#eaf6f0;margin:0 -12px;padding:12px;border-radius:10px;border-bottom:0}
+.route .nm{font-size:13px;font-weight:700}
+.route .ds{font-size:11px;color:var(--muted);margin-top:2px}
+.route .vl{font-weight:800;white-space:nowrap;font-size:13px}
+.route.best .vl{color:var(--green)}
+.note{border-radius:12px;padding:14px 16px;margin-bottom:12px;font-size:12.5px}
+.note b{display:block;margin-bottom:4px}
+.n-warn{background:#fff9e9;border-left:4px solid var(--gold)}
+.n-ok{background:#eaf6f0;border-left:4px solid var(--green)}
+.n-bad{background:#fff6f4;border-left:4px solid var(--red)}
+.n-info{background:#eaf1f6;border-left:4px solid var(--blue)}
+.law{font-family:ui-monospace,monospace;font-size:11px;background:#f0ede5;padding:2px 7px;border-radius:5px;color:var(--muted);white-space:nowrap;display:inline-block}
+details{border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-top:10px;background:#fff}
+details summary{cursor:pointer;font-weight:800;font-size:13px;color:var(--green)}
+details p,details ul{margin-top:8px;font-size:12.5px;color:var(--muted);line-height:1.6}
+details ul{margin-left:18px}
+details li{margin-bottom:5px}
+.srcbox{background:#faf8f2;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:12.5px}
+.srcbox div{padding:8px 0;border-bottom:1px solid var(--line)}
+.srcbox div:last-child{border-bottom:0}
+.srcbox a{color:var(--green);font-weight:700}
+.disclaimer{font-size:11px;color:var(--muted);line-height:1.6;background:#fff9e9;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:14px 16px;margin-top:14px}
+.view-tabs{width:min(760px,calc(100% - 28px));margin:14px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);position:sticky;top:8px;z-index:90}
+.view-tab{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 6px;border-radius:9px;border:none;background:transparent;color:var(--muted);font-family:inherit;font-size:12px;font-weight:800;cursor:pointer}
+.view-tab b{font-size:10px;font-weight:600;opacity:.75}
+.view-tab.active{background:var(--green);color:#fff}
+.view-tab.active b{color:#fff;opacity:.85}
+.view-tab:hover:not(.active){background:var(--paper);color:var(--green)}
+.view-panel{display:none}
+.view-panel.active{display:block}
+@media(max-width:560px){.view-tabs{width:calc(100% - 18px);position:relative;top:auto}.view-tab{padding:8px 4px;font-size:10.5px}}
+.result-modal-overlay{display:none;position:fixed;inset:0;background:rgba(21,37,31,.55);z-index:200;align-items:flex-end;justify-content:center}
+.result-modal-overlay.show{display:flex}
+.result-modal{background:var(--card);border-radius:18px 18px 0 0;max-width:480px;width:100%;padding:20px 20px 22px;box-shadow:0 -8px 30px rgba(0,0,0,.25);animation:modalUp .22s ease-out}
+@media(min-width:640px){.result-modal-overlay{align-items:center;padding:20px}.result-modal{border-radius:18px}}
+@keyframes modalUp{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}
+.result-modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px}
+.result-modal-head h3{margin:0;font-size:17px;color:var(--green)}
+.result-modal-close{border:none;background:var(--paper);color:var(--muted);width:30px;height:30px;border-radius:50%;font-size:15px;cursor:pointer;flex:0 0 30px}
+.result-modal-big{font-size:27px;font-weight:900;color:var(--ink);margin:6px 0 2px}
+.result-modal-sub{font-size:12px;color:var(--muted);margin-bottom:12px}
+.result-modal-rows{display:grid;gap:6px;margin-bottom:14px}
+.result-modal-row{display:flex;flex-direction:column;gap:4px;font-size:12.5px;background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:10px 12px}
+.result-modal-row span{font-size:10.5px;font-weight:900;text-transform:uppercase;letter-spacing:.03em;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:5px;margin-bottom:1px}
+.result-modal-row b{font-weight:600;color:var(--ink);line-height:1.5}
+.result-modal-actions{display:flex;gap:8px}
+.result-modal-actions button{flex:1;border-radius:11px;padding:11px;font-weight:850;font-size:13px;cursor:pointer;border:1px solid var(--line)}
+.result-modal-actions .rm-primary{background:var(--green);color:#fff;border-color:var(--green)}
+.result-modal-actions .rm-secondary{background:transparent;color:var(--muted)}
+</style><script data-goatcounter="https://finance-portal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<noscript><div style="background:#fff6f4;border-bottom:2px solid #b84b3e;color:#b84b3e;text-align:center;padding:12px;font-family:sans-serif;font-size:13px">Для работы калькулятора нужен включённый JavaScript в браузере.</div></noscript>
+<header class="top"><div class="shell topbar"><div class="logo"><span class="mark">₪</span><span>Понятные финансы в Израиле</span></div><a class="back" href="index.html">← На главную</a><select onchange="if(this.value)location.href=this.value" style="font-size:11.5px;font-weight:700;color:var(--green);border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:#fff;margin-inline-start:8px;cursor:pointer"><option value="">Все калькуляторы ▾</option><option value="salary.html">💰 Зарплата</option><option value="mashkanta.html">🏠 Машканта</option><option value="auto.html">🚗 Автомобиль</option><option value="kredit.html">💳 Кредит</option><option value="arenda-vs-pokupka.html">⚖️ Аренда vs покупка</option><option value="mihzur-mashkanta.html">🔄 Рефинансирование</option><option value="siluk-mukdam.html">💎 Погашение vs инвестиции</option><option value="pension-gap.html">🧓 Пенсионный разрыв</option><option value="keren-hishtalmut.html">🎓 Фонд повышения квалификации</option><option value="nekudot-zikuy.html">🎯 Некудот зикуй</option><option value="valuta.html">💱 Курс валют</option><option value="tablo.html">📊 Экономика сегодня</option><option value="benzin.html">⛽ Цена на бензин</option><option value="arnona.html">🏛️ Скидка на арнону</option><option value="dira.html">🏗️ Дира бе-ханаха</option><option value="avtala.html">📋 Дмей автала</option><option value="mas-shevach.html">📉 Мас шевах</option><option value="nko.html">🤝 Благотворительные НКО</option><option value="slovar.html">📖 Словарь терминов</option></select></div></header>
+
+<section class="hero shell">
+<div class="eyebrow">Мас рехиша</div>
+<h1>Налог на покупку квартиры</h1>
+<p>Точный расчёт по ступеням 2026 со ссылками на закон. Сравнивает все доступные вам маршруты и показывает выгоднейший.</p>
+<div class="live">
+<span class="pill">Ступени <b>2026</b></span>
+<span class="pill freeze">Заморожены до <b>15.01.2028</b></span>
+<span class="pill">Проверено <b id="p-upd">24.07.2026</b></span>
+</div>
+</section>
+
+<nav class="view-tabs" id="view-tabs">
+    <button class="view-tab active" id="tab-input" onclick="setActiveView('input')"><span>Ввод</span><b>сделка и статус</b></button>
+    <button class="view-tab" id="tab-result" onclick="setActiveView('result')"><span>Результат</span><b>налог и маршруты</b></button>
+    <button class="view-tab" id="tab-explain" onclick="setActiveView('explain')"><span>Разберись</span><b>закон и сроки</b></button>
+</nav>
+
+<main class="shell">
+<section class="card">
+<div class="title"><span class="num">·</span><div><h2>Когда налог платится, а когда нет</h2><p>Главное правило, которое надо понять до расчёта.</p></div></div>
+<div class="note n-ok"><b>✓ Первая (единственная) квартира — часто НОЛЬ</b>Если это ваша единственная квартира в Израиле, то на первые <strong>1,978,745 ₪</strong> налог не начисляется вообще. Квартира за 1.8 млн на периферии — <strong>0 ₪ налога</strong>.</div>
+<div class="note n-warn"><b>Но «первая = бесплатно» верно не всегда</b>Освобождение действует только до 1,978,745 ₪. Средняя квартира в Израиле стоит около <strong>2,330,000 ₪</strong> (ЦСБ, 2026) — это выше порога, и налог составит около 12,294 ₪. В центре страны первую квартиру тоже облагают: за 2.5 млн — 20,538 ₪, за 3.5 млн — 70,538 ₪.</div>
+<div class="note n-bad"><b>✗ Вторая квартира — платится с первого шекеля</b>Никакого освобождения: 8% сразу. На той же средней квартире 2,330,000 ₪ это <strong>186,400 ₪ вместо 12,294 ₪</strong> — разница в 15 раз.</div>
+<div class="note n-info"><b>Кто вообще не платит</b>Полного освобождения по стоимости нет ни у кого, но есть нулевые ставки: единственная квартира до 1,978,745 ₪ · репатриант по такане 12א до той же суммы · инвалид с единственной квартирой до 2.5 млн (на часть до первой ступени) · передача жилья супругу, живущему в квартире (такана 21) — полное освобождение.</div>
+</section>
+
+<section class="card">
+<div class="title"><span class="num">1</span><div><h2>Данные сделки</h2><p>Стоимость — из договора купли-продажи, до вычета любых скидок.</p></div></div>
+
+<div class="f"><label>Стоимость квартиры, ₪</label><input type="number" id="val" value="2500000" step="50000" min="0"></div>
+
+<div class="f"><label>Ваш статус <span class="sub">— основной фактор</span></label>
+<select id="status">
+<option value="single">Единственная квартира в Израиле</option>
+<option value="upgrader">Улучшаю жильё — есть старая, продам её</option>
+<option value="additional">Дополнительная квартира / инвестиция</option>
+<option value="foreign">Иностранный резидент</option>
+<option value="nonres">Не жильё (участок, магазин, коммерция)</option>
+</select></div>
+
+<div class="note n-info" style="margin-bottom:16px"><b>Условия статуса «единственная квартира»</b>Чтобы платить по льготным ступеням, должны выполняться <strong>все</strong> условия: вы резидент Израиля (иностранный резидент платит по ставкам дополнительной квартиры); это ваша единственная квартира — доля до 1/3 в другой или до 1/2 в унаследованной статуса не лишает; учитывается вся семья — вы, супруг и дети до 18 лет считаются одним покупателем; объект — жильё, а не участок или коммерция; если улучшаете жильё — старая квартира продана в отведённый срок.</div>
+
+<div id="upgBox" style="display:none">
+<div class="row">
+<div class="f"><label>Дата подписания договора</label><input type="date" id="buyDate"></div>
+<div class="f"><label>У кого покупаете</label>
+<select id="fromWho"><option value="second">Вторичный рынок</option><option value="dev">У застройщика</option></select></div>
+</div></div>
+
+<h3>Дополнительные основания</h3>
+<label class="chk"><input type="checkbox" id="oleh"><span>Я репатриант (<span lang="he" dir="rtl">עולה חדש</span>)<small>От года до въезда и 7 лет после. Служба в армии в счёт не входит.</small></span></label>
+<label class="chk"><input type="checkbox" id="disabled"><span>Инвалид, слепой, пострадавший от враждебных действий или семья павшего<small>Льгота — до двух раз за жизнь, квартира для собственного проживания.</small></span></label>
+
+<div id="olehBox" style="display:none">
+<div class="f"><label>Дата репатриации <span class="sub">— определяет, какая норма применима</span></label><input type="date" id="olehDate"></div>
+</div>
+
+<button class="primary" id="run-btn" type="button">Рассчитать налог →</button>
+</section>
+</main>
+
+<main class="shell" style="display:none" id="hidden-source">
+<section class="card"><div class="title"><span class="num">2</span><div><h2>Результат</h2><p>Налог и доступные вам маршруты.</p></div></div><div id="out"></div></section>
+
+<section class="card">
+<div class="title"><span class="num">3</span><div><h2>Правовая база</h2><p>Все цифры опираются на эти нормы — ссылки рабочие.</p></div></div>
+<div class="srcbox">
+<div><span class="law" lang="he" dir="rtl">חוק מיסוי מקרקעין (שבח ורכישה), התשכ"ג-1963</span><br>Основной закон. <span class="law" lang="he" dir="rtl">סעיף 9(א)</span> — обязанность покупателя уплатить налог.<br><a href="https://www.nevo.co.il/law_html/law01/276_002.htm" target="_blank" rel="noopener">Текст закона →</a></div>
+<div><span class="law" lang="he" dir="rtl">תקנות מס רכישה, התשל"ה-1974</span><br>Постановления: льготы и освобождения. <a href="https://www.nevo.co.il/law_html/law01/297_032.htm" target="_blank" rel="noopener">Текст →</a></div>
+<div><span class="law" lang="he" dir="rtl">סעיף 9(ג1ג)(3)</span> — ступени единственной квартиры</div>
+<div><span class="law" lang="he" dir="rtl">סעיף 9(ג1ו)</span> — ступени дополнительной квартиры</div>
+<div><span class="law" lang="he" dir="rtl">סעיף 9(ג1ג)(2)</span> — улучшающие жильё, сроки продажи старой</div>
+<div><span class="law" lang="he" dir="rtl">תקנה 11</span> — инвалиды, пострадавшие, семьи павших</div>
+<div><span class="law" lang="he" dir="rtl">תקנה 12א</span> — репатриант, единственная квартира (введена 15.08.2024)</div>
+<div><span class="law" lang="he" dir="rtl">תקנה 12</span> — репатриант, бизнес-объект (прежняя редакция)</div>
+<div><span class="law" lang="he" dir="rtl">תקנה 2(1)</span> — нежилая недвижимость, 6%</div>
+<div><strong>Официальный калькулятор Налогового управления</strong><br><a href="https://www.gov.il/he/departments/israel_tax_authority" target="_blank" rel="noopener">רשות המסים →</a> — сверяйте результат перед сделкой</div>
+</div>
+</section>
+
+<section class="card">
+<div class="title"><span class="num">4</span><div><h2>Что важно знать</h2><p>Термины и подводные камни.</p></div></div>
+<details><summary>Кто считается «одним покупателем»</summary><p><span class="law" lang="he" dir="rtl">סעיף 9(ג)(2)(ב)(2)</span> — покупатель, его супруг (кроме постоянно проживающего отдельно) и дети до 18 лет считаются <strong>одним покупателем</strong>. Судебная практика распространила это правило и на фактических супругов. Если у супруга есть квартира — она учитывается как ваша.</p></details>
+<details><summary>Когда квартира всё ещё считается единственной</summary><ul><li>есть доля <strong>не более 1/3</strong> в другой квартире</li><li>есть доля <strong>до 1/2</strong> в унаследованной квартире</li><li>вы улучшаете жильё и продадите старую квартиру в срок</li></ul><p>У этих правил есть исключения. При наличии долей обязательно проконсультируйтесь с адвокатом по недвижимости.</p></details>
+<details><summary>Сроки для улучшающих жильё — менялись трижды</summary><p><strong>Вторичный рынок:</strong> с 01.06.2025 действует постоянная норма — <strong>24 месяца</strong> со дня подписания договора. С 01.06.2023 по 31.05.2025 действовала временная норма 18 месяцев, она истекла и не была продлена.</p><p><strong>У застройщика:</strong> 12 месяцев с даты, когда владение должно было быть передано по договору. При задержке не по вашей вине — с фактической передачи.</p><p><strong>Риск:</strong> в Кнессете продвигается законопроект о возврате к 18 месяцам. Перед сделкой проверьте актуальную норму.</p></details>
+<details><summary>Репатрианты: норма изменилась в августе 2024</summary><p>До 15.08.2024 действовала <span class="law" lang="he" dir="rtl">תקנה 12</span>: 0.5% с первого шекеля и 5% выше первой ступени. Она была невыгодна — обычные ступени единственной квартиры почти всегда давали меньше.</p><p>С 15.08.2024 введена <span class="law" lang="he" dir="rtl">תקנה 12א</span>: для единственной квартиры 0% до 1,978,745 ₪ и всего <strong>0.5%</strong> до 6,055,070 ₪. Это существенно выгоднее обычных ступеней.</p><p>Репатриант, чей день репатриации предшествовал поправке, вправе выбрать прежнюю норму. Калькулятор считает оба варианта.</p></details>
+<details><summary>Сроки подачи и оплаты</summary><p>Декларация в «мисуй мекаркеин» — <strong>в течение 30 дней</strong> с подписания договора. Оплата налога — <strong>в течение 60 дней</strong>. Просрочка влечёт проценты, индексацию и возможные штрафы. Обычно декларацию подаёт сопровождающий сделку адвокат в день подписания.</p></details>
+<details><summary>Нежилая недвижимость</summary><p><span class="law" lang="he" dir="rtl">תקנה 2(1)</span> — 6% с первого шекеля: участок, магазин, офис, склад, а также дом, не пригодный для проживания. При покупке участка под жильё возможен возврат 1/6 налога, если в течение 24 месяцев получено разрешение на строительство.</p></details>
+
+<div class="disclaimer">Расчёт носит информационный характер и не заменяет консультацию адвоката по недвижимости или налогового консультанта. Итоговую сумму определяет «мисуй мекаркеин» на основании поданной декларации; возможны факторы, не учтённые здесь. Ступени действительны с 16.01.2026 и заморожены до 15.01.2028. Перед сделкой сверьте данные на сайте <span lang="he" dir="rtl">רשות המסים</span>.</div>
+</section>
+</main>
+
+<footer class="shell" style="padding:26px 0 50px;color:var(--muted);font-size:11px;text-align:center">Понятные финансы в Израиле · калькулятор мас рехиша · не финансовая или юридическая консультация · <a href="contact.html" style="color:var(--green);font-weight:800;text-decoration:none">Написать нам</a></footer>
+
+<button id="scrollToTop" title="Наверх" aria-label="Прокрутить наверх" style="display:none;position:fixed;bottom:20px;right:20px;width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;border:none;font-size:18px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.2);z-index:150">↑</button>
+
+<script>
+/* ═══ СТУПЕНИ 2026 (заморожены до 15.01.2028) — ядро не менять без пересчёта тестов ═══ */
+var B={
+  single:[[1978745,0],[2347040,.035],[6055070,.05],[20183565,.08],[null,.10]],
+  additional:[[6055070,.08],[null,.10]],
+  olehNew:[[1978745,0],[6055070,.005],[20183565,.08],[null,.10]],
+  olehOld:[[1988090,.005],[null,.05]]
+};
+var DISABLED_THRESHOLD=2500000, FIRST_TIER=1978745, NONRES=.06;
+var OLEH_AMENDMENT='2024-08-15';
+
+function calcBrackets(v,tiers){
+  var t=0,prev=0,rows=[];
+  for(var i=0;i<tiers.length;i++){
+    var cap=tiers[i][0]===null?Infinity:tiers[i][0], r=tiers[i][1];
+    if(v>prev){
+      var part=Math.min(v,cap)-prev, tax=part*r;
+      t+=tax;
+      rows.push({from:prev,to:Math.min(v,cap),rate:r,part:part,tax:tax});
+      prev=cap;
+    } else break;
+  }
+  return {total:t,rows:rows};
+}
+function calcDisabled(v,isSingle){
+  if(isSingle&&v<=DISABLED_THRESHOLD){
+    var taxable=Math.max(0,v-FIRST_TIER);
+    return {total:taxable*.005,
+      rows:[{from:0,to:Math.min(v,FIRST_TIER),rate:0,part:Math.min(v,FIRST_TIER),tax:0},
+            {from:FIRST_TIER,to:v,rate:.005,part:taxable,tax:taxable*.005}].filter(function(r){return r.part>0})};
+  }
+  return {total:v*.005,rows:[{from:0,to:v,rate:.005,part:v,tax:v*.005}]};
+}
+function fmt(n){return Math.round(n).toLocaleString('ru-RU')}
+function fmtD(d){var p=d.split('-');return p[2]+'.'+p[1]+'.'+p[0]}
+function addMonths(iso,m){
+  var d=new Date(iso); var day=d.getDate();
+  d.setMonth(d.getMonth()+m);
+  if(d.getDate()<day)d.setDate(0);
+  return d.toISOString().slice(0,10);
+}
+
+document.getElementById('status').addEventListener('change',function(){
+  document.getElementById('upgBox').style.display=(this.value==='upgrader')?'block':'none';
+});
+document.getElementById('oleh').addEventListener('change',function(){
+  document.getElementById('olehBox').style.display=this.checked?'block':'none';
+});
+
+function calc(){
+  var v=+document.getElementById('val').value||0;
+  var st=document.getElementById('status').value;
+  var isOleh=document.getElementById('oleh').checked;
+  var isDis=document.getElementById('disabled').checked;
+  var olehDate=document.getElementById('olehDate').value;
+  var buyDate=document.getElementById('buyDate').value;
+  var fromWho=document.getElementById('fromWho').value;
+  var h='';
+
+  if(st==='nonres'){
+    var t=v*NONRES;
+    h+='<div class="verdict"><div class="v-lbl">Налог на покупку</div>'+
+       '<div class="v-num">'+fmt(t)+' ₪</div>'+
+       '<div class="v-sub">6% с первого шекеля</div>'+
+       '<div class="v-eff">эффективная ставка 6.00%</div></div>';
+    h+='<div class="note n-info"><b>Нежилая недвижимость</b>'+
+       '<span class="law" lang="he" dir="rtl">תקנה 2(1)</span> — единая ставка 6% на всю стоимость, без ступеней и без освобождения. '+
+       'Если покупаете участок под жилищное строительство и в течение 24 месяцев получите разрешение на строительство, '+
+       'возможен возврат 1/6 уплаченного налога (около '+fmt(t/6)+' ₪).</div>';
+    document.getElementById('out').innerHTML=h;
+    document.getElementById('results-wrap') && document.getElementById('results-wrap').classList.add('show');
+    return {big:fmt(t)+' ₪', sub:'6% — нежилая недвижимость'};
+  }
+
+  var singleLike=(st==='single'||st==='upgrader');
+  var routes=[];
+
+  if(singleLike){
+    var r=calcBrackets(v,B.single);
+    routes.push({key:'single',name:'Единственная квартира',law:'סעיף 9(ג1ג)(3)',
+      desc:'обычные ступени резидента Израиля',total:r.total,rows:r.rows});
+  }
+  if(st==='additional'||st==='foreign'){
+    var r2=calcBrackets(v,B.additional);
+    routes.push({key:'additional',name:st==='foreign'?'Иностранный резидент':'Дополнительная квартира',
+      law:'סעיף 9(ג1ו)',desc:'8% с первого шекеля, далее 10%',total:r2.total,rows:r2.rows});
+  }
+  if(isOleh){
+    if(singleLike){
+      var r3=calcBrackets(v,B.olehNew);
+      routes.push({key:'olehNew',name:'Репатриант — единственная квартира',law:'תקנה 12א',
+        desc:'действует с 15.08.2024',total:r3.total,rows:r3.rows});
+    }
+    var before=olehDate&&olehDate<OLEH_AMENDMENT;
+    if(before||!singleLike){
+      var r4=calcBrackets(v,B.olehOld);
+      routes.push({key:'olehOld',name:'Репатриант — прежняя норма',law:'תקנה 12',
+        desc:before?'доступна вам: репатриация до 15.08.2024':'прежняя редакция',
+        total:r4.total,rows:r4.rows});
+    }
+  }
+  if(isDis){
+    var r5=calcDisabled(v,singleLike);
+    routes.push({key:'disabled',name:'Льгота инвалида / пострадавшего',law:'תקנה 11',
+      desc:singleLike&&v<=DISABLED_THRESHOLD?'освобождение до первой ступени, далее 0.5%':'0.5% с первого шекеля',
+      total:r5.total,rows:r5.rows});
+  }
+
+  routes.sort(function(a,b){return a.total-b.total});
+  var best=routes[0];
+  var eff=v>0?(best.total/v*100):0;
+
+  h+='<div class="verdict"><div class="v-lbl">Налог на покупку</div>'+
+     '<div class="v-num">'+fmt(best.total)+' ₪</div>'+
+     '<div class="v-sub">'+best.name+'</div>'+
+     '<div class="v-eff">эффективная ставка '+eff.toFixed(2)+'% от стоимости</div></div>';
+
+  if(routes.length>1){
+    h+='<div style="margin-bottom:10px"><b style="font-size:14px">Доступные вам маршруты</b>'+
+       '<p style="font-size:12px;color:var(--muted);margin:4px 0 10px">Калькулятор выбирает выгоднейший. Льгота не всегда лучше обычных ступеней — сравнивайте.</p></div>';
+    routes.forEach(function(rt,i){
+      h+='<div class="route'+(i===0?' best':'')+'"><div><div class="nm">'+(i===0?'✓ ':'')+rt.name+'</div>'+
+         '<div class="ds"><span class="law" lang="he" dir="rtl">'+rt.law+'</span> '+rt.desc+'</div></div>'+
+         '<div class="vl">'+fmt(rt.total)+' ₪'+(i>0?'<div style="font-size:10.5px;font-weight:400;color:var(--muted)">+'+fmt(rt.total-best.total)+'</div>':'')+'</div></div>';
+    });
+  }
+
+  h+='<div style="margin-top:20px;margin-bottom:10px"><b style="font-size:14px">Разбивка по ступеням</b>'+
+     '<p style="font-size:12px;color:var(--muted);margin:4px 0 10px">Ставка применяется не ко всей сумме, а к части стоимости внутри каждой ступени.</p></div>'+
+     '<div style="overflow:auto"><table><thead><tr><th>Часть стоимости</th><th>Ставка</th><th>Сумма части</th><th>Налог</th></tr></thead><tbody>';
+  best.rows.forEach(function(r){
+    h+='<tr><td>'+fmt(r.from)+' – '+fmt(r.to)+'</td>'+
+       '<td>'+(r.rate*100).toFixed(1)+'%</td>'+
+       '<td>'+fmt(r.part)+'</td>'+
+       '<td'+(r.tax===0?' class="zero"':'')+'>'+(r.tax===0?'—':fmt(r.tax))+'</td></tr>';
+  });
+  h+='</tbody><tfoot><tr><td colspan="3">Итого налог</td><td>'+fmt(best.total)+' ₪</td></tr></tfoot></table></div>';
+
+  h+='<div style="margin-top:22px"><b style="font-size:14px">Что учесть</b></div><div style="margin-top:10px">';
+
+  if(st==='upgrader'){
+    var months=(fromWho==='dev')?12:24;
+    var deadline=buyDate?addMonths(buyDate,months):null;
+    var addl=calcBrackets(v,B.additional).total;
+    var risk=addl-best.total;
+    h+='<div class="note n-bad"><b>⏳ Главное: срок продажи старой квартиры</b>'+
+       'Вы платите по ставкам единственной квартиры <strong>при условии</strong>, что продадите старую квартиру в срок. '+
+       (fromWho==='dev'
+         ? '<span class="law" lang="he" dir="rtl">סעיף 9(ג1ג)(2)(ב)</span> — <strong>12 месяцев</strong> с даты, когда застройщик должен был передать вам владение по договору.'
+         : '<span class="law" lang="he" dir="rtl">סעיף 9(ג1ג)(2)(א)</span> — <strong>24 месяца</strong> со дня подписания договора.')+
+       (deadline?'<br><br><strong>Ваш крайний срок: примерно '+fmtD(deadline)+'</strong>':'')+
+       '<br><br>Если не успеть — доначисление задним числом по ставкам дополнительной квартиры: '+
+       '<strong>'+fmt(addl)+' ₪</strong> вместо '+fmt(best.total)+' ₪. Разница <strong>'+fmt(risk)+' ₪</strong>, плюс проценты и индексация.</div>';
+    h+='<div class="note n-warn"><b>Норма срока менялась трижды</b>'+
+       'С 01.06.2023 по 31.05.2025 действовали 18 месяцев (временная норма). С 01.06.2025 вернулись 24 месяца. '+
+       'В Кнессете продвигается законопроект о возврате к 18 месяцам — перед сделкой проверьте актуальную норму у адвоката.</div>';
+  }
+
+  if(isOleh){
+    if(best.key==='olehNew'){
+      var vsSingle=calcBrackets(v,B.single).total;
+      h+='<div class="note n-ok"><b>Льгота репатрианта работает в вашу пользу</b>'+
+         '<span class="law" lang="he" dir="rtl">תקנה 12א</span> даёт 0% до '+fmt(FIRST_TIER)+' ₪ и всего 0.5% до '+fmt(6055070)+' ₪. '+
+         'Экономия против обычных ступеней: <strong>'+fmt(vsSingle-best.total)+' ₪</strong>.</div>';
+    } else if(best.key==='single'&&routes.some(function(r){return r.key.indexOf('oleh')===0})){
+      h+='<div class="note n-warn"><b>Льгота репатрианта вам НЕ выгодна</b>'+
+         'Обычные ступени единственной квартиры дают меньший налог. Не применяйте льготу автоматически только потому, что она положена — '+
+         'это распространённая и дорогая ошибка.</div>';
+    }
+    if(!olehDate){
+      h+='<div class="note n-info"><b>Укажите дату репатриации</b>'+
+         'От неё зависит, какая норма применима. Для репатриировавшихся до 15.08.2024 доступен выбор между '+
+         '<span class="law" lang="he" dir="rtl">תקנה 12</span> и <span class="law" lang="he" dir="rtl">תקנה 12א</span>.</div>';
+    }
+    h+='<div class="note n-info"><b>Условия льготы репатрианта</b>'+
+       'Период: от года до первого въезда в Израиль и до 7 лет после. Срочная и национальная служба в счёт семи лет не входит. '+
+       'Нужна виза оле по ст. 2 Закона о возвращении, теудат оле по ст. 3 либо разрешение А1. Льгота даётся один раз.</div>';
+  }
+
+  if(isDis){
+    h+='<div class="note n-info"><b>Условия льготы по такане 11</b>'+
+       'Предоставляется <strong>не более двух раз за жизнь</strong>, и квартира должна служить для проживания правообладателя. '+
+       'Требуется подтверждение Битуах Леуми или Министерства обороны о степени инвалидности.</div>';
+  }
+
+  if(st==='additional'||st==='foreign'){
+    var asSingle=calcBrackets(v,B.single).total;
+    h+='<div class="note n-warn"><b>Разница со статусом единственной квартиры — '+fmt(best.total-asSingle)+' ₪</b>'+
+       'Если это ваша единственная квартира в Израиле, или вы продаёте имеющуюся — вы вправе на ставки единственной. '+
+       'Проверьте: доля до 1/3 в другой квартире или до 1/2 в унаследованной <strong>не лишает</strong> статуса единственной.</div>';
+    if(st==='foreign'){
+      h+='<div class="note n-info"><b>Иностранный резидент, ставший резидентом Израиля</b>'+
+         'Существовало положение, по которому покупатель, ставший резидентом в течение 27 месяцев с покупки, получал ставки единственной квартиры задним числом. '+
+         'Уточните актуальность у адвоката.</div>';
+    }
+  }
+
+  h+='<div class="note n-info"><b>Проверьте «семейную ячейку»</b>'+
+     '<span class="law" lang="he" dir="rtl">סעיף 9(ג)(2)(ב)(2)</span> — вы, ваш супруг и дети до 18 лет считаются <strong>одним покупателем</strong>. '+
+     'Если у супруга есть квартира, она учитывается как ваша, и статус единственной теряется.</div>';
+
+  h+='<div class="note n-warn"><b>Сроки подачи и оплаты</b>'+
+     'Декларация в «мисуй мекаркеин» — <strong>30 дней</strong> с подписания договора. Оплата — <strong>60 дней</strong>. '+
+     'Просрочка влечёт проценты, индексацию и штрафы.</div>';
+
+  h+='</div>';
+
+  document.getElementById('out').innerHTML=h;
+  var wrap = document.getElementById('results-wrap');
+  if(wrap) wrap.classList.add('show');
+  return {big:fmt(best.total)+' ₪', sub:best.name, eff:eff.toFixed(2)+'%'};
+}
+
+function runAndShowModal(){
+  var r = calc();
+  showResultModal('Налог на покупку (мас рехиша)', r.big, r.sub,
+    r.eff ? [['Эффективная ставка', r.eff]] : [],
+    '📊 Смотреть разбивку и маршруты', function(){setActiveView('result');});
+}
+document.getElementById('run-btn').addEventListener('click', runAndShowModal);
+
+function buildViewPanelsSafe(){
+  var inputMain = document.querySelectorAll('main.shell')[0];
+  var hiddenMain = document.getElementById('hidden-source');
+  var inputCards = [].slice.call(inputMain.querySelectorAll(':scope > section.card'));
+  var hiddenCards = [].slice.call(hiddenMain.querySelectorAll(':scope > section.card'));
+
+  var panelInput = document.createElement('div'); panelInput.id='view-panel-input'; panelInput.className='view-panel active';
+  inputCards.forEach(function(c){panelInput.appendChild(c);});
+
+  var panelResult = document.createElement('div'); panelResult.id='view-panel-result'; panelResult.className='view-panel';
+  hiddenCards[0].id='results-wrap';
+  panelResult.appendChild(hiddenCards[0]);
+
+  var panelExplain = document.createElement('div'); panelExplain.id='view-panel-explain'; panelExplain.className='view-panel';
+  panelExplain.appendChild(hiddenCards[1]);
+  panelExplain.appendChild(hiddenCards[2]);
+
+  inputMain.appendChild(panelInput);
+  inputMain.appendChild(panelResult);
+  inputMain.appendChild(panelExplain);
+  hiddenMain.remove();
+}
+function setActiveView(name){
+  document.querySelectorAll('.view-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.view-tab').forEach(function(t){t.classList.remove('active');});
+  var panel=document.getElementById('view-panel-'+name), tab=document.getElementById('tab-'+name);
+  if(panel) panel.classList.add('active');
+  if(tab) tab.classList.add('active');
+  document.getElementById('view-tabs').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showResultModal(title,bigValue,subText,rowsArr,actionLabel,actionFn){
+  var ov=document.getElementById('result-modal-overlay');
+  if(!ov){
+    ov=document.createElement('div');ov.id='result-modal-overlay';ov.className='result-modal-overlay';
+    ov.innerHTML='<div class="result-modal"><div class="result-modal-head"><h3 id="rm-title"></h3><button class="result-modal-close" onclick="closeResultModal()">✕</button></div><div class="result-modal-big" id="rm-big"></div><div class="result-modal-sub" id="rm-sub"></div><div class="result-modal-rows" id="rm-rows"></div><div class="result-modal-actions"><button class="rm-secondary" onclick="closeResultModal()">Закрыть</button><button class="rm-primary" id="rm-action-btn"></button></div></div>';
+    document.body.appendChild(ov);
+    ov.addEventListener('click',function(e){if(e.target===ov)closeResultModal();});
+  }
+  document.getElementById('rm-title').textContent=title;
+  var bigEl=document.getElementById('rm-big');
+  if(bigValue){bigEl.textContent=bigValue;bigEl.style.display='';}else{bigEl.style.display='none';}
+  document.getElementById('rm-sub').textContent=subText;
+  document.getElementById('rm-rows').innerHTML=(rowsArr||[]).map(function(r){return '<div class="result-modal-row"><span>'+r[0]+'</span><b>'+r[1]+'</b></div>';}).join('');
+  var actBtn=document.getElementById('rm-action-btn');
+  if(actionLabel){actBtn.style.display='';actBtn.textContent=actionLabel;actBtn.onclick=function(){closeResultModal();(actionFn||function(){})();};}
+  else{actBtn.style.display='none';}
+  ov.classList.add('show');
+}
+function closeResultModal(){var ov=document.getElementById('result-modal-overlay');if(ov)ov.classList.remove('show');}
+
+(function(){
+  var btn = document.getElementById('scrollToTop');
+  window.addEventListener('scroll', function(){ btn.style.display = window.scrollY > 400 ? 'block' : 'none'; });
+  btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+})();
+
+fetch('data/rates.json',{cache:'no-cache'})
+  .then(function(r){if(!r.ok)throw 0;return r.json()})
+  .then(function(j){ if(j.updated){ var d=new Date(j.updated); if(!isNaN(d)) document.getElementById('p-upd').textContent=d.toLocaleDateString('ru-RU'); } })
+  .catch(function(){});
+
+document.addEventListener('DOMContentLoaded', buildViewPanelsSafe);
+</script>
+</body></html>

@@ -1,0 +1,492 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08775a">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308775a'/><text x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='900' fill='white' text-anchor='middle'>₪</text></svg>">
+<link rel="canonical" href="https://exodus611.github.io/finance-portal/pension-gap.html">
+<title>Пенсионный разрыв: сколько вы получите на пенсии в Израиле — калькулятор 2026</title>
+<meta name="description" content="Честный расчёт будущей пенсии: накопления, кицват зикна, коэффициент замещения. Покажет разрыв между желаемым и реальным доходом и цену промедления.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Пенсионный разрыв — сколько вы получите на пенсии">
+<meta property="og:description" content="Честный расчёт: накопления, кицват зикна, коэффициент замещения зарплаты и цена промедления.">
+<meta property="og:url" content="https://exodus611.github.io/finance-portal/pension-gap.html">
+<meta property="og:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="ru_RU">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Калькулятор пенсионного разрыва",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "description": "Расчёт будущей пенсии в Израиле: накопления, кицват зикна от Битуах Леуми, коэффициент замещения зарплаты, цена промедления.",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "ILS"},
+  "inLanguage": "ru"
+}
+</script>
+<style>
+:root{--ink:#15251f;--muted:#5a6660;--paper:#f4f1e9;--card:#fffdf8;--line:#ddd6c7;--green:#08775a;--green2:#0d9671;--gold:#c29b52;--red:#b84b3e;--blue:#30779a;--purple:#7857b8;--shadow:0 16px 40px rgba(26,45,37,.08);--r:18px}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+html{overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.45;overflow-x:hidden;max-width:100vw}
+button,input,select{font:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+.shell{width:min(760px,calc(100% - 28px));margin:auto}
+.top{padding:18px 0}
+.topbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;row-gap:6px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:850}
+.mark{width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,var(--green2),var(--green) 70%);color:#fff;display:grid;place-items:center;font-size:32px;font-weight:900;box-shadow:0 6px 18px rgba(8,119,90,.45);border:2px solid rgba(255,255,255,.55)}
+a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none;white-space:nowrap}
+.hero{padding:30px 0 10px;text-align:center}
+.eyebrow{font-size:12px;color:var(--green);font-weight:900;text-transform:uppercase;letter-spacing:.09em}
+.hero h1{font-size:clamp(24px,5vw,38px);line-height:1.15;letter-spacing:-.03em;margin:10px auto 12px;max-width:620px}
+.hero p{font-size:14.5px;color:var(--muted);max-width:580px;margin:0 auto}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;margin:18px 0;box-shadow:var(--shadow)}
+.title{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.num{width:32px;height:32px;border-radius:10px;background:var(--green);color:#fff;font-weight:900;display:grid;place-items:center;flex:0 0 32px;font-size:14px}
+.title h2{margin:0 0 3px;font-size:18px}
+.title p{margin:0;font-size:12.5px;color:var(--muted)}
+.hint{color:var(--muted);font-size:12.5px;margin-bottom:16px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+@media(max-width:560px){.row3,.row2{grid-template-columns:1fr}}
+.f{margin-bottom:16px}
+.f label{display:block;font-size:12px;font-weight:800;color:var(--muted);margin-bottom:6px}
+.f label .sub{font-weight:500;color:var(--muted);text-transform:none;letter-spacing:0}
+.f input,.f select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:11px;font-size:14px;background:#fff;color:var(--ink)}
+h3{font-size:14px;margin:18px 0 8px}
+.chk{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1px solid var(--line);border-radius:11px;cursor:pointer;background:#faf8f2;margin-bottom:10px}
+.chk input{width:auto;margin-top:3px;flex-shrink:0}
+.chk span{font-size:13px}
+.chk small{display:block;color:var(--muted);font-size:11.5px;margin-top:2px}
+.primary{width:100%;background:var(--green);color:#fff;border:none;border-radius:14px;padding:14px;font-size:14.5px;font-weight:800;cursor:pointer;margin-top:6px}
+.primary:hover{background:var(--green2)}
+.verdict{border-radius:var(--r);padding:22px 20px;margin-bottom:16px;text-align:center;background:var(--card);border:1px solid var(--line)}
+.v-bad{background:#fff6f4;border:1px solid #f0cec6}
+.v-warn{background:#fff9e9;border:1px solid #e9d9b8}
+.v-ok{background:#eaf6f0;border:1px solid #b9d8ca}
+.v-lbl{font-size:12.5px;margin-bottom:6px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.v-num{font-size:2.1rem;font-weight:900;letter-spacing:-1px;line-height:1.1;color:var(--red)}
+.v-ok .v-num{color:var(--green)}
+.v-warn .v-num{color:var(--gold)}
+.v-sub{font-size:12.5px;margin-top:8px;color:var(--muted)}
+.bar{height:32px;background:#efece3;border-radius:8px;overflow:hidden;position:relative;margin:6px 0 4px}
+.bar i{display:block;height:100%;background:var(--green)}
+.bar.short i{background:var(--red)}
+.bar span{position:absolute;top:0;left:10px;line-height:32px;font-size:12.5px;font-weight:800;color:#fff}
+.barlbl{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:12px}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+@media(max-width:560px){.kpi{grid-template-columns:1fr}}
+.k{background:var(--card);border-radius:12px;padding:14px;text-align:center;border:1px solid var(--line)}
+.k .n{font-size:18px;font-weight:900}
+.k .l{font-size:11px;color:var(--muted);margin-top:3px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{padding:9px 7px;text-align:right;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+th{font-size:10.5px;color:var(--muted);font-weight:800;text-transform:uppercase}
+tfoot td{font-weight:900;border-bottom:0;border-top:2px solid var(--ink)}
+td.pos{color:var(--green);font-weight:800}
+td.neg{color:var(--red);font-weight:800}
+tr.hl{background:#fff9e9}
+.note{border-radius:12px;padding:14px 16px;margin-bottom:12px;font-size:12.5px}
+.note b{display:block;margin-bottom:4px}
+.n-warn{background:#fff9e9;border-left:4px solid var(--gold)}
+.n-ok{background:#eaf6f0;border-left:4px solid var(--green)}
+.n-bad{background:#fff6f4;border-left:4px solid var(--red)}
+.n-info{background:#eaf1f6;border-left:4px solid var(--blue)}
+details{border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-top:10px;background:#fff}
+details summary{cursor:pointer;font-weight:800;font-size:13px;color:var(--green)}
+details p{margin-top:8px;font-size:12.5px;color:var(--muted);line-height:1.6}
+.term{background:#fff;border:1px dashed var(--line);padding:1px 5px;border-radius:5px;font-size:.94em}
+.disclaimer{font-size:11px;color:var(--muted);line-height:1.6;background:#fff9e9;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:14px 16px;margin-top:14px}
+.view-tabs{width:min(760px,calc(100% - 28px));margin:14px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);position:sticky;top:8px;z-index:90}
+.view-tab{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 6px;border-radius:9px;border:none;background:transparent;color:var(--muted);font-family:inherit;font-size:12px;font-weight:800;cursor:pointer}
+.view-tab b{font-size:10px;font-weight:600;opacity:.75}
+.view-tab.active{background:var(--green);color:#fff}
+.view-tab.active b{color:#fff;opacity:.85}
+.view-tab:hover:not(.active){background:var(--paper);color:var(--green)}
+.view-panel{display:none}
+.view-panel.active{display:block}
+@media(max-width:560px){.view-tabs{width:calc(100% - 18px);position:relative;top:auto}.view-tab{padding:8px 4px;font-size:10.5px}}
+.result-modal-overlay{display:none;position:fixed;inset:0;background:rgba(21,37,31,.55);z-index:200;align-items:flex-end;justify-content:center}
+.result-modal-overlay.show{display:flex}
+.result-modal{background:var(--card);border-radius:18px 18px 0 0;max-width:480px;width:100%;padding:20px 20px 22px;box-shadow:0 -8px 30px rgba(0,0,0,.25);animation:modalUp .22s ease-out}
+@media(min-width:640px){.result-modal-overlay{align-items:center;padding:20px}.result-modal{border-radius:18px}}
+@keyframes modalUp{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}
+.result-modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px}
+.result-modal-head h3{margin:0;font-size:17px;color:var(--green)}
+.result-modal-close{border:none;background:var(--paper);color:var(--muted);width:30px;height:30px;border-radius:50%;font-size:15px;cursor:pointer;flex:0 0 30px}
+.result-modal-big{font-size:27px;font-weight:900;color:var(--ink);margin:6px 0 2px}
+.result-modal-sub{font-size:12px;color:var(--muted);margin-bottom:12px}
+.result-modal-rows{display:grid;gap:6px;margin-bottom:14px}
+.result-modal-row{display:flex;flex-direction:column;gap:4px;font-size:12.5px;background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:10px 12px}
+.result-modal-row span{font-size:10.5px;font-weight:900;text-transform:uppercase;letter-spacing:.03em;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:5px;margin-bottom:1px}
+.result-modal-row b{font-weight:600;color:var(--ink);line-height:1.5}
+.result-modal-actions{display:flex;gap:8px}
+.result-modal-actions button{flex:1;border-radius:11px;padding:11px;font-weight:850;font-size:13px;cursor:pointer;border:1px solid var(--line)}
+.result-modal-actions .rm-primary{background:var(--green);color:#fff;border-color:var(--green)}
+.result-modal-actions .rm-secondary{background:transparent;color:var(--muted)}
+</style><script data-goatcounter="https://finance-portal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<noscript><div style="background:#fff6f4;border-bottom:2px solid #b84b3e;color:#b84b3e;text-align:center;padding:12px;font-family:sans-serif;font-size:13px">Для работы калькулятора нужен включённый JavaScript в браузере.</div></noscript>
+<header class="top"><div class="shell topbar"><div class="logo"><span class="mark">₪</span><span>Понятные финансы в Израиле</span></div><a class="back" href="index.html">← На главную</a><select onchange="if(this.value)location.href=this.value" style="font-size:11.5px;font-weight:700;color:var(--green);border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:#fff;margin-inline-start:8px;cursor:pointer"><option value="">Все калькуляторы ▾</option><option value="salary.html">💰 Зарплата</option><option value="mashkanta.html">🏠 Машканта</option><option value="auto.html">🚗 Автомобиль</option><option value="kredit.html">💳 Кредит</option><option value="arenda-vs-pokupka.html">⚖️ Аренда vs покупка</option><option value="mihzur-mashkanta.html">🔄 Рефинансирование</option><option value="siluk-mukdam.html">💎 Погашение vs инвестиции</option><option value="mas-rehisha.html">🏛️ Мас рехиша</option><option value="mas-shevach.html">📉 Мас шевах</option><option value="keren-hishtalmut.html">🎓 Фонд повышения квалификации</option><option value="nekudot-zikuy.html">🎯 Некудот зикуй</option><option value="valuta.html">💱 Курс валют</option><option value="tablo.html">📊 Экономика сегодня</option><option value="benzin.html">⛽ Цена на бензин</option><option value="arnona.html">🏛️ Скидка на арнону</option><option value="dira.html">🏗️ Дира бе-ханаха</option><option value="avtala.html">📋 Дмей автала</option><option value="nko.html">🤝 Благотворительные НКО</option><option value="slovar.html">📖 Словарь терминов</option></select></div></header>
+
+<section class="hero shell">
+<div class="eyebrow">Пенсионный разрыв</div>
+<h1>Сколько вы получите на пенсии — и хватит ли этого</h1>
+<p>Самый важный расчёт, который почти никто не делает. Считаем честно: с комиссиями фондов, реальной пенсионной базой и перерывами в карьере.</p>
+</section>
+
+<nav class="view-tabs" id="view-tabs">
+    <button class="view-tab active" id="tab-input" onclick="setActiveView('input')"><span>Ввод</span><b>вы и отчисления</b></button>
+    <button class="view-tab" id="tab-result" onclick="setActiveView('result')"><span>Результат</span><b>разрыв и план</b></button>
+    <button class="view-tab" id="tab-explain" onclick="setActiveView('explain')"><span>Разберись</span><b>мекадем, кицва</b></button>
+</nav>
+
+<main class="shell">
+<section class="card">
+<div class="title"><span class="num">1</span><div><h2>О вас</h2><p>Базовые параметры для расчёта.</p></div></div>
+
+<div class="note n-warn"><b>Зачем это знать сейчас</b>Исследование Университета Бен-Гуриона: реальный коэффициент замещения в Израиле — около <strong>38% у мужчин и 31% у женщин</strong>. Типичный израильтянин на пенсии живёт на треть прежнего дохода. Чем раньше вы это увидите, тем дешевле исправить.</div>
+
+<div class="row3">
+<div class="f"><label>Возраст сейчас</label><input type="number" id="age" value="40" min="18" max="70"></div>
+<div class="f"><label>Пол <span class="sub">— возраст выхода</span></label><select id="sex"><option value="m">Мужчина</option><option value="f">Женщина</option></select></div>
+<div class="f"><label>Выход на пенсию</label><input type="number" id="retire" value="67" min="55" max="80"></div>
+</div>
+
+<div class="row2">
+<div class="f"><label>Зарплата брутто, ₪/мес</label><input type="number" id="salary" value="20000" step="500"></div>
+<div class="f"><label>Уже накоплено в пенсии, ₪ <span class="sub">— из отчёта фонда</span></label><input type="number" id="saved" value="300000" step="10000"></div>
+</div>
+
+<h3>Отчисления</h3>
+<div class="row3">
+<div class="f"><label>Вы, %</label><input type="number" id="pw" value="6" step="0.5"></div>
+<div class="f"><label>Работодатель, %</label><input type="number" id="pe" value="6.5" step="0.5"></div>
+<div class="f"><label>Компенсация за увольнение (<span lang="he" dir="rtl">פיצויים</span>), %</label><input type="number" id="pz" value="8.33" step="0.01"></div>
+</div>
+
+<h3>Реальность, которую обычно игнорируют</h3>
+<div class="f"><label>Какая часть зарплаты идёт в пенсионную базу, % <span class="sub">— бонусы и сверхурочные обычно не входят</span></label><input type="number" id="base" value="85" min="30" max="100" step="5"></div>
+
+<label class="chk"><input type="checkbox" id="pitzOut"><span>Я снимал компенсацию за увольнение при смене работы (или планирую)<small>Самый разрушительный фактор — теряется примерно треть будущей пенсии</small></span></label>
+<label class="chk"><input type="checkbox" id="gaps"><span>Были или будут перерывы: декрет, безработица, учёба<small>Уменьшает накопления примерно на 10%</small></span></label>
+<label class="chk"><input type="checkbox" id="single" checked><span>Одинокий / супруг(а) тоже получает свою пенсию<small>Влияет на размер кицват зикна</small></span></label>
+
+<h3>Допущения</h3>
+<div class="row3">
+<div class="f"><label>Доходность фонда, %/год <span class="sub">номинал</span></label><input type="number" id="ret" value="5.5" step="0.5"></div>
+<div class="f"><label>Инфляция, %/год</label><input type="number" id="infl" value="2" step="0.5"></div>
+<div class="f"><label>Комиссия с накоплений, %</label><input type="number" id="fee" value="0.5" step="0.05"></div>
+</div>
+
+<div class="f"><label>Сколько нужно на пенсии, % от нынешней зарплаты <span class="sub">— мировой стандарт 60–70%</span></label><input type="number" id="target" value="70" min="30" max="120" step="5"></div>
+
+<button class="primary" id="run-btn" type="button">Показать мою пенсию →</button>
+</section>
+</main>
+
+<main class="shell" style="display:none" id="hidden-source">
+<section class="card"><div class="title"><span class="num">2</span><div><h2>Результат</h2><p>Разрыв, откуда капитал и что делать.</p></div></div><div id="out"></div></section>
+
+<section class="card">
+<div class="title"><span class="num">3</span><div><h2>Как это считается</h2><p>Термины без сюрпризов.</p></div></div>
+<details open><summary>Что такое мекадем и почему он около 200</summary><p>Мекадем hамара (<span lang="he" dir="rtl">מקדם המרה</span>) — делитель, переводящий накопленный капитал в месячную выплату. Капитал 2,000,000 ₪ при мекадеме 200 даёт 10,000 ₪ в месяц. Зависит от ожидаемой продолжительности жизни, пола и возраста выхода, и <strong>окончательно фиксируется только в день выхода на пенсию</strong>. У женщин он выше (дольше выплаты), поэтому при равном капитале пенсия меньше.</p></details>
+<details><summary>Почему снятие компенсации за увольнение так дорого обходится</summary><p>Компенсация за увольнение (<span lang="he" dir="rtl">פיצויים</span>) — это 6–8.33% от зарплаты, то есть примерно <strong>треть всех пенсионных отчислений</strong>. При увольнении их можно забрать наличными, и многие так делают. Но эти деньги должны были работать десятилетиями. Снятие 100,000 ₪ в 40 лет — это минус 250,000–400,000 ₪ капитала к 67 годам.</p></details>
+<details><summary>Откуда берётся кицват зикна</summary><p>Базовая выплата Битуах Леуми в 2026: <strong>1,838 ₪</strong> одинокому, <strong>2,762 ₪</strong> если у супруга нет своей. За каждый год страхования свыше десяти добавляется 2%, максимум +50%. Это первый уровень пенсии, и один он прожиточного минимума не обеспечивает.</p></details>
+<details><summary>Почему мой расчёт может отличаться от расчёта фонда</summary><p>Мы считаем в сегодняшних деньгах: из номинальной доходности вычитаем инфляцию, получая реальную. Фонды часто показывают номинальные суммы, которые выглядят крупнее, но покупательная способность у них ниже. Наш подход консервативнее и честнее.</p></details>
+<details><summary>Что делать, если разрыв большой</summary><p>По эффективности: сохранить компенсацию за увольнение при смене работы · увеличить свою часть отчислений до 7% (это ещё и налоговая льгота) · открыть фонд повышения квалификации (<span lang="he" dir="rtl">קרן השתלמות</span>), если работодатель согласен · рассмотреть отсрочку выхода на пенсию — каждый год добавляет и накопления, и +5% к кицва · снизить комиссии фонда.</p></details>
+
+<div class="disclaimer">Расчёт оценочный и не является пенсионной или инвестиционной консультацией. Доходность фонда — предположение, а не гарантия. Мекадем фиксируется только в день выхода на пенсию. Не учтены: налогообложение пенсии, страховые риски, фонд повышения квалификации и частные накопления. Для персонального плана обратитесь к лицензированному пенсионному консультанту.</div>
+<div style="margin-top:12px;font-size:12px"><a href="salary.html" style="color:var(--green);font-weight:800;text-decoration:none">Проверить точные пенсионные удержания из вашей зарплаты →</a></div>
+</section>
+</main>
+
+<footer class="shell" style="padding:26px 0 50px;color:var(--muted);font-size:11px;text-align:center">Понятные финансы в Израиле · калькулятор пенсионного разрыва · не финансовая консультация · <a href="contact.html" style="color:var(--green);font-weight:800;text-decoration:none">Написать нам</a></footer>
+
+<button id="scrollToTop" title="Наверх" aria-label="Прокрутить наверх" style="display:none;position:fixed;bottom:20px;right:20px;width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;border:none;font-size:18px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.2);z-index:150">↑</button>
+
+<script>
+/* ═══ ЯДРО — проверено против реальных данных Битуах Леуми и внутренней согласованности ═══ */
+var K={kzSingle:1838, kzCouple:2762, kzVetekMax:0.50, mekademM:200, mekademF:210, feeDeposit:0.02};
+function fmt(n){return Math.round(n).toLocaleString('ru-RU')}
+function fvLump(P,r,n){return P*Math.pow(1+r,n)}
+function fvStream(m,r,n){return r===0?m*n:m*(Math.pow(1+r,n)-1)/r}
+function pmtNeeded(t,r,n){return r===0?t/n:t*r/(Math.pow(1+r,n)-1)}
+function kitzva(yearsInsured,single){
+  var base=single?K.kzSingle:K.kzCouple;
+  var v=Math.min(K.kzVetekMax,Math.max(0,yearsInsured-10)*0.02);
+  return base*(1+v);
+}
+
+document.getElementById('sex').addEventListener('change',function(){
+  document.getElementById('retire').value=(this.value==='f')?65:67;
+});
+
+function drawPensionChart(points, targetLine){
+  var W=640,H=260,padL=58,padR=14,padT=16,padB=30;
+  var plotW=W-padL-padR, plotH=H-padT-padB;
+  var vals=points.map(function(p){return p.cap});
+  if(targetLine!==null)vals.push(targetLine);
+  var maxV=Math.max(1,Math.max.apply(null,vals));
+  function x(i){return padL+(plotW*i/(points.length-1))}
+  function y(v){return padT+plotH-(plotH*v/maxV)}
+  function fmtShort(n){return Math.abs(n)>=1000000?(n/1000000).toFixed(1)+'M':Math.abs(n)>=1000?Math.round(n/1000)+'K':Math.round(n)}
+  var pathCap=points.map(function(p,i){return (i===0?'M':'L')+x(i)+','+y(p.cap)}).join(' ');
+
+  var gridLines='';
+  for(var g=0;g<=4;g++){
+    var gv=maxV*g/4, gy=y(gv);
+    gridLines+='<line x1="'+padL+'" y1="'+gy+'" x2="'+(W-padR)+'" y2="'+gy+'" stroke="var(--line)" stroke-width="1" stroke-dasharray="3,3"/>';
+    gridLines+='<text x="'+(padL-8)+'" y="'+(gy+4)+'" font-size="10" fill="var(--muted)" text-anchor="end">'+fmtShort(gv)+'</text>';
+  }
+  var xLabels='';
+  points.forEach(function(p,i){
+    xLabels+='<text x="'+x(i)+'" y="'+(H-8)+'" font-size="10" fill="var(--muted)" text-anchor="middle">'+p.y+' лет</text>';
+  });
+  var targetSvg='';
+  if(targetLine!==null){
+    var ty=y(targetLine);
+    targetSvg='<line x1="'+padL+'" y1="'+ty+'" x2="'+(W-padR)+'" y2="'+ty+'" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="5,4"/>'+
+      '<text x="'+(W-padR)+'" y="'+(ty-6)+'" font-size="10" fill="var(--gold)" text-anchor="end" font-weight="700">цель: '+fmtShort(targetLine)+'</text>';
+  }
+  var dots=points.map(function(p,i){return '<circle cx="'+x(i)+'" cy="'+y(p.cap)+'" r="3.5" fill="var(--green)"/>'}).join('');
+
+  var svg='<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">'+
+    gridLines+targetSvg+
+    '<path d="'+pathCap+'" fill="none" stroke="var(--green)" stroke-width="2.5"/>'+
+    dots+xLabels+
+    '</svg>'+
+    '<div style="display:flex;gap:16px;justify-content:center;margin-top:8px;font-size:11.5px;color:var(--muted)">'+
+    '<span>🟢 Ваш прогнозируемый капитал</span>'+(targetLine!==null?'<span>🟡 Нужный капитал для цели</span>':'')+'</div>';
+  document.getElementById('pension-chart-wrap').innerHTML=svg;
+}
+
+function calc(){
+  var age=+document.getElementById('age').value||40;
+  var sex=document.getElementById('sex').value;
+  var retire=+document.getElementById('retire').value||67;
+  var salary=+document.getElementById('salary').value||0;
+  var saved=+document.getElementById('saved').value||0;
+  var pw=+document.getElementById('pw').value||0;
+  var pe=+document.getElementById('pe').value||0;
+  var pz=+document.getElementById('pz').value||0;
+  var basePct=(+document.getElementById('base').value||100)/100;
+  var pitzOut=document.getElementById('pitzOut').checked;
+  var gaps=document.getElementById('gaps').checked;
+  var single=document.getElementById('single').checked;
+  var nom=(+document.getElementById('ret').value||5.5)/100;
+  var infl=(+document.getElementById('infl').value||2)/100;
+  var fee=(+document.getElementById('fee').value||0.5)/100;
+  var targetPct=(+document.getElementById('target').value||70)/100;
+
+  var years=Math.max(0,retire-age);
+  if(years<=0){alert('Возраст выхода должен быть больше текущего');return}
+
+  var realGross=(1+nom)/(1+infl)-1;
+  var real=realGross-fee;
+  var rm=real/12;
+  var mekadem=(sex==='f')?K.mekademF:K.mekademM;
+
+  var rate=(pw+pe+(pitzOut?0:pz))/100;
+  var gapFactor=gaps?0.90:1.0;
+  var contrib=salary*basePct*gapFactor*rate*(1-K.feeDeposit);
+
+  var fv1=fvLump(saved,real,years);
+  var fv2=fvStream(contrib,rm,years*12);
+  var total=fv1+fv2;
+  var pension=total/mekadem;
+  var kz=kitzva(years+Math.max(0,age-22),single);
+  var income=pension+kz;
+  var need=salary*targetPct;
+  var gap=need-income;
+  var repl=salary>0?income/salary*100:0;
+
+  var h='';
+  var cls=gap>need*0.25?'v-bad':(gap>0?'v-warn':'v-ok');
+  h+='<div class="verdict '+cls+'"><div class="v-lbl">'+
+     (gap>0?'Вам будет не хватать':'Вы обеспечены')+'</div>'+
+     '<div class="v-num">'+(gap>0?fmt(gap):fmt(-gap))+' ₪</div>'+
+     '<div class="v-sub">в месяц'+(gap>0?', начиная с '+retire+' лет':' — сверх цели')+'</div></div>';
+
+  h+='<div class="kpi">'+
+    '<div class="k"><div class="n">'+fmt(income)+' ₪</div><div class="l">Доход на пенсии</div></div>'+
+    '<div class="k"><div class="n" style="color:'+(repl<50?'var(--red)':repl<65?'var(--gold)':'var(--green)')+'">'+repl.toFixed(0)+'%</div><div class="l">Замещение зарплаты</div></div>'+
+    '<div class="k"><div class="n">'+fmt(total)+' ₪</div><div class="l">Капитал к '+retire+' годам</div></div>'+
+    '</div>';
+
+  var maxv=Math.max(need,income,1);
+  h+='<div style="margin-bottom:10px"><b style="font-size:14px">Сегодня и на пенсии</b><p style="font-size:12px;color:var(--muted);margin:4px 0 10px">В сегодняшних деньгах — с поправкой на инфляцию.</p></div>'+
+     '<div class="barlbl"><span>Нужно для прежнего уровня жизни</span><strong>'+fmt(need)+' ₪</strong></div>'+
+     '<div class="bar"><i style="width:'+(need/maxv*100)+'%"></i><span>'+fmt(need)+' ₪</span></div>'+
+     '<div class="barlbl" style="margin-top:14px"><span>Реально будете получать</span><strong>'+fmt(income)+' ₪</strong></div>'+
+     '<div class="bar'+(income<need?' short':'')+'"><i style="width:'+(income/maxv*100)+'%"></i><span>'+fmt(income)+' ₪</span></div>';
+
+  h+='<table style="margin-top:20px"><thead><tr><th>Источник</th><th>В месяц</th></tr></thead><tbody>'+
+     '<tr><td>Пенсионный фонд<br><span style="font-size:10.5px;color:var(--muted)">капитал '+fmt(total)+' ₪ ÷ мекадем '+mekadem+'</span></td><td>'+fmt(pension)+' ₪</td></tr>'+
+     '<tr><td>Кицват зикна (Битуах Леуми)<br><span style="font-size:10.5px;color:var(--muted)">'+(single?'одинокий':'с супругом')+', со стажевой надбавкой</span></td><td>'+fmt(kz)+' ₪</td></tr>'+
+     '</tbody><tfoot><tr><td>Итого доход</td><td>'+fmt(income)+' ₪</td></tr></tfoot></table>';
+
+  h+='<div style="margin-top:22px;margin-bottom:10px"><b style="font-size:14px">Откуда возьмётся капитал</b></div>'+
+     '<table><tbody>'+
+     '<tr><td>Уже накоплено сегодня<br><span style="font-size:10.5px;color:var(--muted)">вырастет за '+years+' лет под '+(real*100).toFixed(2)+'% реальных</span></td><td>'+fmt(fv1)+' ₪</td></tr>'+
+     '<tr><td>Будущие отчисления<br><span style="font-size:10.5px;color:var(--muted)">'+fmt(contrib)+' ₪/мес × '+years+' лет</span></td><td>'+fmt(fv2)+' ₪</td></tr>'+
+     '</tbody><tfoot><tr><td>Капитал к пенсии</td><td>'+fmt(total)+' ₪</td></tr></tfoot></table>'+
+     '<p style="font-size:11.5px;color:var(--muted);margin-top:10px">Реальная доходность '+(real*100).toFixed(2)+'% = '+(nom*100).toFixed(1)+'% фонда − '+(infl*100).toFixed(1)+'% инфляции − '+(fee*100).toFixed(2)+'% комиссии.</p>';
+
+  h+='<div style="margin-top:22px;margin-bottom:10px"><b style="font-size:14px">Рост капитала по годам</b>'+
+     '<p style="font-size:12px;color:var(--muted);margin:4px 0 10px">Накопления сегодня + будущие отчисления, сложным процентом до самой пенсии.</p></div>'+
+     '<div id="pension-chart-wrap"></div>';
+
+  var needCapForChart = gap>0 ? gap*mekadem : null;
+
+  if(gap>0){
+    var needCap=gap*mekadem;
+    var extra=pmtNeeded(needCap,rm,years*12);
+    h+='<div style="margin-top:22px"><b style="font-size:14px">Как закрыть разрыв</b></div>'+
+       '<div class="note n-info" style="margin-top:10px"><b>Нужен дополнительный капитал '+fmt(needCap)+' ₪</b>'+
+       'Это '+fmt(extra)+' ₪ в месяц дополнительно, если начать сейчас и откладывать до '+retire+' лет.</div>';
+
+    h+='<h3>Цена промедления</h3><div style="overflow:auto"><table><thead><tr><th>Если начать</th><th>Нужно откладывать</th><th>Переплата</th></tr></thead><tbody>';
+    [0,1,3,5,10].forEach(function(d){
+      if(years-d<=1)return;
+      var e=pmtNeeded(needCap,rm,(years-d)*12);
+      h+='<tr'+(d===0?' class="hl"':'')+'><td>'+(d===0?'<strong>сейчас</strong>':'через '+d+' лет')+'</td>'+
+         '<td>'+fmt(e)+' ₪/мес</td>'+
+         '<td'+(d>0?' class="neg"':'')+'>'+(d===0?'—':'+'+fmt(e-extra)+' ₪/мес')+'</td></tr>';
+    });
+    h+='</tbody></table></div><p style="font-size:11.5px;color:var(--muted);margin-top:10px">Каждый год промедления делает решение дороже. Это не про дисциплину — это математика сложного процента.</p>';
+  }
+
+  h+='<div style="margin-top:22px;margin-bottom:10px"><b style="font-size:14px">Что влияет сильнее всего</b></div>';
+
+  if(pitzOut){
+    var rateKeep=(pw+pe+pz)/100;
+    var contribKeep=salary*basePct*gapFactor*rateKeep*(1-K.feeDeposit);
+    var totalKeep=fv1+fvStream(contribKeep,rm,years*12);
+    var diff=totalKeep-total;
+    h+='<div class="note n-bad"><b>Снятие компенсации стоит вам '+fmt(diff)+' ₪ капитала</b>'+
+       'Это '+fmt(diff/mekadem)+' ₪ в месяц пенсии — навсегда. При увольнении их можно оставить в фонде: деньги продолжат работать, и это почти всегда выгоднее.</div>';
+  } else {
+    h+='<div class="note n-ok"><b>Вы сохраняете компенсацию — правильное решение</b>Если бы вы её снимали, капитал был бы примерно на треть меньше. Держите эту линию при каждой смене работы.</div>';
+  }
+
+  if(pw<7){
+    var rateUp=(7+pe+(pitzOut?0:pz))/100;
+    var contribUp=salary*basePct*gapFactor*rateUp*(1-K.feeDeposit);
+    var totalUp=fv1+fvStream(contribUp,rm,years*12);
+    h+='<div class="note n-info"><b>Увеличить свою часть с '+pw+'% до 7%</b>'+
+       'Добавит '+fmt(totalUp-total)+' ₪ к капиталу и '+fmt((totalUp-total)/mekadem)+' ₪ к месячной пенсии. Плюс налоговая льгота.</div>';
+  }
+
+  if(retire<70){
+    var y2=years+3;
+    var t2=fvLump(saved,real,y2)+fvStream(contrib,rm,y2*12);
+    var kz2=kitzva(y2+Math.max(0,age-22),single)*1.15;
+    var inc2=t2/mekadem+kz2;
+    h+='<div class="note n-info"><b>Отложить выход на 3 года: '+fmt(inc2)+' ₪ вместо '+fmt(income)+' ₪</b>'+
+       'Работает трижды: капитал растёт, взносы продолжаются, и Битуах Леуми добавляет 5% к кицва за каждый год отсрочки.</div>';
+  }
+
+  var totalLowFee=fvLump(saved,realGross-0.002,years)+fvStream(contrib,(realGross-0.002)/12,years*12);
+  if(fee>0.002){
+    h+='<div class="note n-warn"><b>Снизить комиссию с '+(fee*100).toFixed(2)+'% до 0.2%</b>'+
+       'Разница в капитале — '+fmt(totalLowFee-total)+' ₪. Полпроцента в год за 25 лет превращаются в сотни тысяч шекелей.</div>';
+  }
+
+  h+='<div class="note '+(repl>=50?'n-ok':'n-warn')+'"><b>Ваше замещение '+repl.toFixed(0)+'% — контекст</b>'+
+     'По исследованию Университета Бен-Гуриона, средний коэффициент замещения в Израиле — 38% у мужчин и 31% у женщин. Мировой ориентир — 60–70%. '+
+     (repl>=60?'Вы в хорошей позиции.':repl>=45?'Вы выше среднего по стране, но ниже комфортного уровня.':'Это тревожная зона — стоит действовать.')+'</div>';
+
+  document.getElementById('out').innerHTML=h;
+
+  var pensionPoints=[];
+  var pSteps=6;
+  for(var pi=1;pi<=pSteps;pi++){
+    var yy=Math.max(1,Math.round(years*pi/pSteps));
+    var cap=fvLump(saved,real,yy)+fvStream(contrib,rm,yy*12);
+    pensionPoints.push({y:age+yy, cap:cap});
+  }
+  var targetCapitalLine = needCapForChart!==null ? (total+needCapForChart) : null;
+  drawPensionChart(pensionPoints, targetCapitalLine);
+  var wrap = document.getElementById('results-wrap');
+  if(wrap) wrap.classList.add('show');
+  return {big:(gap>0?fmt(gap):fmt(-gap))+' ₪', sub:gap>0?'не хватает в месяц':'сверх цели в месяц', repl:repl.toFixed(0)+'%', income:fmt(income)+' ₪'};
+}
+
+function runAndShowModal(){
+  var r = calc();
+  if(!r) return;
+  showResultModal(r.sub.includes('не хватает')?'Вам будет не хватать':'Вы обеспечены', r.big, r.sub,
+    [['Доход на пенсии', r.income], ['Замещение зарплаты', r.repl]],
+    '📊 Смотреть план и цену промедления', function(){setActiveView('result');});
+}
+document.getElementById('run-btn').addEventListener('click', runAndShowModal);
+
+function buildViewPanelsSafe(){
+  var inputMain = document.querySelectorAll('main.shell')[0];
+  var hiddenMain = document.getElementById('hidden-source');
+  var inputCard = inputMain.querySelector('section.card');
+  var hiddenCards = [].slice.call(hiddenMain.querySelectorAll(':scope > section.card'));
+
+  var panelInput = document.createElement('div'); panelInput.id='view-panel-input'; panelInput.className='view-panel active';
+  panelInput.appendChild(inputCard);
+
+  var panelResult = document.createElement('div'); panelResult.id='view-panel-result'; panelResult.className='view-panel';
+  hiddenCards[0].id='results-wrap';
+  panelResult.appendChild(hiddenCards[0]);
+
+  var panelExplain = document.createElement('div'); panelExplain.id='view-panel-explain'; panelExplain.className='view-panel';
+  panelExplain.appendChild(hiddenCards[1]);
+
+  inputMain.appendChild(panelInput);
+  inputMain.appendChild(panelResult);
+  inputMain.appendChild(panelExplain);
+  hiddenMain.remove();
+}
+function setActiveView(name){
+  document.querySelectorAll('.view-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.view-tab').forEach(function(t){t.classList.remove('active');});
+  var panel=document.getElementById('view-panel-'+name), tab=document.getElementById('tab-'+name);
+  if(panel) panel.classList.add('active');
+  if(tab) tab.classList.add('active');
+  document.getElementById('view-tabs').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showResultModal(title,bigValue,subText,rowsArr,actionLabel,actionFn){
+  var ov=document.getElementById('result-modal-overlay');
+  if(!ov){
+    ov=document.createElement('div');ov.id='result-modal-overlay';ov.className='result-modal-overlay';
+    ov.innerHTML='<div class="result-modal"><div class="result-modal-head"><h3 id="rm-title"></h3><button class="result-modal-close" onclick="closeResultModal()">✕</button></div><div class="result-modal-big" id="rm-big"></div><div class="result-modal-sub" id="rm-sub"></div><div class="result-modal-rows" id="rm-rows"></div><div class="result-modal-actions"><button class="rm-secondary" onclick="closeResultModal()">Закрыть</button><button class="rm-primary" id="rm-action-btn"></button></div></div>';
+    document.body.appendChild(ov);
+    ov.addEventListener('click',function(e){if(e.target===ov)closeResultModal();});
+  }
+  document.getElementById('rm-title').textContent=title;
+  var bigEl=document.getElementById('rm-big');
+  if(bigValue){bigEl.textContent=bigValue;bigEl.style.display='';}else{bigEl.style.display='none';}
+  document.getElementById('rm-sub').textContent=subText;
+  document.getElementById('rm-rows').innerHTML=(rowsArr||[]).map(function(r){return '<div class="result-modal-row"><span>'+r[0]+'</span><b>'+r[1]+'</b></div>';}).join('');
+  var actBtn=document.getElementById('rm-action-btn');
+  if(actionLabel){actBtn.style.display='';actBtn.textContent=actionLabel;actBtn.onclick=function(){closeResultModal();(actionFn||function(){})();};}
+  else{actBtn.style.display='none';}
+  ov.classList.add('show');
+}
+function closeResultModal(){var ov=document.getElementById('result-modal-overlay');if(ov)ov.classList.remove('show');}
+
+(function(){
+  var btn = document.getElementById('scrollToTop');
+  window.addEventListener('scroll', function(){ btn.style.display = window.scrollY > 400 ? 'block' : 'none'; });
+  btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+})();
+
+document.addEventListener('DOMContentLoaded', buildViewPanelsSafe);
+</script>
+</body></html>

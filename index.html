@@ -1,0 +1,786 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308775a'/><text x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='900' fill='white' text-anchor='middle'>₪</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#08775a">
+<title>Понятные финансы в Израиле — калькуляторы зарплаты, ипотеки и авто | 2026</title>
+<link rel="canonical" href="https://exodus611.github.io/finance-portal/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Понятные финансы в Израиле — калькуляторы и словарь терминов">
+<meta property="og:description" content="Зарплата, машканта, автомобиль, кредит, аренда vs покупка, рефинансирование, погашение vs инвестиции — бесплатные калькуляторы и статьи простым языком о финансах в Израиле.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://exodus611.github.io/finance-portal/">
+<meta property="og:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Бесплатные калькуляторы для жизни в Израиле: зарплата брутто-нетто, машканта (ипотека), содержание автомобиля. Простым языком о банковской системе и покупке квартиры.">
+<!-- СЮДА вставить строку подтверждения из Google Search Console, например:
+<meta name="google-site-verification" content="ТВОЙ_КОД_ОТ_GOOGLE" /> -->
+<meta name="google-site-verification" content="rF1V6g7xHbSI6cvEudIr8c56nbTXMlVyZQzyeOhcSsI" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Понятные финансы в Израиле",
+  "url": "https://exodus611.github.io/finance-portal/",
+  "description": "Независимые калькуляторы и словарь терминов для изучения финансовых инструментов в Израиле: зарплата, ипотека, автомобиль, кредит, аренда vs покупка, рефинансирование, досрочное погашение.",
+  "inLanguage": "ru",
+  "dateModified": "2026-07-24"
+}
+</script>
+<style>
+html{scroll-behavior:smooth}
+:root{--ink:#15251f;--muted:#5a6660;--paper:#f4f1e9;--card:#fffdf8;--line:#ddd6c7;--green:#08775a;--green2:#0d9671;--gold:#c29b52;--blue:#317aa1;--purple:#7a5ab8;--shadow:0 16px 40px rgba(26,45,37,.08);--r:20px}
+*{box-sizing:border-box}
+html{overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.5;overflow-x:hidden;max-width:100vw}
+.shell{width:min(760px,calc(100% - 28px));margin:auto}
+.top{padding:18px 0}
+.topbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;row-gap:6px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:850;font-size:15px}
+.mark{width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,var(--green2),var(--green) 70%);color:#fff;display:grid;place-items:center;font-size:32px;font-weight:900;box-shadow:0 6px 18px rgba(8,119,90,.45);border:2px solid rgba(255,255,255,.55)}
+.privacy{font-size:12px;color:var(--muted)}
+.hero{padding:40px 0 10px;text-align:center}
+.eyebrow{font-size:12px;color:var(--green);font-weight:900;text-transform:uppercase;letter-spacing:.09em}
+.hero h1{font-size:clamp(32px,6vw,56px);line-height:1.05;letter-spacing:-.04em;margin:12px auto 16px;max-width:760px}
+.hero p{font-size:17px;color:var(--muted);max-width:620px;margin:0 auto}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:34px 0}
+.tool-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 18px;box-shadow:var(--shadow);text-decoration:none;color:var(--ink);transition:transform .2s,box-shadow .2s,border-color .2s}
+.tool-card:hover{transform:translateY(-3px);border-color:var(--green);box-shadow:0 20px 48px rgba(26,45,37,.14)}
+.tool-card:active{transform:translateY(-1px) scale(.98)}
+.fade-in{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.tool-ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:24px;margin-bottom:12px}
+.tool-card h3{margin:0 0 6px;font-size:16px}
+.tool-card p{margin:0;font-size:12.5px;color:var(--muted)}
+.section{margin:34px 0}
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.section-head .ico{width:54px;height:54px;flex:0 0 54px;border-radius:16px;display:grid;place-items:center}
+.section-head h2{margin:0;font-size:25px;letter-spacing:-.02em}
+.section-head .sub{font-size:12.5px;color:var(--muted);margin-top:2px}
+.article-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:start}
+.article-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;box-shadow:var(--shadow)}
+.article-card p{font-size:14.5px;color:var(--ink);margin:0 0 13px}
+.article-card p:last-child{margin-bottom:0}
+.article-card b{color:var(--green)}
+.side-illustration{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
+.fact-list{display:grid;gap:10px;margin-top:16px}
+.fact{background:#faf8f2;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:12.5px;display:flex;gap:10px;align-items:flex-start}
+.fact b{color:var(--ink);display:block;font-size:12.5px;margin-bottom:2px}
+.fact span.txt{color:var(--muted)}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.cta-row a{font-size:12.5px;font-weight:800;color:#fff;background:var(--green);border-radius:20px;padding:9px 16px;text-decoration:none;transition:transform .12s}
+.cta-row a:active{transform:scale(.96)}
+.cta-row a.secondary{background:transparent;color:var(--green);border:1px solid var(--green)}
+.footer{padding:30px 0 50px;color:var(--muted);font-size:11px;text-align:center;border-top:1px solid var(--line);margin-top:30px}
+@media(max-width:900px){.tool-grid{grid-template-columns:1fr 1fr}.article-grid{grid-template-columns:1fr}.side-illustration,.article-grid>div:not(.article-card){display:none}}
+@media(max-width:560px){.shell{width:calc(100% - 18px)}.privacy{display:none}.tool-grid{grid-template-columns:1fr}.article-card{padding:18px}}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';float:left;margin-inline-end:10px;font-weight:900;color:var(--green)}
+.faq-item[open] summary::after{content:'−'}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style><script data-goatcounter="https://finance-portal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body><noscript><div style="background:#fff6f4;border-bottom:2px solid #b84b3e;color:#b84b3e;text-align:center;padding:12px;font-family:sans-serif;font-size:13px">Для работы калькуляторов нужен включённый JavaScript в браузере.</div></noscript>
+
+<div id="ticker-bar" style="background:#f4f1e9;border-bottom:1px solid #ddd6c7;color:#15251f;font-size:12px;padding:8px 0;display:flex;align-items:center;gap:10px;overflow:hidden">
+<div style="flex:1;overflow:hidden;white-space:nowrap;position:relative">
+  <div id="ticker-msg" style="display:inline-block;padding-left:100%;animation:ticker-scroll 22s linear infinite;font-weight:700;color:#08775a">📌 Публикация мадада (ИПЦ) — 13 августа</div>
+</div>
+<button id="ticker-toggle" style="flex:0 0 auto;margin-inline-end:14px;background:#eaf6f0;border:1px solid #b9d8ca;color:#08775a;font-size:11px;font-weight:800;padding:4px 12px;border-radius:12px;cursor:pointer;white-space:nowrap">📅 все даты</button>
+</div>
+<style>
+@keyframes ticker-scroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+@media (prefers-reduced-motion:reduce){#ticker-msg{animation:none;padding-left:0}}
+</style>
+<div id="ticker-panel" style="display:none;background:#fffdf8;border-bottom:1px solid #ddd6c7;color:#3d4a3e;font-size:12px;padding:12px 16px;max-width:640px;margin:0 auto">
+  <div id="ticker-panel-body" style="display:grid;gap:8px"></div>
+</div>
+<script>
+(function(){
+  function pad(n){return n<10?'0'+n:''+n}
+  function fmtDate(d){return pad(d.getDate())+'.'+pad(d.getMonth()+1)+'.'+d.getFullYear()}
+  function daysUntil(d){return Math.ceil((d-new Date())/86400000)}
+  function nextCbs15(){
+    var now=new Date(); var y=now.getFullYear(),m=now.getMonth();
+    var c=new Date(y,m,15,18,30);
+    if(c<=now) c=new Date(y,m+1,15,18,30);
+    var dow=c.getDay();
+    if(dow===5) c.setDate(c.getDate()-1); else if(dow===6) c.setDate(c.getDate()-2);
+    return c;
+  }
+  function nextMonthFirst(){
+    var now=new Date();
+    return new Date(now.getFullYear(), now.getMonth()+1, 1);
+  }
+  function next15th(){
+    var now=new Date(); var d=new Date(now.getFullYear(),now.getMonth(),15);
+    if(d<=now) d=new Date(now.getFullYear(),now.getMonth()+1,15);
+    return d;
+  }
+  window.__renderTicker=function(tabloData){
+    var events=[];
+    if(tabloData&&tabloData.boi&&tabloData.boi.next_decision){
+      var bd=new Date(tabloData.boi.next_decision+'T00:00:00');
+      events.push({label:'Решение по ставке Банка Израиля', date:bd, href:'tablo.html'});
+    }
+    var cbs=nextCbs15();
+    events.push({label:'Публикация мадада (ИПЦ)', date:cbs, href:'tablo.html'});
+    var fuel=nextMonthFirst();
+    events.push({label:'Пересмотр цены на бензин', date:fuel, href:'benzin.html'});
+    var bl=next15th();
+    events.push({label:'Взносы Битуах Леуми (самозанятые)', date:bl, href:'salary.html'});
+
+    events.sort(function(a,b){return a.date-b.date});
+    var nearest=events[0];
+    var days=daysUntil(nearest.date);
+    var daysStr=days<=0?'сегодня':(days===1?'завтра':'через '+days+' '+(days>=2&&days<=4?'дня':'дней'));
+    document.getElementById('ticker-msg').innerHTML='📌 '+nearest.label+' — '+daysStr+' ('+fmtDate(nearest.date)+')';
+
+    var panel=document.getElementById('ticker-panel-body');
+    panel.innerHTML=events.map(function(e){
+      return '<a href="'+e.href+'" style="display:flex;justify-content:space-between;gap:10px;color:#3d4a3e;text-decoration:none;padding:6px 0;border-bottom:1px solid #ddd6c7">'+
+        '<span>'+e.label+'</span><span style="white-space:nowrap;font-weight:700;color:#08775a">'+fmtDate(e.date)+'</span></a>';
+    }).join('');
+  };
+  document.getElementById('ticker-toggle').addEventListener('click',function(){
+    var p=document.getElementById('ticker-panel');
+    p.style.display=(p.style.display==='none')?'block':'none';
+  });
+  if(window.__tabloData) window.__renderTicker(window.__tabloData);
+})();
+</script>
+
+<header class="top"><div class="shell topbar"><div class="logo"><span class="mark">₪</span><span>Понятные финансы в Израиле</span></div><div class="privacy">Без регистрации · расчёты только в браузере</div></div></header>
+
+<main class="shell">
+<section class="hero" style="padding-top:6px">
+<div class="eyebrow">Финансы для жизни в Израиле · 2026</div>
+<h1 style="margin:2px 0 6px">Ваши деньги — простыми словами</h1>
+<p style="font-size:13.5px;margin:0">20 бесплатных калькуляторов и живое табло экономики. Мы не советуем, что вам делать — мы показываем цифры, а решение остаётся за вами.</p>
+</section>
+
+<div style="display:flex;align-items:center;gap:9px;max-width:640px;margin:12px auto 0;padding:9px 14px;background:#fff;border:1px solid var(--line);border-radius:12px">
+<span style="font-size:16px;flex:0 0 auto">✅</span>
+<p style="margin:0;font-size:11.5px;color:var(--muted);text-align:left;line-height:1.4"><b style="color:var(--ink)">Независимый проект.</b> Не банк, не брокер, не финансовый советник. Только считаем и объясняем; решения — за вами.</p>
+</div>
+
+<style>
+@keyframes home-pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.home-live-dot{width:8px;height:8px;border-radius:50%;background:#1fae6e;display:inline-block;animation:home-pulse 1.6s infinite}
+@media (prefers-reduced-motion:reduce){.home-live-dot{animation:none}}
+</style>
+
+<div style="max-width:640px;margin:12px auto 0;text-align:center">
+<span style="display:inline-flex;align-items:center;gap:7px;background:#eaf6f0;color:#08775a;font-size:11px;font-weight:800;padding:5px 12px;border-radius:20px;letter-spacing:.02em"><span class="home-live-dot"></span>ONLINE — данные обновляются автоматически</span>
+<div style="font-size:10.5px;color:var(--muted);margin-top:6px">7 показателей экономики обновляются в реальном времени, каждый день, без твоего участия — такого нет ни у одного другого русскоязычного сайта об Израиле</div>
+</div>
+
+<a href="tablo.html" style="display:block;max-width:640px;margin:12px auto 0;text-decoration:none">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;padding:0 2px">
+<span style="font-size:13px;font-weight:800;color:var(--ink)">📊 Экономика Израиля сегодня</span>
+<span style="font-size:11px;color:var(--green);font-weight:700">Подробнее →</span>
+</div>
+<div id="mini-tablo-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+<div style="background:linear-gradient(135deg,#0b7a6d,#12a58f);border-radius:14px;padding:10px 8px;color:#fff;text-align:center">
+<div style="font-size:8.5px;opacity:.9;font-weight:700;line-height:1.2">СТАВКА БАНКА ИЗРАИЛЯ</div>
+<div id="mt-rate" style="font-size:17px;font-weight:900;margin-top:2px">3,50%</div>
+</div>
+<div style="background:linear-gradient(135deg,#e07a1f,#f2a13d);border-radius:14px;padding:10px 8px;color:#fff;text-align:center">
+<div style="font-size:9.5px;opacity:.9;font-weight:700">МАДАД</div>
+<div id="mt-cpi" style="font-size:17px;font-weight:900;margin-top:2px">1,6%</div>
+</div>
+<div style="background:linear-gradient(135deg,#2f6df6,#5b93ff);border-radius:14px;padding:10px 8px;color:#fff;text-align:center">
+<div style="font-size:9.5px;opacity:.9;font-weight:700">USD/₪</div>
+<div id="mt-usd" style="font-size:17px;font-weight:900;margin-top:2px">3,06</div>
+</div>
+<div style="background:linear-gradient(135deg,#8b5cf6,#a97cf7);border-radius:14px;padding:10px 8px;color:#fff;text-align:center">
+<div style="font-size:8.5px;opacity:.9;font-weight:700;line-height:1.2">МИНИМАЛЬНАЯ ЗАРАБОТНАЯ ПЛАТА</div>
+<div id="mt-wage" style="font-size:15px;font-weight:900;margin-top:2px">6 444 ₪</div>
+</div>
+<div style="background:linear-gradient(135deg,#0e9384,#3fc9b5);border-radius:14px;padding:10px 8px;color:#fff;text-align:center">
+<div style="font-size:9.5px;opacity:.9;font-weight:700">ЖИЛЬЁ</div>
+<div id="mt-housing" style="font-size:17px;font-weight:900;margin-top:2px">−1,2%</div>
+</div>
+<div style="background:linear-gradient(135deg,#c2410c,#f0653a);border-radius:14px;padding:10px 8px;color:#fff;text-align:center">
+<div style="font-size:9.5px;opacity:.9;font-weight:700">АРЕНДА 3-КОМН.</div>
+<div id="mt-rent" style="font-size:15px;font-weight:900;margin-top:2px">4 919 ₪</div>
+</div>
+<div style="background:linear-gradient(135deg,#1e3a5f,#3d6a9c);border-radius:14px;padding:10px 8px;color:#fff;text-align:center">
+<div style="font-size:9.5px;opacity:.9;font-weight:700">БЕНЗИН</div>
+<div id="mt-fuel" style="font-size:17px;font-weight:900;margin-top:2px">8,09₪</div>
+</div>
+<div style="background:linear-gradient(135deg,#5a4a3a,#8a7560);border-radius:14px;padding:10px 8px;color:#fff;text-align:center;display:flex;align-items:center;justify-content:center">
+<div style="font-size:11px;font-weight:800">Ещё →</div>
+</div>
+</div>
+</a>
+<script>
+fetch('data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():Promise.reject()}).then(function(j){
+  var f=function(n,d){return new Intl.NumberFormat('ru-RU',{minimumFractionDigits:d,maximumFractionDigits:d}).format(n)};
+  if(j.boi) document.getElementById('mt-rate').textContent=f(j.boi.rate*100,2)+'%';
+  if(j.cpi) document.getElementById('mt-cpi').textContent=f(j.cpi.yoy*100,1)+'%';
+  if(j.fx&&j.fx.market&&j.fx.market.USD) document.getElementById('mt-usd').textContent=f(j.fx.market.USD,2);
+  if(j.wage) document.getElementById('mt-wage').textContent=f(j.wage.min_monthly,0)+' ₪';
+  if(j.housing) document.getElementById('mt-housing').textContent=(j.housing.yoy>=0?'+':'−')+f(Math.abs(j.housing.yoy*100),1)+'%';
+  if(j.rent_by_city) document.getElementById('mt-rent').textContent=f(j.rent_by_city.national_avg,0)+' ₪';
+  if(j.fuel) document.getElementById('mt-fuel').textContent=f(j.fuel.price_95,2)+'₪';
+  window.__tabloData=j;
+  if(window.__renderTicker) window.__renderTicker(j);
+}).catch(function(){});
+
+var MONTHS_RU=['январе','феврале','марте','апреле','мае','июне','июле','августе','сентябре','октябре','ноябре','декабре'];
+fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():Promise.reject()}).then(function(p){
+  function dd(iso){ if(!iso) return '—'; var parts=iso.split('-'); return parts[2]+'.'+parts[1]; }
+  var els={
+    'pay-children':p.children,'pay-unemployment':p.unemployment,
+    'pay-self-employed':p.self_employed,'pay-long-term':p.long_term
+  };
+  Object.keys(els).forEach(function(id){
+    var el=document.getElementById(id);
+    if(el && els[id]) el.textContent=dd(els[id]);
+  });
+  var lbl=document.getElementById('pay-month-label');
+  if(lbl && p.month_label){
+    var parts=p.month_label.split('-');
+    lbl.textContent='в '+MONTHS_RU[parseInt(parts[1],10)-1]+' '+parts[0];
+  }
+}).catch(function(){});
+</script>
+
+<div style="max-width:640px;margin:24px auto 0">
+<div style="background:linear-gradient(135deg,#0d9671,#08775a);border-radius:18px;padding:4px;box-shadow:0 10px 28px rgba(8,119,90,.25)">
+<div style="background:#fffdf8;border-radius:15px;padding:16px 16px 6px">
+
+<details>
+<summary style="cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;margin-bottom:10px">
+<span style="font-size:20px">💸</span>
+<span style="font-size:14px;font-weight:900;color:var(--ink);flex:1">Выплаты <span id="pay-month-label">в августе 2026</span></span>
+<span style="font-size:10px;color:var(--green);font-weight:700">важно — нажмите ▸</span>
+</summary>
+<div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px">
+<div style="display:flex;justify-content:space-between;align-items:center;background:var(--paper);border-radius:10px;padding:9px 12px">
+<span style="font-size:12.5px;color:var(--ink)">👶 Кицват еладим (пособие на детей)</span>
+<span style="font-size:13px;font-weight:800;color:var(--green)" id="pay-children">20.08</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;background:var(--paper);border-radius:10px;padding:9px 12px">
+<span style="font-size:12.5px;color:var(--ink)">📋 Дмей автала (пособие по безработице)</span>
+<span style="font-size:13px;font-weight:800;color:var(--green)" id="pay-unemployment">12.08</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;background:var(--paper);border-radius:10px;padding:9px 12px">
+<span style="font-size:12.5px;color:var(--ink)">💼 Взносы Битуах леуми (самозанятые)</span>
+<span style="font-size:13px;font-weight:800;color:var(--green)" id="pay-self-employed">16.08</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;background:var(--paper);border-radius:10px;padding:9px 12px">
+<span style="font-size:12.5px;color:var(--ink)">🧓 Кицват зикна, инвалидность и др.</span>
+<span style="font-size:13px;font-weight:800;color:var(--green)" id="pay-long-term">28.08*</span>
+</div>
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span>✈️ Саль клита (корзина абсорбции)</span><span style="font-size:11px;font-weight:700;color:var(--muted)">по дате репатриации ▸</span>
+</summary>
+<div style="font-size:11px;color:var(--muted);line-height:1.6;padding:0 0 10px">
+Министерство алии и интеграции. Часть — наличными в аэропорту при въезде, остальное — <b>6 ежемесячных платежей</b> на счёт. Суммы 2026: одиночка ≈20,491 ₪, пара ≈39,065 ₪, семья с 2 детьми ≈61,000 ₪ (на первые полгода). Точная дата платежа зависит от даты вашей репатриации, не единая для всех.
+</div>
+</details>
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span>🏠 Квартирные после сааль клита</span><span style="font-size:11px;font-weight:700;color:var(--muted)">по дате репатриации ▸</span>
+</summary>
+<div style="font-size:11px;color:var(--muted);line-height:1.6;padding:0 0 10px">
+<b>Министерство строительства и жилья</b> (отдельное от Битуах леуми ведомство). Продолжает помощь с арендой после окончания сааль клита — до конца 5-го года репатриации (6-го для родителей-одиночек). Момент начала выплат зависит от точной даты вашей репатриации.
+</div>
+</details>
+</div>
+<p style="font-size:10px;color:var(--muted);margin:0 0 14px" id="pay-note">* дата берётся напрямую с официальной страницы Битуах леуми — иногда отличается от «чистого» 28-го числа из-за их внутреннего порядка обработки праздников и выходных</p>
+</details>
+
+<div style="height:1px;background:var(--line);margin:0 0 14px"></div>
+
+<details style="margin-bottom:6px">
+<summary style="cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;padding:0 0 10px">
+<span style="font-size:20px">🕍</span>
+<span style="font-size:14px;font-weight:900;color:var(--ink);flex:1">Праздники 2026 — режим работы учреждений</span>
+<span style="color:var(--green);font-size:13px">▸</span>
+</summary>
+<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:6px">
+
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span>🍎 Рош а-Шана</span><span style="color:var(--green);font-weight:800">11–13.09</span>
+</summary>
+<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
+<b>Канун, 11.09 (пятница):</b> банки, Битуах леуми, налоговая, МВД — сокращённый день, закрытие ~12:00–13:00.<br>
+<b>1-й день, 11 вечера – 12.09:</b> банки и госучреждения полностью закрыты.<br>
+<b>2-й день, 12–13.09:</b> тоже полностью закрыто — Рош а-Шана длится 2 дня подряд.<br>
+Почта не работает все дни праздника.
+</div>
+</details>
+
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span>🕯️ Йом Кипур</span><span style="color:var(--green);font-weight:800">20–21.09</span>
+</summary>
+<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
+<b>Канун, 20.09 (воскресенье):</b> сокращённый рабочий день, закрытие ~13:00–14:00.<br>
+<b>Сам день, вечер 20.09 – вечер 21.09:</b> вся страна останавливается — банки, учреждения, транспорт не работают вообще, даже общественный транспорт стоит.
+</div>
+</details>
+
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span>🌿 Суккот</span><span style="color:var(--green);font-weight:800">25.09–03.10</span>
+</summary>
+<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
+<b>Канун, 25.09 (пятница вечер):</b> сокращённый день, закрытие ~13:00–14:00.<br>
+<b>1-й день, 26.09 (суббота):</b> банки и госучреждения закрыты (плюс это ещё и обычная суббота).<br>
+<b>Холь а-моэд (промежуточные дни), 27.09–01.10:</b> банки работают укороченно (обычно до 12:00–13:00), Битуах леуми закрыт для личного приёма, но можно решить вопрос по телефону 171 (работает круглосуточно).<br>
+<b>Ошана раба, 02.10 (7-й день):</b> обычно рабочий день с сокращёнными часами, многие уходят в отпуск заранее.<br>
+<b>Шмини Ацерет / Симхат Тора, 03.10 (суббота):</b> отдельный праздник сразу за Суккот — банки и госучреждения снова полностью закрыты.
+</div>
+</details>
+
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span>🕎 Ханука</span><span style="color:var(--green);font-weight:800">04–12.12</span>
+</summary>
+<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
+8 дней, с вечера 04.12 по вечер 12.12 — <b>не выходной день</b>, банки и госучреждения работают в обычном режиме все дни, кроме укороченных часов в канун (пятница).
+</div>
+</details>
+
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span style="opacity:.6">🎭 Пурим (прошёл в 2026)</span><span style="color:var(--muted);font-weight:800">02–03.03</span>
+</summary>
+<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
+Таанит Эстер (пост) — 02.03, Пурим — 03.03. Не выходной день по всей стране, банки работают. В Иерусалиме отдельно отмечают Шушан-Пурим на день позже.
+</div>
+</details>
+
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span style="opacity:.6">🍷 Песах (прошёл в 2026)</span><span style="color:var(--muted);font-weight:800">01–08.04</span>
+</summary>
+<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
+<b>Седер, 01.04 (вечер):</b> начало праздника. <b>1-й день, 02.04:</b> банки и госучреждения закрыты. <b>Холь а-моэд, 03–07.04:</b> укороченные часы. <b>7-й день, 08.04:</b> снова полностью закрыто.
+</div>
+</details>
+
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span style="opacity:.6">🇮🇱 День Независимости (прошёл в 2026)</span><span style="color:var(--muted);font-weight:800">22.04</span>
+</summary>
+<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
+Йом а-Зикарон (день памяти) — 21.04, банки работают, но с 20:00 вечера начинаются траурные мероприятия. Йом а-Ацмаут (независимость) — 22.04, официальный выходной, банки и госучреждения закрыты.
+</div>
+</details>
+
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span style="opacity:.6">📜 Шавуот (прошёл в 2026)</span><span style="color:var(--muted);font-weight:800">22.05</span>
+</summary>
+<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
+Однодневный праздник, в 2026 году выпал на пятницу — банки и госучреждения закрыты, соединился с выходными в длинный уик-энд.
+</div>
+</details>
+
+</div>
+<p style="font-size:10px;color:var(--muted);margin:8px 0 0">Даты 2026 года, по данным Битуах леуми, банков и еврейского календаря. Часы могут отличаться у конкретного отделения — уточняйте на месте. Прошедшие праздники оставлены для справки на следующий год (даты будут другими — еврейский календарь смещается).</p>
+</details>
+</div>
+</div>
+</div>
+
+<div style="max-width:640px;margin:22px auto 0">
+<div style="font-size:12.5px;font-weight:800;color:var(--ink);margin-bottom:10px;text-align:center">Четыре самых актуальных сейчас</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+<a href="avtala.html" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:12px 6px;background:#fff;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit">
+<span style="font-size:20px">📋</span>
+<span style="font-size:11px;font-weight:800;color:var(--ink)">Дмей автала</span>
+<span style="font-size:9.5px;color:var(--muted);line-height:1.25">Сколько заплатят</span>
+</a>
+<a href="arnona.html" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:12px 6px;background:#fff;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit">
+<span style="font-size:20px">🏛️</span>
+<span style="font-size:11px;font-weight:800;color:var(--ink)">Арнона</span>
+<span style="font-size:9.5px;color:var(--muted);line-height:1.25">Скидки по закону</span>
+</a>
+<a href="valuta.html" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:12px 6px;background:#fff;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit">
+<span style="font-size:20px">💱</span>
+<span style="font-size:11px;font-weight:800;color:var(--ink)">Курс валют</span>
+<span style="font-size:9.5px;color:var(--muted);line-height:1.25">160+ валют</span>
+</a>
+<a href="nko.html" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:12px 6px;background:#fff;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit">
+<span style="font-size:20px">🤝</span>
+<span style="font-size:11px;font-weight:800;color:var(--ink)">НКО</span>
+<span style="font-size:9.5px;color:var(--muted);line-height:1.25">Кто реально помогает</span>
+</a>
+</div>
+</div>
+
+<div style="max-width:640px;margin:22px auto 0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px" id="digest-block">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+<span style="font-size:18px">🗞️</span>
+<span style="font-size:13.5px;font-weight:800;color:var(--ink)">Что изменилось за неделю</span>
+<span style="font-size:10px;color:var(--muted);margin-inline-start:auto" id="digest-updated"></span>
+</div>
+<p style="font-size:13px;color:#3d4a3e;line-height:1.6;margin:0" id="digest-text">На этой неделе ставка Банка Израиля осталась без изменений на уровне 3,50%. Годовая инфляция держится на уровне 1,6%. Цена бензина выросла на 61 агору по сравнению с прошлым месяцем. Курс доллара — около 3,01 ₪.</p>
+</div>
+
+<script>
+fetch('data/digest.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():Promise.reject()}).then(function(d){
+  var textEl=document.getElementById('digest-text');
+  var updEl=document.getElementById('digest-updated');
+  if(textEl && d.digest) textEl.textContent=d.digest;
+  if(updEl && d.updated){
+    var dt=new Date(d.updated+'T00:00:00');
+    updEl.textContent='обновлено '+dt.toLocaleDateString('ru-RU',{day:'numeric',month:'long'});
+  }
+}).catch(function(){
+  var block=document.getElementById('digest-block');
+  if(block) block.style.display='none';
+});
+</script>
+
+<div style="max-width:640px;margin:26px auto 0">
+<h2 style="font-size:18px;font-weight:800;color:var(--ink);text-align:center;margin:0 0 6px">🛡️ Управление кибербезопасности предупреждает</h2>
+<p style="text-align:center;font-size:13px;color:var(--muted);margin:0 0 6px;line-height:1.5">Официальные предупреждения о мошеннических SMS и звонках — с примерами текстов и объяснением, на что обратить внимание.</p>
+<p style="text-align:center;font-size:11.5px;color:var(--green);font-weight:700;margin:0 0 14px">🔄 Следите за объявлениями — они обновляются автоматически, прямо с официального канала агентства</p>
+
+<details class="tb-scam-acc" id="tb-scam-acc">
+  <summary>
+    <span class="tb-scam-acc__badge">🛡️</span>
+    <span class="tb-scam-acc__title">
+      <b>Национальное управление кибербезопасности Израиля</b>
+      <span class="tb-scam-acc__he" dir="rtl" lang="he">מערך הסייבר הלאומי</span>
+      <span class="tb-scam-acc__sub">Телефон для сообщений о мошенничестве: 119 · <span id="tb-scam-updated">—</span></span>
+    </span>
+    <span class="tb-scam-acc__chevron">▸</span>
+  </summary>
+
+  <div class="tb-scam-filters" id="tb-scam-filters">
+    <button class="tb-scam-filter active" data-type="all">Все (8)</button>
+    <button class="tb-scam-filter" data-type="call">📞 Звонки</button>
+    <button class="tb-scam-filter" data-type="sms">📲 SMS и ссылки</button>
+  </div>
+
+  <div class="tb-scam-list" id="tb-scam-list"></div>
+
+  <p class="tb-scam-disclaimer">Это информационный агрегатор публичных официальных предупреждений Национального управления кибербезопасности Израиля и независимых новостных публикаций. Не является юридической консультацией. Полные тексты и обновления — в <a href="https://t.me/Israel_Cyber" target="_blank" rel="noopener noreferrer">официальном канале агентства</a>.</p>
+</details>
+</div>
+
+<style>
+.tb-scam-acc{border:1px solid var(--line);border-radius:16px;background:#fff;overflow:hidden}
+.tb-scam-acc>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:14px 16px}
+.tb-scam-acc>summary::-webkit-details-marker{display:none}
+.tb-scam-acc__badge{font-size:20px;flex:0 0 auto}
+.tb-scam-acc__title{flex:1;min-width:0}
+.tb-scam-acc__title b{display:block;font-size:13px;font-weight:750;color:var(--ink)}
+.tb-scam-acc__he{font-size:11px;color:var(--muted);margin-inline-start:6px}
+.tb-scam-acc__sub{display:block;font-size:11px;color:var(--muted);margin-top:2px}
+.tb-scam-acc__chevron{flex:0 0 auto;font-size:13px;color:var(--green);transition:transform .2s}
+.tb-scam-acc[open] .tb-scam-acc__chevron{transform:rotate(90deg)}
+.tb-scam-filters{display:flex;gap:7px;padding:0 16px 12px;flex-wrap:wrap}
+.tb-scam-filter{background:var(--paper);border:1px solid var(--line);color:var(--muted);
+  font-family:inherit;font-size:12px;font-weight:700;padding:6px 12px;border-radius:16px;cursor:pointer}
+.tb-scam-filter.active{background:var(--green);border-color:var(--green);color:#fff}
+.tb-scam-list{display:flex;flex-direction:column;gap:10px;padding:0 16px 16px}
+.tb-scam-card{border:1px solid var(--line);border-radius:12px;padding:13px 14px;background:var(--paper)}
+.tb-scam-card__top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:5px;font-size:12.5px}
+.tb-scam-card__date{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tb-scam-card__title{font-size:14px;font-weight:750;margin-bottom:5px;color:var(--ink)}
+.tb-scam-card__summary{font-size:13px;color:#3d4a3e;line-height:1.5;margin-bottom:8px}
+.tb-scam-card__he{font-size:13.5px;color:#3d4a3e;background:#eef1ea;border-inline-end:3px solid #7a8a6a;
+  padding:9px 11px;border-radius:9px;margin:8px 0 0;line-height:1.65;text-align:right}
+.tb-scam-card__msg{font-size:13px;font-style:italic;color:#4a3a2a;background:#fff8ec;border-inline-start:3px solid var(--gold);
+  padding:9px 11px;border-radius:9px;margin:8px 0;line-height:1.5}
+.tb-scam-card__msg-note{font-size:12px;color:var(--muted);margin:6px 0 0;line-height:1.5}
+.tb-scam-card details{margin-top:2px}
+.tb-scam-card details summary{cursor:pointer;font-size:12.5px;font-weight:700;color:var(--green);list-style:none}
+.tb-scam-card details summary::-webkit-details-marker{display:none}
+.tb-scam-card__details{font-size:13px;color:#3d4a3e;line-height:1.55;margin:8px 0}
+.tb-scam-card__nope{font-size:12.5px;margin:8px 0 0;padding:9px 11px;background:#fff3f0;border-radius:9px;border-inline-start:3px solid #d95d4a}
+.tb-scam-card__nope b{display:block;margin-bottom:4px;color:#a5402f}
+.tb-scam-card__nope ul{margin:0;padding-inline-start:18px}
+.tb-scam-card__src{display:inline-block;margin-top:8px;font-size:11.5px;color:var(--muted)}
+.tb-scam-disclaimer{font-size:11px;color:var(--muted);line-height:1.5;padding:0 16px 16px;margin:0}
+</style>
+
+<script>
+(function(){
+  var el=function(s){return document.querySelector(s);};
+  var els=function(s){return document.querySelectorAll(s);};
+  var ALL_WARNINGS=[];
+
+  function dshort(iso){
+    if(!iso)return'—';
+    var d=new Date(iso+'T00:00:00');
+    return d.toLocaleDateString('ru-RU',{day:'numeric',month:'long'});
+  }
+  function typeLabel(t){
+    return t==='call'?'📞 Звонок':(t==='sms'?'📲 SMS/ссылка':(t==='web'?'🌐 Сайт/email':'⚠️'));
+  }
+  function cardHtml(w){
+    var heBlock=w.he_original?
+      '<div class="tb-scam-card__he" dir="rtl" lang="he">«'+w.he_original+'»</div>':'';
+    var trBlock=w.ru_translation?
+      '<div class="tb-scam-card__msg">'+(w.he_original?'Перевод: ':'')+w.ru_translation+'</div>':
+      (w.needs_manual_translation?'<div class="tb-scam-card__msg-note">⏳ Автоматический перевод этой записи временно недоступен — читайте оригинал на иврите выше.</div>':'');
+    var noticeBlock=w.what_to_notice?
+      '<div class="tb-scam-card__msg-note"><b>На что обратить внимание в самом тексте:</b> '+w.what_to_notice+'</div>':'';
+    var detailsBlock=w.details?'<div class="tb-scam-card__details">'+w.details+'</div>':'';
+    return '<div class="tb-scam-card" data-type="'+w.type+'">'+
+      '<div class="tb-scam-card__top"><span>'+typeLabel(w.type)+'</span><span class="tb-scam-card__date">'+dshort(w.date)+'</span></div>'+
+      '<div class="tb-scam-card__title">'+w.title+'</div>'+
+      '<div class="tb-scam-card__summary">'+w.summary+'</div>'+
+      '<details><summary>Оригинал, перевод и разбор ▸</summary>'+
+      heBlock+trBlock+noticeBlock+detailsBlock+
+      '<div class="tb-scam-card__nope"><b>Так не поступают банки и госучреждения:</b><ul>'+
+      w.what_not_to_do.map(function(x){return '<li>'+x+'</li>';}).join('')+
+      '</ul></div>'+
+      '<a class="tb-scam-card__src" href="'+w.source_url+'" target="_blank" rel="noopener noreferrer">Источник ›</a>'+
+      '</details></div>';
+  }
+  function renderList(filter){
+    var box=el('#tb-scam-list');
+    if(!box)return;
+    var items=ALL_WARNINGS.filter(function(w){return filter==='all'||w.type===filter;});
+    if(!items.length){box.innerHTML='<p class="tb-scam-disclaimer" style="padding:0">Нет предупреждений этого типа.</p>';return;}
+    box.innerHTML=items.map(cardHtml).join('');
+  }
+  els('#tb-scam-filters .tb-scam-filter').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      els('#tb-scam-filters .tb-scam-filter').forEach(function(b){b.classList.remove('active');});
+      btn.classList.add('active');
+      renderList(btn.getAttribute('data-type'));
+    });
+  });
+  fetch('data/scams.json',{cache:'no-cache'})
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+    .then(function(j){
+      ALL_WARNINGS=j.warnings||[];
+      ALL_WARNINGS.sort(function(a,b){return new Date(b.date)-new Date(a.date);});
+      renderList('all');
+      var upd=el('#tb-scam-updated');
+      if(upd&&j.updated) upd.textContent='обновлено '+dshort(j.updated);
+    })
+    .catch(function(e){
+      var box=el('#tb-scam-list');
+      if(box) box.innerHTML='<p class="tb-scam-disclaimer" style="padding:0">Не удалось загрузить предупреждения ('+e.message+').</p>';
+    });
+})();
+</script>
+
+<p style="text-align:center;font-size:13px;color:var(--ink);font-weight:700;max-width:600px;margin:24px auto 14px;line-height:1.5">Для вашего удобства — 15 бесплатных калькуляторов, живое табло экономики, проверка специалистов и словарь терминов. Нажмите на нужный:</p>
+
+<div class="fx-tabs" id="fx-tabs">
+  <button class="fx-tab active" data-cat="housing">🏠 Жильё</button>
+  <button class="fx-tab" data-cat="salary">💰 Зарплата и пособия</button>
+  <button class="fx-tab" data-cat="auto">🚗 Авто и кредиты</button>
+  <button class="fx-tab" data-cat="economy">📈 Экономика</button>
+  <button class="fx-tab" data-cat="other">📖 Справочники</button>
+</div>
+
+<div class="fx-list" id="fx-list">
+<a class="fx-row" data-cat="salary" href="salary.html" aria-label="Калькулятор зарплаты — брутто/нетто, выходное пособие, согласование налога, пенсионер"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">💰</div><div class="fx-txt"><h3>Зарплата</h3><p>Брутто↔нетто, выходное пособие, 2 работы, работающий пенсионер</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="mashkanta.html" aria-label="Калькулятор машканты — расчёт и автоподбор ипотечных стратегий"><div class="fx-ico" style="background:#fbf3e3;color:var(--gold)">🏠</div><div class="fx-txt"><h3>Машканта</h3><p>Автоподбор из 67 000+ комбинаций, стресс-тест</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="auto" href="auto.html" aria-label="Калькулятор стоимости автомобиля"><div class="fx-ico" style="background:#eaf1f6;color:var(--blue)">🚗</div><div class="fx-txt"><h3>Автомобиль</h3><p>Реальная стоимость владения, не только цена в объявлении</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="auto" href="kredit.html" aria-label="Калькулятор кредита — платёж и переплата по ссуде"><div class="fx-ico" style="background:#fdeceb;color:#b84b3e">💳</div><div class="fx-txt"><h3>Кредит</h3><p>Платёж, переплата, сравнение сроков</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="arenda-vs-pokupka.html" aria-label="Калькулятор сравнения аренды и покупки квартиры"><div class="fx-ico" style="background:#e6f2f0;color:#0d8a7a">⚖️</div><div class="fx-txt"><h3>Аренда vs покупка</h3><p>Что накопит больше капитала — снимать или купить</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="mihzur-mashkanta.html" aria-label="Калькулятор рефинансирования машканты"><div class="fx-ico" style="background:#eef0fb;color:#4a5aa8">🔄</div><div class="fx-txt"><h3>Рефинансирование</h3><p>Стоит ли переоформить машканту на новых условиях</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="siluk-mukdam.html" aria-label="Калькулятор досрочного погашения или инвестирования"><div class="fx-ico" style="background:#fdf6e3;color:#b8860b">💎</div><div class="fx-txt"><h3>Погашение vs инвестиции</h3><p>Что выгоднее с учётом штрафа и налога</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="mas-rehisha.html" aria-label="Калькулятор налога на покупку квартиры мас рехиша"><div class="fx-ico" style="background:#e6f0ea;color:#2c5f8a">🏛️</div><div class="fx-txt"><h3>Мас рехиша</h3><p>Налог на покупку квартиры — все ступени 2026 и льготы</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="mas-shevach.html" aria-label="Калькулятор налога на прибыль при продаже квартиры мас шевах"><div class="fx-ico" style="background:#fdeceb;color:#8a3a3a">📉</div><div class="fx-txt"><h3>Мас шевах</h3><p>Налог при продаже — пропорциональное освобождение, не «всё или ничего»</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="dira.html" aria-label="Дира бе-ханаха — статус розыгрыша льготного жилья"><div class="fx-ico" style="background:#eaf1f6;color:#30779a">🏗️</div><div class="fx-txt"><h3>Дира бе-ханаха</h3><p>Статус розыгрыша, что готовится, где реально был шанс за 5 лет</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="arnona.html" aria-label="Скидка на арнону — кому положена по закону"><div class="fx-ico" style="background:#f3ece0;color:#8a5a2b">🏛️</div><div class="fx-txt"><h3>Скидка на арнону</h3><p>Репатрианты, пожилые, инвалиды, низкий доход — размеры по закону</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="salary" href="avtala.html" aria-label="Пособие по безработице дмей автала"><div class="fx-ico" style="background:#fdece8;color:#c2452e">📋</div><div class="fx-txt"><h3>Дмей автала</h3><p>Уволили? Сколько заплатят, сколько дней, куда идти по шагам</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="salary" href="pension-gap.html" aria-label="Калькулятор пенсионного разрыва"><div class="fx-ico" style="background:#f2eefa;color:#7857b8">🧓</div><div class="fx-txt"><h3>Пенсионный разрыв</h3><p>Хватит ли вам на пенсии — честно, с кицват зикна</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="salary" href="keren-hishtalmut.html" aria-label="Калькулятор фонда повышения квалификации"><div class="fx-ico" style="background:#eafaf3;color:#0a8f6b">🎓</div><div class="fx-txt"><h3>Фонд повышения квалификации</h3><p>Рост фонда без налога — с правильными двумя потолками для самозанятых</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="salary" href="nekudot-zikuy.html" aria-label="Калькулятор налоговых баллов некудот зикуй"><div class="fx-ico" style="background:#fef2e0;color:#c2790b">🎯</div><div class="fx-txt"><h3>Некудот зикуй</h3><p>Сколько баллов вам положено и сколько это в шекелях</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="economy" href="valuta.html" aria-label="Конвертер валют, курс шекеля, корзина валют"><div class="fx-ico" style="background:#e6f0fa;color:#2f6df6">💱</div><div class="fx-txt"><h3>Курс валют</h3><p>Конвертер, корзина валют, график за год, официальный vs рыночный</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="economy" href="tablo.html" aria-label="Экономика Израиля сегодня"><div class="fx-ico" style="background:#eaf6f0;color:#08775a">📊</div><div class="fx-txt"><h3>Экономика сегодня</h3><p>Ставка, мадад, курсы валют, минималка — живое табло</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="auto" href="benzin.html" aria-label="Цена на бензин в Израиле"><div class="fx-ico" style="background:#e8eef7;color:#1e3a5f">⛽</div><div class="fx-txt"><h3>Цена на бензин</h3><p>Из чего складывается литр, доля государства, сравнение с Европой</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="other" href="slovar.html" aria-label="Словарь финансовых терминов"><div class="fx-ico" style="background:#f2eefa;color:var(--purple)">📖</div><div class="fx-txt"><h3>Словарь терминов</h3><p>Что банк говорит и что это значит на самом деле</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="other" href="nko.html" aria-label="Благотворительные организации Израиля"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">🤝</div><div class="fx-txt"><h3>Благотворительные НКО</h3><p>Крупные проверенные организации + как проверить любую самому</p></div><span class="fx-arrow">→</span></a>
+</div>
+
+<style>
+.fx-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0 16px;max-width:900px;margin-inline:auto}
+.fx-tab{background:#fff;border:1px solid var(--line);color:var(--muted);font-family:inherit;font-size:12.5px;font-weight:700;padding:8px 14px;border-radius:20px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.fx-tab:hover{border-color:var(--green);color:var(--green)}
+.fx-tab.active{background:var(--green);border-color:var(--green);color:#fff}
+.fx-list{display:flex;flex-direction:column;gap:8px;max-width:900px;margin:0 auto 34px}
+.fx-row{display:flex;align-items:center;gap:14px;padding:12px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s,border-color .15s}
+.fx-row:hover{transform:translateY(-1px);border-color:var(--green);box-shadow:0 8px 20px rgba(26,45,37,.08)}
+.fx-row:active{transform:translateY(0) scale(.99)}
+.fx-ico{width:44px;height:44px;flex:0 0 44px;border-radius:12px;display:grid;place-items:center;font-size:20px}
+.fx-txt{min-width:0;flex:1}
+.fx-txt h3{margin:0 0 2px;font-size:14.5px;line-height:1.25}
+.fx-txt p{margin:0;font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fx-arrow{flex:0 0 auto;font-size:17px;color:var(--line);font-weight:700}
+.fx-row:hover .fx-arrow{color:var(--green)}
+@media(max-width:560px){.fx-txt p{white-space:normal;-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}}
+</style>
+<script>
+(function(){
+  var tabs=document.querySelectorAll('#fx-tabs .fx-tab');
+  var rows=document.querySelectorAll('#fx-list .fx-row');
+  function applyFilter(cat){
+    rows.forEach(function(r){
+      r.style.display=(r.getAttribute('data-cat')===cat)?'flex':'none';
+    });
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.remove('active')});
+      t.classList.add('active');
+      applyFilter(t.getAttribute('data-cat'));
+    });
+  });
+  // фильтр сразу при загрузке — по умолчанию первая вкладка
+  var activeTab=document.querySelector('#fx-tabs .fx-tab.active');
+  if(activeTab) applyFilter(activeTab.getAttribute('data-cat'));
+})();
+</script>
+<p style="text-align:center;font-size:13.5px;color:var(--muted);max-width:560px;margin:38px auto 0;line-height:1.6">Прежде чем считать конкретные цифры, стоит понять общую картину — с чем вообще вы имеете дело, когда открываете счёт в банке или подписываете договор об ипотеке.</p>
+
+<section class="section" id="banking">
+<div class="section-head"><div class="ico" style="background:#eaf6f0"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 10L12 4L21 10" stroke="#08775a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10V19M9.5 10V19M14.5 10V19M19 10V19" stroke="#08775a" stroke-width="1.8" stroke-linecap="round"/><path d="M3 19H21" stroke="#08775a" stroke-width="1.8" stroke-linecap="round"/><path d="M3 22H21" stroke="#0d9671" stroke-width="1.8" stroke-linecap="round"/></svg></div><div><h2>Как устроена банковская система Израиля</h2><div class="sub">Прайм, овердрафт, Битуах Леуми — коротко о главном</div></div></div>
+<div class="article-grid">
+<div class="article-card fade-in">
+<p>В Израиле банковский рынок держится на нескольких крупных игроках (Апоалим, Леуми, Дисконт, Мизрахи-Тфахот), а ставки, кредиты и зарплатные удержания называют ивритскими терминами, которые никто не объясняет вслух — «Прайм», «машканта», «Битуах Леуми».</p>
+<p>Ставка Банка Израиля определяет «Прайм» — базу для процентов почти на всё: ипотеку, кредиты, овердрафт. А фонд повышения квалификации (<span lang="he" dir="rtl">קרן השתלמות</span>) — это не налог, а растущий накопительный счёт с льготой через 6 лет.</p>
+<div class="cta-row"><a href="slovar.html">Открыть словарь терминов →</a><a class="secondary" href="salary.html">Посчитать зарплату</a></div>
+</div>
+<div>
+<svg class="side-illustration" width="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fffdf8"/>
+<rect x="0" y="230" width="400" height="70" fill="#f4f1e9"/>
+<g>
+<rect x="60" y="120" width="280" height="110" fill="#fbf7ee" stroke="#ddd6c7" stroke-width="1.5"/>
+<polygon points="50,120 200,55 350,120" fill="#08775a"/>
+<rect x="90" y="140" width="18" height="90" fill="#c29b52"/>
+<rect x="130" y="140" width="18" height="90" fill="#c29b52"/>
+<rect x="191" y="140" width="18" height="90" fill="#c29b52"/>
+<rect x="252" y="140" width="18" height="90" fill="#c29b52"/>
+<rect x="292" y="140" width="18" height="90" fill="#c29b52"/>
+<rect x="60" y="225" width="280" height="10" fill="#0d9671"/>
+</g>
+<text x="200" y="270" text-anchor="middle" font-family="Inter,Arial" font-size="15" font-weight="800" fill="#15251f">בנק ישראל</text>
+<circle cx="330" cy="70" r="26" fill="#eaf6f0" stroke="#08775a" stroke-width="1.5"/>
+<text x="330" y="76" text-anchor="middle" font-family="Inter,Arial" font-size="20" font-weight="900" fill="#08775a">%</text>
+</svg>
+</div>
+</div>
+</section>
+
+<section class="section" id="apartment">
+<div class="section-head"><div class="ico" style="background:#fbf3e3"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 11L12 3L21 11" stroke="#c29b52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5V21H19V10.5" stroke="#c29b52" stroke-width="1.8" stroke-linejoin="round"/><rect x="10" y="14" width="4" height="7" stroke="#c29b52" stroke-width="1.6"/></svg></div><div><h2>Что на самом деле значит «купить квартиру» в Израиле</h2><div class="sub">Машканта, тамхиль, налоги на покупку — по шагам</div></div></div>
+<div class="article-grid">
+<div class="side-illustration" style="order:2">
+<svg width="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#fffdf8"/>
+<rect x="0" y="240" width="400" height="60" fill="#f4f1e9"/>
+<rect x="70" y="90" width="150" height="150" fill="#fbf3e3" stroke="#ddd6c7" stroke-width="1.5"/>
+<polygon points="60,90 145,40 230,90" fill="#c29b52"/>
+<rect x="130" y="170" width="30" height="60" fill="#08775a"/>
+<rect x="90" y="120" width="24" height="24" fill="#fff" stroke="#c29b52" stroke-width="1.2"/>
+<rect x="176" y="120" width="24" height="24" fill="#fff" stroke="#c29b52" stroke-width="1.2"/>
+<rect x="240" y="150" width="110" height="90" fill="#eaf1f6" stroke="#ddd6c7" stroke-width="1.5"/>
+<rect x="255" y="170" width="20" height="20" fill="#fff" stroke="#317aa1" stroke-width="1.2"/>
+<rect x="285" y="170" width="20" height="20" fill="#fff" stroke="#317aa1" stroke-width="1.2"/>
+<rect x="315" y="170" width="20" height="20" fill="#fff" stroke="#317aa1" stroke-width="1.2"/>
+<rect x="255" y="200" width="20" height="20" fill="#fff" stroke="#317aa1" stroke-width="1.2"/>
+<rect x="285" y="200" width="20" height="20" fill="#fff" stroke="#317aa1" stroke-width="1.2"/>
+<rect x="315" y="200" width="20" height="20" fill="#fff" stroke="#317aa1" stroke-width="1.2"/>
+</svg>
+</div>
+<div class="article-card fade-in">
+<p>Купить квартиру в Израиле — это собственный капитал (обычно от 25% стоимости), <b>машканта</b> на остальное, и отдельно — налоги и расходы, которые часто забывают заложить в бюджет.</p>
+<p>Машканта — это не один кредит, а «тамхиль»: смесь треков с разными правилами (Прайм, КАЛАЦ, Миштана). Банки обычно проверяют «стресс-тест» — потянете ли платёж, если Прайм вырастет на 1%.</p>
+<div class="cta-row"><a href="mashkanta.html">Открыть калькулятор машканты →</a><a href="arenda-vs-pokupka.html" class="secondary">Снимать или купить — сравнить →</a></div>
+<p style="font-size:12px;margin-top:8px"><a href="mas-rehisha.html" style="color:var(--green);font-weight:800;text-decoration:none">Не забудьте про налог на покупку (мас рехиша) →</a></p>
+</div>
+</div>
+<div class="fact-list">
+<div class="fact fade-in"><b>🧮 Автоподбор считает всерьёз</b><span class="txt">Наш калькулятор машканты перебирает свыше 67 000 комбинаций треков и сроков, чтобы найти вариант под вашу цель — а не просто один усреднённый пример.</span></div>
+<div class="fact fade-in"><b>💡 Первый взнос</b><span class="txt">Для первой квартиры банк обычно финансирует до 75% стоимости — остальное нужно своими средствами.</span></div>
+<div class="fact fade-in"><b>💡 Не только цена квартиры</b><span class="txt">Налог на покупку (мас рехиша), услуги адвоката и оценщика — отдельные статьи расходов сверх цены жилья.</span></div>
+<div class="fact fade-in"><b>💡 Тамхиль — не один процент</b><span class="txt">У ипотеки может быть 2–4 разных трека одновременно, каждый со своей ставкой и правилами пересчёта.</span></div>
+</div>
+</section>
+
+<p style="text-align:center;font-size:13.5px;color:var(--muted);max-width:560px;margin:6px auto 0;line-height:1.6">А если хочется копнуть отдельные темы глубже — ниже пара коротких статей о повседневных мелочах, которые незаметно бьют по бюджету сильнее, чем кажется.</p>
+
+<section class="section">
+<div class="section-head"><div class="ico" style="background:#f2eefa"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 4H20V20H4V4Z" stroke="#7a5ab8" stroke-width="1.7"/><path d="M8 8H16M8 12H16M8 16H12" stroke="#7a5ab8" stroke-width="1.7" stroke-linecap="round"/></svg></div><div><h2>Статьи</h2><div class="sub">Коротко и по делу — без воды</div></div></div>
+<div class="tool-grid" style="grid-template-columns:repeat(2,1fr)">
+<a class="tool-card fade-in" href="article_minus.html" aria-label="Статья про минус на банковском счёте"><div class="tool-ico" style="background:#fff6f4;color:#c15045">🔴</div><h3>Минус на счету</h3><p>Почему овердрафт — самая дорогая ссуда и как из него выйти</p></a>
+<a class="tool-card fade-in" href="article_budget_leaks.html" aria-label="Статья про дыры в бюджете"><div class="tool-ico" style="background:#eaf6f0;color:var(--green)">🕳️</div><h3>4 дыры в бюджете</h3><p>Комиссии, забытые платежи, связь и электричество — где теряются деньги</p></a>
+</div>
+</section>
+
+<section class="section" style="text-align:center;padding:36px 0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)">
+<h2 style="margin:0 0 8px">Готовы посчитать свою ситуацию?</h2>
+<p style="color:var(--muted);font-size:14px;margin:0 0 18px">Без регистрации. Ничего не сохраняется и никуда не отправляется.</p>
+<div class="cta-row" style="justify-content:center"><a href="salary.html">💰 Зарплата</a><a href="mashkanta.html">🏠 Машканта</a><a href="auto.html">🚗 Автомобиль</a><a href="kredit.html">💳 Кредит</a><a href="arenda-vs-pokupka.html">⚖️ Аренда vs покупка</a><a href="mihzur-mashkanta.html">🔄 Рефинансирование</a><a href="siluk-mukdam.html">💎 Погашение vs инвестиции</a><a href="mas-rehisha.html">🏛️ Мас рехиша</a><a href="mas-shevach.html">📉 Мас шевах</a><a href="pension-gap.html">🧓 Пенсионный разрыв</a><a href="keren-hishtalmut.html">🎓 Фонд повышения квалификации</a><a class="secondary" href="slovar.html">📖 Словарь терминов</a></div>
+</section>
+
+<section class="section">
+<div class="section-head"><div class="ico" style="background:#eaf1f6"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#30779a" stroke-width="1.7"/><path d="M9.5 9.5C9.5 8 10.5 7 12 7C13.5 7 14.5 8 14.5 9.2C14.5 10.5 12 10.8 12 13" stroke="#30779a" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="16" r="0.9" fill="#30779a"/></svg></div><div><h2>Частые вопросы</h2><div class="sub">Коротко о том, что спрашивают чаще всего</div></div></div>
+<div id="faq-list">
+<details class="faq-item fade-in" style="margin-bottom:10px"><summary style="cursor:pointer;font-weight:800;color:var(--green);padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;list-style:none">Калькуляторы точные или это просто оценка?</summary><p style="margin:8px 4px 0;font-size:13px;color:var(--muted)">Это модельные расчёты по стандартным формулам (аннуитет, налоговые ступени и т.д.) — они показывают общую картину и правильный порядок цифр. Фактические условия зависят от индивидуальной ситуации, банка, даты расчёта и действующего законодательства.</p></details>
+<details class="faq-item fade-in" style="margin-bottom:10px"><summary style="cursor:pointer;font-weight:800;color:var(--green);padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;list-style:none">Нужна ли регистрация, чтобы посчитать?</summary><p style="margin:8px 4px 0;font-size:13px;color:var(--muted)">Нет. Все расчёты происходят прямо в браузере, без отправки данных на сервер и без сохранения где-либо.</p></details>
+<details class="faq-item fade-in" style="margin-bottom:10px"><summary style="cursor:pointer;font-weight:800;color:var(--green);padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;list-style:none">Это сайт банка или финансового советника?</summary><p style="margin:8px 4px 0;font-size:13px;color:var(--muted)">Нет. Это независимый информационный проект — мы не аффилированы ни с одним банком, брокером или советником и не получаем комиссии за то, что вы что-то купите или оформите.</p></details>
+<details class="faq-item fade-in" style="margin-bottom:10px"><summary style="cursor:pointer;font-weight:800;color:var(--green);padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;list-style:none">Что такое «автоподбор» в калькуляторе машканты?</summary><p style="margin:8px 4px 0;font-size:13px;color:var(--muted)">Это алгоритм, который перебирает свыше 67 000 комбинаций долей и сроков ипотечных треков и находит вариант, оптимальный под вашу цель — вместо того, чтобы вы подбирали пропорции вручную.</p></details>
+<details class="faq-item fade-in"><summary style="cursor:pointer;font-weight:800;color:var(--green);padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;list-style:none">Почему в словаре термины на русском и в скобках на иврите?</summary><p style="margin:8px 4px 0;font-size:13px;color:var(--muted)">Чтобы вы понимали суть по-русски, но при этом узнавали официальное название термина, если увидите его в документе банка или расчётном листе на иврите.</p></details>
+</div>
+</section>
+</main>
+
+<footer class="shell footer">Понятные финансы в Израиле — независимый информационный проект, не аффилированный с банками, брокерами или финансовыми советниками. Создан для изучения финансовых инструментов и самостоятельного принятия решений на основе полученных знаний и расчётов. Расчёты являются ориентировочными. Фактические условия зависят от индивидуальной ситуации, банка, даты расчёта и действующего законодательства. · <a href="contact.html" style="color:var(--green);font-weight:800;text-decoration:none">Написать нам</a></footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Калькуляторы точные или это просто оценка?","acceptedAnswer":{"@type":"Answer","text":"Это модельные расчёты по стандартным формулам — они показывают общую картину и правильный порядок цифр. Фактические условия зависят от индивидуальной ситуации, банка, даты расчёта и действующего законодательства."}},
+    {"@type":"Question","name":"Нужна ли регистрация, чтобы посчитать?","acceptedAnswer":{"@type":"Answer","text":"Нет. Все расчёты происходят прямо в браузере, без отправки данных на сервер и без сохранения где-либо."}},
+    {"@type":"Question","name":"Это сайт банка или финансового советника?","acceptedAnswer":{"@type":"Answer","text":"Нет, это независимый информационный проект, не аффилированный ни с одним банком, брокером или советником."}},
+    {"@type":"Question","name":"Что такое автоподбор в калькуляторе машканты?","acceptedAnswer":{"@type":"Answer","text":"Алгоритм, который перебирает свыше 67000 комбинаций долей и сроков ипотечных треков и находит вариант, оптимальный под вашу цель."}},
+    {"@type":"Question","name":"Почему термины даны на русском и в скобках на иврите?","acceptedAnswer":{"@type":"Answer","text":"Чтобы понимать суть по-русски и при этом узнавать официальное название термина в документах банка на иврите."}}
+  ]
+}
+</script>
+
+<button id="scrollToTop" title="Наверх" aria-label="Прокрутить наверх" style="display:none;position:fixed;bottom:20px;right:20px;width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;border:none;font-size:18px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.2);z-index:150">↑</button>
+<script>
+(function(){
+  var btn = document.getElementById('scrollToTop');
+  if(!btn) return;
+  window.addEventListener('scroll', function(){
+    btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  });
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+<script>
+(function(){
+  var els = document.querySelectorAll('.fade-in');
+  if(!els.length || !('IntersectionObserver' in window)) { els.forEach(function(e){e.classList.add('visible');}); return; }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){ entry.target.classList.add('visible'); obs.unobserve(entry.target); }
+    });
+  }, {threshold:0.1});
+  els.forEach(function(e){ obs.observe(e); });
+})();
+</script>
+</body></html>

@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Конвертер валют Израиль 2026 — курс шекеля к доллару, рублю, евро онлайн</title>
+<meta name="description" content="Курс шекеля онлайн: доллар, евро, рубль, гривна, тенге. Официальный курс Банка Израиля и рыночный. Конвертер, корзина валют, график за год. Обновляется автоматически.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://exodus611.github.io/finance-portal/valuta.html">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="google-site-verification" content="rF1V6g7xHbSI6cvEudIr8c56nbTXMlVyZQzyeOhcSsI">
+<script data-goatcounter="https://finance-portal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Конвертер валют Израиль — курс шекеля онлайн">
+<meta property="og:description" content="Официальный курс Банка Израиля и рыночный. Корзина валют, графики, конвертер.">
+<meta property="og:url" content="https://exodus611.github.io/finance-portal/valuta.html">
+<meta property="og:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="ru_RU">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Конвертер валют — курс шекеля",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "description": "Конвертер 160+ валют, официальный курс Банка Израиля и рыночный, корзина валют, график за год.",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "ILS"},
+  "inLanguage": "ru"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+html{overflow-x:hidden}
+body{margin:0;overflow-x:hidden;max-width:100vw}
+/* ══════════════════════════════════════════════════════════════════════
+   Конвертер валют. Всё изолировано в .fx-root — не конфликтует с порталом.
+   Переменные с префиксом --fx-.
+   ══════════════════════════════════════════════════════════════════════ */
+.fx-root{
+  --fx-bg:#fbfcfe;
+  --fx-card:#ffffff;
+  --fx-surface:#f4f7fb;
+  --fx-surface-2:#eef3f9;
+  --fx-border:#e3e9f2;
+  --fx-border-str:#cfd9e8;
+  --fx-text:#0d1526;
+  --fx-text-2:#3d4a60;
+  --fx-muted:#75839a;
+  --fx-brand:#0b7a6d;
+  --fx-brand-2:#12a58f;
+  --fx-brand-ink:#065349;
+  --fx-accent:#2f6df6;
+  --fx-up:#0a9757;
+  --fx-down:#e0393e;
+  --fx-amber:#c07d15;
+  --fx-r-lg:22px; --fx-r-md:15px; --fx-r-sm:11px;
+  --fx-sh-1:0 1px 2px rgba(13,21,38,.05), 0 2px 8px rgba(13,21,38,.04);
+  --fx-sh-2:0 2px 6px rgba(13,21,38,.06), 0 12px 32px rgba(13,21,38,.07);
+  --fx-sh-3:0 8px 24px rgba(11,122,109,.16), 0 24px 56px rgba(13,21,38,.10);
+  --fx-grad:linear-gradient(135deg,#0b7a6d 0%,#12a58f 55%,#2f9fd6 100%);
+
+  max-width:1000px; margin-inline:auto; padding:10px 18px 64px;
+  overflow-x:clip; overflow-wrap:break-word;
+  font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  font-feature-settings:'cv02','cv03','cv04','tnum' 0;
+  color:var(--fx-text); line-height:1.6; font-size:16.5px;
+  box-sizing:border-box; -webkit-font-smoothing:antialiased;
+}
+.fx-root *,.fx-root *::before,.fx-root *::after{box-sizing:inherit}
+.fx-root img,.fx-root svg,.fx-root table,.fx-root pre{max-width:100%}
+.fx-root select,.fx-root input{max-width:100%}
+
+@media (prefers-color-scheme:dark){
+  .fx-root:not([data-theme="light"]){
+    --fx-bg:#0a0f1a; --fx-card:#121a29; --fx-surface:#161f30; --fx-surface-2:#1c2739;
+    --fx-border:#26324a; --fx-border-str:#33425f; --fx-text:#eaf0fa; --fx-text-2:#c0cbdd;
+    --fx-muted:#8797ae; --fx-brand:#2bc0a8; --fx-brand-2:#39d6bb; --fx-brand-ink:#7ff0dc;
+    --fx-accent:#6ea4ff; --fx-up:#2ecc80; --fx-down:#ff6b6b; --fx-amber:#e6a942;
+    --fx-sh-1:0 1px 2px rgba(0,0,0,.3); --fx-sh-2:0 2px 8px rgba(0,0,0,.35),0 16px 40px rgba(0,0,0,.3);
+    --fx-sh-3:0 10px 30px rgba(0,0,0,.45); --fx-grad:linear-gradient(135deg,#0d5f56 0%,#127f70 55%,#1c6f9c 100%);
+  }
+}
+.fx-root[data-theme="dark"]{
+  --fx-bg:#0a0f1a; --fx-card:#121a29; --fx-surface:#161f30; --fx-surface-2:#1c2739;
+  --fx-border:#26324a; --fx-border-str:#33425f; --fx-text:#eaf0fa; --fx-text-2:#c0cbdd;
+  --fx-muted:#8797ae; --fx-brand:#2bc0a8; --fx-brand-2:#39d6bb; --fx-brand-ink:#7ff0dc;
+  --fx-accent:#6ea4ff; --fx-up:#2ecc80; --fx-down:#ff6b6b; --fx-amber:#e6a942;
+  --fx-sh-1:0 1px 2px rgba(0,0,0,.3); --fx-sh-2:0 2px 8px rgba(0,0,0,.35),0 16px 40px rgba(0,0,0,.3);
+  --fx-sh-3:0 10px 30px rgba(0,0,0,.45); --fx-grad:linear-gradient(135deg,#0d5f56 0%,#127f70 55%,#1c6f9c 100%);
+}
+
+.fx-root h1{font-size:clamp(26px,4.2vw,40px);line-height:1.14;margin:.35em 0 .25em;
+  letter-spacing:-.025em;font-weight:800}
+.fx-root h2{font-size:clamp(21px,3vw,28px);margin:1.9em 0 .5em;letter-spacing:-.02em;font-weight:700}
+.fx-root h3{font-size:18.5px;margin:1.5em 0 .35em;letter-spacing:-.01em;font-weight:650}
+.fx-root p{margin:.7em 0;color:var(--fx-text-2)}
+.fx-root a{color:var(--fx-accent);text-underline-offset:3px}
+.fx-root :focus-visible{outline:2.5px solid var(--fx-accent);outline-offset:2px;border-radius:6px}
+.fx-num{font-variant-numeric:tabular-nums;font-feature-settings:'tnum'}
+.fx-hint{font-size:13.5px;color:var(--fx-muted);line-height:1.5}
+.fx-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.fx-lead{font-size:17.5px;color:var(--fx-text-2);max-width:74ch}
+
+/* ─── Шапка ─── */
+.fx-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.fx-eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;
+  letter-spacing:.07em;text-transform:uppercase;color:var(--fx-brand);
+  background:color-mix(in srgb,var(--fx-brand) 11%,transparent);
+  border:1px solid color-mix(in srgb,var(--fx-brand) 24%,transparent);
+  padding:5px 12px;border-radius:999px;margin-block-start:6px}
+.fx-live{width:7px;height:7px;border-radius:50%;background:var(--fx-up);
+  box-shadow:0 0 0 0 color-mix(in srgb,var(--fx-up) 60%,transparent);animation:fx-pulse 2.4s infinite}
+@keyframes fx-pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--fx-up) 55%,transparent)}
+  70%{box-shadow:0 0 0 7px transparent}100%{box-shadow:0 0 0 0 transparent}}
+@media (prefers-reduced-motion:reduce){.fx-live{animation:none}}
+.fx-iconbtn{width:42px;height:42px;flex:none;border-radius:12px;border:1px solid var(--fx-border);
+  background:var(--fx-card);color:var(--fx-text-2);font-size:17px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;box-shadow:var(--fx-sh-1);
+  transition:transform .15s,border-color .15s}
+.fx-iconbtn:hover{border-color:var(--fx-brand);color:var(--fx-brand);transform:translateY(-1px)}
+
+/* ─── Тикер ─── */
+.fx-ticker{display:flex;gap:9px;overflow-x:auto;max-width:100%;padding:4px 2px 10px;margin-block:18px 6px;
+  scrollbar-width:thin;scroll-snap-type:x proximity}
+.fx-ticker::-webkit-scrollbar{height:5px}
+.fx-ticker::-webkit-scrollbar-thumb{background:var(--fx-border-str);border-radius:9px}
+.fx-tick{flex:none;min-width:126px;padding:13px 15px;border-radius:var(--fx-r-md);text-align:start;
+  background:var(--fx-card);border:1px solid var(--fx-border);cursor:pointer;
+  box-shadow:var(--fx-sh-1);scroll-snap-align:start;
+  transition:transform .16s cubic-bezier(.34,1.4,.64,1),box-shadow .16s,border-color .16s}
+.fx-tick:hover{transform:translateY(-3px);box-shadow:var(--fx-sh-2);border-color:var(--fx-brand)}
+.fx-tick:active{transform:translateY(-1px)}
+.fx-tick__c{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;
+  color:var(--fx-muted);letter-spacing:.05em}
+.fx-tick__v{font-size:21px;font-weight:750;letter-spacing:-.02em;display:block;margin-block:3px 1px}
+.fx-tick__d{font-size:12.5px;font-weight:650}
+.fx-up{color:var(--fx-up)} .fx-down{color:var(--fx-down)}
+
+/* ─── Табы ─── */
+.fx-tabs{display:flex;gap:5px;padding:5px;margin-block:24px 18px;max-width:100%;background:var(--fx-surface);
+  border:1px solid var(--fx-border);border-radius:var(--fx-r-md);width:fit-content;max-width:100%;
+  overflow-x:auto;scrollbar-width:none}
+.fx-tabs::-webkit-scrollbar{display:none}
+.fx-tab{appearance:none;border:0;background:transparent;color:var(--fx-muted);white-space:nowrap;
+  padding:10px 18px;border-radius:10px;font:inherit;font-size:15px;font-weight:650;cursor:pointer;
+  transition:background .18s,color .18s,box-shadow .18s}
+.fx-tab:hover{color:var(--fx-text)}
+.fx-tab[aria-selected="true"]{background:var(--fx-card);color:var(--fx-brand);box-shadow:var(--fx-sh-1)}
+.fx-panel{border:1px solid var(--fx-border);border-radius:var(--fx-r-lg);background:var(--fx-card);
+  padding:26px;box-shadow:var(--fx-sh-2);animation:fx-in .28s ease}
+@keyframes fx-in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.fx-panel{animation:none}}
+.fx-panel[hidden]{display:none}
+
+/* ─── Конвертер ─── */
+.fx-conv{display:grid;gap:14px}
+.fx-row2{display:grid;grid-template-columns:minmax(0,1fr) 54px minmax(0,1fr);gap:12px;align-items:end}
+.fx-row2>*{min-width:0}
+@media (max-width:660px){.fx-row2{grid-template-columns:minmax(0,1fr);gap:8px}}
+.fx-field label{display:block;font-size:12.5px;color:var(--fx-muted);font-weight:700;
+  letter-spacing:.05em;text-transform:uppercase;margin-block-end:7px}
+.fx-inputwrap{display:flex;gap:0;min-width:0;border:1.5px solid var(--fx-border);border-radius:var(--fx-r-md);
+  background:var(--fx-surface);overflow:hidden;transition:border-color .18s,box-shadow .18s}
+.fx-inputwrap:focus-within{border-color:var(--fx-brand);
+  box-shadow:0 0 0 4px color-mix(in srgb,var(--fx-brand) 13%,transparent)}
+.fx-amount{flex:1 1 0;min-width:0;width:100%;padding:16px 12px;font:inherit;font-size:clamp(19px,4.4vw,27px);font-weight:750;
+  letter-spacing:-.02em;border:0;background:transparent;color:var(--fx-text);
+  font-variant-numeric:tabular-nums;outline:none}
+.fx-sel{min-width:0;flex:none;padding:0 12px;font:inherit;font-size:15.5px;font-weight:700;border:0;
+  border-inline-start:1.5px solid var(--fx-border);background:var(--fx-surface-2);
+  color:var(--fx-text);cursor:pointer;max-width:132px;outline:none}
+.fx-swap{align-self:center;justify-self:center;width:50px;height:50px;border-radius:50%;
+  border:1.5px solid var(--fx-border);background:var(--fx-card);color:var(--fx-brand);
+  font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--fx-sh-1);transition:transform .35s cubic-bezier(.34,1.4,.64,1),background .18s}
+.fx-swap:hover{background:var(--fx-grad);color:#fff;border-color:transparent;transform:rotate(180deg)}
+@media (max-width:660px){.fx-swap{transform:rotate(90deg);margin-block:-2px}
+  .fx-swap:hover{transform:rotate(270deg)}}
+
+.fx-rateline{text-align:center;padding:14px;border-radius:var(--fx-r-md);
+  background:linear-gradient(180deg,color-mix(in srgb,var(--fx-brand) 7%,transparent),transparent);
+  border:1px dashed color-mix(in srgb,var(--fx-brand) 28%,transparent)}
+.fx-rateline b{font-size:19px;font-weight:750;letter-spacing:-.01em}
+
+.fx-quick{display:flex;gap:7px;flex-wrap:wrap}
+.fx-chip{appearance:none;border:1px solid var(--fx-border);background:var(--fx-surface);
+  color:var(--fx-text-2);padding:9px 15px;border-radius:999px;font:inherit;font-size:14px;
+  font-weight:650;cursor:pointer;min-height:40px;transition:all .16s}
+.fx-chip:hover{border-color:var(--fx-brand);color:var(--fx-brand);transform:translateY(-1px)}
+.fx-chip[aria-pressed="true"]{background:var(--fx-grad);border-color:transparent;color:#fff;
+  box-shadow:0 4px 14px color-mix(in srgb,var(--fx-brand) 32%,transparent)}
+
+.fx-btn{appearance:none;border:0;border-radius:12px;padding:12px 20px;font:inherit;font-size:15px;
+  font-weight:650;cursor:pointer;background:var(--fx-grad);color:#fff;min-height:46px;
+  box-shadow:0 4px 14px color-mix(in srgb,var(--fx-brand) 26%,transparent);transition:transform .16s,box-shadow .16s}
+.fx-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px color-mix(in srgb,var(--fx-brand) 34%,transparent)}
+.fx-btn--ghost{background:var(--fx-surface);color:var(--fx-text-2);border:1px solid var(--fx-border);box-shadow:none}
+.fx-btn--ghost:hover{border-color:var(--fx-brand);color:var(--fx-brand);box-shadow:var(--fx-sh-1)}
+.fx-btn--sm{padding:8px 14px;font-size:13.5px;min-height:38px}
+.fx-actions{display:flex;gap:9px;flex-wrap:wrap;margin-block-start:6px}
+
+/* ─── Карточки сравнения ─── */
+.fx-cmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(172px,1fr));gap:11px}
+.fx-cmp__i{background:var(--fx-surface);border:1px solid var(--fx-border);
+  border-radius:var(--fx-r-md);padding:15px;position:relative;overflow:hidden}
+.fx-cmp__i::before{content:'';position:absolute;inset-block-start:0;inset-inline-start:0;
+  width:3px;height:100%;background:var(--fx-grad);opacity:.85}
+.fx-cmp__l{font-size:12px;color:var(--fx-muted);display:block;font-weight:650;
+  text-transform:uppercase;letter-spacing:.05em}
+.fx-cmp__v{font-size:23px;font-weight:750;letter-spacing:-.02em;display:block;margin-block-start:3px}
+
+/* ─── Корзина ─── */
+.fx-basket{display:grid;gap:10px}
+.fx-brow{display:grid;grid-template-columns:minmax(0,132px) minmax(0,1fr) auto 38px;gap:11px;align-items:center;
+  padding:13px;background:var(--fx-surface);border:1px solid var(--fx-border);
+  border-radius:var(--fx-r-md);transition:border-color .16s}
+.fx-brow:hover{border-color:var(--fx-border-str)}
+@media (max-width:660px){.fx-brow{grid-template-columns:minmax(0,104px) minmax(0,1fr) 34px;gap:9px}
+  .fx-brow__ils{grid-column:1/3;text-align:end}}
+.fx-brow>*{min-width:0}
+.fx-brow select,.fx-brow input{padding:10px;font:inherit;font-size:15.5px;font-weight:600;
+  border:1px solid var(--fx-border);border-radius:10px;background:var(--fx-card);
+  color:var(--fx-text);width:100%;min-width:0;font-variant-numeric:tabular-nums;outline:none}
+.fx-brow input:focus,.fx-brow select:focus{border-color:var(--fx-brand)}
+.fx-brow__ils{font-weight:750;font-size:15.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums}
+.fx-brow__del{appearance:none;border:0;background:transparent;color:var(--fx-muted);font-size:21px;
+  cursor:pointer;line-height:1;padding:7px;border-radius:9px;transition:all .15s}
+.fx-brow__del:hover{background:color-mix(in srgb,var(--fx-down) 13%,transparent);color:var(--fx-down)}
+
+.fx-total{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:20px 22px;margin-block-start:16px;border-radius:var(--fx-r-lg);background:var(--fx-grad);
+  color:#fff;box-shadow:var(--fx-sh-3)}
+.fx-total__l{font-size:13.5px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;opacity:.9}
+.fx-total__v{font-size:clamp(26px,6vw,42px);word-break:break-word;font-weight:800;letter-spacing:-.03em;
+  font-variant-numeric:tabular-nums;line-height:1.05}
+
+.fx-bars{display:flex;height:12px;border-radius:999px;overflow:hidden;margin-block:16px 10px;
+  background:var(--fx-surface)}
+.fx-bars div{height:100%;transition:width .4s cubic-bezier(.4,0,.2,1)}
+.fx-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13.5px;color:var(--fx-text-2);font-weight:600}
+.fx-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;
+  margin-inline-end:6px;vertical-align:middle}
+
+/* ─── График ─── */
+.fx-chart{width:100%;height:260px;display:block;margin-block:8px}
+.fx-chart .line{fill:none;stroke:url(#fxgrad);stroke-width:2.75;stroke-linejoin:round;stroke-linecap:round}
+.fx-chart .area{fill:url(#fxfill);stroke:none}
+.fx-chart .grid{stroke:var(--fx-border);stroke-width:1;stroke-dasharray:3 5}
+.fx-chart text{fill:var(--fx-muted);font-size:11.5px;font-weight:600;font-family:'Inter',sans-serif}
+.fx-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:11px;margin-block:14px}
+.fx-stat{background:var(--fx-surface);border:1px solid var(--fx-border);border-radius:var(--fx-r-md);padding:13px}
+.fx-stat__l{font-size:11.5px;color:var(--fx-muted);display:block;font-weight:650;
+  text-transform:uppercase;letter-spacing:.05em}
+.fx-stat__v{font-size:20px;font-weight:750;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+
+/* ─── Таблица ─── */
+.fx-table{width:100%;min-width:520px;border-collapse:separate;border-spacing:0;font-size:15px;margin-block:12px}
+.fx-table th{background:var(--fx-surface);font-size:11.5px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.05em;color:var(--fx-muted);padding:11px 13px;text-align:start;
+  position:sticky;top:0;z-index:1}
+.fx-table th:first-child{border-start-start-radius:10px}
+.fx-table th:last-child{border-start-end-radius:10px}
+.fx-table td{padding:12px 13px;border-block-end:1px solid var(--fx-border)}
+.fx-table td.num,.fx-table th.num{text-align:end;font-variant-numeric:tabular-nums}
+.fx-table tbody tr{transition:background .13s}
+.fx-table tbody tr:hover td{background:var(--fx-surface)}
+.fx-flag{font-size:17px;margin-inline-end:3px}
+
+.fx-note{background:var(--fx-surface);border:1px solid var(--fx-border);border-radius:var(--fx-r-md);
+  padding:15px 17px;margin-block:15px;font-size:15.5px;color:var(--fx-text-2)}
+.fx-warn{background:color-mix(in srgb,var(--fx-amber) 10%,transparent);
+  border:1px solid color-mix(in srgb,var(--fx-amber) 34%,transparent);
+  border-radius:var(--fx-r-md);padding:15px 17px;margin-block:15px;font-size:15.5px;color:var(--fx-text-2)}
+.fx-badge{display:inline-block;font-size:10.5px;font-weight:750;padding:2px 8px;border-radius:999px;
+  background:var(--fx-surface);border:1px solid var(--fx-border);color:var(--fx-muted);
+  letter-spacing:.04em;text-transform:uppercase}
+.fx-badge--ok{background:color-mix(in srgb,var(--fx-up) 13%,transparent);color:var(--fx-up);
+  border-color:color-mix(in srgb,var(--fx-up) 32%,transparent)}
+
+.fx-faq details{border:1px solid var(--fx-border);border-radius:var(--fx-r-md);padding:0 17px;
+  margin-block:9px;background:var(--fx-card);transition:border-color .16s}
+.fx-faq details:hover{border-color:var(--fx-border-str)}
+.fx-faq details[open]{box-shadow:var(--fx-sh-1)}
+.fx-faq summary{cursor:pointer;padding:15px 0;font-weight:650;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:10px}
+.fx-faq summary::-webkit-details-marker{display:none}
+.fx-faq summary::after{content:'+';font-size:21px;color:var(--fx-brand);font-weight:400;
+  transition:transform .22s;flex:none}
+.fx-faq details[open] summary::after{transform:rotate(45deg)}
+.fx-faq details[open] summary{border-block-end:1px solid var(--fx-border)}
+.fx-faq p{font-size:15.5px}
+
+.fx-meta{font-size:14px;color:var(--fx-muted);margin-block-start:30px;padding-block-start:18px;
+  border-block-start:1px solid var(--fx-border)}
+.fx-meta ul{padding-inline-start:19px}
+.fx-meta li{margin-block:5px}
+.fx-skel{background:linear-gradient(90deg,var(--fx-surface) 25%,var(--fx-surface-2) 50%,var(--fx-surface) 75%);
+  background-size:200% 100%;animation:fx-sk 1.3s infinite;border-radius:var(--fx-r-md);height:76px;min-width:126px;flex:none}
+@keyframes fx-sk{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+@media (max-width:560px){.fx-root{font-size:16px;padding-inline:14px}.fx-panel{padding:18px}}
+@media print{.fx-tabs,.fx-actions,.fx-btn,.fx-swap,.fx-iconbtn{display:none!important}
+  .fx-panel[hidden]{display:block!important}.fx-total{background:none;color:#000;border:2px solid #000}}
+</style>
+</head>
+<body>
+
+<header style="padding:14px 0;background:#f4f1e9;border-bottom:1px solid #ddd6c7">
+<div style="width:min(1200px,calc(100% - 28px));margin:auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;font-family:Inter,system-ui,sans-serif">
+<div style="display:flex;align-items:center;gap:11px;font-weight:850">
+<span style="width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#0d9671,#08775a 70%);color:#fff;display:grid;place-items:center;font-size:24px;font-weight:900;box-shadow:0 6px 18px rgba(8,119,90,.35)">₪</span>
+<span style="color:#15251f;font-size:14px">Понятные финансы в Израиле</span>
+</div>
+<div style="display:flex;align-items:center;gap:8px">
+<a href="index.html" style="font-size:12px;font-weight:800;color:#08775a;text-decoration:none;white-space:nowrap">← На главную</a>
+<select onchange="if(this.value)location.href=this.value" style="font-size:11.5px;font-weight:700;color:#08775a;border:1px solid #ddd6c7;border-radius:8px;padding:6px 8px;background:#fff;cursor:pointer">
+<option value="">Все калькуляторы ▾</option>
+<option value="salary.html">💰 Зарплата</option>
+<option value="mashkanta.html">🏠 Машканта</option>
+<option value="auto.html">🚗 Автомобиль</option>
+<option value="kredit.html">💳 Кредит</option>
+<option value="arenda-vs-pokupka.html">⚖️ Аренда vs покупка</option>
+<option value="mihzur-mashkanta.html">🔄 Рефинансирование</option>
+<option value="siluk-mukdam.html">💎 Погашение vs инвестиции</option>
+<option value="mas-rehisha.html">🏛️ Мас рехиша</option>
+<option value="mas-shevach.html">📉 Мас шевах</option>
+<option value="pension-gap.html">🧓 Пенсионный разрыв</option>
+<option value="keren-hishtalmut.html">🎓 Фонд повышения квалификации</option>
+<option value="nekudot-zikuy.html">🎯 Некудот зикуй</option><option value="tablo.html">📊 Экономика сегодня</option><option value="benzin.html">⛽ Цена на бензин</option><option value="arnona.html">🏛️ Скидка на арнону</option><option value="dira.html">🏗️ Дира бе-ханаха</option><option value="avtala.html">📋 Дмей автала</option>
+<option value="nko.html">🤝 Благотворительные НКО</option><option value="slovar.html">📖 Словарь терминов</option>
+</select>
+</div>
+</div>
+</header>
+
+<div class="fx-root" id="fx-root">
+
+  <div class="fx-head">
+    <div>
+      <span class="fx-eyebrow"><span class="fx-live"></span>Курсы обновляются автоматически</span>
+      <h1>Конвертер валют Израиль</h1>
+    </div>
+    <button type="button" class="fx-iconbtn" id="fx-theme" title="Сменить тему" aria-label="Сменить тему">◐</button>
+  </div>
+
+  <p class="fx-lead">Два курса сразу: <strong>официальный курс Банка Израиля</strong> — по нему считают
+  налоги и таможню, и <strong>рыночный</strong> — ближе к тому, что вы увидите в обменнике
+  или банковском приложении.</p>
+
+  <div class="fx-ticker" id="fx-ticker" aria-label="Текущие курсы"></div>
+  <div id="fx-status"></div>
+
+  <div class="fx-tabs" role="tablist" aria-label="Инструменты">
+    <button type="button" class="fx-tab" role="tab" data-tab="conv" aria-selected="true"
+            aria-controls="fx-p-conv" id="fx-t-conv">Конвертер</button>
+    <button type="button" class="fx-tab" role="tab" data-tab="basket" aria-selected="false"
+            aria-controls="fx-p-basket" id="fx-t-basket">Корзина валют</button>
+    <button type="button" class="fx-tab" role="tab" data-tab="chart" aria-selected="false"
+            aria-controls="fx-p-chart" id="fx-t-chart">График</button>
+    <button type="button" class="fx-tab" role="tab" data-tab="table" aria-selected="false"
+            aria-controls="fx-p-table" id="fx-t-table">Все курсы</button>
+  </div>
+
+  <!-- ══ КОНВЕРТЕР ══ -->
+  <div class="fx-panel" role="tabpanel" data-panel="conv" id="fx-p-conv" aria-labelledby="fx-t-conv">
+    <div style="display:flex;align-items:center;gap:10px;margin-block-end:14px;font-size:13px">
+      <label style="display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none">
+        <input type="checkbox" id="fx-realistic-toggle" style="width:36px;height:20px;cursor:pointer">
+        <span>Считать по реальному курсу обменника (со спредом), а не по среднему рыночному</span>
+      </label>
+    </div>
+    <div class="fx-conv">
+      <div class="fx-row2">
+        <div class="fx-field">
+          <label for="fx-a1">Отдаём</label>
+          <div class="fx-inputwrap">
+            <input class="fx-amount" type="text" inputmode="decimal" size="1" id="fx-a1" value="1000" autocomplete="off">
+            <select class="fx-sel" id="fx-c1" aria-label="Исходная валюта"></select>
+          </div>
+        </div>
+        <button type="button" class="fx-swap" id="fx-swap" title="Поменять местами"
+                aria-label="Поменять валюты местами">⇅</button>
+        <div class="fx-field">
+          <label for="fx-a2">Получаем</label>
+          <div class="fx-inputwrap">
+            <input class="fx-amount" type="text" inputmode="decimal" size="1" id="fx-a2" autocomplete="off">
+            <select class="fx-sel" id="fx-c2" aria-label="Целевая валюта"></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="fx-rateline" id="fx-rateline" aria-live="polite"></div>
+
+      <div class="fx-quick" id="fx-quick"></div>
+      <div class="fx-cmp" id="fx-cmp"></div>
+
+      <div class="fx-actions">
+        <button type="button" class="fx-btn fx-btn--ghost" id="fx-share">Скопировать ссылку</button>
+        <button type="button" class="fx-btn fx-btn--ghost" id="fx-tobasket">Добавить в корзину →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ КОРЗИНА ══ -->
+  <div class="fx-panel" role="tabpanel" data-panel="basket" id="fx-p-basket" aria-labelledby="fx-t-basket" hidden>
+    <p style="margin-top:0">Внесите накопления в разных валютах — увидите общую сумму в шекелях
+    и как она изменилась за месяц. Данные хранятся <strong>только в вашем браузере</strong>.</p>
+
+    <div class="fx-basket" id="fx-basket"></div>
+
+    <div class="fx-actions">
+      <button type="button" class="fx-btn fx-btn--ghost fx-btn--sm" id="fx-badd">+ Добавить валюту</button>
+      <button type="button" class="fx-btn fx-btn--ghost fx-btn--sm" id="fx-bclear">Очистить</button>
+      <button type="button" class="fx-btn fx-btn--ghost fx-btn--sm" id="fx-bshare">Поделиться корзиной</button>
+    </div>
+
+    <div class="fx-total">
+      <span class="fx-total__l">Всего в шекелях</span>
+      <span class="fx-total__v" id="fx-btotal" aria-live="polite">0 ₪</span>
+    </div>
+
+    <div class="fx-bars" id="fx-bbars"></div>
+    <div class="fx-legend" id="fx-blegend"></div>
+    <div id="fx-bchange"></div>
+  </div>
+
+  <!-- ══ ГРАФИК ══ -->
+  <div class="fx-panel" role="tabpanel" data-panel="chart" id="fx-p-chart" aria-labelledby="fx-t-chart" hidden>
+    <div class="fx-quick" id="fx-chart-cur"></div>
+    <div class="fx-quick" style="margin-block-start:10px" id="fx-chart-per"></div>
+    <div class="fx-stats" id="fx-chart-stats"></div>
+    <svg class="fx-chart" id="fx-chart" viewBox="0 0 760 260" preserveAspectRatio="none"
+         role="img" aria-label="График курса"></svg>
+    <p class="fx-hint" id="fx-chart-note"></p>
+  </div>
+
+  <!-- ══ ВСЕ КУРСЫ ══ -->
+  <div class="fx-panel" role="tabpanel" data-panel="table" id="fx-p-table" aria-labelledby="fx-t-table" hidden>
+    <p class="fx-hint" style="margin-top:0">Сколько шекелей стоит одна единица валюты. Официальный курс
+    Банк Израиля публикует по будням около 9:20 — он есть не для всех валют.</p>
+    <div class="fx-scroll">
+      <table class="fx-table" id="fx-alltable">
+        <thead><tr><th>Валюта</th><th class="num">Рыночный</th><th class="num">Банк Израиля</th>
+        <th class="num">За сутки</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ══ ТЕКСТ ══ -->
+  <h2>Какой курс вам нужен</h2>
+  <p>В Израиле в ходу два разных курса, и путаница между ними стоит денег.</p>
+
+  <h3>Официальный курс Банка Израиля</h3>
+  <p>«Шаар йациг» <span dir="rtl">(שער יציג)</span>, <em>ша́ар яци́г</em> — представительный курс.
+  Публикуется по будням около 9:20 утра и действует весь день. По нему считают налоги, таможенные
+  пошлины, судебные суммы и отчётность. В выходные и праздники не обновляется — действует курс
+  последнего рабочего дня.</p>
+
+  <h3>Рыночный курс</h3>
+  <p>Меняется постоянно в течение дня. Он ближе к тому, что вы увидите при переводе или в обменнике.
+  Но и он не равен тому, что вы получите на руки: банки и обменники добавляют свою наценку.</p>
+
+  <div class="fx-warn"><strong>Сколько теряется на обмене.</strong> Банк обычно берёт 1,5–3% от суммы,
+  обменник в туристическом месте — до 5%, а карта при оплате за границей добавляет комиссию
+  за конвертацию около 2,5–3%. На тысяче долларов разница между хорошим и плохим курсом легко
+  достигает 100–150 шекелей. Сравнивайте с курсом на этой странице — он показывает базу без наценок.</div>
+
+  <h2>Частые вопросы</h2>
+  <div class="fx-faq">
+    <details><summary>Почему курс здесь отличается от курса в моём банке?</summary>
+      <p>Здесь показан базовый курс без наценок. Банки и обменники добавляют свою маржу — обычно
+      1,5–3%, плюс иногда фиксированную комиссию за операцию. Сравнив свой курс с базовым, вы сразу
+      увидите, сколько с вас берут сверху.</p></details>
+    <details><summary>Какой курс нужен для налоговой и таможни?</summary>
+      <p>Официальный курс Банка Израиля на нужную дату. Он же используется при расчёте пошлины
+      на посылки и при декларировании доходов из-за границы.</p></details>
+    <details><summary>Почему в выходные курс не меняется?</summary>
+      <p>Банк Израиля публикует официальный курс только по рабочим дням. В пятницу вечером, субботу
+      и праздники действует курс последнего рабочего дня. Рыночный курс при этом может немного двигаться.</p></details>
+    <details><summary>Данные корзины куда-то отправляются?</summary>
+      <p>Нет. Всё хранится в памяти вашего браузера и никуда не передаётся. Если очистите данные
+      браузера — корзина исчезнет. Ссылкой на корзину можно поделиться: суммы зашиваются
+      прямо в адрес страницы.</p></details>
+    <details><summary>Насколько свежие данные?</summary>
+      <p>Рыночные курсы обновляются несколько раз в сутки, официальный курс Банка Израиля — по будням
+      утром. Точное время последнего обновления показано под строкой курсов. Если интернета нет,
+      страница покажет последние сохранённые значения и предупредит об этом.</p></details>
+  </div>
+
+  <div class="fx-meta">
+    <p><strong>Источники данных:</strong></p>
+    <ul>
+      <li><a href="https://www.boi.org.il/" target="_blank" rel="noopener nofollow">Банк Израиля</a>
+        — официальный представительный курс</li>
+      <li><a href="https://www.exchangerate-api.com/" target="_blank" rel="noopener nofollow">ExchangeRate-API</a>
+        — рыночные курсы, открытый доступ</li>
+      <li><a href="https://frankfurter.dev/" target="_blank" rel="noopener nofollow">Frankfurter</a>
+        — исторические данные на основе публикаций Европейского центрального банка</li>
+    </ul>
+    <p class="fx-hint">Курсы носят справочный характер. Фактический курс сделки определяет банк
+    или обменный пункт. Расчёты выполняются в вашем браузере, никакие данные не собираются.</p>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","name":"Конвертер валют Израиль","applicationCategory":"FinanceApplication",
+ "operatingSystem":"Any","inLanguage":"ru","offers":{"@type":"Offer","price":"0","priceCurrency":"ILS"}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Почему курс отличается от курса в банке?","acceptedAnswer":{"@type":"Answer",
+ "text":"Здесь показан базовый курс без наценок. Банки и обменники добавляют маржу 1,5–3%, плюс иногда фиксированную комиссию."}},
+{"@type":"Question","name":"Какой курс нужен для налоговой и таможни?","acceptedAnswer":{"@type":"Answer",
+ "text":"Официальный представительный курс Банка Израиля на нужную дату. Он же применяется при расчёте пошлины на посылки."}},
+{"@type":"Question","name":"Почему в выходные курс не меняется?","acceptedAnswer":{"@type":"Answer",
+ "text":"Банк Израиля публикует официальный курс только по рабочим дням. В выходные действует курс последнего рабочего дня."}}
+]}]}
+</script>
+
+<script>
+(function () {
+  'use strict';
+  var root = document.getElementById('fx-root');
+  if (!root) return;
+
+  /* ═══ Источники. У всех проверен CORS, ключи не нужны ═══ */
+  var API = {
+    market:  'https://open.er-api.com/v6/latest/ILS',
+    history: 'https://api.frankfurter.dev/v1/',
+    // API Банка Израиля отвечает 404 на браузерный Origin — читаем локальный файл,
+    // который обновляет GitHub Actions. Без файла страница работает, колонка пустая.
+    official: 'data/rates.json'
+  };
+
+  var NAMES = {ILS:'Шекель',USD:'Доллар США',EUR:'Евро',RUB:'Рубль',UAH:'Гривна',GBP:'Фунт',
+    KZT:'Тенге',GEL:'Лари',TRY:'Лира',CHF:'Франк',CAD:'Канад. доллар',AUD:'Австрал. доллар',
+    PLN:'Злотый',CZK:'Крона',HUF:'Форинт',RON:'Лей',BGN:'Лев',MDL:'Молд. лей',AMD:'Драм',
+    AZN:'Манат',UZS:'Сум',KGS:'Сом',BYN:'Бел. рубль',THB:'Бат',JPY:'Иена',CNY:'Юань',
+    INR:'Рупия',SEK:'Швед. крона',NOK:'Норв. крона',DKK:'Дат. крона',ZAR:'Ранд',AED:'Дирхам',
+    JOD:'Динар',EGP:'Егип. фунт'};
+  var FLAGS = {ILS:'🇮🇱',USD:'🇺🇸',EUR:'🇪🇺',RUB:'🇷🇺',UAH:'🇺🇦',GBP:'🇬🇧',KZT:'🇰🇿',GEL:'🇬🇪',
+    TRY:'🇹🇷',CHF:'🇨🇭',CAD:'🇨🇦',AUD:'🇦🇺',PLN:'🇵🇱',CZK:'🇨🇿',HUF:'🇭🇺',RON:'🇷🇴',BGN:'🇧🇬',
+    MDL:'🇲🇩',AMD:'🇦🇲',AZN:'🇦🇿',UZS:'🇺🇿',KGS:'🇰🇬',BYN:'🇧🇾',THB:'🇹🇭',JPY:'🇯🇵',CNY:'🇨🇳',
+    INR:'🇮🇳',SEK:'🇸🇪',NOK:'🇳🇴',DKK:'🇩🇰',ZAR:'🇿🇦',AED:'🇦🇪',JOD:'🇯🇴',EGP:'🇪🇬'};
+  var POPULAR = ['USD','EUR','RUB','UAH','GBP','KZT','GEL','TRY'];
+  var TICKER  = ['USD','EUR','RUB','UAH','GBP','KZT'];
+  var LS = 'fx-v2';
+
+  var D = {market:{},official:{},prev:{},updated:null,officialDate:null,offline:false,list:[]};
+
+  var nf = function (n,d){return new Intl.NumberFormat('ru-RU',
+    {minimumFractionDigits:d,maximumFractionDigits:d}).format(n);};
+  function money(n){var a=Math.abs(n);return nf(n,a>=1000?0:a>=10?2:4);}
+  function rate(n){var a=Math.abs(n);return nf(n,a>=100?2:a>=1?4:6);}
+  function el(s){return root.querySelector(s);}
+  function els(s){return Array.prototype.slice.call(root.querySelectorAll(s));}
+  function name(c){return NAMES[c]||c;}
+  function flag(c){return FLAGS[c]||'💱';}
+  function parseNum(s){var v=parseFloat(String(s).replace(/\s/g,'').replace(',','.'));return isFinite(v)?v:0;}
+
+  function readHash(){var o={},q=location.hash.replace(/^#/,'');
+    q.split('&').forEach(function(p){if(!p)return;var kv=p.split('=');
+      o[decodeURIComponent(kv[0])]=decodeURIComponent(kv[1]||'');});return o;}
+  function writeHash(o){var a=[];Object.keys(o).forEach(function(k){
+    if(o[k]!==''&&o[k]!=null)a.push(encodeURIComponent(k)+'='+encodeURIComponent(o[k]));});
+    history.replaceState(null,'',a.length?'#'+a.join('&'):location.pathname);}
+  var H = readHash();
+
+  function save(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+  function load(k){try{return JSON.parse(localStorage.getItem(k));}catch(e){return null;}}
+
+  function fetchJSON(u,ms){
+    return new Promise(function(res,rej){
+      var t=setTimeout(function(){rej(new Error('timeout'));},ms||12000);
+      fetch(u,{cache:'no-cache'}).then(function(r){clearTimeout(t);
+        if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+        .then(res).catch(function(e){clearTimeout(t);rej(e);});
+    });
+  }
+
+  function loadRates(){
+    var cached=load(LS+'-rates');
+    if(cached&&cached.market){D.market=cached.market;D.official=cached.official||{};
+      D.updated=cached.updated;D.officialDate=cached.officialDate;D.prev=cached.prev||{};}
+    return fetchJSON(API.market).then(function(j){
+      if(!j||!j.rates)throw new Error('нет данных');
+      var m={};
+      Object.keys(j.rates).forEach(function(c){var v=j.rates[c];
+        if(v&&isFinite(v)&&v>0)m[c]=1/v;});   // шекелей за 1 единицу
+      m.ILS=1;
+      D.prev=(cached&&cached.market)?cached.market:{};
+      D.market=m; D.updated=j.time_last_update_utc||new Date().toUTCString(); D.offline=false;
+      return fetchJSON(API.official,6000).catch(function(){return null;});
+    }).then(function(off){
+      if(off&&off.fx&&!off.rates){ off={rates:off.fx, date:off.updated}; } // наш формат rates.json -> ожидаемый модулем
+      if(off&&off.rates){D.official=off.rates;D.officialDate=off.date||off.updated;}
+      D.list=Object.keys(D.market).filter(function(c){return c!=='ILS';}).sort();
+      save(LS+'-rates',{market:D.market,official:D.official,updated:D.updated,
+        officialDate:D.officialDate,prev:D.prev});
+    }).catch(function(e){
+      if(D.market&&Object.keys(D.market).length){D.offline=true;
+        D.list=Object.keys(D.market).filter(function(c){return c!=='ILS';}).sort();return;}
+      throw e;
+    });
+  }
+
+  function renderStatus(){
+    var when=D.updated?new Date(D.updated):null, s=el('#fx-status');
+    if(D.offline){
+      s.innerHTML='<div class="fx-warn"><strong>Нет связи с сервером курсов.</strong> Показаны последние '+
+        'сохранённые значения'+(when?' от '+when.toLocaleString('ru-RU'):'')+'.</div>';
+      return;
+    }
+    var bits=[];
+    if(when)bits.push('Обновлено '+when.toLocaleString('ru-RU',
+      {day:'numeric',month:'long',hour:'2-digit',minute:'2-digit'}));
+    if(D.officialDate)bits.push('официальный курс Банка Израиля на '+
+      new Date(D.officialDate).toLocaleDateString('ru-RU'));
+    s.innerHTML='<p class="fx-hint" style="margin:0 0 2px">'+bits.join(' · ')+'</p>';
+  }
+
+  function renderTicker(){
+    el('#fx-ticker').innerHTML=TICKER.map(function(c){
+      var v=D.market[c]; if(!v)return '';
+      var p=D.prev[c], d=(p&&p>0)?(v-p)/p*100:null;
+      var cls=d==null?'':(d>=0?'fx-up':'fx-down'), arrow=d==null?'':(d>=0?'▲':'▼');
+      return '<button type="button" class="fx-tick" data-cur="'+c+'">'+
+        '<span class="fx-tick__c"><span class="fx-flag">'+flag(c)+'</span>'+c+'</span>'+
+        '<span class="fx-tick__v fx-num">'+rate(v)+'</span>'+
+        '<span class="fx-tick__d '+cls+'">'+(d==null?'&nbsp;':arrow+' '+nf(Math.abs(d),2)+'%')+
+        '</span></button>';
+    }).join('');
+    els('[data-cur]').forEach(function(b){
+      b.addEventListener('click',function(){
+        el('#fx-c1').value=b.getAttribute('data-cur'); el('#fx-c2').value='ILS';
+        activate('conv'); convert('a1');
+      });
+    });
+  }
+
+  function fillSelects(){
+    var opts=['ILS'].concat(D.list).map(function(c){
+      return '<option value="'+c+'">'+flag(c)+' '+c+'</option>';}).join('');
+    el('#fx-c1').innerHTML=opts; el('#fx-c2').innerHTML=opts;
+    el('#fx-c1').value=(H.from&&D.market[H.from])?H.from:'USD';
+    el('#fx-c2').value=(H.to&&D.market[H.to])?H.to:'ILS';
+    el('#fx-a1').value=H.amt||'1000';
+  }
+
+  var SPREAD=0.03; // типичный суммарный спред обменника/банка — 1.5% в каждую сторону
+  D.realistic=false; // по умолчанию — средний рыночный курс
+
+  // Продаёте валюту c (получаете ILS) — обменник покупает у вас по курсу похуже (ниже)
+  function toILS(a,c){
+    if(c==='ILS')return a;
+    var m=D.market[c]||0;
+    var rate=D.realistic?m*(1-SPREAD/2):m;
+    return a*rate;
+  }
+  // Покупаете валюту c (тратите ILS) — обменник продаёт вам по курсу похуже (выше)
+  function fromILS(a,c){
+    if(c==='ILS')return a;
+    var m=D.market[c]||1;
+    var rate=D.realistic?m*(1+SPREAD/2):m;
+    return a/rate;
+  }
+
+  function convert(src){
+    var c1=el('#fx-c1').value, c2=el('#fx-c2').value;
+    if(src==='a2'){
+      var v2=parseNum(el('#fx-a2').value);
+      el('#fx-a1').value=money(fromILS(toILS(v2,c2),c1));
+    }else{
+      var v1=parseNum(el('#fx-a1').value);
+      el('#fx-a2').value=money(fromILS(toILS(v1,c1),c2));
+    }
+    var one=fromILS(toILS(1,c1),c2);
+    el('#fx-rateline').innerHTML='1 '+c1+' = <b class="fx-num">'+rate(one)+'</b> '+c2+
+      '<br><span class="fx-hint">1 '+c2+' = '+rate(1/one)+' '+c1+'</span>';
+    renderCompare(c1,c2);
+    var h=readHash(); h.from=c1; h.to=c2; h.amt=el('#fx-a1').value; writeHash(h);
+    els('#fx-quick .fx-chip').forEach(function(b){
+      b.setAttribute('aria-pressed',b.getAttribute('data-q')===c1&&c2==='ILS');});
+  }
+
+  function renderCompare(c1,c2){
+    var box=el('#fx-cmp'), pair=(c1!=='ILS'?c1:c2);
+    if(pair==='ILS'){box.innerHTML='';return;}
+    var mk=D.market[pair], of=D.official[pair];
+    var sellToYou=mk*(1+SPREAD/2);   // обменник продаёт вам валюту — курс хуже (дороже)
+    var buyFromYou=mk*(1-SPREAD/2);  // обменник покупает у вас валюту — курс хуже (дешевле)
+    var html='<div class="fx-cmp__i"><span class="fx-cmp__l">Рыночный курс (средний)</span>'+
+      '<span class="fx-cmp__v fx-num">'+rate(mk)+' ₪</span></div>';
+    html+='<div class="fx-cmp__i"><span class="fx-cmp__l">Купить '+pair+' — вам продают</span>'+
+      '<span class="fx-cmp__v fx-num">'+rate(sellToYou)+' ₪</span>'+
+      '<span class="fx-hint">дороже среднего — оценка</span></div>';
+    html+='<div class="fx-cmp__i"><span class="fx-cmp__l">Продать '+pair+' — у вас покупают</span>'+
+      '<span class="fx-cmp__v fx-num">'+rate(buyFromYou)+' ₪</span>'+
+      '<span class="fx-hint">дешевле среднего — оценка</span></div>';
+    if(of){
+      var diff=(mk-of)/of*100;
+      html+='<div class="fx-cmp__i"><span class="fx-cmp__l">Банк Израиля</span>'+
+        '<span class="fx-cmp__v fx-num">'+rate(of)+' ₪</span>'+
+        '<span class="fx-hint '+(diff>=0?'fx-up':'fx-down')+'">разница '+nf(Math.abs(diff),2)+'%</span></div>';
+    }
+    var amt=parseNum(el('#fx-a1').value)||0, ilsSum=toILS(amt,c1);
+    if(ilsSum>0){
+      html+='<div class="fx-cmp__i"><span class="fx-cmp__l">Потеря при наценке 2%</span>'+
+        '<span class="fx-cmp__v fx-num">−'+money(ilsSum*0.02)+' ₪</span>'+
+        '<span class="fx-hint">типичная маржа банка</span></div>';
+    }
+    box.innerHTML=html;
+  }
+
+  function renderQuick(){
+    el('#fx-quick').innerHTML=POPULAR.map(function(c){
+      return '<button type="button" class="fx-chip" data-q="'+c+'" aria-pressed="false">'+
+        flag(c)+' '+c+'</button>';}).join('');
+    els('#fx-quick .fx-chip').forEach(function(b){
+      b.addEventListener('click',function(){
+        el('#fx-c1').value=b.getAttribute('data-q'); el('#fx-c2').value='ILS'; convert('a1');});
+    });
+  }
+
+  /* ═══ Корзина ═══ */
+  var basket=[];
+  function loadBasket(){
+    if(H.b){
+      basket=H.b.split(',').map(function(p){var kv=p.split(':');
+        return {cur:kv[0],amt:parseFloat(kv[1])||0};}).filter(function(x){return x.cur;});
+    }else{
+      basket=load(LS+'-basket')||[{cur:'USD',amt:5000},{cur:'ILS',amt:20000}];
+    }
+  }
+  function persistBasket(){save(LS+'-basket',basket);}
+
+  function renderBasket(){
+    var box=el('#fx-basket');
+    if(!basket.length){
+      box.innerHTML='<p class="fx-hint">Корзина пуста. Добавьте валюту кнопкой ниже.</p>';
+    }else{
+      var opts=['ILS'].concat(D.list);
+      box.innerHTML=basket.map(function(r,i){
+        return '<div class="fx-brow">'+
+          '<select data-bc="'+i+'" aria-label="Валюта">'+opts.map(function(c){
+            return '<option value="'+c+'"'+(c===r.cur?' selected':'')+'>'+flag(c)+' '+c+'</option>';
+          }).join('')+'</select>'+
+          '<input type="text" inputmode="decimal" size="1" data-ba="'+i+'" value="'+r.amt+'" aria-label="Сумма">'+
+          '<span class="fx-brow__ils" data-bi="'+i+'"></span>'+
+          '<button type="button" class="fx-brow__del" data-bd="'+i+'" aria-label="Удалить">×</button></div>';
+      }).join('');
+      els('[data-bc]').forEach(function(s){s.addEventListener('change',function(){
+        basket[+s.getAttribute('data-bc')].cur=s.value;calcBasket();persistBasket();});});
+      els('[data-ba]').forEach(function(inp){inp.addEventListener('input',function(){
+        basket[+inp.getAttribute('data-ba')].amt=parseNum(inp.value);calcBasket();persistBasket();});});
+      els('[data-bd]').forEach(function(b){b.addEventListener('click',function(){
+        basket.splice(+b.getAttribute('data-bd'),1);renderBasket();persistBasket();});});
+    }
+    calcBasket();
+  }
+
+  var PALETTE=['#0b7a6d','#2f6df6','#c07d15','#7c3aed','#e0393e','#0a9757','#db2777','#0891b2'];
+
+  function calcBasket(){
+    var total=0, parts=[];
+    basket.forEach(function(r,i){
+      var ils=toILS(r.amt,r.cur); total+=ils; parts.push({cur:r.cur,ils:ils});
+      var n=root.querySelector('[data-bi="'+i+'"]'); if(n)n.textContent=money(ils)+' ₪';
+    });
+    el('#fx-btotal').textContent=money(total)+' ₪';
+
+    var bars='', legend='';
+    parts.forEach(function(p,i){
+      if(total<=0||p.ils<=0)return;
+      var pc=p.ils/total*100, col=PALETTE[i%PALETTE.length];
+      bars+='<div style="width:'+pc+'%;background:'+col+'" title="'+p.cur+' '+nf(pc,1)+'%"></div>';
+      legend+='<span><i style="background:'+col+'"></i>'+p.cur+' '+nf(pc,1)+'%</span>';
+    });
+    el('#fx-bbars').innerHTML=bars; el('#fx-blegend').innerHTML=legend;
+
+    var curs=parts.filter(function(p){return p.cur!=='ILS';}).map(function(p){return p.cur;});
+    if(!curs.length||total<=0){el('#fx-bchange').innerHTML='';return;}
+    var d=new Date(); d.setDate(d.getDate()-30);
+    fetchJSON(API.history+d.toISOString().slice(0,10)+'?base=ILS&symbols='+curs.join(','),9000)
+      .then(function(j){
+        if(!j||!j.rates)return;
+        var old=0, ok=false;
+        parts.forEach(function(p){
+          if(p.cur==='ILS'){old+=p.ils;return;}
+          var r=j.rates[p.cur];
+          if(r){var amt=basket.filter(function(b){return b.cur===p.cur;})
+            .reduce(function(s,b){return s+b.amt;},0); old+=amt/r; ok=true;}
+          else old+=p.ils;
+        });
+        if(!ok||old<=0)return;
+        var diff=total-old, pc=diff/old*100;
+        el('#fx-bchange').innerHTML='<div class="fx-note">За последний месяц корзина '+
+          (diff>=0?'подорожала':'подешевела')+' на <strong class="'+(diff>=0?'fx-up':'fx-down')+
+          '">'+money(Math.abs(diff))+' ₪ ('+nf(Math.abs(pc),2)+'%)</strong> — только за счёт курсов.</div>';
+      }).catch(function(){});
+  }
+
+  /* ═══ График ═══ */
+  var chartCur=H.ch||'USD', chartPer=H.cp||'90';
+
+  function renderChartControls(){
+    el('#fx-chart-cur').innerHTML=['USD','EUR','GBP','CHF','JPY'].map(function(c){
+      return '<button type="button" class="fx-chip" data-cc="'+c+'" aria-pressed="'+
+        (c===chartCur)+'">'+flag(c)+' '+c+'</button>';}).join('');
+    el('#fx-chart-per').innerHTML=[['30','Месяц'],['90','3 месяца'],['365','Год']].map(function(p){
+      return '<button type="button" class="fx-chip" data-cp="'+p[0]+'" aria-pressed="'+
+        (p[0]===chartPer)+'">'+p[1]+'</button>';}).join('');
+    els('[data-cc]').forEach(function(b){b.addEventListener('click',function(){
+      chartCur=b.getAttribute('data-cc');renderChartControls();drawChart();});});
+    els('[data-cp]').forEach(function(b){b.addEventListener('click',function(){
+      chartPer=b.getAttribute('data-cp');renderChartControls();drawChart();});});
+  }
+
+  function drawChart(){
+    var svg=el('#fx-chart');
+    svg.innerHTML='<text x="380" y="130" text-anchor="middle">Загружаем данные…</text>';
+    var end=new Date(), start=new Date();
+    start.setDate(start.getDate()-parseInt(chartPer,10));
+    var url=API.history+start.toISOString().slice(0,10)+'..'+end.toISOString().slice(0,10)+
+            '?base=ILS&symbols='+chartCur;
+    var h=readHash(); h.ch=chartCur; h.cp=chartPer; writeHash(h);
+
+    fetchJSON(url,14000).then(function(j){
+      if(!j||!j.rates)throw new Error('нет данных');
+      var pts=Object.keys(j.rates).sort().map(function(d){
+        var v=j.rates[d][chartCur]; return v?{d:d,v:1/v}:null;}).filter(Boolean);
+      if(pts.length<2)throw new Error('мало точек');
+
+      var vals=pts.map(function(p){return p.v;});
+      var min=Math.min.apply(null,vals), max=Math.max.apply(null,vals);
+      var pad=(max-min)*0.14||0.01; min-=pad; max+=pad;
+      var W=760,Hh=260,ml=10,mr=10,mt=16,mb=26;
+      var x=function(i){return ml+i*(W-ml-mr)/(pts.length-1);};
+      var y=function(v){return mt+(max-v)/(max-min)*(Hh-mt-mb);};
+
+      var dLine=pts.map(function(p,i){return (i?'L':'M')+x(i).toFixed(1)+' '+y(p.v).toFixed(1);}).join(' ');
+      var dArea=dLine+' L'+x(pts.length-1).toFixed(1)+' '+(Hh-mb)+' L'+ml+' '+(Hh-mb)+' Z';
+
+      var defs='<defs><linearGradient id="fxgrad" x1="0" y1="0" x2="1" y2="0">'+
+        '<stop offset="0%" stop-color="var(--fx-brand)"/><stop offset="100%" stop-color="var(--fx-brand-2)"/>'+
+        '</linearGradient><linearGradient id="fxfill" x1="0" y1="0" x2="0" y2="1">'+
+        '<stop offset="0%" stop-color="var(--fx-brand)" stop-opacity=".22"/>'+
+        '<stop offset="100%" stop-color="var(--fx-brand)" stop-opacity="0"/></linearGradient></defs>';
+
+      var grid='',labels='';
+      for(var g=0;g<=3;g++){
+        var vv=min+(max-min)*g/3, yy=y(vv);
+        grid+='<line class="grid" x1="'+ml+'" y1="'+yy.toFixed(1)+'" x2="'+(W-mr)+'" y2="'+yy.toFixed(1)+'"/>';
+        labels+='<text x="'+(ml+4)+'" y="'+(yy-5).toFixed(1)+'">'+nf(vv,3)+'</text>';
+      }
+      var f=pts[0], l=pts[pts.length-1];
+      labels+='<text x="'+ml+'" y="'+(Hh-7)+'">'+f.d.slice(5)+'</text>'+
+              '<text x="'+(W-mr)+'" y="'+(Hh-7)+'" text-anchor="end">'+l.d.slice(5)+'</text>';
+
+      svg.innerHTML=defs+grid+'<path class="area" d="'+dArea+'"/><path class="line" d="'+dLine+'"/>'+
+        '<circle cx="'+x(pts.length-1).toFixed(1)+'" cy="'+y(l.v).toFixed(1)+
+        '" r="5" fill="var(--fx-brand)" stroke="var(--fx-card)" stroke-width="2.5"/>'+labels;
+
+      var chg=(l.v-f.v)/f.v*100;
+      el('#fx-chart-stats').innerHTML=
+        stat('Сейчас',rate(l.v)+' ₪')+
+        stat('Минимум',rate(Math.min.apply(null,vals))+' ₪')+
+        stat('Максимум',rate(Math.max.apply(null,vals))+' ₪')+
+        stat('Изменение','<span class="'+(chg>=0?'fx-up':'fx-down')+'">'+
+          (chg>=0?'+':'−')+nf(Math.abs(chg),2)+'%</span>');
+      el('#fx-chart-note').textContent='Курс 1 '+chartCur+' в шекелях. Данные Европейского '+
+        'центрального банка, публикуются по будням. Точек на графике: '+pts.length+'.';
+    }).catch(function(){
+      svg.innerHTML='<text x="380" y="130" text-anchor="middle">Не удалось загрузить историю</text>';
+      el('#fx-chart-stats').innerHTML='';
+    });
+
+    function stat(l,v){return '<div class="fx-stat"><span class="fx-stat__l">'+l+
+      '</span><span class="fx-stat__v fx-num">'+v+'</span></div>';}
+  }
+
+  function renderTable(){
+    var order=POPULAR.concat(D.list.filter(function(c){return POPULAR.indexOf(c)<0;}));
+    el('#fx-alltable tbody').innerHTML=order.map(function(c){
+      var v=D.market[c]; if(!v)return '';
+      var of=D.official[c], p=D.prev[c], d=(p&&p>0)?(v-p)/p*100:null;
+      return '<tr><td><span class="fx-flag">'+flag(c)+'</span><strong>'+c+'</strong> '+
+        '<span class="fx-hint">'+name(c)+'</span></td>'+
+        '<td class="num">'+rate(v)+' ₪</td>'+
+        '<td class="num">'+(of?rate(of)+' ₪ <span class="fx-badge fx-badge--ok">офиц.</span>':'—')+'</td>'+
+        '<td class="num '+(d==null?'':(d>=0?'fx-up':'fx-down'))+'">'+
+        (d==null?'—':(d>=0?'+':'−')+nf(Math.abs(d),2)+'%')+'</td></tr>';
+    }).join('');
+  }
+
+  function activate(n){
+    els('.fx-tab').forEach(function(t){t.setAttribute('aria-selected',t.getAttribute('data-tab')===n);});
+    els('.fx-panel').forEach(function(p){p.hidden=p.getAttribute('data-panel')!==n;});
+    var h=readHash(); h.t=n; writeHash(h);
+    if(n==='chart')drawChart();
+  }
+
+  function initTabs(){
+    var tabs=els('.fx-tab');
+    tabs.forEach(function(t,i){
+      t.addEventListener('click',function(){activate(t.getAttribute('data-tab'));});
+      t.addEventListener('keydown',function(e){
+        if(e.key==='ArrowRight'){tabs[(i+1)%tabs.length].focus();e.preventDefault();}
+        if(e.key==='ArrowLeft'){tabs[(i-1+tabs.length)%tabs.length].focus();e.preventDefault();}
+      });
+    });
+    activate(H.t||'conv');
+  }
+
+  function copyLink(btn,label){
+    var t=btn.textContent;
+    if(navigator.clipboard)navigator.clipboard.writeText(location.href);
+    btn.textContent=label||'Скопировано ✓';
+    setTimeout(function(){btn.textContent=t;},1800);
+  }
+
+  function initTheme(){
+    var saved=load(LS+'-theme');
+    if(saved)root.setAttribute('data-theme',saved);
+    el('#fx-theme').addEventListener('click',function(){
+      var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+      root.setAttribute('data-theme',next); save(LS+'-theme',next);
+    });
+  }
+
+  // Скелетоны, пока грузятся курсы
+  el('#fx-ticker').innerHTML=TICKER.map(function(){return '<div class="fx-skel"></div>';}).join('');
+
+  loadRates().then(function(){
+    fillSelects(); renderQuick(); renderTicker(); renderStatus(); renderTable();
+    loadBasket(); renderBasket(); renderChartControls(); initTabs(); initTheme();
+
+    el('#fx-a1').addEventListener('input',function(){convert('a1');});
+    el('#fx-realistic-toggle').addEventListener('change',function(){D.realistic=this.checked;convert('a1');});
+    el('#fx-a2').addEventListener('input',function(){convert('a2');});
+    el('#fx-c1').addEventListener('change',function(){convert('a1');});
+    el('#fx-c2').addEventListener('change',function(){convert('a1');});
+    el('#fx-swap').addEventListener('click',function(){
+      var a=el('#fx-c1').value; el('#fx-c1').value=el('#fx-c2').value; el('#fx-c2').value=a; convert('a1');});
+    el('#fx-share').addEventListener('click',function(){copyLink(this);});
+    el('#fx-bshare').addEventListener('click',function(){
+      var h=readHash(); h.b=basket.map(function(r){return r.cur+':'+r.amt;}).join(',');
+      h.t='basket'; writeHash(h); copyLink(this,'Ссылка скопирована ✓');});
+    el('#fx-tobasket').addEventListener('click',function(){
+      basket.push({cur:el('#fx-c1').value,amt:parseNum(el('#fx-a1').value)});
+      persistBasket(); renderBasket(); activate('basket');});
+    el('#fx-badd').addEventListener('click',function(){
+      basket.push({cur:'EUR',amt:1000}); persistBasket(); renderBasket();});
+    el('#fx-bclear').addEventListener('click',function(){
+      basket=[]; persistBasket(); renderBasket();});
+
+    convert('a1');
+    setInterval(function(){
+      loadRates().then(function(){renderTicker();renderStatus();renderTable();convert('a1');calcBasket();})
+                 .catch(function(){});
+    },600000);
+  }).catch(function(e){
+    el('#fx-ticker').innerHTML='';
+    el('#fx-status').innerHTML='<div class="fx-warn"><strong>Не удалось загрузить курсы.</strong> '+
+      'Проверьте соединение и обновите страницу. ('+e.message+')</div>';
+  });
+})();
+</script>
+<footer style="width:min(1200px,calc(100% - 28px));margin:26px auto 40px;color:#5a6660;font-size:11px;text-align:center;font-family:Inter,system-ui,sans-serif">Понятные финансы в Израиле · курс валют · не финансовая консультация · <a href="contact.html" style="color:#08775a;font-weight:800;text-decoration:none">Написать нам</a></footer>
+</body>
+</html>
