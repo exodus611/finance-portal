@@ -1,0 +1,32 @@
+{
+  "boi_rate": 3.5,
+  "prime": 5.0,
+  "next_interest_date": "2026-09-01T00:00:00Z",
+  "cpi_index": 105.1,
+  "cpi_annual_pct": 1.5,
+  "fx": {
+    "USD": 3.062,
+    "EUR": 3.4863,
+    "GBP": 4.0789
+  },
+  "manual": {
+    "avg_mortgage_rate_by_term": {
+      "5": 3.57,
+      "10": 3.56,
+      "15": 3.29,
+      "20": 3.54,
+      "25": 3.44,
+      "30": 3.46
+    },
+    "avg_mortgage_rate_overall": 3.52,
+    "_checked": "2026-07-24"
+  },
+  "errors": {
+    "fx": "AttributeError: 'str' object has no attribute 'get'"
+  },
+  "updated": "2026-08-16T06:22:05.102746+00:00",
+  "updated_sources_ok": "2/3",
+  "_seed_note": "Начальный файл с проверенными значениями на дату создания. Далее обновляется автоматически через GitHub Actions (scripts/update-rates.py), кроме блока manual — его обновлять руками раз в месяц.",
+  "boi_rate_updated": "2026-08-16T06:22:05.102746+00:00",
+  "cpi_updated": "2026-08-16T06:22:05.102746+00:00"
+}

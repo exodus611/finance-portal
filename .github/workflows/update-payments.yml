@@ -1,0 +1,60 @@
+name: Обновление дат выплат Битуах леуми
+
+on:
+  schedule:
+    # Дважды в месяц: 1-го и 10-го числа в 04:30 UTC.
+    # Битуах леуми обычно публикует расписание на новый месяц заранее,
+    # двух запусков достаточно, чтобы точно поймать обновление.
+    - cron: "30 4 1,10 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Обновить даты выплат
+        id: run
+        continue-on-error: true
+        run: python3 scripts/update_payments.py | tee /tmp/out.txt
+
+      - name: Проверить целость файла данных
+        run: python3 -m json.tool data/payments.json > /dev/null
+
+      - name: Пересобрать статичную разметку для поисковых роботов
+        run: python3 scripts/prerender_payments.py
+
+      - name: Сохранить изменения
+        run: |
+          git config user.name "finance-portal-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/payments.json index.html
+          if git diff --staged --quiet; then
+            echo "Изменений нет"
+          else
+            git commit -m "Даты выплат Битуах леуми: автообновление $(date +%Y-%m-%d)"
+            git pull --rebase origin main
+            git push
+          fi
+
+      - name: Issue при сбое
+        if: steps.run.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let body = 'Автообновление дат выплат Битуах леуми не смогло выполниться.\n\n';
+            try { body += '```\n' + fs.readFileSync('/tmp/out.txt','utf8').slice(0,4000) + '\n```'; } catch(e) {}
+            body += '\n\nСтраница работает на последних сохранённых датах.';
+            const { owner, repo } = context.repo;
+            const open = await github.rest.issues.listForRepo({ owner, repo, state: 'open', labels: 'payments' });
+            if (open.data.length) await github.rest.issues.createComment({ owner, repo, issue_number: open.data[0].number, body });
+            else await github.rest.issues.create({ owner, repo, title: 'Даты выплат: сбой автообновления', body, labels: ['payments'] });

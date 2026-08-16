@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://exodus611.github.io/finance-portal/sitemap.xml

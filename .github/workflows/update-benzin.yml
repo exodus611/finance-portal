@@ -1,0 +1,45 @@
+# Автообновление цены на бензин.
+name: Обновление цены на бензин
+
+on:
+  schedule:
+    # Каждый день в 04:10 по всемирному времени.
+    # Цену объявляют за два дня до конца месяца и вводят с первого числа,
+    # поэтому ежедневный запуск ловит её в тот же день, без ручного вмешательства.
+    - cron: "10 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Обновить данные
+        run: python3 scripts/benzin_update.py
+
+      - name: Проверить, что файл данных не сломан
+        run: python3 -m json.tool data/benzin.json > /dev/null
+
+      - name: Пересобрать статичную разметку для поисковых роботов
+        run: python3 scripts/benzin_prerender.py
+
+      - name: Сохранить изменения
+        run: |
+          git config user.name "finance-portal-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/benzin.json benzin.html
+          if git diff --staged --quiet; then
+            echo "Изменений нет"
+          else
+            git commit -m "Цена на бензин: обновление за $(date +%Y-%m-%d)"
+            git pull --rebase origin main
+            git push
+          fi

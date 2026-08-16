@@ -1,0 +1,241 @@
+/* Модуль «Скидка на арнону» — все стили изолированы в .arn-root */
+.arn-root{
+  --arn-bg:#ffffff;
+  --arn-surface:#f7f8fa;
+  --arn-surface-2:#eef1f6;
+  --arn-border:#dfe3ea;
+  --arn-text:#1d2430;
+  --arn-muted:#5d6675;
+  --arn-accent:#1f5fa9;
+  --arn-accent-soft:#e8f0fa;
+  --arn-warm:#8a5a00;
+  --arn-warm-soft:#fdf4e3;
+  --arn-good:#1f7a4d;
+  --arn-good-soft:#e7f4ed;
+  --arn-radius:14px;
+  --arn-radius-sm:9px;
+  --arn-gap:16px;
+  --arn-maxw:760px;
+  box-sizing:border-box;
+  max-width:var(--arn-maxw);
+  margin:0 auto;
+  padding:18px 16px 60px;
+  color:var(--arn-text);
+  background:var(--arn-bg);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.62;
+  overflow-x:clip;
+}
+.arn-root *,.arn-root *::before,.arn-root *::after{box-sizing:inherit;min-width:0}
+.arn-root h1,.arn-root h2,.arn-root h3,.arn-root h4{
+  margin:0 0 10px;line-height:1.3;font-weight:700;letter-spacing:-.01em}
+.arn-root h1{font-size:clamp(22px,5.2vw,31px)}
+.arn-root h2{font-size:clamp(19px,4.2vw,24px);margin-top:6px}
+.arn-root h3{font-size:clamp(17px,3.6vw,19px)}
+.arn-root h4{font-size:16px}
+.arn-root p{margin:0 0 12px}
+.arn-root ul,.arn-root ol{margin:0 0 12px;padding-inline-start:22px}
+.arn-root li{margin-bottom:7px}
+.arn-root a{color:var(--arn-accent);text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}
+.arn-root a:hover{text-decoration:none}
+.arn-root strong{font-weight:700}
+
+.arn-head{margin-bottom:22px}
+.arn-lead{font-size:clamp(15px,3.4vw,17px);color:var(--arn-muted);margin-bottom:14px}
+.arn-updated{
+  display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;
+  background:var(--arn-surface);border:1px solid var(--arn-border);
+  border-radius:999px;padding:7px 14px;font-size:14px;color:var(--arn-muted)}
+.arn-updated b{color:var(--arn-text);font-weight:600}
+
+.arn-section{margin:30px 0 0;padding-top:24px;border-top:1px solid var(--arn-border)}
+
+/* Аккордеон для второстепенных разделов */
+.arn-acc{border:1px solid var(--arn-border);border-radius:12px;padding-inline:16px;background:var(--arn-card,#fff);overflow:hidden}
+.arn-acc>summary{cursor:pointer;list-style:none;padding-block:15px;font-size:19px;font-weight:700;
+  display:flex;align-items:center;gap:10px;color:var(--arn-text)}
+.arn-acc>summary::-webkit-details-marker{display:none}
+.arn-acc>summary::before{content:'▸';font-size:14px;color:var(--arn-accent);transition:transform .2s ease;flex:0 0 auto}
+.arn-acc[open]>summary::before{transform:rotate(90deg)}
+.arn-acc[open]>summary{padding-block-end:6px}
+.arn-acc>summary:hover{color:var(--arn-accent)}
+.arn-acc>*:not(summary):last-child{padding-block-end:18px}
+.arn-section:first-of-type{border-top:0;padding-top:0}
+
+.arn-card{
+  background:var(--arn-surface);border:1px solid var(--arn-border);
+  border-radius:var(--arn-radius);padding:18px;margin:14px 0}
+.arn-card--accent{background:var(--arn-accent-soft);border-color:#c9dcf2}
+.arn-card--warm{background:var(--arn-warm-soft);border-color:#f0dcb4}
+.arn-card--good{background:var(--arn-good-soft);border-color:#c3e3d2}
+
+.arn-quote{
+  margin:12px 0;padding:13px 16px;background:var(--arn-bg);
+  border:1px solid var(--arn-border);border-inline-start:3px solid var(--arn-accent);
+  border-radius:var(--arn-radius-sm)}
+.arn-quote .arn-he{
+  direction:rtl;text-align:right;font-size:16px;color:var(--arn-text);
+  margin-bottom:6px;unicode-bidi:isolate}
+.arn-quote .arn-tr{font-size:15px;color:var(--arn-muted);font-style:italic}
+
+.arn-he-inline{direction:rtl;unicode-bidi:isolate;font-size:.97em}
+
+/* Уровни норм */
+.arn-levels{display:grid;gap:12px;margin:14px 0}
+@media(min-width:720px){.arn-levels{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.arn-level{
+  background:var(--arn-bg);border:1px solid var(--arn-border);
+  border-radius:var(--arn-radius);padding:15px;position:relative}
+.arn-level__n{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:26px;height:26px;border-radius:50%;background:var(--arn-accent);
+  color:#fff;font-size:14px;font-weight:700;margin-bottom:9px}
+.arn-level__kind{font-size:13px;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--arn-muted);font-weight:600;margin-bottom:5px}
+.arn-level__name{font-weight:700;margin-bottom:3px;font-size:15px}
+.arn-level__he{direction:rtl;unicode-bidi:isolate;font-size:13px;
+  color:var(--arn-muted);margin-bottom:7px;text-align:right}
+.arn-level__art{display:inline-block;font-size:13px;background:var(--arn-surface-2);
+  border-radius:6px;padding:2px 8px;margin-bottom:8px;color:var(--arn-muted)}
+.arn-level__what{font-size:14px;color:var(--arn-muted);margin:0}
+
+/* Калькулятор */
+.arn-calc{display:grid;gap:14px}
+.arn-field{display:grid;gap:6px}
+.arn-field label{font-size:14px;font-weight:600}
+.arn-field .arn-hint{font-size:13px;color:var(--arn-muted);font-weight:400}
+.arn-root input[type="number"],.arn-root input[type="text"],
+.arn-root input[type="date"],.arn-root select{
+  width:100%;min-width:0;padding:11px 13px;font-size:16px;font-family:inherit;
+  color:var(--arn-text);background:var(--arn-bg);
+  border:1px solid var(--arn-border);border-radius:var(--arn-radius-sm)}
+.arn-root input:focus,.arn-root select:focus{
+  outline:2px solid var(--arn-accent);outline-offset:1px;border-color:var(--arn-accent)}
+.arn-row{display:grid;gap:12px}
+@media(min-width:600px){.arn-row--2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.arn-out{
+  background:var(--arn-bg);border:1px solid var(--arn-border);
+  border-radius:var(--arn-radius);padding:16px;margin-top:4px}
+.arn-out__row{display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;padding:9px 0;border-bottom:1px dashed var(--arn-border);flex-wrap:wrap}
+.arn-out__row:last-child{border-bottom:0}
+.arn-out__label{color:var(--arn-muted);font-size:15px}
+.arn-out__val{font-weight:700;font-size:clamp(17px,4vw,21px);
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.arn-out__val--big{font-size:clamp(21px,5.5vw,27px);color:var(--arn-good)}
+.arn-note{font-size:13.5px;color:var(--arn-muted);margin-top:10px}
+
+/* Срок для репатрианта */
+.arn-timer{text-align:center;padding:6px 0}
+.arn-timer__val{font-size:clamp(26px,7vw,38px);font-weight:700;line-height:1.15;
+  font-variant-numeric:tabular-nums}
+.arn-timer__cap{font-size:14px;color:var(--arn-muted);margin-top:4px}
+.arn-bar{height:9px;background:var(--arn-surface-2);border-radius:99px;
+  overflow:hidden;margin:13px 0 7px}
+.arn-bar__fill{height:100%;background:var(--arn-accent);border-radius:99px;
+  transition:width .35s ease;width:0}
+
+/* Таблица категорий */
+.arn-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;
+  border:1px solid var(--arn-border);border-radius:var(--arn-radius);margin:14px 0}
+.arn-table{width:100%;min-width:600px;border-collapse:collapse;font-size:14.5px;background:var(--arn-bg)}
+
+.arn-cat-list{display:flex;flex-direction:column;gap:9px;margin-top:12px}
+.arn-cat-card{border:1px solid var(--arn-border);border-radius:11px;padding:12px 14px;background:var(--arn-surface,#f7f8fa)}
+.arn-cat-card__top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:5px}
+.arn-cat-card__who{font-size:14.5px;line-height:1.45;margin-bottom:5px}
+.arn-cat-card__limits{font-size:13px;color:var(--arn-muted,#667);margin-bottom:7px}
+.arn-table th,.arn-table td{padding:11px 13px;text-align:start;
+  border-bottom:1px solid var(--arn-border);vertical-align:top}
+.arn-table thead th{background:var(--arn-surface-2);font-weight:700;font-size:13.5px;
+  position:sticky;top:0;white-space:nowrap}
+.arn-table tbody tr:last-child td{border-bottom:0}
+.arn-table tbody tr:hover{background:var(--arn-surface)}
+.arn-art{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;
+  background:var(--arn-surface-2);border-radius:5px;padding:2px 6px;white-space:nowrap;
+  direction:ltr;unicode-bidi:isolate;display:inline-block}
+.arn-ceil{font-weight:700;white-space:nowrap}
+.arn-term{display:block;font-size:13px;color:var(--arn-muted);margin-top:3px}
+.arn-term .arn-he-inline{margin-inline-start:4px}
+
+.arn-badge{display:inline-block;font-size:12.5px;font-weight:600;
+  padding:3px 9px;border-radius:99px;white-space:nowrap}
+.arn-badge--easy{background:var(--arn-good-soft);color:var(--arn-good)}
+.arn-badge--mid{background:var(--arn-accent-soft);color:var(--arn-accent)}
+.arn-badge--hard{background:var(--arn-warm-soft);color:var(--arn-warm)}
+
+.arn-legend{display:grid;gap:10px;margin:14px 0}
+@media(min-width:700px){.arn-legend{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.arn-legend__item{background:var(--arn-bg);border:1px solid var(--arn-border);
+  border-radius:var(--arn-radius-sm);padding:12px}
+.arn-legend__item p{margin:7px 0 0;font-size:13.5px;color:var(--arn-muted)}
+
+/* Шаги */
+.arn-steps{list-style:none;padding:0;margin:14px 0;counter-reset:arnstep}
+.arn-step{display:grid;grid-template-columns:34px minmax(0,1fr);gap:13px;
+  padding:14px 0;border-bottom:1px solid var(--arn-border)}
+.arn-step:last-child{border-bottom:0}
+.arn-step__n{width:30px;height:30px;border-radius:50%;background:var(--arn-accent);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:15px}
+.arn-step__t{font-weight:700;margin-bottom:3px}
+.arn-step__b{font-size:15px;color:var(--arn-muted);margin:0}
+
+/* Обжалование */
+.arn-appeal{display:grid;gap:11px;margin:14px 0}
+.arn-appeal__item{background:var(--arn-bg);border:1px solid var(--arn-border);
+  border-radius:var(--arn-radius-sm);padding:13px;
+  display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;align-items:start}
+.arn-appeal__n{width:26px;height:26px;border-radius:50%;background:var(--arn-surface-2);
+  color:var(--arn-text);display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:14px}
+.arn-appeal__t{font-weight:600}
+.arn-appeal__d{font-size:13.5px;color:var(--arn-muted);margin-top:2px}
+
+/* Документы-чеклист */
+.arn-docs{list-style:none;padding:0;margin:12px 0}
+.arn-docs li{position:relative;padding-inline-start:28px;margin-bottom:9px;font-size:15px}
+.arn-docs li::before{content:"";position:absolute;inset-inline-start:0;top:6px;
+  width:16px;height:16px;border:2px solid var(--arn-accent);border-radius:4px}
+
+/* Вопросы */
+.arn-faq details{background:var(--arn-surface);border:1px solid var(--arn-border);
+  border-radius:var(--arn-radius-sm);margin-bottom:9px;overflow:hidden}
+.arn-faq summary{padding:13px 15px;cursor:pointer;font-weight:600;font-size:15.5px;
+  list-style:none;position:relative;padding-inline-end:40px}
+.arn-faq summary::-webkit-details-marker{display:none}
+.arn-faq summary::after{content:"+";position:absolute;inset-inline-end:15px;top:11px;
+  font-size:21px;font-weight:400;color:var(--arn-muted);line-height:1}
+.arn-faq details[open] summary::after{content:"–"}
+.arn-faq details[open] summary{border-bottom:1px solid var(--arn-border)}
+.arn-faq__a{padding:13px 15px;font-size:15px;color:var(--arn-muted)}
+.arn-faq__a p:last-child{margin-bottom:0}
+
+/* Словарь */
+.arn-gloss{display:grid;gap:9px;margin:14px 0}
+@media(min-width:640px){.arn-gloss{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.arn-gloss__item{background:var(--arn-surface);border:1px solid var(--arn-border);
+  border-radius:var(--arn-radius-sm);padding:11px 13px;font-size:14.5px}
+.arn-gloss__ru{font-weight:700}
+.arn-gloss__he{direction:rtl;unicode-bidi:isolate;color:var(--arn-muted);
+  margin-inline-start:7px;font-size:14px}
+.arn-gloss__d{display:block;color:var(--arn-muted);font-size:13.5px;margin-top:3px}
+
+.arn-sources{list-style:none;padding:0;margin:12px 0}
+.arn-sources li{padding:9px 0;border-bottom:1px solid var(--arn-border);font-size:14.5px}
+.arn-sources li:last-child{border-bottom:0}
+.arn-sources .arn-he-inline{color:var(--arn-muted);font-size:13.5px;display:block;margin-top:2px}
+
+.arn-disclaimer{font-size:13.5px;color:var(--arn-muted);
+  background:var(--arn-surface);border:1px solid var(--arn-border);
+  border-radius:var(--arn-radius-sm);padding:14px;margin-top:22px}
+
+@media print{
+  .arn-root{max-width:none;padding:0}
+  .arn-faq details{break-inside:avoid}
+  .arn-faq details summary::after{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .arn-root *{transition:none!important;animation:none!important}
+}

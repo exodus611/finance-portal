@@ -1,0 +1,405 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308775a'/><text x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='900' fill='white' text-anchor='middle'>₪</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#08775a">
+<title>Калькулятор кредита (ссуды) в Израиле — платёж, переплата, срок | 2026</title>
+<link rel="canonical" href="https://exodus611.github.io/finance-portal/kredit.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Калькулятор кредита (ссуды) в Израиле">
+<meta property="og:description" content="Платёж, полная переплата и эффективная ставка по краткосрочной ссуде — с сравнением разных сроков.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://exodus611.github.io/finance-portal/kredit.html">
+<meta property="og:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Рассчитайте ежемесячный платёж и полную переплату по краткосрочной ссуде в Израиле. Сравните разные сроки и узнайте цену досрочного погашения.">
+<style>
+html{scroll-behavior:smooth}
+:root{--ink:#15251f;--muted:#5a6660;--paper:#f4f1e9;--card:#fffdf8;--line:#ddd6c7;--green:#08775a;--green2:#0d9671;--gold:#c29b52;--red:#b84b3e;--blue:#30779a;--purple:#7857b8;--shadow:0 16px 40px rgba(26,45,37,.08);--r:18px}
+*{box-sizing:border-box}
+html{overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.45;overflow-x:hidden;max-width:100vw}
+button,input,select{font:inherit}
+.shell{width:min(900px,calc(100% - 28px));margin:auto}
+.top{padding:18px 0}
+.topbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;row-gap:6px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:850}
+.mark{width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,var(--green2),var(--green) 70%);color:#fff;display:grid;place-items:center;font-size:32px;font-weight:900;box-shadow:0 6px 18px rgba(8,119,90,.45);border:2px solid rgba(255,255,255,.55)}
+.privacy{font-size:12px;color:var(--muted)}
+.hero{padding:35px 0 10px;text-align:center}
+.eyebrow{font-size:12px;color:var(--green);font-weight:900;text-transform:uppercase;letter-spacing:.09em}
+.hero h1{font-size:clamp(30px,5.5vw,48px);line-height:1.08;letter-spacing:-.03em;margin:10px auto 14px;max-width:700px}
+.hero p{font-size:15.5px;color:var(--muted);max-width:600px;margin:0 auto}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;margin:20px 0;box-shadow:var(--shadow)}
+.title{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+.num{width:32px;height:32px;border-radius:10px;background:var(--green);color:#fff;font-weight:900;display:grid;place-items:center;flex:0 0 32px;font-size:14px}
+.title h2{margin:0 0 3px;font-size:19px}
+.title p{margin:0;font-size:12.5px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field label{display:block;font-size:12px;font-weight:800;color:var(--muted);margin-bottom:6px}
+.field .wrap{display:flex;align-items:center;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.field input,.field select{border:none;background:transparent;padding:11px 12px;width:100%;font-size:14px;color:var(--ink)}
+.field .wrap span{padding:0 12px;color:var(--muted);font-size:12.5px;font-weight:700}
+.primary{width:100%;margin-top:6px;background:var(--green);color:#fff;border:none;border-radius:14px;padding:14px;font-size:14.5px;font-weight:800;cursor:pointer}
+.primary:hover{background:var(--green2)}
+.results{display:none}
+.results.show{display:block}
+.big-result{text-align:center;padding:20px 0 8px}
+.big-result .amount{font-size:38px;font-weight:900;color:var(--green)}
+.big-result .label{font-size:12.5px;color:var(--muted);margin-top:2px}
+.breakdown{display:grid;gap:8px;margin-top:16px}
+.line{display:flex;justify-content:space-between;background:var(--paper);border-radius:10px;padding:10px 13px;font-size:13px}
+.line b{font-weight:800}
+.scenario-table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px}
+.scenario-table th{background:var(--ink);color:#fff;padding:9px;text-align:right;font-weight:700}
+.scenario-table th:first-child,.scenario-table td:first-child{text-align:left}
+.scenario-table td{padding:9px;text-align:right;border-bottom:1px solid var(--line)}
+.scenario-table tr.current{background:#eaf6f0;font-weight:800}
+.info{background:#faf8f2;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:12px;color:var(--muted);margin-top:16px}
+.info b{color:var(--ink)}
+details{border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-top:10px;background:#fff}
+details summary{cursor:pointer;font-weight:800;font-size:13px}
+.detail{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.6}
+.term{background:#fff;border:1px dashed var(--line);padding:1px 5px;border-radius:5px;font-size:.94em}
+.disclaimer{font-size:11px;color:var(--muted);line-height:1.6;background:#fff9e9;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:14px 16px}
+/* tabs + modal (единый паттерн со всеми калькуляторами портала) */
+.view-tabs{width:min(900px,calc(100% - 28px));margin:14px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);position:sticky;top:8px;z-index:90}
+.view-tab{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 6px;border-radius:9px;border:none;background:transparent;color:var(--muted);font-family:inherit;font-size:12px;font-weight:800;cursor:pointer}
+.view-tab b{font-size:10px;font-weight:600;opacity:.75}
+.view-tab.active{background:var(--green);color:#fff}
+.view-tab.active b{color:#fff;opacity:.85}
+.view-tab:hover:not(.active){background:var(--paper);color:var(--green)}
+.view-panel{display:none}
+.view-panel.active{display:block}
+@media(max-width:560px){.view-tabs{width:calc(100% - 18px);position:relative;top:auto}.view-tab{padding:8px 4px;font-size:10.5px}.grid{grid-template-columns:1fr}}
+.result-modal-overlay{display:none;position:fixed;inset:0;background:rgba(21,37,31,.55);z-index:200;align-items:flex-end;justify-content:center}
+.result-modal-overlay.show{display:flex}
+.result-modal{background:var(--card);border-radius:18px 18px 0 0;max-width:480px;width:100%;padding:20px 20px 22px;box-shadow:0 -8px 30px rgba(0,0,0,.25);animation:modalUp .22s ease-out}
+@media(min-width:640px){.result-modal-overlay{align-items:center;padding:20px}.result-modal{border-radius:18px}}
+@keyframes modalUp{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}
+.result-modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px}
+.result-modal-head h3{margin:0;font-size:17px;color:var(--green)}
+.result-modal-close{border:none;background:var(--paper);color:var(--muted);width:30px;height:30px;border-radius:50%;font-size:15px;cursor:pointer;flex:0 0 30px}
+.result-modal-big{font-size:27px;font-weight:900;color:var(--ink);margin:6px 0 2px}
+.result-modal-sub{font-size:12px;color:var(--muted);margin-bottom:12px}
+.result-modal-rows{display:grid;gap:6px;margin-bottom:14px}
+.result-modal-row{display:flex;flex-direction:column;gap:4px;font-size:12.5px;background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:10px 12px}
+.result-modal-row span{font-size:10.5px;font-weight:900;text-transform:uppercase;letter-spacing:.03em;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:5px;margin-bottom:1px}
+.result-modal-row b{font-weight:600;color:var(--ink);line-height:1.5}
+.result-modal-actions{display:flex;gap:8px}
+.result-modal-actions button{flex:1;border-radius:11px;padding:11px;font-weight:850;font-size:13px;cursor:pointer;border:1px solid var(--line)}
+.result-modal-actions .rm-primary{background:var(--green);color:#fff;border-color:var(--green)}
+.result-modal-actions .rm-secondary{background:transparent;color:var(--muted)}
+.info-dot{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--muted);font-size:10px;cursor:pointer;margin-inline-start:4px;padding:0;line-height:1}
+.info-dot:hover{background:var(--green);color:#fff;border-color:var(--green)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Калькулятор кредита (ссуды)",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "description": "Расчёт ежемесячного платежа, переплаты и эффективной ставки по краткосрочной ссуде в Израиле.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "ILS"
+  },
+  "inLanguage": "ru"
+}
+</script>
+<script data-goatcounter="https://finance-portal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body><noscript><div style="background:#fff6f4;border-bottom:2px solid #b84b3e;color:#b84b3e;text-align:center;padding:12px;font-family:sans-serif;font-size:13px">Для работы калькуляторов нужен включённый JavaScript в браузере.</div></noscript>
+<header class="top"><div class="shell topbar"><div class="logo"><span class="mark">💳</span><span>Понятные финансы в Израиле</span></div><div class="privacy">Без регистрации · расчёты только в браузере</div><a href="index.html" style="font-size:12px;font-weight:800;color:var(--green);text-decoration:none;white-space:nowrap;margin-inline-start:14px">← На главную</a><select onchange="if(this.value)location.href=this.value" style="font-size:11.5px;font-weight:700;color:var(--green);border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:#fff;margin-inline-start:8px;cursor:pointer"><option value="">Все калькуляторы ▾</option><option value="salary.html">💰 Зарплата</option><option value="mashkanta.html">🏠 Машканта</option><option value="auto.html">🚗 Автомобиль</option><option value="arenda-vs-pokupka.html">⚖️ Аренда vs покупка</option><option value="mihzur-mashkanta.html">🔄 Рефинансирование</option><option value="siluk-mukdam.html">💎 Погашение vs инвестиции</option><option value="mas-rehisha.html">🏛️ Мас рехиша</option><option value="mas-shevach.html">📉 Мас шевах</option><option value="pension-gap.html">🧓 Пенсионный разрыв</option><option value="keren-hishtalmut.html">🎓 Фонд повышения квалификации</option><option value="nekudot-zikuy.html">🎯 Некудот зикуй</option><option value="valuta.html">💱 Курс валют</option><option value="tablo.html">📊 Экономика сегодня</option><option value="benzin.html">⛽ Цена на бензин</option><option value="arnona.html">🏛️ Скидка на арнону</option><option value="dira.html">🏗️ Дира бе-ханаха</option><option value="avtala.html">📋 Дмей автала</option><option value="nko.html">🤝 Благотворительные НКО</option><option value="slovar.html">📖 Словарь терминов</option></select></div></header>
+<section class="hero shell"><div class="eyebrow">Калькулятор кредита</div><h1>Сколько на самом деле стоит ссуда</h1><p>Не только ежемесячный платёж — а полная переплата, и что изменится, если взять её на другой срок.</p><p style="margin-top:10px"><span style="background:#eaf6f0;color:var(--green);border-radius:20px;padding:5px 12px;font-size:11.5px;font-weight:700">✓ Модель актуальна на 2026 год</span></p></section>
+
+<nav class="view-tabs" id="view-tabs">
+    <button class="view-tab active" id="tab-input" onclick="setActiveView('input')"><span>Ввод</span><b>сумма и срок</b></button>
+    <button class="view-tab" id="tab-result" onclick="setActiveView('result')"><span>Результат</span><b>платёж и переплата</b></button>
+    <button class="view-tab" id="tab-explain" onclick="setActiveView('explain')"><span>Разберись</span><b>эффективная ставка, досрочное</b></button>
+</nav>
+
+<main class="shell">
+
+<section class="card">
+<div class="title"><span class="num">1</span><div><h2>Условия ссуды</h2><p>Введите параметры так, как они указаны в предложении банка.</p></div></div>
+<div class="grid">
+<div class="field"><label>Сумма ссуды</label><div class="wrap"><input id="principal" type="number" value="30000" step="1000" min="0"><span>₪</span></div></div>
+<div class="field"><label>Тип ставки</label><div class="wrap" style="padding:0"><select id="rateType" onchange="onRateTypeChange()" style="width:100%;padding:11px 12px;border:none;background:transparent">
+<option value="fixed">Фиксированная (не меняется)</option>
+<option value="prime">Привязана к Прайм (плавающая)</option>
+</select></div></div>
+<div class="field" id="fixedRateBox"><label>Годовая процентная ставка (номинальная)</label><div class="wrap"><input id="rate" type="number" value="9.5" step="0.1" min="0"><span>%</span></div></div>
+<div class="field" id="primeSpreadBox" style="display:none">
+<label>Спред к Прайм <span style="font-weight:500;color:var(--muted)">— например «Прайм −0.5» пишем как −0.5</span></label>
+<div class="wrap"><input id="primeSpread" type="number" value="-0.5" step="0.1"><span>%</span></div>
+<p id="primeEffectiveNote" style="font-size:11.5px;color:var(--muted);margin:6px 0 0">Текущий Прайм: <b id="primeCurrentVal">5.00%</b> → эффективная ставка сейчас: <b id="primeEffectiveVal">4.50%</b>. Ставка меняется вслед за решениями Банка Израиля — платёж может как вырасти, так и снизиться.</p>
+</div>
+<div class="field"><label>Срок ссуды</label><div class="wrap"><input id="months" type="number" value="36" step="1" min="1"><span>мес.</span></div></div>
+<div class="field"><label>Разовая комиссия за оформление</label><div class="wrap"><input id="fee" type="number" value="0" step="50" min="0"><span>₪</span></div></div>
+</div>
+<button class="primary" id="run">Рассчитать платёж</button>
+</section>
+
+</main>
+
+<div id="view-panel-result-placeholder"></div>
+
+<main class="shell" style="display:none" id="hidden-source">
+<section class="card results" id="results">
+<div class="title"><span class="num">2</span><div><h2>Результат</h2><p>Платёж, полная переплата и что изменится при другом сроке.</p></div></div>
+<div class="big-result"><div class="amount" id="monthlyPayment">—</div><div class="label">₪ в месяц</div></div>
+<div class="breakdown">
+<div class="line"><span>Сумма ссуды</span><b id="sumPrincipal">—</b></div>
+<div class="line"><span>Итого выплат за весь срок</span><b id="sumTotal">—</b></div>
+<div class="line"><span>Переплата (только проценты и комиссия) <button class="info-dot" onclick="showTermInfo('overpay')" type="button">ⓘ</button></span><b id="sumOverpay">—</b></div>
+<div class="line"><span>Эффективная ставка <button class="info-dot" onclick="showTermInfo('effective')" type="button">ⓘ</button></span><b id="effectiveRate">—</b></div>
+</div>
+<div class="info" style="margin-top:20px"><b>А что если взять на другой срок?</b> Ниже — тот же кредит при том же проценте, только с другим сроком погашения.</div>
+<div style="overflow:auto;margin-top:10px"><table class="scenario-table" id="scenarioTable"><thead><tr><th>Срок</th><th>Платёж/мес</th><th>Переплата всего</th></tr></thead><tbody></tbody></table></div>
+<div class="info" style="margin-top:14px">💡 <b>Правило простое:</b> короче срок — выше ежемесячный платёж, но меньше переплата. Длиннее срок — платёж комфортнее, но за эту комфортность вы платите банку больше процентов.</div>
+</section>
+
+<section class="card">
+<div class="title"><span class="num">3</span><div><h2>Что нужно знать перед подписанием</h2><p>Термины, которые редко объясняют вслух.</p></div></div>
+
+<details open><summary>Что такое эффективная процентная ставка?</summary><div class="detail">Номинальная ставка в договоре — это как бы «цена в год». Эффективная ставка учитывает ещё и разовые комиссии, размазанные на весь срок ссуды — поэтому она почти всегда чуть выше номинальной. Сравнивать разные предложения банков нужно именно по эффективной ставке, а не по красивому числу на баннере.</div></details>
+
+<details><summary>«Прайм минус 0.5» — что это вообще значит</summary><div class="detail">Это не фиксированная цена, а формула: ваша ставка = текущий Прайм Банка Израиля минус (или плюс) фиксированная надбавка/скидка банка. Если Прайм сегодня 5.0%, а вам предложили «Прайм −0.5», ваша реальная ставка сейчас — 4.5%. Но когда Банк Израиля меняет свою ставку — меняется и ваш платёж, автоматически, без нового договора. «Прайм −0.5» сегодня может выглядеть выгоднее фиксированной ставки 9.5%, но через пару лет, если Прайм вырастет, реальная ставка может оказаться выше. Выбрали этот тип в калькуляторе выше — используйте актуальный Прайм, который подтягивается автоматически.</div></details>
+
+<details><summary>Досрочное погашение (<span class="term" lang="he" dir="rtl">פירעון מוקדם</span>) — не всегда бесплатно</summary><div class="detail">Погасить ссуду раньше срока обычно можно, но банк вправе взять компенсацию — это называется «комиссия за досрочное погашение». Её размер зависит от того, сколько осталось платить и как изменилась рыночная ставка с момента оформления кредита. Перед досрочным погашением стоит прямо спросить банк о точной сумме компенсации — иногда экономия на процентах перекрывает комиссию, а иногда нет.</div></details>
+
+<details><summary>Кредит или минус на счету — что дешевле?</summary><div class="detail">Если у вас уже есть минус (овердрафт) по текущему счёту, который «завис» на одной сумме месяцами — как правило, обычная целевая ссуда с фиксированной ставкой обходится дешевле, чем ежедневно капающий процент по овердрафту. Подробнее об этом — в статье «Минус на счету».</div><div style="margin-top:8px"><a href="article_minus.html" style="font-size:12px;font-weight:800;color:var(--green);text-decoration:none">Читать статью про минус →</a></div></details>
+
+<div class="disclaimer" style="margin-top:14px">Расчёт — модельный, для понимания механики. Точную ставку, комиссии и условия досрочного погашения уточняйте в конкретном банке — они отличаются у разных кредитных линий и зависят от вашей кредитной истории.</div>
+</section>
+</main>
+
+<footer class="shell" style="padding:26px 0 50px;color:var(--muted);font-size:11px;text-align:center">Понятные финансы в Израиле · калькулятор кредита · не финансовая консультация · <a href="contact.html" style="color:var(--green);font-weight:800;text-decoration:none">Написать нам</a></footer>
+
+<script>
+function $(id){return document.getElementById(id);}
+function fmt(n){return Math.round(n).toLocaleString('ru-RU');}
+
+var CURRENT_PRIME = 5.0; // дефолт, если rates.json недоступен
+
+function onRateTypeChange(){
+  const isPrime = $('rateType').value==='prime';
+  $('fixedRateBox').style.display = isPrime ? 'none' : 'block';
+  $('primeSpreadBox').style.display = isPrime ? 'block' : 'none';
+  updatePrimeNote();
+}
+function updatePrimeNote(){
+  const spread = parseFloat($('primeSpread').value)||0;
+  const eff = CURRENT_PRIME + spread;
+  $('primeCurrentVal').textContent = CURRENT_PRIME.toFixed(2)+'%';
+  $('primeEffectiveVal').textContent = eff.toFixed(2)+'%';
+}
+document.getElementById('primeSpread')?.addEventListener('input', updatePrimeNote);
+
+function getEffectiveAnnualRate(){
+  if($('rateType').value==='prime'){
+    const spread = parseFloat($('primeSpread').value)||0;
+    return Math.max(0, CURRENT_PRIME + spread);
+  }
+  return parseFloat($('rate').value)||0;
+}
+
+fetch('data/rates.json',{cache:'no-cache'})
+  .then(function(r){if(!r.ok)throw 0;return r.json()})
+  .then(function(j){ if(typeof j.prime==='number'){ CURRENT_PRIME=j.prime; updatePrimeNote(); } })
+  .catch(function(){ console.warn('rates.json недоступен, Прайм по умолчанию', CURRENT_PRIME); });
+
+function annuity(principal, monthlyRate, months){
+  if(monthlyRate===0) return principal/months;
+  return principal * monthlyRate / (1 - Math.pow(1+monthlyRate, -months));
+}
+
+function calc(){
+  const principal = parseFloat($('principal').value)||0;
+  const annualRate = getEffectiveAnnualRate();
+  const months = parseInt($('months').value)||1;
+  const fee = parseFloat($('fee').value)||0;
+  const monthlyRate = annualRate/100/12;
+
+  const payment = annuity(principal, monthlyRate, months);
+  const total = payment*months + fee;
+  const overpay = total - principal;
+
+  // effective rate: solve rate that explains (principal - fee) repaid via `payment` over `months`
+  // approximate via same annuity formula treating fee as reducing amount received
+  const netReceived = principal - fee;
+  let effRate = annualRate;
+  if(netReceived>0){
+    // binary search monthly rate r such that annuity(netReceived, r, months) == payment
+    let lo=0, hi=1;
+    for(let i=0;i<60;i++){
+      const mid=(lo+hi)/2;
+      const p = annuity(netReceived, mid, months);
+      if(p>payment) hi=mid; else lo=mid;
+    }
+    effRate = lo*12*100;
+  }
+
+  $('monthlyPayment').textContent = fmt(payment);
+  $('sumPrincipal').textContent = fmt(principal)+' ₪';
+  $('sumTotal').textContent = fmt(total)+' ₪';
+  $('sumOverpay').textContent = fmt(overpay)+' ₪';
+  $('effectiveRate').textContent = effRate.toFixed(2)+'%';
+
+  // scenario table: current, -12mo, -6mo, +6mo, +12mo (clamped to >=3)
+  const offsets = [-12,-6,0,6,12,24];
+  const tbody = $('scenarioTable').querySelector('tbody');
+  tbody.innerHTML='';
+  offsets.forEach(off=>{
+    const m = months+off;
+    if(m<3) return;
+    const p = annuity(principal, monthlyRate, m);
+    const t = p*m+fee;
+    const isCurrent = off===0;
+    const tr = document.createElement('tr');
+    if(isCurrent) tr.className='current';
+    tr.innerHTML = `<td>${m} мес.${isCurrent?' (сейчас)':''}</td><td>${fmt(p)} ₪</td><td>${fmt(t-principal)} ₪</td>`;
+    tbody.appendChild(tr);
+  });
+
+  $('results').classList.add('show');
+  return {payment, total, overpay, effRate};
+}
+
+function runAndShowModal(){
+  const r = calc();
+  showResultModal(
+    'Ваш платёж по ссуде',
+    fmt(r.payment)+' ₪/мес',
+    'Столько вы будете платить каждый месяц в течение всего срока',
+    [
+      ['Переплата за весь срок', fmt(r.overpay)+' ₪'],
+      ['Эффективная ставка', r.effRate.toFixed(2)+'% годовых']
+    ],
+    '📊 Смотреть сравнение сроков',
+    ()=>setActiveView('result')
+  );
+}
+$('run').onclick = runAndShowModal;
+
+/* --- вкладки --- */
+function buildViewPanels(){
+  const mains = document.querySelectorAll('main.shell');
+  const inputMain = mains[0];
+  const hiddenMain = document.getElementById('hidden-source');
+  const cards = hiddenMain.querySelectorAll(':scope > section.card');
+
+  const panelInput = document.createElement('div'); panelInput.id='view-panel-input'; panelInput.className='view-panel active';
+  panelInput.appendChild(inputMain.querySelector('section.card'));
+  inputMain.appendChild(panelInput);
+
+  const panelResult = document.createElement('div'); panelResult.id='view-panel-result'; panelResult.className='view-panel';
+  panelResult.appendChild(cards[0]);
+  inputMain.appendChild(panelResult);
+
+  const panelExplain = document.createElement('div'); panelExplain.id='view-panel-explain'; panelExplain.className='view-panel';
+  panelExplain.appendChild(cards[0]); // cards[0] already moved; re-query
+  inputMain.appendChild(panelExplain);
+
+  hiddenMain.remove();
+}
+// Исправленная версия сборки (без гонки индексов при перемещении узлов)
+function buildViewPanelsSafe(){
+  const inputMain = document.querySelectorAll('main.shell')[0];
+  const hiddenMain = document.getElementById('hidden-source');
+  const inputCard = inputMain.querySelector('section.card');
+  const hiddenCards = [...hiddenMain.querySelectorAll(':scope > section.card')];
+
+  const panelInput = document.createElement('div'); panelInput.id='view-panel-input'; panelInput.className='view-panel active';
+  panelInput.appendChild(inputCard);
+
+  const panelResult = document.createElement('div'); panelResult.id='view-panel-result'; panelResult.className='view-panel';
+  panelResult.appendChild(hiddenCards[0]);
+
+  const panelExplain = document.createElement('div'); panelExplain.id='view-panel-explain'; panelExplain.className='view-panel';
+  panelExplain.appendChild(hiddenCards[1]);
+
+  inputMain.appendChild(panelInput);
+  inputMain.appendChild(panelResult);
+  inputMain.appendChild(panelExplain);
+  hiddenMain.remove();
+}
+
+function setActiveView(name){
+  document.querySelectorAll('.view-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.view-tab').forEach(t=>t.classList.remove('active'));
+  const panel=document.getElementById('view-panel-'+name), tab=document.getElementById('tab-'+name);
+  if(panel) panel.classList.add('active');
+  if(tab) tab.classList.add('active');
+  document.getElementById('view-tabs').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function showResultModal(title,bigValue,subText,rows,actionLabel,actionFn){
+  let ov=document.getElementById('result-modal-overlay');
+  if(!ov){
+    ov=document.createElement('div');ov.id='result-modal-overlay';ov.className='result-modal-overlay';
+    ov.innerHTML='<div class="result-modal"><div class="result-modal-head"><h3 id="rm-title"></h3><button class="result-modal-close" onclick="closeResultModal()">✕</button></div><div class="result-modal-big" id="rm-big"></div><div class="result-modal-sub" id="rm-sub"></div><div class="result-modal-rows" id="rm-rows"></div><div class="result-modal-actions"><button class="rm-secondary" onclick="closeResultModal()">Закрыть</button><button class="rm-primary" id="rm-action-btn"></button></div></div>';
+    document.body.append(ov);
+    ov.addEventListener('click',e=>{if(e.target===ov)closeResultModal();});
+  }
+  document.getElementById('rm-title').textContent=title;
+  const bigEl=document.getElementById('rm-big');
+  if(bigValue){bigEl.textContent=bigValue;bigEl.style.display='';}else{bigEl.style.display='none';}
+  document.getElementById('rm-sub').textContent=subText;
+  document.getElementById('rm-rows').innerHTML=(rows||[]).map(r=>`<div class="result-modal-row"><span>${r[0]}</span><b>${r[1]}</b></div>`).join('');
+  const actBtn=document.getElementById('rm-action-btn');
+  if(actionLabel){actBtn.style.display='';actBtn.textContent=actionLabel;actBtn.onclick=()=>{closeResultModal();(actionFn||(()=>{}))();};}
+  else{actBtn.style.display='none';}
+  ov.classList.add('show');
+}
+function closeResultModal(){const ov=document.getElementById('result-modal-overlay');if(ov)ov.classList.remove('show');}
+
+const TERM_INFO = {
+  overpay: {
+    title: 'Переплата по кредиту',
+    big:'', sub:'Разница между тем, что вы взяли, и тем, что вернёте банку',
+    rows: [
+      ['Из чего складывается', 'Проценты, начисленные за весь срок, плюс разовая комиссия за оформление, если она была'],
+      ['Почему это не «плата за услугу»', 'Это цена времени — банк даёт вам деньги сейчас, а получает их обратно постепенно, и берёт за это процент']
+    ]
+  },
+  effective: {
+    title: 'Эффективная процентная ставка',
+    big:'', sub:'Настоящая цена кредита, не только красивое число на баннере',
+    rows: [
+      ['Номинальная ставка', 'То, что написано крупным шрифтом в рекламе — не учитывает разовые комиссии'],
+      ['Эффективная ставка', 'Учитывает и комиссию за оформление, размазанную на весь срок — почти всегда чуть выше номинальной'],
+      ['Как сравнивать предложения', 'Смотрите именно на эффективную ставку у разных банков — только так сравнение будет честным']
+    ]
+  }
+};
+function showTermInfo(key){
+  const t=TERM_INFO[key]; if(!t) return;
+  showResultModal(t.title, t.big, t.sub, t.rows, null, null);
+}
+
+document.addEventListener('DOMContentLoaded', buildViewPanelsSafe);
+</script>
+
+<button id="scrollToTop" title="Наверх" aria-label="Прокрутить наверх" style="display:none;position:fixed;bottom:20px;right:20px;width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;border:none;font-size:18px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.2);z-index:150">↑</button>
+<script>
+(function(){
+  var btn = document.getElementById('scrollToTop');
+  if(!btn) return;
+  window.addEventListener('scroll', function(){
+    btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  });
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+</body></html>
