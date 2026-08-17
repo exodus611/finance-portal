@@ -2,7 +2,7 @@
   "_comment": "Единственный файл с данными. Заполняется скриптом scripts/auto_update.py.",
   "schema_version": 1,
   "year": 2026,
-  "updated": "2026-08-02",
+  "updated": "2026-08-17",
   "updated_by": "auto",
   "rules": {
     "age_min": 20,
@@ -255,17 +255,15 @@
     "minimum_wage_since": "2026-04-01"
   },
   "auto": {
-    "last_run": "2026-08-02T18:48:43+00:00",
+    "last_run": "2026-08-17T06:04:05+00:00",
     "ok": false,
-    "sources_used": [
-      "Коль Зхут (резерв)",
-      "data.gov.il — минимальная зарплата"
-    ],
-    "notes": [
-      "Коль Зхут (резерв): получены ставки и потолки."
-    ],
+    "sources_used": [],
+    "notes": [],
     "warnings": [
-      "Битуах Леуми недоступен (страница слишком короткая (252 байт))."
+      "Битуах Леуми недоступен ('latin-1' codec can't encode characters in position 77-84: ordinal not in range(256)).",
+      "Коль Зхут (резерв) недоступен ('latin-1' codec can't encode characters in position 77-84: ordinal not in range(256)).",
+      "Все источники ставок недоступны — используются последние сохранённые значения.",
+      "Минимальная зарплата недоступна ('latin-1' codec can't encode characters in position 77-84: ordinal not in range(256))."
     ]
   },
   "organizations": [
