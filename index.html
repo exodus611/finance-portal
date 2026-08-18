@@ -137,16 +137,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     if(d<=now) d=shifted(y,m+1);
     return d;
   }
-  // Дата ежемесячной выплаты Битуах леуми: берём проверенное число из
-  // payments.json, но если оно уже прошло — переносим на тот же день
-  // следующего месяца. Иначе к концу месяца тикер залипал на прошедшей дате.
-  function blNextDate(){
-    var p=window.__paymentsData;
-    if(!p||!p.self_employed) return next15th();
-    var iso=p.self_employed.split('-');
-    var y=+iso[0], m=+iso[1]-1, day=+iso[2];
+  // Дата выплаты Битуах леуми: берём проверенное число из payments.json,
+  // но если оно уже прошло — переносим на тот же день следующего месяца.
+  // Иначе к концу месяца тикер залипал на прошедшей дате.
+  function blNext(iso, fallbackDay){
+    if(!iso) return fallbackDay?next15th():null;
+    var p=iso.split('-');
+    var y=+p[0], m=+p[1]-1, day=+p[2];
     var d=new Date(y,m,day);
-    if(daysUntil(d)>=0) return d;          // дата ещё впереди — она точная, берём её
+    if(daysUntil(d)>=0) return d;          // дата ещё впереди — она точная
     var n=new Date(y,m+1,day);             // прошла — тот же день следующего месяца
     var dow=n.getDay();                     // Битуах леуми сдвигает ВПЕРЁД на будний
     if(dow===5) n.setDate(n.getDate()+3);
@@ -164,7 +163,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     events.push({label:'Публикация индекса потребительских цен (מדד)', date:cbs, href:'tablo.html'});
     var fuel=nextMonthFirst();
     events.push({label:'Пересмотр цены на бензин', date:fuel, href:'benzin.html'});
-    events.push({label:'Взносы Битуах Леуми (самозанятые)', date:blNextDate(), href:'salary.html'});
+
+    // ВСЕ выплаты Битуах леуми, а не только взносы самозанятых.
+    // Даты приходят с официальной страницы расписания (scripts/update_payments.py).
+    var pay=window.__paymentsData||{};
+    var BL=[
+      {k:'unemployment',  label:'Пособие по безработице и гарантия дохода (דמי אבטלה, הבטחת הכנסה)', href:'avtala.html'},
+      {k:'self_employed', label:'Взносы Битуах леуми — самозанятые и работодатели', href:'salary.html'},
+      {k:'children',      label:'Пособие на детей (קצבת ילדים)', href:'tablo.html'},
+      {k:'long_term',     label:'Пенсия по старости, инвалидность, сиюд и другие (קצבאות ארוכות מועד)', href:'pension-gap.html'}
+    ];
+    BL.forEach(function(b){
+      var d=blNext(pay[b.k], b.k==='self_employed');
+      if(d) events.push({label:b.label, date:d, href:b.href, bl:b.k});
+    });
 
     // Отсеиваем всё, что уже прошло: раньше просроченная дата оставалась
     // первой в списке и тикер намертво вставал на ней со словом «сегодня».
@@ -188,10 +200,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     panel.innerHTML=events.map(function(e){
       var d=daysUntil(e.date);
       var when=d===0?'сегодня':(d===1?'завтра':'через '+d+' дн.');
-      return '<a href="'+e.href+'" style="display:flex;justify-content:space-between;gap:10px;color:#3d4a3e;text-decoration:none;padding:6px 0;border-bottom:1px solid #ddd6c7">'+
+      var row='<a href="'+e.href+'" style="display:flex;justify-content:space-between;gap:10px;color:#3d4a3e;text-decoration:none;padding:6px 0;border-bottom:1px solid #ddd6c7">'+
         '<span>'+e.label+'</span><span style="white-space:nowrap;font-weight:700;color:#08775a">'+fmtDate(e.date)+
         ' <span style="font-weight:500;color:#5a6660">· '+when+'</span></span></a>';
-    }).join('');
+      // «Длинные пособия» — это одна дата на 11 разных выплат. Расшифровываем,
+      // чтобы человек нашёл именно своё, а не гадал по общей формулировке.
+      if(e.bl==='long_term' && pay.long_term_items && pay.long_term_items.length){
+        row+='<div style="font-size:11px;color:#5a6660;padding:2px 0 8px;line-height:1.7;border-bottom:1px solid #ddd6c7">'+
+          'В эту дату платят: '+pay.long_term_items.map(function(it){
+            return '<span style="white-space:nowrap">'+it.ru+' <span lang="he" dir="rtl" style="opacity:.75">('+it.he+')</span></span>';
+          }).join(' · ')+'</div>';
+      }
+      return row;
+    }).join('')+
+    '<div style="font-size:10.5px;color:#5a6660;padding:8px 0 0;line-height:1.5">Даты берутся автоматически с официальной страницы расписания выплат Битуах леуми. Если дата уже прошла — показываем следующий месяц.</div>';
   };
   // Пересчёт в полночь: страница, открытая сутками (телефон в фоне),
   // больше не показывает вчерашние «сегодня».
@@ -212,7 +234,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 <section class="hero" style="padding-top:6px">
 <div class="eyebrow">Финансы для жизни в Израиле · 2026</div>
 <h1 style="margin:2px 0 6px">Ваши деньги — простыми словами</h1>
-<p style="font-size:13.5px;margin:0">20 бесплатных калькуляторов и живое табло экономики. Мы не советуем, что вам делать — мы показываем цифры, а решение остаётся за вами.</p>
+<p style="font-size:13.5px;margin:0">21 бесплатный калькулятор и живое табло экономики. Мы не советуем, что вам делать — мы показываем цифры, а решение остаётся за вами.</p>
 </section>
 
 <div style="display:flex;align-items:center;gap:9px;max-width:640px;margin:12px auto 0;padding:9px 14px;background:#fff;border:1px solid var(--line);border-radius:12px">
@@ -310,7 +332,7 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 
 
 <h2 style="text-align:center;font-size:22px;letter-spacing:-.02em;max-width:600px;margin:28px auto 4px">Выберите калькулятор</h2>
-<p style="text-align:center;font-size:13px;color:var(--muted);max-width:600px;margin:0 auto 14px;line-height:1.5">20 бесплатных калькуляторов, живое табло экономики и словарь терминов — всё считается прямо в браузере, без регистрации</p>
+<p style="text-align:center;font-size:13px;color:var(--muted);max-width:600px;margin:0 auto 14px;line-height:1.5">21 бесплатный калькулятор, живое табло экономики и словарь терминов — всё считается прямо в браузере, без регистрации</p>
 
 <div class="fx-tabs" id="fx-tabs">
   <button class="fx-tab active" data-cat="housing">🏠 Жильё</button>
@@ -336,6 +358,7 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 <a class="fx-row" data-cat="salary" href="pension-gap.html" aria-label="Калькулятор пенсионного разрыва"><div class="fx-ico" style="background:#f2eefa;color:#7857b8">🧓</div><div class="fx-txt"><h3>Пенсионный разрыв</h3><p>Хватит ли вам на пенсии — честно, с кицват зикна</p></div><span class="fx-arrow">→</span></a>
 <a class="fx-row" data-cat="salary" href="keren-hishtalmut.html" aria-label="Калькулятор фонда повышения квалификации"><div class="fx-ico" style="background:#eafaf3;color:#0a8f6b">🎓</div><div class="fx-txt"><h3>Фонд повышения квалификации</h3><p>Рост фонда без налога — с правильными двумя потолками для самозанятых</p></div><span class="fx-arrow">→</span></a>
 <a class="fx-row" data-cat="salary" href="nekudot-zikuy.html" aria-label="Калькулятор налоговых баллов некудот зикуй"><div class="fx-ico" style="background:#fef2e0;color:#c2790b">🎯</div><div class="fx-txt"><h3>Некудот зикуй</h3><p>Сколько баллов вам положено и сколько это в шекелях</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="economy" href="pikadon-vs-keren.html" aria-label="Пикадон или керен каспит — что выгоднее"><div class="fx-ico" style="background:#eaf6f0;color:#08775a">🏦</div><div class="fx-txt"><h3>Пикадон vs керен каспит</h3><p>Банк даёт 4,5%, фонд 3,5% — что выгоднее чистыми</p></div><span class="fx-arrow">→</span></a>
 <a class="fx-row" data-cat="economy" href="valuta.html" aria-label="Конвертер валют, курс шекеля, корзина валют"><div class="fx-ico" style="background:#e6f0fa;color:#2f6df6">💱</div><div class="fx-txt"><h3>Курс валют</h3><p>Конвертер, корзина валют, график за год, официальный vs рыночный</p></div><span class="fx-arrow">→</span></a>
 <a class="fx-row" data-cat="economy" href="tablo.html" aria-label="Экономика Израиля сегодня"><div class="fx-ico" style="background:#eaf6f0;color:#08775a">📊</div><div class="fx-txt"><h3>Экономика сегодня</h3><p>Ставка, мадад, курсы валют, минималка — живое табло</p></div><span class="fx-arrow">→</span></a>
 <a class="fx-row" data-cat="auto" href="benzin.html" aria-label="Цена на бензин в Израиле"><div class="fx-ico" style="background:#e8eef7;color:#1e3a5f">⛽</div><div class="fx-txt"><h3>Цена на бензин</h3><p>Из чего складывается литр, доля государства, сравнение с Европой</p></div><span class="fx-arrow">→</span></a>
@@ -344,21 +367,24 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 </div>
 
 <style>
-.fx-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0 16px;max-width:900px;margin-inline:auto}
-.fx-tab{background:#fff;border:1px solid var(--line);color:var(--muted);font-family:inherit;font-size:12.5px;font-weight:700;padding:8px 14px;border-radius:20px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.fx-tabs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:12px 0 10px;max-width:900px;margin-inline:auto}
+.fx-tab{background:#fff;border:1px solid var(--line);color:var(--muted);font-family:inherit;font-size:12px;font-weight:700;padding:6px 12px;border-radius:20px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
 .fx-tab:hover{border-color:var(--green);color:var(--green)}
 .fx-tab.active{background:var(--green);border-color:var(--green);color:#fff}
-.fx-list{display:flex;flex-direction:column;gap:8px;max-width:900px;margin:0 auto 34px}
-.fx-row{display:flex;align-items:center;gap:14px;padding:12px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s,border-color .15s}
+/* Компактная сетка вместо вертикального списка: блок занимал почти целый
+   экран телефона (828px) и отжимал вниз всё остальное. */
+.fx-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:7px;max-width:900px;margin:0 auto 22px}
+.fx-row{display:flex;align-items:center;gap:9px;padding:8px 10px;background:var(--card);border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s,border-color .15s}
 .fx-row:hover{transform:translateY(-1px);border-color:var(--green);box-shadow:0 8px 20px rgba(26,45,37,.08)}
 .fx-row:active{transform:translateY(0) scale(.99)}
-.fx-ico{width:44px;height:44px;flex:0 0 44px;border-radius:12px;display:grid;place-items:center;font-size:20px}
+.fx-ico{width:30px;height:30px;flex:0 0 30px;border-radius:8px;display:grid;place-items:center;font-size:15px}
 .fx-txt{min-width:0;flex:1}
-.fx-txt h3{margin:0 0 2px;font-size:14.5px;line-height:1.25}
-.fx-txt p{margin:0;font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.fx-arrow{flex:0 0 auto;font-size:17px;color:var(--line);font-weight:700}
-.fx-row:hover .fx-arrow{color:var(--green)}
-@media(max-width:560px){.fx-txt p{white-space:normal;-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}}
+.fx-txt h3{margin:0;font-size:13px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* Подпись скрыта — название говорит само за себя, а на телефоне
+   она добавляла по строке к каждой из 20 карточек. */
+.fx-txt p{display:none}
+.fx-arrow{display:none}
+@media(max-width:560px){.fx-list{grid-template-columns:1fr 1fr;gap:6px}.fx-txt h3{font-size:12px;white-space:normal}.fx-ico{width:26px;height:26px;flex:0 0 26px;font-size:14px}}
 </style>
 <script>
 (function(){

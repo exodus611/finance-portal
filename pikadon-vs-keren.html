@@ -1,0 +1,403 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308775a'/><text x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='900' fill='white' text-anchor='middle'>₪</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#08775a">
+<title>Пикадон или керен каспит — что выгоднее: калькулятор 2026</title>
+<link rel="canonical" href="https://exodus611.github.io/finance-portal/pikadon-vs-keren.html">
+<meta name="description" content="Банк даёт 4,5%, а керен каспит 3,5% — что выгоднее на самом деле? Калькулятор считает чистыми, с учётом разного налога: 15% номинально в пикадоне против 25% на реальную прибыль в фонде.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Пикадон или керен каспит — что выгоднее на самом деле">
+<meta property="og:description" content="Банк обещает 4,5%, фонд 3,5% — а чистыми может выйти наоборот. Считаем с налогом 15% номинальным против 25% реального и с учётом инфляции.">
+<meta property="og:url" content="https://exodus611.github.io/finance-portal/pikadon-vs-keren.html">
+<meta property="og:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="ru_IL">
+<meta name="google-site-verification" content="rF1V6g7xHbSI6cvEudIr8c56nbTXMlVyZQzyeOhcSsI" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ru",
+  "mainEntity": [
+    {"@type":"Question","name":"Банк даёт 4,5%, а керен каспит 3,5% — что выгоднее?","acceptedAnswer":{"@type":"Answer","text":"Сравнивать надо не объявленные проценты, а чистый результат после налога. В банковском пикадоне налог 15% берут со всей начисленной суммы. В керен каспит налог 25%, но только с прибыли сверх инфляции. При инфляции около 1,5% пикадон под 4,5% даёт примерно 3,83% чистыми, а фонд под 3,5% — примерно 3,00% чистыми. То есть здесь выигрывает пикадон. Но если инфляция вырастет, разрыв быстро сокращается, потому что в фонде облагается только реальная прибыль."}},
+    {"@type":"Question","name":"Почему у керен каспит налог 25%, а платят иногда меньше, чем 15% в банке?","acceptedAnswer":{"@type":"Answer","text":"Потому что база разная. В пикадоне 15% считают со всей номинальной прибыли. В керен каспит 25% считают только с той части, которая обогнала индекс потребительских цен. Если фонд заработал 3,5%, а инфляция была 3,5%, реальная прибыль равна нулю и налога нет вообще."}},
+    {"@type":"Question","name":"Что важнее процента при выборе между пикадоном и фондом?",
+     "acceptedAnswer":{"@type":"Answer","text":"Ликвидность. Пикадон обычно закрыт на срок, и досрочный выход либо невозможен, либо лишает процентов. Керен каспит продаётся в любой торговый день, деньги приходят за день-два. Если это подушка безопасности, разница в десятые доли процента менее важна, чем возможность забрать деньги."}}
+  ]
+}
+</script>
+<style>
+html{scroll-behavior:smooth}
+:root{--ink:#15251f;--muted:#5a6660;--paper:#f4f1e9;--card:#fffdf8;--line:#ddd6c7;--green:#08775a;--green2:#0d9671;--gold:#c29b52;--red:#b84b3e;--blue:#30779a;--purple:#7857b8;--shadow:0 16px 40px rgba(26,45,37,.08);--r:18px}
+*{box-sizing:border-box}
+html{overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.45;overflow-x:hidden;max-width:100vw}
+button,input,select{font:inherit}
+.shell{width:min(900px,calc(100% - 28px));margin:auto}
+.top{padding:18px 0}
+.topbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;row-gap:6px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:850;font-size:14px}
+.mark{width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,var(--green2),var(--green) 70%);color:#fff;display:grid;place-items:center;font-size:28px;font-weight:900;box-shadow:0 6px 18px rgba(8,119,90,.45);border:2px solid rgba(255,255,255,.55)}
+.hero{padding:30px 0 6px;text-align:center}
+.eyebrow{font-size:12px;color:var(--green);font-weight:900;text-transform:uppercase;letter-spacing:.09em}
+.hero h1{font-size:clamp(27px,5vw,42px);line-height:1.1;letter-spacing:-.03em;margin:10px auto 12px;max-width:720px}
+.hero p{font-size:15px;color:var(--muted);max-width:620px;margin:0 auto}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;margin:18px 0;box-shadow:var(--shadow)}
+.title{display:flex;gap:13px;align-items:flex-start;margin-bottom:16px}
+.num{width:30px;height:30px;border-radius:10px;background:var(--green);color:#fff;font-weight:900;display:grid;place-items:center;flex:0 0 30px;font-size:13px}
+.title h2{margin:0 0 3px;font-size:18px}
+.title p{margin:0;font-size:12.5px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field label{display:block;font-size:12px;font-weight:800;color:var(--muted);margin-bottom:6px}
+.field .wrap{display:flex;align-items:center;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.field input,.field select{border:none;background:transparent;padding:11px 12px;width:100%;font-size:14px;color:var(--ink)}
+.field .wrap span{padding:0 12px;color:var(--muted);font-size:12.5px;font-weight:700}
+.hint{font-size:11px;color:var(--muted);margin:5px 0 0;line-height:1.45}
+/* Итог: две колонки-соперника */
+.verdict{text-align:center;padding:6px 0 2px}
+.verdict .who{font-size:23px;font-weight:900;color:var(--green);line-height:1.2}
+.verdict .diff{font-size:13px;color:var(--muted);margin-top:5px}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.opt{border:2px solid var(--line);border-radius:16px;padding:16px 14px;background:#fff;position:relative}
+.opt.win{border-color:var(--green);box-shadow:0 8px 24px rgba(8,119,90,.14)}
+.opt .tag{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font-size:10px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;border-radius:20px;padding:3px 11px;white-space:nowrap}
+.opt h3{margin:2px 0 3px;font-size:14.5px;text-align:center}
+.opt .he{display:block;font-size:11px;color:var(--muted);font-weight:600;text-align:center;margin-bottom:10px}
+.opt .net{font-size:26px;font-weight:900;text-align:center;color:var(--ink);line-height:1.15}
+.opt .netlbl{font-size:10.5px;color:var(--muted);text-align:center;margin-top:2px}
+.rows{margin-top:12px;display:grid;gap:5px}
+.row{display:flex;justify-content:space-between;gap:8px;font-size:12px;padding:6px 9px;background:var(--paper);border-radius:8px}
+.row b{font-weight:800;white-space:nowrap}
+.row.tax b{color:var(--red)}
+.chart{margin-top:18px}
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.bar-name{flex:0 0 108px;font-size:11.5px;font-weight:700;color:var(--muted)}
+.bar-track{flex:1;background:var(--paper);border-radius:8px;height:26px;position:relative;overflow:hidden}
+.bar-fill{height:100%;border-radius:8px;transition:width .5s ease}
+.bar-val{position:absolute;right:9px;top:50%;transform:translateY(-50%);font-size:11.5px;font-weight:800;color:var(--ink)}
+.results{display:none}
+.results.show{display:block}
+.info{background:#faf8f2;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:12px;color:var(--muted);margin-top:16px;line-height:1.6}
+.info b{color:var(--ink)}
+.flip{background:#eaf6f0;border:1px solid #b9d8ca;border-radius:12px;padding:13px 15px;font-size:12.5px;color:var(--ink);margin-top:14px;line-height:1.6}
+.flip b{color:var(--green)}
+details{border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-top:10px;background:#fff}
+details summary{cursor:pointer;font-weight:800;font-size:13px}
+.detail{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.65}
+.term{background:#fff;border:1px dashed var(--line);padding:1px 5px;border-radius:5px;font-size:.94em}
+.disclaimer{font-size:11px;color:var(--muted);line-height:1.6;background:#fff9e9;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:14px 16px;margin:18px 0}
+.cmp{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:8px}
+.cmp th{background:var(--ink);color:#fff;padding:9px;text-align:left;font-weight:700;font-size:11.5px}
+.cmp td{padding:9px;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp td:first-child{font-weight:700;width:31%}
+.footer{padding:26px 0 46px;color:var(--muted);font-size:11px;text-align:center;border-top:1px solid var(--line);margin-top:26px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+@media(max-width:620px){.grid{grid-template-columns:1fr}.vs{grid-template-columns:1fr;gap:16px}.bar-name{flex:0 0 84px;font-size:10.5px}.card{padding:18px}}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style><script data-goatcounter="https://finance-portal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body><noscript><div style="background:#fff6f4;border-bottom:2px solid #b84b3e;color:#b84b3e;text-align:center;padding:12px;font-family:sans-serif;font-size:13px">Для работы калькулятора нужен включённый JavaScript в браузере.</div></noscript>
+
+<header class="top"><div class="shell topbar"><div class="logo"><span class="mark">₪</span><span>Понятные финансы в Израиле</span></div><a href="index.html" style="font-size:12px;font-weight:800;color:var(--green);text-decoration:none;white-space:nowrap;margin-inline-start:14px">← На главную</a><select onchange="if(this.value)location.href=this.value" style="font-size:11.5px;font-weight:700;color:var(--green);border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:#fff;margin-inline-start:8px;cursor:pointer">
+<option value="">Все калькуляторы ▾</option>
+<option value="salary.html">💰 Зарплата</option>
+<option value="mashkanta.html">🏠 Машканта</option>
+<option value="auto.html">🚗 Автомобиль</option>
+<option value="kredit.html">💳 Кредит</option>
+<option value="arenda-vs-pokupka.html">⚖️ Аренда vs покупка</option>
+<option value="mihzur-mashkanta.html">🔄 Рефинансирование</option>
+<option value="siluk-mukdam.html">💎 Погашение vs инвестиции</option>
+<option value="mas-rehisha.html">🏛️ Мас рехиша</option>
+<option value="mas-shevach.html">📉 Мас шевах</option>
+<option value="pension-gap.html">🧓 Пенсионный разрыв</option>
+<option value="keren-hishtalmut.html">🎓 Фонд повышения квалификации</option>
+<option value="nekudot-zikuy.html">🎯 Некудот зикуй</option>
+<option value="valuta.html">💱 Курс валют</option>
+<option value="tablo.html">📊 Экономика сегодня</option>
+<option value="benzin.html">⛽ Цена на бензин</option>
+<option value="arnona.html">🏛️ Скидка на арнону</option>
+<option value="dira.html">🏗️ Дира бе-ханаха</option>
+<option value="avtala.html">📋 Дмей автала</option>
+<option value="nko.html">🤝 Благотворительные НКО</option>
+<option value="slovar.html">📖 Словарь терминов</option>
+</select></div></header>
+
+<main>
+<section class="hero shell">
+<div class="eyebrow">Куда положить свободные деньги</div>
+<h1>Пикадон или керен каспит (<span lang="he" dir="rtl">פיקדון או קרן כספית</span>)?</h1>
+<p>Банк говорит 4,5%, фонд — 3,5%, и кажется, что выбор очевиден. Но налог у них считается по-разному, и чистыми результат может перевернуться. Посчитайте на своих цифрах.</p>
+</section>
+
+<div class="shell">
+
+<section class="card">
+<div class="title"><span class="num">1</span><div><h2>Ваши деньги и сроки</h2><p>Начните с суммы и срока — остальное уже заполнено сегодняшними значениями</p></div></div>
+<div class="grid">
+<div class="field"><label>Сумма вложения</label><div class="wrap"><input type="number" id="amount" value="100000" min="0" step="1000"><span>₪</span></div>
+<p class="hint">Столько денег вы кладёте на весь срок</p></div>
+<div class="field"><label>Срок</label><div class="wrap"><input type="number" id="months" value="12" min="1" max="120" step="1"><span>мес.</span></div>
+<p class="hint">Для пикадона — период, на который банк закрывает деньги</p></div>
+</div>
+</section>
+
+<section class="card">
+<div class="title"><span class="num">2</span><div><h2>Условия банка и фонда</h2><p>Ставку пикадона называет банк. Доходность фонда обычно близка к ставке Банка Израиля минус комиссия</p></div></div>
+<div class="grid">
+<div class="field"><label>Ставка пикадона (годовая)</label><div class="wrap"><input type="number" id="depRate" value="4.5" min="0" max="30" step="0.05"><span>%</span></div>
+<p class="hint">То, что банк обещает по закрытому вкладу</p></div>
+<div class="field"><label>Доходность керен каспит (годовая)</label><div class="wrap"><input type="number" id="fundRate" value="3.5" min="0" max="30" step="0.05"><span>%</span></div>
+<p class="hint" id="fundHint">Не гарантирована. Обычно идёт следом за ставкой Банка Израиля</p></div>
+<div class="field"><label>Комиссия фонда (дмей нихуль)</label><div class="wrap"><input type="number" id="fee" value="0.15" min="0" max="3" step="0.01"><span>%</span></div>
+<p class="hint">В керен каспит обычно 0,05–0,25% в год. У пикадона комиссии нет</p></div>
+<div class="field"><label>Ожидаемая инфляция (мадад)</label><div class="wrap"><input type="number" id="infl" value="1.5" min="-5" max="30" step="0.1"><span>%</span></div>
+<p class="hint" id="inflHint">Главный переключатель: от неё зависит налог фонда</p></div>
+</div>
+<div class="info" style="margin-top:14px"><b>Откуда взяты числа по умолчанию.</b> <span id="srcNote">Ставка Банка Израиля и годовая инфляция подставляются автоматически с нашего табло, которое обновляется каждый день из официальных источников.</span></div>
+</section>
+
+<section class="card results show" id="results">
+<div class="title"><span class="num">3</span><div><h2>Что получится чистыми</h2><p>После налога — то есть столько реально останется у вас на руках</p></div></div>
+
+<div class="verdict">
+<div class="who" id="who">—</div>
+<div class="diff" id="diff"></div>
+</div>
+
+<div class="vs">
+<div class="opt" id="optDep">
+<div class="tag" id="tagDep" style="display:none">Выгоднее</div>
+<h3>Пикадон в банке</h3><span class="he" lang="he" dir="rtl">פיקדון בנקאי</span>
+<div class="net" id="depNet">—</div>
+<div class="netlbl">на руки после налога</div>
+<div class="rows">
+<div class="row"><span>Начислено процентов</span><b id="depGross">—</b></div>
+<div class="row tax"><span>Налог 15% со всей суммы</span><b id="depTax">—</b></div>
+<div class="row"><span>Чистая доходность</span><b id="depEff">—</b></div>
+</div>
+</div>
+
+<div class="opt" id="optFund">
+<div class="tag" id="tagFund" style="display:none">Выгоднее</div>
+<h3>Керен каспит</h3><span class="he" lang="he" dir="rtl">קרן כספית</span>
+<div class="net" id="fundNet">—</div>
+<div class="netlbl">на руки после налога</div>
+<div class="rows">
+<div class="row"><span>Заработано после комиссии</span><b id="fundGross">—</b></div>
+<div class="row tax"><span id="fundTaxLbl">Налог 25% с реальной прибыли</span><b id="fundTax">—</b></div>
+<div class="row"><span>Чистая доходность</span><b id="fundEff">—</b></div>
+</div>
+</div>
+</div>
+
+<div class="chart">
+<div class="bar-row"><div class="bar-name">Пикадон</div><div class="bar-track"><div class="bar-fill" id="barDep" style="background:linear-gradient(90deg,#30779a,#5b9cc0);width:0"></div><span class="bar-val" id="barDepV"></span></div></div>
+<div class="bar-row"><div class="bar-name">Керен каспит</div><div class="bar-track"><div class="bar-fill" id="barFund" style="background:linear-gradient(90deg,#0d9671,#08775a);width:0"></div><span class="bar-val" id="barFundV"></span></div></div>
+</div>
+
+<div class="flip" id="flip"></div>
+
+<div class="info" id="realNote"></div>
+</section>
+
+<section class="card">
+<div class="title"><span class="num">4</span><div><h2>Главное, что скрыто за процентами</h2><p>Три вещи, из-за которых сравнение «4,5 против 3,5» ничего не значит само по себе</p></div></div>
+
+<details open><summary>Налог считается с разной базы — это и есть весь фокус</summary><div class="detail">
+В пикадоне налог <b>15% берут со всей начисленной суммы</b>, независимо от инфляции. В керен каспит ставка выше — <b>25%</b>, но берут её <b>только с реальной прибыли</b>, то есть с того, что осталось сверх роста индекса потребительских цен (<span class="term" lang="he" dir="rtl">מדד המחירים לצרכן</span>).<br><br>
+Отсюда правило: чем выше инфляция, тем сильнее выигрывает фонд. При инфляции, равной доходности фонда, налог фонда обнуляется полностью — платить не с чего. А пикадон продолжает платить 15% с каждого шекеля процентов, даже если эти проценты просто компенсировали подорожание жизни.
+</div></details>
+
+<details><summary>Ликвидность: пикадон запирает деньги, фонд — нет</summary><div class="detail">
+Пикадон обычно закрывают на срок. Выйти раньше либо нельзя вовсе, либо можно в редкие «станции выхода» (<span class="term" lang="he" dir="rtl">תחנות יציאה</span>), и тогда проценты часто теряются целиком или частично.<br><br>
+Керен каспит продаётся в любой торговый день, деньги приходят обычно в течение одного рабочего дня, без штрафов. Если это ваша подушка безопасности на чёрный день, разница в две десятых процента значит куда меньше, чем возможность забрать деньги завтра.
+</div></details>
+
+<details><summary>Гарантия против оценки: важное различие в рисках</summary><div class="detail">
+Ставка пикадона <b>зафиксирована договором</b> — банк обязан её выплатить. Доходность керен каспит <b>не гарантирована</b>: это оценка, основанная на том, что фонд держит короткие государственные бумаги (<span class="term" lang="he" dir="rtl">מק״מ</span>) и депозиты. Если Банк Израиля снизит ставку, доходность фонда пойдёт вниз следом — а ваш уже открытый пикадон сохранит свой процент.<br><br>
+Верно и обратное: при росте ставки фонд отреагирует быстро, а пикадон останется на старых условиях до конца срока. Риск потерять вложенное в керен каспит крайне низкий, но формально он не нулевой и вклад не застрахован государством так, как банковский депозит.
+</div></details>
+
+<details><summary>Гражданам США — отдельная осторожность</summary><div class="detail">
+Для налоговых резидентов США израильские фонды могут попадать под режим PFIC с тяжёлой отчётностью и невыгодным налогообложением в США. В такой ситуации банковский пикадон часто оказывается проще и дешевле, даже при меньшей доходности. Это тот случай, когда стоит спросить бухгалтера, знакомого с американской отчётностью, — цена ошибки здесь выше разницы в процентах.
+</div></details>
+
+<table class="cmp">
+<tr><th>Что сравниваем</th><th>Пикадон <span lang="he" dir="rtl">פיקדון</span></th><th>Керен каспит <span lang="he" dir="rtl">קרן כספית</span></th></tr>
+<tr><td>Налог</td><td>15% со всей прибыли</td><td>25%, но только с прибыли сверх инфляции</td></tr>
+<tr><td>Доходность</td><td>Зафиксирована в договоре</td><td>Не гарантирована, идёт за ставкой Банка Израиля</td></tr>
+<tr><td>Комиссия</td><td>Нет</td><td>0,05–0,25% в год</td></tr>
+<tr><td>Когда забрать деньги</td><td>В конце срока или в «станции выхода»</td><td>Любой торговый день, обычно день-два</td></tr>
+<tr><td>Досрочный выход</td><td>Часто с потерей процентов</td><td>Без штрафа</td></tr>
+<tr><td>Минимальная сумма</td><td>Обычно тысячи шекелей</td><td>Практически любая</td></tr>
+<tr><td>Кто надзирает</td><td>Надзор над банками</td><td>Управление ценных бумаг</td></tr>
+</table>
+</section>
+
+<div class="disclaimer"><b>Это ориентировочный расчёт, а не рекомендация.</b> Модель считает по простой формуле сложного процента и не учитывает точный график начисления в конкретном банке, возможные акционные условия, комиссии вашего брокерского счёта, а также будущие изменения ставки Банка Израиля и инфляции — их никто не знает заранее. Доходность керен каспит не гарантирована. Перед решением уточните реальные условия в банке и параметры конкретного фонда.</div>
+
+<p style="text-align:center;font-size:13px;margin:0 0 26px"><a href="valuta.html" style="color:var(--green);font-weight:800;text-decoration:none">Курс валют →</a> &nbsp;·&nbsp; <a href="tablo.html" style="color:var(--green);font-weight:800;text-decoration:none">Ставка и мадад сегодня →</a> &nbsp;·&nbsp; <a href="slovar.html" style="color:var(--green);font-weight:800;text-decoration:none">Словарь терминов →</a></p>
+
+</div>
+</main>
+
+<footer class="shell footer">Понятные финансы в Израиле · сравнение пикадона и керен каспит · информационный проект, не инвестиционная консультация · <a href="contact.html" style="color:var(--green);font-weight:800;text-decoration:none">Написать нам</a></footer>
+
+<script>
+(function(){
+  var DEP_TAX=0.15;   // пикадон: 15% с номинальной прибыли
+  var FUND_TAX=0.25;  // керен каспит: 25% с РЕАЛЬНОЙ прибыли (сверх мадада)
+
+  function el(id){return document.getElementById(id)}
+  function num(id){var v=parseFloat(el(id).value);return isNaN(v)?0:v}
+  function money(n){
+    var r=Math.round(n);
+    return (r<0?'−':'')+Math.abs(r).toLocaleString('ru-RU')+' ₪';
+  }
+  function pct(n){return (Math.round(n*100)/100).toLocaleString('ru-RU')+'%'}
+
+  function calc(){
+    var P=Math.max(0,num('amount'));
+    var months=Math.max(1,num('months'));
+    var years=months/12;
+    var rDep=num('depRate')/100;
+    var rFund=num('fundRate')/100;
+    var fee=num('fee')/100;
+    var infl=num('infl')/100;
+
+    // Пикадон: сложный процент, налог 15% со всей начисленной прибыли.
+    var depGross=P*(Math.pow(1+rDep,years)-1);
+    var depTax=Math.max(0,depGross)*DEP_TAX;
+    var depNet=depGross-depTax;
+
+    // Керен каспит: доходность за вычетом комиссии фонда.
+    var rFundNet=rFund-fee;
+    var fundGross=P*(Math.pow(1+rFundNet,years)-1);
+    // Налог только с прибыли, обогнавшей инфляцию за тот же срок.
+    var inflAmount=P*(Math.pow(1+infl,years)-1);
+    var realProfit=fundGross-inflAmount;
+    var fundTax=realProfit>0?realProfit*FUND_TAX:0;
+    var fundNet=fundGross-fundTax;
+
+    // Эффективная годовая доходность чистыми
+    function eff(net){
+      if(P<=0) return 0;
+      return (Math.pow(1+net/P,1/years)-1)*100;
+    }
+    var depEff=eff(depNet), fundEff=eff(fundNet);
+
+    el('depGross').textContent=money(depGross);
+    el('depTax').textContent='−'+money(depTax).replace('−','');
+    el('depNet').textContent=money(depNet);
+    el('depEff').textContent=pct(depEff)+' годовых';
+
+    el('fundGross').textContent=money(fundGross);
+    el('fundTax').textContent=fundTax>0?('−'+money(fundTax).replace('−','')):'0 ₪';
+    el('fundTaxLbl').textContent=fundTax>0?'Налог 25% с реальной прибыли':'Налог 25% — реальной прибыли нет';
+    el('fundNet').textContent=money(fundNet);
+    el('fundEff').textContent=pct(fundEff)+' годовых';
+
+    // Кто победил
+    var diff=depNet-fundNet;
+    var depWins=diff>0;
+    var tie=Math.abs(diff)<Math.max(1,P*0.0002);
+    el('optDep').classList.toggle('win',depWins&&!tie);
+    el('optFund').classList.toggle('win',!depWins&&!tie);
+    el('tagDep').style.display=(depWins&&!tie)?'block':'none';
+    el('tagFund').style.display=(!depWins&&!tie)?'block':'none';
+
+    if(tie){
+      el('who').textContent='Практически поровну';
+      el('diff').textContent='Разница меньше '+money(Math.abs(diff))+' — решает не математика, а удобство: нужны ли вам деньги раньше срока.';
+    } else {
+      el('who').textContent=depWins?'Выгоднее пикадон в банке':'Выгоднее керен каспит';
+      el('diff').textContent='Разница за '+months+' мес.: '+money(Math.abs(diff))+
+        ' ('+pct(Math.abs(depEff-fundEff))+' годовых)';
+    }
+
+    // Полоски
+    var max=Math.max(depNet,fundNet,1);
+    el('barDep').style.width=Math.max(2,depNet/max*100)+'%';
+    el('barFund').style.width=Math.max(2,fundNet/max*100)+'%';
+    el('barDepV').textContent=money(depNet);
+    el('barFundV').textContent=money(fundNet);
+
+    // При какой инфляции решение переворачивается.
+    // Ищем перебором: инфляция, при которой чистый результат сравнивается.
+    var flipAt=null;
+    for(var i=0;i<=1200;i++){
+      var testInfl=i/100/10;            // от 0% до 12% с шагом 0.01
+      var ia=P*(Math.pow(1+testInfl,years)-1);
+      var rp=fundGross-ia;
+      var ft=rp>0?rp*FUND_TAX:0;
+      var fn=fundGross-ft;
+      if((depNet-fn)*(diff)<0){ flipAt=testInfl*100; break; }
+    }
+    var flipEl=el('flip');
+    if(fundGross<=0||P<=0){
+      flipEl.style.display='none';
+    } else if(flipAt!==null){
+      flipEl.style.display='block';
+      flipEl.innerHTML='<b>Точка перелома.</b> При инфляции около <b>'+pct(flipAt)+'</b> в год результат сравнивается, '+
+        'а выше — выгоднее становится '+(depWins?'керен каспит':'пикадон')+'. '+
+        'Сейчас у вас стоит '+pct(infl*100)+'.';
+    } else {
+      flipEl.style.display='block';
+      flipEl.innerHTML='<b>Вывод устойчив.</b> В разумном диапазоне инфляции (0–12%) победитель не меняется: '+
+        (depWins?'пикадон остаётся выгоднее':'керен каспит остаётся выгоднее')+'.';
+    }
+
+    // Пояснение про реальную покупательную способность
+    var realDep=depNet-inflAmount, realFund=fundNet-inflAmount;
+    el('realNote').innerHTML='<b>А что с покупательной способностью.</b> Инфляция за этот срок «съедает» примерно '+
+      money(inflAmount)+' от вашей суммы. С её учётом пикадон оставляет '+
+      (realDep>=0?'плюс ':'минус ')+money(Math.abs(realDep))+', керен каспит — '+
+      (realFund>=0?'плюс ':'минус ')+money(Math.abs(realFund))+
+      '. Если оба значения отрицательные, деньги теряют в реальной стоимости в обоих вариантах — вопрос лишь в том, где теряют меньше.';
+  }
+
+  ['amount','months','depRate','fundRate','fee','infl'].forEach(function(id){
+    el(id).addEventListener('input',calc);
+  });
+
+  // Подставляем сегодняшние ставку и инфляцию из нашего же табло.
+  fetch('data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():Promise.reject()}).then(function(j){
+    var note=[];
+    if(j.boi&&typeof j.boi.rate==='number'){
+      var boi=j.boi.rate*100;
+      // Керен каспит обычно идёт около ставки Банка Израиля.
+      el('fundRate').value=(Math.round(boi*100)/100);
+      el('fundHint').textContent='Подставлена текущая ставка Банка Израиля '+pct(boi)+' — керен каспит обычно держится около неё';
+      note.push('ставка Банка Израиля '+pct(boi));
+    }
+    if(j.cpi&&typeof j.cpi.yoy==='number'){
+      var cpi=j.cpi.yoy*100;
+      el('infl').value=(Math.round(cpi*10)/10);
+      el('inflHint').textContent='Подставлена текущая годовая инфляция '+pct(cpi)+'. Попробуйте поднять — увидите, как меняется вывод';
+      note.push('годовая инфляция '+pct(cpi));
+    }
+    if(note.length){
+      el('srcNote').textContent='Подставлены сегодняшние значения: '+note.join(', ')+
+        ' — из нашего табло, которое обновляется каждый день из официальных источников. Ставку пикадона впишите ту, что предлагает ваш банк.';
+    }
+    calc();
+  }).catch(function(){ calc(); });
+
+  calc();
+})();
+</script>
+
+<button id="scrollToTop" title="Наверх" aria-label="Прокрутить наверх" style="display:none;position:fixed;bottom:20px;right:20px;width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;border:none;font-size:18px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.2);z-index:150">↑</button>
+<script>
+(function(){
+  var btn=document.getElementById('scrollToTop');
+  window.addEventListener('scroll',function(){btn.style.display=window.scrollY>400?'block':'none'});
+  btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
+</body></html>
