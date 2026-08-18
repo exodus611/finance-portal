@@ -160,7 +160,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       events.push({label:'Решение по ставке Банка Израиля', date:bd, href:'tablo.html'});
     }
     var cbs=nextCbs15();
-    events.push({label:'Публикация индекса потребительских цен (מדד)', date:cbs, href:'tablo.html'});
+    events.push({label:'Публикация индекса потребительских цен (<span lang="he" dir="rtl">מדד</span>)', date:cbs, href:'tablo.html'});
     var fuel=nextMonthFirst();
     events.push({label:'Пересмотр цены на бензин', date:fuel, href:'benzin.html'});
 
@@ -168,10 +168,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     // Даты приходят с официальной страницы расписания (scripts/update_payments.py).
     var pay=window.__paymentsData||{};
     var BL=[
-      {k:'unemployment',  label:'Пособие по безработице и гарантия дохода (דמי אבטלה, הבטחת הכנסה)', href:'avtala.html'},
+      {k:'unemployment',  label:'Пособие по безработице и гарантия дохода (<span lang="he" dir="rtl">דמי אבטלה, הבטחת הכנסה</span>)', href:'avtala.html'},
       {k:'self_employed', label:'Взносы Битуах леуми — самозанятые и работодатели', href:'salary.html'},
-      {k:'children',      label:'Пособие на детей (קצבת ילדים)', href:'tablo.html'},
-      {k:'long_term',     label:'Пенсия по старости, инвалидность, сиюд и другие (קצבאות ארוכות מועד)', href:'pension-gap.html'}
+      {k:'children',      label:'Пособие на детей (<span lang="he" dir="rtl">קצבת ילדים</span>)', href:'tablo.html'},
+      {k:'long_term',     label:'Пенсия по старости, инвалидность, сиюд и другие (<span lang="he" dir="rtl">קצבאות ארוכות מועד</span>)', href:'pension-gap.html'}
     ];
     BL.forEach(function(b){
       var d=blNext(pay[b.k], b.k==='self_employed');
