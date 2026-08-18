@@ -91,7 +91,9 @@ details summary{cursor:pointer;font-weight:800;font-size:13px}
 .detail{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.65}
 .term{background:#fff;border:1px dashed var(--line);padding:1px 5px;border-radius:5px;font-size:.94em}
 .disclaimer{font-size:11px;color:var(--muted);line-height:1.6;background:#fff9e9;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:14px 16px;margin:18px 0}
-.cmp{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:8px}
+/* Обёртка со скроллом: на узком экране таблица уезжала под правый край */
+.cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:8px}
+.cmp{width:100%;min-width:440px;border-collapse:collapse;font-size:12.5px}
 .cmp th{background:var(--ink);color:#fff;padding:9px;text-align:left;font-weight:700;font-size:11.5px}
 .cmp td{padding:9px;border-bottom:1px solid var(--line);vertical-align:top}
 .cmp td:first-child{font-weight:700;width:31%}
@@ -210,7 +212,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 
 <details open><summary>Налог считается с разной базы — это и есть весь фокус</summary><div class="detail">
 В пикадоне налог <b>15% берут со всей начисленной суммы</b>, независимо от инфляции. В керен каспит ставка выше — <b>25%</b>, но берут её <b>только с реальной прибыли</b>, то есть с того, что осталось сверх роста индекса потребительских цен (<span class="term" lang="he" dir="rtl">מדד המחירים לצרכן</span>).<br><br>
-Отсюда правило: чем выше инфляция, тем сильнее выигрывает фонд. При инфляции, равной доходности фонда, налог фонда обнуляется полностью — платить не с чего. А пикадон продолжает платить 15% с каждого шекеля процентов, даже если эти проценты просто компенсировали подорожание жизни.
+Отсюда правило: чем выше инфляция, тем сильнее выигрывает фонд. При инфляции, равной доходности фонда, налог фонда обнуляется полностью — платить не с чего. А пикадон продолжает платить 15% с каждого шекеля процентов, даже если эти проценты просто компенсировали подорожание жизни.<br><br>
+<b>Обратная ситуация — дефляция.</b> Если индекс за период не вырос, а упал, льгота не превращается в бонус: закон в этом случае считает всю номинальную прибыль реальной и облагает её теми же 25%. То есть отрицательный мадад не уменьшает налоговую базу ниже фактически заработанного. Калькулятор это учитывает — попробуйте поставить инфляцию со знаком минус.
 </div></details>
 
 <details><summary>Ликвидность: пикадон запирает деньги, фонд — нет</summary><div class="detail">
@@ -227,7 +230,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 Для налоговых резидентов США израильские фонды могут попадать под режим PFIC с тяжёлой отчётностью и невыгодным налогообложением в США. В такой ситуации банковский пикадон часто оказывается проще и дешевле, даже при меньшей доходности. Это тот случай, когда стоит спросить бухгалтера, знакомого с американской отчётностью, — цена ошибки здесь выше разницы в процентах.
 </div></details>
 
-<table class="cmp">
+<div class="cmp-wrap"><table class="cmp">
 <tr><th>Что сравниваем</th><th>Пикадон <span lang="he" dir="rtl">פיקדון</span></th><th>Керен каспит <span lang="he" dir="rtl">קרן כספית</span></th></tr>
 <tr><td>Налог</td><td>15% со всей прибыли</td><td>25%, но только с прибыли сверх инфляции</td></tr>
 <tr><td>Доходность</td><td>Зафиксирована в договоре</td><td>Не гарантирована, идёт за ставкой Банка Израиля</td></tr>
@@ -236,10 +239,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 <tr><td>Досрочный выход</td><td>Часто с потерей процентов</td><td>Без штрафа</td></tr>
 <tr><td>Минимальная сумма</td><td>Обычно тысячи шекелей</td><td>Практически любая</td></tr>
 <tr><td>Кто надзирает</td><td>Надзор над банками</td><td>Управление ценных бумаг</td></tr>
-</table>
+</table></div>
 </section>
 
-<div class="disclaimer"><b>Это ориентировочный расчёт, а не рекомендация.</b> Модель считает по простой формуле сложного процента и не учитывает точный график начисления в конкретном банке, возможные акционные условия, комиссии вашего брокерского счёта, а также будущие изменения ставки Банка Израиля и инфляции — их никто не знает заранее. Доходность керен каспит не гарантирована. Перед решением уточните реальные условия в банке и параметры конкретного фонда.</div>
+<div class="disclaimer"><b>Это ориентировочный расчёт, а не рекомендация.</b> Чтобы у вас не было ложного ощущения точности, вот что модель упрощает.<br><br>
+<b>Считаем по сложному проценту</b> с ежегодной капитализацией, а конкретный банк может начислять иначе — ежемесячно, по «ступенькам» или по акционной ставке только на первый период. Реальную формулу спрашивайте в банке.<br><br>
+<b>Обе ставки считаются постоянными на весь срок.</b> В жизни доходность керен каспит идёт следом за ставкой Банка Израиля и меняется хоть завтра, а инфляция за год редко совпадает с прогнозом. Ставка вашего пикадона, наоборот, зафиксирована — в этом и разница по риску. Поэтому смотрите не только на итог, а на строку «точка перелома»: она показывает, насколько устойчив вывод.<br><br>
+<b>Налог в фонде платится при продаже</b>, а не ежегодно, — на длинных сроках это даёт небольшую дополнительную выгоду за счёт отсрочки, которую модель не считает. Не учтены и возможные комиссии вашего брокерского счёта, зачёт убытков против прибыли и особые налоговые льготы (например, для пожилых людей с низким доходом по статье 125D).<br><br>
+Доходность керен каспит не гарантирована. Перед решением уточните реальные условия в банке и параметры конкретного фонда — а при крупной сумме имеет смысл спросить бухгалтера.</div>
 
 <p style="text-align:center;font-size:13px;margin:0 0 26px"><a href="valuta.html" style="color:var(--green);font-weight:800;text-decoration:none">Курс валют →</a> &nbsp;·&nbsp; <a href="tablo.html" style="color:var(--green);font-weight:800;text-decoration:none">Ставка и мадад сегодня →</a> &nbsp;·&nbsp; <a href="slovar.html" style="color:var(--green);font-weight:800;text-decoration:none">Словарь терминов →</a></p>
 
@@ -281,6 +288,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
     // Налог только с прибыли, обогнавшей инфляцию за тот же срок.
     var inflAmount=P*(Math.pow(1+infl,years)-1);
     var realProfit=fundGross-inflAmount;
+    // При отрицательном мададе (дефляции) закон не разрешает раздувать
+    // налоговую базу: номинальная прибыль тогда считается реальной.
+    // Без этой границы калькулятор облагал бы налогом больше, чем человек заработал.
+    if(inflAmount<0) realProfit=fundGross;
     var fundTax=realProfit>0?realProfit*FUND_TAX:0;
     var fundNet=fundGross-fundTax;
 
@@ -292,7 +303,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
     var depEff=eff(depNet), fundEff=eff(fundNet);
 
     el('depGross').textContent=money(depGross);
-    el('depTax').textContent='−'+money(depTax).replace('−','');
+    // Минус ставим только если налог реально есть, иначе на экране «−0 ₪».
+    el('depTax').textContent=depTax>0.5?('−'+money(depTax).replace('−','')):'0 ₪';
     el('depNet').textContent=money(depNet);
     el('depEff').textContent=pct(depEff)+' годовых';
 
