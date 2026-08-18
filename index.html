@@ -137,6 +137,23 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     if(d<=now) d=shifted(y,m+1);
     return d;
   }
+  // Дата ежемесячной выплаты Битуах леуми: берём проверенное число из
+  // payments.json, но если оно уже прошло — переносим на тот же день
+  // следующего месяца. Иначе к концу месяца тикер залипал на прошедшей дате.
+  function blNextDate(){
+    var p=window.__paymentsData;
+    if(!p||!p.self_employed) return next15th();
+    var iso=p.self_employed.split('-');
+    var y=+iso[0], m=+iso[1]-1, day=+iso[2];
+    var d=new Date(y,m,day);
+    if(daysUntil(d)>=0) return d;          // дата ещё впереди — она точная, берём её
+    var n=new Date(y,m+1,day);             // прошла — тот же день следующего месяца
+    var dow=n.getDay();                     // Битуах леуми сдвигает ВПЕРЁД на будний
+    if(dow===5) n.setDate(n.getDate()+3);
+    else if(dow===6) n.setDate(n.getDate()+2);
+    return n;
+  }
+
   window.__renderTicker=function(tabloData){
     var events=[];
     if(tabloData&&tabloData.boi&&tabloData.boi.next_decision){
@@ -147,30 +164,40 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     events.push({label:'Публикация индекса потребительских цен (מדד)', date:cbs, href:'tablo.html'});
     var fuel=nextMonthFirst();
     events.push({label:'Пересмотр цены на бензин', date:fuel, href:'benzin.html'});
+    events.push({label:'Взносы Битуах Леуми (самозанятые)', date:blNextDate(), href:'salary.html'});
 
-    // Взносы Битуах леуми — используем настоящую проверенную дату из
-    // data/payments.json (её реально забирает наш скрипт с официальной
-    // страницы), а не собственную формулу-догадку: выяснилось, что
-    // Битуах леуми сдвигает срок ВПЕРЁД на ближайший будний день после
-    // выходных, а не назад, как мы делали для мадада — направление сдвига
-    // у разных учреждений разное, гадать рискованно.
-    var blDate = (window.__paymentsData && window.__paymentsData.self_employed)
-      ? new Date(window.__paymentsData.self_employed+'T00:00:00')
-      : next15th();
-    events.push({label:'Взносы Битуах Леуми (самозанятые)', date:blDate, href:'salary.html'});
-
+    // Отсеиваем всё, что уже прошло: раньше просроченная дата оставалась
+    // первой в списке и тикер намертво вставал на ней со словом «сегодня».
+    events=events.filter(function(e){return e.date && !isNaN(e.date) && daysUntil(e.date)>=0});
     events.sort(function(a,b){return a.date-b.date});
-    var nearest=events[0];
-    var days=daysUntil(nearest.date);
-    var daysStr=days<=0?'сегодня':(days===1?'завтра':'через '+days+' '+(days>=2&&days<=4?'дня':'дней'));
-    document.getElementById('ticker-msg').innerHTML='📌 '+nearest.label+' — '+daysStr+' ('+fmtDate(nearest.date)+')';
+    if(!events.length) return;
+
+    function phrase(e){
+      var d=daysUntil(e.date);
+      var s=d===0?'сегодня':(d===1?'завтра':'через '+d+' '+(d%10>=2&&d%10<=4&&(d<10||d>20)?'дня':'дней'));
+      return e.label+' — '+s+' ('+fmtDate(e.date)+')';
+    }
+    // Крутим ВСЕ ближайшие события, а не только первое: строка перестала
+    // выглядеть застывшей и показывает мадад, бензин и взносы тоже.
+    var msg=document.getElementById('ticker-msg');
+    msg.innerHTML=events.map(function(e){return '📌 '+phrase(e)}).join('&nbsp;&nbsp;•&nbsp;&nbsp;');
+    // Длительность прокрутки по длине текста — иначе длинная строка летит.
+    msg.style.animationDuration=Math.max(22,Math.round(msg.textContent.length/4.2))+'s';
 
     var panel=document.getElementById('ticker-panel-body');
     panel.innerHTML=events.map(function(e){
+      var d=daysUntil(e.date);
+      var when=d===0?'сегодня':(d===1?'завтра':'через '+d+' дн.');
       return '<a href="'+e.href+'" style="display:flex;justify-content:space-between;gap:10px;color:#3d4a3e;text-decoration:none;padding:6px 0;border-bottom:1px solid #ddd6c7">'+
-        '<span>'+e.label+'</span><span style="white-space:nowrap;font-weight:700;color:#08775a">'+fmtDate(e.date)+'</span></a>';
+        '<span>'+e.label+'</span><span style="white-space:nowrap;font-weight:700;color:#08775a">'+fmtDate(e.date)+
+        ' <span style="font-weight:500;color:#5a6660">· '+when+'</span></span></a>';
     }).join('');
   };
+  // Пересчёт в полночь: страница, открытая сутками (телефон в фоне),
+  // больше не показывает вчерашние «сегодня».
+  setInterval(function(){
+    if(window.__renderTicker) window.__renderTicker(window.__tabloData);
+  },600000);
   document.getElementById('ticker-toggle').addEventListener('click',function(){
     var p=document.getElementById('ticker-panel');
     p.style.display=(p.style.display==='none')?'block':'none';

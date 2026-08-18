@@ -87,12 +87,20 @@ def main():
     # 3. Курсы валют
     try:
         j = fetch_json(BOI_FX_URL)
+        # Банк Израиля отдаёт объект вида {"exchangeRates":[...]}, а не голый список.
+        # Старый код перебирал сам объект — получал строку 'exchangeRates' и падал
+        # с AttributeError, из-за чего курсы в файле не обновлялись вообще.
+        items = j.get('exchangeRates', j) if isinstance(j, dict) else j
         fx = {}
-        for item in j:
+        for item in items:
+            if not isinstance(item, dict):
+                continue
             key = item.get('key') or item.get('Key')
             rate = item.get('currentExchangeRate') or item.get('CurrentExchangeRate')
+            # unit=100 у иены и т.п. — приводим к «шекелей за 1 единицу валюты»
+            unit = item.get('unit') or item.get('Unit') or 1
             if key and rate is not None:
-                fx[key] = float(rate)
+                fx[key] = round(float(rate) / float(unit), 6)
         if fx:
             data['fx'] = fx
             data['fx_updated'] = now_iso

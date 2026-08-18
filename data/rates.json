@@ -5,9 +5,20 @@
   "cpi_index": 105.1,
   "cpi_annual_pct": 1.5,
   "fx": {
-    "USD": 3.062,
-    "EUR": 3.4863,
-    "GBP": 4.0789
+    "USD": 2.986,
+    "GBP": 4.0388,
+    "JPY": 0.018697,
+    "EUR": 3.4568,
+    "AUD": 2.1224,
+    "CAD": 2.1524,
+    "DKK": 0.4624,
+    "NOK": 0.3167,
+    "ZAR": 0.1841,
+    "SEK": 0.3134,
+    "CHF": 3.6756,
+    "JOD": 4.2121,
+    "LBP": 3e-05,
+    "EGP": 0.0591
   },
   "manual": {
     "avg_mortgage_rate_by_term": {
@@ -21,12 +32,11 @@
     "avg_mortgage_rate_overall": 3.52,
     "_checked": "2026-07-24"
   },
-  "errors": {
-    "fx": "AttributeError: 'str' object has no attribute 'get'"
-  },
-  "updated": "2026-08-18T06:25:13.703960+00:00",
-  "updated_sources_ok": "2/3",
+  "errors": {},
+  "updated": "2026-08-18T18:29:07.896335+00:00",
+  "updated_sources_ok": "3/3",
   "_seed_note": "Начальный файл с проверенными значениями на дату создания. Далее обновляется автоматически через GitHub Actions (scripts/update-rates.py), кроме блока manual — его обновлять руками раз в месяц.",
-  "boi_rate_updated": "2026-08-18T06:25:13.703960+00:00",
-  "cpi_updated": "2026-08-18T06:25:13.703960+00:00"
+  "boi_rate_updated": "2026-08-18T18:29:07.896335+00:00",
+  "cpi_updated": "2026-08-18T18:29:07.896335+00:00",
+  "fx_updated": "2026-08-18T18:29:07.896335+00:00"
 }

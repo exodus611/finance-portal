@@ -831,7 +831,7 @@ const I18N = {
     reset_toast: "אופס לברירת מחדל", share_copied: "הקישור הועתק ללוח", share_url: "הקישור מוכן בכתובת העמוד",
     brand_name: "נטו·2026", img_btn: "🖼️ שמור כתמונה", img_done: "התמונה הורדה", card_footer: "חושב בדפדפן בלבד · ללא שמירת נתונים",
     calc_basis: "בסיס ברירת מחדל: פנסיה 6% · 2.25 נקודות זיכוי · ביטוח לאומי 4.27%/12.17% · ללא קרן השתלמות וללא ביטוח בריאות מהשכר",
-    lang_btn_he: "🌐 РУС", lang_btn_ru: "🌐 עב"
+    lang_btn_he: "🌐 РУС", lang_btn_ru: "🌐 עברית"
   },
   ru: {
     sankey_h: "Куда уходят деньги?",
@@ -904,86 +904,16 @@ const I18N = {
     reset_toast: "Сброшено по умолчанию", share_copied: "Ссылка скопирована", share_url: "Ссылка готова в адресе страницы",
     brand_name: "Нетто-зарплата", img_btn: "🖼️ Скачать картинку", img_done: "Картинка сохранена", card_footer: "рассчитано только в браузере · без сохранения данных",
     calc_basis: "По умолчанию: пенсия 6% · 2.25 налоговых очка · Битуах Леуми 4.27/12.17% · без керен-фонда и медстраховки из зарплаты",
-    lang_btn_he: "🌐 EN", lang_btn_ru: "🌐 EN", lang_btn_en: "🌐 EN"
-  },
-  en: {
-    sankey_h: "Where your money goes",
-    sankey_sub: "visual flow: from gross to net and what goes to tax and savings",
-    sankey_net: "Net", sankey_tax: "Income tax", sankey_yesef: "Surcharge", sankey_bl: "Nat. Insurance", sankey_pension: "Pension+Fund", sankey_from: "Gross", more_details: "More details", acc_inputs: "Income &amp; contributions", acc_breakdown: "Breakdown &amp; chart", acc_ladder: "Tax brackets", acc_credits: "Credits &amp; rights", acc_annual: "Projection &amp; tips",
-    opt_h: "Rights optimizer",
-    opt_sub: "tick your situation - we compute tax credits you may be missing",
-    opt_disclaimer: "⚠️ Approximate estimate only — exact points for children and new immigrants depend on precise age and immigration year. For an exact figure use the official Tax Authority simulator.",
-    opt_woman: "Woman (+0.5 point)", opt_child5: "Child under 5", opt_child617: "Children 6-17 (count)", opt_vet: "Released soldier (36 mo.)", opt_degree: "Academic degree", opt_immigrant: "New immigrant (first 18 mo.)", opt_single: "Single parent",
-    opt_calc: "Compute points", opt_result: "Currently {0} points. You can reach {1} → +{2} per month to net", opt_none: "All credits claimed - great!", opt_apply: "Apply to salary", opt_applied: "Points applied: {0} (credit {1})",
-    ladder_next: "{0} left to the next tax bracket this year",
-    brand_sub: "Salary Calculator 2026",
-    share_title: "Share a link to this calculation",
-    theme_title: "Switch theme",
-    lang_title: "Switch language",
-    eyebrow: "Updated: January 2026",
-    pill: "✓ 2026 tax data",
-    h1: "Neto 2026 Calculator",
-    updated: "Tax brackets · National Insurance · tax credits — tax year 2026",
-    intro: "A free calculator based on the latest income-tax brackets, including overtime, pension, severance pay, tax coordination, gross-from-net solving and an annual projection. Everything runs in your browser only — no data is sent to any server.",
-    info_box: "Why the monthly deduction changes: the employer annualizes — multiplies your current salary by 12 and calculates on that basis. A bonus or a mid-year raise distorts the monthly deduction. At year-end, reconciliation with the tax authority refunds any overpayment.",
-    tab_salary: "Net salary", tab_inverse: "How much gross?", tab_severance: "Severance", tab_coord: "Tax coord.", tab_pension: "Pensioner",
-    s_income_h: "💼 Income", s_income_sub: "Enter base salary and overtime. Hours are calculated at the hourly rate from the base salary.",
-    lbl_base: "Base salary, gross (₪)", lbl_hours: "Working hours per month", lbl_ot125: "Overtime 125%", lbl_ot150: "Overtime 150%",
-    ot_hint: "The first 2 daily overtime hours are paid at 125%, from the 3rd hour onward — 150%. The legal monthly overtime cap is 58 hours (without a special Labor Ministry permit).",
-    lbl_sector: "Your sector (to check the minimum wage)", sector_general: "General (6,443.85 ₪ / 35.40 ₪ per hour)",
-    sector_security: "Security/guarding (7,118.85 ₪ / 39.11 ₪ per hour)", sector_cleaning: "Cleaning/maintenance (7,118.85 ₪ / 38.03 ₪ per hour)",
-    sector_catering: "Catering/food service (≈7,281.55 ₪, 113% of general)", sector_construction: "Construction (rises by grade and sector seniority)",
-    min_warning_prefix: "Note: your sector's minimum wage is currently", min_warning_suffix: "— the salary you entered is below this floor. The employer must pay the difference.",
-    ot_warning: "Note: the overtime hours you entered exceed the legal cap of 58 overtime hours per month under the general permit.",
-    lbl_night: "Extra night hours (115%)", lbl_shabbat: "Saturday/holiday hours (150%)", lbl_travel: "Tax-free travel (₪)",
-    travel_title: "Reimbursement of travel expenses up to the legal ceiling — added to net pay and not taxed.",
-    s_pens_h: "🏦 Pension contributions", s_pens_sub: "The employee contribution reduces taxable income (up to the allowed ceiling).",
-    lbl_pension: "Employee pension contribution", pension_opt_default: "Default (6%)", pension_opt_high: "Enhanced (7%)", pension_opt_custom: "Custom %",
-    lbl_keren: "Training fund, employee (%)", lbl_pension_custom: "Custom pension %",
-    s_cred_h: "🎫 Credits", lbl_points: "Tax credit points", points_title: "Resident: 2.25 points (≈544 ₪ monthly credit). Woman +0.5, children, new immigrant and more — add per your entitlement. One point = 242 ₪ per month.",
-    s_detail_h: "📊 Deduction breakdown",
-    row_gross: "Total gross", row_taxable: "Taxable income", row_tax: "Income tax (after credit)", row_yesef: "Surcharge tax (above 60,130 ₪)",
-    row_bl: "National Insurance + health", row_pension: "Employee contributions (pension+fund)", row_travel: "Travel (tax-free, added)", legend_net: "Net", donut_back: "tap again → net", donut_hint: "tap a slice",
-    m_marginal: "Marginal tax rate", m_takehome: "Net as % of gross", m_hourly: "Hourly rate (gross)", m_empcost: "Estimated employer cost",
-    empcost_title: "Rough estimate: gross + employer NI (7.6%) + employer pension (6.5%) + training fund (7.5% if applicable) + severance accrual (8.33%).",
-    ladder_h: "🪜 Your 2026 tax brackets", annual_h: "📅 Annual projection",
-    m_annGross: "Annual gross", m_annTax: "Annual tax", m_annNet: "Annual net",
-    tips_h: "💡 Smart tips", reset_btn: "↺ Reset to defaults",
-    receipt_net_label: "Net salary payable", receipt_net_sub: "Calculated right now in your browser", stamp: "NET",
-    inv_h: "🎯 How much gross do you need?", inv_sub: "Enter the net salary you want to receive — the calculator will compute the required gross (inverse solution of the tax brackets).",
-    lbl_inv_net: "Desired net salary (₪)", lbl_inv_pension: "Employee pension contribution (%)", lbl_inv_points: "Tax credit points", inv_p0: "none",
-    row_inv_gross: "Required gross (payable to employer)", row_inv_tax: "Income tax payable", row_inv_bl: "National Insurance + health", row_inv_pension: "Pension contribution (6%)",
-    inv_receipt_label: "to receive a net of", inv_receipt_sub: "Required monthly gross",
-    inv_disclaimer: "Based on base salary with no overtime and no travel, with the employee pension contribution you entered. The marginal rate also hits the difference — raising gross by 1,000 ₪ adds less than a thousand to net.",
-    sev_h: "📦 Employment details", sev_sub: "Severance pay = determining salary × years of tenure (one month per year of work).",
-    lbl_sev_salary: "Last determining salary (₪)", lbl_sev_years: "Years of tenure", lbl_sev_accrued: "Already accrued in severance fund (₪)", sev_accrued_title: "The amount already actually deposited in the severance fund or paid earlier.",
-    row_sev_total: "Statutory severance (salary × tenure)", row_sev_accrued: "Already accrued in fund", sev_receipt_label: "Balance the employer should top up",
-    sev_disclaimer: "Basic calculation by the statutory formula. There is a tax exemption up to an annual ceiling (≈13,750 ₪ per year of tenure, indexed yearly) — amounts above the ceiling may be taxed. The calculation excludes section 14, special cases or notice-period compensation. Individual legal advice required.",
-    coord_h: "🔗 Two salaries", coord_sub: "Without tax coordination, each employer grants the credit points — and you overpay (or get a refund) at year-end.",
-    lbl_coord_a: "Gross salary — job 1 (₪)", lbl_coord_b: "Gross salary — job 2 (₪)",
-    row_coord_proper: "Correct annual tax (on total income)", row_coord_naive: "Monthly withholding without coordination", coord_naive_title: "Each employer withholds as if this were your only income with full credits.", row_coord_balance: "Balance due at year-end",
-    coord_receipt_label: "What you save with proper coordination", coord_saving_sub_a: "Overpayment at year-end if you don't coordinate", coord_saving_sub_b: "Expected refund at year-end",
-    coord_disclaimer: "With proper coordination the employers split the credit points, and the monthly withholding reflects the true tax — no year-end surprises. The calculation ignores pension contributions and other income.",
-    pen_h: "🧓 Work + pension", pen_sub: "For a pensioner who works and receives a pension: the pension is taxed only on the portion above the exemption percentage.",
-    lbl_pen_salary: "Salary from work, gross (₪)", lbl_pen_pension: "Monthly pension, gross (₪)", lbl_pen_exempt: "Pension exemption (%)", pen_exempt_title: "Depends on vesting of rights and retirement date. Enter the percentage known to you from the pension fund (usually 52%–67%).",
-    row_pen_taxable: "Taxable pension (after exemption)", row_pen_total: "Combined taxable income", row_pen_tax: "Total income tax", row_pen_health: "Health insurance from pension",
-    pen_receipt_label: "Total net (work + pension)",
-    pen_disclaimer: "The exemption percentage depends on personal data (vesting of rights, retirement date). The calculation excludes the peripheral-area benefit, National Insurance (usually not applied past pension age) or other income.",
-    disclaimer_main: "Estimated calculation based on 2026 tax brackets and employee National Insurance rates. Not tax or legal advice. For an exact calculation, consult a CPA or licensed tax advisor.",
-    footer: "Data sources: Tax Authority (2026 brackets), National Insurance Institute (2026 rates, 51,910 ₪ ceiling). The site collects no personal data and stores nothing you enter.",
-    doc_title: "Neto 2026 — gross/net, compare, image download | free",
-    ladder_here: "you are here",
-    ladder_sub: "based on taxable income (gross minus contributions)",
-    reset_toast: "Reset to defaults", share_copied: "Link copied to clipboard", share_url: "Link ready in the page address",
-    brand_name: "Neto·2026", img_btn: "🖼️ Save as image", img_done: "Image saved", card_footer: "calculated in-browser only · no data stored",
-    lang_btn_he: "🌐 EN", lang_btn_ru: "🌐 EN", lang_btn_en: "🌐 EN"
+    lang_btn_he: "🌐 РУС", lang_btn_ru: "🌐 עברית"
   }
 };
 let lang = 'ru';
 let LOCALE = 'he-IL';
-const LANGS = ['he', 'ru', 'en'];
-const LANG_NAMES = { he: 'עב', ru: 'РУС', en: 'EN' };
-function t(key) { return (I18N[lang] && I18N[lang][key]) || I18N.he[key] || key; }
+// Портал русскоязычный, и вторым языком нужен иврит — оригинал терминов,
+// на котором человек увидит их в расчётном листке и в банке. Английский убран.
+const LANGS = ['ru', 'he'];
+const LANG_NAMES = { he: 'עברית', ru: 'РУС' };
+function t(key) { return (I18N[lang] && I18N[lang][key]) || I18N.ru[key] || key; }
 
 /* ===== 2026 constants (verified) ===== */
 const BRACKETS = [
@@ -1430,7 +1360,7 @@ function toast(msg) { const tt = document.getElementById('toast'); if (!tt) retu
 
 /* ===== language ===== */
 function applyLang() {
-  LOCALE = lang === 'en' ? 'en-US' : lang === 'ru' ? 'ru-RU' : 'he-IL';
+  LOCALE = lang === 'ru' ? 'ru-RU' : 'he-IL';
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
   document.title = t('doc_title');
@@ -1467,7 +1397,7 @@ function applyHash() {
   const p = new URLSearchParams(location.hash.slice(1));
   let applied = false;
   p.forEach((v, k) => {
-    if (k === 'lang') { lang = (v === 'ru' || v === 'he' || v === 'en') ? v : 'he'; return; }
+    if (k === 'lang') { lang = (v === 'ru' || v === 'he') ? v : 'ru'; return; }
     const el = document.getElementById(k);
     if (el && (el.tagName === 'INPUT' || el.tagName === 'SELECT')) { el.value = v; applied = true; }
   });
@@ -1552,7 +1482,7 @@ if (themeToggle) {
 }
 
 // restore language preference, then apply shared state, then render
-try { const l = localStorage.getItem('lang'); if (l === 'ru' || l === 'he' || l === 'en') lang = l; } catch (e) {}
+try { const l = localStorage.getItem('lang'); if (l === 'ru' || l === 'he') lang = l; } catch (e) {}
 try { applyHash(); } catch (e) {}
 try { applyLang(); } catch (e) {}
 try { triggerHud(); } catch (e) {}
