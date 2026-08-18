@@ -248,7 +248,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     </div>
 </header>
 
-<div style="max-width:1100px;margin:14px auto 0;width:calc(100% - 32px);padding:16px 18px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow);font-size:13px;line-height:1.55"><b id="site-intro-title">Ипотечная ссуда (машканта): расширенный расчёт</b><br><span id="site-intro-text" style="color:var(--text-muted)">Сначала задайте сумму и распределение треков. Затем можно использовать учебные стратегии или автоматический подбор. Все результаты являются предварительной математической моделью.</span></div>
+<div style="max-width:1100px;margin:14px auto 0;width:calc(100% - 32px);padding:16px 18px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow);font-size:13px;line-height:1.55"><h1 id="site-intro-title" style="font-size:15px;margin:0 0 4px;font-weight:800">Калькулятор машканты (<span lang="he" dir="rtl">משכנתא</span>) — расширенный расчёт</h1><span id="site-intro-text" style="color:var(--text-muted)">Сначала задайте сумму и распределение треков. Затем можно использовать учебные стратегии или автоматический подбор. Все результаты являются предварительной математической моделью.</span></div>
 <div class="debt-burden-bar">
     <div class="dbb-header">
         <span class="dbb-title" id="lbl_dbb_title" data-ru="📊 Долговая нагрузка ипотеки от дохода семьи (нетто)" data-he="📊 עומס משכנתא מתוך הכנסת המשפחה נטו">📊 Долговая нагрузка ипотеки от дохода семьи (нетто)</span>
@@ -707,7 +707,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         const set = (id, ru, iv, html=false) => { const e=document.getElementById(id); if(e) e[html?'innerHTML':'textContent']=he?iv:ru; };
         document.title = he ? 'מחשבון משכנתא בישראל — התאמת תמהיל, אסטרטגיות ולוח סילוקין | 2026' : 'Калькулятор ипотечной ссуды (машканты) в Израиле — подбор структуры и график | 2026';
         set('site-back','← На главную','חזרה לדף הראשי →');
-        set('site-intro-title','Ипотечная ссуда (машканта): расширенный расчёт','הלוואת משכנתא: חישוב מורחב');
+        set('site-intro-title','Калькулятор машканты (<span lang="he" dir="rtl">משכנתא</span>) — расширенный расчёт','מחשבון משכנתא — חישוב מורחב');
         set('site-intro-text','Сначала задайте сумму и распределение треков. Затем можно использовать учебные стратегии или автоматический подбор. Все результаты являются предварительной математической моделью.','תחילה הגדירו את הסכום ואת חלוקת המסלולים. לאחר מכן ניתן להשתמש באסטרטגיות ההדגמה או בהתאמה האוטומטית. כל התוצאות הן מודל מתמטי מקדים.');
         set('opt-help-1-title','1. Задайте предел','1. הגדירו גבול');
         set('opt-help-1-text','Комфортный платёж и максимальный срок.','החזר חודשי נוח ותקופה מרבית.');
