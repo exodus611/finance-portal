@@ -146,11 +146,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     var y=+p[0], m=+p[1]-1, day=+p[2];
     var d=new Date(y,m,day);
     if(daysUntil(d)>=0) return d;          // дата ещё впереди — она точная
-    var n=new Date(y,m+1,day);             // прошла — тот же день следующего месяца
-    var dow=n.getDay();                     // Битуах леуми сдвигает ВПЕРЁД на будний
-    if(dow===5) n.setDate(n.getDate()+3);
-    else if(dow===6) n.setDate(n.getDate()+2);
-    return n;
+    // Перематываем вперёд ПОКА дата в прошлом (а не ровно на месяц):
+    // если файл не обновлялся несколько месяцев, одного шага мало.
+    for(var k=1;k<=24;k++){
+      var n=new Date(y,m+k,day);
+      var dow=n.getDay();                   // Битуах леуми сдвигает ВПЕРЁД на будний
+      if(dow===5) n.setDate(n.getDate()+3);
+      else if(dow===6) n.setDate(n.getDate()+2);
+      if(daysUntil(n)>=0) return n;
+    }
+    return null;
   }
 
   window.__renderTicker=function(tabloData){
@@ -171,7 +176,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       {k:'unemployment',  label:'Пособие по безработице и гарантия дохода (<span lang="he" dir="rtl">דמי אבטלה, הבטחת הכנסה</span>)', href:'avtala.html'},
       {k:'self_employed', label:'Взносы Битуах леуми — самозанятые и работодатели', href:'salary.html'},
       {k:'children',      label:'Пособие на детей (<span lang="he" dir="rtl">קצבת ילדים</span>)', href:'tablo.html'},
-      {k:'long_term',     label:'Пенсия по старости, инвалидность, сиюд и другие (<span lang="he" dir="rtl">קצבאות ארוכות מועד</span>)', href:'pension-gap.html'}
+      {k:'long_term',     label:'Пособие по старости, инвалидность, сиюд и другие (<span lang="he" dir="rtl">קצבאות ארוכות מועד</span>)', href:'pension-gap.html'}
     ];
     BL.forEach(function(b){
       var d=blNext(pay[b.k], b.k==='self_employed');
@@ -309,20 +314,83 @@ fetch('data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json(
 var MONTHS_RU=['январе','феврале','марте','апреле','мае','июне','июле','августе','сентябре','октябре','ноябре','декабре'];
 fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():Promise.reject()}).then(function(p){
   window.__paymentsData=p;
-  function dd(iso){ if(!iso) return '—'; var parts=iso.split('-'); return parts[2]+'.'+parts[1]; }
-  var els={
-    'pay-children':p.children,'pay-unemployment':p.unemployment,
-    'pay-self-employed':p.self_employed,'pay-long-term':p.long_term
-  };
-  Object.keys(els).forEach(function(id){
-    var el=document.getElementById(id);
-    if(el && els[id]) el.textContent=dd(els[id]);
-  });
+  // Строки выплат рисует блок «Институт национального страхования» ниже —
+  // он показывает живые даты с переносом на следующий месяц.
   var lbl=document.getElementById('pay-month-label');
   if(lbl && p.month_label){
     var parts=p.month_label.split('-');
     lbl.textContent='в '+MONTHS_RU[parseInt(parts[1],10)-1]+' '+parts[0];
   }
+
+  // ---- Отдельный блок «Институт национального страхования» ----
+  // Даты живые: если число месяца уже прошло, показываем следующий месяц,
+  // чтобы блок не завис на прошедшей дате, как это было с бегущей строкой.
+  (function renderBituah(){
+    var box=document.getElementById('bl-rows');
+    if(!box) return;
+    function daysTo(d){
+      var t=new Date(); t.setHours(0,0,0,0);
+      var x=new Date(d); x.setHours(0,0,0,0);
+      return Math.round((x-t)/86400000);
+    }
+    function shiftFwd(d){                      // Битуах леуми сдвигает вперёд на будний
+      var dow=d.getDay();
+      if(dow===5) d.setDate(d.getDate()+3);
+      else if(dow===6) d.setDate(d.getDate()+2);
+      return d;
+    }
+    function nextDate(iso){
+      if(!iso) return null;
+      var a=iso.split('-'), y=+a[0], m=+a[1]-1, day=+a[2];
+      var d=new Date(y,m,day);
+      if(daysTo(d)>=0) return d;               // дата ещё впереди — она точная
+      // Перематываем вперёд ПОКА дата в прошлом, а не ровно на один месяц:
+      // если бот не обновлял файл пару месяцев, одного шага не хватало
+      // и на экране появлялось «через −1 дн.».
+      for(var k=1;k<=24;k++){
+        var n=shiftFwd(new Date(y,m+k,day));
+        if(daysTo(n)>=0) return n;
+      }
+      return null;
+    }
+    function pad(n){return n<10?'0'+n:''+n}
+    var ITEMS=[
+      {k:'unemployment', icon:'📋', ru:'Пособие по безработице и гарантия дохода', he:'דמי אבטלה, הבטחת הכנסה'},
+      {k:'children',     icon:'👶', ru:'Пособие на детей', he:'קצבת ילדים'},
+      {k:'long_term',    icon:'🧓', ru:'Пособие по старости, инвалидность и другие', he:'קצבאות ארוכות מועד'},
+      {k:'self_employed',icon:'💼', ru:'Взносы: самозанятые и работодатели', he:'תשלום דמי ביטוח'}
+    ];
+    var rows=ITEMS.map(function(it){
+      var d=nextDate(p[it.k]);
+      return d?{it:it,d:d,days:daysTo(d)}:null;
+    }).filter(Boolean);
+    rows.sort(function(a,b){return a.d-b.d});
+    if(!rows.length){ box.innerHTML=''; return; }
+
+    box.innerHTML=rows.map(function(r,idx){
+      var when=r.days===0?'сегодня':(r.days===1?'завтра':'через '+r.days+' дн.');
+      var soon=idx===0;
+      return '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;background:'+
+        (soon?'#eaf6f0':'var(--paper)')+';border:1px solid '+(soon?'#b9d8ca':'transparent')+
+        ';border-radius:10px;padding:10px 12px">'+
+        '<span style="font-size:12.5px;color:var(--ink);min-width:0">'+r.it.icon+' '+r.it.ru+
+        '<span style="display:block;font-size:10.5px;color:var(--muted)" lang="he" dir="rtl">'+r.it.he+'</span></span>'+
+        '<span style="text-align:right;white-space:nowrap"><b style="font-size:14px;color:var(--green)">'+
+        pad(r.d.getDate())+'.'+pad(r.d.getMonth()+1)+'</b>'+
+        '<span style="display:block;font-size:10.5px;color:'+(soon?'#08775a':'var(--muted)')+';font-weight:'+(soon?'800':'500')+'">'+when+'</span></span>'+
+        '</div>';
+    }).join('');
+
+    // Расшифровка «длинных пособий» — 11 видов одной датой
+    var ll=document.getElementById('bl-long-list');
+    if(ll && p.long_term_items && p.long_term_items.length){
+      ll.innerHTML='Все они приходят в одну дату — '+
+        p.long_term_items.map(function(x){
+          return '<span style="white-space:nowrap">'+x.ru+' (<span lang="he" dir="rtl">'+x.he+'</span>)</span>';
+        }).join(' · ')+'.';
+    }
+  })();
+
   // Тикер уже мог отрисоваться раньше (до того, как эти данные подгрузились) —
   // перерисовываем его с уже верной, проверенной датой Битуах леуми.
   if(window.__renderTicker && window.__tabloData) window.__renderTicker(window.__tabloData);
@@ -408,6 +476,64 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 })();
 </script>
 
+
+<!-- ВЫПЛАТЫ БИТУАХ ЛЕУМИ — отдельный заметный блок.
+     Раньше был свёрнут в гармошке на 68% страницы: человек, которому нужна
+     дата пособия, его просто не находил и вынужден был ждать бегущую строку. -->
+<div style="max-width:640px;margin:26px auto 0" id="bituah-block">
+<div style="background:linear-gradient(135deg,#0d9671,#08775a);border-radius:18px;padding:3px;box-shadow:0 10px 28px rgba(8,119,90,.25)">
+<div style="background:#fffdf8;border-radius:15px;padding:18px 16px 14px">
+
+<div style="display:flex;align-items:center;gap:9px;margin-bottom:3px">
+<span style="font-size:24px">🏛️</span>
+<div style="flex:1">
+<h2 style="margin:0;font-size:16.5px;line-height:1.25;color:var(--ink)">Институт национального страхования</h2>
+<div style="font-size:11.5px;color:var(--muted);margin-top:1px">Битуах леуми (<span lang="he" dir="rtl">ביטוח לאומי</span>) — когда платят пособия</div>
+</div>
+<span style="flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;background:#eaf6f0;color:#08775a;font-size:10px;font-weight:800;padding:4px 9px;border-radius:20px;white-space:nowrap"><span class="home-live-dot"></span>ЖИВЫЕ ДАТЫ</span>
+</div>
+
+<p style="font-size:11.5px;color:var(--muted);margin:8px 0 12px;line-height:1.5">Даты каждый месяц разные — берём их прямо с официальной страницы расписания. Ближайшая выделена зелёным.</p>
+
+<div id="bl-rows" style="display:flex;flex-direction:column;gap:7px;margin-bottom:12px"></div>
+
+<details style="background:var(--paper);border-radius:10px;padding:0 12px;margin-bottom:7px">
+<summary style="padding:10px 0;font-size:12.5px;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span>🧓 Что входит в «длинные пособия»</span><span style="font-size:11px;font-weight:700;color:var(--green)">11 видов ▸</span>
+</summary>
+<div id="bl-long-list" style="font-size:11.5px;color:var(--muted);line-height:1.75;padding:0 0 11px"></div>
+</details>
+
+<div style="display:flex;flex-direction:column;gap:7px;margin-bottom:12px">
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span>✈️ Саль клита (корзина абсорбции)</span><span style="font-size:11px;font-weight:700;color:var(--muted)">по дате репатриации ▸</span>
+</summary>
+<div style="font-size:11px;color:var(--muted);line-height:1.6;padding:0 0 10px">
+Министерство алии и интеграции. Часть — наличными в аэропорту при въезде, остальное — <b>6 ежемесячных платежей</b> на счёт. Суммы 2026: одиночка ≈20,491 ₪, пара ≈39,065 ₪, семья с 2 детьми ≈61,000 ₪ (на первые полгода). Точная дата платежа зависит от даты вашей репатриации, не единая для всех.
+</div>
+</details>
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span>🏠 Квартирные после сааль клита</span><span style="font-size:11px;font-weight:700;color:var(--muted)">по дате репатриации ▸</span>
+</summary>
+<div style="font-size:11px;color:var(--muted);line-height:1.6;padding:0 0 10px">
+<b>Министерство строительства и жилья</b> (отдельное от Битуах леуми ведомство). Продолжает помощь с арендой после окончания сааль клита — до конца 5-го года репатриации (6-го для родителей-одиночек). Момент начала выплат зависит от точной даты вашей репатриации.
+</div>
+</details>
+</div>
+
+<p style="font-size:10px;color:var(--muted);margin:0 0 14px" id="pay-note">* дата берётся напрямую с официальной страницы Битуах леуми — иногда отличается от «чистого» 28-го числа из-за их внутреннего порядка обработки праздников и выходных</p>
+
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+<a href="avtala.html" style="flex:1 1 130px;text-align:center;font-size:12px;font-weight:800;color:#fff;background:var(--green);border-radius:20px;padding:9px 12px;text-decoration:none">Калькулятор авталы →</a>
+<a href="pension-gap.html" style="flex:1 1 130px;text-align:center;font-size:12px;font-weight:800;color:var(--green);background:transparent;border:1px solid var(--green);border-radius:20px;padding:9px 12px;text-decoration:none">Пенсионный разрыв →</a>
+</div>
+<p style="font-size:10px;color:var(--muted);margin:10px 0 0;text-align:center">Источник: <a href="https://www.btl.gov.il/Pages/BenefitsPaymentDates.aspx" target="_blank" rel="noopener nofollow" style="color:var(--green);font-weight:700">официальная страница выплат Битуах леуми</a> · обновляется автоматически</p>
+
+</div>
+</div>
+</div>
 
 <div style="max-width:640px;margin:22px auto 0;background:linear-gradient(135deg,#0d9671,#08775a);border-radius:16px;padding:3px;box-shadow:0 8px 22px rgba(8,119,90,.22)">
 <div style="background:#fff;border-radius:14px;padding:16px">
@@ -700,50 +826,7 @@ fetch('data/digest.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json
 <div style="background:linear-gradient(135deg,#0d9671,#08775a);border-radius:18px;padding:4px;box-shadow:0 10px 28px rgba(8,119,90,.25)">
 <div style="background:#fffdf8;border-radius:15px;padding:16px 16px 6px">
 
-<details>
-<summary style="cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;margin-bottom:10px">
-<span style="font-size:20px">💸</span>
-<span style="font-size:14px;font-weight:900;color:var(--ink);flex:1">Выплаты <span id="pay-month-label">в августе 2026</span></span>
-<span style="font-size:10px;color:var(--green);font-weight:700">важно — нажмите ▸</span>
-</summary>
-<div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px">
-<div style="display:flex;justify-content:space-between;align-items:center;background:var(--paper);border-radius:10px;padding:9px 12px">
-<span style="font-size:12.5px;color:var(--ink)">👶 Кицват еладим (пособие на детей)</span>
-<span style="font-size:13px;font-weight:800;color:var(--green)" id="pay-children">20.08</span>
-</div>
-<div style="display:flex;justify-content:space-between;align-items:center;background:var(--paper);border-radius:10px;padding:9px 12px">
-<span style="font-size:12.5px;color:var(--ink)">📋 Дмей автала (пособие по безработице)</span>
-<span style="font-size:13px;font-weight:800;color:var(--green)" id="pay-unemployment">12.08</span>
-</div>
-<div style="display:flex;justify-content:space-between;align-items:center;background:var(--paper);border-radius:10px;padding:9px 12px">
-<span style="font-size:12.5px;color:var(--ink)">💼 Взносы Битуах леуми (самозанятые)</span>
-<span style="font-size:13px;font-weight:800;color:var(--green)" id="pay-self-employed">16.08</span>
-</div>
-<div style="display:flex;justify-content:space-between;align-items:center;background:var(--paper);border-radius:10px;padding:9px 12px">
-<span style="font-size:12.5px;color:var(--ink)">🧓 Кицват зикна, инвалидность и др.</span>
-<span style="font-size:13px;font-weight:800;color:var(--green)" id="pay-long-term">28.08*</span>
-</div>
-<details style="background:var(--paper);border-radius:10px;padding:0 12px">
-<summary style="padding:9px 0;font-size:12.5px;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
-<span>✈️ Саль клита (корзина абсорбции)</span><span style="font-size:11px;font-weight:700;color:var(--muted)">по дате репатриации ▸</span>
-</summary>
-<div style="font-size:11px;color:var(--muted);line-height:1.6;padding:0 0 10px">
-Министерство алии и интеграции. Часть — наличными в аэропорту при въезде, остальное — <b>6 ежемесячных платежей</b> на счёт. Суммы 2026: одиночка ≈20,491 ₪, пара ≈39,065 ₪, семья с 2 детьми ≈61,000 ₪ (на первые полгода). Точная дата платежа зависит от даты вашей репатриации, не единая для всех.
-</div>
-</details>
-<details style="background:var(--paper);border-radius:10px;padding:0 12px">
-<summary style="padding:9px 0;font-size:12.5px;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
-<span>🏠 Квартирные после сааль клита</span><span style="font-size:11px;font-weight:700;color:var(--muted)">по дате репатриации ▸</span>
-</summary>
-<div style="font-size:11px;color:var(--muted);line-height:1.6;padding:0 0 10px">
-<b>Министерство строительства и жилья</b> (отдельное от Битуах леуми ведомство). Продолжает помощь с арендой после окончания сааль клита — до конца 5-го года репатриации (6-го для родителей-одиночек). Момент начала выплат зависит от точной даты вашей репатриации.
-</div>
-</details>
-</div>
-<p style="font-size:10px;color:var(--muted);margin:0 0 14px" id="pay-note">* дата берётся напрямую с официальной страницы Битуах леуми — иногда отличается от «чистого» 28-го числа из-за их внутреннего порядка обработки праздников и выходных</p>
-</details>
 
-<div style="height:1px;background:var(--line);margin:0 0 14px"></div>
 
 <details style="margin-bottom:6px">
 <summary style="cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;padding:0 0 10px">
