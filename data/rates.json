@@ -24,9 +24,9 @@
   "errors": {
     "fx": "AttributeError: 'str' object has no attribute 'get'"
   },
-  "updated": "2026-08-17T06:33:39.500345+00:00",
+  "updated": "2026-08-18T06:25:13.703960+00:00",
   "updated_sources_ok": "2/3",
   "_seed_note": "Начальный файл с проверенными значениями на дату создания. Далее обновляется автоматически через GitHub Actions (scripts/update-rates.py), кроме блока manual — его обновлять руками раз в месяц.",
-  "boi_rate_updated": "2026-08-17T06:33:39.500345+00:00",
-  "cpi_updated": "2026-08-17T06:33:39.500345+00:00"
+  "boi_rate_updated": "2026-08-18T06:25:13.703960+00:00",
+  "cpi_updated": "2026-08-18T06:25:13.703960+00:00"
 }
