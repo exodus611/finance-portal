@@ -381,6 +381,16 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
         '</div>';
     }).join('');
 
+    // Подсказка в свёрнутом заголовке: ближайшая выплата видна сразу,
+    // без раскрытия блока — чтобы понятно было, ради чего нажимать.
+    var teaser=document.getElementById('bl-teaser');
+    if(teaser){
+      var n=rows[0];
+      var w=n.days===0?'сегодня':(n.days===1?'завтра':'через '+n.days+' дн.');
+      teaser.textContent='Ближайшая: '+n.it.ru.toLowerCase()+' — '+w+' ('+
+        pad(n.d.getDate())+'.'+pad(n.d.getMonth()+1)+')';
+    }
+
     // Расшифровка «длинных пособий» — 11 видов одной датой
     var ll=document.getElementById('bl-long-list');
     if(ll && p.long_term_items && p.long_term_items.length){
@@ -484,16 +494,20 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 <div style="background:linear-gradient(135deg,#0d9671,#08775a);border-radius:18px;padding:3px;box-shadow:0 10px 28px rgba(8,119,90,.25)">
 <div style="background:#fffdf8;border-radius:15px;padding:18px 16px 14px">
 
-<div style="display:flex;align-items:center;gap:9px;margin-bottom:3px">
+<!-- Свёрнуто: виден только заголовок, содержимое раскрывается по клику,
+     чтобы блок не занимал экран у тех, кому даты сейчас не нужны. -->
+<details id="bl-details">
+<summary style="cursor:pointer;list-style:none;display:flex;align-items:center;gap:9px">
 <span style="font-size:24px">🏛️</span>
-<div style="flex:1">
+<div style="flex:1;min-width:0">
 <h2 style="margin:0;font-size:16.5px;line-height:1.25;color:var(--ink)">Институт национального страхования</h2>
 <div style="font-size:11.5px;color:var(--muted);margin-top:1px">Битуах леуми (<span lang="he" dir="rtl">ביטוח לאומי</span>) — когда платят пособия</div>
+<div id="bl-teaser" style="font-size:11.5px;color:var(--green);font-weight:800;margin-top:5px"></div>
 </div>
-<span style="flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;background:#eaf6f0;color:#08775a;font-size:10px;font-weight:800;padding:4px 9px;border-radius:20px;white-space:nowrap"><span class="home-live-dot"></span>ЖИВЫЕ ДАТЫ</span>
-</div>
+<span style="flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;background:#eaf6f0;color:#08775a;font-size:10px;font-weight:800;padding:4px 9px;border-radius:20px;white-space:nowrap"><span class="home-live-dot"></span>ВСЕ ДАТЫ ▸</span>
+</summary>
 
-<p style="font-size:11.5px;color:var(--muted);margin:8px 0 12px;line-height:1.5">Даты каждый месяц разные — берём их прямо с официальной страницы расписания. Ближайшая выделена зелёным.</p>
+<p style="font-size:11.5px;color:var(--muted);margin:12px 0 12px;line-height:1.5">Даты каждый месяц разные — берём их прямо с официальной страницы расписания. Ближайшая выделена зелёным.</p>
 
 <div id="bl-rows" style="display:flex;flex-direction:column;gap:7px;margin-bottom:12px"></div>
 
@@ -530,6 +544,7 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 <a href="pension-gap.html" style="flex:1 1 130px;text-align:center;font-size:12px;font-weight:800;color:var(--green);background:transparent;border:1px solid var(--green);border-radius:20px;padding:9px 12px;text-decoration:none">Пенсионный разрыв →</a>
 </div>
 <p style="font-size:10px;color:var(--muted);margin:10px 0 0;text-align:center">Источник: <a href="https://www.btl.gov.il/Pages/BenefitsPaymentDates.aspx" target="_blank" rel="noopener nofollow" style="color:var(--green);font-weight:700">официальная страница выплат Битуах леуми</a> · обновляется автоматически</p>
+</details>
 
 </div>
 </div>
