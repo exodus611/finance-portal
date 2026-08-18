@@ -307,184 +307,91 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 }).catch(function(){});
 </script>
 
-<div style="max-width:640px;margin:24px auto 0">
-<div style="background:linear-gradient(135deg,#0d9671,#08775a);border-radius:18px;padding:4px;box-shadow:0 10px 28px rgba(8,119,90,.25)">
-<div style="background:#fffdf8;border-radius:15px;padding:16px 16px 6px">
 
-<details>
-<summary style="cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;margin-bottom:10px">
-<span style="font-size:20px">💸</span>
-<span style="font-size:14px;font-weight:900;color:var(--ink);flex:1">Выплаты <span id="pay-month-label">в августе 2026</span></span>
-<span style="font-size:10px;color:var(--green);font-weight:700">важно — нажмите ▸</span>
-</summary>
-<div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px">
-<div style="display:flex;justify-content:space-between;align-items:center;background:var(--paper);border-radius:10px;padding:9px 12px">
-<span style="font-size:12.5px;color:var(--ink)">👶 Кицват еладим (пособие на детей)</span>
-<span style="font-size:13px;font-weight:800;color:var(--green)" id="pay-children">20.08</span>
-</div>
-<div style="display:flex;justify-content:space-between;align-items:center;background:var(--paper);border-radius:10px;padding:9px 12px">
-<span style="font-size:12.5px;color:var(--ink)">📋 Дмей автала (пособие по безработице)</span>
-<span style="font-size:13px;font-weight:800;color:var(--green)" id="pay-unemployment">12.08</span>
-</div>
-<div style="display:flex;justify-content:space-between;align-items:center;background:var(--paper);border-radius:10px;padding:9px 12px">
-<span style="font-size:12.5px;color:var(--ink)">💼 Взносы Битуах леуми (самозанятые)</span>
-<span style="font-size:13px;font-weight:800;color:var(--green)" id="pay-self-employed">16.08</span>
-</div>
-<div style="display:flex;justify-content:space-between;align-items:center;background:var(--paper);border-radius:10px;padding:9px 12px">
-<span style="font-size:12.5px;color:var(--ink)">🧓 Кицват зикна, инвалидность и др.</span>
-<span style="font-size:13px;font-weight:800;color:var(--green)" id="pay-long-term">28.08*</span>
-</div>
-<details style="background:var(--paper);border-radius:10px;padding:0 12px">
-<summary style="padding:9px 0;font-size:12.5px;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
-<span>✈️ Саль клита (корзина абсорбции)</span><span style="font-size:11px;font-weight:700;color:var(--muted)">по дате репатриации ▸</span>
-</summary>
-<div style="font-size:11px;color:var(--muted);line-height:1.6;padding:0 0 10px">
-Министерство алии и интеграции. Часть — наличными в аэропорту при въезде, остальное — <b>6 ежемесячных платежей</b> на счёт. Суммы 2026: одиночка ≈20,491 ₪, пара ≈39,065 ₪, семья с 2 детьми ≈61,000 ₪ (на первые полгода). Точная дата платежа зависит от даты вашей репатриации, не единая для всех.
-</div>
-</details>
-<details style="background:var(--paper);border-radius:10px;padding:0 12px">
-<summary style="padding:9px 0;font-size:12.5px;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
-<span>🏠 Квартирные после сааль клита</span><span style="font-size:11px;font-weight:700;color:var(--muted)">по дате репатриации ▸</span>
-</summary>
-<div style="font-size:11px;color:var(--muted);line-height:1.6;padding:0 0 10px">
-<b>Министерство строительства и жилья</b> (отдельное от Битуах леуми ведомство). Продолжает помощь с арендой после окончания сааль клита — до конца 5-го года репатриации (6-го для родителей-одиночек). Момент начала выплат зависит от точной даты вашей репатриации.
-</div>
-</details>
-</div>
-<p style="font-size:10px;color:var(--muted);margin:0 0 14px" id="pay-note">* дата берётся напрямую с официальной страницы Битуах леуми — иногда отличается от «чистого» 28-го числа из-за их внутреннего порядка обработки праздников и выходных</p>
-</details>
 
-<div style="height:1px;background:var(--line);margin:0 0 14px"></div>
+<h2 style="text-align:center;font-size:22px;letter-spacing:-.02em;max-width:600px;margin:28px auto 4px">Выберите калькулятор</h2>
+<p style="text-align:center;font-size:13px;color:var(--muted);max-width:600px;margin:0 auto 14px;line-height:1.5">20 бесплатных калькуляторов, живое табло экономики и словарь терминов — всё считается прямо в браузере, без регистрации</p>
 
-<details style="margin-bottom:6px">
-<summary style="cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;padding:0 0 10px">
-<span style="font-size:20px">🕍</span>
-<span style="font-size:14px;font-weight:900;color:var(--ink);flex:1">Праздники 2026 — режим работы учреждений</span>
-<span style="color:var(--green);font-size:13px">▸</span>
-</summary>
-<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:6px">
-
-<details style="background:var(--paper);border-radius:10px;padding:0 12px">
-<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
-<span>🍎 Рош а-Шана</span><span style="color:var(--green);font-weight:800">11–13.09</span>
-</summary>
-<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
-<b>Канун, 11.09 (пятница):</b> банки, Битуах леуми, налоговая, МВД — сокращённый день, закрытие ~12:00–13:00.<br>
-<b>1-й день, 11 вечера – 12.09:</b> банки и госучреждения полностью закрыты.<br>
-<b>2-й день, 12–13.09:</b> тоже полностью закрыто — Рош а-Шана длится 2 дня подряд.<br>
-Почта не работает все дни праздника.
-</div>
-</details>
-
-<details style="background:var(--paper);border-radius:10px;padding:0 12px">
-<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
-<span>🕯️ Йом Кипур</span><span style="color:var(--green);font-weight:800">20–21.09</span>
-</summary>
-<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
-<b>Канун, 20.09 (воскресенье):</b> сокращённый рабочий день, закрытие ~13:00–14:00.<br>
-<b>Сам день, вечер 20.09 – вечер 21.09:</b> вся страна останавливается — банки, учреждения, транспорт не работают вообще, даже общественный транспорт стоит.
-</div>
-</details>
-
-<details style="background:var(--paper);border-radius:10px;padding:0 12px">
-<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
-<span>🌿 Суккот</span><span style="color:var(--green);font-weight:800">25.09–03.10</span>
-</summary>
-<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
-<b>Канун, 25.09 (пятница вечер):</b> сокращённый день, закрытие ~13:00–14:00.<br>
-<b>1-й день, 26.09 (суббота):</b> банки и госучреждения закрыты (плюс это ещё и обычная суббота).<br>
-<b>Холь а-моэд (промежуточные дни), 27.09–01.10:</b> банки работают укороченно (обычно до 12:00–13:00), Битуах леуми закрыт для личного приёма, но можно решить вопрос по телефону 171 (работает круглосуточно).<br>
-<b>Ошана раба, 02.10 (7-й день):</b> обычно рабочий день с сокращёнными часами, многие уходят в отпуск заранее.<br>
-<b>Шмини Ацерет / Симхат Тора, 03.10 (суббота):</b> отдельный праздник сразу за Суккот — банки и госучреждения снова полностью закрыты.
-</div>
-</details>
-
-<details style="background:var(--paper);border-radius:10px;padding:0 12px">
-<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
-<span>🕎 Ханука</span><span style="color:var(--green);font-weight:800">04–12.12</span>
-</summary>
-<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
-8 дней, с вечера 04.12 по вечер 12.12 — <b>не выходной день</b>, банки и госучреждения работают в обычном режиме все дни, кроме укороченных часов в канун (пятница).
-</div>
-</details>
-
-<details style="background:var(--paper);border-radius:10px;padding:0 12px">
-<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
-<span style="opacity:.6">🎭 Пурим (прошёл в 2026)</span><span style="color:var(--muted);font-weight:800">02–03.03</span>
-</summary>
-<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
-Таанит Эстер (пост) — 02.03, Пурим — 03.03. Не выходной день по всей стране, банки работают. В Иерусалиме отдельно отмечают Шушан-Пурим на день позже.
-</div>
-</details>
-
-<details style="background:var(--paper);border-radius:10px;padding:0 12px">
-<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
-<span style="opacity:.6">🍷 Песах (прошёл в 2026)</span><span style="color:var(--muted);font-weight:800">01–08.04</span>
-</summary>
-<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
-<b>Седер, 01.04 (вечер):</b> начало праздника. <b>1-й день, 02.04:</b> банки и госучреждения закрыты. <b>Холь а-моэд, 03–07.04:</b> укороченные часы. <b>7-й день, 08.04:</b> снова полностью закрыто.
-</div>
-</details>
-
-<details style="background:var(--paper);border-radius:10px;padding:0 12px">
-<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
-<span style="opacity:.6">🇮🇱 День Независимости (прошёл в 2026)</span><span style="color:var(--muted);font-weight:800">22.04</span>
-</summary>
-<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
-Йом а-Зикарон (день памяти) — 21.04, банки работают, но с 20:00 вечера начинаются траурные мероприятия. Йом а-Ацмаут (независимость) — 22.04, официальный выходной, банки и госучреждения закрыты.
-</div>
-</details>
-
-<details style="background:var(--paper);border-radius:10px;padding:0 12px">
-<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
-<span style="opacity:.6">📜 Шавуот (прошёл в 2026)</span><span style="color:var(--muted);font-weight:800">22.05</span>
-</summary>
-<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
-Однодневный праздник, в 2026 году выпал на пятницу — банки и госучреждения закрыты, соединился с выходными в длинный уик-энд.
-</div>
-</details>
-
-</div>
-<p style="font-size:10px;color:var(--muted);margin:8px 0 0">Даты 2026 года, по данным Битуах леуми, банков и еврейского календаря. Часы могут отличаться у конкретного отделения — уточняйте на месте. Прошедшие праздники оставлены для справки на следующий год (даты будут другими — еврейский календарь смещается).</p>
-</details>
-</div>
-</div>
+<div class="fx-tabs" id="fx-tabs">
+  <button class="fx-tab active" data-cat="housing">🏠 Жильё</button>
+  <button class="fx-tab" data-cat="salary">💰 Зарплата и пособия</button>
+  <button class="fx-tab" data-cat="auto">🚗 Авто и кредиты</button>
+  <button class="fx-tab" data-cat="economy">📈 Экономика</button>
+  <button class="fx-tab" data-cat="other">📖 Справочники</button>
 </div>
 
-<div style="max-width:640px;margin:22px auto 0">
-<div style="font-size:12.5px;font-weight:800;color:var(--ink);margin-bottom:10px;text-align:center">Четыре самых актуальных сейчас</div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
-<a href="avtala.html" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:12px 6px;background:#fff;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit">
-<span style="font-size:20px">📋</span>
-<span style="font-size:11px;font-weight:800;color:var(--ink)">Дмей автала</span>
-<span style="font-size:9.5px;color:var(--muted);line-height:1.25">Сколько заплатят</span>
-</a>
-<a href="arnona.html" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:12px 6px;background:#fff;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit">
-<span style="font-size:20px">🏛️</span>
-<span style="font-size:11px;font-weight:800;color:var(--ink)">Арнона</span>
-<span style="font-size:9.5px;color:var(--muted);line-height:1.25">Скидки по закону</span>
-</a>
-<a href="valuta.html" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:12px 6px;background:#fff;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit">
-<span style="font-size:20px">💱</span>
-<span style="font-size:11px;font-weight:800;color:var(--ink)">Курс валют</span>
-<span style="font-size:9.5px;color:var(--muted);line-height:1.25">160+ валют</span>
-</a>
-<a href="nko.html" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:12px 6px;background:#fff;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit">
-<span style="font-size:20px">🤝</span>
-<span style="font-size:11px;font-weight:800;color:var(--ink)">НКО</span>
-<span style="font-size:9.5px;color:var(--muted);line-height:1.25">Кто реально помогает</span>
-</a>
+<div class="fx-list" id="fx-list">
+<a class="fx-row" data-cat="salary" href="salary.html" aria-label="Калькулятор зарплаты — брутто/нетто, выходное пособие, согласование налога, пенсионер"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">💰</div><div class="fx-txt"><h3>Зарплата</h3><p>Брутто↔нетто, выходное пособие, 2 работы, работающий пенсионер</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="mashkanta.html" aria-label="Калькулятор машканты — расчёт и автоподбор ипотечных стратегий"><div class="fx-ico" style="background:#fbf3e3;color:var(--gold)">🏠</div><div class="fx-txt"><h3>Машканта</h3><p>Автоподбор из 67 000+ комбинаций, стресс-тест</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="auto" href="auto.html" aria-label="Калькулятор стоимости автомобиля"><div class="fx-ico" style="background:#eaf1f6;color:var(--blue)">🚗</div><div class="fx-txt"><h3>Автомобиль</h3><p>Реальная стоимость владения, не только цена в объявлении</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="auto" href="kredit.html" aria-label="Калькулятор кредита — платёж и переплата по ссуде"><div class="fx-ico" style="background:#fdeceb;color:#b84b3e">💳</div><div class="fx-txt"><h3>Кредит</h3><p>Платёж, переплата, сравнение сроков</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="arenda-vs-pokupka.html" aria-label="Калькулятор сравнения аренды и покупки квартиры"><div class="fx-ico" style="background:#e6f2f0;color:#0d8a7a">⚖️</div><div class="fx-txt"><h3>Аренда vs покупка</h3><p>Что накопит больше капитала — снимать или купить</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="mihzur-mashkanta.html" aria-label="Калькулятор рефинансирования машканты"><div class="fx-ico" style="background:#eef0fb;color:#4a5aa8">🔄</div><div class="fx-txt"><h3>Рефинансирование</h3><p>Стоит ли переоформить машканту на новых условиях</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="siluk-mukdam.html" aria-label="Калькулятор досрочного погашения или инвестирования"><div class="fx-ico" style="background:#fdf6e3;color:#b8860b">💎</div><div class="fx-txt"><h3>Погашение vs инвестиции</h3><p>Что выгоднее с учётом штрафа и налога</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="mas-rehisha.html" aria-label="Калькулятор налога на покупку квартиры мас рехиша"><div class="fx-ico" style="background:#e6f0ea;color:#2c5f8a">🏛️</div><div class="fx-txt"><h3>Мас рехиша</h3><p>Налог на покупку квартиры — все ступени 2026 и льготы</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="mas-shevach.html" aria-label="Калькулятор налога на прибыль при продаже квартиры мас шевах"><div class="fx-ico" style="background:#fdeceb;color:#8a3a3a">📉</div><div class="fx-txt"><h3>Мас шевах</h3><p>Налог при продаже — пропорциональное освобождение, не «всё или ничего»</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="dira.html" aria-label="Дира бе-ханаха — статус розыгрыша льготного жилья"><div class="fx-ico" style="background:#eaf1f6;color:#30779a">🏗️</div><div class="fx-txt"><h3>Дира бе-ханаха</h3><p>Статус розыгрыша, что готовится, где реально был шанс за 5 лет</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="arnona.html" aria-label="Скидка на арнону — кому положена по закону"><div class="fx-ico" style="background:#f3ece0;color:#8a5a2b">🏛️</div><div class="fx-txt"><h3>Скидка на арнону</h3><p>Репатрианты, пожилые, инвалиды, низкий доход — размеры по закону</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="salary" href="avtala.html" aria-label="Пособие по безработице дмей автала"><div class="fx-ico" style="background:#fdece8;color:#c2452e">📋</div><div class="fx-txt"><h3>Дмей автала</h3><p>Уволили? Сколько заплатят, сколько дней, куда идти по шагам</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="salary" href="pension-gap.html" aria-label="Калькулятор пенсионного разрыва"><div class="fx-ico" style="background:#f2eefa;color:#7857b8">🧓</div><div class="fx-txt"><h3>Пенсионный разрыв</h3><p>Хватит ли вам на пенсии — честно, с кицват зикна</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="salary" href="keren-hishtalmut.html" aria-label="Калькулятор фонда повышения квалификации"><div class="fx-ico" style="background:#eafaf3;color:#0a8f6b">🎓</div><div class="fx-txt"><h3>Фонд повышения квалификации</h3><p>Рост фонда без налога — с правильными двумя потолками для самозанятых</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="salary" href="nekudot-zikuy.html" aria-label="Калькулятор налоговых баллов некудот зикуй"><div class="fx-ico" style="background:#fef2e0;color:#c2790b">🎯</div><div class="fx-txt"><h3>Некудот зикуй</h3><p>Сколько баллов вам положено и сколько это в шекелях</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="economy" href="valuta.html" aria-label="Конвертер валют, курс шекеля, корзина валют"><div class="fx-ico" style="background:#e6f0fa;color:#2f6df6">💱</div><div class="fx-txt"><h3>Курс валют</h3><p>Конвертер, корзина валют, график за год, официальный vs рыночный</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="economy" href="tablo.html" aria-label="Экономика Израиля сегодня"><div class="fx-ico" style="background:#eaf6f0;color:#08775a">📊</div><div class="fx-txt"><h3>Экономика сегодня</h3><p>Ставка, мадад, курсы валют, минималка — живое табло</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="auto" href="benzin.html" aria-label="Цена на бензин в Израиле"><div class="fx-ico" style="background:#e8eef7;color:#1e3a5f">⛽</div><div class="fx-txt"><h3>Цена на бензин</h3><p>Из чего складывается литр, доля государства, сравнение с Европой</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="other" href="slovar.html" aria-label="Словарь финансовых терминов"><div class="fx-ico" style="background:#f2eefa;color:var(--purple)">📖</div><div class="fx-txt"><h3>Словарь терминов</h3><p>Что банк говорит и что это значит на самом деле</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="other" href="nko.html" aria-label="Благотворительные организации Израиля"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">🤝</div><div class="fx-txt"><h3>Благотворительные НКО</h3><p>Крупные проверенные организации + как проверить любую самому</p></div><span class="fx-arrow">→</span></a>
 </div>
-</div>
+
+<style>
+.fx-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0 16px;max-width:900px;margin-inline:auto}
+.fx-tab{background:#fff;border:1px solid var(--line);color:var(--muted);font-family:inherit;font-size:12.5px;font-weight:700;padding:8px 14px;border-radius:20px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.fx-tab:hover{border-color:var(--green);color:var(--green)}
+.fx-tab.active{background:var(--green);border-color:var(--green);color:#fff}
+.fx-list{display:flex;flex-direction:column;gap:8px;max-width:900px;margin:0 auto 34px}
+.fx-row{display:flex;align-items:center;gap:14px;padding:12px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s,border-color .15s}
+.fx-row:hover{transform:translateY(-1px);border-color:var(--green);box-shadow:0 8px 20px rgba(26,45,37,.08)}
+.fx-row:active{transform:translateY(0) scale(.99)}
+.fx-ico{width:44px;height:44px;flex:0 0 44px;border-radius:12px;display:grid;place-items:center;font-size:20px}
+.fx-txt{min-width:0;flex:1}
+.fx-txt h3{margin:0 0 2px;font-size:14.5px;line-height:1.25}
+.fx-txt p{margin:0;font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fx-arrow{flex:0 0 auto;font-size:17px;color:var(--line);font-weight:700}
+.fx-row:hover .fx-arrow{color:var(--green)}
+@media(max-width:560px){.fx-txt p{white-space:normal;-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}}
+</style>
+<script>
+(function(){
+  var tabs=document.querySelectorAll('#fx-tabs .fx-tab');
+  var rows=document.querySelectorAll('#fx-list .fx-row');
+  function applyFilter(cat){
+    rows.forEach(function(r){
+      r.style.display=(r.getAttribute('data-cat')===cat)?'flex':'none';
+    });
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.remove('active')});
+      t.classList.add('active');
+      applyFilter(t.getAttribute('data-cat'));
+    });
+  });
+  // фильтр сразу при загрузке — по умолчанию первая вкладка
+  var activeTab=document.querySelector('#fx-tabs .fx-tab.active');
+  if(activeTab) applyFilter(activeTab.getAttribute('data-cat'));
+})();
+</script>
+
 
 <div style="max-width:640px;margin:22px auto 0;background:linear-gradient(135deg,#0d9671,#08775a);border-radius:16px;padding:3px;box-shadow:0 8px 22px rgba(8,119,90,.22)">
 <div style="background:#fff;border-radius:14px;padding:16px">
-<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-<span style="font-size:20px">🧠</span>
-<span style="font-size:14px;font-weight:900;color:var(--ink)">Умный запрос — с данными, о которых вы бы не подумали спросить</span>
+<div style="display:inline-block;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--green);border-radius:20px;padding:4px 11px;margin-bottom:9px">★ Только у нас</div>
+<div style="display:flex;align-items:center;gap:9px;margin-bottom:7px">
+<span style="font-size:26px">🧠</span>
+<span style="font-size:17px;font-weight:900;color:var(--ink);line-height:1.25">Умный запрос — найдёт то,<br>о чём вы не подумали спросить</span>
 </div>
-<p style="font-size:12.5px;color:var(--muted);margin:0 0 4px;line-height:1.5">Опишите, кого или что ищете — своими словами, можно голосом.</p>
-<p style="font-size:11.5px;color:var(--green);font-style:italic;margin:0 0 12px;line-height:1.5">Система сформирует правильный вопрос — поместите его в любую нейросеть с доступом в интернет.</p>
+<p style="font-size:13px;color:var(--muted);margin:0 0 4px;line-height:1.5">Опишите своими словами, кого или что ищете — врача, адвоката, мастера. Можно голосом.</p>
+<p style="font-size:12px;color:var(--green);font-weight:700;margin:0 0 12px;line-height:1.5">Мы соберём правильный вопрос со ссылками на официальные реестры — вставьте его в любую нейросеть с интернетом.</p>
 <textarea id="univ-query" placeholder="например: ортодонт для ребёнка в Тель-Авиве" rows="3" style="width:100%;padding:11px;border:1px solid var(--line);border-radius:11px;font-size:14.5px;box-sizing:border-box;margin-bottom:10px;font-family:inherit;resize:vertical;line-height:1.5"></textarea>
 <div style="display:flex;gap:8px">
 <button onclick="copyUnivPrompt()" style="flex:1;background:var(--green);color:#fff;border:none;padding:12px;border-radius:9px;font-size:13.5px;font-weight:700;cursor:pointer">🧠 Собрать и скопировать запрос</button>
@@ -531,7 +438,7 @@ function copyUnivPrompt(){
 
   var baseRole = 'Ты — местный эксперт-консьерж в Израиле: знаешь город, официальные реестры, отличаешь настоящих специалистов от рекламного мусора. Только конкретика, без воды и банальностей. ';
 
-  var universalRules = 'Сам найди в интернете и дай готовый результат, не отправляй «погуглите сами». Не выдумывай данные — если не нашёл, честно скажи об этом кратко, не подставляй похожего человека под указанное мной имя (если фамилия не совпала — спроси «вы имели в виду [X]?», не выдавай за факт). Google-рейтинг только 1.0–5.0 (число выше 5 — ошибка). Лицензия — либо номер+статус, либо «не нашёл», без расплывчатых фраз типа «подтверждено реестром» без номера. Не смешивай алфавиты внутри слова (проверь перед выдачей). Пиши чистым русским текстом, адреса — обычной транслитерацией («улица Герцль 73»), НЕ вставляй ивритские слова в русские фразы; иврит-оригинал допустим только для 1-2 официальных названий на весь ответ, не для мелочей. Не выдумывай фонетическую транслитерацию непонятных названий — просто опиши по-русски. Ссылки давай только точные проверяемые (лучше .gov.il), сомнительные — не давай вообще. Если указано условие (касса, район, страховка) — это жёсткий фильтр, показывай только подходящее. Предпочитай независимые источники рекламным подборкам. Ищи детали, которые обычный поиск мог бы упустить. ';
+  var universalRules = 'Сам найди в интернете и дай готовый результат, не отправляй «погуглите сами». Не выдумывай данные — если не нашёл, честно скажи об этом кратко, не подставляй похожего человека под указанное мной имя (если фамилия не совпала — спроси «вы имели в виду [X]?», не выдавай за факт). Google-рейтинг только 1.0–5.0 (число выше 5 — ошибка). Лицензия — либо номер+статус, либо «не нашёл», без расплывчатых фраз типа «подтверждено реестром» без номера. ЯЗЫК ОТВЕТА — СТРОГОЕ ПРАВИЛО. Весь ответ пиши живым, естественным русским языком — так, как написал бы человек, а не машинный перевод: никаких калек с иврита и корявых конструкций. Английского языка в ответе быть НЕ ДОЛЖНО вообще — ни слов, ни названий, ни пояснений в скобках. Если название или термин существует на иврите (учреждение, улица, больница, больничная касса, юридический термин, название реестра), давай его так: понятный русский перевод или транслитерация, а сразу за ним в скобках ОРИГИНАЛ НА ИВРИТЕ. Например: «улица Герцль 73 (רחוב הרצל 73)», «больничная касса Клалит (כללית)», «налог на покупку (מס רכישה)», «Управление земель Израиля (רשות מקרקעי ישראל)». Никогда не подставляй в скобки английский вариант вместо ивритского. Не смешивай буквы разных алфавитов внутри одного слова (проверь перед выдачей). Если не знаешь точного написания на иврите — просто не ставь скобки, но не заменяй их английским. Ссылки давай только точные проверяемые (лучше .gov.il), сомнительные — не давай вообще. Если указано условие (касса, район, страховка) — это жёсткий фильтр, показывай только подходящее. Предпочитай независимые источники рекламным подборкам. Ищи детали, которые обычный поиск мог бы упустить. ';
 
   var text;
   if (registry) {
@@ -560,6 +467,34 @@ function copyUnivPrompt(){
 }
 </script>
 
+
+<div style="max-width:640px;margin:22px auto 0">
+<div style="font-size:12.5px;font-weight:800;color:var(--ink);margin-bottom:10px;text-align:center">Четыре самых актуальных сейчас</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+<a href="avtala.html" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:12px 6px;background:#fff;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit">
+<span style="font-size:20px">📋</span>
+<span style="font-size:11px;font-weight:800;color:var(--ink)">Дмей автала</span>
+<span style="font-size:9.5px;color:var(--muted);line-height:1.25">Сколько заплатят</span>
+</a>
+<a href="arnona.html" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:12px 6px;background:#fff;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit">
+<span style="font-size:20px">🏛️</span>
+<span style="font-size:11px;font-weight:800;color:var(--ink)">Арнона</span>
+<span style="font-size:9.5px;color:var(--muted);line-height:1.25">Скидки по закону</span>
+</a>
+<a href="valuta.html" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:12px 6px;background:#fff;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit">
+<span style="font-size:20px">💱</span>
+<span style="font-size:11px;font-weight:800;color:var(--ink)">Курс валют</span>
+<span style="font-size:9.5px;color:var(--muted);line-height:1.25">160+ валют</span>
+</a>
+<a href="nko.html" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:12px 6px;background:#fff;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit">
+<span style="font-size:20px">🤝</span>
+<span style="font-size:11px;font-weight:800;color:var(--ink)">НКО</span>
+<span style="font-size:9.5px;color:var(--muted);line-height:1.25">Кто реально помогает</span>
+</a>
+</div>
+</div>
+
+
 <div style="max-width:640px;margin:22px auto 0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px" id="digest-block">
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
 <span style="font-size:18px">🗞️</span>
@@ -583,6 +518,7 @@ fetch('data/digest.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json
   if(block) block.style.display='none';
 });
 </script>
+
 
 <div style="max-width:640px;margin:26px auto 0;background:linear-gradient(135deg,#c2452e,#a5372a);border-radius:16px;padding:3px;box-shadow:0 8px 22px rgba(165,55,42,.2)">
 <div style="background:#fff;border-radius:14px;padding:16px 16px 6px">
@@ -734,77 +670,150 @@ fetch('data/digest.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json
 })();
 </script>
 
-<p style="text-align:center;font-size:13px;color:var(--ink);font-weight:700;max-width:600px;margin:24px auto 14px;line-height:1.5">Для вашего удобства — 15 бесплатных калькуляторов, живое табло экономики, проверка специалистов и словарь терминов. Нажмите на нужный:</p>
+<div style="max-width:640px;margin:24px auto 0">
+<div style="background:linear-gradient(135deg,#0d9671,#08775a);border-radius:18px;padding:4px;box-shadow:0 10px 28px rgba(8,119,90,.25)">
+<div style="background:#fffdf8;border-radius:15px;padding:16px 16px 6px">
 
-<div class="fx-tabs" id="fx-tabs">
-  <button class="fx-tab active" data-cat="housing">🏠 Жильё</button>
-  <button class="fx-tab" data-cat="salary">💰 Зарплата и пособия</button>
-  <button class="fx-tab" data-cat="auto">🚗 Авто и кредиты</button>
-  <button class="fx-tab" data-cat="economy">📈 Экономика</button>
-  <button class="fx-tab" data-cat="other">📖 Справочники</button>
+<details>
+<summary style="cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;margin-bottom:10px">
+<span style="font-size:20px">💸</span>
+<span style="font-size:14px;font-weight:900;color:var(--ink);flex:1">Выплаты <span id="pay-month-label">в августе 2026</span></span>
+<span style="font-size:10px;color:var(--green);font-weight:700">важно — нажмите ▸</span>
+</summary>
+<div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px">
+<div style="display:flex;justify-content:space-between;align-items:center;background:var(--paper);border-radius:10px;padding:9px 12px">
+<span style="font-size:12.5px;color:var(--ink)">👶 Кицват еладим (пособие на детей)</span>
+<span style="font-size:13px;font-weight:800;color:var(--green)" id="pay-children">20.08</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;background:var(--paper);border-radius:10px;padding:9px 12px">
+<span style="font-size:12.5px;color:var(--ink)">📋 Дмей автала (пособие по безработице)</span>
+<span style="font-size:13px;font-weight:800;color:var(--green)" id="pay-unemployment">12.08</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;background:var(--paper);border-radius:10px;padding:9px 12px">
+<span style="font-size:12.5px;color:var(--ink)">💼 Взносы Битуах леуми (самозанятые)</span>
+<span style="font-size:13px;font-weight:800;color:var(--green)" id="pay-self-employed">16.08</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;background:var(--paper);border-radius:10px;padding:9px 12px">
+<span style="font-size:12.5px;color:var(--ink)">🧓 Кицват зикна, инвалидность и др.</span>
+<span style="font-size:13px;font-weight:800;color:var(--green)" id="pay-long-term">28.08*</span>
+</div>
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span>✈️ Саль клита (корзина абсорбции)</span><span style="font-size:11px;font-weight:700;color:var(--muted)">по дате репатриации ▸</span>
+</summary>
+<div style="font-size:11px;color:var(--muted);line-height:1.6;padding:0 0 10px">
+Министерство алии и интеграции. Часть — наличными в аэропорту при въезде, остальное — <b>6 ежемесячных платежей</b> на счёт. Суммы 2026: одиночка ≈20,491 ₪, пара ≈39,065 ₪, семья с 2 детьми ≈61,000 ₪ (на первые полгода). Точная дата платежа зависит от даты вашей репатриации, не единая для всех.
+</div>
+</details>
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span>🏠 Квартирные после сааль клита</span><span style="font-size:11px;font-weight:700;color:var(--muted)">по дате репатриации ▸</span>
+</summary>
+<div style="font-size:11px;color:var(--muted);line-height:1.6;padding:0 0 10px">
+<b>Министерство строительства и жилья</b> (отдельное от Битуах леуми ведомство). Продолжает помощь с арендой после окончания сааль клита — до конца 5-го года репатриации (6-го для родителей-одиночек). Момент начала выплат зависит от точной даты вашей репатриации.
+</div>
+</details>
+</div>
+<p style="font-size:10px;color:var(--muted);margin:0 0 14px" id="pay-note">* дата берётся напрямую с официальной страницы Битуах леуми — иногда отличается от «чистого» 28-го числа из-за их внутреннего порядка обработки праздников и выходных</p>
+</details>
+
+<div style="height:1px;background:var(--line);margin:0 0 14px"></div>
+
+<details style="margin-bottom:6px">
+<summary style="cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;padding:0 0 10px">
+<span style="font-size:20px">🕍</span>
+<span style="font-size:14px;font-weight:900;color:var(--ink);flex:1">Праздники 2026 — режим работы учреждений</span>
+<span style="color:var(--green);font-size:13px">▸</span>
+</summary>
+<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:6px">
+
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span>🍎 Рош а-Шана</span><span style="color:var(--green);font-weight:800">11–13.09</span>
+</summary>
+<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
+<b>Канун, 11.09 (пятница):</b> банки, Битуах леуми, налоговая, МВД — сокращённый день, закрытие ~12:00–13:00.<br>
+<b>1-й день, 11 вечера – 12.09:</b> банки и госучреждения полностью закрыты.<br>
+<b>2-й день, 12–13.09:</b> тоже полностью закрыто — Рош а-Шана длится 2 дня подряд.<br>
+Почта не работает все дни праздника.
+</div>
+</details>
+
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span>🕯️ Йом Кипур</span><span style="color:var(--green);font-weight:800">20–21.09</span>
+</summary>
+<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
+<b>Канун, 20.09 (воскресенье):</b> сокращённый рабочий день, закрытие ~13:00–14:00.<br>
+<b>Сам день, вечер 20.09 – вечер 21.09:</b> вся страна останавливается — банки, учреждения, транспорт не работают вообще, даже общественный транспорт стоит.
+</div>
+</details>
+
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span>🌿 Суккот</span><span style="color:var(--green);font-weight:800">25.09–03.10</span>
+</summary>
+<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
+<b>Канун, 25.09 (пятница вечер):</b> сокращённый день, закрытие ~13:00–14:00.<br>
+<b>1-й день, 26.09 (суббота):</b> банки и госучреждения закрыты (плюс это ещё и обычная суббота).<br>
+<b>Холь а-моэд (промежуточные дни), 27.09–01.10:</b> банки работают укороченно (обычно до 12:00–13:00), Битуах леуми закрыт для личного приёма, но можно решить вопрос по телефону 171 (работает круглосуточно).<br>
+<b>Ошана раба, 02.10 (7-й день):</b> обычно рабочий день с сокращёнными часами, многие уходят в отпуск заранее.<br>
+<b>Шмини Ацерет / Симхат Тора, 03.10 (суббота):</b> отдельный праздник сразу за Суккот — банки и госучреждения снова полностью закрыты.
+</div>
+</details>
+
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span>🕎 Ханука</span><span style="color:var(--green);font-weight:800">04–12.12</span>
+</summary>
+<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
+8 дней, с вечера 04.12 по вечер 12.12 — <b>не выходной день</b>, банки и госучреждения работают в обычном режиме все дни, кроме укороченных часов в канун (пятница).
+</div>
+</details>
+
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span style="opacity:.6">🎭 Пурим (прошёл в 2026)</span><span style="color:var(--muted);font-weight:800">02–03.03</span>
+</summary>
+<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
+Таанит Эстер (пост) — 02.03, Пурим — 03.03. Не выходной день по всей стране, банки работают. В Иерусалиме отдельно отмечают Шушан-Пурим на день позже.
+</div>
+</details>
+
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span style="opacity:.6">🍷 Песах (прошёл в 2026)</span><span style="color:var(--muted);font-weight:800">01–08.04</span>
+</summary>
+<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
+<b>Седер, 01.04 (вечер):</b> начало праздника. <b>1-й день, 02.04:</b> банки и госучреждения закрыты. <b>Холь а-моэд, 03–07.04:</b> укороченные часы. <b>7-й день, 08.04:</b> снова полностью закрыто.
+</div>
+</details>
+
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span style="opacity:.6">🇮🇱 День Независимости (прошёл в 2026)</span><span style="color:var(--muted);font-weight:800">22.04</span>
+</summary>
+<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
+Йом а-Зикарон (день памяти) — 21.04, банки работают, но с 20:00 вечера начинаются траурные мероприятия. Йом а-Ацмаут (независимость) — 22.04, официальный выходной, банки и госучреждения закрыты.
+</div>
+</details>
+
+<details style="background:var(--paper);border-radius:10px;padding:0 12px">
+<summary style="padding:9px 0;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+<span style="opacity:.6">📜 Шавуот (прошёл в 2026)</span><span style="color:var(--muted);font-weight:800">22.05</span>
+</summary>
+<div style="font-size:11.5px;color:var(--muted);line-height:1.6;padding:0 0 11px">
+Однодневный праздник, в 2026 году выпал на пятницу — банки и госучреждения закрыты, соединился с выходными в длинный уик-энд.
+</div>
+</details>
+
+</div>
+<p style="font-size:10px;color:var(--muted);margin:8px 0 0">Даты 2026 года, по данным Битуах леуми, банков и еврейского календаря. Часы могут отличаться у конкретного отделения — уточняйте на месте. Прошедшие праздники оставлены для справки на следующий год (даты будут другими — еврейский календарь смещается).</p>
+</details>
+</div>
+</div>
 </div>
 
-<div class="fx-list" id="fx-list">
-<a class="fx-row" data-cat="salary" href="salary.html" aria-label="Калькулятор зарплаты — брутто/нетто, выходное пособие, согласование налога, пенсионер"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">💰</div><div class="fx-txt"><h3>Зарплата</h3><p>Брутто↔нетто, выходное пособие, 2 работы, работающий пенсионер</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="housing" href="mashkanta.html" aria-label="Калькулятор машканты — расчёт и автоподбор ипотечных стратегий"><div class="fx-ico" style="background:#fbf3e3;color:var(--gold)">🏠</div><div class="fx-txt"><h3>Машканта</h3><p>Автоподбор из 67 000+ комбинаций, стресс-тест</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="auto" href="auto.html" aria-label="Калькулятор стоимости автомобиля"><div class="fx-ico" style="background:#eaf1f6;color:var(--blue)">🚗</div><div class="fx-txt"><h3>Автомобиль</h3><p>Реальная стоимость владения, не только цена в объявлении</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="auto" href="kredit.html" aria-label="Калькулятор кредита — платёж и переплата по ссуде"><div class="fx-ico" style="background:#fdeceb;color:#b84b3e">💳</div><div class="fx-txt"><h3>Кредит</h3><p>Платёж, переплата, сравнение сроков</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="housing" href="arenda-vs-pokupka.html" aria-label="Калькулятор сравнения аренды и покупки квартиры"><div class="fx-ico" style="background:#e6f2f0;color:#0d8a7a">⚖️</div><div class="fx-txt"><h3>Аренда vs покупка</h3><p>Что накопит больше капитала — снимать или купить</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="housing" href="mihzur-mashkanta.html" aria-label="Калькулятор рефинансирования машканты"><div class="fx-ico" style="background:#eef0fb;color:#4a5aa8">🔄</div><div class="fx-txt"><h3>Рефинансирование</h3><p>Стоит ли переоформить машканту на новых условиях</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="housing" href="siluk-mukdam.html" aria-label="Калькулятор досрочного погашения или инвестирования"><div class="fx-ico" style="background:#fdf6e3;color:#b8860b">💎</div><div class="fx-txt"><h3>Погашение vs инвестиции</h3><p>Что выгоднее с учётом штрафа и налога</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="housing" href="mas-rehisha.html" aria-label="Калькулятор налога на покупку квартиры мас рехиша"><div class="fx-ico" style="background:#e6f0ea;color:#2c5f8a">🏛️</div><div class="fx-txt"><h3>Мас рехиша</h3><p>Налог на покупку квартиры — все ступени 2026 и льготы</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="housing" href="mas-shevach.html" aria-label="Калькулятор налога на прибыль при продаже квартиры мас шевах"><div class="fx-ico" style="background:#fdeceb;color:#8a3a3a">📉</div><div class="fx-txt"><h3>Мас шевах</h3><p>Налог при продаже — пропорциональное освобождение, не «всё или ничего»</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="housing" href="dira.html" aria-label="Дира бе-ханаха — статус розыгрыша льготного жилья"><div class="fx-ico" style="background:#eaf1f6;color:#30779a">🏗️</div><div class="fx-txt"><h3>Дира бе-ханаха</h3><p>Статус розыгрыша, что готовится, где реально был шанс за 5 лет</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="housing" href="arnona.html" aria-label="Скидка на арнону — кому положена по закону"><div class="fx-ico" style="background:#f3ece0;color:#8a5a2b">🏛️</div><div class="fx-txt"><h3>Скидка на арнону</h3><p>Репатрианты, пожилые, инвалиды, низкий доход — размеры по закону</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="salary" href="avtala.html" aria-label="Пособие по безработице дмей автала"><div class="fx-ico" style="background:#fdece8;color:#c2452e">📋</div><div class="fx-txt"><h3>Дмей автала</h3><p>Уволили? Сколько заплатят, сколько дней, куда идти по шагам</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="salary" href="pension-gap.html" aria-label="Калькулятор пенсионного разрыва"><div class="fx-ico" style="background:#f2eefa;color:#7857b8">🧓</div><div class="fx-txt"><h3>Пенсионный разрыв</h3><p>Хватит ли вам на пенсии — честно, с кицват зикна</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="salary" href="keren-hishtalmut.html" aria-label="Калькулятор фонда повышения квалификации"><div class="fx-ico" style="background:#eafaf3;color:#0a8f6b">🎓</div><div class="fx-txt"><h3>Фонд повышения квалификации</h3><p>Рост фонда без налога — с правильными двумя потолками для самозанятых</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="salary" href="nekudot-zikuy.html" aria-label="Калькулятор налоговых баллов некудот зикуй"><div class="fx-ico" style="background:#fef2e0;color:#c2790b">🎯</div><div class="fx-txt"><h3>Некудот зикуй</h3><p>Сколько баллов вам положено и сколько это в шекелях</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="economy" href="valuta.html" aria-label="Конвертер валют, курс шекеля, корзина валют"><div class="fx-ico" style="background:#e6f0fa;color:#2f6df6">💱</div><div class="fx-txt"><h3>Курс валют</h3><p>Конвертер, корзина валют, график за год, официальный vs рыночный</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="economy" href="tablo.html" aria-label="Экономика Израиля сегодня"><div class="fx-ico" style="background:#eaf6f0;color:#08775a">📊</div><div class="fx-txt"><h3>Экономика сегодня</h3><p>Ставка, мадад, курсы валют, минималка — живое табло</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="auto" href="benzin.html" aria-label="Цена на бензин в Израиле"><div class="fx-ico" style="background:#e8eef7;color:#1e3a5f">⛽</div><div class="fx-txt"><h3>Цена на бензин</h3><p>Из чего складывается литр, доля государства, сравнение с Европой</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="other" href="slovar.html" aria-label="Словарь финансовых терминов"><div class="fx-ico" style="background:#f2eefa;color:var(--purple)">📖</div><div class="fx-txt"><h3>Словарь терминов</h3><p>Что банк говорит и что это значит на самом деле</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="other" href="nko.html" aria-label="Благотворительные организации Израиля"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">🤝</div><div class="fx-txt"><h3>Благотворительные НКО</h3><p>Крупные проверенные организации + как проверить любую самому</p></div><span class="fx-arrow">→</span></a>
-</div>
-
-<style>
-.fx-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0 16px;max-width:900px;margin-inline:auto}
-.fx-tab{background:#fff;border:1px solid var(--line);color:var(--muted);font-family:inherit;font-size:12.5px;font-weight:700;padding:8px 14px;border-radius:20px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
-.fx-tab:hover{border-color:var(--green);color:var(--green)}
-.fx-tab.active{background:var(--green);border-color:var(--green);color:#fff}
-.fx-list{display:flex;flex-direction:column;gap:8px;max-width:900px;margin:0 auto 34px}
-.fx-row{display:flex;align-items:center;gap:14px;padding:12px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s,border-color .15s}
-.fx-row:hover{transform:translateY(-1px);border-color:var(--green);box-shadow:0 8px 20px rgba(26,45,37,.08)}
-.fx-row:active{transform:translateY(0) scale(.99)}
-.fx-ico{width:44px;height:44px;flex:0 0 44px;border-radius:12px;display:grid;place-items:center;font-size:20px}
-.fx-txt{min-width:0;flex:1}
-.fx-txt h3{margin:0 0 2px;font-size:14.5px;line-height:1.25}
-.fx-txt p{margin:0;font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.fx-arrow{flex:0 0 auto;font-size:17px;color:var(--line);font-weight:700}
-.fx-row:hover .fx-arrow{color:var(--green)}
-@media(max-width:560px){.fx-txt p{white-space:normal;-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}}
-</style>
-<script>
-(function(){
-  var tabs=document.querySelectorAll('#fx-tabs .fx-tab');
-  var rows=document.querySelectorAll('#fx-list .fx-row');
-  function applyFilter(cat){
-    rows.forEach(function(r){
-      r.style.display=(r.getAttribute('data-cat')===cat)?'flex':'none';
-    });
-  }
-  tabs.forEach(function(t){
-    t.addEventListener('click',function(){
-      tabs.forEach(function(x){x.classList.remove('active')});
-      t.classList.add('active');
-      applyFilter(t.getAttribute('data-cat'));
-    });
-  });
-  // фильтр сразу при загрузке — по умолчанию первая вкладка
-  var activeTab=document.querySelector('#fx-tabs .fx-tab.active');
-  if(activeTab) applyFilter(activeTab.getAttribute('data-cat'));
-})();
-</script>
 <p style="text-align:center;font-size:13.5px;color:var(--muted);max-width:560px;margin:38px auto 0;line-height:1.6">Прежде чем считать конкретные цифры, стоит понять общую картину — с чем вообще вы имеете дело, когда открываете счёт в банке или подписываете договор об ипотеке.</p>
 
 <section class="section" id="banking">
