@@ -173,8 +173,8 @@ details p{margin-top:8px;font-size:12.5px;color:var(--muted);line-height:1.6}
 <div class="f"><label>Цена продажи, ₪</label><input type="number" id="sellPrice" value="2500000" step="50000" min="0"></div>
 </div>
 <div class="row2">
-<div class="f"><label>Дата покупки</label><input type="date" id="buyDate" value="2012-06-01"></div>
-<div class="f"><label>Дата продажи <span class="sub">— по умолчанию сегодня</span></label><input type="date" id="sellDate"></div>
+<div class="f"><label>Дата покупки</label><div style="display:flex;gap:6px"><select id="buyMonth" style="flex:1;min-width:0"></select><select id="buyYear" style="flex:0 0 90px"></select></div><input type="hidden" id="buyDate" value="2012-06-01"></div>
+<div class="f"><label>Дата продажи <span class="sub">— по умолчанию текущий месяц</span></label><div style="display:flex;gap:6px"><select id="sellMonth" style="flex:1;min-width:0"></select><select id="sellYear" style="flex:0 0 90px"></select></div><input type="hidden" id="sellDate"></div>
 </div>
 <div class="f"><label>Дополнительные расходы (ремонт, риелтор, юрист, проценты по машканте), ₪</label><input type="number" id="expenses" value="60000" step="5000" min="0"></div>
 
@@ -369,7 +369,24 @@ function closeResultModal(){var ov=document.getElementById('result-modal-overlay
   btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
 })();
 
-document.getElementById('sellDate').value = new Date().toISOString().slice(0,10);
+(function initDateSelects(){
+  var MN=['январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь'];
+  var now=new Date(), curY=now.getFullYear(), curM=now.getMonth()+1;
+  function fill(mSel,ySel,hidden,defY,defM){
+    var m=document.getElementById(mSel), y=document.getElementById(ySel), h=document.getElementById(hidden);
+    if(!m||!y||!h) return;
+    for(var i=0;i<12;i++){var o=document.createElement('option');o.value=i+1;o.textContent=MN[i];m.appendChild(o);}
+    for(var yy=curY;yy>=1960;yy--){var o2=document.createElement('option');o2.value=yy;o2.textContent=yy;y.appendChild(o2);}
+    m.value=defM; y.value=defY;
+    function sync(){
+      var mm=(''+m.value).length<2?'0'+m.value:m.value;
+      h.value=y.value+'-'+mm+'-01';
+    }
+    m.addEventListener('change',sync); y.addEventListener('change',sync); sync();
+  }
+  fill('buyMonth','buyYear','buyDate',2012,6);
+  fill('sellMonth','sellYear','sellDate',curY,curM);
+})();
 document.addEventListener('DOMContentLoaded', buildViewPanelsSafe);
 </script>
 </body></html>
