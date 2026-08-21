@@ -240,7 +240,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 <section class="hero" style="padding-top:6px">
 <div class="eyebrow">Финансы для жизни в Израиле · 2026</div>
 <h1 style="margin:2px 0 6px">Ваши деньги — простыми словами</h1>
-<p style="font-size:13.5px;margin:0">21 бесплатный калькулятор и живое табло экономики. Мы не советуем, что вам делать — мы показываем цифры, а решение остаётся за вами.</p>
+<p style="font-size:13.5px;margin:0">23 бесплатных калькулятора и живое табло экономики. Мы не советуем, что вам делать — мы показываем цифры, а решение остаётся за вами.</p>
 </section>
 
 <div style="display:flex;align-items:center;gap:9px;max-width:640px;margin:12px auto 0;padding:9px 14px;background:#fff;border:1px solid var(--line);border-radius:12px">
@@ -416,6 +416,32 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 
 
 
+<section class="section" id="hot" style="margin-top:26px">
+<h2 style="text-align:center;font-size:22px;letter-spacing:-.02em;max-width:600px;margin:0 auto 4px">🔥 Горячее сейчас</h2>
+<p style="text-align:center;font-size:13px;color:var(--muted);max-width:600px;margin:0 auto 16px;line-height:1.5">Свежие изменения, которые касаются денег прямо сегодня</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px">
+
+<a href="havraa.html" style="display:block;text-decoration:none;background:var(--card);border:2px solid var(--green);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)">
+<div style="display:inline-block;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:20px;padding:4px 11px;margin-bottom:9px">Новое · 18 августа</div>
+<div style="display:flex;align-items:flex-start;gap:11px">
+<span style="font-size:28px;line-height:1">🏖️</span>
+<div style="min-width:0">
+<h3 style="margin:0 0 5px;font-size:16.5px;color:var(--ink);line-height:1.25">Оздоровительные подорожали</h3>
+<p style="margin:0;font-size:12.5px;color:var(--muted);line-height:1.5">День стоит 451,50 ₪ вместо 418 ₪. Заплатили по старой ставке — обязаны доплатить. Посчитайте свою разницу</p>
+</div></div></a>
+
+<a href="hisahon-yeled.html" style="display:block;text-decoration:none;background:var(--card);border:2px solid var(--gold);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)">
+<div style="display:inline-block;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--gold);border-radius:20px;padding:4px 11px;margin-bottom:9px">Проверьте своё</div>
+<div style="display:flex;align-items:flex-start;gap:11px">
+<span style="font-size:28px;line-height:1">👶</span>
+<div style="min-width:0">
+<h3 style="margin:0 0 5px;font-size:16.5px;color:var(--ink);line-height:1.25">Накопления на ребёнка</h3>
+<p style="margin:0;font-size:12.5px;color:var(--muted);line-height:1.5">Государство кладёт 58 ₪ в месяц. Где эти деньги и сколько вырастут — разница доходит до пяти раз</p>
+</div></div></a>
+
+</div>
+</section>
+
 <h2 style="text-align:center;font-size:22px;letter-spacing:-.02em;max-width:600px;margin:28px auto 4px">Выберите калькулятор</h2>
 <p style="text-align:center;font-size:13px;color:var(--muted);max-width:600px;margin:0 auto 14px;line-height:1.5">21 бесплатный калькулятор, живое табло экономики и словарь терминов — всё считается прямо в браузере, без регистрации</p>
 
@@ -428,6 +454,8 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 </div>
 
 <div class="fx-list" id="fx-list">
+<a class="fx-row" data-cat="salary" href="havraa.html" aria-label="Калькулятор оздоровительных — новая ставка 2026 и проверка недоплаты"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">🏖️</div><div class="fx-txt"><h3>Оздоровительные <span style="font-size:10px;font-weight:900;color:#fff;background:var(--red);border-radius:10px;padding:2px 7px;vertical-align:middle">НОВОЕ</span></h3><p>Ставку подняли до 451,50 ₪ за день — посчитайте доплату</p></div></a>
+<a class="fx-row" data-cat="salary" href="hisahon-yeled.html" aria-label="Калькулятор накоплений на каждого ребёнка"><div class="fx-ico" style="background:#fbf3e3;color:var(--gold)">👶</div><div class="fx-txt"><h3>Накопления на ребёнка</h3><p>58 ₪ в месяц от государства — сколько будет к 18 и 21 году</p></div></a>
 <a class="fx-row" data-cat="salary" href="salary.html" aria-label="Калькулятор зарплаты — брутто/нетто, выходное пособие, согласование налога, пенсионер"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">💰</div><div class="fx-txt"><h3>Зарплата</h3><p>Брутто↔нетто, выходное пособие, 2 работы, работающий пенсионер</p></div><span class="fx-arrow">→</span></a>
 <a class="fx-row" data-cat="housing" href="mashkanta.html" aria-label="Калькулятор машканты — расчёт и автоподбор ипотечных стратегий"><div class="fx-ico" style="background:#fbf3e3;color:var(--gold)">🏠</div><div class="fx-txt"><h3>Машканта</h3><p>Автоподбор из 67 000+ комбинаций, стресс-тест</p></div><span class="fx-arrow">→</span></a>
 <a class="fx-row" data-cat="auto" href="auto.html" aria-label="Калькулятор стоимости автомобиля"><div class="fx-ico" style="background:#eaf1f6;color:var(--blue)">🚗</div><div class="fx-txt"><h3>Автомобиль</h3><p>Реальная стоимость владения, не только цена в объявлении</p></div><span class="fx-arrow">→</span></a>
