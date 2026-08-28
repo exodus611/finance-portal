@@ -1,0 +1,695 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08775a">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308775a'/><text x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='900' fill='white' text-anchor='middle'>₪</text></svg>">
+<link rel="canonical" href="https://exodus611.github.io/finance-portal/siluk-mukdam.html">
+<title>Досрочное погашение машканты или инвестировать — калькулятор | 2026</title>
+<meta name="description" content="Есть свободные деньги — погасить машканту или вложить? Расчёт с учётом штрафа, налога на прирост капитала и индексации. Точка безразличия и приоритет каналов.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Досрочное погашение машканты или инвестировать?">
+<meta property="og:description" content="Честное сравнение при одинаковых денежных потоках: точка безразличия, приоритет каналов, штраф и налог на прирост капитала.">
+<meta property="og:url" content="https://exodus611.github.io/finance-portal/siluk-mukdam.html">
+<meta property="og:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="ru_RU">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Калькулятор: досрочное погашение машканты или инвестировать",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "description": "Сравнение будущей стоимости двух сценариев при одинаковых денежных потоках: досрочное погашение ипотеки против инвестирования свободных денег.",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "ILS"},
+  "inLanguage": "ru"
+}
+</script>
+<style>
+:root{--ink:#15251f;--muted:#5a6660;--paper:#f4f1e9;--card:#fffdf8;--line:#ddd6c7;--green:#08775a;--green2:#0d9671;--gold:#c29b52;--red:#b84b3e;--blue:#30779a;--purple:#7857b8;--shadow:0 16px 40px rgba(26,45,37,.08);--r:18px}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+html{overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.45;overflow-x:hidden;max-width:100vw}
+button,input,select{font:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+.shell{width:min(760px,calc(100% - 28px));margin:auto}
+.top{padding:18px 0}
+.topbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;row-gap:6px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:850}
+.mark{width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,var(--green2),var(--green) 70%);color:#fff;display:grid;place-items:center;font-size:32px;font-weight:900;box-shadow:0 6px 18px rgba(8,119,90,.45);border:2px solid rgba(255,255,255,.55)}
+a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none;white-space:nowrap}
+.hero{padding:30px 0 10px;text-align:center}
+.eyebrow{font-size:12px;color:var(--green);font-weight:900;text-transform:uppercase;letter-spacing:.09em}
+.hero h1{font-size:clamp(26px,5.2vw,40px);line-height:1.1;letter-spacing:-.03em;margin:10px auto 12px;max-width:620px}
+.hero p{font-size:14.5px;color:var(--muted);max-width:580px;margin:0 auto}
+.live{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:16px 0 0}
+.pill{background:#eaf6f0;color:var(--green);border-radius:20px;padding:6px 13px;font-size:12px;font-weight:700}
+.pill b{font-weight:900}
+.stale-note{text-align:center;font-size:11px;color:var(--muted);margin:6px auto 0;max-width:520px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;margin:18px 0;box-shadow:var(--shadow)}
+.title{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.num{width:32px;height:32px;border-radius:10px;background:var(--green);color:#fff;font-weight:900;display:grid;place-items:center;flex:0 0 32px;font-size:14px}
+.title h2{margin:0 0 3px;font-size:18px}
+.title p{margin:0;font-size:12.5px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:560px){.grid2,.grid3{grid-template-columns:1fr}}
+.f{margin-bottom:14px}
+.f label{display:block;font-size:12px;font-weight:800;color:var(--muted);margin-bottom:6px}
+.f label .sub{font-weight:500;color:var(--muted);text-transform:none;letter-spacing:0}
+.f input,.f select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:11px;font-size:14px;background:#fff;color:var(--ink)}
+.trk{border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px;background:#faf8f2}
+.trk-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
+.trk-h select{flex:1 1 140px;min-width:0;padding:9px 10px;font-size:13px;font-weight:700;border:1px solid var(--line);border-radius:10px;background:#fff}
+.tag{font-size:10.5px;padding:4px 10px;border-radius:20px;font-weight:800;white-space:nowrap}
+.tag.free{background:#eaf6f0;color:var(--green)}
+.tag.fee{background:#fff9e9;color:var(--gold)}
+.trk .grid3{gap:10px;margin-bottom:0}
+.trk input{padding:9px 10px;font-size:13px}
+.trk label{font-size:11px;margin-bottom:4px}
+.del{background:none;border:0;color:var(--red);cursor:pointer;font-size:14px;padding:4px 6px}
+.addbtn{width:100%;background:#fff;border:1.5px dashed var(--line);color:var(--muted);padding:11px;border-radius:11px;cursor:pointer;font-size:13px;font-family:inherit;margin-bottom:14px}
+.addbtn:hover{border-color:var(--green);color:var(--green)}
+.seg{display:flex;gap:8px;margin-bottom:6px}
+.seg button{flex:1;padding:11px 8px;border:1px solid var(--line);background:#fff;border-radius:11px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:700;color:var(--muted)}
+.seg button.on{background:var(--green);color:#fff;border-color:var(--green)}
+.chk{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1px solid var(--line);border-radius:11px;cursor:pointer;background:#faf8f2;margin-bottom:12px}
+.chk input{width:auto;margin-top:3px;flex-shrink:0}
+.chk span{font-size:13px}
+.primary{width:100%;background:var(--green);color:#fff;border:none;border-radius:14px;padding:14px;font-size:14.5px;font-weight:800;cursor:pointer}
+.primary:hover{background:var(--green2)}
+.verdict{border-radius:var(--r);padding:22px 20px;margin-bottom:16px;text-align:center;background:var(--card);border:1px solid var(--line)}
+.v-pay{background:#eaf6f0;border:1px solid #b9d8ca}
+.v-inv{background:#eaf1f6;border:1px solid #c7dbe6}
+.v-eq{background:#fff9e9;border:1px solid #e9d9b8}
+.v-lbl{font-size:12.5px;margin-bottom:6px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.v-num{font-size:2.1rem;font-weight:900;letter-spacing:-1px;line-height:1.1;color:var(--green)}
+.v-inv .v-num{color:var(--blue)}
+.v-eq .v-num{color:var(--gold)}
+.v-sub{font-size:12.5px;margin-top:8px;color:var(--muted)}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+@media(max-width:560px){.kpi{grid-template-columns:1fr}}
+.k{background:var(--card);border-radius:12px;padding:14px;text-align:center;border:1px solid var(--line)}
+.k .n{font-size:18px;font-weight:900}
+.k .l{font-size:11px;color:var(--muted);margin-top:3px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{padding:9px 7px;text-align:right;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+th{font-size:10.5px;color:var(--muted);font-weight:800;text-transform:uppercase}
+td.pos{color:var(--green);font-weight:800}
+td.neg{color:var(--red);font-weight:800}
+tfoot td{font-weight:900;border-bottom:0;border-top:2px solid var(--ink)}
+.rank{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.rank:last-child{border-bottom:0}
+.rank .rnum{width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:800;font-size:12px;flex:0 0 26px}
+.rank .rnum.off{background:var(--line);color:var(--muted)}
+.rank .info{flex:1}
+.rank .info b{font-size:13px}
+.rank .info div{font-size:11px;color:var(--muted);margin-top:2px}
+.note{border-radius:12px;padding:14px 16px;margin-bottom:12px;font-size:12.5px}
+.note b{display:block;margin-bottom:4px}
+.n-warn{background:#fff9e9;border-left:4px solid var(--gold)}
+.n-ok{background:#eaf6f0;border-left:4px solid var(--green)}
+.n-bad{background:#fff6f4;border-left:4px solid var(--red)}
+.n-info{background:#eaf1f6;border-left:4px solid var(--blue)}
+details{border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-top:10px;background:#fff}
+details summary{cursor:pointer;font-weight:800;font-size:13px;color:var(--green)}
+.detail{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.6}
+.term{background:#fff;border:1px dashed var(--line);padding:1px 5px;border-radius:5px;font-size:.94em}
+.disclaimer{font-size:11px;color:var(--muted);line-height:1.6;background:#fff9e9;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:14px 16px;margin-top:14px}
+.view-tabs{width:min(760px,calc(100% - 28px));margin:14px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);position:sticky;top:8px;z-index:90}
+.view-tab{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 6px;border-radius:9px;border:none;background:transparent;color:var(--muted);font-family:inherit;font-size:12px;font-weight:800;cursor:pointer}
+.view-tab b{font-size:10px;font-weight:600;opacity:.75}
+.view-tab.active{background:var(--green);color:#fff}
+.view-tab.active b{color:#fff;opacity:.85}
+.view-tab:hover:not(.active){background:var(--paper);color:var(--green)}
+.view-panel{display:none}
+.view-panel.active{display:block}
+@media(max-width:560px){.view-tabs{width:calc(100% - 18px);position:relative;top:auto}.view-tab{padding:8px 4px;font-size:10.5px}}
+.result-modal-overlay{display:none;position:fixed;inset:0;background:rgba(21,37,31,.55);z-index:200;align-items:flex-end;justify-content:center}
+.result-modal-overlay.show{display:flex}
+.result-modal{background:var(--card);border-radius:18px 18px 0 0;max-width:480px;width:100%;padding:20px 20px 22px;box-shadow:0 -8px 30px rgba(0,0,0,.25);animation:modalUp .22s ease-out}
+@media(min-width:640px){.result-modal-overlay{align-items:center;padding:20px}.result-modal{border-radius:18px}}
+@keyframes modalUp{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}
+.result-modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px}
+.result-modal-head h3{margin:0;font-size:17px;color:var(--green)}
+.result-modal-close{border:none;background:var(--paper);color:var(--muted);width:30px;height:30px;border-radius:50%;font-size:15px;cursor:pointer;flex:0 0 30px}
+.result-modal-big{font-size:27px;font-weight:900;color:var(--ink);margin:6px 0 2px}
+.result-modal-sub{font-size:12px;color:var(--muted);margin-bottom:12px}
+.result-modal-rows{display:grid;gap:6px;margin-bottom:14px}
+.result-modal-row{display:flex;flex-direction:column;gap:4px;font-size:12.5px;background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:10px 12px}
+.result-modal-row span{font-size:10.5px;font-weight:900;text-transform:uppercase;letter-spacing:.03em;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:5px;margin-bottom:1px}
+.result-modal-row b{font-weight:600;color:var(--ink);line-height:1.5}
+.result-modal-actions{display:flex;gap:8px}
+.result-modal-actions button{flex:1;border-radius:11px;padding:11px;font-weight:850;font-size:13px;cursor:pointer;border:1px solid var(--line)}
+.result-modal-actions .rm-primary{background:var(--green);color:#fff;border-color:var(--green)}
+.result-modal-actions .rm-secondary{background:transparent;color:var(--muted)}
+</style><script data-goatcounter="https://finance-portal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<noscript><div style="background:#fff6f4;border-bottom:2px solid #b84b3e;color:#b84b3e;text-align:center;padding:12px;font-family:sans-serif;font-size:13px">Для работы калькулятора нужен включённый JavaScript в браузере.</div></noscript>
+<header class="top"><div class="shell topbar"><div class="logo"><span class="mark">₪</span><span>Понятные финансы в Израиле</span></div><a class="back" href="index.html">← На главную</a><select onchange="if(this.value)location.href=this.value" style="font-size:11.5px;font-weight:700;color:var(--green);border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:#fff;margin-inline-start:8px;cursor:pointer"><option value="">Все калькуляторы ▾</option><option value="salary.html">💰 Зарплата</option><option value="mashkanta.html">🏠 Машканта</option><option value="auto.html">🚗 Автомобиль</option><option value="kredit.html">💳 Кредит</option><option value="arenda-vs-pokupka.html">⚖️ Аренда vs покупка</option><option value="mihzur-mashkanta.html">🔄 Рефинансирование</option><option value="mas-rehisha.html">🏛️ Мас рехиша</option><option value="mas-shevach.html">📉 Мас шевах</option><option value="pension-gap.html">🧓 Пенсионный разрыв</option><option value="keren-hishtalmut.html">🎓 Фонд повышения квалификации</option><option value="nekudot-zikuy.html">🎯 Некудот зикуй</option><option value="valuta.html">💱 Курс валют</option><option value="pikadon-vs-keren.html">🏦 Пикадон vs керен каспит</option><option value="tablo.html">📊 Экономика сегодня</option><option value="benzin.html">⛽ Цена на бензин</option><option value="arnona.html">🏛️ Скидка на арнону</option><option value="dira.html">🏗️ Дира бе-ханаха</option><option value="avtala.html">📋 Дмей автала</option>
+<option value="havraa.html">🏖️ Оздоровительные</option><option value="hisahon-yeled.html">👶 Накопления на ребёнка</option><option value="nko.html">🤝 Благотворительные НКО</option><option value="slovar.html">📖 Словарь терминов</option></select></div></header>
+
+<section class="hero shell">
+<div class="eyebrow">Досрочное погашение или инвестиции</div>
+<h1>Погасить машканту досрочно (<span lang="he" dir="rtl">סילוק מוקדם</span>) или инвестировать?</h1>
+<p>Считаем честно: штраф за досрочное погашение, налог на прирост капитала и индексация к мададу — а не наивное сравнение процентов.</p>
+<div class="live">
+<span class="pill">Прайм (<span lang="he" dir="rtl">פריים</span>) <b id="p-prime">5.0%</b></span>
+<span class="pill">Мадад (<span lang="he" dir="rtl">מדד</span>) год. <b id="p-cpi">1.6%</b></span>
+</div>
+<p class="stale-note" id="stale-note">⚠️ Ориентировочные ставки — актуальные уточняйте у банка перед решением.</p>
+<p style="text-align:center;font-size:11.5px;margin:6px 0 0"><a href="slovar.html" style="color:var(--green);font-weight:800;text-decoration:none">Что значат «Прайм» и «Мадад»? → словарь</a></p>
+</section>
+
+<nav class="view-tabs" id="view-tabs">
+    <button class="view-tab active" id="tab-input" onclick="setActiveView('input')"><span>Ввод</span><b>каналы и сумма</b></button>
+    <button class="view-tab" id="tab-result" onclick="setActiveView('result')"><span>Результат</span><b>что выгоднее</b></button>
+    <button class="view-tab" id="tab-explain" onclick="setActiveView('explain')"><span>Разберись</span><b>почему так считаем</b></button>
+</nav>
+
+<main class="shell">
+
+<section class="card">
+<div class="title"><span class="num">1</span><div><h2>Ваша машканта</h2><p>Данные из детализации банка (<span class="term" lang="he" dir="rtl">דפי פירוט</span>) или личного кабинета.</p></div></div>
+<div class="grid2">
+<div class="f"><label>Когда взяли <span class="sub">— влияет на скидку по штрафу</span></label>
+<select id="taken">
+<option value="0.5">Меньше года назад</option>
+<option value="1.5">1–2 года</option>
+<option value="2.5">2–3 года</option>
+<option value="3.5" selected>3–4 года</option>
+<option value="4.5">4–5 лет</option>
+<option value="6">Больше 5 лет</option>
+</select></div>
+<div class="f"><label>Тип кредита</label>
+<select id="ztype">
+<option value="regular">Обычная машканта</option>
+<option value="zakaut">Есть льготный сертификат (<span class="term" lang="he" dir="rtl">תעודת זכאות</span>)</option>
+</select></div>
+</div>
+<label style="display:block;font-size:12px;font-weight:800;color:var(--muted);margin-bottom:10px">Каналы (<span class="term" lang="he" dir="rtl">מסלולים</span>)</label>
+<div id="tracks"></div>
+<button class="addbtn" type="button" onclick="addTrack()">+ Добавить канал</button>
+</section>
+
+<section class="card">
+<div class="title"><span class="num">2</span><div><h2>Свободные деньги и альтернатива</h2><p>Сколько готовы вложить и какую доходность ожидаете.</p></div></div>
+<div class="f"><label>Свободная сумма, ₪</label><input type="number" id="lump" value="200000" step="10000" min="0"></div>
+<div class="f"><label>Что сделать при погашении</label>
+<div class="seg">
+<button id="m-pay" class="on" type="button" onclick="setMode('payment')">Снизить платёж</button>
+<button id="m-term" type="button" onclick="setMode('term')">Сократить срок</button>
+</div>
+<p class="sub" id="modeHint" style="font-size:12px;color:var(--muted);margin-top:6px">Срок остаётся прежним, платёж уменьшается. Освободившуюся разницу инвестируем.</p>
+</div>
+<div class="grid3">
+<div class="f"><label>Доходность инвестиций, %</label><input type="number" id="ret" value="7" step="0.5" min="0" max="30"></div>
+<div class="f"><label>Налог на доход, %</label><input type="number" id="tax" value="25" step="1" min="0" max="50"></div>
+<div class="f"><label>Горизонт, лет</label><input type="number" id="hor" value="20" step="1" min="1" max="40"></div>
+</div>
+<label class="chk"><input type="checkbox" id="fund" checked><span>У меня есть резерв на 3–6 месяцев расходов, и эти деньги — сверх него</span></label>
+<label class="chk"><input type="checkbox" id="keren"><span>Я уже полностью использую льготные отчисления (фонд повышения квалификации, пенсионные)</span></label>
+<button class="primary" id="run-btn" type="button">Сравнить варианты →</button>
+</section>
+
+</main>
+
+<main class="shell" style="display:none" id="hidden-source">
+<section class="card">
+<div class="title"><span class="num">3</span><div><h2>Результат</h2><p>Что выгоднее при ваших цифрах.</p></div></div>
+<div id="out"></div>
+</section>
+
+<section class="card">
+<div class="title"><span class="num">4</span><div><h2>Как это работает</h2><p>Без иллюзий и наивных сравнений.</p></div></div>
+<details open><summary>Почему нельзя просто сравнить 4.9% и 7%</summary><div class="detail">Доход от инвестиций облагается налогом, а экономия на процентах по машканте — нет. При налоге 25% доходность 7% превращается примерно в 5.25% чистыми. Разрыв сокращается втрое. Именно поэтому погашение машканты часто оказывается разумнее, чем кажется на первый взгляд.</div></details>
+<details><summary>Почему считаем будущую стоимость, а не «сэкономленные проценты»</summary><div class="detail">Наивное сравнение забывает, что после погашения освобождается ежемесячный платёж, и его тоже можно инвестировать. Мы сравниваем два сценария при одинаковых денежных потоках: в обоих вы тратите одну и ту же сумму сейчас и одну и ту же сумму ежемесячно. Разница только в том, куда эти деньги идут.</div></details>
+<details><summary>Что такое точка безразличия</summary><div class="detail">Доходность, при которой оба варианта дают одинаковый результат. Если вы верите, что рынок даст больше — выгоднее инвестировать. Если меньше — погашать. Это не прогноз, а ориентир для вашего собственного решения.</div></details>
+<details><summary>Индексированные каналы (<span class="term" lang="he" dir="rtl">צמוד מדד</span>)</summary><div class="detail">У цепного канала реальная стоимость долга равна ставке плюс инфляция. Канал под 3.3% при мададе 1.6% фактически стоит около 4.9% — дороже, чем выглядит. Поэтому цепные каналы часто выгоднее погашать первыми, даже если номинальная ставка ниже.</div></details>
+<details><summary>Снизить платёж или сократить срок</summary><div class="detail">Сокращение срока экономит больше процентов, но деньги «работают» внутри кредита под его ставку. Снижение платежа освобождает деньги сразу, и их можно инвестировать. Калькулятор считает оба варианта и подсказывает, какой лучше при ваших цифрах.</div></details>
+
+<div class="disclaimer">Расчёт оценочный и не является финансовой или налоговой консультацией. Ожидаемая доходность инвестиций — предположение, а не гарантия: рынок может дать меньше или уйти в минус. Не учтены комиссии фондов, льготные счета и ваша личная налоговая ситуация. Точный штраф рассчитает банк по запросу.</div>
+<div style="margin-top:12px;font-size:12px"><a href="mihzur-mashkanta.html" style="color:var(--green);font-weight:800;text-decoration:none">Хотите переоформить машканту на лучших условиях вместо погашения? Посчитайте рефинансирование →</a></div>
+</section>
+</main>
+
+<nav id="rel-links" aria-label="Смежные калькуляторы" style="width:min(760px,calc(100% - 28px));margin:8px auto 0;padding:16px 0"><div style="font-size:12px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Читайте также</div><a href="mihzur-mashkanta.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Рефинансирование</a><a href="mashkanta.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Машканта</a><a href="pikadon-vs-keren.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Пикадон или керен каспит</a><a href="kredit.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Кредит</a></nav>
+<footer class="shell" style="padding:26px 0 50px;color:var(--muted);font-size:11px;text-align:center">Понятные финансы в Израиле · калькулятор досрочного погашения · не финансовая консультация · <a href="contact.html" style="color:var(--green);font-weight:800;text-decoration:none">Написать нам</a></footer>
+
+<button id="scrollToTop" title="Наверх" aria-label="Прокрутить наверх" style="display:none;position:fixed;bottom:20px;right:20px;width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;border:none;font-size:18px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.2);z-index:150">↑</button>
+
+<script>
+/* ══ ДАННЫЕ (подтягиваются из data/rates.json, есть дефолты) ══ */
+var R={prime:5.0,boi:3.5,cpi:1.6,avg:3.52,
+  byTerm:{5:3.57,10:3.56,15:3.29,20:3.54,25:3.44,30:3.46},
+  op:60,noNotice:0.001,updated:null};
+
+var TRACKS=[
+ {t:"prime", n:"Прайм",                      free:true,  linked:false},
+ {t:"kalatz",n:"Фикс. без индексации (КАЛАЦ)",free:false, linked:false},
+ {t:"katz",  n:'Фикс. с индексацией (К"Ц)',  free:false, linked:true},
+ {t:"var5",  n:"Переменная раз в 5 лет",      free:false, linked:false},
+ {t:"var1",  n:"Переменная раз в год",        free:true,  linked:false}
+];
+function def(t){for(var i=0;i<TRACKS.length;i++)if(TRACKS[i].t===t)return TRACKS[i];return TRACKS[1]}
+
+var rows=[], MODE='payment';
+
+/* ══ ФИНАНСОВОЕ ЯДРО (не менять без пересчёта тестов) ══ */
+function pmt(P,ann,yrs){
+  var i=ann/100/12,n=Math.round(yrs*12);
+  if(n<=0)return 0;
+  return i<=0? P/n : P*i/(1-Math.pow(1+i,-n));
+}
+function balAfter(P0,ann,pay,k){
+  if(P0<=0)return 0;
+  var i=ann/100/12;
+  if(k<=0)return P0;
+  if(i<=0)return Math.max(0,P0-pay*k);
+  var g=Math.pow(1+i,k);
+  return Math.max(0,P0*g-pay*(g-1)/i);
+}
+function monthsToPayoff(P0,ann,pay){
+  if(P0<=0)return 0;
+  var i=ann/100/12;
+  if(i<=0)return P0/pay;
+  if(pay<=P0*i)return Infinity;
+  return -Math.log(1-i*P0/pay)/Math.log(1+i);
+}
+function fvAnnuity(m,r,n){
+  if(n<=0)return 0;
+  return r<=0? m*n : m*(Math.pow(1+r,n)-1)/r;
+}
+function discount(y,zt){
+  if(zt==='zakaut'){
+    if(y>=4)return .40; if(y>=3)return .30; if(y>=2)return .20; if(y>=1)return .10; return 0;
+  }
+  if(y>=5)return .30; if(y>=3)return .20; return 0;
+}
+function mktRate(y){
+  var k=[5,10,15,20,25,30],b=30;
+  for(var i=0;i<k.length;i++){if(y<=k[i]){b=k[i];break}}
+  return R.byTerm[b];
+}
+function ivun(repaid,rate,years,disc){
+  var mkt=mktRate(years), gap=rate-mkt;
+  if(gap<=0||repaid<=0)return 0;
+  var i=mkt/100/12,m=gap/100/12,n=Math.round(years*12);
+  var pay=pmt(repaid,rate,years),bal=repaid,pv=0;
+  for(var k=1;k<=n;k++){
+    pv+=(bal*m)/Math.pow(1+i,k);
+    bal-=(pay-bal*(rate/100/12));
+    if(bal<=0)break;
+  }
+  return pv*(1-disc);
+}
+
+function rankTracks(hor,disc){
+  return rows.map(function(r){
+    var d=def(r.type);
+    var eff=r.rate+(d.linked?R.cpi:0);
+    var feePct=d.free?0:(ivun(r.bal,r.rate,r.years,disc)/Math.max(1,r.bal));
+    var score=(eff/100)*Math.min(hor,r.years)-feePct;
+    return {r:r,d:d,eff:eff,feePct:feePct,score:score};
+  }).sort(function(a,b){return b.score-a.score});
+}
+
+function allocate(lump,ranked,disc){
+  var fees=0;
+  for(var pass=0;pass<2;pass++){
+    var left=Math.max(0,lump-fees),f=0;
+    ranked.forEach(function(x){
+      var amt=Math.min(left,x.r.bal);
+      x.repaid=amt; left-=amt;
+      x.fee=x.d.free?0:ivun(amt,x.r.rate,x.r.years,disc);
+      f+=x.fee;
+    });
+    fees=f;
+  }
+  var totalRepaid=ranked.reduce(function(a,x){return a+x.repaid},0);
+  var noNotice=totalRepaid*R.noNotice;
+  return {fees:fees+noNotice+(totalRepaid>0?R.op:0),repaid:totalRepaid};
+}
+
+function scenarios(lump,ret,tax,hor,disc,mode){
+  var rNet=ret*(1-tax/100)/100/12, H=Math.round(hor*12);
+  var ranked=rankTracks(hor,disc);
+  var alloc=allocate(lump,ranked,disc);
+
+  var payBefore=0, debtB=0;
+  rows.forEach(function(r){
+    var p=pmt(r.bal,r.rate,r.years);
+    payBefore+=p;
+    debtB+=balAfter(r.bal,r.rate,p,Math.min(H,Math.round(r.years*12)));
+  });
+
+  var nwB=lump*Math.pow(1+rNet,H)-debtB;
+
+  var nwA=0, freedTotal=0, payAfterTotal=0;
+  if(mode==='payment'){
+    var debtA=0;
+    ranked.forEach(function(x){
+      var r=x.r, nb=Math.max(0,r.bal-x.repaid);
+      var pB=pmt(r.bal,r.rate,r.years);
+      var pA=nb>0?pmt(nb,r.rate,r.years):0;
+      freedTotal+=(pB-pA); payAfterTotal+=pA;
+      debtA+=nb>0?balAfter(nb,r.rate,pA,Math.min(H,Math.round(r.years*12))):0;
+    });
+    nwA=fvAnnuity(freedTotal,rNet,H)-debtA;
+  }else{
+    var debtA2=0, invA=0;
+    ranked.forEach(function(x){
+      var r=x.r, nb=Math.max(0,r.bal-x.repaid);
+      var p=pmt(r.bal,r.rate,r.years);
+      payAfterTotal+=p;
+      if(nb<=0){ invA+=fvAnnuity(p,rNet,H); freedTotal+=p; return; }
+      var nLeft=monthsToPayoff(nb,r.rate,p);
+      var origLeft=Math.round(r.years*12);
+      nLeft=Math.min(nLeft,origLeft);
+      if(nLeft>=H){
+        debtA2+=balAfter(nb,r.rate,p,H);
+      }else{
+        var freeM=H-Math.round(nLeft);
+        invA+=fvAnnuity(p,rNet,freeM);
+      }
+    });
+    nwA=invA-debtA2;
+  }
+  return {nwA:nwA,nwB:nwB,ranked:ranked,alloc:alloc,
+          payBefore:payBefore,freed:freedTotal,payAfter:payAfterTotal};
+}
+
+function breakeven(lump,tax,hor,disc,mode){
+  var lo=0,hi=40;
+  var f=function(x){var s=scenarios(lump,x,tax,hor,disc,mode);return s.nwA-s.nwB};
+  if(f(lo)<0)return null;
+  if(f(hi)>0)return null;
+  for(var i=0;i<40;i++){
+    var mid=(lo+hi)/2;
+    if(f(mid)>0)lo=mid; else hi=mid;
+  }
+  return (lo+hi)/2;
+}
+
+/* ══ UI ══ */
+function addTrack(p){
+  rows.push(Object.assign({id:'t'+Math.random().toString(36).slice(2,8),
+    bal:400000,rate:4.5,years:20,type:'kalatz'},p||{}));
+  render();
+}
+function render(){
+  var h='';
+  rows.forEach(function(r){
+    var d=def(r.type);
+    h+='<div class="trk"><div class="trk-h">'+
+      '<select onchange="upd(\''+r.id+'\',\'type\',this.value)">';
+    TRACKS.forEach(function(t){
+      h+='<option value="'+t.t+'"'+(t.t===r.type?' selected':'')+'>'+t.n+'</option>';
+    });
+    h+='</select><span class="tag '+(d.free?'free':'fee')+'">'+(d.free?'без штрафа':'есть штраф')+'</span>'+
+      (rows.length>1?'<button class="del" type="button" onclick="del(\''+r.id+'\')" aria-label="Удалить канал">✕</button>':'')+
+      '</div><div class="grid3">'+
+      '<div class="f"><label>Остаток, ₪</label><input type="number" value="'+r.bal+'" step="10000" oninput="upd(\''+r.id+'\',\'bal\',this.value)"></div>'+
+      '<div class="f"><label>Ставка, %</label><input type="number" value="'+r.rate+'" step="0.05" oninput="upd(\''+r.id+'\',\'rate\',this.value)"></div>'+
+      '<div class="f"><label>Осталось лет</label><input type="number" value="'+r.years+'" step="1" min="1" max="30" oninput="upd(\''+r.id+'\',\'years\',this.value)"></div>'+
+      '</div></div>';
+  });
+  document.getElementById('tracks').innerHTML=h;
+}
+function upd(id,k,v){
+  rows.forEach(function(r){if(r.id===id)r[k]=(k==='type')?v:(+v||0)});
+  if(k==='type')render();
+}
+function del(id){rows=rows.filter(function(r){return r.id!==id});render()}
+function setMode(m){
+  MODE=m;
+  document.getElementById('m-pay').className=(m==='payment')?'on':'';
+  document.getElementById('m-term').className=(m==='term')?'on':'';
+  document.getElementById('modeHint').textContent=(m==='payment')
+    ?'Срок остаётся прежним, ежемесячный платёж уменьшается. Освободившуюся разницу инвестируем.'
+    :'Платёж остаётся прежним, машканта закрывается раньше. После закрытия платёж инвестируем.';
+}
+function fmt(n){return Math.round(n).toLocaleString('ru-RU')}
+
+function drawSilukChart(points){
+  var W=640,H=260,padL=54,padR=14,padT=16,padB=30;
+  var plotW=W-padL-padR, plotH=H-padT-padB;
+  var allVals=points.map(function(p){return p.pay}).concat(points.map(function(p){return p.inv}));
+  var maxV=Math.max(1,Math.max.apply(null,allVals));
+  var minV=Math.min(0,Math.min.apply(null,allVals));
+  var range=maxV-minV||1;
+  function x(i){return padL+(plotW*i/(points.length-1))}
+  function y(v){return padT+plotH-(plotH*(v-minV)/range)}
+  function pathFor(key){return points.map(function(p,i){return (i===0?'M':'L')+x(i)+','+y(p[key])}).join(' ')}
+  function fmtShort(n){return Math.abs(n)>=1000000?(n/1000000).toFixed(1)+'M':Math.abs(n)>=1000?Math.round(n/1000)+'K':Math.round(n)}
+
+  var gridLines='';
+  for(var g=0;g<=4;g++){
+    var gv=minV+range*g/4, gy=y(gv);
+    gridLines+='<line x1="'+padL+'" y1="'+gy+'" x2="'+(W-padR)+'" y2="'+gy+'" stroke="var(--line)" stroke-width="1" stroke-dasharray="3,3"/>';
+    gridLines+='<text x="'+(padL-8)+'" y="'+(gy+4)+'" font-size="10" fill="var(--muted)" text-anchor="end">'+fmtShort(gv)+'</text>';
+  }
+  var xLabels='';
+  points.forEach(function(p,i){
+    xLabels+='<text x="'+x(i)+'" y="'+(H-8)+'" font-size="10" fill="var(--muted)" text-anchor="middle">'+p.y+'л</text>';
+  });
+  var dotsPay=points.map(function(p,i){return '<circle cx="'+x(i)+'" cy="'+y(p.pay)+'" r="3.5" fill="var(--green)"/>'}).join('');
+  var dotsInv=points.map(function(p,i){return '<circle cx="'+x(i)+'" cy="'+y(p.inv)+'" r="3.5" fill="var(--blue)"/>'}).join('');
+
+  var svg='<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">'+
+    gridLines+
+    '<path d="'+pathFor('pay')+'" fill="none" stroke="var(--green)" stroke-width="2.5"/>'+
+    '<path d="'+pathFor('inv')+'" fill="none" stroke="var(--blue)" stroke-width="2.5"/>'+
+    dotsPay+dotsInv+xLabels+
+    '</svg>'+
+    '<div style="display:flex;gap:16px;justify-content:center;margin-top:8px;font-size:11.5px;color:var(--muted)">'+
+    '<span>🟢 Погасить</span><span>🔵 Инвестировать</span></div>';
+  document.getElementById('siluk-chart-wrap').innerHTML=svg;
+}
+
+function calc(){
+  var lump=+document.getElementById('lump').value||0;
+  var ret=+document.getElementById('ret').value||0;
+  var tax=+document.getElementById('tax').value||0;
+  var hor=+document.getElementById('hor').value||1;
+  var taken=+document.getElementById('taken').value;
+  var zt=document.getElementById('ztype').value;
+  var hasFund=document.getElementById('fund').checked;
+  var usesKeren=document.getElementById('keren').checked;
+  var disc=discount(taken,zt);
+
+  var totalBal=rows.reduce(function(a,r){return a+r.bal},0);
+  if(lump>totalBal)lump=totalBal;
+
+  var s=scenarios(lump,ret,tax,hor,disc,MODE);
+  var other=scenarios(lump,ret,tax,hor,disc,MODE==='payment'?'term':'payment');
+  var be=breakeven(lump,tax,hor,disc,MODE);
+  var d=s.nwA-s.nwB;
+  var rel=Math.abs(d)/Math.max(Math.abs(s.nwA),Math.abs(s.nwB),1);
+  var close=rel<0.05;
+  var h='';
+
+  var cls=close?'v-eq':(d>0?'v-pay':'v-inv');
+  var lbl=close?'Варианты примерно равноценны'
+    :(d>0?'Выгоднее погасить машканту':'Выгоднее инвестировать');
+  h+='<div class="verdict '+cls+'"><div class="v-lbl">'+lbl+'</div>'+
+     '<div class="v-num">'+(close?'≈ '+fmt(Math.abs(d))+' ₪':(d>0?'+':'−')+fmt(Math.abs(d))+' ₪')+'</div>'+
+     '<div class="v-sub">'+(close
+       ? 'Разница меньше 5% за '+hor+' лет — решайте по отношению к риску, а не по цифре'
+       : 'разница за '+hor+' лет при доходности '+ret+'% и налоге '+tax+'%')+'</div></div>';
+
+  h+='<div class="kpi">'+
+    '<div class="k"><div class="n">'+(be===null?'—':be.toFixed(2)+'%')+'</div><div class="l">Точка безразличия</div></div>'+
+    '<div class="k"><div class="n" style="color:'+(s.alloc.fees>0?'var(--red)':'var(--green)')+'">'+fmt(s.alloc.fees)+' ₪</div><div class="l">Штраф и сборы</div></div>'+
+    '<div class="k"><div class="n">'+fmt(MODE==='payment'?s.freed:s.payBefore)+' ₪</div><div class="l">'+(MODE==='payment'?'Освободится в месяц':'Платёж не меняется')+'</div></div>'+
+    '</div>';
+
+  h+='<div style="margin-bottom:10px"><b style="font-size:14px">Как растёт капитал по годам</b>'+
+     '<p style="font-size:12px;color:var(--muted);margin:4px 0 10px">Наглядно видно, когда (если вообще) один сценарий обгоняет другой.</p></div>'+
+     '<div id="siluk-chart-wrap" style="margin-bottom:16px"></div>';
+
+  h+='<div style="margin-bottom:10px"><b style="font-size:14px">Два сценария через '+hor+' лет</b>'+
+     '<p style="font-size:12px;color:var(--muted);margin:4px 0 10px">В обоих вы тратите одинаково: '+fmt(lump)+' ₪ сейчас и '+fmt(s.payBefore)+' ₪ в месяц. Разница — куда идут деньги.</p></div>';
+  h+='<div style="overflow:auto"><table><thead><tr><th>Сценарий</th><th>Чистая позиция</th></tr></thead><tbody>'+
+     '<tr><td><strong>Погасить машканту</strong><br><span style="font-size:10.5px;color:var(--muted)">'+
+     (MODE==='payment'?'платёж падает, разницу инвестируем':'срок короче, потом инвестируем платёж')+'</span></td>'+
+     '<td class="'+(d>0?'pos':'')+'">'+fmt(s.nwA)+' ₪</td></tr>'+
+     '<tr><td><strong>Инвестировать</strong><br><span style="font-size:10.5px;color:var(--muted)">машканта идёт своим чередом</span></td>'+
+     '<td class="'+(d<0?'pos':'')+'">'+fmt(s.nwB)+' ₪</td></tr>'+
+     '</tbody><tfoot><tr><td>Разница</td><td class="'+(d>0?'pos':'neg')+'">'+(d>0?'+':'')+fmt(d)+' ₪</td></tr></tfoot></table></div>';
+
+  h+='<p style="font-size:12px;color:var(--muted);margin-top:14px">Второй способ погашения («'+
+     (MODE==='payment'?'сократить срок':'снизить платёж')+'») дал бы '+fmt(other.nwA)+' ₪ — '+
+     (other.nwA>s.nwA?'на '+fmt(other.nwA-s.nwA)+' ₪ лучше, попробуйте переключить':'на '+fmt(s.nwA-other.nwA)+' ₪ хуже, ваш выбор верный')+'.</p>';
+
+  h+='<div style="margin-top:22px"><b style="font-size:14px">Какой канал погашать первым</b>'+
+     '<p style="font-size:12px;color:var(--muted);margin:4px 0 10px">По эффективной стоимости: ставка плюс индексация, минус штраф. Не всегда тот, где выше процент.</p></div>';
+  s.ranked.forEach(function(x,i){
+    var used=x.repaid>0;
+    h+='<div class="rank"><div class="rnum'+(used?'':' off')+'">'+(i+1)+'</div><div class="info">'+
+       '<b>'+x.d.n+'</b><div>ставка '+x.r.rate+'%'+(x.d.linked?' + мадад '+R.cpi+'% = <strong>'+x.eff.toFixed(2)+'%</strong> реальных':'')+
+       (x.d.free?' · без штрафа':' · штраф ~'+fmt(x.fee||0)+' ₪')+'</div></div>'+
+       '<div style="text-align:right;font-size:13px;'+(used?'font-weight:800;color:var(--green)':'color:var(--muted)')+'">'+
+       (used?fmt(x.repaid)+' ₪':'не хватило')+'</div></div>';
+  });
+
+  h+='<div style="margin-top:22px"><b style="font-size:14px">Что учесть</b></div><div style="margin-top:10px">';
+
+  if(!hasFund){
+    h+='<div class="note n-bad"><b>Сначала резерв, потом машканта</b>Деньги, отправленные в машканту, обратно не достать. Если нет подушки на 3–6 месяцев расходов, при потере дохода придётся брать дорогой потребительский кредит. Сформируйте резерв прежде, чем погашать.</div>';
+  }
+  if(!usesKeren){
+    h+='<div class="note n-info"><b>Проверьте фонд повышения квалификации и пенсионные</b>Если вы не выбираете лимит льготных отчислений, зачастую выгоднее сначала заполнить его: там есть налоговая льгота, которой нет ни у погашения, ни у обычных инвестиций. Только потом сравнивайте остаток.</div>';
+  }
+  var linked=s.ranked.filter(function(x){return x.d.linked&&x.r.bal>0});
+  if(linked.length){
+    h+='<div class="note n-warn"><b>У вас есть индексированный канал</b>Ставка '+linked[0].r.rate+'% выглядит низкой, но с мададом '+R.cpi+'% реальная стоимость около '+linked[0].eff.toFixed(2)+'%. При росте инфляции этот канал дорожает автоматически — часто его стоит погашать в первую очередь.</div>';
+  }
+  var freeT=s.ranked.filter(function(x){return x.d.free&&x.r.bal>0});
+  if(freeT.length){
+    h+='<div class="note n-ok"><b>Часть машканты можно погашать без штрафа</b>Каналы «Прайм» и «переменная раз в год» не облагаются штрафом за досрочное погашение — их можно погашать частями в любой момент, без потерь и без спешки.</div>';
+  }
+  if(be!==null){
+    h+='<div class="note n-info"><b>Ваш ориентир — '+be.toFixed(2)+'% годовых</b>Если верите, что инвестиции стабильно дадут больше этого — вкладывайте. Если сомневаетесь — погашение даёт этот результат гарантированно, без просадок и без налога.</div>';
+  }
+  if(close){
+    h+='<div class="note n-warn"><b>Цифры почти равны — решает не математика</b>При такой разнице выбор зависит от того, что вам важнее: гарантия и спокойствие или потенциал доходности с риском. Обе стратегии разумны.</div>';
+  }
+  h+='<div class="note n-info"><b>Спросите банк о бесплатном частичном погашении</b>У некоторых банков есть условия, позволяющие погашать часть остатка без комиссии. Официальный расчёт штрафа банк обязан дать бесплатно по запросу.</div>';
+  h+='</div>';
+
+  document.getElementById('out').innerHTML=h;
+
+  var chartPoints=[];
+  var steps=6;
+  for(var si=1;si<=steps;si++){
+    var yy=Math.max(1,Math.round(hor*si/steps));
+    var ss=scenarios(lump,ret,tax,yy,disc,MODE);
+    chartPoints.push({y:yy, pay:ss.nwA, inv:ss.nwB});
+  }
+  drawSilukChart(chartPoints);
+  var wrap = document.getElementById('results-wrap');
+  if(wrap) wrap.classList.add('show');
+  return {verdictLbl:lbl, verdictNum:(close?'≈ ':(d>0?'+':'−'))+fmt(Math.abs(d))+' ₪', be:be, fees:s.alloc.fees};
+}
+
+function runAndShowModal(){
+  var r = calc();
+  showResultModal(
+    r.verdictLbl,
+    r.verdictNum,
+    'Итог сравнения при ваших цифрах',
+    [['Точка безразличия', r.be===null?'—':r.be.toFixed(2)+'%'], ['Штраф и сборы', fmt(r.fees)+' ₪']],
+    '📊 Смотреть детали и приоритет каналов',
+    function(){setActiveView('result');}
+  );
+}
+document.getElementById('run-btn').addEventListener('click', runAndShowModal);
+
+/* ══ ЗАГРУЗКА rates.json (схема портала: manual.avg_mortgage_rate_by_term / _overall) ══ */
+function loadRates(){
+  return fetch('data/rates.json',{cache:'no-cache'})
+    .then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
+    .then(function(j){
+      if(typeof j.prime === 'number') R.prime=j.prime;
+      if(j.cpi_annual_pct!=null) R.cpi=j.cpi_annual_pct;
+      if(j.updated) R.updated=j.updated;
+      var m=j.manual;
+      if(m && m.avg_mortgage_rate_by_term){
+        var bt=m.avg_mortgage_rate_by_term;
+        R.byTerm={5:bt['5'],10:bt['10'],15:bt['15'],20:bt['20'],25:bt['25'],30:bt['30']};
+      }
+      if(m && typeof m.avg_mortgage_rate_overall === 'number') R.avg=m.avg_mortgage_rate_overall;
+      R.manualChecked = (m && m._checked) || null;
+      return true;
+    })
+    .catch(function(e){
+      console.warn('rates.json недоступен, работаем на дефолтах в коде', e);
+      return false;
+    });
+}
+function paintPills(loaded){
+  document.getElementById('p-prime').textContent=R.prime.toFixed(2)+'%';
+  document.getElementById('p-cpi').textContent=R.cpi.toFixed(1)+'%';
+  var note=document.getElementById('stale-note');
+  if(loaded && R.updated){
+    var d=new Date(R.updated);
+    var dateStr = isNaN(d) ? R.updated : d.toLocaleDateString('ru-RU');
+    note.textContent='✓ Ставка Банка Израиля и мадад обновлены автоматически ('+dateStr+'). Средние ставки — проверены вручную'+(R.manualChecked?' '+R.manualChecked:'')+'.';
+  } else {
+    note.textContent='⚠️ Не удалось загрузить свежие данные — показаны ориентировочные ставки (зашиты в код). Уточняйте у банка перед решением.';
+  }
+}
+
+/* ══ ВКЛАДКИ (единый паттерн портала) ══ */
+function buildViewPanelsSafe(){
+  var inputMain = document.querySelectorAll('main.shell')[0];
+  var hiddenMain = document.getElementById('hidden-source');
+  var inputCards = [].slice.call(inputMain.querySelectorAll(':scope > section.card'));
+  var hiddenCards = [].slice.call(hiddenMain.querySelectorAll(':scope > section.card'));
+
+  var panelInput = document.createElement('div'); panelInput.id='view-panel-input'; panelInput.className='view-panel active';
+  inputCards.forEach(function(c){panelInput.appendChild(c);});
+
+  var panelResult = document.createElement('div'); panelResult.id='view-panel-result'; panelResult.className='view-panel';
+  hiddenCards[0].id='results-wrap';
+  panelResult.appendChild(hiddenCards[0]);
+
+  var panelExplain = document.createElement('div'); panelExplain.id='view-panel-explain'; panelExplain.className='view-panel';
+  panelExplain.appendChild(hiddenCards[1]);
+
+  inputMain.appendChild(panelInput);
+  inputMain.appendChild(panelResult);
+  inputMain.appendChild(panelExplain);
+  hiddenMain.remove();
+}
+function setActiveView(name){
+  document.querySelectorAll('.view-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.view-tab').forEach(function(t){t.classList.remove('active');});
+  var panel=document.getElementById('view-panel-'+name), tab=document.getElementById('tab-'+name);
+  if(panel) panel.classList.add('active');
+  if(tab) tab.classList.add('active');
+  document.getElementById('view-tabs').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showResultModal(title,bigValue,subText,rowsArr,actionLabel,actionFn){
+  var ov=document.getElementById('result-modal-overlay');
+  if(!ov){
+    ov=document.createElement('div');ov.id='result-modal-overlay';ov.className='result-modal-overlay';
+    ov.innerHTML='<div class="result-modal"><div class="result-modal-head"><h3 id="rm-title"></h3><button class="result-modal-close" onclick="closeResultModal()">✕</button></div><div class="result-modal-big" id="rm-big"></div><div class="result-modal-sub" id="rm-sub"></div><div class="result-modal-rows" id="rm-rows"></div><div class="result-modal-actions"><button class="rm-secondary" onclick="closeResultModal()">Закрыть</button><button class="rm-primary" id="rm-action-btn"></button></div></div>';
+    document.body.appendChild(ov);
+    ov.addEventListener('click',function(e){if(e.target===ov)closeResultModal();});
+  }
+  document.getElementById('rm-title').textContent=title;
+  var bigEl=document.getElementById('rm-big');
+  if(bigValue){bigEl.textContent=bigValue;bigEl.style.display='';}else{bigEl.style.display='none';}
+  document.getElementById('rm-sub').textContent=subText;
+  document.getElementById('rm-rows').innerHTML=(rowsArr||[]).map(function(r){return '<div class="result-modal-row"><span>'+r[0]+'</span><b>'+r[1]+'</b></div>';}).join('');
+  var actBtn=document.getElementById('rm-action-btn');
+  if(actionLabel){actBtn.style.display='';actBtn.textContent=actionLabel;actBtn.onclick=function(){closeResultModal();(actionFn||function(){})();};}
+  else{actBtn.style.display='none';}
+  ov.classList.add('show');
+}
+function closeResultModal(){var ov=document.getElementById('result-modal-overlay');if(ov)ov.classList.remove('show');}
+
+(function(){
+  var btn = document.getElementById('scrollToTop');
+  window.addEventListener('scroll', function(){ btn.style.display = window.scrollY > 400 ? 'block' : 'none'; });
+  btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+})();
+
+addTrack({type:'prime', bal:300000,rate:5.0,years:22});
+addTrack({type:'kalatz',bal:400000,rate:4.9,years:20});
+addTrack({type:'katz',  bal:250000,rate:3.3,years:25});
+
+loadRates().then(paintPills);
+document.addEventListener('DOMContentLoaded', buildViewPanelsSafe);
+</script>
+</body></html>

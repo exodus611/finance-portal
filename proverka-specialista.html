@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Official Check Israel — проверка специалистов в Израиле</title>
+  <meta name="description" content="Русскоязычный проводник по официальным израильским реестрам: адвокаты, маклеры, нотариусы, CPA, инвестиционные и пенсионные специалисты." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#2557d6" />
+  <meta name="color-scheme" content="light" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="Official Check Israel" />
+  <meta property="og:title" content="Official Check Israel — проверка специалистов в Израиле" />
+  <meta property="og:description" content="Русскоязычный проводник по официальным израильским реестрам лицензированных специалистов: адвокаты, маклеры, нотариусы, CPA, пенсионные и инвестиционные консультанты." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Official Check Israel — проверка специалистов в Израиле" />
+  <meta name="twitter:description" content="Официальные ссылки, перевод терминов с иврита и инструкции для проверки специалистов в Израиле." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Official Check Israel — проверка специалистов в Израиле",
+    "description": "Русскоязычный проводник по официальным израильским реестрам специалистов и лицензий.",
+    "inLanguage": "ru",
+    "about": [
+      "проверка адвоката в Израиле",
+      "проверка маклера в Израиле",
+      "проверка нотариуса в Израиле",
+      "проверка CPA в Израиле",
+      "проверка пенсионного консультанта в Израиле",
+      "проверка инвестиционного консультанта в Израиле"
+    ],
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Официальные проверки специалистов",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Адвокаты / עורכי דין","url":"https://www.israelbar.org.il/lawyer_list.asp"},
+        {"@type":"ListItem","position":2,"name":"Маклеры / מתווכים","url":"https://data.gov.il/dataset/metavhim"},
+        {"@type":"ListItem","position":3,"name":"Оценщики недвижимости / שמאי מקרקעין","url":"https://data.gov.il/dataset/shamaim"},
+        {"@type":"ListItem","position":4,"name":"Нотариусы / נוטריונים","url":"https://data.gov.il/dataset/notary"},
+        {"@type":"ListItem","position":5,"name":"CPA / רואי חשבון","url":"https://data.gov.il/dataset/cpalist"},
+        {"@type":"ListItem","position":6,"name":"Инвестиционные специалисты / יועצי השקעות","url":"https://www.investors.isa.gov.il/page/search-advisor"},
+        {"@type":"ListItem","position":7,"name":"Пенсионные и страховые специалисты / יועצים פנסיוניים וסוכני ביטוח","url":"https://www.gov.il/he/service/agents_and_consultants_search"},
+        {"@type":"ListItem","position":8,"name":"Врачи и медработники / מקצועות בריאות","url":"https://www.gov.il/en/service/licensed-medical-practitioners"}
+      ]
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --ink: #142033;
+      --muted: #617089;
+      --line: #dfe6f2;
+      --primary: #2557d6;
+      --primary-dark: #1740a8;
+      --accent: #0f9f7a;
+      --warn: #f0a51b;
+      --danger: #d94343;
+      --soft: #eef4ff;
+      --soft-green: #eafaf4;
+      --soft-yellow: #fff7e6;
+      --soft-red: #fff0f0;
+      --shadow: 0 12px 35px rgba(20, 32, 51, .09);
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(37, 87, 214, .16), transparent 36rem),
+        radial-gradient(circle at top right, rgba(15, 159, 122, .14), transparent 32rem),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 18px 56px; }
+
+    header.hero {
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 22px;
+      align-items: stretch;
+      margin-bottom: 22px;
+    }
+
+    .hero-main, .hero-side, .panel, .card {
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(223,230,242,.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-main { padding: 34px; }
+    .hero-side { padding: 24px; }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--soft-green);
+      color: #08795e;
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+    .eyebrow::before { content: "✓"; }
+
+    h1 { font-size: clamp(31px, 5vw, 56px); line-height: 1.04; margin: 0 0 16px; letter-spacing: -.035em; }
+    h2 { font-size: 27px; margin: 0 0 14px; letter-spacing: -.02em; }
+    h3 { font-size: 20px; margin: 0 0 8px; }
+    p { margin: 0 0 12px; }
+    .lead { font-size: 19px; color: var(--muted); max-width: 760px; }
+    .muted { color: var(--muted); }
+    .small { font-size: 13px; }
+    .he { direction: rtl; unicode-bidi: plaintext; font-family: Arial, system-ui, sans-serif; }
+
+    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 750;
+      font-size: 14px;
+      transition: .16s transform, .16s background, .16s border-color;
+    }
+    .btn:hover { transform: translateY(-1px); border-color: #b9c8e5; }
+    .btn.primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .btn.primary:hover { background: var(--primary-dark); }
+    .btn.green { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn.ghost { background: transparent; }
+    .btn.copy-done { background: var(--soft-green); color: #08795e; border-color: #b8eadb; }
+
+    .side-list { display: grid; gap: 12px; margin-top: 8px; }
+    .side-item { display: flex; gap: 10px; align-items: flex-start; }
+    .num {
+      flex: 0 0 auto;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--soft);
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .notice {
+      border-radius: 16px;
+      padding: 14px 16px;
+      border: 1px solid #ffdca3;
+      background: var(--soft-yellow);
+      color: #7a4d00;
+      margin: 14px 0 0;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1fr 220px 220px;
+      gap: 12px;
+      margin: 22px 0;
+    }
+    .input, select {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font-size: 15px;
+      outline: none;
+    }
+    .input:focus, select:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(37, 87, 214, .12); }
+
+    .panel { padding: 22px; margin: 20px 0; }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .chip {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 999px;
+      padding: 7px 11px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+    .chip.green { background: var(--soft-green); color: #08795e; border-color: #b8eadb; }
+    .chip.blue { background: var(--soft); color: var(--primary); border-color: #cddafd; }
+    .chip.yellow { background: var(--soft-yellow); color: #895900; border-color: #ffdca3; }
+    .chip.red { background: var(--soft-red); color: #a52525; border-color: #ffc5c5; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .card { padding: 20px; display: flex; flex-direction: column; min-height: 365px; }
+    .card-top { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .icon {
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      display: grid; place-items: center;
+      background: var(--soft);
+      font-size: 23px;
+    }
+    .card h3 { margin-bottom: 2px; }
+    .card .subtitle { color: var(--muted); font-size: 14px; }
+    .card ul { margin: 10px 0 12px; padding-left: 20px; color: var(--muted); }
+    .card li { margin: 3px 0; }
+    .terms { display: grid; gap: 6px; margin: 12px 0; }
+    .term {
+      display: flex; justify-content: space-between; gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f8faff;
+      border: 1px solid #edf2fb;
+      font-size: 13px;
+    }
+    .term b { font-weight: 800; }
+    .card-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 10px; }
+    .card-acc { margin-top: 10px; border: 1px solid #e5e8ee; border-radius: 10px; padding: 0 12px; background: #fafbfc; }
+    .card-acc summary { cursor: pointer; list-style: none; padding: 11px 0; font-size: 13px; font-weight: 700; color: #2557d6; }
+    .card-acc summary::-webkit-details-marker { display: none; }
+    .card-acc[open] summary { padding-bottom: 4px; }
+    .card-acc > *:not(summary):last-child { padding-bottom: 12px; }
+
+    .status {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 9px; border-radius: 999px;
+      font-size: 12px; font-weight: 800;
+      white-space: nowrap;
+    }
+    .status.full { background: var(--soft-green); color: #08795e; }
+    .status.redirect { background: var(--soft); color: var(--primary); }
+    .status.warn { background: var(--soft-yellow); color: #895900; }
+
+    details {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin: 10px 0;
+    }
+    summary { cursor: pointer; font-weight: 800; }
+    .dict {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .dict-item {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 10px 12px;
+      background: #fff;
+    }
+    .dict-item .he { font-weight: 800; font-size: 16px; }
+    .dict-item .ru { color: var(--muted); font-size: 13px; }
+
+    .footer {
+      margin-top: 24px;
+      padding: 20px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .hidden { display: none !important; }
+    .toast {
+      position: fixed;
+      left: 50%; bottom: 18px;
+      transform: translateX(-50%);
+      background: #142033;
+      color: #fff;
+      padding: 11px 15px;
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      font-weight: 700;
+      z-index: 99;
+      opacity: 0;
+      pointer-events: none;
+      transition: .2s opacity, .2s transform;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(-5px); }
+
+    @media (max-width: 980px) {
+      header.hero { grid-template-columns: 1fr; }
+      .toolbar { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .dict { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .wrap { padding: 14px 12px 36px; }
+      .hero-main, .hero-side, .panel, .card { border-radius: 16px; }
+      .hero-main { padding: 24px 18px; }
+      .hero-side, .panel, .card { padding: 18px; }
+      .grid { grid-template-columns: 1fr; }
+      .dict { grid-template-columns: 1fr; }
+      .btn { width: 100%; }
+      .card-actions .btn { width: auto; flex: 1 1 145px; }
+    }
+  </style>
+  <link rel="canonical" href="https://exodus611.github.io/finance-portal/proverka-specialista.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:url" content="https://exodus611.github.io/finance-portal/proverka-specialista.html">
+  <meta property="og:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="google-site-verification" content="rF1V6g7xHbSI6cvEudIr8c56nbTXMlVyZQzyeOhcSsI">
+  <script data-goatcounter="https://finance-portal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <style>html{overflow-x:hidden}body{margin:0;overflow-x:hidden;max-width:100vw}</style>
+</head>
+<body>
+
+<header style="padding:14px 0;background:#f4f1e9;border-bottom:1px solid #ddd6c7">
+<div style="width:min(1200px,calc(100% - 28px));margin:auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;font-family:Inter,system-ui,sans-serif">
+<div style="display:flex;align-items:center;gap:11px;font-weight:850">
+<span style="width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#0d9671,#08775a 70%);color:#fff;display:grid;place-items:center;font-size:24px;font-weight:900;box-shadow:0 6px 18px rgba(8,119,90,.35)">₪</span>
+<span style="color:#15251f;font-size:14px">Понятные финансы в Израиле</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+<a href="index.html" style="font-size:12px;font-weight:800;color:#08775a;text-decoration:none;white-space:nowrap">← На главную</a>
+<select onchange="if(this.value)location.href=this.value" style="font-size:11.5px;font-weight:700;color:#08775a;border:1px solid #ddd6c7;border-radius:8px;padding:6px 8px;background:#fff;cursor:pointer">
+<option value="">Все калькуляторы ▾</option>
+<option value="salary.html">💰 Зарплата</option>
+<option value="mashkanta.html">🏠 Машканта</option>
+<option value="auto.html">🚗 Автомобиль</option>
+<option value="kredit.html">💳 Кредит</option>
+<option value="arenda-vs-pokupka.html">⚖️ Аренда vs покупка</option>
+<option value="mihzur-mashkanta.html">🔄 Рефинансирование</option>
+<option value="siluk-mukdam.html">💎 Погашение vs инвестиции</option>
+<option value="mas-rehisha.html">🏛️ Мас рехиша</option>
+<option value="mas-shevach.html">📉 Мас шевах</option>
+<option value="pension-gap.html">🧓 Пенсионный разрыв</option>
+<option value="keren-hishtalmut.html">🎓 Фонд повышения квалификации</option>
+<option value="nekudot-zikuy.html">🎯 Некудот зикуй</option>
+<option value="valuta.html">💱 Курс валют</option>
+<option value="pikadon-vs-keren.html">🏦 Пикадон vs керен каспит</option>
+<option value="tablo.html">📊 Экономика сегодня</option>
+<option value="avtala.html">📋 Дмей автала</option>
+<option value="havraa.html">🏖️ Оздоровительные</option><option value="hisahon-yeled.html">👶 Накопления на ребёнка</option>
+<option value="benzin.html">⛽ Цена на бензин</option>
+<option value="arnona.html">🏛️ Скидка на арнону</option>
+<option value="dira.html">🏗️ Дира бе-ханаха</option>
+
+<option value="nko.html">🤝 Благотворительные НКО</option><option value="slovar.html">📖 Словарь терминов</option>
+</select>
+</div>
+</div>
+</header>
+
+<div class="wrap">
+    <header class="hero">
+      <section class="hero-main">
+        <div class="eyebrow">Русскоязычный проводник по официальным реестрам Израиля</div>
+        <h1>Проверьте специалиста перед важной сделкой</h1>
+        <p class="lead">Найдите, где официально проверить адвоката, маклера, нотариуса, CPA, инвестиционного консультанта, страхового агента и других специалистов. Сайт объясняет по-русски, какие кнопки нажимать на ивритских госстраницах.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#specialists">Выбрать специалиста</a>
+          <a class="btn" href="#translate-help">Как перевести сайт</a>
+          <button class="btn green" data-copy="ai-general">Скопировать промпт для нейронки</button>
+        </div>
+        <div class="notice small"><b>Важно:</b> мы не оцениваем качество специалиста и не даём юридическую/финансовую рекомендацию. Мы направляем к официальным государственным или регуляторным источникам.</div>
+        <div class="notice small" style="margin-top:8px"><b>О промпте для нейронки:</b> не все нейросети умеют сами открывать ссылки — это зависит от того, какой нейронкой вы пользуетесь и включён ли у неё доступ в интернет. Если нейронка ссылку открыть не может — просто откройте её сами и пришлите нейронке скриншот страницы, промпт уже это учитывает.</div>
+      </section>
+      <aside class="hero-side">
+        <h2>Как пользоваться</h2>
+        <div class="side-list">
+          <div class="side-item"><span class="num">1</span><div><b>Выберите профессию.</b><br><span class="muted">Например: нотариус, маклер, инвестиционный консультант.</span></div></div>
+          <div class="side-item"><span class="num">2</span><div><b>Откройте официальный сайт.</b><br><span class="muted">Используйте оригинал или ссылку через переводчик.</span></div></div>
+          <div class="side-item"><span class="num">3</span><div><b>Введите имя, город или лицензию.</b><br><span class="muted">Ниже есть перевод полей с иврита.</span></div></div>
+          <div class="side-item"><span class="num">4</span><div><b>Сверьте статус.</b><br><span class="muted">Ищите слова: בתוקף, פעיל, מספר רישיון.</span></div></div>
+        </div>
+      </aside>
+    </header>
+
+    <section class="panel" id="specialists">
+      <h2>Официальные проверки</h2>
+      <p class="muted">Можно искать по-русски или на иврите: “нотариус”, “נוטריון”, “инвестиции”, “ביטוח”, “квартира”.</p>
+      <div class="toolbar">
+        <input class="input" id="search" type="search" placeholder="Поиск: нотариус, маклер, CPA, инвестиционный консультант..." />
+        <select id="category">
+          <option value="all">Все категории</option>
+          <option value="realestate">Недвижимость</option>
+          <option value="finance">Финансы и налоги</option>
+          <option value="legal">Право и документы</option>
+          <option value="business">Бизнес / медицина / IP</option>
+          <option value="warning">Нет полноценного реестра</option>
+        </select>
+        <select id="mode">
+          <option value="all">Все типы</option>
+          <option value="direct">Можно искать в открытых данных</option>
+          <option value="official">Официальный внешний поиск</option>
+          <option value="checklist">Только чеклист</option>
+        </select>
+      </div>
+      <p class="small muted" style="margin-top:6px">* Кнопка «С переводом» не всегда срабатывает — у многих ивритских гос. сайтов перевод браузера работает нестабильно или не работает вовсе. Надёжнее использовать словарь терминов внутри карточки («Подробнее»).</p>
+      <div class="chips">
+        <span class="chip green">✓ официальные источники</span>
+        <span class="chip blue">↗ открытие в новом окне</span>
+        <span class="chip yellow">RU-подсказки для иврита</span>
+        <span class="chip red">не вводите пароли и коды в нейронки</span>
+      </div>
+      <details>
+        <summary>Все официальные ссылки одним списком</summary>
+        <ul class="muted">
+          <li><a href="https://www.israelbar.org.il/lawyer_list.asp" target="_blank" rel="noopener noreferrer">Адвокаты / עורכי דין — Israel Bar Association</a></li>
+          <li><a href="https://data.gov.il/dataset/metavhim" target="_blank" rel="noopener noreferrer">Маклеры / מתווכים — data.gov.il</a></li>
+          <li><a href="https://data.gov.il/dataset/shamaim" target="_blank" rel="noopener noreferrer">Оценщики недвижимости / שמאי מקרקעין — data.gov.il</a></li>
+          <li><a href="https://data.gov.il/dataset/notary" target="_blank" rel="noopener noreferrer">Нотариусы / נוטריונים — data.gov.il</a></li>
+          <li><a href="https://data.gov.il/dataset/cpalist" target="_blank" rel="noopener noreferrer">CPA / רואי חשבון — data.gov.il</a></li>
+          <li><a href="https://www.tac.gov.il/" target="_blank" rel="noopener noreferrer">Налоговые консультанты / יועצי מס — מועצת יועצי המס</a></li>
+          <li><a href="https://www.investors.isa.gov.il/page/search-advisor" target="_blank" rel="noopener noreferrer">Инвестиционные консультанты, маркетологи и управляющие портфелями — ISA</a></li>
+          <li><a href="https://www.gov.il/he/service/agents_and_consultants_search" target="_blank" rel="noopener noreferrer">Пенсионные и страховые специалисты — gov.il / Рשות שוק ההון</a></li>
+          <li><a href="https://data.gov.il/dataset/justice-patent-attorneys" target="_blank" rel="noopener noreferrer">Патентные поверенные / עורכי פטנטים — data.gov.il</a></li>
+          <li><a href="https://www.gov.il/en/service/licensed-medical-practitioners" target="_blank" rel="noopener noreferrer">Врачи и медработники — Министерство здравоохранения</a></li>
+        </ul>
+      </details>
+      <div class="grid" id="cards"></div>
+    </section>
+
+    <section class="panel" id="translate-help">
+      <h2>Как перевести официальный сайт на русский</h2>
+      <details open>
+        <summary>Способ 1 — Chrome / Edge</summary>
+        <p class="muted">Откройте официальный сайт → нажмите правой кнопкой мыши → <b>“Перевести на русский”</b>. На телефоне: меню <b>⋮</b> → <b>Перевести</b>.</p>
+      </details>
+      <details>
+        <summary>Способ 2 — Google Translate-ссылка</summary>
+        <p class="muted">На карточках есть кнопка “Открыть с переводом”. Иногда перевод ломает сложные формы. Если так случилось — откройте оригинал в Chrome и включите перевод страницы.</p>
+      </details>
+      <details>
+        <summary>Способ 3 — нейронка по скриншоту</summary>
+        <p class="muted">Сделайте скриншот официальной страницы и попросите ChatGPT / Gemini / Claude объяснить интерфейс. Не отправляйте документы, номера удостоверений, банковские данные, пароли или SMS-коды.</p>
+        <button class="btn" data-copy="ai-screenshot">Скопировать безопасный запрос</button>
+      </details>
+      <details>
+        <summary>Способ 4 — Google Lens на телефоне</summary>
+        <p class="muted">Сделайте скриншот → откройте Google Lens → выберите “Перевести” → русский язык. Это удобно, если сайт не переводится автоматически.</p>
+      </details>
+    </section>
+
+    <section class="panel" id="dictionary">
+      <h2>Мини-словарь для официальных сайтов</h2>
+      <p class="muted">Эти слова чаще всего встречаются в формах поиска лицензий.</p>
+      <div class="dict" id="dict"></div>
+      <div class="hero-actions">
+        <button class="btn" data-copy="dictionary">Скопировать словарь</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Красные флаги</h2>
+      <div class="chips">
+        <span class="chip red">“Лицензия не нужна, поверьте мне”</span>
+        <span class="chip red">Просит перевести деньги до договора</span>
+        <span class="chip red">Не даёт номер лицензии</span>
+        <span class="chip red">Давит “подписать сегодня”</span>
+        <span class="chip red">Не раскрывает комиссию или конфликт интересов</span>
+      </div>
+      <p class="muted" style="margin-top:12px">Если специалист не найден в официальном реестре, это не всегда автоматически означает нарушение, но это повод остановиться и проверить статус напрямую у регулятора.</p>
+    </section>
+
+    <section class="panel" id="mortgage-checklist">
+      <h2>Если нужен ипотечный консультант</h2>
+      <p class="muted">Для <span class="he">יועץ משכנתאות</span> не найден такой же простой официальный публичный реестр лицензий, как для адвокатов, CPA, маклеров, страховых или инвестиционных специалистов. Поэтому здесь полезнее не “проверка лицензии”, а список вопросов перед работой.</p>
+      <div class="chips">
+        <span class="chip yellow">Попросите письменный договор</span>
+        <span class="chip yellow">Уточните, получает ли он комиссию от банка</span>
+        <span class="chip yellow">Спросите, сколько банков сравнивает</span>
+        <span class="chip yellow">Попросите сценарий роста ставки</span>
+        <span class="chip yellow">Проверьте общую стоимость кредита, а не только платёж</span>
+        <span class="chip yellow">Уточните, есть ли профессиональная страховка</span>
+      </div>
+    </section>
+
+    <section class="panel" id="retirement-checklist">
+      <h2>Пенсионное планирование vs выход на пенсию</h2>
+      <p class="muted">Здесь собраны ВСЕ похожие названия, с которыми вы столкнётесь, ищя пенсионного специалиста — и чётко указано, у кого из них есть настоящая проверяемая государственная лицензия, а у кого нет.</p>
+      <div class="notice small" style="margin-bottom:14px"><b>Главная ловушка:</b> «יועץ פנסיוני» (пенсионный консультант) и «יועץ פרישה» (консультант по выходу на пенсию) звучат почти одинаково по-русски, но первое — настоящая лицензия, а второе — нет вообще.</div>
+
+      <div style="overflow-x:auto;margin-bottom:14px">
+      <table style="width:100%;border-collapse:collapse;font-size:13.5px">
+        <thead>
+          <tr style="border-bottom:2px solid #dde1e8">
+            <th style="text-align:left;padding:8px 6px">Русское название</th>
+            <th style="text-align:left;padding:8px 6px">На иврите</th>
+            <th style="text-align:left;padding:8px 6px">Транскрипция</th>
+            <th style="text-align:left;padding:8px 6px">Лицензия?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #e8eaee">
+            <td style="padding:8px 6px">Пенсионный консультант</td>
+            <td style="padding:8px 6px" dir="rtl" lang="he">יועץ פנסיוני</td>
+            <td style="padding:8px 6px">йоэ́ц пенсио́ни</td>
+            <td style="padding:8px 6px"><span class="status full" style="display:inline-block;padding:3px 8px;border-radius:6px;font-size:12px">✓ Да, реальная лицензия</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid #e8eaee">
+            <td style="padding:8px 6px">Пенсионный агент</td>
+            <td style="padding:8px 6px" dir="rtl" lang="he">סוכן פנסיוני</td>
+            <td style="padding:8px 6px">со́хен пенсио́ни</td>
+            <td style="padding:8px 6px"><span class="status full" style="display:inline-block;padding:3px 8px;border-radius:6px;font-size:12px">✓ Да, реальная лицензия</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid #e8eaee">
+            <td style="padding:8px 6px">Страховой агент</td>
+            <td style="padding:8px 6px" dir="rtl" lang="he">סוכן ביטוח</td>
+            <td style="padding:8px 6px">со́хен биту́ах</td>
+            <td style="padding:8px 6px"><span class="status full" style="display:inline-block;padding:3px 8px;border-radius:6px;font-size:12px">✓ Да, реальная лицензия</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid #e8eaee">
+            <td style="padding:8px 6px">Пенсионный маркетолог</td>
+            <td style="padding:8px 6px" dir="rtl" lang="he">משווק פנסיוני</td>
+            <td style="padding:8px 6px">мешаве́к пенсио́ни</td>
+            <td style="padding:8px 6px"><span class="status full" style="display:inline-block;padding:3px 8px;border-radius:6px;font-size:12px">✓ Да, реальная лицензия</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid #e8eaee;background:#fff8ec">
+            <td style="padding:8px 6px"><b>Консультант по выходу на пенсию</b></td>
+            <td style="padding:8px 6px" dir="rtl" lang="he">יועץ פרישה</td>
+            <td style="padding:8px 6px">йоэ́ц приша́</td>
+            <td style="padding:8px 6px"><span class="status warn" style="display:inline-block;padding:3px 8px;border-radius:6px;font-size:12px">✗ НЕТ, звучит похоже на реальную</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid #e8eaee;background:#fff8ec">
+            <td style="padding:8px 6px">Планирование выхода на пенсию</td>
+            <td style="padding:8px 6px" dir="rtl" lang="he">תכנון פרישה</td>
+            <td style="padding:8px 6px">тихну́н приша́</td>
+            <td style="padding:8px 6px"><span class="status warn" style="display:inline-block;padding:3px 8px;border-radius:6px;font-size:12px">✗ Нет, не лицензия</span></td>
+          </tr>
+          <tr style="background:#fff8ec">
+            <td style="padding:8px 6px">Финансовый планировщик</td>
+            <td style="padding:8px 6px" dir="rtl" lang="he">מתכנן פיננסי</td>
+            <td style="padding:8px 6px">митахне́н пинанси́</td>
+            <td style="padding:8px 6px"><span class="status warn" style="display:inline-block;padding:3px 8px;border-radius:6px;font-size:12px">✗ Нет, не лицензия</span></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p class="muted" style="font-size:13px"><b>Как читать эту таблицу:</b> первые четыре строки (без жёлтой заливки) — это лицензии, которые реально проверяются на <a href="https://www.gov.il/he/service/agents_and_consultants_search" target="_blank" rel="noopener noreferrer">gov.il</a>. Последние три строки (с жёлтой заливкой) — это названия, которые звучат профессионально, но НЕ являются государственной лицензией и не проверяются нигде. Человек с таким титулом может при этом ДОПОЛНИТЕЛЬНО иметь одну из настоящих лицензий выше — это стоит спросить прямо.</p>
+
+      <h3 style="margin-top:20px;font-size:15px">Три настоящие лицензии — что каждой конкретно разрешено</h3>
+      <p class="muted" style="font-size:13px">Учат всех троих одинаково и экзамен один и тот же. Разница — не в знаниях, а в том, что именно закон разрешает и запрещает каждому типу лицензии.</p>
+      <div style="overflow-x:auto;margin-bottom:10px">
+      <table style="width:100%;border-collapse:collapse;font-size:13px">
+        <thead>
+          <tr style="border-bottom:2px solid #dde1e8">
+            <th style="text-align:left;padding:8px 6px">Что разрешено/запрещено</th>
+            <th style="text-align:center;padding:8px 6px">Консультант<br><span style="font-weight:400;font-size:11px">יועץ פנסיוני</span></th>
+            <th style="text-align:center;padding:8px 6px">Агент<br><span style="font-weight:400;font-size:11px">סוכן פנסיוני</span></th>
+            <th style="text-align:center;padding:8px 6px">Маркетолог<br><span style="font-weight:400;font-size:11px">משווק פנסיוני</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #e8eaee">
+            <td style="padding:8px 6px">Давать рекомендацию по маршруту/фонду</td>
+            <td style="text-align:center;padding:8px 6px">✓</td>
+            <td style="text-align:center;padding:8px 6px">✓</td>
+            <td style="text-align:center;padding:8px 6px">✓</td>
+          </tr>
+          <tr style="border-bottom:1px solid #e8eaee">
+            <td style="padding:8px 6px">Физически оформить/подать документы на новый продукт</td>
+            <td style="text-align:center;padding:8px 6px">✗ запрещено законом</td>
+            <td style="text-align:center;padding:8px 6px">✓</td>
+            <td style="text-align:center;padding:8px 6px">✓</td>
+          </tr>
+          <tr style="border-bottom:1px solid #e8eaee">
+            <td style="padding:8px 6px">Получает комиссию от компании за продажу</td>
+            <td style="text-align:center;padding:8px 6px">✗ только единая ставка от всех одинаково</td>
+            <td style="text-align:center;padding:8px 6px">✓ от компаний, которые представляет</td>
+            <td style="text-align:center;padding:8px 6px">✓ от своего единственного работодателя</td>
+          </tr>
+          <tr style="border-bottom:1px solid #e8eaee">
+            <td style="padding:8px 6px">Сколько компаний может предлагать</td>
+            <td style="text-align:center;padding:8px 6px">любые, объективно</td>
+            <td style="text-align:center;padding:8px 6px">несколько, с которыми работает</td>
+            <td style="text-align:center;padding:8px 6px">только одна (своего работодателя)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #e8eaee">
+            <td style="padding:8px 6px">Заполнить форму 161 / решить форму 161-Д при выходе в 67 лет</td>
+            <td style="text-align:center;padding:8px 6px" colspan="3">Форму 161 заполняет <b>работодатель</b>. Решение по форме 161-Д (необратимое!) — задача <b>бухгалтера или налогового консультанта</b>, а не пенсионного специалиста вообще</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 6px">Обязан быть объективным по закону</td>
+            <td style="text-align:center;padding:8px 6px">✓ обязан</td>
+            <td style="text-align:center;padding:8px 6px">✗ не обязан</td>
+            <td style="text-align:center;padding:8px 6px">✗ не обязан</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="muted" style="font-size:13px"><b>Итог простыми словами:</b> консультант — это тот, кто скажет вам объективно, что делать, но не сможет сам это оформить. Агент — тот, кто может оформить, но выбирает из ограниченного набора компаний и получает с этого комиссию. Маркетолог — сотрудник одной конкретной компании, предлагает только её продукты. <b>Консультант и агент — взаимоисключающие лицензии</b>, одновременно держать обе нельзя: консультанту по определению запрещена любая связь с компаниями, а агент по определению работает по договору с ними.</p>
+
+      <div class="notice small"><b>Практическое правило:</b> если человек советует по пенсионным продуктам — проверьте лицензию в Рשות שוק ההון. Если говорит о налогах при выходе на пенсию — проверьте CPA / налогового консультанта. Если советует инвестиции — проверьте лицензию ISA.</div>
+    </section>
+
+    <footer class="footer">
+      <p>Official Check Israel — стартовая статическая версия для GitHub Pages. Обновляйте ссылки и инструкции при изменении официальных сайтов.</p>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast">Скопировано</div>
+
+  <script>
+    const specialists = [
+      {
+        title: "Адвокат", he: "עורך דין", icon: "⚖️", cat: "legal", mode: "official",
+        status: "Официальный поиск", statusClass: "redirect",
+        url: "https://www.israelbar.org.il/lawyer_list.asp",
+        altUrl: "https://www.israelbar.org.il/english_lawyer_list.asp?menu=2",
+        source: "Israel Bar Association / לשכת עורכי הדין",
+        desc: "Проверка адвоката в реестре коллегии адвокатов. Можно искать по имени, номеру лицензии, району и иногда области практики.<br><br><b>Важно:</b> в Израиле у адвокатов НЕТ отдельной государственной лицензии по узкой специализации (как, например, у врачей). Лицензия одна общая — на право заниматься адвокатской практикой вообще. «Специализация» (недвижимость, семейное право, уголовное право, трудовое право и т.д.) — это просто фокус практики конкретного адвоката, а не отдельный проверяемый сертификат. Реестр подтвердит только то, что человек лицензирован как адвокат в принципе — опыт именно в нужной вам области надо уточнять отдельно, напрямую у адвоката.",
+        can: ["проверить статус адвоката", "найти адвоката по району/параметрам", "сверить номер лицензии", "использовать термины ниже, чтобы точно назвать нужную область адвокату при первом звонке (сам официальный реестр по узкой специализации не фильтрует)"],
+        terms: [["שם", "имя"], ["מספר רישיון", "номер лицензии"], ["מחוז", "округ/район"], ["דיני משפחה", "семейное право (развод, опека, алименты)"], ["מקרקעין", "недвижимость"], ["דיני עבודה", "трудовое право"], ["פלילי", "уголовное право"], ["ירושות וצוואות", "наследство и завещания"], ["ליטיגציה אזרחית ומסחרית", "гражданские/коммерческие споры"]],
+        keywords: "адвокат lawyer עורך דין עורכי דין israelbar"
+      },
+      {
+        title: "Маклер / риелтор", he: "מתווך מקרקעין", icon: "🏠", cat: "realestate", mode: "direct",
+        status: "Открытые данные", statusClass: "full",
+        url: "https://data.gov.il/dataset/metavhim",
+        source: "Министерство юстиции / data.gov.il",
+        desc: "Реестр лицензированных маклеров. Полезно перед подписанием договора на посредничество при покупке/аренде недвижимости.",
+        can: ["проверить лицензию маклера", "найти по имени", "искать по городу, указанному в реестре"],
+        terms: [["מס רשיון", "номер лицензии"], ["שם המתווך", "имя маклера"], ["עיר מגורים", "город проживания"]],
+        keywords: "маклер риелтор брокер недвижимость מתווך מקרקעין דירה"
+      },
+      {
+        title: "Оценщик недвижимости", he: "שמאי מקרקעין", icon: "📐", cat: "realestate", mode: "direct",
+        status: "Открытые данные", statusClass: "full",
+        url: "https://data.gov.il/dataset/shamaim",
+        source: "Министерство юстиции / data.gov.il",
+        desc: "Реестр оценщиков недвижимости. Полезно при покупке квартиры, споре о стоимости, налогах и проверке оценки банка.",
+        can: ["найти оценщика по городу", "проверить номер лицензии", "сверить имя в официальном реестре"],
+        terms: [["שם שמאי", "имя оценщика"], ["מספר רשיון", "номер лицензии"], ["עיר", "город"]],
+        keywords: "оценщик недвижимость שמאי מקרקעין הערכת שווי квартира"
+      },
+      {
+        title: "Нотариус", he: "נוטריון", icon: "🖋️", cat: "legal", mode: "direct",
+        status: "Открытые данные", statusClass: "full",
+        url: "https://data.gov.il/dataset/notary",
+        source: "Министерство юстиции / data.gov.il",
+        desc: "Реестр активных нотариусов. Часто нужен для доверенности, перевода, заверения документов и апостиля.",
+        can: ["найти нотариуса по городу", "проверить активность", "посмотреть языки, если указаны"],
+        terms: [["שם", "имя"], ["ישוב", "населённый пункт"], ["שפות", "языки"]],
+        keywords: "нотариус נוטריון доверенность перевод апостиль ייפוי כוח"
+      },
+      {
+        title: "Бухгалтер / CPA", he: "רואה חשבון", icon: "🧾", cat: "finance", mode: "direct",
+        status: "Открытые данные", statusClass: "full",
+        url: "https://data.gov.il/dataset/cpalist",
+        source: "Министерство юстиции / data.gov.il",
+        desc: "Реестр бухгалтеров. Обязательно смотрите поле “статус”: специалист может быть в списке, но не заниматься профессией активно.",
+        can: ["найти CPA по городу", "проверить номер лицензии", "проверить статус"],
+        terms: [["שם פרטי", "имя"], ["שם משפחה", "фамилия"], ["סטטוס", "статус"]],
+        keywords: "бухгалтер CPA רואה חשבון налог отчет דוח שנתי"
+      },
+      {
+        title: "Налоговый консультант", he: "יועץ מס", icon: "💼", cat: "finance", mode: "official",
+        status: "Официальный сайт", statusClass: "redirect",
+        url: "https://www.tac.gov.il/",
+        source: "Мועצת יועצי המס בישראל",
+        desc: "На сайте Совета налоговых консультантов ищите раздел “חיפוש יועץ”. Подходит для проверки/поиска консультанта по налогам.",
+        can: ["найти налогового консультанта", "проверить через официальный сайт", "искать по имени или городу, если доступно"],
+        terms: [["חיפוש יועץ", "поиск консультанта"], ["שם", "имя"], ["עיר", "город"]],
+        keywords: "налоговый консультант יועץ מס taxes מס הכנסה מעמ"
+      },
+      {
+        title: "Инвестиционный специалист", he: "יועץ / משווק / מנהל תיקים", icon: "📈", cat: "finance", mode: "official",
+        status: "Официальный поиск ISA", statusClass: "redirect",
+        url: "https://www.investors.isa.gov.il/page/search-advisor",
+        altUrl: "https://www.new.isa.gov.il/page/entities-search",
+        source: "Israel Securities Authority / רשות ניירות ערך",
+        desc: "Проверка инвестиционных консультантов, маркетологов, управляющих портфелями и лицензированных компаний. Перед инвестициями — обязательно проверить.",
+        can: ["проверить лицензию консультанта", "найти компанию под надзором ISA", "различить консультанта и маркетолога"],
+        terms: [["יועץ השקעות", "инвест. консультант"], ["משווק השקעות", "инвест. маркетолог"], ["מנהל תיקים", "управляющий портфелем"]],
+        keywords: "инвестиции יועץ השקעות משווק השקעות מנהל תיקים ISA portfolio"
+      },
+      {
+        title: "Пенсионный консультант / агент / маркетолог", he: "יועץ פנסיוני / סוכן פנסיוני / משווק פנסיוני", icon: "🛡️", cat: "finance", mode: "official",
+        status: "gov.il поиск", statusClass: "redirect",
+        url: "https://www.gov.il/he/service/agents_and_consultants_search",
+        source: "Рשות שוק ההון, ביטוח וחיסכון / gov.il",
+        desc: "Важно: все трое проходят ОДИНАКОВОЕ обучение и один и тот же экзамен от Рашут шук а-hон (плюс полугодовая стажировка). Но по закону у них РАЗНЫЕ ПОЛНОМОЧИЯ — это не просто «кто лучше разбирается», а прямой юридический запрет одним и обязанность у других.<br><br><b>Пенсионный консультант</b> (иврит: <span dir=\"rtl\" lang=\"he\">יועץ פנסיוני</span>, транскрипция: йоэ́ц пенсио́ни) — независим, работает и получает оплату ТОЛЬКО от клиента, а не от компаний (кроме одинаковой для всех «дистрибуционной комиссии»). Даёт объективную рекомендацию по всему рынку: любые фонды, любые компании. <b>По закону ему ЗАПРЕЩЕНО самому оформлять покупку продукта</b> — только рекомендация, оформляет клиент сам или через агента. В стране их около 1000, из них независимых частных — только около 100 (остальные — консультанты в банках).<br><br><b>Пенсионный / страховой агент</b> (иврит: <span dir=\"rtl\" lang=\"he\">סוכן ביטוח פנסיוני</span>, транскрипция: со́хен биту́ах пенсио́ни) — работает по договорам с несколькими компаниями, платят ему именно эти компании комиссией. <b>Именно агент фактически оформляет</b> покупку/перевод продукта — то, чего консультанту делать нельзя. <b>Важно: агенту законом ЗАПРЕЩЕНО называть себя «консультантом» или использовать слово «ייעוץ»</b> — поэтому агенты часто называются «пенсионный планировщик» (это и вызывает путаницу, см. таблицу нерегулируемых названий выше).<br><br><b>Пенсионный маркетолог</b> (иврит: <span dir=\"rtl\" lang=\"he\">משווק פנסיוני</span>, транскрипция: мешаве́к пенсио́ни) — штатный сотрудник одной конкретной компании (Менора, Феникс, Альтшулер-Шахам и т.п.), продаёт и оформляет только её продукты — самый большой конфликт интересов из троих.<br><br><b>Важное уточнение, которое мы исправили:</b> лицензии консультанта и агента — ВЗАИМОИСКЛЮЧАЮЩИЕ, их нельзя держать одновременно (это прямо следует из того, что консультанту по определению запрещена любая связь с компаниями, а агент по определению работает по договорам с ними).<br><br><b>А вот про сам момент выхода на пенсию (например, вам исполнилось 67):</b> основную форму — <span dir=\"rtl\" lang=\"he\">טופס 161</span> (тóфес 161, уведомление о выходе на пенсию) — по закону обязан заполнить ваш работодатель. Но самое важное решение здесь — форма <span dir=\"rtl\" lang=\"he\">161ד</span> (тóфес 161-дáлет, заявление о фиксации налоговых прав) — это НЕОБРАТИМОЕ решение о налоговом освобождении, и им занимается <b>бухгалтер (роэ́ хешбо́н) или уполномоченный налоговый консультант (йоэ́ц мас мусма́х)</b> — не работодатель и не пенсионный консультант/агент. Ни консультант, ни агент, ни маркетолог не имеют права представлять вас перед налоговой или Битуах леуми — этим занимаются только бухгалтер, налоговый консультант или адвокат.<br><br><b>Вывод для вас:</b> объективный совет «куда вкладывать» — консультант. Физически открыть/сменить продукт — агент. Налоговые формы при выходе на пенсию (161-Д, фиксация прав) — бухгалтер или налоговый консультант, это отдельная профессия, не пенсионная лицензия вообще.",
+        can: ["искать по имени/фамилии", "искать по городу", "узнать точный тип лицензии: консультант, агент или маркетолог", "понять, есть ли у специалиста разрешение вообще заниматься пенсионными продуктами", "если нужен только объективный совет по маршруту — искать консультанта (не может держать лицензию агента одновременно)", "если нужно физически оформить продукт/подать документы — искать агента", "для формы 161-Д и налоговых вопросов при выходе на пенсию — искать бухгалтера (роэ хешбон) или уполномоченного налогового консультанта (йоэц мас мусмах), это отдельная профессия", "прямо спросить: на какую компанию вы работаете и как получаете вознаграждение"],
+        terms: [["יועץ פנסיוני", "пенсионный консультант — независим"], ["סוכן פנסיוני", "пенсионный агент — представляет страховую"], ["סוכן ביטוח", "страховой агент"], ["משווק פנסיוני", "пенсионный маркетолог — только одна компания-работодатель"], ["סוג רישיון", "тип лицензии"], ["זיקה", "финансовая заинтересованность/привязка"]],
+        keywords: "пенсионный консультант пенсионный агент маркетолог pension פנסיוני ביטוח סוכן ביטוח יועץ פנסיוני סוכן פנסיוני שיווק פנסיוני"
+      },
+      {
+        title: "Планирование выхода на пенсию / финансовый планировщик", he: "מתכנן פרישה / מתכנן פיננסי", icon: "🌅", cat: "finance", mode: "checklist",
+        status: "Название не лицензируется", statusClass: "warn",
+        url: "#retirement-checklist",
+        source: "Официально такой профессии/лицензии в Израиле не существует",
+        desc: "Важно понимать: <b>«планирование выхода на пенсию» и «финансовый планировщик» — это НЕ регулируемые государством названия.</b> Лицензии «мэтахнен паришá» просто не существует — так может назвать себя кто угодно, включая бухгалтера, страхового агента или человека вообще без лицензий.<br><br>Реально регулируется только САМО ДЕЙСТВИЕ: чтобы законно выполнить пенсионную операцию (перевести накопления, оформить выплату и т.п.), нужна ОДНА из трёх лицензий выше (консультант/агент/маркетолог). Сертификаты вроде CFP/EFP — это профессиональные квалификации, а не государственная лицензия.<br><br>Поэтому: человек может отлично «спланировать» всё на бумаге, не имея лицензии — но выполнить план сможет только тот, у кого лицензия есть.",
+        can: ["спросить прямо: какая у вас государственная лицензия — консультант, агент или маркетолог", "не путать сертификат/титул (CFP, «финансовый планировщик») с гослицензией", "если обсуждаются налоги — отдельно проверить CPA или налогового консультанта", "если обсуждаются инвестиции — отдельно проверить лицензию ISA", "попросить письменное раскрытие комиссий и конфликта интересов"],
+        terms: [["תכנון פרישה", "планирование выхода на пенсию — не лицензируется"], ["יועץ פרישה", "консультант по выходу на пенсию — не лицензируется, звучит похоже на настоящую лицензию «יועץ פנסיוני»"], ["מתכנן פיננסי", "финансовый планировщик — не лицензируется"], ["קיבוע זכויות", "фиксация налоговых прав"], ["מענק פרישה", "выходное пособие"], ["פטור ממס", "налоговое освобождение"]],
+        keywords: "выход на пенсию финансовый планировщик retirement financial planner פרישה תכנון פרישה מתכנן פיננסי יועץ פרישה קיבוע זכויות מענק פרישה פטור ממס"
+      },
+      {
+        title: "Патентный поверенный", he: "עורך פטנטים", icon: "💡", cat: "business", mode: "direct",
+        status: "Открытые данные", statusClass: "full",
+        url: "https://data.gov.il/dataset/justice-patent-attorneys",
+        source: "Министерство юстиции / Рשות הפטנטים / data.gov.il",
+        desc: "Реестр патентных поверенных. Полезно для изобретений, патентов, товарных знаков и IP-вопросов.",
+        can: ["проверить лицензию", "найти по имени", "посмотреть город/контакты, если указаны"],
+        terms: [["מספר רישיון", "номер лицензии"], ["שם פרטי", "имя"], ["יישוב", "город"]],
+        keywords: "патентный поверенный עורך פטנטים patent trademark IP"
+      },
+      {
+        title: "Врач / медработник", he: "רופא / מקצועות בריאות", icon: "🩺", cat: "business", mode: "official",
+        status: "gov.il поиск", statusClass: "redirect",
+        url: "https://www.gov.il/en/service/licensed-medical-practitioners",
+        altUrl: "https://practitioners.health.gov.il/Practitioners",
+        source: "Министерство здравоохранения / gov.il",
+        desc: "Проверка лицензированных врачей, стоматологов, фармацевтов, психологов и других медицинских профессий.",
+        can: ["проверить лицензию", "искать по имени", "искать по профессии/специализации"],
+        terms: [["רופא", "врач"], ["רישיון", "лицензия"], ["התמחות", "специализация"]],
+        keywords: "врач רופא медицина лицензия healthcare doctor psychologist pharmacist"
+      },
+      {
+        title: "Компания / поставщик", he: "חברה", icon: "🏢", cat: "business", mode: "direct",
+        status: "Открытые данные", statusClass: "full",
+        url: "https://data.gov.il/dataset/ica_companies",
+        source: "Регистр компаний / Министерство юстиции / data.gov.il",
+        desc: "Проверка статуса компании: активна ли, номер, адрес и другие сведения из реестра.",
+        can: ["проверить компанию перед договором", "сверить номер компании", "посмотреть статус"],
+        terms: [["מספר תאגיד", "номер компании"], ["שם תאגיד", "название"], ["סטטוס", "статус"]],
+        keywords: "компания поставщик חברה רשם החברות ח.פ supplier"
+      },
+      {
+        title: "Ипотечный консультант", he: "יועץ משכנתאות", icon: "🏦", cat: "warning", mode: "checklist",
+        status: "Чеклист вместо реестра", statusClass: "warn",
+        url: "#mortgage-checklist",
+        source: "Нет полноценного публичного госреестра лицензий для быстрой проверки",
+        desc: "Для ипотечных консультантов не найден такой же стабильный госреестр лицензий, как у адвокатов, CPA или страховых агентов. Используйте чеклист вопросов.",
+        can: ["проверить конфликт интересов", "попросить письменный договор", "спросить, получает ли консультант комиссию от банка"],
+        terms: [["עמלה", "комиссия"], ["הסכם", "договор"], ["ניגוד עניינים", "конфликт интересов"]],
+        keywords: "ипотечный консультант יועץ משכנתאות משכנתא mortgage"
+      }
+    ];
+
+    const dictionary = [
+      ["חיפוש", "поиск"], ["שם", "имя / название"], ["שם פרטי", "имя"], ["שם משפחה", "фамилия"],
+      ["מספר רישיון", "номер лицензии"], ["מס רשיון", "номер лицензии"], ["עיר", "город"], ["יישוב / ישוב", "населённый пункт"],
+      ["עיר מגורים", "город проживания"], ["סוג רישיון", "тип лицензии"], ["יועץ פנסיוני", "пенсионный консультант"], ["סוכן פנסיוני", "пенсионный агент"],
+      ["תכנון פנסיוני", "пенсионное планирование"], ["תכנון פרישה", "планирование выхода на пенсию"], ["יועץ פרישה", "консультант по выходу на пенсию"], ["קיבוע זכויות", "фиксация налоговых прав"],
+      ["סנן / סינון", "фильтр"], ["נקה סננים", "очистить фильтры"],
+      ["תוצאות", "результаты"], ["בתוקף", "действует"], ["פעיל", "активен"], ["לא פעיל", "неактивен"],
+      ["הותלה", "приостановлен"], ["בוטל", "аннулирован"], ["חברה", "компания"], ["יחיד", "физическое лицо"],
+      ["כתובת", "адрес"], ["טלפון", "телефон"], ["דואר אלקטרוני", "email"], ["שפות", "языки"],
+      ["לכניסה למערכת", "войти в систему"], ["יצא לקובץ", "экспорт в файл"]
+    ];
+
+    // Общее языковое правило для всех промптов: русский + иврит в скобках,
+    // английского быть не должно. Раньше правила не было вообще, и нейросети
+    // подставляли в скобки английский вместо ивритского оригинала.
+    const LANG_RULE = ` ЯЗЫК ОТВЕТА — СТРОГОЕ ПРАВИЛО. Пиши живым, естественным русским языком, как пишет человек, а не машинный перевод. Английского языка в ответе быть НЕ ДОЛЖНО вообще — ни слов, ни названий, ни пояснений в скобках. Названия учреждений, полей формы, улиц, статусов и должностей давай так: понятный русский перевод, а сразу за ним в скобках ОРИГИНАЛ НА ИВРИТЕ — например «номер лицензии (מספר רישיון)», «действующая (בתוקף)», «улица Герцль 73 (רחוב הרצל 73)». Никогда не подставляй в скобки английский вместо иврита. Не смешивай буквы разных алфавитов внутри одного слова. Если точного написания на иврите не знаешь — просто не ставь скобки.`;
+
+    const copyTexts = {
+      "ai-general": `Я пользуюсь официальным израильским сайтом для проверки лицензии специалиста. Объясни мне на русском, что означают поля на иврите и какие шаги выполнить. Не проси у меня паспорт, теудат зеут, банковские данные, пароли, SMS-коды или личные документы. Если я пришлю скриншот, объясняй только интерфейс и не сохраняй чувствительные данные.` + LANG_RULE,
+      "ai-screenshot": `Я пришлю скриншот официального израильского сайта. Переведи интерфейс с иврита на русский и объясни, что нажимать, чтобы найти специалиста или проверить лицензию. Не обрабатывай и не проси личные документы, пароли, банковские данные, номера удостоверений или SMS-коды.` + LANG_RULE,
+      "dictionary": dictionary.map(([he, ru]) => `${he} = ${ru}`).join("\n")
+    };
+
+    function translateUrl(url) {
+      if (!url || url.startsWith('#')) return url;
+      return `https://translate.google.com/translate?sl=auto&tl=ru&u=${encodeURIComponent(url)}`;
+    }
+
+    function cardPrompt(item, city) {
+      const cityLine = city ? `Ищу в городе/районе: ${city}. ` : '';
+      return `Найди специалистов в Израиле: ${item.title} / ${item.he}. ${cityLine}Официальный сайт для поиска: ${item.url}. ВАЖНО: если у тебя есть доступ к интернету — САМ зайди на сайт, выполни поиск и ВЫПИШИ ПРЯМО В ОТВЕТЕ конкретные имена, номера лицензий и контакты, которые нашёл — не отправляй меня «зайдите на сайт сами», я не понимаю иврит. Если доступа к интернету нет — объясни, какие поля на иврите что означают, чтобы я сам мог заполнить форму, а результат пришлю тебе скриншотом для перевода. Мне нужен список подходящих специалистов, а не проверка одного уже известного имени. Ключевые слова: ${item.terms.map(t => t[0] + ' = ' + t[1]).join('; ')}. Не проси и не обрабатывай личные документы, пароли, банковские данные или SMS-коды.` + LANG_RULE;
+    }
+
+    function renderCards() {
+      const q = document.getElementById('search').value.trim().toLowerCase();
+      const cat = document.getElementById('category').value;
+      const mode = document.getElementById('mode').value;
+      const cards = document.getElementById('cards');
+      cards.innerHTML = '';
+      const filtered = specialists.filter(item => {
+        const hay = `${item.title} ${item.he} ${item.desc} ${item.keywords} ${item.source}`.toLowerCase();
+        const okQ = !q || hay.includes(q);
+        const okCat = cat === 'all' || item.cat === cat;
+        const okMode = mode === 'all' || (mode === 'direct' && item.mode === 'direct') || (mode === 'official' && item.mode === 'official') || (mode === 'checklist' && item.mode === 'checklist');
+        return okQ && okCat && okMode;
+      });
+
+      if (!filtered.length) {
+        cards.innerHTML = `<div class="card" style="grid-column: 1 / -1; min-height: auto"><h3>Ничего не найдено</h3><p class="muted">Попробуйте другое слово: “налог”, “страхование”, “адвокат”, “нотариус”, “השקעות”.</p></div>`;
+        return;
+      }
+
+      for (const item of filtered) {
+        const el = document.createElement('article');
+        el.className = 'card';
+        const checklist = item.mode === 'checklist';
+        el.innerHTML = `
+          <div class="card-top">
+            <div>
+              <div class="icon">${item.icon}</div>
+            </div>
+            <span class="status ${item.statusClass}">${item.status}</span>
+          </div>
+          <h3>${item.title}</h3>
+          <div class="subtitle he">${item.he}</div>
+          <details class="card-acc">
+            <summary>Подробнее — что это и как пользоваться ▸</summary>
+            <p class="muted" style="margin-top:10px">${item.desc}</p>
+            <ul>${item.can.map(x => `<li>${x}</li>`).join('')}</ul>
+            <div class="terms">${item.terms.map(([he, ru]) => `<div class="term"><b class="he">${he}</b><span>${ru}</span></div>`).join('')}</div>
+            <p class="small muted"><b>Источник:</b> ${item.source}</p>
+          </details>
+          ${!checklist ? `
+          <div style="margin-top:10px">
+            <label style="font-size:12px;font-weight:700;color:var(--muted,#5d6675);display:block;margin-bottom:4px">Город или район поиска (необязательно):</label>
+            <input type="text" class="city-input" placeholder="например: Хайфа, Шарон, Тель-Авив" style="width:100%;padding:8px 10px;border:1px solid #dcdfe6;border-radius:8px;font-size:13px;box-sizing:border-box">
+          </div>` : ''}
+          <div class="card-actions">
+            ${checklist ? `<a class="btn primary" href="#mortgage-checklist">Чеклист</a>` : `<a class="btn primary" href="${item.url}" target="_blank" rel="noopener noreferrer">Официальный сайт</a>`}
+            ${(!checklist && item.altUrl) ? `<a class="btn" href="${item.altUrl}" target="_blank" rel="noopener noreferrer">Доп. ссылка</a>` : ''}
+            ${(!checklist) ? `<a class="btn" href="${translateUrl(item.url)}" target="_blank" rel="noopener noreferrer">С переводом*</a>` : ''}
+            <button class="btn" data-card-copy="${encodeURIComponent(item.title)}">Промпт</button>
+          </div>
+        `;
+        const cityInput = el.querySelector('.city-input');
+        el.querySelector('[data-card-copy]').addEventListener('click', () => copyToClipboard(cardPrompt(item, cityInput ? cityInput.value.trim() : '')));
+        cards.appendChild(el);
+      }
+    }
+
+    function renderDict() {
+      const d = document.getElementById('dict');
+      d.innerHTML = dictionary.map(([he, ru]) => `<div class="dict-item"><div class="he">${he}</div><div class="ru">${ru}</div></div>`).join('');
+    }
+
+    function copyToClipboard(text, btn) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => showToast(btn));
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus(); ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+        showToast(btn);
+      }
+    }
+
+    function showToast(btn) {
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      if (btn) {
+        const old = btn.textContent;
+        btn.classList.add('copy-done');
+        btn.textContent = 'Скопировано';
+        setTimeout(() => { btn.classList.remove('copy-done'); btn.textContent = old; }, 1400);
+      }
+      setTimeout(() => toast.classList.remove('show'), 1400);
+    }
+
+    document.addEventListener('click', e => {
+      const btn = e.target.closest('[data-copy]');
+      if (!btn) return;
+      const key = btn.getAttribute('data-copy');
+      copyToClipboard(copyTexts[key] || '', btn);
+    });
+
+    document.getElementById('search').addEventListener('input', renderCards);
+    document.getElementById('category').addEventListener('change', renderCards);
+    document.getElementById('mode').addEventListener('change', renderCards);
+
+    renderCards();
+    renderDict();
+  </script>
+
+<button id="scrollToTop" title="Наверх" aria-label="Прокрутить наверх" style="display:none;position:fixed;bottom:20px;right:20px;width:44px;height:44px;border-radius:50%;background:#08775a;color:#fff;border:none;font-size:18px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.2);z-index:150">↑</button>
+<script>
+(function(){
+  var btn = document.getElementById('scrollToTop');
+  window.addEventListener('scroll', function(){ btn.style.display = window.scrollY > 400 ? 'block' : 'none'; });
+  btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+})();
+</script>
+<footer style="width:min(1200px,calc(100% - 28px));margin:26px auto 40px;color:#5a6660;font-size:11px;text-align:center;font-family:Inter,system-ui,sans-serif">Понятные финансы в Израиле · проверка специалиста · не юридическая консультация · <a href="contact.html" style="color:#08775a;font-weight:800;text-decoration:none">Написать нам</a></footer>
+</body>
+</html>

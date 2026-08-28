@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Экономика Израиля сегодня — ставка, мадад, курс, минималка | 2026</title>
+<meta name="description" content="Главные цифры Израиля на сегодня: ставка Банка Израиля и прайм, мадад и инфляция, курс доллара и евро, минимальная зарплата, индекс строительства. Обновляется автоматически из официальных источников.">
+<link rel="canonical" href="https://exodus611.github.io/finance-portal/tablo.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Экономика Израиля сегодня — все цифры на одном экране">
+<meta property="og:description" content="Ставка Банка Израиля, мадад, курсы валют, минимальная зарплата. Свежие данные из официальных источников.">
+<meta property="og:url" content="https://exodus611.github.io/finance-portal/tablo.html">
+<meta property="og:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+.tb-root{
+  --tb-bg:#fbfcfe;--tb-card:#fff;--tb-surface:#f4f7fb;--tb-border:#e3e9f2;
+  --tb-text:#0d1526;--tb-text2:#3d4a60;--tb-muted:#75839a;
+  --tb-brand:#0b7a6d;--tb-brand2:#12a58f;--tb-accent:#2f6df6;
+  --tb-up:#0a9757;--tb-down:#e0393e;--tb-warn:#c07d15;
+  --tb-r:19px;--tb-r-sm:13px;
+  --tb-sh1:0 1px 2px rgba(13,21,38,.05),0 2px 8px rgba(13,21,38,.04);
+  --tb-sh2:0 2px 6px rgba(13,21,38,.06),0 14px 34px rgba(13,21,38,.07);
+  --tb-grad:linear-gradient(135deg,#0b7a6d 0%,#12a58f 55%,#2f9fd6 100%);
+  max-width:1000px;margin-inline:auto;padding:12px 18px 60px;overflow-x:clip;
+  font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--tb-text);line-height:1.6;font-size:16.5px;box-sizing:border-box;
+  -webkit-font-smoothing:antialiased;
+}
+.tb-root *,.tb-root *::before,.tb-root *::after{box-sizing:inherit}
+@media (prefers-color-scheme:dark){.tb-root:not([data-t="light"]){
+  --tb-bg:#0a0f1a;--tb-card:#121a29;--tb-surface:#161f30;--tb-border:#26324a;
+  --tb-text:#eaf0fa;--tb-text2:#c0cbdd;--tb-muted:#8797ae;--tb-brand:#2bc0a8;
+  --tb-brand2:#39d6bb;--tb-accent:#6ea4ff;--tb-up:#2ecc80;--tb-down:#ff6b6b;--tb-warn:#e6a942;
+  --tb-sh1:0 1px 3px rgba(0,0,0,.3);--tb-sh2:0 4px 18px rgba(0,0,0,.4);
+}}
+.tb-root h1{font-size:clamp(26px,4.4vw,40px);line-height:1.12;margin:.3em 0 .25em;
+  letter-spacing:-.03em;font-weight:850}
+.tb-root h2{font-size:clamp(20px,3vw,27px);margin:1.8em 0 .5em;letter-spacing:-.02em;font-weight:750}
+.tb-root p{margin:.65em 0;color:var(--tb-text2)}
+.tb-root a{color:var(--tb-accent)}
+.tb-root :focus-visible{outline:2.5px solid var(--tb-accent);outline-offset:2px;border-radius:7px}
+.tb-num{font-variant-numeric:tabular-nums}
+.tb-hint{font-size:13.5px;color:var(--tb-muted);line-height:1.5}
+
+.tb-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.tb-live{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:750;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--tb-brand);
+  background:color-mix(in srgb,var(--tb-brand) 11%,transparent);
+  border:1px solid color-mix(in srgb,var(--tb-brand) 24%,transparent);
+  padding:5px 13px;border-radius:999px}
+.tb-dot{width:7px;height:7px;border-radius:50%;background:var(--tb-up);animation:tb-p 2.4s infinite}
+@keyframes tb-p{0%,100%{opacity:1}50%{opacity:.3}}
+@media (prefers-reduced-motion:reduce){.tb-dot{animation:none}}
+
+/* ── Плитки ── */
+.tb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(minmax(0,150px),1fr));
+  gap:10px;margin-block:22px}
+.tb-tile{border-radius:var(--tb-r);padding:13px;box-shadow:var(--tb-sh1);position:relative;overflow:hidden;
+  cursor:pointer;border:none;color:#fff;transition:transform .16s,box-shadow .16s;text-align:start;
+  font-family:inherit;width:100%;display:block}
+.tb-tile:hover{transform:translateY(-3px);box-shadow:var(--tb-sh2)}
+.tb-tile:active{transform:translateY(-1px)}
+.tb-tile--rate{background:linear-gradient(135deg,#0b7a6d,#12a58f)}
+.tb-tile--cpi{background:linear-gradient(135deg,#e07a1f,#f2a13d)}
+.tb-tile--build{background:linear-gradient(135deg,#2f6df6,#5b93ff)}
+.tb-tile--wage{background:linear-gradient(135deg,#8b5cf6,#a97cf7)}
+.tb-tile--housing{background:linear-gradient(135deg,#0e9384,#3fc9b5)}
+.tb-tile--rent{background:linear-gradient(135deg,#c2410c,#f0653a)}
+.tb-tile--fuel{background:linear-gradient(135deg,#1e3a5f,#3d6a9c)}
+.tb-tile__l{font-size:12px;font-weight:750;letter-spacing:.04em;text-transform:uppercase;
+  opacity:.92;display:flex;align-items:center;gap:6px}
+.tb-tile__v{font-size:clamp(19px,6vw,26px);font-weight:850;letter-spacing:-.03em;
+  line-height:1.08;margin-block:6px 2px;font-variant-numeric:tabular-nums}
+.tb-tile__sub{font-size:12.5px;opacity:.9;font-variant-numeric:tabular-nums}
+.tb-tile__d{font-size:12.5px;font-weight:750;margin-block-start:4px;opacity:.95}
+.tb-tile__more{font-size:11px;font-weight:700;margin-block-start:8px;opacity:.85;display:flex;align-items:center;gap:3px}
+.tb-up{color:#baffd8}.tb-down{color:#ffd1d1}
+
+/* ── Модалка объяснения ── */
+.tb-modal-overlay{display:none;position:fixed;inset:0;background:#151b28;z-index:300;
+  align-items:flex-end;justify-content:center}
+.tb-modal-overlay.show{display:flex}
+@media(min-width:640px){.tb-modal-overlay{align-items:center;padding:20px}}
+.tb-modal{position:relative;z-index:301;box-sizing:border-box;background-color:#ffffff;background:var(--tb-card,#ffffff);border-radius:20px 20px 0 0;max-width:min(460px,calc(100vw - 24px));width:100%;
+  padding:22px 22px 26px;box-shadow:0 -8px 30px rgba(0,0,0,.25);animation:tbModalUp .22s ease-out;max-height:85vh;overflow-y:auto}
+@media(min-width:640px){.tb-modal{border-radius:20px}}
+@keyframes tbModalUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+.tb-modal__head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:6px}
+.tb-modal__head h3{margin:0;font-size:16px;color:var(--tb-brand)}
+.tb-modal__close{border:none;background:var(--tb-surface);color:var(--tb-muted);width:30px;height:30px;
+  border-radius:50%;font-size:15px;cursor:pointer;flex:0 0 30px}
+.tb-modal__big{font-size:28px;font-weight:900;color:var(--tb-text);margin:8px 0 4px;font-variant-numeric:tabular-nums}
+.tb-modal__sub{font-size:12.5px;color:var(--tb-muted);margin-bottom:14px}
+.tb-modal__expl{font-size:14px;color:var(--tb-text2);line-height:1.55;margin-bottom:16px}
+.tb-modal__link{display:block;text-align:center;background:var(--tb-brand);color:#fff;text-decoration:none;
+  border-radius:12px;padding:12px;font-weight:750;font-size:14px}
+.tb-modal__link:hover{background:var(--tb-brand2)}
+
+/* ── Валютная полоса ── */
+/* ── Пульс кибербезопасности ── */
+.tb-scam-acc{border:1px solid var(--tb-border);border-radius:var(--tb-r);background:var(--tb-card);
+  margin-block:14px 24px;overflow:hidden}
+.tb-scam-acc>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:16px 18px}
+.tb-scam-acc>summary::-webkit-details-marker{display:none}
+.tb-scam-acc__badge{font-size:22px;flex:0 0 auto}
+.tb-scam-acc__title{flex:1;min-width:0}
+.tb-scam-acc__title b{display:block;font-size:14.5px}
+.tb-scam-acc__he{font-size:12px;color:var(--tb-muted);margin-inline-start:6px}
+.tb-scam-acc__sub{display:block;font-size:11.5px;color:var(--tb-muted);margin-top:2px}
+.tb-scam-acc__chevron{flex:0 0 auto;font-size:14px;color:var(--tb-brand);transition:transform .2s}
+.tb-scam-acc[open] .tb-scam-acc__chevron{transform:rotate(90deg)}
+.tb-scam-filters{display:flex;gap:7px;padding:0 18px 12px;flex-wrap:wrap}
+.tb-scam-filter{background:var(--tb-surface);border:1px solid var(--tb-border);color:var(--tb-muted);
+  font-family:inherit;font-size:12px;font-weight:700;padding:6px 12px;border-radius:16px;cursor:pointer}
+.tb-scam-filter.active{background:var(--tb-brand);border-color:var(--tb-brand);color:#fff}
+.tb-scam-list{display:flex;flex-direction:column;gap:10px;padding:0 18px 16px}
+.tb-scam-card{border:1px solid var(--tb-border);border-radius:12px;padding:13px 14px;background:var(--tb-surface)}
+.tb-scam-card__top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:5px}
+.tb-scam-card__date{font-size:11px;color:var(--tb-muted);font-variant-numeric:tabular-nums}
+.tb-scam-card__title{font-size:14px;font-weight:750;margin-bottom:5px}
+.tb-scam-card__summary{font-size:13px;color:var(--tb-text2);line-height:1.5;margin-bottom:8px}
+.tb-scam-card details{margin-top:2px}
+.tb-scam-card details summary{cursor:pointer;font-size:12.5px;font-weight:700;color:var(--tb-brand);list-style:none}
+.tb-scam-card details summary::-webkit-details-marker{display:none}
+.tb-scam-card__details{font-size:13px;color:var(--tb-text2);line-height:1.55;margin:8px 0}
+.tb-scam-card__nope{font-size:12.5px;margin:8px 0 0;padding:9px 11px;background:#fff3f0;border-radius:9px;border-inline-start:3px solid #d95d4a}
+.tb-scam-card__nope b{display:block;margin-bottom:4px;color:#a5402f}
+.tb-scam-card__nope ul{margin:0;padding-inline-start:18px}
+.tb-scam-card__src{display:inline-block;margin-top:8px;font-size:11.5px;color:var(--tb-muted)}
+.tb-scam-disclaimer{font-size:11px;color:var(--tb-muted);line-height:1.5;padding:0 18px 16px;margin:0}
+
+.tb-fx{display:flex;gap:9px;overflow-x:auto;padding:3px 2px 9px;margin-block:6px 20px;scrollbar-width:thin}
+.tb-fxi{flex:none;min-width:118px;padding:12px 14px;border-radius:var(--tb-r-sm);
+  background:var(--tb-card);border:1px solid var(--tb-border);box-shadow:var(--tb-sh1)}
+.tb-fxi__c{font-size:12px;font-weight:750;color:var(--tb-muted);letter-spacing:.04em}
+.tb-fxi__v{font-size:19px;font-weight:800;letter-spacing:-.02em;display:block;
+  margin-block:2px 1px;font-variant-numeric:tabular-nums}
+.tb-fxi__d{font-size:12.5px;font-weight:650}
+
+.tb-note{background:var(--tb-surface);border:1px solid var(--tb-border);border-radius:var(--tb-r-sm);
+  padding:14px 16px;margin-block:15px;font-size:15.5px;color:var(--tb-text2)}
+.tb-cta{display:flex;gap:9px;flex-wrap:wrap;margin-block:16px}
+.tb-btn{appearance:none;border:1px solid var(--tb-border);background:var(--tb-surface);
+  color:var(--tb-text2);border-radius:12px;padding:11px 18px;font:inherit;font-size:15px;
+  font-weight:650;cursor:pointer;text-decoration:none;display:inline-block;transition:all .16s}
+.tb-btn:hover{border-color:var(--tb-brand);color:var(--tb-brand);transform:translateY(-1px)}
+.tb-btn--p{background:var(--tb-grad);color:#fff;border-color:transparent;
+  box-shadow:0 4px 14px color-mix(in srgb,var(--tb-brand) 28%,transparent)}
+.tb-btn--p:hover{color:#fff}
+
+.tb-tbl{width:100%;border-collapse:separate;border-spacing:0;font-size:15px;margin-block:12px}
+.tb-tbl th{background:var(--tb-surface);font-size:11.5px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.05em;color:var(--tb-muted);padding:10px 12px;text-align:start}
+.tb-tbl td{padding:11px 12px;border-block-end:1px solid var(--tb-border)}
+.tb-tbl td.num{text-align:end;font-variant-numeric:tabular-nums}
+.tb-trend-acc{border:1px solid var(--tb-border);border-radius:var(--tb-r);background:var(--tb-card);margin-block:14px 22px;overflow:hidden}
+.tb-trend-acc>summary{list-style:none;cursor:pointer;padding:13px 16px;font-size:13.5px;font-weight:750;color:var(--tb-ink);display:flex;align-items:center;justify-content:space-between}
+.tb-trend-acc>summary::-webkit-details-marker{display:none}
+.tb-trend-acc>summary::after{content:'▸';color:var(--tb-brand);font-size:13px;transition:transform .2s}
+.tb-trend-acc[open]>summary::after{transform:rotate(90deg)}
+.tb-trend-acc .tb-trend-legend{padding:0 16px;margin:0 0 8px}
+.tb-trends{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:0 16px 16px}
+.tb-trend-card{padding:9px 10px 7px}
+.tb-trend-svg{height:44px}
+.tb-trend-pts{font-size:9px}
+.tb-trend-label{font-size:10px;margin-bottom:3px}
+.tb-trend-card{background:var(--tb-card);border-radius:var(--tb-r);padding:14px 14px 12px;box-shadow:var(--tb-sh1)}
+.tb-trend-label{font-size:11.5px;font-weight:750;color:var(--tb-muted);text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px}
+.tb-trend-svg{width:100%;height:52px;display:block}
+.tb-trend-pts{display:flex;justify-content:space-between;gap:2px;margin-top:2px}
+.tb-trend-pts span{display:flex;flex-direction:column;align-items:center;font-size:11px;font-weight:800;color:var(--tb-ink);flex:1;min-width:0}
+.tb-trend-pts span b{font-weight:600;font-size:8.5px;color:var(--tb-muted);margin-top:1px;white-space:nowrap}
+.tb-trend-legend{font-size:11.5px;color:var(--tb-muted);line-height:1.5;margin:4px 0 12px}
+.tb-trend-note{font-size:10.5px;color:var(--tb-muted);margin:2px 0 22px;font-style:italic}
+
+.tb-scroll{overflow-x:auto;max-width:100%}
+
+.tb-faq details{border:1px solid var(--tb-border);border-radius:var(--tb-r-sm);padding:0 16px;
+  margin-block:8px;background:var(--tb-card)}
+.tb-faq summary{cursor:pointer;padding:14px 0;font-weight:650;list-style:none;
+  display:flex;justify-content:space-between;gap:10px;align-items:center}
+.tb-faq summary::-webkit-details-marker{display:none}
+.tb-faq summary::after{content:'+';font-size:20px;color:var(--tb-brand);transition:transform .22s}
+.tb-faq details[open] summary::after{transform:rotate(45deg)}
+.tb-faq details[open] summary{border-block-end:1px solid var(--tb-border)}
+.tb-meta{font-size:13.5px;color:var(--tb-muted);margin-block-start:26px;padding-block-start:16px;
+  border-block-start:1px solid var(--tb-border)}
+.tb-meta li{margin-block:4px}
+@media (max-width:560px){.tb-root{font-size:16px;padding-inline:14px}.tb-tile{padding:15px}}
+</style>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script data-goatcounter="https://finance-portal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>html{overflow-x:hidden}body{margin:0;overflow-x:hidden;max-width:100vw}</style>
+</head>
+<body>
+
+<header style="padding:14px 0;background:#f4f1e9;border-bottom:1px solid #ddd6c7">
+<div style="width:min(1200px,calc(100% - 28px));margin:auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;font-family:Inter,system-ui,sans-serif">
+<div style="display:flex;align-items:center;gap:11px;font-weight:850">
+<span style="width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#0d9671,#08775a 70%);color:#fff;display:grid;place-items:center;font-size:24px;font-weight:900;box-shadow:0 6px 18px rgba(8,119,90,.35)">₪</span>
+<span style="color:#15251f;font-size:14px">Понятные финансы в Израиле</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+<a href="index.html" style="font-size:12px;font-weight:800;color:#08775a;text-decoration:none;white-space:nowrap">← На главную</a>
+<select onchange="if(this.value)location.href=this.value" style="font-size:11.5px;font-weight:700;color:#08775a;border:1px solid #ddd6c7;border-radius:8px;padding:6px 8px;background:#fff;cursor:pointer">
+<option value="">Все калькуляторы ▾</option>
+<option value="salary.html">💰 Зарплата</option>
+<option value="mashkanta.html">🏠 Машканта</option>
+<option value="auto.html">🚗 Автомобиль</option>
+<option value="kredit.html">💳 Кредит</option>
+<option value="arenda-vs-pokupka.html">⚖️ Аренда vs покупка</option>
+<option value="mihzur-mashkanta.html">🔄 Рефинансирование</option>
+<option value="siluk-mukdam.html">💎 Погашение vs инвестиции</option>
+<option value="mas-rehisha.html">🏛️ Мас рехиша</option>
+<option value="mas-shevach.html">📉 Мас шевах</option>
+<option value="pension-gap.html">🧓 Пенсионный разрыв</option>
+<option value="keren-hishtalmut.html">🎓 Фонд повышения квалификации</option>
+<option value="nekudot-zikuy.html">🎯 Некудот зикуй</option>
+<option value="valuta.html">💱 Курс валют</option>
+<option value="pikadon-vs-keren.html">🏦 Пикадон vs керен каспит</option>
+<option value="avtala.html">📋 Дмей автала</option>
+<option value="havraa.html">🏖️ Оздоровительные</option><option value="hisahon-yeled.html">👶 Накопления на ребёнка</option>
+<option value="nko.html">🤝 Благотворительные НКО</option><option value="slovar.html">📖 Словарь терминов</option>
+</select>
+</div>
+</div>
+</header>
+
+<div class="tb-root" id="tb-root">
+
+  <div class="tb-head">
+    <div>
+      <span class="tb-live"><span class="tb-dot"></span>Обновляется автоматически</span>
+      <h1>Экономика Израиля сегодня</h1>
+    </div>
+  </div>
+
+  <p>Все цифры, от которых зависит ваш бюджет — на одном экране. Ставка Банка Израиля,
+  мадад, курсы валют, минимальная зарплата. Данные берутся напрямую из официальных
+  источников и обновляются каждый день.</p>
+
+  <div id="tb-status"></div>
+
+  <!-- ГЛАВНЫЕ ПЛИТКИ -->
+  <div class="tb-grid" id="tb-grid"><!--pr-->
+    <button type="button" class="tb-tile tb-tile--rate" onclick="tbOpenModal(0)">
+      <div class="tb-tile__l">🏛️ Ставка Банка Израиля</div>
+      <div class="tb-tile__v">3,50%</div>
+      <div class="tb-tile__sub">Прайм: <strong>5,00%</strong></div>
+      <div class="tb-tile__more">Подробнее ›</div>
+    </button>
+    <button type="button" class="tb-tile tb-tile--cpi" onclick="tbOpenModal(1)">
+      <div class="tb-tile__l">📈 Мадад — индекс цен</div>
+      <div class="tb-tile__v">1,6%</div>
+      <div class="tb-tile__sub">за год · значение 104,8</div>
+      <div class="tb-tile__more">Подробнее ›</div>
+    </button>
+    <button type="button" class="tb-tile tb-tile--build" onclick="tbOpenModal(2)">
+      <div class="tb-tile__l">🏗️ Индекс строительства</div>
+      <div class="tb-tile__v">3,7%</div>
+      <div class="tb-tile__sub">за год · значение 103,6</div>
+      <div class="tb-tile__more">Подробнее ›</div>
+    </button>
+    <button type="button" class="tb-tile tb-tile--wage" onclick="tbOpenModal(3)">
+      <div class="tb-tile__l">💼 Минимальная зарплата</div>
+      <div class="tb-tile__v">6 443,85 ₪</div>
+      <div class="tb-tile__sub">в час: 35,40 ₪</div>
+      <div class="tb-tile__more">Подробнее ›</div>
+    </button>
+    <button type="button" class="tb-tile tb-tile--housing" onclick="tbOpenModal(4)">
+      <div class="tb-tile__l">🏘️ Индекс цен на жильё</div>
+      <div class="tb-tile__v">−1,2%</div>
+      <div class="tb-tile__sub">за год</div>
+      <div class="tb-tile__more">Подробнее ›</div>
+    </button>
+    <button type="button" class="tb-tile tb-tile--rent" onclick="tbOpenModal(5)">
+      <div class="tb-tile__l">🏠 Аренда по городам</div>
+      <div class="tb-tile__v">4 919 ₪</div>
+      <div class="tb-tile__sub">3-комн. квартира · средняя по стране · +4,3% за год</div>
+      <div class="tb-tile__more">Выбрать свой город ›</div>
+    </button>
+    <button type="button" class="tb-tile tb-tile--fuel" onclick="tbOpenModal(6)">
+      <div class="tb-tile__l">⛽ Бензин 95</div>
+      <div class="tb-tile__v">8,09 ₪/л</div>
+      <div class="tb-tile__sub">самообслуживание</div>
+      <div class="tb-tile__more">Подробнее ›</div>
+    </button>
+  <!--/pr--></div>
+
+  <!-- ДИНАМИКА -->
+  <details class="tb-trend-acc">
+    <summary>📈 Динамика 2023 → сейчас (ставка, мадад, жильё, USD)</summary>
+    <p class="tb-trend-legend">Одинаковые годы у всех четырёх — можно сравнивать между собой.</p>
+    <div class="tb-trends">
+
+    <div class="tb-trend-card">
+      <div class="tb-trend-label">Ставка Банка Израиля</div>
+      <svg class="tb-trend-svg" viewBox="0 0 320 100" preserveAspectRatio="none">
+        <polyline points="10,15 110,15 210,15 310,85" fill="none" stroke="#08775a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="10" cy="15" r="4" fill="#08775a"/><circle cx="110" cy="15" r="4" fill="#08775a"/>
+        <circle cx="210" cy="15" r="4" fill="#08775a"/><circle cx="310" cy="85" r="4" fill="#08775a"/>
+      </svg>
+      <div class="tb-trend-pts">
+        <span>4.5%<b>2023</b></span><span>4.5%<b>2024</b></span><span>4.5%<b>2025</b></span><span>3.5%<b>сейчас</b></span>
+      </div>
+    </div>
+
+    <div class="tb-trend-card">
+      <div class="tb-trend-label">Мадад, годовая</div>
+      <svg class="tb-trend-svg" viewBox="0 0 320 100" preserveAspectRatio="none">
+        <polyline points="10,26 110,15 210,47 310,85" fill="none" stroke="#c2790b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="10" cy="26" r="4" fill="#c2790b"/><circle cx="110" cy="15" r="4" fill="#c2790b"/>
+        <circle cx="210" cy="47" r="4" fill="#c2790b"/><circle cx="310" cy="85" r="4" fill="#c2790b"/>
+      </svg>
+      <div class="tb-trend-pts">
+        <span>3.0%<b>2023</b></span><span>3.2%<b>2024</b></span><span>2.6%<b>2025</b></span><span>1.9%<b>сейчас</b></span>
+      </div>
+    </div>
+
+    <div class="tb-trend-card">
+      <div class="tb-trend-label">Цены на жильё, годовая</div>
+      <svg class="tb-trend-svg" viewBox="0 0 320 100" preserveAspectRatio="none">
+        <polyline points="10,85 110,15 210,79 310,72" fill="none" stroke="#7857b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="10" cy="85" r="4" fill="#7857b8"/><circle cx="110" cy="15" r="4" fill="#7857b8"/>
+        <circle cx="210" cy="79" r="4" fill="#7857b8"/><circle cx="310" cy="72" r="4" fill="#7857b8"/>
+      </svg>
+      <div class="tb-trend-pts">
+        <span>-1.8%<b>2023</b></span><span>+7.8%<b>2024</b></span><span>-1.0%<b>2025</b></span><span>~0%<b>сейчас</b></span>
+      </div>
+    </div>
+
+    <div class="tb-trend-card">
+      <div class="tb-trend-label">Курс USD/₪</div>
+      <svg class="tb-trend-svg" viewBox="0 0 320 100" preserveAspectRatio="none">
+        <polyline points="10,15 110,44 210,68 310,85" fill="none" stroke="#2f6df6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="10" cy="15" r="4" fill="#2f6df6"/><circle cx="110" cy="44" r="4" fill="#2f6df6"/>
+        <circle cx="210" cy="68" r="4" fill="#2f6df6"/><circle cx="310" cy="85" r="4" fill="#2f6df6"/>
+      </svg>
+      <div class="tb-trend-pts">
+        <span>3.60<b>2023</b></span><span>~3.35<b>2024</b></span><span>~3.15<b>2025</b></span><span>3.00<b>сейчас</b></span>
+      </div>
+    </div>
+
+  </div>
+  </details>
+
+  <!-- ВАЛЮТЫ -->
+  <h2>Курсы валют</h2>
+  <div class="tb-fx" id="tb-fx"></div>
+  <p class="tb-hint" id="tb-fx-note"></p>
+
+  <div class="tb-cta">
+    <a class="tb-btn tb-btn--p" href="valuta.html">Конвертер валют →</a>
+    <a class="tb-btn" href="salary.html">Калькулятор зарплаты</a>
+    <a class="tb-btn" href="mashkanta.html">Машканта</a>
+  </div>
+
+  <!-- ЧТО ЭТО ЗНАЧИТ -->
+  <h2>Живой расчёт: индексация аренды по мададу</h2>
+  <p class="tb-hint">Нажмите на любую плитку выше, чтобы узнать подробнее — здесь только уникальный интерактивный расчёт.</p>
+
+  <h3 id="arenda">Сколько подорожает аренда</h3>
+  <p>Если договор аренды «<span dir="rtl">צמוד למדד</span>» — плата растёт вместе с индексом цен.</p>
+  <div class="tb-note" id="tb-rent-calc">
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px">
+      <label for="tb-rent-input" style="font-size:13px;font-weight:700">Ваша аренда в месяц, ₪:</label>
+      <input type="number" id="tb-rent-input" value="4500" step="100" min="0"
+        style="width:110px;padding:6px 8px;border:1px solid var(--tb-border,#ccc);border-radius:8px;font-size:14px">
+    </div>
+    <div id="tb-rent-result"></div>
+  </div>
+
+  <!-- ИСТОРИЯ -->
+  <h2>Как менялась ставка</h2>
+  <div class="tb-scroll">
+    <table class="tb-tbl" id="tb-hist">
+      <thead><tr><th>Показатель</th><th class="num">Сейчас</th><th class="num">Было</th><th>Когда изменилось</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- FAQ -->
+  <h2>Частые вопросы</h2>
+  <div class="tb-faq">
+    <details><summary>Что такое прайм и откуда он берётся?</summary>
+      <p>Прайм — это ставка Банка Израиля плюс 1,5 процентных пункта. Банки используют его
+      как базу для кредитов и ипотеки. Когда Банк Израиля меняет ставку, прайм меняется
+      автоматически в тот же день.</p></details>
+    <details><summary>Что значит «цена привязана к мададу»?</summary>
+      <p>Значит, сумма пересчитывается вместе с индексом потребительских цен. Чаще всего
+      так устроена аренда жилья и часть ипотечных треков. Индекс вырос на 2% — сумма тоже
+      вырастет примерно на 2%.</p></details>
+    <details><summary>Чем официальный курс отличается от рыночного?</summary>
+      <p>Официальный публикует Банк Израиля по будням около 9:20, и он действует весь день —
+      по нему считают налоги и таможню. Рыночный меняется постоянно и ближе к тому, что
+      вы увидите в обменнике. Оба показаны выше.</p></details>
+    <details><summary>Когда следующее решение по ставке?</summary>
+      <p id="tb-next-q">Банк Израиля принимает решение примерно восемь раз в год.
+      Ближайшая дата указана на плитке со ставкой.</p></details>
+    <details><summary>Откуда берутся данные?</summary>
+      <p>Из открытых API Банка Израиля, Центрального статистического бюро и портала
+      открытых данных правительства. Ссылки на все источники — внизу страницы.</p></details>
+  </div>
+
+  <div class="tb-meta">
+    <p><strong>Дата последнего обновления:</strong> <span id="tb-updated"></span></p>
+    <p><strong>Источники:</strong></p>
+    <ul id="tb-sources"></ul>
+    <p class="tb-hint">Данные носят справочный характер. Официальные значения публикуют
+    Банк Израиля и Центральное статистическое бюро.</p>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebPage","name":"Экономика Израиля сегодня","inLanguage":"ru",
+ "description":"Ставка Банка Израиля, мадад, курсы валют, минимальная зарплата — актуальные данные."},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Что такое прайм и откуда он берётся?","acceptedAnswer":{"@type":"Answer",
+ "text":"Прайм — это ставка Банка Израиля плюс 1,5 процентных пункта. Банки используют его как базу для кредитов и ипотеки. При изменении ставки прайм меняется автоматически."}},
+{"@type":"Question","name":"Что значит «цена привязана к мададу»?","acceptedAnswer":{"@type":"Answer",
+ "text":"Сумма пересчитывается вместе с индексом потребительских цен. Так устроена аренда жилья и часть ипотечных треков: индекс вырос на 2 процента — сумма тоже вырастет примерно на 2 процента."}},
+{"@type":"Question","name":"Чем официальный курс отличается от рыночного?","acceptedAnswer":{"@type":"Answer",
+ "text":"Официальный публикует Банк Израиля по будням около 9:20, по нему считают налоги и таможню. Рыночный меняется постоянно и ближе к курсу обменника."}}
+]}]}
+</script>
+
+<script>
+(function(){
+'use strict';
+var root=document.getElementById('tb-root'); if(!root) return;
+var SRC=root.getAttribute('data-src')||'data/tablo.json';
+var D=null;
+
+function el(s){return root.querySelector(s);}
+var nf=function(n,d){return new Intl.NumberFormat('ru-RU',
+  {minimumFractionDigits:d,maximumFractionDigits:d}).format(n);};
+function pct(x,d){return nf(x*100,d===undefined?2:d)+'%';}
+function money(n){return nf(n,Math.abs(n)>=1000?0:2)+' ₪';}
+function dt(s){return s?new Date(s+'T00:00:00').toLocaleDateString('ru-RU',
+  {day:'numeric',month:'long',year:'numeric'}):'';}
+function dshort(s){return s?new Date(s+'T00:00:00').toLocaleDateString('ru-RU'):'';}
+
+function arrow(v){return v>0?'▲':v<0?'▼':'';}
+function cls(v){return v>0?'tb-up':v<0?'tb-down':'';}
+
+function tile(o){
+  var idx=window.__tbModalData=(window.__tbModalData||[]);
+  var i=idx.length;
+  idx.push(o);
+  return '<button type="button" class="tb-tile tb-tile--'+o.kind+'" onclick="tbOpenModal('+i+')">'+
+    '<div class="tb-tile__l">'+o.icon+' '+o.label+'</div>'+
+    '<div class="tb-tile__v">'+o.value+'</div>'+
+    (o.sub?'<div class="tb-tile__sub">'+o.sub+'</div>':'')+
+    (o.delta?'<div class="tb-tile__d">'+o.delta+'</div>':'')+
+    '<div class="tb-tile__more">Подробнее ›</div>'+
+    '</button>';
+}
+function tbOpenModal(i){
+  var o=(window.__tbModalData||[])[i];
+  if(!o)return;
+  var ov=document.getElementById('tb-modal-overlay');
+  if(!ov){
+    ov=document.createElement('div');ov.id='tb-modal-overlay';ov.className='tb-modal-overlay';
+    ov.innerHTML='<div class="tb-modal"><div class="tb-modal__head"><h3 id="tb-modal-title"></h3>'+
+      '<button class="tb-modal__close" onclick="tbCloseModal()">✕</button></div>'+
+      '<div class="tb-modal__big" id="tb-modal-big"></div>'+
+      '<div class="tb-modal__sub" id="tb-modal-sub"></div>'+
+      '<div id="tb-modal-city-picker" style="display:none;margin-bottom:14px">'+
+        '<label style="font-size:12.5px;font-weight:700;color:var(--tb-muted);display:block;margin-bottom:6px">Выберите свой город:</label>'+
+        '<select id="tb-city-select" style="width:100%;padding:10px 12px;border:1px solid var(--tb-border);border-radius:10px;font-size:14px;background:var(--tb-surface);color:var(--tb-text)"></select>'+
+        '<div id="tb-city-result" style="margin-top:10px;font-size:14px;color:var(--tb-text2)"></div>'+
+      '</div>'+
+      '<div class="tb-modal__expl" id="tb-modal-expl"></div>'+
+      '<a class="tb-modal__link" id="tb-modal-link" href="#"></a></div>';
+    document.body.appendChild(ov);
+    ov.addEventListener('click',function(e){if(e.target===ov)tbCloseModal();});
+    document.getElementById('tb-city-select').addEventListener('change', tbCityChange);
+  }
+  document.getElementById('tb-modal-title').textContent=o.label;
+  document.getElementById('tb-modal-big').textContent=o.value;
+  document.getElementById('tb-modal-sub').innerHTML=o.sub||'';
+  document.getElementById('tb-modal-expl').innerHTML=o.expl||'';
+  var pickerBox=document.getElementById('tb-modal-city-picker');
+  if(o.cities){
+    pickerBox.style.display='block';
+    var sel=document.getElementById('tb-city-select');
+    var names=Object.keys(o.cities);
+    sel.innerHTML=names.map(function(c){return '<option value="'+c+'">'+c+'</option>';}).join('');
+    window.__tbCurrentCities=o.cities;
+    window.__tbNationalAvg=parseFloat((o.value||'').replace(/[^\d]/g,''))||0;
+    tbCityChange();
+  } else {
+    pickerBox.style.display='none';
+  }
+  var linkEl=document.getElementById('tb-modal-link');
+  if(o.link){linkEl.style.display='';linkEl.textContent=o.link[0]+' →';linkEl.href=o.link[1];}
+  else{linkEl.style.display='none';}
+  ov.classList.add('show');
+}
+function tbCityChange(){
+  var sel=document.getElementById('tb-city-select');
+  var cities=window.__tbCurrentCities||{};
+  var city=sel.value;
+  var val=cities[city];
+  var avg=window.__tbNationalAvg||0;
+  var box=document.getElementById('tb-city-result');
+  if(!box||val==null)return;
+  var diff=val-avg;
+  var diffStr=diff===0?'ровно как в среднем по стране':
+    (diff>0?'на '+new Intl.NumberFormat('ru-RU').format(diff)+' ₪ дороже среднего по стране':
+    'на '+new Intl.NumberFormat('ru-RU').format(-diff)+' ₪ дешевле среднего по стране');
+  box.innerHTML='<strong style="font-size:20px;color:var(--tb-text)">'+
+    new Intl.NumberFormat('ru-RU').format(val)+' ₪</strong> — средняя аренда 3-комнатной квартиры в '+city+'<br>'+
+    '<span style="opacity:.85">'+diffStr+'</span>';
+}
+window.tbCityChange=tbCityChange;
+function tbCloseModal(){var ov=document.getElementById('tb-modal-overlay');if(ov)ov.classList.remove('show');}
+window.tbOpenModal=tbOpenModal;
+window.tbCloseModal=tbCloseModal;
+
+function nextCbsPublication(){
+  // ЦСБ публикует мадад и индекс строительства 15 числа каждого месяца в 18:30,
+  // с переносом на четверг, если 15-е выпадает на пятницу или субботу.
+  // Важно: сдвиг на выходные применяется ДО проверки "прошло или нет" —
+  // иначе дата после сдвига (например, 13-е) могла бы застревать как
+  // "ближайшая", даже если этот сдвинутый день уже прошёл.
+  function shifted(y, m){
+    var c=new Date(y,m,15,18,30);
+    var dow=c.getDay();
+    if(dow===5) c.setDate(c.getDate()-1);
+    else if(dow===6) c.setDate(c.getDate()-2);
+    return c;
+  }
+  var now=new Date();
+  var y=now.getFullYear(),m=now.getMonth();
+  var candidate=shifted(y,m);
+  if(candidate<=now) candidate=shifted(y,m+1);
+  return candidate;
+}
+
+function render(){
+  var b=D.boi,c=D.cpi,k=D.construction,w=D.wage,e=D.explain;
+
+  var rateDelta='';
+  if(b.prev_rate!=null && Math.abs(b.prev_rate-b.rate)>1e-9){
+    var diff=(b.rate-b.prev_rate)*100;
+    rateDelta=arrow(diff)+' '+nf(Math.abs(diff),2)+' п.п. с '+dshort(b.changed);
+  }
+
+  var nextCbs=nextCbsPublication();
+  var nextCbsStr=nextCbs.toLocaleDateString('ru-RU',{day:'numeric',month:'long'});
+
+  window.__tbModalData=[];
+  el('#tb-grid').innerHTML=
+    tile({kind:'rate',icon:'🏛️',label:'Ставка Банка Израиля',value:pct(b.rate,2),
+      sub:'Прайм: <strong>'+pct(b.prime,2)+'</strong>',
+      delta:rateDelta,dcls:cls(b.rate-(b.prev_rate||b.rate)),
+      expl:e.rate_ru+(b.next_decision?' Следующее решение: '+dshort(b.next_decision)+'.':''),
+      link:['Пересчитать машканту','mashkanta.html']})+
+    tile({kind:'cpi',icon:'📈',label:'Мадад — индекс цен',value:pct(c.yoy,1),
+      sub:'за год · значение '+nf(c.value,1),
+      delta:'за месяц '+(c.mom>=0?'+':'−')+nf(Math.abs(c.mom*100),1)+'%',dcls:cls(c.mom),
+      expl:e.cpi_ru+' Следующая публикация ЦСБ — '+nextCbsStr+' в 18:30.',
+      link:['Расчёт индексации аренды','#arenda']})+
+    tile({kind:'build',icon:'🏗️',label:'Индекс строительства',value:pct(k.yoy,1),
+      sub:'за год · значение '+nf(k.value,1),
+      delta:'за месяц '+(k.mom>=0?'+':'−')+nf(Math.abs(k.mom*100),1)+'%',dcls:cls(k.mom),
+      expl:e.construction_ru+' Следующая публикация ЦСБ — '+nextCbsStr+' в 18:30.',
+      link:['Налог при покупке','mas-rehisha.html']})+
+    tile({kind:'wage',icon:'💼',label:'Минимальная зарплата',value:money(w.min_monthly),
+      sub:'в час: '+nf(w.min_hourly,2)+' ₪',
+      delta:'действует с '+dshort(w.since),
+      expl:e.min_wage_ru,link:['Посчитать зарплату','salary.html']})+
+    tile({kind:'housing',icon:'🏘️',label:'Индекс цен на жильё',value:pct(D.housing.yoy,1),
+      sub:'за год'+(D.housing.value?' · значение '+nf(D.housing.value,1):''),
+      delta:'за 2 месяца '+(D.housing.mom>=0?'+':'−')+nf(Math.abs(D.housing.mom*100),1)+'%',dcls:cls(D.housing.mom),
+      expl:e.housing_ru,link:['Налог при покупке','mas-rehisha.html']})+
+    tile({kind:'rent',icon:'🏠',label:'Аренда по городам',value:money(D.rent_by_city.national_avg),
+      sub:'3-комн. квартира · средняя по стране',
+      delta:'за год +'+nf(D.rent_by_city.yoy*100,1)+'%',dcls:'up',
+      expl:e.rent_ru,link:['Аренда или покупка?','arenda-vs-pokupka.html'],
+      cities:D.rent_by_city.cities})+
+    tile({kind:'fuel',icon:'⛽',label:'Бензин 95',value:nf(D.fuel.price_95,2)+' ₪/л',
+      sub:'самообслуживание · с полным обслуживанием +'+nf(D.fuel.full_service_extra,2)+' ₪/л',
+      delta:(D.fuel.price_95>=D.fuel.prev_price?'+':'')+nf((D.fuel.price_95-D.fuel.prev_price)*100,0)+' агорот с прошлого месяца',
+      dcls:cls(D.fuel.price_95-D.fuel.prev_price),
+      expl:e.fuel_ru,link:['Подробный разбор цены','benzin.html']});
+
+  // Валюты
+  var fx=D.fx,out='';
+  ['USD','EUR','RUB','UAH','GBP'].forEach(function(cur){
+    var v=fx.market[cur]; if(!v)return;
+    var p=(fx.prev||{})[cur],d=(p&&p>0)?(v-p)/p*100:null;
+    out+='<div class="tb-fxi"><div class="tb-fxi__c">'+cur+'</div>'+
+      '<span class="tb-fxi__v">'+nf(v,v>=1?4:5)+'</span>'+
+      '<span class="tb-fxi__d '+(d==null?'':cls(d))+'">'+
+      (d==null?'&nbsp;':arrow(d)+' '+nf(Math.abs(d),2)+'%')+'</span></div>';
+  });
+  el('#tb-fx').innerHTML=out;
+
+  var off=fx.official&&fx.official.USD;
+  el('#tb-fx-note').innerHTML='Сколько шекелей за одну единицу валюты. '+
+    (off?'Официальный курс Банка Израиля на '+dshort(fx.official_date)+': USD '+
+      nf(off,4)+' ₪, EUR '+nf(fx.official.EUR,4)+' ₪. ':'')+e.fx_ru;
+
+  // Калькулятор индексации аренды
+  function renderRentCalc(){
+    var rentInput = el('#tb-rent-input');
+    var rent = rentInput ? (+rentInput.value || 0) : 4500;
+    var add = rent*c.yoy;
+    var resultBox = el('#tb-rent-result');
+    var daysLeft = Math.max(0, Math.ceil((nextCbs - new Date()) / 86400000));
+    if(resultBox) resultBox.innerHTML = (rent>0 ?
+      'Если ваша аренда '+money(rent)+
+      ' и она привязана к мададу, при годовом росте индекса '+pct(c.yoy,1)+
+      ' плата вырастет примерно на <strong>'+money(add)+'</strong> в месяц — это '+
+      money(add*12)+' в год. '
+      : 'Введите сумму аренды, чтобы увидеть расчёт. ')+
+      'Проверьте в договоре пункт про привязку: без него поднимать плату в течение срока нельзя. '+
+      '<br><span style="opacity:.8">📅 Следующее обновление индекса — через <strong>'+daysLeft+' '+
+      (daysLeft===1?'день':(daysLeft>=2&&daysLeft<=4?'дня':'дней'))+'</strong> ('+nextCbsStr+').</span>';
+  }
+  renderRentCalc();
+  if(el('#tb-rent-input')) el('#tb-rent-input').addEventListener('input', renderRentCalc);
+
+  // История
+  var rows='';
+  if(b.prev_rate!=null){
+    rows+='<tr><td>Ставка Банка Израиля</td><td class="num">'+pct(b.rate,2)+
+      '</td><td class="num">'+pct(b.prev_rate,2)+'</td><td>'+dshort(b.changed)+'</td></tr>'+
+      '<tr><td>Прайм</td><td class="num">'+pct(b.prime,2)+'</td><td class="num">'+
+      pct(b.prev_rate+0.015,2)+'</td><td>'+dshort(b.changed)+'</td></tr>';
+  }
+  rows+='<tr><td>Минимальная зарплата</td><td class="num">'+money(w.min_monthly)+
+    '</td><td class="num">—</td><td>'+dshort(w.since)+'</td></tr>';
+  el('#tb-hist tbody').innerHTML=rows;
+
+  // Подвал
+  el('#tb-updated').textContent=dt(D.updated);
+  el('#tb-sources').innerHTML=(D.sources||[]).map(function(s){
+    return '<li><a href="'+s.url+'" target="_blank" rel="noopener nofollow">'+s.name+
+      '</a> <span class="tb-hint">— '+s.role+'</span></li>';}).join('');
+
+  // Статус
+  var a=D.auto||{},age=Math.round((new Date()-new Date(D.updated+'T00:00:00'))/86400000);
+  var stale=age>3, partial=a.ok===false;
+  el('#tb-status').innerHTML='<p class="tb-hint" style="margin:2px 0 0">'+
+    (stale?'Данные от '+dt(D.updated)+' — возможны расхождения.'
+          :'Данные обновлены '+dt(D.updated)+' из официальных источников.')+
+    (partial?' Часть показателей могла не обновиться.':'')+'</p>';
+}
+
+fetch(SRC,{cache:'no-cache'})
+  .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+  .then(function(j){D=j;window.TABLO={data:D};render();})
+  .catch(function(e){
+    el('#tb-status').innerHTML='<div class="tb-note">Не удалось загрузить данные ('+
+      e.message+'). Проверьте путь к <code>'+SRC+'</code>.</div>';});
+})();
+</script>
+</script>
+<nav id="rel-links" aria-label="Смежные калькуляторы" style="width:min(760px,calc(100% - 28px));margin:8px auto 0;padding:16px 0"><div style="font-size:12px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Читайте также</div><a href="valuta.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Курс валют</a><a href="benzin.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Цена на бензин</a><a href="mashkanta.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Машканта</a><a href="salary.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Калькулятор зарплаты</a></nav>
+<footer style="width:min(1200px,calc(100% - 28px));margin:26px auto 40px;color:#5a6660;font-size:11px;text-align:center;font-family:Inter,system-ui,sans-serif">Понятные финансы в Израиле · пульс экономики · не финансовая консультация · <a href="contact.html" style="color:#08775a;font-weight:800;text-decoration:none">Написать нам</a></footer>
+</body>
+</html>
