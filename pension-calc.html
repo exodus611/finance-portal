@@ -69,6 +69,14 @@ a.back{font-size:11.5px;font-weight:800;color:var(--green);text-decoration:none}
 .age-btn:hover{border-color:var(--green);color:var(--green)}
 .age-btn.active{background:var(--green);color:#fff;border-color:var(--green);box-shadow:0 3px 8px rgba(8,119,90,.25)}
 
+/* Clear Structured Age Status Banners */
+.age-hint-box{border-radius:10px;padding:9px 12px;margin-top:8px;font-size:11.5px;line-height:1.45;border:1px solid transparent}
+.age-hint-early{background:#fff8f7;border-color:rgba(184,75,62,.3);color:#78261e}
+.age-hint-official{background:#f0f9f5;border-color:rgba(8,119,90,.3);color:#06543f}
+.age-hint-defer{background:#fdfbf2;border-color:rgba(194,155,82,.35);color:#6e5118}
+.age-hint-title{font-weight:850;margin-bottom:4px;font-size:12px}
+.age-hint-text{font-size:11px;line-height:1.45;opacity:.95}
+
 /* Result Dashboard */
 .dash-card{background:linear-gradient(145deg,#075e47,#0a7a5d);color:#fff;border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(8,119,90,.22);margin:14px 0}
 @media(max-width:480px){.dash-card{padding:14px 10px;border-radius:12px}}
@@ -103,7 +111,7 @@ a.back{font-size:11.5px;font-weight:800;color:var(--green);text-decoration:none}
 .print-btn{background:#fff;color:var(--green);border:none;padding:8px 14px;border-radius:8px;font-size:11.5px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:5px;box-shadow:0 3px 10px rgba(0,0,0,.1);transition:transform .1s}
 .print-btn:active{transform:scale(.98)}
 
-.custom-checkbox{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;background:#fff;border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:all .15s}
+.custom-checkbox{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;background:#fff;border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:border-color .15s}
 .custom-checkbox:hover{border-color:var(--green)}
 .custom-checkbox input{margin-top:2px;cursor:pointer;accent-color:var(--green);width:15px;height:15px}
 .custom-checkbox.disabled{opacity:.55;background:#f0ede6;border-color:#d8d0c0;cursor:not-allowed;pointer-events:none}
@@ -250,11 +258,19 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
         <!-- Генерируется JS -->
       </div>
 
-      <div style="margin-top:8px;padding-top:6px;border-top:1px solid rgba(8,119,90,.15);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px">
-        <span id="ret-age-hint" style="font-size:11px;font-weight:800;color:var(--red)">⚠️ Ранний выход (63 года). До 67 лет действует налог и соцстрах.</span>
-        <span style="font-size:11.5px;font-weight:800;background:#fff;padding:2px 7px;border-radius:6px;border:1px solid var(--green);color:var(--green)">
-          Микадем: <b id="top-mikadem-val" style="font-size:13.5px">183.61</b>
+      <!-- Строка с Микадемом -->
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;margin-top:8px;padding-top:6px;border-top:1px solid rgba(8,119,90,.15)">
+        <span style="font-size:12px;font-weight:800;color:var(--ink)">
+          Делитель капитала (Микадем): <b id="top-mikadem-val" style="font-size:14px;color:var(--green);background:#fff;padding:2px 7px;border-radius:6px;border:1px solid var(--green)">183.61</b>
         </span>
+        <span style="font-size:11px;color:var(--muted)">
+          Пенсия на каждые 100 000 ₪: <b id="top-pension-per-100k" style="color:var(--ink);font-size:12px">545 ₪ / мес</b>
+        </span>
+      </div>
+
+      <!-- ЧЕТКОЕ СТРУКТУРИРОВАННОЕ ОБЪЯСНЕНИЕ ВЫБРАННОГО ВОЗРАСТА -->
+      <div id="ret-age-hint-wrap" class="age-hint-box age-hint-early">
+        <!-- Заполняется JS -->
       </div>
     </div>
   </div>
@@ -477,7 +493,7 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
       </div>
 
       <div class="dash-item">
-        <div class="lbl">🏛️ Битуах Леуми (пособие)</div>
+        <div class="lbl">🏛️ Пособие по старости (Битуах Леуми)</div>
         <div class="val" id="res-btl-sum">0 ₪</div>
         <div class="subval" id="res-btl-details">База + стаж 0%</div>
       </div>
@@ -512,7 +528,7 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
             <th>Пенсия фонда</th>
             <th>Подоходный</th>
             <th>Битуах/Здоровье</th>
-            <th>Битуах Леуми</th>
+            <th>Пособие по старости</th>
             <th>ИТОГО НЕТТО</th>
           </tr>
         </thead>
@@ -1033,26 +1049,53 @@ function calc(){
     document.getElementById('res-btl-details').textContent = `База: ${fmt(btl.base)} ₪ + стаж: +${btl.seniorityPct}%`;
   } else {
     document.getElementById('res-btl-sum').textContent = `0 ₪ (до ${offAgeLabel})`;
-    document.getElementById('res-btl-details').textContent = 'Пособие начнется с официального возраста';
+    document.getElementById('res-btl-details').textContent = 'Пособие начнётся с официального пенсионного возраста';
   }
 
-  // Обновление Микадема
+  // Обновление Микадема в шаге 1 и 4
   document.getElementById('top-mikadem-val').textContent = mikadem.toFixed(2);
+  const immediatePer100k = Math.round(100000 / mikadem);
+  if(document.getElementById('top-pension-per-100k')) {
+    document.getElementById('top-pension-per-100k').textContent = fmt(immediatePer100k) + ' ₪ / мес';
+  }
+
   document.getElementById('dyn-ret-age-label').textContent = retAge + ' лет';
   document.getElementById('mikadem-val').textContent = mikadem.toFixed(2);
-  
-  const immediatePer100k = Math.round(100000 / mikadem);
   document.getElementById('pension-per-100k').textContent = fmt(immediatePer100k) + ' ₪ / мес';
 
-  if(retAge < officialAge - 0.1) {
-    document.getElementById('ret-age-hint').innerHTML = `⚠️ Ранний выход (${retAge} лет вместо ${offAgeLabel}). Удерживается налог и соцстрах; Битуах Леуми — с ${offAgeLabel}.`;
-    document.getElementById('ret-age-hint').style.color = 'var(--red)';
-  } else if(retAge > officialAge + 0.1) {
-    document.getElementById('ret-age-hint').innerHTML = `🌟 Отложенный выход (${retAge} лет: +${Math.floor(retAge - officialAge)*5}% надбавка от Битуах Леуми).`;
-    document.getElementById('ret-age-hint').style.color = 'var(--green)';
-  } else {
-    document.getElementById('ret-age-hint').innerHTML = `✓ Официальный пенсионный возраст («Гиль Приша Мезаке» — ${offAgeLabel}).`;
-    document.getElementById('ret-age-hint').style.color = 'var(--green)';
+  // ЧЕТКОЕ СТРУКТУРИРОВАННОЕ ОБЪЯСНЕНИЕ В ШАГЕ 1
+  const ageHintWrap = document.getElementById('ret-age-hint-wrap');
+  if(ageHintWrap) {
+    if(retAge < officialAge - 0.1) {
+      ageHintWrap.className = 'age-hint-box age-hint-early';
+      ageHintWrap.innerHTML = `
+        <div class="age-hint-title">⚠️ Ранний выход на пенсию (${retAge} лет при официальном возрасте ${offAgeLabel}):</div>
+        <div class="age-hint-text">
+          • <b>Пособие по старости:</b> Государственное пособие от Битуах Леуми начнёт выплачиваться только по достижении <b>${offAgeLabel}</b>.<br>
+          • <b>Удержания из пенсионного фонда:</b> До ${offAgeLabel} из пенсии удерживаются стандартный подоходный налог и взносы на здравоохранение/соцстрах (ст. 345б).
+        </div>
+      `;
+    } else if(retAge > officialAge + 0.1) {
+      const deferYears = Math.floor(retAge - officialAge);
+      const deferBonus = Math.min(25, deferYears * 5);
+      ageHintWrap.className = 'age-hint-box age-hint-defer';
+      ageHintWrap.innerHTML = `
+        <div class="age-hint-title">🌟 Отложенный выход на пенсию (${retAge} лет):</div>
+        <div class="age-hint-text">
+          • <b>Надбавка за отсрочку:</b> Битуах Леуми начисляет +${deferBonus}% (+5% за каждый год) к пособию по старости за отсрочку после ${offAgeLabel}.<br>
+          • <b>Максимальная пенсия:</b> Сниженный делитель (микадем = ${mikadem.toFixed(2)}) обеспечивает максимальную ежемесячную выплату.
+        </div>
+      `;
+    } else {
+      ageHintWrap.className = 'age-hint-box age-hint-official';
+      ageHintWrap.innerHTML = `
+        <div class="age-hint-title">✅ Официальный пенсионный возраст («Гиль Приша Мезаке» — ${offAgeLabel}):</div>
+        <div class="age-hint-text">
+          • <b>Государственное пособие:</b> Битуах Леуми начинает ежемесячную выплату пособия по старости.<br>
+          • <b>Налоговые льготы:</b> Вступает в силу 100% освобождение от подоходного налога по форме 161д (Кибуа Зхуйот) и полное освобождение от взносов Битуах Леуми с пенсии фонда.
+        </div>
+      `;
+    }
   }
 
   const senBonus = Math.min(50, Math.max(0, seniority - 10) * 2);
