@@ -8,8 +8,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308775a'/><text x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='900' fill='white' text-anchor='middle'>₪</text></svg>">
-<title>Пенсионный калькулятор Израиля 2026 — Профессиональный модуль</title>
-<meta name="description" content="Полный расчёт пенсии в Израиле: возраст от 60 лет, точный микадем, Битуах Леуми, налог на здоровье (ст. 345б), налоги (кибуа зхуйот) и выплаты семье.">
+<title>Пенсионный калькулятор Израиля 2026 — Профессиональный стандарт</title>
+<meta name="description" content="Полный расчёт пенсии в Израиле: возраст от 60 лет, точный микадем, Битуах Леуми, налог на здоровье (ст. 345б), налоги (кибуа зхуйот) и пенсионные треки.">
 <style>
 :root{
   --ink:#15251f;--muted:#5a6660;--paper:#f4f1e9;--card:#fffdf8;--line:#ddd6c7;
@@ -62,14 +62,14 @@ a.back{font-size:11.5px;font-weight:800;color:var(--green);text-decoration:none}
 .seg-btn{border:none;background:transparent;padding:6px 6px;border-radius:7px;font-size:11.5px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .15s;text-align:center}
 .seg-btn.active{background:#fff;color:var(--green);box-shadow:0 1px 4px rgba(0,0,0,.08);font-weight:850}
 
-/* Age Interactive Selector Box (Compact) */
+/* Age Interactive Selector Box */
 .age-selector-box{background:linear-gradient(135deg,#f0f9f5,#e5f4ee);border:1.5px solid var(--green);border-radius:12px;padding:12px;margin-top:10px}
 .age-quick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:5px;margin-top:8px}
 .age-btn{background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:6px 4px;font-size:11.5px;font-weight:800;color:var(--ink);cursor:pointer;transition:all .15s;text-align:center;box-shadow:var(--shadow-sm)}
 .age-btn:hover{border-color:var(--green);color:var(--green)}
 .age-btn.active{background:var(--green);color:#fff;border-color:var(--green);box-shadow:0 3px 8px rgba(8,119,90,.25)}
 
-/* Result Dashboard (Compact & Crisp) */
+/* Result Dashboard */
 .dash-card{background:linear-gradient(145deg,#075e47,#0a7a5d);color:#fff;border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(8,119,90,.22);margin:14px 0}
 @media(max-width:480px){.dash-card{padding:14px 10px;border-radius:12px}}
 .dash-total{text-align:center;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.15);margin-bottom:12px}
@@ -241,14 +241,9 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
         </div>
       </div>
 
-      <!-- Кнопки быстрого выбора возраста выхода (БЕЗ 55 ЛЕТ, СТРОГО С 60) -->
-      <div class="age-quick-grid">
-        <button type="button" class="age-btn" onclick="setQuickRetAge(60)">60 лет</button>
-        <button type="button" class="age-btn" onclick="setQuickRetAge(62)">62 года</button>
-        <button type="button" class="age-btn active" id="chip-63" onclick="setQuickRetAge(63)">63 года</button>
-        <button type="button" class="age-btn" onclick="setQuickRetAge(65)">65 лет</button>
-        <button type="button" class="age-btn" id="chip-67" onclick="setQuickRetAge(67)">67 лет (офиц.)</button>
-        <button type="button" class="age-btn" onclick="setQuickRetAge(70)">70 лет</button>
+      <!-- Кнопки быстрого выбора возраста выхода (динамически адаптируются) -->
+      <div class="age-quick-grid" id="quick-buttons-container">
+        <!-- Генерируется JS -->
       </div>
 
       <div style="margin-top:8px;padding-top:6px;border-top:1px solid rgba(8,119,90,.15);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px">
@@ -377,6 +372,23 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
         </div>
       </div>
     </div>
+
+    <!-- Возможность ручного ввода микадема из пенсионного отчета -->
+    <div style="margin-top:8px">
+      <label class="custom-checkbox">
+        <input type="checkbox" id="custom-mikadem-toggle" onchange="toggleCustomMikadem()">
+        <div>
+          <b style="font-size:11.5px;color:var(--ink)">Задать точный микадем вручную (из личного годового отчёта фонда)</b>
+          <div style="font-size:10.5px;color:var(--muted)">Используется, если фонд зафиксировал индивидуальный гарантированный коэффициент.</div>
+        </div>
+      </label>
+      <div id="custom-mikadem-wrap" style="display:none;margin-top:6px;width:160px">
+        <div class="input-wrap">
+          <input type="number" id="custom-mikadem-input" placeholder="183.61" step="0.01" min="100" max="300" oninput="calc()">
+          <span class="suffix">коэф.</span>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- ШАГ 5: Налоговый статус: КИБУА ЗХУЙОТ (Форма 161д) -->
@@ -394,7 +406,7 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
         <input type="checkbox" id="kibua-done" checked onchange="calc()">
         <div>
           <b style="font-size:11.5px;color:var(--ink)">Оформлять «Кибуа Зхуйот» (Форма 161д) при достижении официального возраста</b>
-          <div style="font-size:10.5px;color:var(--muted)">Даёт безналоговую корзину до ~4,950 ₪/мес (вступает в силу с 67 лет для мужчин).</div>
+          <div style="font-size:10.5px;color:var(--muted)">Даёт безналоговую корзину до ~4,950 ₪/мес (вступает в силу с официального возраста).</div>
         </div>
       </label>
     </div>
@@ -420,15 +432,15 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
     </div>
 
     <div id="kibua-age-warning" class="notice-box notice-gold" style="display:none">
-      ⚠️ <b>Внимание о раннем выходе (до 67 лет):</b> До официального возраста Кибуа Зхуйот (161д) по закону не применяется (действует обычный налог), а пенсионный фонд удерживает взносы в Битуах Леуми и налог на здоровье (ст. 345б: 3.49%–11.79%). С 67 лет наступает 100% освобождение!
+      ⚠️ <b>Внимание о раннем выходе (до официального возраста):</b> До официального возраста Кибуа Зхуйот (161д) по закону не применяется (действует обычный налог), а пенсионный фонд удерживает взносы в Битуах Леуми и налог на здоровье (ст. 345б: 3.49%–11.79%). С официального возраста наступает 100% освобождение!
     </div>
 
     <div id="kibua-warning" class="notice-box notice-red" style="display:none">
-      🚨 <b>Внимание:</b> Без оформления формы 161д после наступления 67 лет фонд будет удерживать налог со всей пенсии без применения льготы!
+      🚨 <b>Внимание:</b> Без оформления формы 161д после наступления пенсионного возраста фонд будет удерживать налог со всей пенсии без применения льготы!
     </div>
 
     <div id="kibua-success" class="notice-box notice-green">
-      ✅ <b>С 67 лет с формой 161д:</b> Максимальное освобождение от подоходного налога (0 ₪) + полное освобождение от Битуах Леуми.
+      ✅ <b>С официального возраста с формой 161д:</b> Максимальное освобождение от подоходного налога (0 ₪) + полное освобождение от Битуах Леуми.
     </div>
   </div>
 
@@ -500,7 +512,7 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
     </div>
 
     <div class="notice-box notice-green">
-      📌 <b>Вывод пенсионного консультанта:</b> Отсрочка выхода с раннего возраста (60–63) до официального (67 лет) даёт четверной выигрыш: <b>Кибуа Зхуйот (0 налога)</b>, <b>0 ₪ взносов в Битуах Леуми и налога на здоровье</b>, <b>гос. пособие по старости</b> и <b>снижение микадема</b>.
+      📌 <b>Вывод пенсионного консультанта:</b> Отсрочка выхода с раннего возраста (60–63) до официального даёт четверной выигрыш: <b>Кибуа Зхуйот (0 налога)</b>, <b>0 ₪ взносов в Битуах Леуми и налога на здоровье</b>, <b>гос. пособие по старости</b> и <b>снижение микадема</b>.
     </div>
   </div>
 
@@ -512,13 +524,13 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
         <li><b>Взносы в Битуах Леуми и Здравоохранение (ст. 345б Закона о нацстраховании):</b>
           <ul style="padding-left:14px;margin:3px 0">
             <li><b>При раннем выходе (60–66 лет):</b> пенсионный фонд по закону <i>(סעיף 345ב לחוק הביטוח הלאומי)</i> обязан удерживать из пенсии взносы на нацстрахование и налог на здравоохранение (3.49% до 7,522 ₪ и 11.79% свыше).</li>
-            <li><b>С 67 лет (официального возраста):</b> наступает <b>100% освобождение от взносов в Битуах Леуми и налога на здоровье</b> с пенсионных выплат фонда. Медстраховка (~223 ₪) вычитается государством из государственного пособия по старости, а пенсию фонда вы получаете без удержаний!</li>
+            <li><b>С официального возраста (67 лет для мужчин / 62–65 для женщин):</b> наступает <b>100% освобождение от взносов в Битуах Леуми и налога на здоровье</b> с пенсионных выплат фонда. Медстраховка (~223 ₪) вычитается государством из государственного пособия по старости, а пенсию фонда вы получаете без удержаний!</li>
           </ul>
         </li>
         <li><b>Подоходный налог (Мас Ахнаса — ст. 9а):</b>
           <ul style="padding-left:14px;margin:3px 0">
-            <li><b>До 67 лет:</b> пенсия облагается как обычный доход без применения безналоговой корзины Кибуа Зхуйот.</li>
-            <li><b>С 67 лет:</b> пенсионер оформляет форму 161д (*טופס 161ד*) и получает безналоговую корзину до <b>4,950 ₪/мес</b>, снижая подоходный налог до <b>0 ₪</b>.</li>
+            <li><b>До официального возраста:</b> пенсия облагается как обычный доход без применения безналоговой корзины Кибуа Зхуйот.</li>
+            <li><b>С официального возраста:</b> пенсионер оформляет форму 161д (*טופס 161ד*) и получает безналоговую корзину до <b>4,950 ₪/мес</b>, снижая подоходный налог до <b>0 ₪</b>.</li>
           </ul>
         </li>
         <li><b>Правило 32 лет (נוסחת השילוב):</b> Налоговая проверяет выходные пособия (пицуим), забранные без налога за последние 32 года. Каждый 1 ₪ забранного пицуим «съедает» 1.35 ₪ из льготного капитала.</li>
@@ -582,6 +594,7 @@ async function handleUnlock(e) {
 function revealCalculator() {
   document.getElementById('lock-gate').style.display = 'none';
   document.getElementById('main-content').style.display = 'block';
+  updateQuickButtons();
   calc();
 }
 
@@ -616,7 +629,7 @@ const FEMALE_BASE_TABLE = {
   71: 162.50, 72: 158.00, 73: 153.50, 74: 149.00, 75: 144.50
 };
 
-// Официальная таблица ступеней реформы для женщин
+// Официальная таблица ступеней реформы для женщин (תיקון מס' 8 לחוק גיל פרישה)
 function getFemaleOfficialAgeByYear(birthYear){
   if(birthYear <= 1959) return { age: 62.0, label: "62 года" };
   if(birthYear === 1960) return { age: 62 + 4/12, label: "62 г. и 4 мес" };
@@ -638,6 +651,24 @@ let state = {
   withdrewSeverance: false
 };
 
+function updateQuickButtons(){
+  const userBirthYear = parseInt(document.getElementById('user-birth-year').value) || 1966;
+  const offData = state.gender === 'm' ? { age: 67, label: '67 лет' } : getFemaleOfficialAgeByYear(userBirthYear);
+  const container = document.getElementById('quick-buttons-container');
+  
+  let ages = state.gender === 'm' ? [60, 62, 63, 65, 67, 70] : [60, 62, 63, Math.round(offData.age), 65, 70];
+  ages = [...new Set(ages)].sort((a,b) => a - b);
+
+  container.innerHTML = ages.map(age => {
+    const isOff = Math.abs(age - offData.age) < 0.2;
+    const label = isOff ? `${Math.round(age)} лет (офиц.)` : (age === 62 || age === 63 ? `${age} года` : `${age} лет`);
+    return `<button type="button" class="age-btn" data-age="${age}" onclick="setQuickRetAge(${age})">${label}</button>`;
+  }).join('');
+
+  const curRet = parseFloat(document.getElementById('ret-age').value) || 63;
+  updateQuickChips(curRet);
+}
+
 function onRetAgeChange(){
   let retVal = parseFloat(document.getElementById('ret-age').value) || 63;
   if(retVal < 60) retVal = 60;
@@ -654,7 +685,7 @@ function setQuickRetAge(age){
 
 function updateQuickChips(age){
   document.querySelectorAll('.age-quick-grid .age-btn').forEach(btn => {
-    const btnAge = parseFloat(btn.textContent);
+    const btnAge = parseFloat(btn.getAttribute('data-age') || btn.textContent);
     btn.classList.toggle('active', Math.abs(btnAge - age) < 0.2);
   });
 }
@@ -676,6 +707,7 @@ function setGender(g){
   } else {
     document.getElementById('official-age-label').textContent = 'Официальный возраст: 67 лет';
   }
+  updateQuickButtons();
   calc();
 }
 
@@ -705,8 +737,20 @@ function setSeverance(val){
   calc();
 }
 
+function toggleCustomMikadem(){
+  const isCustom = document.getElementById('custom-mikadem-toggle').checked;
+  document.getElementById('custom-mikadem-wrap').style.display = isCustom ? 'block' : 'none';
+  calc();
+}
+
 /* Точный расчет Микадема (от 60 лет) */
 function getMikadem(retAge, gender, isMarried, spousePct, guaranteeMonths, spouseAgeDiffYears){
+  const isCustom = document.getElementById('custom-mikadem-toggle') && document.getElementById('custom-mikadem-toggle').checked;
+  const customVal = parseFloat(document.getElementById('custom-mikadem-input') ? document.getElementById('custom-mikadem-input').value : 0);
+  if(isCustom && customVal >= 100) {
+    return customVal;
+  }
+
   const tbl = (gender === 'm') ? MALE_BASE_TABLE : FEMALE_BASE_TABLE;
   let base = 0;
 
@@ -826,8 +870,14 @@ function calcPensionTax(grossPension, retAge, officialAge, gender, isKibuaDone, 
     rawTax = taxableGross * 0.10;
   } else if(taxableGross <= 10060) {
     rawTax = 7010 * 0.10 + (taxableGross - 7010) * 0.14;
+  } else if(taxableGross <= 16150) {
+    rawTax = 7010 * 0.10 + (10060 - 7010) * 0.14 + (taxableGross - 10060) * 0.20;
+  } else if(taxableGross <= 22440) {
+    rawTax = 7010 * 0.10 + (10060 - 7010) * 0.14 + (16150 - 10060) * 0.20 + (taxableGross - 16150) * 0.31;
+  } else if(taxableGross <= 46690) {
+    rawTax = 7010 * 0.10 + (10060 - 7010) * 0.14 + (16150 - 10060) * 0.20 + (22440 - 16150) * 0.31 + (taxableGross - 22440) * 0.35;
   } else {
-    rawTax = 7010 * 0.10 + 3050 * 0.14 + (taxableGross - 10060) * 0.20;
+    rawTax = 7010 * 0.10 + (10060 - 7010) * 0.14 + (16150 - 10060) * 0.20 + (22440 - 16150) * 0.31 + (46690 - 22440) * 0.35 + (taxableGross - 46690) * 0.47;
   }
 
   const creditPointsVal = (gender === 'm' ? 2.25 : 2.75) * 242;
@@ -921,7 +971,7 @@ function calc(){
   if(isEarlyRetirement) {
     deductionsNote = `Удержания: -${fmt(totalDeductions)} ₪ (Подоходный: ${fmt(pensionTax)} ₪ · Соцстрах/Здоровье: ${fmt(btlHealth.total)} ₪)`;
   } else if(totalDeductions === 0) {
-    deductionsNote = `100% освобождение от налогов (с 67 лет и Кибуа Зхуйот)`;
+    deductionsNote = `100% освобождение от налогов (с ${offAgeLabel} и Кибуа Зхуйот)`;
   } else {
     deductionsNote = `Подоходный налог: ${fmt(pensionTax)} ₪ (Битуах/Здоровье: 0 ₪)`;
   }
@@ -934,7 +984,7 @@ function calc(){
   document.getElementById('res-total-deductions').textContent = totalDeductions > 0 ? `-${fmt(totalDeductions)} ₪ / мес` : '0 ₪ (освобождено)';
   document.getElementById('res-deductions-details').textContent = isEarlyRetirement 
     ? `Налог: ${fmt(pensionTax)} ₪ · Соцстрах+Здоровье: ${fmt(btlHealth.total)} ₪`
-    : `С 67 лет соцстрах = 0 ₪ · Налог = ${fmt(pensionTax)} ₪`;
+    : `С ${offAgeLabel} соцстрах = 0 ₪ · Налог = ${fmt(pensionTax)} ₪`;
 
   if(btl.isEligible) {
     document.getElementById('res-btl-sum').textContent = fmt(btl.btlTotal) + ' ₪ / мес';
@@ -980,10 +1030,13 @@ function renderScenarios(curCapital, seniority, aliyahAge, isMarried, spousePct,
   tbody.innerHTML = '';
 
   let testAges = [60, 62, 63, 65, officialAge, 70];
+  if(state.gender === 'f') {
+    testAges.push(64);
+  }
   if(!testAges.includes(selectedRetAge) && selectedRetAge >= 60) {
     testAges.push(selectedRetAge);
-    testAges.sort((a,b) => a - b);
   }
+  testAges = [...new Set(testAges)].filter(a => a >= 60).sort((a,b) => a - b);
 
   testAges.forEach(age => {
     const mik = getMikadem(age, state.gender, isMarried, spousePct, guaranteeMonths, spouseDiffYears);
@@ -999,19 +1052,20 @@ function renderScenarios(curCapital, seniority, aliyahAge, isMarried, spousePct,
     if(Math.abs(age - selectedRetAge) < 0.2) tr.classList.add('highlight');
     tr.onclick = () => selectScenarioAge(age);
 
+    const isOff = Math.abs(age - officialAge) < 0.1;
     const ageLabel = Number.isInteger(age) ? `${age} лет` : `${Math.floor(age)} лет и ${Math.round((age%1)*12)} мес`;
 
     let taxCol = taxRes.tax === 0 ? `<span style="color:var(--green)">0 ₪</span>` : `<span style="color:var(--red)">-${fmt(taxRes.tax)} ₪</span>`;
     let btlHealthCol = btlHealth.total === 0 ? `<span style="color:var(--green)">0 ₪</span>` : `<span style="color:var(--red)">-${fmt(btlHealth.total)} ₪</span>`;
 
     tr.innerHTML = `
-      <td><b>${ageLabel}</b> ${Math.abs(age - selectedRetAge) < 0.2 ? '★' : ''}</td>
+      <td><b>${ageLabel}</b> ${isOff ? '⚖️' : ''} ${Math.abs(age - selectedRetAge) < 0.2 ? '★' : ''}</td>
       <td><b style="color:#2b6cb0;font-size:12px">${mik.toFixed(2)}</b></td>
       <td>${fmt(curCapital)} ₪</td>
       <td>${fmt(fundGross)} ₪</td>
       <td>${taxCol}</td>
       <td>${btlHealthCol}</td>
-      <td>${btlObj.isEligible ? fmt(btlObj.btlTotal) + ' ₪' : '0 ₪ (до 67)'}</td>
+      <td>${btlObj.isEligible ? fmt(btlObj.btlTotal) + ' ₪' : `0 ₪ (до ${Math.round(officialAge)})`}</td>
       <td><b style="color:var(--green)">${fmt(net)} ₪/мес</b></td>
     `;
     tbody.appendChild(tr);
