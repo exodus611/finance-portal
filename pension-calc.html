@@ -107,7 +107,7 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
 .disclaimer-card p:last-child{margin-bottom:0}
 
 /* Password Gate Screen */
-#lock-gate{position:fixed;inset:0;background:rgba(21,37,31,.75);backdrop-filter:blur(8px);z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px}
+#lock-gate{position:fixed;inset:0;background:rgba(21,37,31,.78);backdrop-filter:blur(8px);z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px}
 .lock-box{background:#fff;border-radius:24px;padding:32px 26px;max-width:420px;width:100%;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.2);animation:popIn .25s ease-out}
 @keyframes popIn{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
 .lock-icon{width:64px;height:64px;border-radius:20px;background:var(--green-light);color:var(--green);display:grid;place-items:center;font-size:32px;margin:0 auto 16px;box-shadow:0 6px 18px rgba(8,119,90,.15)}
@@ -187,16 +187,16 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
       <div class="field">
         <label>Ваш год рождения (שנת לידה)</label>
         <div class="input-wrap">
-          <input type="number" id="user-birth-year" value="1964" min="1940" max="1975" step="1" oninput="onUserBirthYearChange()">
+          <input type="number" id="user-birth-year" value="1966" min="1940" max="1975" step="1" oninput="onUserBirthYearChange()">
           <span class="suffix">г.</span>
         </div>
-        <span class="desc" id="user-age-calc-hint">Возраст в 2026 году: ~62 года</span>
+        <span class="desc" id="user-age-calc-hint">Возраст в 2026 году: ~60 лет</span>
       </div>
 
       <div class="field">
         <label>Текущий возраст</label>
         <div class="input-wrap">
-          <input type="number" id="cur-age" value="62" min="40" max="80" step="1" oninput="onCurAgeChange()">
+          <input type="number" id="cur-age" value="60" min="40" max="80" step="1" oninput="onCurAgeChange()">
           <span class="suffix">лет</span>
         </div>
         <span class="desc">Минимальная пенсия — с 60 лет</span>
@@ -205,10 +205,10 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
       <div class="field">
         <label>Возраст выхода на пенсию</label>
         <div class="input-wrap">
-          <input type="number" id="ret-age" value="63" min="60" max="80" step="0.25" oninput="calc()">
+          <input type="number" id="ret-age" value="67" min="60" max="80" step="0.25" oninput="calc()">
           <span class="suffix">лет</span>
         </div>
-        <span class="desc" id="ret-age-hint">Выход в 63 года</span>
+        <span class="desc" id="ret-age-hint">Официальный возраст: 67 лет</span>
       </div>
     </div>
 
@@ -228,7 +228,7 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
           <input type="number" id="spouse-birth-year" value="1966" min="1935" max="1985" step="1" oninput="calc()">
           <span class="suffix">г.</span>
         </div>
-        <span class="desc" id="spouse-diff-hint" style="color:var(--green);font-weight:700">Супруг(а) моложе на 2 года (1966 г.р.)</span>
+        <span class="desc" id="spouse-diff-hint" style="color:var(--green);font-weight:700">Супруги одного года рождения</span>
       </div>
     </div>
   </div>
@@ -247,19 +247,19 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
       <div class="field">
         <label>Стаж работы / выплат в Израиле к выходу</label>
         <div class="input-wrap">
-          <input type="number" id="israel-seniority" value="20" min="0" max="50" step="1" oninput="calc()">
+          <input type="number" id="israel-seniority" value="0" min="0" max="50" step="1" placeholder="0" oninput="calc()">
           <span class="suffix">лет</span>
         </div>
-        <span class="desc" id="seniority-bonus-desc">Надбавка за стаж (Тосефет ветек): +20%</span>
+        <span class="desc" id="seniority-bonus-desc">Надбавка за стаж (Тосефет ветек): +0%</span>
       </div>
 
       <div class="field">
         <label>Возраст репатриации в Израиль (Алия)</label>
         <div class="input-wrap">
-          <input type="number" id="aliyah-age" value="45" min="0" max="80" step="1" oninput="calc()">
+          <input type="number" id="aliyah-age" value="0" min="0" max="80" step="1" placeholder="0" oninput="calc()">
           <span class="suffix">лет</span>
         </div>
-        <span class="desc" id="aliyah-status-desc">Прибыли до 60–62 лет — стандартное пособие</span>
+        <span class="desc" id="aliyah-status-desc">0 — родился в Израиле или ранняя алия</span>
       </div>
     </div>
 
@@ -282,7 +282,7 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
       <div class="field">
         <label>Текущие накопления на сегодня (все фонды)</label>
         <div class="input-wrap">
-          <input type="number" id="cur-capital" value="1400000" min="0" step="10000" oninput="calc()">
+          <input type="number" id="cur-capital" value="0" min="0" step="10000" placeholder="Например: 500 000" oninput="calc()">
           <span class="suffix">₪</span>
         </div>
         <span class="desc">Из годового отчета пенсионного фонда (סך החיסכון הצבור)</span>
@@ -291,7 +291,7 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
       <div class="field">
         <label>Текущая зарплата брутто (если продолжаете работать)</label>
         <div class="input-wrap">
-          <input type="number" id="cur-salary" value="0" min="0" step="500" oninput="calc()">
+          <input type="number" id="cur-salary" value="0" min="0" step="500" placeholder="0" oninput="calc()">
           <span class="suffix">₪ / мес</span>
         </div>
         <span class="desc">Ежемесячные отчисления: ~18.5%–20.83% (работник + работодатель)</span>
@@ -311,7 +311,7 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
       <div class="field">
         <label>Капитализация / Снять часть суммы наличными (היוון קצבה)</label>
         <div class="input-wrap">
-          <input type="number" id="lump-sum" value="0" min="0" step="10000" oninput="calc()">
+          <input type="number" id="lump-sum" value="0" min="0" step="10000" placeholder="0" oninput="calc()">
           <span class="suffix">₪ разово</span>
         </div>
         <span class="desc">Сумма, которую вы хотите снять сразу (уменьшает ежемесячную пенсию)</span>
@@ -359,17 +359,16 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
     </div>
 
     <div class="notice-box notice-blue" id="mikadem-explain-box">
-      📊 <b>Ваш расчетный актуарный микадем (מקדם המרה): <span id="mikadem-val" style="font-size:16px;font-weight:900">183.61</span></b><br>
-      <span style="font-size:11.5px">Формула: <b>Пенсия = Капитал ÷ Микадем</b>. Если вы выходите <b>прямо сейчас</b> с капиталом 1,400,000 ₪, пенсия составит <b><span id="pension-per-100k">7,625</span> ₪ в месяц</b> пожизненно.</span>
+      📊 <b>Ваш расчетный актуарный микадем (מקדם המרה): <span id="mikadem-val" style="font-size:16px;font-weight:900">167.14</span></b><br>
+      <span style="font-size:11.5px">Формула: <b>Пенсия = Капитал ÷ Микадем</b>. Каждые 100,000 ₪ накоплений дают <b><span id="pension-per-100k">598</span> ₪ в месяц</b> пожизненно.</span>
     </div>
 
     <div class="math-card">
       <h4>🔍 Официальные актуарные стандарты Израиля (Управление рынка капитала):</h4>
       <p style="margin:0 0 6px">Таблицы коэффициентов (מקדם המרה) утверждены единым уставом пенсионных фондов <i>(תקנון תקני של רשות שוק ההון)</i> и действуют одинаково во всех фондах (Мигдаль, Харэль, Менора, Клаль, Феникс):</p>
       <ul style="margin:0;padding-left:18px">
-        <li><b>Одинокий мужчина 63 лет без гарантии:</b> базовый делитель равен ровно <b>183.61</b> ($1,400,000 \div 183.61 = 7,625 \text{ ₪}$).</li>
-        <li><b>Если выход планируется через год (в 63 при текущих 62):</b> капитал за этот год растет за счет инвестиционной доходности (+3.8% = $1,453,200 \text{ ₪}$), поэтому пенсия через год составляет <b>7,915 ₪</b>!</li>
-        <li><b>Семейный трек с защитой вдовы 60% и гарантией 240 мес:</b> фонд берет на себя страхование на 20 лет вперед, поэтому микадем повышается до <b>~218.5</b>.</li>
+        <li><b>Одинокий мужчина 67 лет без гарантии:</b> базовый делитель равен ровно <b>167.14</b> (каждые 1,000,000 ₪ дают 5,983 ₪/мес).</li>
+        <li><b>Семейный трек с защитой вдовы 60% и гарантией 240 мес:</b> фонд берет на себя страхование на 20 лет вперед, поэтому микадем повышается до <b>~198–202</b>.</li>
       </ul>
     </div>
   </div>
@@ -407,7 +406,7 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
       <div class="field" id="severance-sum-wrap" style="display:none">
         <label>Примерная сумма забранного безналогового пицуим</label>
         <div class="input-wrap">
-          <input type="number" id="severance-sum" value="50000" min="0" step="5000" oninput="calc()">
+          <input type="number" id="severance-sum" value="0" min="0" step="5000" placeholder="0" oninput="calc()">
           <span class="suffix">₪</span>
         </div>
         <span class="desc">Каждый 1 ₪ забранного пицуим «съедает» 1.35 ₪ из безналогового капитала</span>
@@ -560,7 +559,7 @@ async function handleUnlock(e) {
   } else {
     err.style.display = 'block';
     card.classList.remove('shake');
-    void card.offsetWidth; // trigger reflow
+    void card.offsetWidth;
     card.classList.add('shake');
     input.value = '';
     input.focus();
@@ -625,7 +624,7 @@ let state = {
 };
 
 function onUserBirthYearChange(){
-  const bYear = parseInt(document.getElementById('user-birth-year').value) || 1964;
+  const bYear = parseInt(document.getElementById('user-birth-year').value) || 1966;
   const calcAge = CURRENT_YEAR - bYear;
   document.getElementById('cur-age').value = calcAge;
   document.getElementById('user-age-calc-hint').textContent = `Возраст в ${CURRENT_YEAR} году: ~${calcAge} лет`;
@@ -637,7 +636,7 @@ function onUserBirthYearChange(){
 }
 
 function onCurAgeChange(){
-  const age = parseInt(document.getElementById('cur-age').value) || 62;
+  const age = parseInt(document.getElementById('cur-age').value) || 60;
   const bYear = CURRENT_YEAR - age;
   document.getElementById('user-birth-year').value = bYear;
   document.getElementById('user-age-calc-hint').textContent = `Возраст в ${CURRENT_YEAR} году: ~${age} лет`;
@@ -649,7 +648,7 @@ function onCurAgeChange(){
 }
 
 function updateFemaleOfficialAge(){
-  const bYear = parseInt(document.getElementById('user-birth-year').value) || 1964;
+  const bYear = parseInt(document.getElementById('user-birth-year').value) || 1966;
   const data = getFemaleOfficialAgeByYear(bYear);
   document.getElementById('official-age-label').textContent = `Официальный возраст: ${data.label}`;
   document.getElementById('ret-age').value = data.age.toFixed(2);
@@ -813,20 +812,20 @@ function fmt(num){
 }
 
 function calc(){
-  const userBirthYear = parseInt(document.getElementById('user-birth-year').value) || 1964;
-  const curAge = parseFloat(document.getElementById('cur-age').value) || 62;
-  const retAge = parseFloat(document.getElementById('ret-age').value) || 63;
+  const userBirthYear = parseInt(document.getElementById('user-birth-year').value) || 1966;
+  const curAge = parseFloat(document.getElementById('cur-age').value) || 60;
+  const retAge = parseFloat(document.getElementById('ret-age').value) || 67;
   const curCapital = parseFloat(document.getElementById('cur-capital').value) || 0;
   const curSalary = parseFloat(document.getElementById('cur-salary').value) || 0;
   const fundYield = (parseFloat(document.getElementById('fund-yield').value) || 3.8) / 100;
   const lumpSum = parseFloat(document.getElementById('lump-sum').value) || 0;
   const seniority = parseInt(document.getElementById('israel-seniority').value) || 0;
-  const aliyahAge = parseInt(document.getElementById('aliyah-age').value) || 45;
+  const aliyahAge = parseInt(document.getElementById('aliyah-age').value) || 0;
   const isMarried = (state.marital === 'married');
   const spousePct = isMarried ? (parseInt(document.getElementById('spouse-pension-pct').value) || 60) : 0;
   const guaranteeMonths = parseInt(document.getElementById('guarantee-months').value) || 0;
 
-  const spouseBirthYear = parseInt(document.getElementById('spouse-birth-year').value) || (userBirthYear + 2);
+  const spouseBirthYear = parseInt(document.getElementById('spouse-birth-year').value) || userBirthYear;
   const spouseDiffYears = spouseBirthYear - userBirthYear;
 
   let spouseText = '';
@@ -898,9 +897,8 @@ function calc(){
 
   document.getElementById('mikadem-val').textContent = mikadem.toFixed(2);
   
-  // Показываем базовую пенсию при текущем капитале без временного сдвига
-  const immediatePension = Math.round(curCapital / mikadem);
-  document.getElementById('pension-per-100k').textContent = fmt(immediatePension);
+  const immediatePer100k = Math.round(100000 / mikadem);
+  document.getElementById('pension-per-100k').textContent = fmt(immediatePer100k);
 
   const offAgeData = state.gender === 'm' ? { age: 67, label: '67 лет' } : getFemaleOfficialAgeByYear(userBirthYear);
   const offAge = offAgeData.age;
