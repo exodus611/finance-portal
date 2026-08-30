@@ -103,9 +103,13 @@ a.back{font-size:11.5px;font-weight:800;color:var(--green);text-decoration:none}
 .print-btn{background:#fff;color:var(--green);border:none;padding:8px 14px;border-radius:8px;font-size:11.5px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:5px;box-shadow:0 3px 10px rgba(0,0,0,.1);transition:transform .1s}
 .print-btn:active{transform:scale(.98)}
 
-.custom-checkbox{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;background:#fff;border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:border-color .15s}
+.custom-checkbox{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;background:#fff;border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:all .15s}
 .custom-checkbox:hover{border-color:var(--green)}
 .custom-checkbox input{margin-top:2px;cursor:pointer;accent-color:var(--green);width:15px;height:15px}
+.custom-checkbox.disabled{opacity:.55;background:#f0ede6;border-color:#d8d0c0;cursor:not-allowed;pointer-events:none}
+
+.kibua-badge-lock{display:inline-flex;align-items:center;gap:4px;background:var(--red-light);color:var(--red);border:1px solid rgba(184,75,62,.3);border-radius:6px;padding:2px 7px;font-size:10.5px;font-weight:800;margin-left:6px}
+.kibua-badge-ok{display:inline-flex;align-items:center;gap:4px;background:var(--green-light);color:var(--green);border:1px solid rgba(8,119,90,.3);border-radius:6px;padding:2px 7px;font-size:10.5px;font-weight:800;margin-left:6px}
 
 /* Modern Collapsible Accordions */
 details.accord-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin:10px 0;box-shadow:var(--shadow-sm);overflow:hidden;transition:all .15s ease}
@@ -203,7 +207,7 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
       <div class="field">
         <label>Год рождения (שנת לידה)</label>
         <div class="input-wrap">
-          <input type="number" id="user-birth-year" value="1966" min="1940" max="1975" step="1" oninput="calc()">
+          <input type="number" id="user-birth-year" value="1966" min="1940" max="1975" step="1" oninput="onBirthYearChange()">
           <span class="suffix">г.</span>
         </div>
         <span class="desc" id="cur-age-calc-hint">Текущий возраст: ~60 лет</span>
@@ -397,16 +401,21 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
       <div class="step-num" style="background:var(--gold)">5</div>
       <div>
         <h2 style="color:#7a5c1e">Статус Кибуа Зхуйот (טופס 161ד) и Пицуим</h2>
-        <p>⚖️ <b>Ст. 9а Налогового кодекса:</b> Льготная корзина оформляется с официального возраста (67 для мужчин / 62–65 для женщин).</p>
+        <p>⚖️ <b>Ст. 9а Налогового кодекса:</b> Льготная корзина оформляется строго с официального возраста (67 для мужчин / 62–65 для женщин).</p>
       </div>
     </div>
 
     <div style="margin-bottom:8px">
-      <label class="custom-checkbox">
+      <label class="custom-checkbox" id="kibua-checkbox-label">
         <input type="checkbox" id="kibua-done" checked onchange="calc()">
         <div>
-          <b style="font-size:11.5px;color:var(--ink)">Оформлять «Кибуа Зхуйот» (Форма 161д) при достижении официального возраста</b>
-          <div style="font-size:10.5px;color:var(--muted)">Даёт безналоговую корзину до ~4,950 ₪/мес (вступает в силу с официального возраста).</div>
+          <div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px">
+            <b style="font-size:11.5px;color:var(--ink)">Оформлять «Кибуа Зхуйот» (Форма 161д)</b>
+            <span id="kibua-status-badge" class="kibua-badge-ok">✅ Доступно</span>
+          </div>
+          <div id="kibua-subdesc" style="font-size:10.5px;color:var(--muted);margin-top:2px">
+            Даёт безналоговую корзину до ~4,950 ₪/мес (вступает в силу с официального возраста).
+          </div>
         </div>
       </label>
     </div>
@@ -432,7 +441,9 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
     </div>
 
     <div id="kibua-age-warning" class="notice-box notice-gold" style="display:none">
-      ⚠️ <b>Внимание о раннем выходе (до официального возраста):</b> До официального возраста Кибуа Зхуйот (161д) по закону не применяется (действует обычный налог), а пенсионный фонд удерживает взносы в Битуах Леуми и налог на здоровье (ст. 345б: 3.49%–11.79%). С официального возраста наступает 100% освобождение!
+      🔒 <b>КИБУА ЗХУЙОТ ЗАБЛОКИРОВАНО ЗАКОНОМ (ДО <span id="kibua-lock-off-age">67 ЛЕТ</span>):</b><br>
+      • <b>Подоходный налог:</b> До достижения официального возраста <i>(סעיף 9א לפקודת מס הכנסה)</i> оформить форму 161д <b>невозможно</b> — пенсия облагается обычным подоходным налогом.<br>
+      • <b>Битуах Леуми и Здоровье:</b> Пенсионный фонд по закону <i>(ст. 345б)</i> обязан удерживать 3.49%–11.79%. Полное освобождение наступит с официального возраста!
     </div>
 
     <div id="kibua-warning" class="notice-box notice-red" style="display:none">
@@ -650,6 +661,14 @@ let state = {
   marital: 'single',
   withdrewSeverance: false
 };
+
+function onBirthYearChange(){
+  if(state.gender === 'f') {
+    updateFemaleOfficialAge();
+  }
+  updateQuickButtons();
+  calc();
+}
 
 function updateQuickButtons(){
   const userBirthYear = parseInt(document.getElementById('user-birth-year').value) || 1966;
@@ -931,20 +950,43 @@ function calc(){
   const officialAge = offAgeData.age;
   const offAgeLabel = offAgeData.label;
 
-  const isKibuaDone = document.getElementById('kibua-done').checked;
-  const severanceSum = state.withdrewSeverance ? (parseFloat(document.getElementById('severance-sum').value) || 0) : 0;
-
   const isEarlyRetirement = (retAge < officialAge - 0.05);
 
-  document.getElementById('kibua-age-warning').style.display = isEarlyRetirement ? 'block' : 'none';
+  const kibuaCheckbox = document.getElementById('kibua-done');
+  const kibuaLabel = document.getElementById('kibua-checkbox-label');
+  const kibuaBadge = document.getElementById('kibua-status-badge');
+  const kibuaSubdesc = document.getElementById('kibua-subdesc');
+  const severanceBlock = document.getElementById('severance-block');
+  const kibuaLockOffAge = document.getElementById('kibua-lock-off-age');
 
-  if(!isEarlyRetirement) {
-    document.getElementById('kibua-warning').style.display = isKibuaDone ? 'none' : 'block';
-    document.getElementById('kibua-success').style.display = isKibuaDone ? 'block' : 'none';
-  } else {
+  if(isEarlyRetirement) {
+    kibuaCheckbox.checked = false;
+    kibuaCheckbox.disabled = true;
+    kibuaLabel.classList.add('disabled');
+    kibuaBadge.className = 'kibua-badge-lock';
+    kibuaBadge.innerHTML = '🔒 Заблокировано (только с ' + offAgeLabel + ')';
+    kibuaSubdesc.innerHTML = '<span style="color:var(--red);font-weight:700">❌ Недоступно при раннем выходе (' + retAge + ' лет).</span> По закону (ст. 9а) корзина 161д недоступна до ' + offAgeLabel + '.';
+    severanceBlock.style.opacity = '0.4';
+    severanceBlock.style.pointerEvents = 'none';
+    document.getElementById('kibua-age-warning').style.display = 'block';
+    if(kibuaLockOffAge) kibuaLockOffAge.textContent = offAgeLabel;
     document.getElementById('kibua-warning').style.display = 'none';
     document.getElementById('kibua-success').style.display = 'none';
+  } else {
+    kibuaCheckbox.disabled = false;
+    kibuaLabel.classList.remove('disabled');
+    kibuaBadge.className = 'kibua-badge-ok';
+    kibuaBadge.innerHTML = '✅ Доступно (с ' + offAgeLabel + ')';
+    kibuaSubdesc.innerHTML = 'Даёт право на безналоговую корзину до ~4,950 ₪/мес, освобождая пенсию от подоходного налога.';
+    severanceBlock.style.opacity = '1';
+    severanceBlock.style.pointerEvents = 'auto';
+    document.getElementById('kibua-age-warning').style.display = 'none';
+    document.getElementById('kibua-warning').style.display = kibuaCheckbox.checked ? 'none' : 'block';
+    document.getElementById('kibua-success').style.display = kibuaCheckbox.checked ? 'block' : 'none';
   }
+
+  const isKibuaDone = kibuaCheckbox.checked && !isEarlyRetirement;
+  const severanceSum = state.withdrewSeverance ? (parseFloat(document.getElementById('severance-sum').value) || 0) : 0;
 
   const effectiveCapital = Math.max(0, curCapital - lumpSum);
   const mikadem = getMikadem(retAge, state.gender, isMarried, spousePct, guaranteeMonths, spouseDiffYears);
@@ -1042,7 +1084,10 @@ function renderScenarios(curCapital, seniority, aliyahAge, isMarried, spousePct,
     const mik = getMikadem(age, state.gender, isMarried, spousePct, guaranteeMonths, spouseDiffYears);
     const fundGross = Math.round(curCapital / mik);
     const btlObj = getBtlAllowance(age, state.gender, seniority, aliyahAge, state.marital, userBirthYear);
-    const taxRes = calcPensionTax(fundGross, age, officialAge, state.gender, isKibuaDone, state.withdrewSeverance, severanceSum);
+    
+    // В таблице сценариев для возрастов >= officialAge кибуа применяется автоматически
+    const isKibuaForAge = (age >= officialAge - 0.05);
+    const taxRes = calcPensionTax(fundGross, age, officialAge, state.gender, isKibuaForAge, state.withdrewSeverance, severanceSum);
     const btlHealth = calcBtlHealthDeductions(fundGross, age, officialAge);
     
     const totalDeds = taxRes.tax + btlHealth.total;
