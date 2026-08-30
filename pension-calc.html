@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308775a'/><text x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='900' fill='white' text-anchor='middle'>₪</text></svg>">
 <title>Пенсионный калькулятор Израиля 2026 — Профессиональный модуль</title>
-<meta name="description" content="Полный расчёт пенсии в Израиле: возраст от 60 лет, точный микадем (актуарный коэффициент), Битуах Леуми, стаж олим хадашим, налоги (кибуа зхуйот) и выплаты семье.">
+<meta name="description" content="Полный расчёт пенсии в Израиле: возраст от 60 лет, точный микадем, Битуах Леуми, налог на здоровье, налоги (кибуа зхуйот) и выплаты семье.">
 <style>
 :root{
   --ink:#15251f;--muted:#5a6660;--paper:#f4f1e9;--card:#fffdf8;--line:#ddd6c7;
@@ -70,14 +70,14 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
 .dash-item{background:rgba(255,255,255,.1);border-radius:12px;padding:12px;backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15)}
 .dash-item .lbl{font-size:11px;opacity:.85;margin-bottom:3px}
 .dash-item .val{font-size:18px;font-weight:850}
-.dash-item .subval{font-size:10.5px;opacity:.75;margin-top:2px}
+.dash-item .subval{font-size:10.5px;opacity:.8;margin-top:2px}
 
 /* Scenario Table & Responsive Scroll */
 .table-scroll-wrap{position:relative;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1px solid var(--line);margin:14px 0;background:#fff}
 .scroll-hint{display:none;font-size:11px;color:var(--muted);text-align:right;margin-bottom:4px;font-weight:700}
 @media(max-width:640px){.scroll-hint{display:block}}
 
-.scenario-table{width:100%;min-width:580px;border-collapse:collapse;font-size:12.5px;text-align:left}
+.scenario-table{width:100%;min-width:640px;border-collapse:collapse;font-size:12.5px;text-align:left}
 .scenario-table th{background:var(--paper);padding:9px 10px;font-weight:800;border-bottom:2px solid var(--line);font-size:11.5px;color:var(--ink);white-space:nowrap}
 .scenario-table td{padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
 .scenario-table tr.highlight{background:var(--green-light);font-weight:800}
@@ -159,9 +159,9 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
   </header>
 
   <div class="hero">
-    <div class="badge">⚖️ Официальная актуарная база Управления рынка капитала Израиля</div>
+    <div class="badge">⚖️ Официальная база Управления рынка капитала и Битуах Леуми</div>
     <h1>Профессиональный калькулятор пенсии в Израиле</h1>
-    <p>Точный расчет с 60 до 80 лет: точный актуарный микадем одиноких и семейных, ступени возраста женщин по реформе 2021 г., пособие Битуах Леуми, стаж Олим Хадашим и статус Кибуа Зхуйот (טופס 161ד).</p>
+    <p>Точный расчет с 60 до 80 лет: микадем, Битуах Леуми и Дмей Бриаут с ранней пенсии (ст. 345б), налоги и статус Кибуа Зхуйот (טופס 161ד).</p>
   </div>
 
   <!-- ШАГ 1: Личные данные, Пол, Год Рождения Заявителя и Супруга -->
@@ -415,10 +415,9 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
     </div>
 
     <div id="kibua-age-warning" class="notice-box notice-gold" style="display:none">
-      ⚠️ <b>ВНИМАНИЕ О РАННЕМ ВЫХОДЕ:</b><br>
-      По закону <i>(סעיף 9א לפקודת מס הכנסה)</i>, «Кибуа Зхуйот» (форма 161д) **НЕЛЬЗЯ** оформить до наступления официального возраста (<span id="warn-off-age-text">67 лет</span>).<br>
-      • В период с раннего выхода до официального возраста пенсионные выплаты облагаются <b>стандартным подоходным налогом без безналоговой корзины</b>.<br>
-      • По достижении официального возраста вы подадите форму 161д, и налог снизится (для большинства до 0 ₪).
+      ⚠️ <b>ВНИМАНИЕ О РАННЕМ ВЫХОДЕ (ДО 67 ЛЕТ):</b><br>
+      • <b>Подоходный налог (Мас Ахнаса):</b> Кибуа Зхуйот (форма 161д) по закону <i>(סעיף 9א)</i> **НЕЛЬЗЯ** оформить до официального возраста (<span id="warn-off-age-text">67 лет</span>). До 67 лет действует стандартный налог.<br>
+      • <b>Битуах Леуми и Здравоохранение (ст. 345б):</b> С ранней пенсии пенсионный фонд обязан удерживать взносы в Битуах Леуми и налог на здоровье (Дмей Бриаут — 3.49%–11.79%). С 67 лет наступает 100% освобождение!
     </div>
 
     <div id="kibua-warning" class="notice-box notice-red" style="display:none">
@@ -427,7 +426,7 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
     </div>
 
     <div id="kibua-success" class="notice-box notice-green">
-      ✅ <b>При оформлении формы 161д:</b> Вы получаете максимальное государственное освобождение от налога. Для большинства пенсионеров налог снижается до <b>0 ₪</b>.
+      ✅ <b>При оформлении формы 161д (с 67 лет):</b> Вы получаете максимальное государственное освобождение от подоходного налога (0 ₪) + полное освобождение от Битуах Леуми.
     </div>
   </div>
 
@@ -436,7 +435,7 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
     <div class="dash-total">
       <div class="caption">ИТОГОВАЯ ЧИСТАЯ ПЕНСИЯ НА РУКИ (נטו לחשבון הבנק)</div>
       <div class="sum" id="total-net-sum">0 ₪</div>
-      <div class="sub" id="total-gross-sub">Брутто: 0 ₪ · Налог: 0 ₪</div>
+      <div class="sub" id="total-gross-sub">Брутто: 0 ₪ · Удержания: 0 ₪</div>
     </div>
 
     <div class="dash-breakdown">
@@ -447,15 +446,15 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
       </div>
 
       <div class="dash-item">
-        <div class="lbl">🏛️ Битуах Леуми (пособие)</div>
-        <div class="val" id="res-btl-sum">0 ₪</div>
-        <div class="subval" id="res-btl-details">База + стаж 0%</div>
+        <div class="lbl">📉 Налоги и сборы с пенсии</div>
+        <div class="val" id="res-total-deductions" style="color:#ffb3ba">0 ₪</div>
+        <div class="subval" id="res-deductions-details">Налог: 0 ₪ · Битуах/Здоровье: 0 ₪</div>
       </div>
 
       <div class="dash-item">
-        <div class="lbl">🛡️ Защита семьи (супругу)</div>
-        <div class="val" id="res-spouse-monthly">0 ₪ / мес</div>
-        <div class="subval" id="res-guarantee-text">Гарантия: 240 мес.</div>
+        <div class="lbl">🏛️ Битуах Леуми (пособие)</div>
+        <div class="val" id="res-btl-sum">0 ₪</div>
+        <div class="subval" id="res-btl-details">База + стаж 0%</div>
       </div>
     </div>
 
@@ -470,7 +469,7 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
       <div class="step-num">💡</div>
       <div>
         <h2>Сравнение сценариев: в каком возрасте выгоднее выйти?</h2>
-        <p>Наглядно: как меняются микадем, право на Кибуа Зхуйот и пособие Битуах Леуми по возрастам</p>
+        <p>Наглядно: как меняются микадем, подоходный налог, сборы Битуах Леуми/Здравоохранения и пособие по старости</p>
       </div>
     </div>
 
@@ -483,7 +482,8 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
             <th>Микадем</th>
             <th>Капитал</th>
             <th>Пенсия фонда</th>
-            <th>Налог</th>
+            <th>Подоходный</th>
+            <th>Битуах/Здоровье</th>
             <th>Битуах Леуми</th>
             <th>ИТОГО НЕТТО</th>
           </tr>
@@ -495,7 +495,7 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
     </div>
 
     <div class="notice-box notice-green">
-      📌 <b>Главный вывод пенсионного консультанта:</b> Отсрочка выхода на пенсию с раннего возраста (60–63) до официального возраста («Гиль Приша Мезаке» 67 лет) даёт сразу тройной эффект: <b>включение Кибуа Зхуйот (0 налога)</b>, <b>выплату пособия Битуах Леуми</b> и <b>снижение делителя (микадема)</b>.
+      📌 <b>Главный вывод пенсионного консультанта:</b> Отсрочка выхода на пенсию с раннего возраста (60–63) до официального возраста («Гиль Приша Мезаке» 67 лет) даёт четверной финансовый выигрыш: <b>включение Кибуа Зхуйот (0 подоходного налога)</b>, <b>полное освобождение от взносов Битуах Леуми и Дмей Бриаут</b>, <b>выплату пособия по старости</b> и <b>снижение делителя (микадема)</b>.
     </div>
   </div>
 
@@ -504,17 +504,26 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
     <div class="card-header">
       <div class="step-num">⚖️</div>
       <div>
-        <h2>Закон о налогах на пенсию и Кибуа Зхуйот (ст. 9а Налогового кодекса)</h2>
-        <p>Официальные правила Налогового управления Израиля (Мас Ахнаса)</p>
+        <h2>Закон о налогах на пенсию и взносах Битуах Леуми / Дмей Бриаут</h2>
+        <p>Официальные правила Налогового управления и Института национального страхования Израиля</p>
       </div>
     </div>
 
     <div style="font-size:12.5px;line-height:1.55;color:var(--ink)">
-      <p><b>С какого возраста и как действует Кибуа Зхуйот (טופס 161ד):</b></p>
+      <p><b>Официальные правила удержаний с пенсии:</b></p>
       <ol style="padding-left:18px;margin:0 0 10px">
-        <li><b>Возрастной ценз (גיל פרישה מזכה):</b> По закону освобождение по форме 161д <b>нельзя</b> получить до официального пенсионного возраста — <b>67 лет для мужчин</b> и <b>62–65 лет для женщин</b> (по графику реформы).</li>
-        <li><b>Что происходит при раннем выходе (60–66 лет):</b> Если выйти на пенсию раньше официального возраста, пенсионная выплата облагается налогом как обычный доход (*הכנסה מיגיעה אישית*) с базовыми налоговыми баллами (2.25 балла). Безналоговая корзина 4,950 ₪/мес в этот период **не применяется**.</li>
-        <li><b>С момента достижения официального возраста:</b> Пенсионер подаёт форму 161д в Мас Ахнаса и с этого месяца начинает пожизненно получать освобождение от налога на сумму до <b>4,950 ₪ в месяц</b> (в 2026 году).</li>
+        <li><b>Взносы в Битуах Леуми и Здравоохранение (ст. 345б Закона о нацстраховании):</b>
+          <ul style="padding-left:16px;margin:4px 0">
+            <li><b>При раннем выходе (60–66 лет):</b> пенсионный фонд по закону <i>(סעיף 345ב לחוק הביטוח הלאומי)</i> обязан удерживать из пенсии взносы на нацстрахование и налог на здравоохранение (3.49% до 7,522 ₪ и 11.79% свыше).</li>
+            <li><b>С 67 лет (официального возраста):</b> наступает <b>100% освобождение от взносов в Битуах Леуми и налога на здоровье</b> с пенсионных выплат фонда. Медстраховка (~223 ₪) вычитается государством из государственного пособия по старости, а пенсию фонда вы получаете без удержаний!</li>
+          </ul>
+        </li>
+        <li><b>Подоходный налог (Мас Ахнаса — ст. 9а):</b>
+          <ul style="padding-left:16px;margin:4px 0">
+            <li><b>До 67 лет:</b> пенсия облагается как обычный доход без применения безналоговой корзины Кибуа Зхуйот.</li>
+            <li><b>С 67 лет:</b> пенсионер оформляет форму 161д (*טופס 161ד*) и получает безналоговую корзину до <b>4,950 ₪/мес</b>, снижая подоходный налог до <b>0 ₪</b>.</li>
+          </ul>
+        </li>
         <li><b>Правило 32 лет (נוסחת השילוב):</b> Налоговая проверяет все выходные пособия (пицуим), которые вы забирали без налога за последние 32 года трудового стажа. Каждый 1 ₪ забранного пицуим «съедает» 1.35 ₪ из безналогового капитала.</li>
       </ol>
     </div>
@@ -530,7 +539,7 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
       <b>2. Окончательные расчёты фонда:</b> Фактический размер ежемесячной пенсии, актуарный коэффициент (микадем), точные суммы выплат наследникам и условия конвертации капитала определяются исключительно в момент подачи официального заявления о выходе на пенсию управляющей компанией вашего пенсионного фонда или страховой компании на основании действующего устава фонда <i>(תקנון קרן הפנסיה)</i>, выбранного пенсионного трека, состояния здоровья и состава семьи.
     </p>
     <p>
-      <b>3. Налоговый статус (Мас Ахнаса):</b> Налоговые льготы, включая освобождение по статье 9(а) Постановления о подоходном налоге <i>(סעיף 9א לפקודת מס הכנסה — קיבוע זכויות)</i>, рассчитываются налоговым инспектором <i>(פקיד שומה)</i> на основании формы 161д, поданных отчетов и истории изъятия выходных пособий (пицуим).
+      <b>3. Налоговый статус (Мас Ахнаса и Битуах Леуми):</b> Налоговые льготы, включая освобождение по статье 9(а) <i>(קיבוע זכויות)</i> и взносы по статье 345(б) <i>(דמי ביטוח לאומי ובריאות)</i>, рассчитываются налоговым инспектором <i>(פקיד שומה)</i> и фондом на основании поданных отчетов и возраста выхода.
     </p>
     <p>
       <b>4. Рекомендация:</b> Перед принятием любых практических решений о выходе на пенсию, капитализации средств <i>(היוון קצבה)</i>, переводе накоплений между фондами или отказе от пенсионных гарантий семье настоятельно рекомендуется обратиться к лицензированному пенсионному консультанту <i>(יועץ פנסיוני מורשה)</i>, лицензированному пенсионному агенту или сертифицированному аудитору / налоговому консультанту <i>(רואה חשבון / יועץ מס)</i>.
@@ -594,7 +603,7 @@ function checkAccess() {
 
 /* ==========================================================================
    ISRAEL PENSION ADVISOR CALCULATION ENGINE (2026)
-   Exact Actuarial Standard (Predict / Capital Market Authority Regulations)
+   Exact Actuarial & Tax Standard (Capital Market Authority & BTL 345b)
    ========================================================================== */
 
 const CURRENT_YEAR = 2026;
@@ -723,7 +732,6 @@ function getMikadem(retAge, gender, isMarried, spousePct, guaranteeMonths, spous
   }
 
   if(!isMarried || spousePct === 0) {
-    // Одинокий трек (Single Track)
     let gAdj = 0;
     if(guaranteeMonths === 240) gAdj = 12.0;
     else if(guaranteeMonths === 180) gAdj = 8.0;
@@ -732,7 +740,6 @@ function getMikadem(retAge, gender, isMarried, spousePct, guaranteeMonths, spous
     else gAdj = 0.0;
     return base + gAdj;
   } else {
-    // Семейный трек (Married Track)
     let sAdj = 0;
     if(spousePct === 60) sAdj = 22.0;
     else if(spousePct === 100) sAdj = 34.0;
@@ -784,9 +791,39 @@ function getBtlAllowance(retAge, gender, seniority, aliyahAge, marital, userBirt
 }
 
 /* 
-  Расчет налога с пенсии с учетом строгих требований ст. 9(а) Налогового кодекса Израиля:
+  Расчет удержаний Битуах Леуми и Дмей Бриаут (налог на здоровье)
+  По закону (סעיף 345ב לחוק הביטוח הלאומי):
+  - При раннем выходе (до 67 лет для мужчин / до 62-65 для женщин): удерживаются взносы BTL и налог на здоровье!
+  - С 67 лет: пенсия фонда ПОЛНОСТЬЮ освобождена от Битуах Леуми и Дмей Бриаут (0 ₪).
+*/
+function calcBtlHealthDeductions(grossPension, retAge, officialAge){
+  if(retAge >= officialAge - 0.01) {
+    return { btl: 0, health: 0, total: 0, isExempt: true };
+  }
+
+  const threshold = 7522; // 60% от средней зарплаты по закону
+  let btl = 0;
+  let health = 0;
+
+  if(grossPension <= threshold) {
+    btl = grossPension * 0.0039;
+    health = grossPension * 0.0310;
+  } else {
+    btl = (threshold * 0.0039) + ((grossPension - threshold) * 0.0679);
+    health = (threshold * 0.0310) + ((grossPension - threshold) * 0.0500);
+  }
+
+  return {
+    btl: Math.round(btl),
+    health: Math.round(health),
+    total: Math.round(btl + health),
+    isExempt: false
+  };
+}
+
+/* 
+  Расчет подоходного налога (Мас Ахнаса) с учетом ст. 9(а) Налогового кодекса Израиля:
   КИБУА ЗХУЙОТ ПО ЗАКОНУ ДЕЙСТВУЕТ ТОЛЬКО С ОФИЦИАЛЬНОГО ВОЗРАСТА («גיל פרישה מזכה» — 67 для мужчин / 62-65 для женщин)!
-  До официального возраста пенсия облагается налогом без применения безналоговой корзины 9(а).
 */
 function calcPensionTax(grossPension, retAge, officialAge, gender, isKibuaDone, withdrewSeverance, severanceSum){
   let exemptCeiling = 0;
@@ -887,9 +924,16 @@ function calc(){
   const fundPensionGross = Math.round(effectiveCapital / mikadem);
 
   const btl = getBtlAllowance(retAge, state.gender, seniority + Math.floor(yearsToRet), aliyahAge, state.marital, userBirthYear);
+  
+  // 1. Подоходный налог (Мас Ахнаса)
   const taxRes = calcPensionTax(fundPensionGross, retAge, officialAge, state.gender, isKibuaDone, state.withdrewSeverance, severanceSum);
   const pensionTax = taxRes.tax;
-  const fundPensionNet = Math.max(0, fundPensionGross - pensionTax);
+
+  // 2. Битуах Леуми и Дмей Бриаут с ранней пенсии (ст. 345б)
+  const btlHealth = calcBtlHealthDeductions(fundPensionGross, retAge, officialAge);
+  
+  const totalDeductions = pensionTax + btlHealth.total;
+  const fundPensionNet = Math.max(0, fundPensionGross - totalDeductions);
 
   const totalNet = fundPensionNet + btl.btlTotal;
   const totalGross = fundPensionGross + btl.btlTotal;
@@ -897,25 +941,24 @@ function calc(){
 
   document.getElementById('total-net-sum').textContent = fmt(totalNet) + ' ₪ / мес';
   
-  let taxNote = '';
+  let deductionsNote = '';
   if(isEarlyRetirement) {
-    if(pensionTax > 0) {
-      taxNote = `<span style="color:#ffb3ba;font-weight:800">Подоходный налог: ${fmt(pensionTax)} ₪ (ранний выход: Кибуа Зхуйот по закону начнётся только с ${offAgeLabel})</span>`;
-    } else {
-      taxNote = `<span class="tax-badge">Налог 0 ₪ (перекрыт налоговыми баллами) · Кибуа Зхуйот с ${offAgeLabel}</span>`;
-    }
-  } else if(!isKibuaDone) {
-    taxNote = `<span style="color:#ffb3ba;font-weight:800">⚠️ Удержан налог ${fmt(pensionTax)} ₪ (Кибуа Зхуйот не оформлен!)</span>`;
-  } else if(pensionTax === 0) {
-    taxNote = `<span class="tax-badge">100% без налога (0 ₪) благодаря Кибуа Зхуйот</span>`;
+    deductionsNote = `Удержания: -${fmt(totalDeductions)} ₪ (Подоходный: ${fmt(pensionTax)} ₪ · Битуах/Здоровье: ${fmt(btlHealth.total)} ₪)`;
+  } else if(totalDeductions === 0) {
+    deductionsNote = `<span class="tax-badge">100% без налогов и сборов (0 ₪) благодаря 67 годам и Кибуа Зхуйот</span>`;
   } else {
-    taxNote = `Подоходный налог: ${fmt(pensionTax)} ₪ (освобождено ${fmt(taxRes.exemptCeiling)} ₪/мес)`;
+    deductionsNote = `Подоходный налог: ${fmt(pensionTax)} ₪ (Битуах/Здоровье: 0 ₪ освобождено)`;
   }
 
-  document.getElementById('total-gross-sub').innerHTML = `Брутто: ${fmt(totalGross)} ₪ · ${taxNote}`;
+  document.getElementById('total-gross-sub').innerHTML = `Брутто: ${fmt(totalGross)} ₪ · ${deductionsNote}`;
 
   document.getElementById('res-fund-pension').textContent = fmt(fundPensionGross) + ' ₪ / мес';
   document.getElementById('res-capital-at-ret').textContent = `К выходу: ${fmt(futureCapital)} ₪`;
+
+  document.getElementById('res-total-deductions').textContent = totalDeductions > 0 ? `-${fmt(totalDeductions)} ₪ / мес` : '0 ₪ (освобождено)';
+  document.getElementById('res-deductions-details').textContent = isEarlyRetirement 
+    ? `Налог: ${fmt(pensionTax)} ₪ · Соцстрах+Здоровье: ${fmt(btlHealth.total)} ₪`
+    : `С 67 лет соцстрах = 0 ₪ · Налог = ${fmt(pensionTax)} ₪`;
 
   if(btl.isEligible) {
     document.getElementById('res-btl-sum').textContent = fmt(btl.btlTotal) + ' ₪ / мес';
@@ -934,7 +977,7 @@ function calc(){
   document.getElementById('pension-per-100k').textContent = fmt(immediatePer100k);
 
   if(retAge < officialAge - 0.1) {
-    document.getElementById('ret-age-hint').innerHTML = `⚠️ Ранний выход (до официальных ${offAgeLabel}). Налог без Кибуа Зхуйот; Битуах Леуми — с ${offAgeLabel}.`;
+    document.getElementById('ret-age-hint').innerHTML = `⚠️ Ранний выход (до ${offAgeLabel}). Удерживается налог и соцстрах; Битуах Леуми — с ${offAgeLabel}.`;
     document.getElementById('ret-age-hint').style.color = 'var(--red)';
   } else if(retAge > officialAge + 0.1) {
     document.getElementById('ret-age-hint').innerHTML = `🌟 Отложенный выход (+${Math.floor(retAge - officialAge)*5}% надбавка от Битуах Леуми).`;
@@ -977,19 +1020,18 @@ function renderScenarios(curAge, curCapital, curSalary, fundYield, seniority, al
     const fundGross = Math.round(cap / mik);
     const btlObj = getBtlAllowance(age, state.gender, seniority + Math.floor(yToRet), aliyahAge, state.marital, userBirthYear);
     const taxRes = calcPensionTax(fundGross, age, officialAge, state.gender, isKibuaDone, state.withdrewSeverance, severanceSum);
-    const net = (fundGross - taxRes.tax) + btlObj.btlTotal;
+    const btlHealth = calcBtlHealthDeductions(fundGross, age, officialAge);
+    
+    const totalDeds = taxRes.tax + btlHealth.total;
+    const net = (fundGross - totalDeds) + btlObj.btlTotal;
 
     const tr = document.createElement('tr');
     if(Math.abs(age - selectedRetAge) < 0.2) tr.classList.add('highlight');
 
     const ageLabel = Number.isInteger(age) ? `${age} лет` : `${Math.floor(age)} лет и ${Math.round((age%1)*12)} мес`;
 
-    let taxCol = '';
-    if(taxRes.tax === 0) {
-      taxCol = `<span style="color:var(--green)">0 ₪</span>`;
-    } else {
-      taxCol = `<span style="color:var(--red)">-${fmt(taxRes.tax)} ₪</span>`;
-    }
+    let taxCol = taxRes.tax === 0 ? `<span style="color:var(--green)">0 ₪</span>` : `<span style="color:var(--red)">-${fmt(taxRes.tax)} ₪</span>`;
+    let btlHealthCol = btlHealth.total === 0 ? `<span style="color:var(--green)">0 ₪</span>` : `<span style="color:var(--red)">-${fmt(btlHealth.total)} ₪</span>`;
 
     tr.innerHTML = `
       <td><b>${ageLabel}</b> ${Math.abs(age - selectedRetAge) < 0.2 ? '★' : ''}</td>
@@ -997,6 +1039,7 @@ function renderScenarios(curAge, curCapital, curSalary, fundYield, seniority, al
       <td>${fmt(cap)} ₪</td>
       <td>${fmt(fundGross)} ₪</td>
       <td>${taxCol}</td>
+      <td>${btlHealthCol}</td>
       <td>${btlObj.isEligible ? fmt(btlObj.btlTotal) + ' ₪' : '0 ₪ (до 67)'}</td>
       <td><b style="color:var(--green)">${fmt(net)} ₪/мес</b></td>
     `;
