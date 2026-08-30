@@ -9,123 +9,132 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308775a'/><text x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='900' fill='white' text-anchor='middle'>₪</text></svg>">
 <title>Пенсионный калькулятор Израиля 2026 — Профессиональный модуль</title>
-<meta name="description" content="Полный расчёт пенсии в Израиле: возраст от 60 лет, точный микадем, Битуах Леуми, налог на здоровье, налоги (кибуа зхуйот) и выплаты семье.">
+<meta name="description" content="Полный расчёт пенсии в Израиле: возраст от 60 лет, точный микадем, Битуах Леуми, налог на здоровье (ст. 345б), налоги (кибуа зхуйот) и выплаты семье.">
 <style>
 :root{
   --ink:#15251f;--muted:#5a6660;--paper:#f4f1e9;--card:#fffdf8;--line:#ddd6c7;
   --green:#08775a;--green2:#0d9671;--green-light:#e8f5f1;--gold:#c29b52;--gold-light:#fdf8ec;
   --red:#b84b3e;--red-light:#fdf1ef;--blue:#2b6cb0;--blue-light:#ebf4ff;--purple:#7857b8;
-  --shadow:0 16px 40px rgba(26,45,37,.08);--shadow-sm:0 4px 12px rgba(26,45,37,.05);--r:20px;
+  --shadow:0 10px 28px rgba(26,45,37,.06);--shadow-sm:0 2px 8px rgba(26,45,37,.04);--r:14px;
 }
 html{scroll-behavior:smooth}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.45;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.4;overflow-x:hidden}
 button,input,select{font:inherit}
-a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--green);outline-offset:2px}
-.shell{width:min(860px,calc(100% - 20px));margin:auto;padding-bottom:40px}
-.top{padding:14px 0}
-.topbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
-.logo{display:flex;align-items:center;gap:11px;font-weight:850;text-decoration:none;color:inherit}
-.mark{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--green2),var(--green) 70%);color:#fff;display:grid;place-items:center;font-size:24px;font-weight:900;box-shadow:0 6px 18px rgba(8,119,90,.3)}
-a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
-.hero{padding:16px 0 10px;text-align:center}
-.badge{display:inline-flex;align-items:center;gap:6px;background:var(--green-light);color:var(--green);padding:4px 12px;border-radius:20px;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px;border:1px solid rgba(8,119,90,.2)}
-.hero h1{font-size:clamp(22px,4vw,34px);line-height:1.2;letter-spacing:-.03em;margin:0 0 10px}
-.hero p{font-size:13.5px;color:var(--muted);max-width:640px;margin:0 auto}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.shell{width:min(820px,calc(100% - 18px));margin:auto;padding-bottom:32px}
 
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;margin:16px 0;box-shadow:var(--shadow)}
-@media(max-width:480px){.card{padding:14px 12px;margin:12px 0;border-radius:16px}}
-.card-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;border-bottom:1px solid var(--line);padding-bottom:12px}
-.step-num{width:32px;height:32px;border-radius:10px;background:var(--green);color:#fff;font-weight:900;display:grid;place-items:center;font-size:14px;flex-shrink:0}
-.card-header h2{margin:0;font-size:17px;font-weight:800}
-.card-header p{margin:2px 0 0;font-size:11.5px;color:var(--muted)}
+/* Top Header */
+.top{padding:10px 0}
+.topbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:850;text-decoration:none;color:inherit}
+.mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--green2),var(--green) 70%);color:#fff;display:grid;place-items:center;font-size:20px;font-weight:900;box-shadow:0 4px 12px rgba(8,119,90,.25)}
+a.back{font-size:11.5px;font-weight:800;color:var(--green);text-decoration:none}
 
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
-.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px}
+/* Hero Compact */
+.hero{padding:10px 0 6px;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:5px;background:var(--green-light);color:var(--green);padding:3px 10px;border-radius:16px;font-size:11px;font-weight:800;letter-spacing:.03em;margin-bottom:6px;border:1px solid rgba(8,119,90,.2)}
+.hero h1{font-size:clamp(19px,3.2vw,27px);line-height:1.2;letter-spacing:-.02em;margin:0 0 4px}
+.hero p{font-size:12.5px;color:var(--muted);max-width:620px;margin:0 auto}
+
+/* Compact Cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:10px 0;box-shadow:var(--shadow)}
+@media(max-width:480px){.card{padding:12px 10px;margin:8px 0;border-radius:12px}}
+.card-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.step-num{width:26px;height:26px;border-radius:8px;background:var(--green);color:#fff;font-weight:900;display:grid;place-items:center;font-size:12.5px;flex-shrink:0}
+.card-header h2{margin:0;font-size:15px;font-weight:800}
+.card-header p{margin:1px 0 0;font-size:11px;color:var(--muted)}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px}
 @media(max-width:640px){.grid2,.grid3{grid-template-columns:1fr}}
 
-.field{display:flex;flex-direction:column;gap:4px}
-.field label{font-size:12px;font-weight:750;color:var(--ink)}
-.field .desc{font-size:11px;color:var(--muted);line-height:1.25}
+.field{display:flex;flex-direction:column;gap:3px}
+.field label{font-size:11.5px;font-weight:750;color:var(--ink)}
+.field .desc{font-size:10.5px;color:var(--muted);line-height:1.2}
 .input-wrap{position:relative;display:flex;align-items:center}
-.input-wrap input,.input-wrap select{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:14px;color:var(--ink);transition:border-color .15s}
+.input-wrap input,.input-wrap select{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:13.5px;color:var(--ink);transition:border-color .15s}
 .input-wrap input:focus,.input-wrap select:focus{border-color:var(--green);outline:none}
-.input-wrap .suffix{position:absolute;right:10px;color:var(--muted);font-size:12.5px;pointer-events:none;font-weight:700}
+.input-wrap .suffix{position:absolute;right:8px;color:var(--muted);font-size:11.5px;pointer-events:none;font-weight:700}
 
-/* Age Interactive Hero Box */
-.age-selector-box{background:linear-gradient(135deg,#f2fbf7,#e8f6f0);border:2px solid var(--green);border-radius:16px;padding:16px;margin-bottom:16px}
-.age-quick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:6px;margin-top:10px}
-.age-btn{background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:8px 6px;font-size:12px;font-weight:800;color:var(--ink);cursor:pointer;transition:all .15s;text-align:center;box-shadow:var(--shadow-sm)}
+/* Segment Control */
+.seg-control{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:3px;background:var(--paper);padding:2px;border-radius:9px;border:1px solid var(--line)}
+.seg-btn{border:none;background:transparent;padding:6px 6px;border-radius:7px;font-size:11.5px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .15s;text-align:center}
+.seg-btn.active{background:#fff;color:var(--green);box-shadow:0 1px 4px rgba(0,0,0,.08);font-weight:850}
+
+/* Age Interactive Selector Box (Compact) */
+.age-selector-box{background:linear-gradient(135deg,#f0f9f5,#e5f4ee);border:1.5px solid var(--green);border-radius:12px;padding:12px;margin-top:10px}
+.age-quick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:5px;margin-top:8px}
+.age-btn{background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:6px 4px;font-size:11.5px;font-weight:800;color:var(--ink);cursor:pointer;transition:all .15s;text-align:center;box-shadow:var(--shadow-sm)}
 .age-btn:hover{border-color:var(--green);color:var(--green)}
-.age-btn.active{background:var(--green);color:#fff;border-color:var(--green);box-shadow:0 4px 10px rgba(8,119,90,.3)}
+.age-btn.active{background:var(--green);color:#fff;border-color:var(--green);box-shadow:0 3px 8px rgba(8,119,90,.25)}
 
-.seg-control{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:5px;background:var(--paper);padding:3px;border-radius:11px;border:1px solid var(--line)}
-.seg-btn{border:none;background:transparent;padding:7px 8px;border-radius:8px;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .15s;text-align:center}
-.seg-btn.active{background:#fff;color:var(--green);box-shadow:0 2px 6px rgba(0,0,0,.08);font-weight:850}
+/* Result Dashboard (Compact & Crisp) */
+.dash-card{background:linear-gradient(145deg,#075e47,#0a7a5d);color:#fff;border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(8,119,90,.22);margin:14px 0}
+@media(max-width:480px){.dash-card{padding:14px 10px;border-radius:12px}}
+.dash-total{text-align:center;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.15);margin-bottom:12px}
+.dash-total .caption{font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:.05em;opacity:.85}
+.dash-total .sum{font-size:clamp(26px,4.5vw,38px);font-weight:900;line-height:1.1;margin:4px 0 2px;letter-spacing:-.03em}
+.dash-total .sub{font-size:11.5px;opacity:.9;line-height:1.35}
 
-/* Result Dashboard */
-.dash-card{background:linear-gradient(145deg,#075e47,#0a7a5d);color:#fff;border-radius:20px;padding:22px;box-shadow:0 18px 40px rgba(8,119,90,.25);margin:20px 0}
-@media(max-width:480px){.dash-card{padding:16px 14px;border-radius:16px}}
-.dash-total{text-align:center;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.15);margin-bottom:16px}
-.dash-total .caption{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;opacity:.85}
-.dash-total .sum{font-size:clamp(32px,5.5vw,48px);font-weight:900;line-height:1.1;margin:6px 0 4px;letter-spacing:-.03em}
-.dash-total .sub{font-size:12px;opacity:.9;line-height:1.4}
-
-.dash-breakdown{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:16px}
+.dash-breakdown{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px}
 @media(max-width:640px){.dash-breakdown{grid-template-columns:1fr}}
-.dash-item{background:rgba(255,255,255,.1);border-radius:12px;padding:12px;backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15)}
-.dash-item .lbl{font-size:11px;opacity:.85;margin-bottom:3px}
-.dash-item .val{font-size:18px;font-weight:850}
-.dash-item .subval{font-size:10.5px;opacity:.8;margin-top:2px}
+.dash-item{background:rgba(255,255,255,.1);border-radius:10px;padding:10px;backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.12)}
+.dash-item .lbl{font-size:10.5px;opacity:.85;margin-bottom:2px}
+.dash-item .val{font-size:16px;font-weight:850}
+.dash-item .subval{font-size:10px;opacity:.8;margin-top:2px}
 
 /* Scenario Table & Responsive Scroll */
-.table-scroll-wrap{position:relative;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1px solid var(--line);margin:14px 0;background:#fff}
-.scroll-hint{font-size:11px;color:var(--muted);margin-bottom:4px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.table-scroll-wrap{position:relative;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;border:1px solid var(--line);margin:10px 0;background:#fff}
+.scroll-hint{font-size:10.5px;color:var(--muted);margin-bottom:3px;font-weight:750;display:flex;justify-content:space-between;align-items:center}
 
-.scenario-table{width:100%;min-width:640px;border-collapse:collapse;font-size:12.5px;text-align:left}
-.scenario-table th{background:var(--paper);padding:9px 10px;font-weight:800;border-bottom:2px solid var(--line);font-size:11.5px;color:var(--ink);white-space:nowrap}
-.scenario-table td{padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap;cursor:pointer}
+.scenario-table{width:100%;min-width:600px;border-collapse:collapse;font-size:11.5px;text-align:left}
+.scenario-table th{background:var(--paper);padding:7px 8px;font-weight:800;border-bottom:1.5px solid var(--line);font-size:11px;color:var(--ink);white-space:nowrap}
+.scenario-table td{padding:7px 8px;border-bottom:1px solid var(--line);white-space:nowrap;cursor:pointer}
 .scenario-table tr:hover td{background:rgba(8,119,90,.04)}
 .scenario-table tr.highlight td{background:var(--green-light);font-weight:800;border-left:3px solid var(--green)}
 
-.notice-box{padding:12px 14px;border-radius:12px;font-size:12px;line-height:1.45;margin:10px 0}
+.notice-box{padding:9px 11px;border-radius:9px;font-size:11.5px;line-height:1.4;margin:8px 0}
 .notice-green{background:var(--green-light);border:1px solid rgba(8,119,90,.25);color:var(--green)}
 .notice-gold{background:var(--gold-light);border:1px solid rgba(194,155,82,.3);color:#7a5c1e}
 .notice-red{background:var(--red-light);border:1px solid rgba(184,75,62,.3);color:var(--red)}
 .notice-blue{background:var(--blue-light);border:1px solid rgba(43,108,176,.25);color:var(--blue)}
 
-.tax-badge{display:inline-block;padding:2px 7px;border-radius:6px;font-size:10.5px;font-weight:800;background:rgba(255,255,255,.2);margin-left:4px}
-
-.print-btn{background:#fff;color:var(--green);border:none;padding:9px 15px;border-radius:9px;font-size:12.5px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 12px rgba(0,0,0,.1);transition:transform .1s}
+.print-btn{background:#fff;color:var(--green);border:none;padding:8px 14px;border-radius:8px;font-size:11.5px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:5px;box-shadow:0 3px 10px rgba(0,0,0,.1);transition:transform .1s}
 .print-btn:active{transform:scale(.98)}
 
-.math-card{background:#f9f8f4;border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0;font-size:12px;line-height:1.5}
-.math-card h4{margin:0 0 6px;font-size:13px;color:var(--ink)}
-
-.custom-checkbox{display:flex;align-items:flex-start;gap:9px;padding:10px 12px;background:#fff;border:1px solid var(--line);border-radius:11px;cursor:pointer;transition:border-color .15s}
+.custom-checkbox{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;background:#fff;border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:border-color .15s}
 .custom-checkbox:hover{border-color:var(--green)}
-.custom-checkbox input{margin-top:2px;cursor:pointer;accent-color:var(--green);width:16px;height:16px}
+.custom-checkbox input{margin-top:2px;cursor:pointer;accent-color:var(--green);width:15px;height:15px}
 
-/* Legal Disclaimer Box */
-.disclaimer-card{background:#faf8f5;border:1px solid var(--line);border-left:4px solid var(--muted);border-radius:14px;padding:16px;margin:24px 0 10px;font-size:11.5px;line-height:1.6;color:var(--muted)}
-.disclaimer-card h3{margin:0 0 8px;font-size:13px;color:var(--ink);display:flex;align-items:center;gap:6px;font-weight:800}
-.disclaimer-card p{margin:0 0 8px}
-.disclaimer-card p:last-child{margin-bottom:0}
+/* Modern Collapsible Accordions */
+details.accord-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin:10px 0;box-shadow:var(--shadow-sm);overflow:hidden;transition:all .15s ease}
+details.accord-card summary{padding:11px 14px;font-size:12.5px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;background:#fcfbf8;color:var(--ink);list-style:none}
+details.accord-card summary::-webkit-details-marker{display:none}
+details.accord-card summary::after{content:'▼';font-size:10px;color:var(--muted);transition:transform .2s ease}
+details.accord-card[open] summary::after{transform:rotate(180deg)}
+details.accord-card[open] summary{border-bottom:1px solid var(--line);background:#f6f4ee}
+details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-height:1.55;color:var(--ink)}
+
+/* Disclaimer Accordion */
+.disclaimer-accord{background:#faf8f5;border-left:4px solid var(--muted)}
+.disclaimer-accord summary{color:var(--muted);font-size:12px}
+.disclaimer-accord .accord-content{color:var(--muted);font-size:11px}
 
 /* Password Gate Screen */
 #lock-gate{position:fixed;inset:0;background:rgba(21,37,31,.78);backdrop-filter:blur(8px);z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px}
-.lock-box{background:#fff;border-radius:24px;padding:32px 26px;max-width:420px;width:100%;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.2);animation:popIn .25s ease-out}
+.lock-box{background:#fff;border-radius:20px;padding:26px 20px;max-width:380px;width:100%;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.2);animation:popIn .25s ease-out}
 @keyframes popIn{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
-.lock-icon{width:64px;height:64px;border-radius:20px;background:var(--green-light);color:var(--green);display:grid;place-items:center;font-size:32px;margin:0 auto 16px;box-shadow:0 6px 18px rgba(8,119,90,.15)}
-.lock-box h2{margin:0 0 8px;font-size:20px;font-weight:850;color:var(--ink)}
-.lock-box p{margin:0 0 20px;font-size:13px;color:var(--muted);line-height:1.45}
-.lock-input{width:100%;padding:12px 14px;border:2px solid var(--line);border-radius:12px;font-size:16px;text-align:center;letter-spacing:.1em;font-weight:800;color:var(--ink);margin-bottom:12px;transition:border-color .15s}
+.lock-icon{width:54px;height:54px;border-radius:16px;background:var(--green-light);color:var(--green);display:grid;place-items:center;font-size:26px;margin:0 auto 12px;box-shadow:0 4px 14px rgba(8,119,90,.15)}
+.lock-box h2{margin:0 0 6px;font-size:18px;font-weight:850;color:var(--ink)}
+.lock-box p{margin:0 0 16px;font-size:12px;color:var(--muted);line-height:1.4}
+.lock-input{width:100%;padding:10px 12px;border:2px solid var(--line);border-radius:10px;font-size:15px;text-align:center;letter-spacing:.1em;font-weight:800;color:var(--ink);margin-bottom:10px;transition:border-color .15s}
 .lock-input:focus{border-color:var(--green);outline:none}
-.lock-btn{width:100%;padding:12px;background:var(--green);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:800;cursor:pointer;box-shadow:0 6px 18px rgba(8,119,90,.3);transition:all .15s}
+.lock-btn{width:100%;padding:10px;background:var(--green);color:#fff;border:none;border-radius:10px;font-size:13.5px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(8,119,90,.25);transition:all .15s}
 .lock-btn:hover{background:var(--green2)}
 .lock-btn:active{transform:scale(.98)}
-.lock-err{margin-top:10px;font-size:12px;font-weight:750;color:var(--red);display:none}
-.lock-exit-btn{background:transparent;border:none;color:var(--muted);font-size:12px;font-weight:750;margin-top:14px;cursor:pointer;text-decoration:underline}
+.lock-err{margin-top:8px;font-size:11.5px;font-weight:750;color:var(--red);display:none}
+.lock-exit-btn{background:transparent;border:none;color:var(--muted);font-size:11px;font-weight:750;margin-top:12px;cursor:pointer;text-decoration:underline}
 .shake{animation:shake .35s ease-in-out}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
 </style>
@@ -137,7 +146,7 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
   <div class="lock-box" id="lock-card">
     <div class="lock-icon">🔒</div>
     <h2>Закрытый доступ</h2>
-    <p>Профессиональный модуль пенсионного планирования находится в режиме закрытого тестирования. Введите пароль доступа:</p>
+    <p>Профессиональный модуль пенсионного планирования Израиля. Введите пароль доступа:</p>
     <form onsubmit="handleUnlock(event)">
       <input type="password" id="gate-pass" class="lock-input" placeholder="Введите пароль..." autocomplete="current-password" autofocus>
       <button type="submit" class="lock-btn">Войти в калькулятор</button>
@@ -153,49 +162,87 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
       <a class="logo" href="index.html">
         <div class="mark">₪</div>
         <div>
-          <div style="font-size:15px;font-weight:900">Финансовый Портал Израиля</div>
-          <div style="font-size:11.5px;color:var(--muted)">Пенсионный модуль: Государственный стандарт 2026</div>
+          <div style="font-size:14px;font-weight:900">Финансовый Портал Израиля</div>
+          <div style="font-size:11px;color:var(--muted)">Пенсионный стандарт 2026</div>
         </div>
       </a>
-      <div style="display:flex;align-items:center;gap:10px">
-        <button type="button" onclick="lockPage()" style="border:1px solid var(--line);background:#fff;padding:5px 10px;border-radius:8px;font-size:11px;font-weight:750;color:var(--muted);cursor:pointer">🔒 Заблокировать</button>
-        <a class="back" href="index.html">← На главную</a>
+      <div style="display:flex;align-items:center;gap:8px">
+        <button type="button" onclick="lockPage()" style="border:1px solid var(--line);background:#fff;padding:4px 8px;border-radius:6px;font-size:10.5px;font-weight:750;color:var(--muted);cursor:pointer">🔒 Закрыть</button>
+        <a class="back" href="index.html">← Главная</a>
       </div>
     </div>
   </header>
 
   <div class="hero">
     <div class="badge">⚖️ Официальная база Управления рынка капитала и Битуах Леуми</div>
-    <h1>Профессиональный калькулятор пенсии в Израиле</h1>
-    <p>Точный расчет: микадем, Битуах Леуми и Дмей Бриаут с ранней пенсии (ст. 345б), налоги и статус Кибуа Зхуйот (טופס 161ד).</p>
+    <h1>Пенсионный калькулятор Израиля 2026</h1>
+    <p>Точный расчет: микадем, Битуах Леуми, налог на здоровье с ранней пенсии (ст. 345б) и льготы Кибуа Зхуйот (161д).</p>
   </div>
 
-  <!-- ШАГ 1: Личные данные и Возраст выхода на пенсию -->
+  <!-- ШАГ 1: Личные данные -> затем Возраст выхода -->
   <div class="card">
     <div class="card-header">
       <div class="step-num">1</div>
       <div>
         <h2>Личные данные и возраст выхода на пенсию</h2>
-        <p>Выберите возраст выхода — калькулятор мгновенно пересчитает Микадем и все выплаты</p>
+        <p>Сначала укажите ваши параметры, затем выберите планируемый возраст выхода (от 60 лет)</p>
       </div>
     </div>
 
-    <!-- ГЛАВНЫЙ ИНТЕРАКТИВНЫЙ БЛОК ВЫБОРА ВОЗРАСТА -->
-    <div class="age-selector-box">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
-        <div>
-          <label style="font-size:13.5px;font-weight:850;color:var(--green)">🎯 Выберите ваш возраст выхода на пенсию:</label>
-          <div style="font-size:11.5px;color:var(--muted)">Нажмите кнопку или введите точный возраст (например 63.5):</div>
+    <!-- 1.1 Личные параметры заявителя -->
+    <div class="grid3">
+      <div class="field">
+        <label>Пол заявителя</label>
+        <div class="seg-control" id="gender-seg">
+          <button type="button" class="seg-btn active" onclick="setGender('m')">👨 Мужчина</button>
+          <button type="button" class="seg-btn" onclick="setGender('f')">👩 Женщина</button>
         </div>
-        <div class="input-wrap" style="width:130px">
-          <input type="number" id="ret-age" value="63" min="50" max="80" step="0.25" oninput="onRetAgeChange()" style="font-size:18px;font-weight:900;color:var(--green);text-align:center;border:2px solid var(--green)">
+        <span class="desc" id="official-age-label">Официальный возраст: 67 лет</span>
+      </div>
+
+      <div class="field">
+        <label>Год рождения (שנת לידה)</label>
+        <div class="input-wrap">
+          <input type="number" id="user-birth-year" value="1966" min="1940" max="1975" step="1" oninput="calc()">
+          <span class="suffix">г.</span>
+        </div>
+        <span class="desc" id="cur-age-calc-hint">Текущий возраст: ~60 лет</span>
+      </div>
+
+      <div class="field">
+        <label>Семейное положение</label>
+        <div class="seg-control" id="marital-seg">
+          <button type="button" class="seg-btn" onclick="setMarital('married')">💍 В браке</button>
+          <button type="button" class="seg-btn active" onclick="setMarital('single')">👤 Одинокий</button>
+        </div>
+        <span class="desc">Одинокий не платит за вдову $\to$ микадем ниже</span>
+      </div>
+    </div>
+
+    <div class="field" id="spouse-age-wrap" style="display:none;margin-bottom:8px">
+      <label>Год рождения супруга / супруги</label>
+      <div class="input-wrap">
+        <input type="number" id="spouse-birth-year" value="1966" min="1935" max="1985" step="1" oninput="calc()">
+        <span class="suffix">г.</span>
+      </div>
+      <span class="desc" id="spouse-diff-hint" style="color:var(--green);font-weight:700">Супруги одного года рождения</span>
+    </div>
+
+    <!-- 1.2 Планируемый возраст выхода на пенсию (от 60 лет) -->
+    <div class="age-selector-box">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+        <div>
+          <label style="font-size:12.5px;font-weight:850;color:var(--green)">🎯 Планируемый возраст выхода на пенсию (от 60 лет):</label>
+          <div style="font-size:11px;color:var(--muted)">Ранняя пенсия по закону Израиля разрешена строго с 60 лет:</div>
+        </div>
+        <div class="input-wrap" style="width:115px">
+          <input type="number" id="ret-age" value="63" min="60" max="80" step="0.25" oninput="onRetAgeChange()" style="font-size:16px;font-weight:900;color:var(--green);text-align:center;border:2px solid var(--green)">
           <span class="suffix" style="font-weight:900;color:var(--green)">лет</span>
         </div>
       </div>
 
-      <!-- Кнопки быстрого выбора возраста выхода -->
+      <!-- Кнопки быстрого выбора возраста выхода (БЕЗ 55 ЛЕТ, СТРОГО С 60) -->
       <div class="age-quick-grid">
-        <button type="button" class="age-btn" onclick="setQuickRetAge(55)">55 лет</button>
         <button type="button" class="age-btn" onclick="setQuickRetAge(60)">60 лет</button>
         <button type="button" class="age-btn" onclick="setQuickRetAge(62)">62 года</button>
         <button type="button" class="age-btn active" id="chip-63" onclick="setQuickRetAge(63)">63 года</button>
@@ -204,54 +251,16 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
         <button type="button" class="age-btn" onclick="setQuickRetAge(70)">70 лет</button>
       </div>
 
-      <div style="margin-top:10px;padding-top:8px;border-top:1px solid rgba(8,119,90,.15);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px">
-        <span id="ret-age-hint" style="font-size:12px;font-weight:800;color:var(--red)">⚠️ Ранний выход (63 года). До 67 лет действует налог и соцстрах.</span>
-        <span style="font-size:12.5px;font-weight:800;background:#fff;padding:3px 8px;border-radius:6px;border:1px solid var(--green);color:var(--green)">
-          Микадем: <b id="top-mikadem-val" style="font-size:15px">183.61</b>
+      <div style="margin-top:8px;padding-top:6px;border-top:1px solid rgba(8,119,90,.15);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px">
+        <span id="ret-age-hint" style="font-size:11px;font-weight:800;color:var(--red)">⚠️ Ранний выход (63 года). До 67 лет действует налог и соцстрах.</span>
+        <span style="font-size:11.5px;font-weight:800;background:#fff;padding:2px 7px;border-radius:6px;border:1px solid var(--green);color:var(--green)">
+          Микадем: <b id="top-mikadem-val" style="font-size:13.5px">183.61</b>
         </span>
       </div>
     </div>
-
-    <div class="grid3">
-      <div class="field">
-        <label>Пол (заявителя)</label>
-        <div class="seg-control" id="gender-seg">
-          <button type="button" class="seg-btn active" onclick="setGender('m')">👨 Мужчина (זכר)</button>
-          <button type="button" class="seg-btn" onclick="setGender('f')">👩 Женщина (נקבה)</button>
-        </div>
-        <span class="desc" id="official-age-label">Официальный возраст: 67 лет</span>
-      </div>
-
-      <div class="field">
-        <label>Ваш год рождения (שנת לידה)</label>
-        <div class="input-wrap">
-          <input type="number" id="user-birth-year" value="1966" min="1940" max="1975" step="1" oninput="calc()">
-          <span class="suffix">г.</span>
-        </div>
-        <span class="desc">Для расчета ступеней реформы</span>
-      </div>
-
-      <div class="field">
-        <label>Семейное положение</label>
-        <div class="seg-control" id="marital-seg">
-          <button type="button" class="seg-btn" onclick="setMarital('married')">💍 В браке (כן)</button>
-          <button type="button" class="seg-btn active" onclick="setMarital('single')">👤 Одинокий (לא)</button>
-        </div>
-        <span class="desc">Одинокий не платит за вдову $\to$ микадем ниже!</span>
-      </div>
-    </div>
-
-    <div class="field" id="spouse-age-wrap" style="display:none;margin-top:8px">
-      <label>Год рождения супруга / супруги</label>
-      <div class="input-wrap">
-        <input type="number" id="spouse-birth-year" value="1966" min="1935" max="1985" step="1" oninput="calc()">
-        <span class="suffix">г.</span>
-      </div>
-      <span class="desc" id="spouse-diff-hint" style="color:var(--green);font-weight:700">Супруги одного года рождения</span>
-    </div>
   </div>
 
-  <!-- ШАГ 2: Пенсионные накопления и доходность -->
+  <!-- ШАГ 2: Пенсионные накопления -->
   <div class="card">
     <div class="card-header">
       <div class="step-num">2</div>
@@ -265,30 +274,30 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
       <div class="field">
         <label>Сумма накоплений к выходу на пенсию</label>
         <div class="input-wrap">
-          <input type="number" id="cur-capital" value="1000000" min="0" step="10000" placeholder="Например: 1 000 000" oninput="calc()">
+          <input type="number" id="cur-capital" value="1000000" min="0" step="10000" placeholder="1 000 000" oninput="calc()">
           <span class="suffix">₪</span>
         </div>
-        <span class="desc">Из годового отчета пенсионного фонда (סך החיסכון הצבור)</span>
+        <span class="desc">Из годового отчета пенсионного фонда (סך החיסכון)</span>
       </div>
 
       <div class="field">
-        <label>Капитализация / Снять часть суммы наличными (היוון קצבה)</label>
+        <label>Капитализация / Снять наличными (היוון קצבה)</label>
         <div class="input-wrap">
           <input type="number" id="lump-sum" value="0" min="0" step="10000" placeholder="0" oninput="calc()">
           <span class="suffix">₪ разово</span>
         </div>
-        <span class="desc">Сумма, которую вы хотите снять сразу (уменьшает ежемесячную пенсию)</span>
+        <span class="desc">Сумма, забираемая сразу (уменьшает ежемесячную пенсию)</span>
       </div>
     </div>
   </div>
 
-  <!-- ШАГ 3: Стаж и статус Репатрианта (Оле Хадаш) -->
+  <!-- ШАГ 3: Стаж и статус Репатрианта -->
   <div class="card">
     <div class="card-header">
       <div class="step-num">3</div>
       <div>
         <h2>Стаж в Израиле и пособие Битуах Леуми</h2>
-        <p>Битуах Леуми начисляет +2% к пособию по старости за каждый год страхового стажа свыше 10 лет (до +50%)</p>
+        <p>Битуах Леуми начисляет +2% к пособию за каждый год стажа свыше 10 лет (до +50%)</p>
       </div>
     </div>
 
@@ -313,7 +322,7 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
     </div>
 
     <div id="low-income-alert" class="notice-box notice-gold" style="display:none">
-      💡 <b>Особое право для Олим с небольшим стажем:</b> Если суммарный доход пенсионера ниже гарантированного минимума (~4,200 ₪ на одного / ~6,400 ₪ на пару), Битуах Леуми доплачивает <b>Социальную надбавку (Ашламат Ахнаса)</b> + льготы на арнону, лекарства и электроэнергию.
+      💡 <b>Особое право для Олим с небольшим стажем:</b> Если суммарный доход пенсионера ниже гарантированного минимума (~4,200 ₪ на одного / ~6,400 ₪ на пару), Битуах Леуми доплачивает <b>Социальную надбавку (Ашламат Ахнаса)</b>.
     </div>
   </div>
 
@@ -323,7 +332,7 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
       <div class="step-num">4</div>
       <div>
         <h2>Пенсионный трек и Микадем (מקדם המרה)</h2>
-        <p>Точный делитель капитала в зависимости от возраста выхода и семейной защиты</p>
+        <p>Делитель капитала в зависимости от возраста и семейной защиты</p>
       </div>
     </div>
 
@@ -332,13 +341,13 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
         <label>Пенсия супругу(е) после ухода пенсионера (פנסיית שארים)</label>
         <div class="input-wrap">
           <select id="spouse-pension-pct" onchange="calc()">
-            <option value="0" selected>0% (Без пенсии супругу / Чистый трек для одиноких)</option>
-            <option value="60">60% от пенсии пожизненно (Стандартный семейный трек)</option>
-            <option value="100">100% от пенсии пожизненно (Максимальная защита)</option>
+            <option value="0" selected>0% (Без пенсии супругу / Для одиноких)</option>
+            <option value="60">60% от пенсии пожизненно (Стандартный трек)</option>
+            <option value="100">100% от пенсии пожизненно (Максимум)</option>
             <option value="30">30% от пенсии пожизненно</option>
           </select>
         </div>
-        <span class="desc">Выплата супругу(е) до конца его/её жизни</span>
+        <span class="desc">Пожизненная выплата супругу(е)</span>
       </div>
 
       <div class="field">
@@ -352,90 +361,78 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
             <option value="60">60 месяцев (5 лет)</option>
           </select>
         </div>
-        <span class="desc">Если пенсионер уходит раньше — остаток гарантированно получают дети/наследники</span>
+        <span class="desc">Остаток гарантированно получают наследники</span>
       </div>
     </div>
 
-    <!-- ДИНАМИЧЕСКАЯ ПЛАШКА МИКАДЕМА -->
     <div class="notice-box notice-blue" id="mikadem-explain-box">
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px">
         <div>
-          <span style="font-size:12px;opacity:.9">Выбранный возраст выхода: <b id="dyn-ret-age-label" style="font-size:14px">63 года</b></span><br>
-          <span style="font-size:14px;font-weight:800">Расчетный Микадем: </span>
-          <span id="mikadem-val" style="font-size:22px;font-weight:900;color:#1a365d;background:#fff;padding:2px 10px;border-radius:8px;border:1px solid #90cdf4;display:inline-block;margin-left:4px">183.61</span>
+          <span style="font-size:11.5px">Выбранный возраст: <b id="dyn-ret-age-label">63 года</b></span> · 
+          <span style="font-size:12px;font-weight:800">Микадем: </span>
+          <span id="mikadem-val" style="font-size:16px;font-weight:900;color:#1a365d;background:#fff;padding:1px 8px;border-radius:6px;border:1px solid #90cdf4;display:inline-block">183.61</span>
         </div>
-        <div style="text-align:right">
-          <span style="font-size:11.5px">Пенсия на каждые 100,000 ₪:</span><br>
-          <b id="pension-per-100k" style="font-size:16px;color:#1a365d">545 ₪ / мес</b>
+        <div>
+          <span style="font-size:11px">Пенсия на каждые 100 000 ₪: <b id="pension-per-100k" style="font-size:13px;color:#1a365d">545 ₪ / мес</b></span>
         </div>
-      </div>
-    </div>
-
-    <div class="math-card">
-      <h4>🔍 Динамическая шкала Микадема для вашего текущего выбора:</h4>
-      <div id="dynamic-mikadem-summary" style="line-height:1.6">
-        <!-- Заполняется JS динамически -->
       </div>
     </div>
   </div>
 
   <!-- ШАГ 5: Налоговый статус: КИБУА ЗХУЙОТ (Форма 161д) -->
-  <div class="card" style="border: 2px solid var(--gold)">
+  <div class="card" style="border: 1.5px solid var(--gold)">
     <div class="card-header" style="border-bottom-color: rgba(194,155,82,.4)">
       <div class="step-num" style="background:var(--gold)">5</div>
       <div>
-        <h2 style="color:#7a5c1e">Статус Кибуа Зхуйот (טופס 161ד — Фиксация прав в Мас Ахнаса)</h2>
-        <p>⚖️ <b>Закон Израиля (ст. 9а Налогового кодекса):</b> Оформление доступно только с официального пенсионного возраста («Гиль Приша Мезаке» — 67 лет для мужчин / 62–65 для женщин).</p>
+        <h2 style="color:#7a5c1e">Статус Кибуа Зхуйот (טופס 161ד) и Пицуим</h2>
+        <p>⚖️ <b>Ст. 9а Налогового кодекса:</b> Льготная корзина оформляется с официального возраста (67 для мужчин / 62–65 для женщин).</p>
       </div>
     </div>
 
-    <div style="margin-bottom:12px">
+    <div style="margin-bottom:8px">
       <label class="custom-checkbox">
         <input type="checkbox" id="kibua-done" checked onchange="calc()">
         <div>
-          <b style="font-size:12.5px;color:var(--ink)">Оформлять «Кибуа Зхуйот» (Форма 161д) по достижении официального возраста</b>
-          <div style="font-size:11px;color:var(--muted);margin-top:2px">Даёт право на безналоговую корзину до ~4,950 ₪/мес (вступает в силу с 67 лет для мужчин / с 62–65 лет для женщин).</div>
+          <b style="font-size:11.5px;color:var(--ink)">Оформлять «Кибуа Зхуйот» (Форма 161д) при достижении официального возраста</b>
+          <div style="font-size:10.5px;color:var(--muted)">Даёт безналоговую корзину до ~4,950 ₪/мес (вступает в силу с 67 лет для мужчин).</div>
         </div>
       </label>
     </div>
 
     <div class="grid2" id="severance-block">
       <div class="field">
-        <label>Забирали ли вы безналоговый Пицуим (פיצויים פטורים) за последние 32 года?</label>
+        <label>Забирали ли вы безналоговый Пицуим за последние 32 года?</label>
         <div class="seg-control" id="severance-seg">
           <button type="button" class="seg-btn active" onclick="setSeverance(false)">❌ Нет (полный птор)</button>
           <button type="button" class="seg-btn" onclick="setSeverance(true)">⚠️ Да, забирал(а)</button>
         </div>
-        <span class="desc">Забранный пицуим уменьшает безналоговую корзину пенсии (נוסחת השילוב)</span>
+        <span class="desc">Забранный пицуим уменьшает льготную корзину пенсии</span>
       </div>
 
       <div class="field" id="severance-sum-wrap" style="display:none">
-        <label>Примерная сумма забранного безналогового пицуим</label>
+        <label>Сумма забранного безналогового пицуим</label>
         <div class="input-wrap">
           <input type="number" id="severance-sum" value="0" min="0" step="5000" placeholder="0" oninput="calc()">
           <span class="suffix">₪</span>
         </div>
-        <span class="desc">Каждый 1 ₪ забранного пицуим «съедает» 1.35 ₪ из безналогового капитала</span>
+        <span class="desc">Каждый 1 ₪ пицуим «съедает» 1.35 ₪ из льготного капитала</span>
       </div>
     </div>
 
     <div id="kibua-age-warning" class="notice-box notice-gold" style="display:none">
-      ⚠️ <b>ВНИМАНИЕ О РАННЕМ ВЫХОДЕ (ДО 67 ЛЕТ):</b><br>
-      • <b>Подоходный налог (Мас Ахнаса):</b> Кибуа Зхуйот (форма 161д) по закону <i>(סעיף 9א)</i> **НЕЛЬЗЯ** оформить до официального возраста (<span id="warn-off-age-text">67 лет</span>). До 67 лет действует стандартный налог.<br>
-      • <b>Битуах Леуми и Здравоохранение (ст. 345б):</b> С ранней пенсии пенсионный фонд обязан удерживать взносы в Битуах Леуми и налог на здоровье (Дмей Бриаут — 3.49%–11.79%). С 67 лет наступает 100% освобождение!
+      ⚠️ <b>Внимание о раннем выходе (до 67 лет):</b> До официального возраста Кибуа Зхуйот (161д) по закону не применяется (действует обычный налог), а пенсионный фонд удерживает взносы в Битуах Леуми и налог на здоровье (ст. 345б: 3.49%–11.79%). С 67 лет наступает 100% освобождение!
     </div>
 
     <div id="kibua-warning" class="notice-box notice-red" style="display:none">
-      🚨 <b>ВНИМАНИЕ: Если вы НЕ оформите форму 161д даже после достижения официального возраста:</b><br>
-      Пенсионный фонд по закону обязан удерживать стандартный подоходный налог <b>со всего размера пенсии без применения льготы</b>! Вы будете ежемесячно терять на налогах от <b>500 до 2,500+ ₪</b> чистыми на ровном месте.
+      🚨 <b>Внимание:</b> Без оформления формы 161д после наступления 67 лет фонд будет удерживать налог со всей пенсии без применения льготы!
     </div>
 
     <div id="kibua-success" class="notice-box notice-green">
-      ✅ <b>При оформлении формы 161д (с 67 лет):</b> Вы получаете максимальное государственное освобождение от подоходного налога (0 ₪) + полное освобождение от Битуах Леуми.
+      ✅ <b>С 67 лет с формой 161д:</b> Максимальное освобождение от подоходного налога (0 ₪) + полное освобождение от Битуах Леуми.
     </div>
   </div>
 
-  <!-- ДАШБОРД РЕЗУЛЬТАТОВ -->
+  <!-- ДАШБОРД РЕЗУЛЬТАТОВ (КОМПАКТНЫЙ) -->
   <div class="dash-card" id="results-dash">
     <div class="dash-total">
       <div class="caption">ИТОГОВАЯ ЧИСТАЯ ПЕНСИЯ НА РУКИ (נטו לחשבון הבנק)</div>
@@ -451,9 +448,9 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
       </div>
 
       <div class="dash-item">
-        <div class="lbl">📉 Налоги и сборы с пенсии</div>
+        <div class="lbl">📉 Налоги и соцстрах с пенсии</div>
         <div class="val" id="res-total-deductions" style="color:#ffb3ba">0 ₪</div>
-        <div class="subval" id="res-deductions-details">Налог: 0 ₪ · Битуах/Здоровье: 0 ₪</div>
+        <div class="subval" id="res-deductions-details">Налог: 0 ₪ · Битуах: 0 ₪</div>
       </div>
 
       <div class="dash-item">
@@ -463,23 +460,23 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
       </div>
     </div>
 
-    <div style="text-align:center;margin-top:10px">
-      <button class="print-btn" onclick="window.print()">🖨️ Распечатать / Сохранить расчет в PDF</button>
+    <div style="text-align:center">
+      <button class="print-btn" onclick="window.print()">🖨️ Распечатать / Сохранить в PDF</button>
     </div>
   </div>
 
-  <!-- СРАВНЕНИЕ ВОЗРАСТОВ ВЫХОДА (КЛИКАБЕЛЬНАЯ ИНТЕРАКТИВНАЯ ТАБЛИЦА) -->
+  <!-- СРАВНЕНИЕ СЦЕНАРИЕВ (НАЧИНАЯ С 60 ЛЕТ) -->
   <div class="card">
     <div class="card-header">
       <div class="step-num">💡</div>
       <div>
         <h2>Сравнение сценариев: в каком возрасте выгоднее выйти?</h2>
-        <p>Нажмите на любую строку таблицы, чтобы мгновенно применить этот возраст к расчёту!</p>
+        <p>Нажмите на любую строку таблицы, чтобы мгновенно применить этот возраст</p>
       </div>
     </div>
 
     <div class="scroll-hint">
-      <span>👆 Нажмите на строку для выбора возраста</span>
+      <span>👆 Кликните по строке для выбора</span>
       <span>↔️ Прокручивайте вправо</span>
     </div>
     <div class="table-scroll-wrap">
@@ -503,63 +500,53 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
     </div>
 
     <div class="notice-box notice-green">
-      📌 <b>Главный вывод пенсионного консультанта:</b> Отсрочка выхода на пенсию с раннего возраста (60–63) до официального возраста («Гиль Приша Мезаке» 67 лет) даёт четверной финансовый выигрыш: <b>включение Кибуа Зхуйот (0 подоходного налога)</b>, <b>полное освобождение от взносов Битуах Леуми и Дмей Бриаут</b>, <b>выплату пособия по старости</b> и <b>снижение делителя (микадема)</b>.
+      📌 <b>Вывод пенсионного консультанта:</b> Отсрочка выхода с раннего возраста (60–63) до официального (67 лет) даёт четверной выигрыш: <b>Кибуа Зхуйот (0 налога)</b>, <b>0 ₪ взносов в Битуах Леуми и налога на здоровье</b>, <b>гос. пособие по старости</b> и <b>снижение микадема</b>.
     </div>
   </div>
 
-  <!-- ДЕТАЛИ НАЛОГООБЛОЖЕНИЯ И КИБУА ЗХУЙОТ -->
-  <div class="card">
-    <div class="card-header">
-      <div class="step-num">⚖️</div>
-      <div>
-        <h2>Закон о налогах на пенсию и взносах Битуах Леуми / Дмей Бриаут</h2>
-        <p>Официальные правила Налогового управления и Института национального страхования Израиля</p>
-      </div>
-    </div>
-
-    <div style="font-size:12.5px;line-height:1.55;color:var(--ink)">
-      <p><b>Официальные правила удержаний с пенсии:</b></p>
-      <ol style="padding-left:18px;margin:0 0 10px">
+  <!-- ГАРМОШКА: ОФИЦИАЛЬНЫЕ ПРАВИЛА И ЗАКОНОДАТЕЛЬСТВО -->
+  <details class="accord-card">
+    <summary>📖 Официальные правила: Налогообложение пенсии, Кибуа Зхуйот и взносы Битуах Леуми (ст. 345б, ст. 9а)</summary>
+    <div class="accord-content">
+      <ol style="padding-left:16px;margin:0 0 8px">
         <li><b>Взносы в Битуах Леуми и Здравоохранение (ст. 345б Закона о нацстраховании):</b>
-          <ul style="padding-left:16px;margin:4px 0">
+          <ul style="padding-left:14px;margin:3px 0">
             <li><b>При раннем выходе (60–66 лет):</b> пенсионный фонд по закону <i>(סעיף 345ב לחוק הביטוח הלאומי)</i> обязан удерживать из пенсии взносы на нацстрахование и налог на здравоохранение (3.49% до 7,522 ₪ и 11.79% свыше).</li>
             <li><b>С 67 лет (официального возраста):</b> наступает <b>100% освобождение от взносов в Битуах Леуми и налога на здоровье</b> с пенсионных выплат фонда. Медстраховка (~223 ₪) вычитается государством из государственного пособия по старости, а пенсию фонда вы получаете без удержаний!</li>
           </ul>
         </li>
         <li><b>Подоходный налог (Мас Ахнаса — ст. 9а):</b>
-          <ul style="padding-left:16px;margin:4px 0">
+          <ul style="padding-left:14px;margin:3px 0">
             <li><b>До 67 лет:</b> пенсия облагается как обычный доход без применения безналоговой корзины Кибуа Зхуйот.</li>
             <li><b>С 67 лет:</b> пенсионер оформляет форму 161д (*טופס 161ד*) и получает безналоговую корзину до <b>4,950 ₪/мес</b>, снижая подоходный налог до <b>0 ₪</b>.</li>
           </ul>
         </li>
-        <li><b>Правило 32 лет (נוסחת השילוב):</b> Налоговая проверяет все выходные пособия (пицуим), которые вы забирали без налога за последние 32 года трудового стажа. Каждый 1 ₪ забранного пицуим «съедает» 1.35 ₪ из безналогового капитала.</li>
+        <li><b>Правило 32 лет (נוסחת השילוב):</b> Налоговая проверяет выходные пособия (пицуим), забранные без налога за последние 32 года. Каждый 1 ₪ забранного пицуим «съедает» 1.35 ₪ из льготного капитала.</li>
       </ol>
     </div>
-  </div>
+  </details>
 
-  <!-- ЮРИДИЧЕСКИЙ ДИСКЛЕЙМЕР И ГИЛЮЙ НАОТ (DISCLAIMER) -->
-  <div class="disclaimer-card">
-    <h3>🛡️ Правовое уведомление и дисклеймер (הבהרה משפטית וגילוי נאות)</h3>
-    <p>
-      <b>1. Не является индивидуальной консультацией:</b> Настоящий калькулятор и любые приведённые на сайте расчёты носят исключительно информационный, сравнительный и ознакомительный характер и <b>не являются</b> индивидуальной инвестиционной, пенсионной, финансовой или налоговой консультацией в соответствии с Законом о надзоре за финансовыми услугами от 2005 года <i>(חוק הפיקוח על שירותים פיננסיים (ייעוץ, שיווק ומערכת סליקה פנסיוניים), התשס"ה-2005)</i>.
-    </p>
-    <p>
-      <b>2. Окончательные расчёты фонда:</b> Фактический размер ежемесячной пенсии, актуарный коэффициент (микадем), точные суммы выплат наследникам и условия конвертации капитала определяются исключительно в момент подачи официального заявления о выходе на пенсию управляющей компанией вашего пенсионного фонда или страховой компании на основании действующего устава фонда <i>(תקנון קרן הפנסיה)</i>, выбранного пенсионного трека, состояния здоровья и состава семьи.
-    </p>
-    <p>
-      <b>3. Налоговый статус (Мас Ахнаса и Битуах Леуми):</b> Налоговые льготы, включая освобождение по статье 9(а) <i>(קיבוע זכויות)</i> и взносы по статье 345(б) <i>(דמי ביטוח לאומי ובריאות)</i>, рассчитываются налоговым инспектором <i>(פקיד שומה)</i> и фондом на основании поданных отчетов и возраста выхода.
-    </p>
-    <p>
-      <b>4. Рекомендация:</b> Перед принятием любых практических решений о выходе на пенсию, капитализации средств <i>(היוון קצבה)</i>, переводе накоплений между фондами или отказе от пенсионных гарантий семье настоятельно рекомендуется обратиться к лицензированному пенсионному консультанту <i>(יועץ פנסיוני מורשה)</i>, лицензированному пенсионному агенту или сертифицированному аудитору / налоговому консультанту <i>(רואה חשבון / יועץ מס)</i>.
-    </p>
-  </div>
+  <!-- ГАРМОШКА: ДИСКЛЕЙМЕР -->
+  <details class="accord-card disclaimer-accord">
+    <summary>🛡️ Правовое уведомление и дисклеймер (הבהרה משפטית וגילוי נאות)</summary>
+    <div class="accord-content">
+      <p style="margin:0 0 6px">
+        <b>1. Не является индивидуальной консультацией:</b> Настоящий калькулятор носит ознакомительный характер и не является индивидуальной инвестиционной, пенсионной или налоговой консультацией <i>(חוק הפיקוח על שירותים פיננסיים, התשס"ה-2005)</i>.
+      </p>
+      <p style="margin:0 0 6px">
+        <b>2. Окончательные расчёты:</b> Фактический размер пенсии и актуарный микадем определяются пенсионным фондом при подаче заявления на основании действующего устава <i>(תקנון קרן הפנסיה)</i> и состава семьи.
+      </p>
+      <p style="margin:0">
+        <b>3. Рекомендация:</b> Перед принятием решений о выходе на пенсию, капитализации <i>(היוון)</i> или отказе от гарантий семье рекомендуется обратиться к лицензированному пенсионному консультанту <i>(יועץ פנסיוני מורשה)</i>.
+      </p>
+    </div>
+  </details>
 
 </div>
 
 <script>
 /* ==========================================================================
-   PASSWORD ACCESS GATE
-   PIN / Password: 2026 or pension2026
+   PASSWORD ACCESS GATE (PIN / Password: 2026 or pension2026)
    ========================================================================== */
 const VALID_HASHES = [
   "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab", // 2026
@@ -616,37 +603,33 @@ function checkAccess() {
 
 const CURRENT_YEAR = 2026;
 
-// Эталонная актуарная база Микадема для одиноких (מסלול יחיד ללא שארים וללא הבטחה)
+// Эталонная актуарная база Микадема для одиноких (минимальный возраст 60 лет)
 const MALE_BASE_TABLE = {
-  50: 232.81, 51: 229.01, 52: 225.21, 53: 221.41, 54: 217.61,
-  55: 213.81, 56: 210.01, 57: 206.21, 58: 202.41, 59: 198.61,
   60: 194.81, 61: 191.13, 62: 187.45, 63: 183.61, 64: 179.60,
   65: 175.60, 66: 171.37, 67: 167.14, 68: 162.70, 69: 158.18, 70: 153.65,
   71: 149.15, 72: 144.65, 73: 140.15, 74: 135.65, 75: 131.15
 };
 
 const FEMALE_BASE_TABLE = {
-  50: 245.00, 51: 241.25, 52: 237.50, 53: 233.75, 54: 230.00,
-  55: 226.00, 56: 222.25, 57: 218.50, 58: 214.75, 59: 211.00,
   60: 207.00, 61: 203.46, 62: 199.92, 63: 196.21, 64: 192.33,
   65: 188.45, 66: 184.33, 67: 180.21, 68: 175.90, 69: 171.45, 70: 167.00,
   71: 162.50, 72: 158.00, 73: 153.50, 74: 149.00, 75: 144.50
 };
 
-// Официальная таблица ступеней реформы 2021 года (Таблица Битуах Леуми и Кнессета)
+// Официальная таблица ступеней реформы для женщин
 function getFemaleOfficialAgeByYear(birthYear){
-  if(birthYear <= 1959) return { age: 62.0, label: "62 года (0 мес)" };
-  if(birthYear === 1960) return { age: 62 + 4/12, label: "62 года и 4 мес" };
-  if(birthYear === 1961) return { age: 62 + 8/12, label: "62 года и 8 мес" };
-  if(birthYear === 1962) return { age: 63.0, label: "63 года (0 мес)" };
-  if(birthYear === 1963) return { age: 63 + 3/12, label: "63 года и 3 мес" };
-  if(birthYear === 1964) return { age: 63 + 6/12, label: "63 года и 6 мес" };
-  if(birthYear === 1965) return { age: 63 + 9/12, label: "63 года и 9 мес" };
-  if(birthYear === 1966) return { age: 64.0, label: "64 года (0 мес)" };
-  if(birthYear === 1967) return { age: 64 + 3/12, label: "64 года и 3 мес" };
-  if(birthYear === 1968) return { age: 64 + 6/12, label: "64 года и 6 мес" };
-  if(birthYear === 1969) return { age: 64 + 9/12, label: "64 года и 9 мес" };
-  return { age: 65.0, label: "65 лет (0 мес)" };
+  if(birthYear <= 1959) return { age: 62.0, label: "62 года" };
+  if(birthYear === 1960) return { age: 62 + 4/12, label: "62 г. и 4 мес" };
+  if(birthYear === 1961) return { age: 62 + 8/12, label: "62 г. и 8 мес" };
+  if(birthYear === 1962) return { age: 63.0, label: "63 года" };
+  if(birthYear === 1963) return { age: 63 + 3/12, label: "63 г. и 3 мес" };
+  if(birthYear === 1964) return { age: 63 + 6/12, label: "63 г. и 6 мес" };
+  if(birthYear === 1965) return { age: 63 + 9/12, label: "63 г. и 9 мес" };
+  if(birthYear === 1966) return { age: 64.0, label: "64 года" };
+  if(birthYear === 1967) return { age: 64 + 3/12, label: "64 г. и 3 мес" };
+  if(birthYear === 1968) return { age: 64 + 6/12, label: "64 г. и 6 мес" };
+  if(birthYear === 1969) return { age: 64 + 9/12, label: "64 г. и 9 мес" };
+  return { age: 65.0, label: "65 лет" };
 }
 
 let state = {
@@ -656,12 +639,14 @@ let state = {
 };
 
 function onRetAgeChange(){
-  const retVal = parseFloat(document.getElementById('ret-age').value) || 63;
+  let retVal = parseFloat(document.getElementById('ret-age').value) || 63;
+  if(retVal < 60) retVal = 60;
   updateQuickChips(retVal);
   calc();
 }
 
 function setQuickRetAge(age){
+  if(age < 60) age = 60;
   document.getElementById('ret-age').value = age;
   updateQuickChips(age);
   calc();
@@ -669,8 +654,7 @@ function setQuickRetAge(age){
 
 function updateQuickChips(age){
   document.querySelectorAll('.age-quick-grid .age-btn').forEach(btn => {
-    const btnText = btn.textContent;
-    const btnAge = parseFloat(btnText);
+    const btnAge = parseFloat(btn.textContent);
     btn.classList.toggle('active', Math.abs(btnAge - age) < 0.2);
   });
 }
@@ -721,15 +705,15 @@ function setSeverance(val){
   calc();
 }
 
-/* Точный расчет Микадема (מקדם המרה לקצבה) */
+/* Точный расчет Микадема (от 60 лет) */
 function getMikadem(retAge, gender, isMarried, spousePct, guaranteeMonths, spouseAgeDiffYears){
   const tbl = (gender === 'm') ? MALE_BASE_TABLE : FEMALE_BASE_TABLE;
   let base = 0;
 
   if(retAge in tbl) {
     base = tbl[retAge];
-  } else if(retAge < 50) {
-    base = tbl[50] + (50 - retAge) * 3.8;
+  } else if(retAge < 60) {
+    base = tbl[60] + (60 - retAge) * 3.8;
   } else if(retAge > 75) {
     base = tbl[75] - (retAge - 75) * 4.5;
   } else {
@@ -747,7 +731,6 @@ function getMikadem(retAge, gender, isMarried, spousePct, guaranteeMonths, spous
     else if(guaranteeMonths === 180) gAdj = 8.0;
     else if(guaranteeMonths === 120) gAdj = 5.0;
     else if(guaranteeMonths === 60) gAdj = 2.0;
-    else gAdj = 0.0;
     return base + gAdj;
   } else {
     let sAdj = 0;
@@ -765,7 +748,7 @@ function getMikadem(retAge, gender, isMarried, spousePct, guaranteeMonths, spous
   }
 }
 
-/* Расчет пособия Битуах Леуми (קצבת אזרח ותיק) */
+/* Расчет пособия Битуах Леуми */
 function getBtlAllowance(retAge, gender, seniority, aliyahAge, marital, userBirthYear){
   const officialAge = (gender === 'm') ? 67.0 : getFemaleOfficialAgeByYear(userBirthYear).age;
   
@@ -773,11 +756,7 @@ function getBtlAllowance(retAge, gender, seniority, aliyahAge, marital, userBirt
     return { btlTotal: 0, isEligible: false, base: 0, seniorityAdd: 0, deferralAdd: 0, officialAge };
   }
 
-  let base = 1736;
-  if(marital === 'married') {
-    base = 2610;
-  }
-
+  let base = (marital === 'married') ? 2610 : 1736;
   let extraYears = Math.max(0, seniority - 10);
   let seniorityPct = Math.min(50, extraYears * 2);
   let seniorityAdd = base * (seniorityPct / 100);
@@ -800,18 +779,13 @@ function getBtlAllowance(retAge, gender, seniority, aliyahAge, marital, userBirt
   };
 }
 
-/* 
-  Расчет удержаний Битуах Леуми и Дмей Бриаут (налог на здоровье)
-  По закону (סעיף 345ב לחוק הביטוח הלאומי):
-  - При раннем выходе (до 67 лет для мужчин / до 62-65 для женщин): удерживаются взносы BTL и налог на здоровье!
-  - С 67 лет: пенсия фонда ПОЛНОСТЬЮ освобождена от Битуах Леуми и Дмей Бриаут (0 ₪).
-*/
+/* Удержания Битуах Леуми и Дмей Бриаут (ст. 345б) */
 function calcBtlHealthDeductions(grossPension, retAge, officialAge){
   if(retAge >= officialAge - 0.01) {
     return { btl: 0, health: 0, total: 0, isExempt: true };
   }
 
-  const threshold = 7522; // 60% от средней зарплаты по закону
+  const threshold = 7522;
   let btl = 0;
   let health = 0;
 
@@ -831,23 +805,17 @@ function calcBtlHealthDeductions(grossPension, retAge, officialAge){
   };
 }
 
-/* 
-  Расчет подоходного налога (Мас Ахнаса) с учетом ст. 9(а) Налогового кодекса Израиля:
-  КИБУА ЗХУЙОТ ПО ЗАКОНУ ДЕЙСТВУЕТ ТОЛЬКО С ОФИЦИАЛЬНОГО ВОЗРАСТА («גיל פרישה מזכה» — 67 для мужчин / 62-65 для женщин)!
-*/
+/* Расчет подоходного налога (Мас Ахнаса — ст. 9а) */
 function calcPensionTax(grossPension, retAge, officialAge, gender, isKibuaDone, withdrewSeverance, severanceSum){
   let exemptCeiling = 0;
   const isEligibleForKibua = (retAge >= officialAge - 0.01);
 
   if(isEligibleForKibua && isKibuaDone) {
     exemptCeiling = 4950;
-
     if(withdrewSeverance && severanceSum > 0) {
       const monthlyPenalty = (severanceSum * 1.35) / 180;
       exemptCeiling = Math.max(0, exemptCeiling - monthlyPenalty);
     }
-  } else {
-    exemptCeiling = 0;
   }
 
   let taxableGross = Math.max(0, grossPension - exemptCeiling);
@@ -873,6 +841,7 @@ function fmt(num){
 }
 
 function selectScenarioAge(age){
+  if(age < 60) age = 60;
   document.getElementById('ret-age').value = age;
   updateQuickChips(age);
   calc();
@@ -881,7 +850,12 @@ function selectScenarioAge(age){
 
 function calc(){
   const userBirthYear = parseInt(document.getElementById('user-birth-year').value) || 1966;
-  const retAge = parseFloat(document.getElementById('ret-age').value) || 63;
+  const curAgeEst = CURRENT_YEAR - userBirthYear;
+  document.getElementById('cur-age-calc-hint').textContent = `Текущий возраст: ~${curAgeEst} лет`;
+
+  let retAge = parseFloat(document.getElementById('ret-age').value) || 63;
+  if(retAge < 60) retAge = 60;
+
   const curCapital = parseFloat(document.getElementById('cur-capital').value) || 0;
   const lumpSum = parseFloat(document.getElementById('lump-sum').value) || 0;
   const seniority = parseInt(document.getElementById('israel-seniority').value) || 0;
@@ -913,7 +887,6 @@ function calc(){
   const isEarlyRetirement = (retAge < officialAge - 0.05);
 
   document.getElementById('kibua-age-warning').style.display = isEarlyRetirement ? 'block' : 'none';
-  document.getElementById('warn-off-age-text').textContent = offAgeLabel;
 
   if(!isEarlyRetirement) {
     document.getElementById('kibua-warning').style.display = isKibuaDone ? 'none' : 'block';
@@ -929,11 +902,11 @@ function calc(){
 
   const btl = getBtlAllowance(retAge, state.gender, seniority, aliyahAge, state.marital, userBirthYear);
   
-  // 1. Подоходный налог (Мас Ахнаса)
+  // Подоходный налог (Мас Ахнаса)
   const taxRes = calcPensionTax(fundPensionGross, retAge, officialAge, state.gender, isKibuaDone, state.withdrewSeverance, severanceSum);
   const pensionTax = taxRes.tax;
 
-  // 2. Битуах Леуми и Дмей Бриаут с ранней пенсии (ст. 345б)
+  // Битуах Леуми и Здоровье с ранней пенсии (ст. 345б)
   const btlHealth = calcBtlHealthDeductions(fundPensionGross, retAge, officialAge);
   
   const totalDeductions = pensionTax + btlHealth.total;
@@ -941,20 +914,19 @@ function calc(){
 
   const totalNet = fundPensionNet + btl.btlTotal;
   const totalGross = fundPensionGross + btl.btlTotal;
-  const spouseMonthly = Math.round(fundPensionGross * (spousePct / 100));
 
   document.getElementById('total-net-sum').textContent = fmt(totalNet) + ' ₪ / мес';
   
   let deductionsNote = '';
   if(isEarlyRetirement) {
-    deductionsNote = `Удержания: -${fmt(totalDeductions)} ₪ (Подоходный: ${fmt(pensionTax)} ₪ · Битуах/Здоровье: ${fmt(btlHealth.total)} ₪)`;
+    deductionsNote = `Удержания: -${fmt(totalDeductions)} ₪ (Подоходный: ${fmt(pensionTax)} ₪ · Соцстрах/Здоровье: ${fmt(btlHealth.total)} ₪)`;
   } else if(totalDeductions === 0) {
-    deductionsNote = `<span class="tax-badge">100% без налогов и сборов (0 ₪) благодаря 67 годам и Кибуа Зхуйот</span>`;
+    deductionsNote = `100% освобождение от налогов (с 67 лет и Кибуа Зхуйот)`;
   } else {
-    deductionsNote = `Подоходный налог: ${fmt(pensionTax)} ₪ (Битуах/Здоровье: 0 ₪ освобождено)`;
+    deductionsNote = `Подоходный налог: ${fmt(pensionTax)} ₪ (Битуах/Здоровье: 0 ₪)`;
   }
 
-  document.getElementById('total-gross-sub').innerHTML = `Брутто: ${fmt(totalGross)} ₪ · ${deductionsNote}`;
+  document.getElementById('total-gross-sub').textContent = `Брутто: ${fmt(totalGross)} ₪ · ${deductionsNote}`;
 
   document.getElementById('res-fund-pension').textContent = fmt(fundPensionGross) + ' ₪ / мес';
   document.getElementById('res-capital-at-ret').textContent = `Капитал: ${fmt(curCapital)} ₪`;
@@ -972,30 +944,13 @@ function calc(){
     document.getElementById('res-btl-details').textContent = 'Пособие начнется с официального возраста';
   }
 
-  // ОБНОВЛЕНИЕ МИКАДЕМА В ШАГЕ 1 И ШАГЕ 4
+  // Обновление Микадема
   document.getElementById('top-mikadem-val').textContent = mikadem.toFixed(2);
   document.getElementById('dyn-ret-age-label').textContent = retAge + ' лет';
   document.getElementById('mikadem-val').textContent = mikadem.toFixed(2);
   
   const immediatePer100k = Math.round(100000 / mikadem);
   document.getElementById('pension-per-100k').textContent = fmt(immediatePer100k) + ' ₪ / мес';
-
-  // ДИНАМИЧЕСКАЯ ШКАЛА МИКАДЕМА
-  const m55 = getMikadem(55, state.gender, isMarried, spousePct, guaranteeMonths, spouseDiffYears);
-  const m60 = getMikadem(60, state.gender, isMarried, spousePct, guaranteeMonths, spouseDiffYears);
-  const m63 = getMikadem(63, state.gender, isMarried, spousePct, guaranteeMonths, spouseDiffYears);
-  const m67 = getMikadem(67, state.gender, isMarried, spousePct, guaranteeMonths, spouseDiffYears);
-  const m70 = getMikadem(70, state.gender, isMarried, spousePct, guaranteeMonths, spouseDiffYears);
-
-  document.getElementById('dynamic-mikadem-summary').innerHTML = `
-    <ul style="margin:0;padding-left:18px">
-      <li>В <b>55 лет</b>: микадем = <b>${m55.toFixed(2)}</b> (пенсия с 1M: ${fmt(Math.round(1000000/m55))} ₪/мес)</li>
-      <li>В <b>60 лет</b>: микадем = <b>${m60.toFixed(2)}</b> (пенсия с 1M: ${fmt(Math.round(1000000/m60))} ₪/мес)</li>
-      <li style="${Math.abs(retAge - 63) < 0.2 ? 'color:var(--green);font-weight:850' : ''}">В <b>63 года</b>: микадем = <b>${m63.toFixed(2)}</b> (пенсия с 1M: ${fmt(Math.round(1000000/m63))} ₪/мес) ${Math.abs(retAge - 63) < 0.2 ? '👈 ВЫБРАН СЕЙЧАС' : ''}</li>
-      <li style="${Math.abs(retAge - 67) < 0.2 ? 'color:var(--green);font-weight:850' : ''}">В <b>67 лет</b>: микадем = <b>${m67.toFixed(2)}</b> (пенсия с 1M: ${fmt(Math.round(1000000/m67))} ₪/мес) ${Math.abs(retAge - 67) < 0.2 ? '👈 ВЫБРАН СЕЙЧАС' : ''}</li>
-      <li>В <b>70 лет</b>: микадем = <b>${m70.toFixed(2)}</b> (пенсия с 1M: ${fmt(Math.round(1000000/m70))} ₪/мес)</li>
-    </ul>
-  `;
 
   if(retAge < officialAge - 0.1) {
     document.getElementById('ret-age-hint').innerHTML = `⚠️ Ранний выход (${retAge} лет вместо ${offAgeLabel}). Удерживается налог и соцстрах; Битуах Леуми — с ${offAgeLabel}.`;
@@ -1024,8 +979,8 @@ function renderScenarios(curCapital, seniority, aliyahAge, isMarried, spousePct,
   const tbody = document.getElementById('scenarios-body');
   tbody.innerHTML = '';
 
-  let testAges = [55, 60, 62, 63, 65, officialAge, 70];
-  if(!testAges.includes(selectedRetAge)) {
+  let testAges = [60, 62, 63, 65, officialAge, 70];
+  if(!testAges.includes(selectedRetAge) && selectedRetAge >= 60) {
     testAges.push(selectedRetAge);
     testAges.sort((a,b) => a - b);
   }
@@ -1051,7 +1006,7 @@ function renderScenarios(curCapital, seniority, aliyahAge, isMarried, spousePct,
 
     tr.innerHTML = `
       <td><b>${ageLabel}</b> ${Math.abs(age - selectedRetAge) < 0.2 ? '★' : ''}</td>
-      <td><b style="color:#2b6cb0;font-size:13px">${mik.toFixed(2)}</b></td>
+      <td><b style="color:#2b6cb0;font-size:12px">${mik.toFixed(2)}</b></td>
       <td>${fmt(curCapital)} ₪</td>
       <td>${fmt(fundGross)} ₪</td>
       <td>${taxCol}</td>
