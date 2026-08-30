@@ -41,9 +41,10 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
 .card-header p{margin:2px 0 0;font-size:11.5px;color:var(--muted)}
 
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px}
 .grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;margin-bottom:12px}
 @media(max-width:720px){.grid4{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.grid2,.grid4{grid-template-columns:1fr}}
+@media(max-width:480px){.grid2,.grid3,.grid4{grid-template-columns:1fr}}
 
 .field{display:flex;flex-direction:column;gap:4px}
 .field label{font-size:12px;font-weight:750;color:var(--ink)}
@@ -52,6 +53,12 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
 .input-wrap input,.input-wrap select{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:14px;color:var(--ink);transition:border-color .15s}
 .input-wrap input:focus,.input-wrap select:focus{border-color:var(--green);outline:none}
 .input-wrap .suffix{position:absolute;right:10px;color:var(--muted);font-size:12.5px;pointer-events:none;font-weight:700}
+
+/* Age Quick Chips */
+.quick-age-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.age-chip{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:4px 8px;font-size:11px;font-weight:750;color:var(--muted);cursor:pointer;transition:all .15s}
+.age-chip:hover{border-color:var(--green);color:var(--green)}
+.age-chip.active{background:var(--green);color:#fff;border-color:var(--green)}
 
 .seg-control{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:5px;background:var(--paper);padding:3px;border-radius:11px;border:1px solid var(--line)}
 .seg-btn{border:none;background:transparent;padding:7px 8px;border-radius:8px;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .15s;text-align:center}
@@ -169,8 +176,8 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
     <div class="card-header">
       <div class="step-num">1</div>
       <div>
-        <h2>Личные данные и точные года рождения</h2>
-        <p>Год рождения определяет официальный пенсионный возраст («Гиль Приша Мезаке») и разницу в возрасте супругов</p>
+        <h2>Личные данные и возраст выхода на пенсию</h2>
+        <p>Изменение возраста выхода мгновенно пересчитывает микадем, налоги и выплаты</p>
       </div>
     </div>
 
@@ -194,21 +201,31 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
       </div>
 
       <div class="field">
-        <label>Текущий возраст</label>
+        <label>Текущий возраст (сегодня)</label>
         <div class="input-wrap">
           <input type="number" id="cur-age" value="60" min="40" max="80" step="1" oninput="onCurAgeChange()">
           <span class="suffix">лет</span>
         </div>
-        <span class="desc">Минимальная пенсия — с 60 лет</span>
+        <span class="desc">Сколько вам полных лет сейчас</span>
       </div>
 
       <div class="field">
-        <label>Возраст выхода на пенсию</label>
+        <label style="color:var(--green);font-weight:850">🎯 Возраст выхода на пенсию</label>
         <div class="input-wrap">
-          <input type="number" id="ret-age" value="67" min="60" max="80" step="0.25" oninput="calc()">
-          <span class="suffix">лет</span>
+          <input type="number" id="ret-age" value="67" min="50" max="80" step="0.25" oninput="onRetAgeChange()" style="border:2px solid var(--green);font-weight:850;color:var(--green)">
+          <span class="suffix" style="font-weight:900;color:var(--green)">лет</span>
         </div>
-        <span class="desc" id="ret-age-hint">Официальный возраст: 67 лет</span>
+        <span class="desc" id="ret-age-hint" style="font-weight:750">Выход в 67 лет (официальный)</span>
+        
+        <!-- Кнопки быстрого выбора возраста выхода -->
+        <div class="quick-age-chips">
+          <button type="button" class="age-chip" onclick="setQuickRetAge(60)">60 лет</button>
+          <button type="button" class="age-chip" onclick="setQuickRetAge(62)">62 года</button>
+          <button type="button" class="age-chip" onclick="setQuickRetAge(63)">63 года</button>
+          <button type="button" class="age-chip" onclick="setQuickRetAge(65)">65 лет</button>
+          <button type="button" class="age-chip active" id="chip-67" onclick="setQuickRetAge(67)">67 лет</button>
+          <button type="button" class="age-chip" onclick="setQuickRetAge(70)">70 лет</button>
+        </div>
       </div>
     </div>
 
@@ -324,8 +341,8 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
     <div class="card-header">
       <div class="step-num">4</div>
       <div>
-        <h2>Пенсионный трек и страхование семьи (מסלול פרישה)</h2>
-        <p>Какую защиту получает семья и какой период выплат гарантирован фондом</p>
+        <h2>Пенсионный трек и Микадем (מקדם המרה)</h2>
+        <p>Точный делитель капитала в зависимости от возраста выхода и семейной защиты</p>
       </div>
     </div>
 
@@ -358,19 +375,29 @@ a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
       </div>
     </div>
 
+    <!-- ДИНАМИЧЕСКАЯ ПЛАШКА МИКАДЕМА -->
     <div class="notice-box notice-blue" id="mikadem-explain-box">
-      📊 <b>Ваш расчетный актуарный микадем (מקדם המרה): <span id="mikadem-val" style="font-size:16px;font-weight:900">167.14</span></b><br>
-      <span style="font-size:11.5px">Формула: <b>Пенсия = Капитал ÷ Микадем</b>. Каждые 100,000 ₪ накоплений дают <b><span id="pension-per-100k">598</span> ₪ в месяц</b> пожизненно.</span>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+        <div>
+          <span style="font-size:12px;opacity:.9">Возраст выхода: <b id="dyn-ret-age-label" style="font-size:14px">67 лет</b></span><br>
+          <span style="font-size:14px;font-weight:800">Расчетный Микадем: </span>
+          <span id="mikadem-val" style="font-size:22px;font-weight:900;color:#1a365d;background:#fff;padding:2px 10px;border-radius:8px;border:1px solid #90cdf4;display:inline-block;margin-left:4px">167.14</span>
+        </div>
+        <div style="text-align:right">
+          <span style="font-size:11.5px">Пенсия на каждые 100,000 ₪:</span><br>
+          <b id="pension-per-100k" style="font-size:16px;color:#1a365d">598 ₪ / мес</b>
+        </div>
+      </div>
+      <div style="font-size:11px;margin-top:8px;border-top:1px solid rgba(43,108,176,.2);padding-top:6px;opacity:.9">
+        Формула: <b>Пенсия = Накопленный капитал ÷ Микадем</b>. При изменении возраста выхода в Шаге 1 микадем мгновенно меняется.
+      </div>
     </div>
 
     <div class="math-card">
-      <h4>🔍 Официальные актуарные стандарты Израиля (Управление рынка капитала):</h4>
-      <p style="margin:0 0 6px">Таблицы коэффициентов (מקדם המרה) утверждены единым уставом пенсионных фондов <i>(תקנון תקני של רשות שוק ההון)</i> и действуют одинаково во всех фондах (Мигдаль, Харэль, Менора, Клаль, Феникс):</p>
-      <ul style="margin:0;padding-left:18px">
-        <li><b>Одинокий мужчина 67 лет без гарантии:</b> базовый делитель равен ровно <b>167.14</b> (каждые 1,000,000 ₪ дают 5,983 ₪/мес).</li>
-        <li><b>Одинокий мужчина 63 лет без гарантии:</b> делитель равен <b>183.61</b>.</li>
-        <li><b>Семейный трек с защитой вдовы 60% и гарантией 240 мес:</b> фонд берет на себя страхование на 20 лет вперед, поэтому микадем повышается до <b>~198–218</b>.</li>
-      </ul>
+      <h4>🔍 Динамическая шкала Микадема для вашего профиля:</h4>
+      <div id="dynamic-mikadem-summary" style="line-height:1.6">
+        <!-- Заполняется JS динамически -->
+      </div>
     </div>
   </div>
 
@@ -610,11 +637,13 @@ const CURRENT_YEAR = 2026;
 
 // Эталонная актуарная база Микадема для одиноких (מסלול יחיד ללא שארים וללא הבטחה)
 const MALE_BASE_TABLE = {
+  55: 213.81, 56: 210.01, 57: 206.21, 58: 202.41, 59: 198.61,
   60: 194.81, 61: 191.13, 62: 187.45, 63: 183.61, 64: 179.60,
   65: 175.60, 66: 171.37, 67: 167.14, 68: 162.70, 69: 158.18, 70: 153.65
 };
 
 const FEMALE_BASE_TABLE = {
+  55: 226.00, 56: 222.25, 57: 218.50, 58: 214.75, 59: 211.00,
   60: 207.00, 61: 203.46, 62: 199.92, 63: 196.21, 64: 192.33,
   65: 188.45, 66: 184.33, 67: 180.21, 68: 175.90, 69: 171.45, 70: 167.00
 };
@@ -654,10 +683,16 @@ function onUserBirthYearChange(){
 }
 
 function onCurAgeChange(){
-  const age = parseInt(document.getElementById('cur-age').value) || 60;
-  const bYear = CURRENT_YEAR - age;
+  const age = parseFloat(document.getElementById('cur-age').value) || 60;
+  const bYear = CURRENT_YEAR - Math.round(age);
   document.getElementById('user-birth-year').value = bYear;
   document.getElementById('user-age-calc-hint').textContent = `Возраст в ${CURRENT_YEAR} году: ~${age} лет`;
+
+  const retAgeInput = document.getElementById('ret-age');
+  const curRetVal = parseFloat(retAgeInput.value) || 67;
+  if(curRetVal < age) {
+    retAgeInput.value = age;
+  }
 
   if(state.gender === 'f') {
     updateFemaleOfficialAge();
@@ -665,11 +700,29 @@ function onCurAgeChange(){
   calc();
 }
 
+function onRetAgeChange(){
+  const retVal = parseFloat(document.getElementById('ret-age').value) || 67;
+  updateQuickChips(retVal);
+  calc();
+}
+
+function setQuickRetAge(age){
+  document.getElementById('ret-age').value = age;
+  updateQuickChips(age);
+  calc();
+}
+
+function updateQuickChips(age){
+  document.querySelectorAll('.quick-age-chips .age-chip').forEach(chip => {
+    const chipAge = parseFloat(chip.textContent);
+    chip.classList.toggle('active', Math.abs(chipAge - age) < 0.2);
+  });
+}
+
 function updateFemaleOfficialAge(){
   const bYear = parseInt(document.getElementById('user-birth-year').value) || 1966;
   const data = getFemaleOfficialAgeByYear(bYear);
   document.getElementById('official-age-label').textContent = `Официальный возраст: ${data.label}`;
-  document.getElementById('ret-age').value = data.age.toFixed(2);
 }
 
 function setGender(g){
@@ -682,7 +735,6 @@ function setGender(g){
     updateFemaleOfficialAge();
   } else {
     document.getElementById('official-age-label').textContent = 'Официальный возраст: 67 лет';
-    document.getElementById('ret-age').value = 67;
   }
   calc();
 }
@@ -720,15 +772,17 @@ function getMikadem(retAge, gender, isMarried, spousePct, guaranteeMonths, spous
 
   if(retAge in tbl) {
     base = tbl[retAge];
-  } else if(retAge < 60) {
-    base = tbl[60] + (60 - retAge) * 3.8;
+  } else if(retAge < 55) {
+    base = tbl[55] + (55 - retAge) * 3.8;
   } else if(retAge > 70) {
     base = tbl[70] - (retAge - 70) * 4.5;
   } else {
     const floorA = Math.floor(retAge);
     const ceilA = floorA + 1;
     const frac = retAge - floorA;
-    base = tbl[floorA] * (1 - frac) + tbl[ceilA] * frac;
+    const baseFloor = tbl[floorA] || tbl[60];
+    const baseCeil = tbl[ceilA] || tbl[70];
+    base = baseFloor * (1 - frac) + baseCeil * frac;
   }
 
   if(!isMarried || spousePct === 0) {
@@ -971,20 +1025,37 @@ function calc(){
   document.getElementById('res-spouse-monthly').textContent = isMarried ? (fmt(spouseMonthly) + ' ₪') : '0 ₪ (одинокий)';
   document.getElementById('res-guarantee-text').textContent = guaranteeMonths > 0 ? `Гарантия семье: ${guaranteeMonths} мес.` : 'Без гарантии';
 
+  // ДИНАМИЧЕСКИЙ ВЫВОД МИКАДЕМА
+  document.getElementById('dyn-ret-age-label').textContent = retAge + ' лет';
   document.getElementById('mikadem-val').textContent = mikadem.toFixed(2);
   
   const immediatePer100k = Math.round(100000 / mikadem);
-  document.getElementById('pension-per-100k').textContent = fmt(immediatePer100k);
+  document.getElementById('pension-per-100k').textContent = fmt(immediatePer100k) + ' ₪ / мес';
+
+  // ДИНАМИЧЕСКАЯ ШКАЛА МИКАДЕМА
+  const m60 = getMikadem(60, state.gender, isMarried, spousePct, guaranteeMonths, spouseDiffYears);
+  const m63 = getMikadem(63, state.gender, isMarried, spousePct, guaranteeMonths, spouseDiffYears);
+  const m67 = getMikadem(67, state.gender, isMarried, spousePct, guaranteeMonths, spouseDiffYears);
+  const m70 = getMikadem(70, state.gender, isMarried, spousePct, guaranteeMonths, spouseDiffYears);
+
+  document.getElementById('dynamic-mikadem-summary').innerHTML = `
+    <ul style="margin:0;padding-left:18px">
+      <li>При выходе в <b>60 лет</b>: микадем = <b>${m60.toFixed(2)}</b></li>
+      <li>При выходе в <b>63 года</b>: микадем = <b>${m63.toFixed(2)}</b> (пенсия с 1M: ${fmt(Math.round(1000000/m63))} ₪/мес)</li>
+      <li>При выходе в <b>67 лет</b>: микадем = <b>${m67.toFixed(2)}</b> (пенсия с 1M: ${fmt(Math.round(1000000/m67))} ₪/мес)</li>
+      <li>При выходе в <b>70 лет</b>: микадем = <b>${m70.toFixed(2)}</b> (пенсия с 1M: ${fmt(Math.round(1000000/m70))} ₪/мес)</li>
+    </ul>
+  `;
 
   if(retAge < officialAge - 0.1) {
-    document.getElementById('ret-age-hint').innerHTML = `⚠️ Ранний выход (до ${offAgeLabel}). Удерживается налог и соцстрах; Битуах Леуми — с ${offAgeLabel}.`;
+    document.getElementById('ret-age-hint').innerHTML = `⚠️ Ранний выход (${retAge} лет вместо ${offAgeLabel}). Удерживается налог и соцстрах; Битуах Леуми — с ${offAgeLabel}.`;
     document.getElementById('ret-age-hint').style.color = 'var(--red)';
   } else if(retAge > officialAge + 0.1) {
-    document.getElementById('ret-age-hint').innerHTML = `🌟 Отложенный выход (+${Math.floor(retAge - officialAge)*5}% надбавка от Битуах Леуми).`;
+    document.getElementById('ret-age-hint').innerHTML = `🌟 Отложенный выход (${retAge} лет: +${Math.floor(retAge - officialAge)*5}% надбавка от Битуах Леуми).`;
     document.getElementById('ret-age-hint').style.color = 'var(--green)';
   } else {
     document.getElementById('ret-age-hint').innerHTML = `✓ Официальный пенсионный возраст («Гиль Приша Мезаке» — ${offAgeLabel}).`;
-    document.getElementById('ret-age-hint').style.color = 'var(--muted)';
+    document.getElementById('ret-age-hint').style.color = 'var(--green)';
   }
 
   const senBonus = Math.min(50, Math.max(0, (seniority + Math.floor(yearsToRet)) - 10) * 2);
@@ -1003,12 +1074,17 @@ function renderScenarios(curAge, curCapital, curSalary, fundYield, seniority, al
   const tbody = document.getElementById('scenarios-body');
   tbody.innerHTML = '';
 
-  const testAges = state.gender === 'm' ? [60, 62, 63, 65, 67, 70] : [60, 62, officialAge, 65, 67, 70];
+  let testAges = [60, 62, 63, 65, officialAge, 70];
+  if(!testAges.includes(selectedRetAge)) {
+    testAges.push(selectedRetAge);
+    testAges.sort((a,b) => a - b);
+  }
+
   const monthlyDeposit = curSalary * 0.195;
   const annualDeposit = monthlyDeposit * 12;
 
   testAges.forEach(age => {
-    if(age < curAge) return;
+    if(age < curAge && Math.abs(age - selectedRetAge) > 0.05) return;
 
     const yToRet = Math.max(0, age - curAge);
     let cap = curCapital;
@@ -1035,7 +1111,7 @@ function renderScenarios(curAge, curCapital, curSalary, fundYield, seniority, al
 
     tr.innerHTML = `
       <td><b>${ageLabel}</b> ${Math.abs(age - selectedRetAge) < 0.2 ? '★' : ''}</td>
-      <td>${mik.toFixed(2)}</td>
+      <td><b style="color:#2b6cb0">${mik.toFixed(2)}</b></td>
       <td>${fmt(cap)} ₪</td>
       <td>${fmt(fundGross)} ₪</td>
       <td>${taxCol}</td>
