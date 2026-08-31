@@ -335,7 +335,7 @@ h1{font-size:clamp(20px,3.6vw,28px);line-height:1.2;margin:4px 0 6px;letter-spac
         </div>
         <p class="deal-desc">Эксклюзивная скидка 50% на первый заказ в приложении Wolt/10bis. Действует на все рестораны, кафе и супермаркеты сети. Уже активировали 18 420 человек.</p>
         <div class="deal-actions">
-          <a href="#" class="deal-btn" onclick="alert('Переход в магазин Wolt по партнёрской ссылке');return false;">Взять скидку 50% →</a>
+          <a href="https://wolt.com/he/isr" target="_blank" rel="noopener noreferrer nofollow" class="deal-btn">Взять скидку 50% ↗</a>
           <button class="deal-promo-btn" onclick="copyCode('WOLT50ISRAEL', this)">📋 Скопировать код: WOLT50ISRAEL</button>
         </div>
       </div>
@@ -387,6 +387,7 @@ const TODAY = new Date(2026, 7, 31, 15, 30, 0);
 let OFFERS_DATA = [
   {
     id: "wolt-01",
+    url: "https://wolt.com/he/isr",
     category: "food",
     title: "Wolt / 10bis — скидка 50% на первый заказ еды и продуктов",
     retailer: "Wolt Israel (וולט)",
@@ -406,6 +407,7 @@ let OFFERS_DATA = [
   },
   {
     id: "rami-levy-01",
+    url: "https://www.rami-levy.co.il/",
     category: "food",
     title: "Rami Levy Online — скидки на мясо, птицу и базовые продукты",
     retailer: "Rami Levy (רמי לוי שיווק השקמה)",
@@ -425,6 +427,7 @@ let OFFERS_DATA = [
   },
   {
     id: "dominos-01",
+    url: "https://www.dominos.co.il/",
     category: "food",
     title: "Domino's Pizza — семейное комбо за 99 ₪ (2 пиццы + кола)",
     retailer: "Domino's Pizza (דומינוס)",
@@ -444,6 +447,7 @@ let OFFERS_DATA = [
   },
   {
     id: "shufersal-01",
+    url: "https://www.shufersal.co.il/",
     category: "food",
     title: "Shufersal Online — купон на 60 ₪ при заказе от 350 ₪",
     retailer: "Shufersal Online (שופרסל)",
@@ -463,6 +467,7 @@ let OFFERS_DATA = [
   },
   {
     id: "mcdonalds-01",
+    url: "https://www.mcdonalds.co.il/",
     category: "food",
     title: "McDonald's Israel — 1+1 на большие комбо-обеды в приложении",
     retailer: "McDonald's (מקדונלד'ס ישראל)",
@@ -482,6 +487,7 @@ let OFFERS_DATA = [
   },
   {
     id: "yohananof-01",
+    url: "https://yochananof.co.il/",
     category: "food",
     title: "Yohananof — скидки до 30% на бытовую химию и подгузники",
     retailer: "Yohananof (יוחננוף)",
@@ -501,6 +507,7 @@ let OFFERS_DATA = [
   },
   {
     id: "superpharm-01",
+    url: "https://shop.super-pharm.co.il/",
     category: "pharmacy",
     title: "Super-Pharm — акция 1+1 на косметику и средства гигиены",
     retailer: "Super-Pharm (סופר-פארם)",
@@ -520,6 +527,7 @@ let OFFERS_DATA = [
   },
   {
     id: "iherb-01",
+    url: "https://il.iherb.com/",
     category: "pharmacy",
     title: "iHerb — скидка 20% на весь раздел витаминов и Омега-3",
     retailer: "iHerb Israel (אייהרב)",
@@ -539,6 +547,7 @@ let OFFERS_DATA = [
   },
   {
     id: "be-pharm-01",
+    url: "https://www.bestore.co.il/",
     category: "pharmacy",
     title: "Be Pharm — скидка 25% на дерматокосметику La Roche-Posay и CeraVe",
     retailer: "Be by Shufersal (בי פארם)",
@@ -558,6 +567,7 @@ let OFFERS_DATA = [
   },
   {
     id: "ksp-01",
+    url: "https://ksp.co.il/",
     category: "electronics",
     title: "KSP — распродажа ноутбуков и планшетов к учебному году",
     retailer: "KSP Israel (קיי אס פי)",
@@ -577,6 +587,7 @@ let OFFERS_DATA = [
   },
   {
     id: "ivory-01",
+    url: "https://www.ivory.co.il/",
     category: "electronics",
     title: "Ivory — скидка 15% на смартфоны Xiaomi, Samsung и мониторы",
     retailer: "Ivory Computers (אייבורי)",
@@ -596,6 +607,7 @@ let OFFERS_DATA = [
   },
   {
     id: "bug-01",
+    url: "https://www.bug.co.il/",
     category: "electronics",
     title: "Bug / JBL — беспроводные наушники и колонки со скидкой 30%",
     retailer: "Bug Multisystem (באג)",
@@ -615,6 +627,7 @@ let OFFERS_DATA = [
   },
   {
     id: "asos-01",
+    url: "https://www.asos.com/",
     category: "clothes",
     title: "ASOS — минус 25% на осеннюю коллекцию брендовой одежды",
     retailer: "ASOS UK -> Israel",
@@ -634,6 +647,7 @@ let OFFERS_DATA = [
   },
   {
     id: "terminal-x-01",
+    url: "https://www.terminalx.com/",
     category: "clothes",
     title: "Terminal X — скидки до 40% на бренды Nike, Adidas, Mango, Levi's",
     retailer: "Terminal X Israel (טרמינל איקס)",
@@ -653,6 +667,7 @@ let OFFERS_DATA = [
   },
   {
     id: "castro-01",
+    url: "https://www.castro.com/",
     category: "clothes",
     title: "Castro & Fox — 1+1 на весь детский ассортимент и базовую одежду",
     retailer: "Castro / Fox Israel (קסטרו / פוקס)",
@@ -672,6 +687,7 @@ let OFFERS_DATA = [
   },
   {
     id: "shein-01",
+    url: "https://il.shein.com/",
     category: "clothes",
     title: "Shein Israel — скидка 20% при заказе от 200 ₪ + бесплатная доставка",
     retailer: "Shein Israel",
@@ -691,6 +707,7 @@ let OFFERS_DATA = [
   },
   {
     id: "aliexpress-01",
+    url: "https://aliexpress.com/",
     category: "home",
     title: "AliExpress — органайзеры и товары для кухни со скидкой 40%",
     retailer: "AliExpress Choice",
@@ -710,6 +727,7 @@ let OFFERS_DATA = [
   },
   {
     id: "ace-01",
+    url: "https://www.ace.co.il/",
     category: "home",
     title: "Ace / Home Center — мебель для балкона и краска со скидкой 35%",
     retailer: "Ace Israel (אייס)",
@@ -729,6 +747,7 @@ let OFFERS_DATA = [
   },
   {
     id: "ikea-01",
+    url: "https://www.ikea.co.il/",
     category: "home",
     title: "IKEA Israel — скидки на рабочие столы, стулья и стеллажи Kallax",
     retailer: "IKEA Israel (איקאה)",
@@ -748,6 +767,7 @@ let OFFERS_DATA = [
   },
   {
     id: "streaming-01",
+    url: "https://www.spotify.com/il-en/",
     category: "streaming",
     title: "Spotify / Apple Music — 3 месяца подписки за 20 ₪",
     retailer: "Spotify Israel (ספוטיפיי)",
@@ -767,6 +787,7 @@ let OFFERS_DATA = [
   },
   {
     id: "netflix-01",
+    url: "https://www.netflix.com/il/",
     category: "streaming",
     title: "Netflix / Disney+ — семейная подписка 4K со скидкой 30%",
     retailer: "Streaming Pass Israel",
@@ -786,6 +807,7 @@ let OFFERS_DATA = [
   },
   {
     id: "cosmetics-01",
+    url: "https://www.cultbeauty.com/",
     category: "cosmetics",
     title: "Sephora & Cult Beauty — люксовые сыворотки и духи до 30%",
     retailer: "Cult Beauty / Sephora",
@@ -805,6 +827,7 @@ let OFFERS_DATA = [
   },
   {
     id: "booking-01",
+    url: "https://www.booking.com/",
     category: "travel",
     title: "Booking.com — кэшбэк 8% на отели в Эйлате и на Мёртвом море",
     retailer: "Booking Israel Hotels",
@@ -824,6 +847,7 @@ let OFFERS_DATA = [
   },
   {
     id: "fattal-01",
+    url: "https://www.fattal.co.il/",
     category: "travel",
     title: "Fattal & Isrotel — скидка 20% на отдых в выходные и праздники",
     retailer: "Fattal Hotels (פתאל)",
@@ -973,7 +997,7 @@ function applyFilter() {
           <p class="card-why">${item.why}</p>
           <div class="card-foot">
             <button type="button" class="card-promo" onclick="copyCode('${item.promo}', this)">📋 ${item.promo}</button>
-            <a href="#" class="card-cta" onclick="alert('Переход на сайт магазина ${item.retailer}');return false;">В магазин →</a>
+            <a href="${item.url || '#'}" target="_blank" rel="noopener noreferrer nofollow" class="card-cta">В магазин ↗</a>
           </div>
         </div>
       </div>

@@ -22,7 +22,8 @@
     "cities": [
       "all"
     ],
-    "score": 116.72
+    "score": 116.72,
+    "url": "https://www.spotify.com/il-en/"
   },
   "offers": [
     {
@@ -45,7 +46,8 @@
       "cities": [
         "all"
       ],
-      "score": 116.72
+      "score": 116.72,
+      "url": "https://www.spotify.com/il-en/"
     },
     {
       "id": "mcdonalds-01",
@@ -67,7 +69,8 @@
       "cities": [
         "all"
       ],
-      "score": 92.12
+      "score": 92.12,
+      "url": "https://www.mcdonalds.co.il/"
     },
     {
       "id": "wolt-01",
@@ -113,7 +116,8 @@
         "afula",
         "eilat"
       ],
-      "score": 91.97
+      "score": 91.97,
+      "url": "https://wolt.com/he/isr"
     },
     {
       "id": "castro-01",
@@ -135,7 +139,8 @@
       "cities": [
         "all"
       ],
-      "score": 89.48
+      "score": 89.48,
+      "url": "https://www.castro.com/"
     },
     {
       "id": "superpharm-01",
@@ -182,7 +187,8 @@
         "beit-shemesh",
         "afula"
       ],
-      "score": 88.16
+      "score": 88.16,
+      "url": "https://shop.super-pharm.co.il/"
     },
     {
       "id": "aliexpress-01",
@@ -204,7 +210,8 @@
       "cities": [
         "all"
       ],
-      "score": 79.0
+      "score": 79.0,
+      "url": "https://aliexpress.com/"
     },
     {
       "id": "terminal-x-01",
@@ -226,7 +233,8 @@
       "cities": [
         "all"
       ],
-      "score": 78.12
+      "score": 78.12,
+      "url": "https://www.terminalx.com/"
     },
     {
       "id": "dominos-01",
@@ -269,7 +277,8 @@
         "afula",
         "eilat"
       ],
-      "score": 73.92
+      "score": 73.92,
+      "url": "https://www.dominos.co.il/"
     },
     {
       "id": "ace-01",
@@ -291,7 +300,8 @@
       "cities": [
         "all"
       ],
-      "score": 63.82
+      "score": 63.82,
+      "url": "https://www.ace.co.il/"
     },
     {
       "id": "yohananof-01",
@@ -325,7 +335,8 @@
         "afula",
         "kiryat-gat"
       ],
-      "score": 60.12
+      "score": 60.12,
+      "url": "https://yochananof.co.il/"
     },
     {
       "id": "netflix-01",
@@ -347,7 +358,8 @@
       "cities": [
         "all"
       ],
-      "score": 59.56
+      "score": 59.56,
+      "url": "https://www.netflix.com/il/"
     },
     {
       "id": "cosmetics-01",
@@ -369,7 +381,8 @@
       "cities": [
         "all"
       ],
-      "score": 57.28
+      "score": 57.28,
+      "url": "https://www.cultbeauty.com/"
     },
     {
       "id": "rami-levy-01",
@@ -391,7 +404,8 @@
       "cities": [
         "all"
       ],
-      "score": 56.9
+      "score": 56.9,
+      "url": "https://www.rami-levy.co.il/"
     },
     {
       "id": "bug-01",
@@ -413,7 +427,8 @@
       "cities": [
         "all"
       ],
-      "score": 56.72
+      "score": 56.72,
+      "url": "https://www.bug.co.il/"
     },
     {
       "id": "asos-01",
@@ -435,7 +450,8 @@
       "cities": [
         "all"
       ],
-      "score": 53.02
+      "score": 53.02,
+      "url": "https://www.asos.com/"
     },
     {
       "id": "be-pharm-01",
@@ -457,7 +473,8 @@
       "cities": [
         "all"
       ],
-      "score": 50.34
+      "score": 50.34,
+      "url": "https://www.bestore.co.il/"
     },
     {
       "id": "iherb-01",
@@ -479,7 +496,8 @@
       "cities": [
         "all"
       ],
-      "score": 49.04
+      "score": 49.04,
+      "url": "https://il.iherb.com/"
     },
     {
       "id": "shein-01",
@@ -501,7 +519,8 @@
       "cities": [
         "all"
       ],
-      "score": 48.8
+      "score": 48.8,
+      "url": "https://il.shein.com/"
     },
     {
       "id": "ikea-01",
@@ -532,7 +551,8 @@
         "ashdod",
         "rehovot"
       ],
-      "score": 46.48
+      "score": 46.48,
+      "url": "https://www.ikea.co.il/"
     },
     {
       "id": "ksp-01",
@@ -554,7 +574,8 @@
       "cities": [
         "all"
       ],
-      "score": 45.28
+      "score": 45.28,
+      "url": "https://ksp.co.il/"
     },
     {
       "id": "fattal-01",
@@ -583,7 +604,8 @@
         "netanya",
         "haifa"
       ],
-      "score": 41.88
+      "score": 41.88,
+      "url": "https://www.fattal.co.il/"
     },
     {
       "id": "shufersal-01",
@@ -605,7 +627,8 @@
       "cities": [
         "all"
       ],
-      "score": 40.3
+      "score": 40.3,
+      "url": "https://www.shufersal.co.il/"
     },
     {
       "id": "ivory-01",
@@ -627,7 +650,8 @@
       "cities": [
         "all"
       ],
-      "score": 36.66
+      "score": 36.66,
+      "url": "https://www.ivory.co.il/"
     },
     {
       "id": "booking-01",
@@ -660,7 +684,8 @@
         "dead-sea",
         "mitzpe-ramon"
       ],
-      "score": 25.16
+      "score": 25.16,
+      "url": "https://www.booking.com/"
     }
   ],
   "categories": {
