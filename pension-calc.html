@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308775a'/><text x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='900' fill='white' text-anchor='middle'>₪</text></svg>">
 <title>Пенсионный калькулятор Израиля 2026 — Профессиональный стандарт</title>
-<meta name="description" content="Полный расчёт пенсии в Израиле: возраст от 60 лет, точный микадем, Битуах Леуми, налог на здоровье (ст. 345б), налоги (кибуа зхуйот) и пенсионные треки.">
+<meta name="description" content="Полный расчёт пенсии в Израиле: возраст от 60 лет, точный микадем, пособие Эзрах Ватик Битуах Леуми, налог на здоровье (ст. 345б), налоги (кибуа зхуйот) и пенсионные треки.">
 <style>
 :root{
   --ink:#15251f;--muted:#5a6660;--paper:#f4f1e9;--card:#fffdf8;--line:#ddd6c7;
@@ -188,7 +188,7 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
   <div class="hero">
     <div class="badge">⚖️ Официальная база Управления рынка капитала и Битуах Леуми</div>
     <h1>Пенсионный калькулятор Израиля 2026</h1>
-    <p>Точный расчет: микадем, Битуах Леуми, налог на здоровье с ранней пенсии (ст. 345б) и льготы Кибуа Зхуйот (161д).</p>
+    <p>Точный расчет: микадем, пособие Эзрах Ватик Битуах Леуми, налог на здоровье с ранней пенсии (ст. 345б) и льготы Кибуа Зхуйот (161д).</p>
   </div>
 
   <!-- ШАГ 1: Личные данные -> затем Возраст выхода -->
@@ -306,19 +306,28 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
     </div>
   </div>
 
-  <!-- ШАГ 3: Стаж и статус Репатрианта -->
-  <div class="card">
+  <!-- ШАГ 3: Пособие по старости «Эзрах Ватик» (Битуах Леуми) -->
+  <div class="card" id="btl-step-card">
     <div class="card-header">
       <div class="step-num">3</div>
       <div>
-        <h2>Стаж в Израиле и пособие Битуах Леуми</h2>
-        <p>Битуах Леуми начисляет +2% к пособию за каждый год стажа свыше 10 лет (до +50%)</p>
+        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:6px">
+          <h2>Пособие по старости «Эзрах Ватик» (Битуах Леуми — קצבת אזרח ותיק)</h2>
+          <span id="btl-status-badge" class="kibua-badge-lock">🔒 Недоступно до 67 лет</span>
+        </div>
+        <p>Выплачивается строго по достижении официального пенсионного возраста («Гиль Приша»)</p>
       </div>
     </div>
 
-    <div class="grid2">
+    <!-- Заблокированное уведомление при раннем выходе -->
+    <div id="btl-early-lock-msg" class="notice-box notice-red" style="display:none">
+      🔒 <b>ПОСОБИЕ ПО СТАРОСТИ («ЭЗРАХ ВАТИК») ЗАБЛОКИРОВАНО ДО <span id="btl-lock-age-lbl">67 ЛЕТ</span>:</b><br>
+      При раннем выходе на пенсию (до официального возраста) Институт национального страхования (Битуах Леуми) <b>не выплачивает</b> пособие по старости (0 ₪). Ввод стажа и расчет пособия активируются при достижении официального возраста.
+    </div>
+
+    <div id="btl-inputs-grid" class="grid2">
       <div class="field">
-        <label>Стаж работы / выплат в Израиле к выходу</label>
+        <label>Страховой стаж в Израиле к официальному возрасту</label>
         <div class="input-wrap">
           <input type="number" id="israel-seniority" value="10" min="0" max="50" step="1" placeholder="0" oninput="calc()">
           <span class="suffix">лет</span>
@@ -334,6 +343,10 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
         </div>
         <span class="desc" id="aliyah-status-desc">0 — родился в Израиле или ранняя алия</span>
       </div>
+    </div>
+
+    <div id="btl-active-msg" class="notice-box notice-green" style="display:none">
+      ✅ <b>Пособие «Эзрах Ватик» активно:</b> Базовая ставка + надбавка за стаж (+2% за каждый год свыше 10 лет, до +50%) + надбавка за отсрочку (+5% в год).
     </div>
 
     <div id="low-income-alert" class="notice-box notice-gold" style="display:none">
@@ -493,7 +506,7 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
       </div>
 
       <div class="dash-item">
-        <div class="lbl">🏛️ Пособие по старости (Битуах Леуми)</div>
+        <div class="lbl">🏛️ Пособие «Эзрах Ватик» (Битуах Леуми)</div>
         <div class="val" id="res-btl-sum">0 ₪</div>
         <div class="subval" id="res-btl-details">База + стаж 0%</div>
       </div>
@@ -528,7 +541,7 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
             <th>Пенсия фонда</th>
             <th>Подоходный</th>
             <th>Битуах/Здоровье</th>
-            <th>Пособие по старости</th>
+            <th>Пособие «Эзрах Ватик»</th>
             <th>ИТОГО НЕТТО</th>
           </tr>
         </thead>
@@ -539,7 +552,7 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
     </div>
 
     <div class="notice-box notice-green">
-      📌 <b>Вывод пенсионного консультанта:</b> Отсрочка выхода с раннего возраста (60–63) до официального даёт четверной выигрыш: <b>Кибуа Зхуйот (0 налога)</b>, <b>0 ₪ взносов в Битуах Леуми и налога на здоровье</b>, <b>гос. пособие по старости</b> и <b>снижение микадема</b>.
+      📌 <b>Вывод пенсионного консультанта:</b> Отсрочка выхода с раннего возраста (60–63) до официального даёт четверной выигрыш: <b>Кибуа Зхуйот (0 налога)</b>, <b>0 ₪ взносов в Битуах Леуми и налога на здоровье</b>, <b>гос. пособие по старости «Эзрах Ватик»</b> и <b>снижение микадема</b>.
     </div>
   </div>
 
@@ -827,11 +840,11 @@ function getMikadem(retAge, gender, isMarried, spousePct, guaranteeMonths, spous
   }
 }
 
-/* Расчет пособия Битуах Леуми */
+/* Расчет пособия «Эзрах Ватик» Битуах Леуми */
 function getBtlAllowance(retAge, gender, seniority, aliyahAge, marital, userBirthYear){
   const officialAge = (gender === 'm') ? 67.0 : getFemaleOfficialAgeByYear(userBirthYear).age;
   
-  if(retAge < officialAge) {
+  if(retAge < officialAge - 0.05) {
     return { btlTotal: 0, isEligible: false, base: 0, seniorityAdd: 0, deferralAdd: 0, officialAge };
   }
 
@@ -968,6 +981,37 @@ function calc(){
 
   const isEarlyRetirement = (retAge < officialAge - 0.05);
 
+  // ШАГ 3: БЛОКИРОВКА ПОСОБИЯ «ЭЗРАХ ВАТИК» БИТУАХ ЛЕУМИ ПРИ РАННЕМ ВЫХОДЕ
+  const btlBadge = document.getElementById('btl-status-badge');
+  const btlEarlyLockMsg = document.getElementById('btl-early-lock-msg');
+  const btlLockAgeLbl = document.getElementById('btl-lock-age-lbl');
+  const btlInputsGrid = document.getElementById('btl-inputs-grid');
+  const btlActiveMsg = document.getElementById('btl-active-msg');
+  const seniorityInput = document.getElementById('israel-seniority');
+  const aliyahInput = document.getElementById('aliyah-age');
+
+  if(isEarlyRetirement) {
+    btlBadge.className = 'kibua-badge-lock';
+    btlBadge.innerHTML = '🔒 Заблокировано (только с ' + offAgeLabel + ')';
+    btlEarlyLockMsg.style.display = 'block';
+    btlLockAgeLbl.textContent = offAgeLabel;
+    btlInputsGrid.style.opacity = '0.45';
+    btlInputsGrid.style.pointerEvents = 'none';
+    seniorityInput.disabled = true;
+    aliyahInput.disabled = true;
+    btlActiveMsg.style.display = 'none';
+  } else {
+    btlBadge.className = 'kibua-badge-ok';
+    btlBadge.innerHTML = '✅ Доступно (с ' + offAgeLabel + ')';
+    btlEarlyLockMsg.style.display = 'none';
+    btlInputsGrid.style.opacity = '1';
+    btlInputsGrid.style.pointerEvents = 'auto';
+    seniorityInput.disabled = false;
+    aliyahInput.disabled = false;
+    btlActiveMsg.style.display = 'block';
+  }
+
+  // ШАГ 5: БЛОКИРОВКА КИБУА ЗХУЙОТ (161д)
   const kibuaCheckbox = document.getElementById('kibua-done');
   const kibuaLabel = document.getElementById('kibua-checkbox-label');
   const kibuaBadge = document.getElementById('kibua-status-badge');
@@ -1049,7 +1093,7 @@ function calc(){
     document.getElementById('res-btl-details').textContent = `База: ${fmt(btl.base)} ₪ + стаж: +${btl.seniorityPct}%`;
   } else {
     document.getElementById('res-btl-sum').textContent = `0 ₪ (до ${offAgeLabel})`;
-    document.getElementById('res-btl-details').textContent = 'Пособие начнётся с официального пенсионного возраста';
+    document.getElementById('res-btl-details').textContent = 'Пособие «Эзрах Ватик» начнётся с официального возраста';
   }
 
   // Обновление Микадема в шаге 1 и 4
@@ -1071,7 +1115,7 @@ function calc(){
       ageHintWrap.innerHTML = `
         <div class="age-hint-title">⚠️ Ранний выход на пенсию (${retAge} лет при официальном возрасте ${offAgeLabel}):</div>
         <div class="age-hint-text">
-          • <b>Пособие по старости:</b> Государственное пособие от Битуах Леуми начнёт выплачиваться только по достижении <b>${offAgeLabel}</b>.<br>
+          • <b>Пособие по старости («Эзрах Ватик»):</b> Выплата от Битуах Леуми начнётся только по достижении <b>${offAgeLabel}</b>.<br>
           • <b>Удержания из пенсионного фонда:</b> До ${offAgeLabel} из пенсии удерживаются стандартный подоходный налог и взносы на здравоохранение/соцстрах (ст. 345б).
         </div>
       `;
@@ -1082,7 +1126,7 @@ function calc(){
       ageHintWrap.innerHTML = `
         <div class="age-hint-title">🌟 Отложенный выход на пенсию (${retAge} лет):</div>
         <div class="age-hint-text">
-          • <b>Надбавка за отсрочку:</b> Битуах Леуми начисляет +${deferBonus}% (+5% за каждый год) к пособию по старости за отсрочку после ${offAgeLabel}.<br>
+          • <b>Надбавка за отсрочку («Эзрах Ватик»):</b> Битуах Леуми начисляет +${deferBonus}% (+5% за каждый год) к пособию за отсрочку после ${offAgeLabel}.<br>
           • <b>Максимальная пенсия:</b> Сниженный делитель (микадем = ${mikadem.toFixed(2)}) обеспечивает максимальную ежемесячную выплату.
         </div>
       `;
@@ -1091,7 +1135,7 @@ function calc(){
       ageHintWrap.innerHTML = `
         <div class="age-hint-title">✅ Официальный пенсионный возраст («Гиль Приша Мезаке» — ${offAgeLabel}):</div>
         <div class="age-hint-text">
-          • <b>Государственное пособие:</b> Битуах Леуми начинает ежемесячную выплату пособия по старости.<br>
+          • <b>Пособие по старости:</b> Битуах Леуми начинает ежемесячную выплату пособия «Эзрах Ватик».<br>
           • <b>Налоговые льготы:</b> Вступает в силу 100% освобождение от подоходного налога по форме 161д (Кибуа Зхуйот) и полное освобождение от взносов Битуах Леуми с пенсии фонда.
         </div>
       `;
@@ -1099,7 +1143,7 @@ function calc(){
   }
 
   const senBonus = Math.min(50, Math.max(0, seniority - 10) * 2);
-  document.getElementById('seniority-bonus-desc').textContent = `Надбавка к пенсии Битуах Леуми за стаж: +${senBonus}%`;
+  document.getElementById('seniority-bonus-desc').textContent = `Надбавка к пособию «Эзрах Ватик» за стаж: +${senBonus}%`;
   
   if(aliyahAge >= 60 || seniority < 10) {
     document.getElementById('low-income-alert').style.display = 'block';
@@ -1153,7 +1197,7 @@ function renderScenarios(curCapital, seniority, aliyahAge, isMarried, spousePct,
       <td>${fmt(fundGross)} ₪</td>
       <td>${taxCol}</td>
       <td>${btlHealthCol}</td>
-      <td>${btlObj.isEligible ? fmt(btlObj.btlTotal) + ' ₪' : `0 ₪ (до ${Math.round(officialAge)})`}</td>
+      <td>${btlObj.isEligible ? fmt(btlObj.btlTotal) + ' ₪' : `<span style="color:var(--muted)">0 ₪ (до ${Math.floor(officialAge)})</span>`}</td>
       <td><b style="color:var(--green)">${fmt(net)} ₪/мес</b></td>
     `;
     tbody.appendChild(tr);
