@@ -429,28 +429,32 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 
 
 
-<section class="section" id="hot" style="margin-top:26px">
-<h2 style="text-align:center;font-size:22px;letter-spacing:-.02em;max-width:600px;margin:0 auto 4px">🔥 Горячее сейчас</h2>
-<p style="text-align:center;font-size:13px;color:var(--muted);max-width:600px;margin:0 auto 16px;line-height:1.5">Свежие изменения, которые касаются денег прямо сегодня</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px">
+<section class="section" id="hot" style="margin-top:16px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px;max-width:900px;margin:0 auto">
 
-<a href="havraa.html" style="display:block;text-decoration:none;background:var(--card);border:2px solid var(--green);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)">
-<div style="display:inline-block;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:20px;padding:4px 11px;margin-bottom:9px">Новое · 18 августа</div>
-<div style="display:flex;align-items:flex-start;gap:11px">
-<span style="font-size:28px;line-height:1">🏖️</span>
-<div style="min-width:0">
-<h3 style="margin:0 0 5px;font-size:16.5px;color:var(--ink);line-height:1.25">Оздоровительные подорожали</h3>
-<p style="margin:0;font-size:12.5px;color:var(--muted);line-height:1.5">День стоит 451,50 ₪ вместо 418 ₪. Заплатили по старой ставке — обязаны доплатить. Посчитайте свою разницу</p>
-</div></div></a>
+<a href="havraa.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 12px;box-shadow:var(--shadow-sm);transition:border-color .15s,transform .15s">
+<span style="font-size:22px;flex:0 0 auto">🏖️</span>
+<div style="min-width:0;flex:1">
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:2px">
+<span style="font-size:12.5px;font-weight:850;color:var(--ink)">Оздоровительные: 451,50 ₪/день</span>
+<span style="font-size:9px;font-weight:900;color:#fff;background:var(--red);border-radius:10px;padding:1px 6px">НОВОЕ</span>
+</div>
+<p style="margin:0;font-size:11px;color:var(--muted);line-height:1.3">Ставку подняли — проверьте размер доплаты</p>
+</div>
+<span style="color:var(--muted);font-size:14px">→</span>
+</a>
 
-<a href="hisahon-yeled.html" style="display:block;text-decoration:none;background:var(--card);border:2px solid var(--gold);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)">
-<div style="display:inline-block;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--gold);border-radius:20px;padding:4px 11px;margin-bottom:9px">Проверьте своё</div>
-<div style="display:flex;align-items:flex-start;gap:11px">
-<span style="font-size:28px;line-height:1">👶</span>
-<div style="min-width:0">
-<h3 style="margin:0 0 5px;font-size:16.5px;color:var(--ink);line-height:1.25">Накопления на ребёнка</h3>
-<p style="margin:0;font-size:12.5px;color:var(--muted);line-height:1.5">Государство кладёт 58 ₪ в месяц. Где эти деньги и сколько вырастут — разница доходит до пяти раз</p>
-</div></div></a>
+<a href="hisahon-yeled.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 12px;box-shadow:var(--shadow-sm);transition:border-color .15s,transform .15s">
+<span style="font-size:22px;flex:0 0 auto">👶</span>
+<div style="min-width:0;flex:1">
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:2px">
+<span style="font-size:12.5px;font-weight:850;color:var(--ink)">Накопления на ребёнка</span>
+<span style="font-size:9px;font-weight:900;color:#8a6012;background:var(--gold-light);border:1px solid rgba(194,155,82,.3);border-radius:10px;padding:1px 6px">ГОСПРОГРАММА</span>
+</div>
+<p style="margin:0;font-size:11px;color:var(--muted);line-height:1.3">58 ₪/мес от государства — проверка начислений</p>
+</div>
+<span style="color:var(--muted);font-size:14px">→</span>
+</a>
 
 </div>
 </section>
@@ -917,113 +921,94 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 <!-- СВЕЖИЕ РЕШЕНИЯ И ЭКОНОМИЧЕСКИЙ КАЛЕНДАРЬ ИЗРАИЛЯ -->
-<div style="max-width:640px;margin:24px auto 0;background:#fffdf8;border:1px solid var(--line);border-radius:18px;padding:18px 16px;box-shadow:var(--shadow)" id="decisions-widget">
-  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px;flex-wrap:wrap">
-    <div style="display:flex;align-items:center;gap:8px">
-      <span style="font-size:20px">⚡</span>
-      <div>
-        <h2 style="margin:0;font-size:15px;font-weight:900;color:var(--ink)">Свежие решения и ключевые индикаторы</h2>
-        <div style="font-size:11px;color:var(--muted)">Результаты публикуются сразу в день принятия ведомствами</div>
-      </div>
+<div style="max-width:640px;margin:20px auto 0;background:#fffdf8;border:1px solid var(--line);border-radius:14px;padding:14px 14px 10px;box-shadow:var(--shadow)" id="decisions-widget">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:10px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:6px">
+      <span style="font-size:17px">⚡</span>
+      <h2 style="margin:0;font-size:13.5px;font-weight:900;color:var(--ink)">Финансовые решения и индикаторы Израиля</h2>
     </div>
-    <span style="font-size:10.5px;font-weight:800;background:var(--green-light);color:var(--green);padding:3px 8px;border-radius:6px">Live данные</span>
+    <span style="font-size:9.5px;font-weight:800;background:var(--green-light);color:var(--green);padding:2px 7px;border-radius:6px;display:inline-flex;align-items:center;gap:4px"><span class="home-live-dot"></span>LIVE</span>
   </div>
 
-  <!-- КАРТОЧКИ СВЕЖИХ РЕШЕНИЙ -->
-  <div style="display:flex;flex-direction:column;gap:10px" id="decisions-list">
+  <!-- КАРТОЧКИ СВЕЖИХ РЕШЕНИЙ (КОМПАКТНЫЙ РЯД) -->
+  <div style="display:flex;flex-direction:column;gap:7px" id="decisions-list">
     
     <!-- 1. РЕШЕНИЕ ПО СТАВКЕ БАНКА ИЗРАИЛЯ -->
-    <div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;border-inline-start:4px solid var(--green)">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;flex-wrap:wrap;gap:4px">
-        <span style="font-size:12px;font-weight:850;color:var(--ink)">🏦 Ставка Банка Израиля и Прайм</span>
-        <span style="font-size:10.5px;font-weight:800;color:var(--green);background:var(--green-light);padding:2px 7px;border-radius:5px">🟢 РЕШЕНИЕ 31.08.2026</span>
+    <div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 11px;border-inline-start:3.5px solid var(--green);display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">
+      <div style="min-width:0;flex:1">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:1px">
+          <span style="font-size:12px;font-weight:850;color:var(--ink)">🏦 Банк Израиля (31.08)</span>
+          <span style="font-size:9px;font-weight:800;color:var(--green);background:var(--green-light);padding:1px 5px;border-radius:4px">БЕЗ ИЗМЕНЕНИЙ</span>
+        </div>
+        <div style="font-size:11.5px;color:var(--ink);font-weight:700" id="dec-boi-val">Ставка 3.50% · Прайм 5.00%</div>
       </div>
-      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px">
-        <span style="font-size:18px;font-weight:900;color:var(--ink)" id="dec-boi-val">Ставка 3.50% · Прайм 5.00%</span>
-        <span style="font-size:11px;color:var(--muted)">(сохранена без изменений)</span>
-      </div>
-      <div style="font-size:11.5px;color:var(--muted);line-height:1.4;margin-bottom:6px">
-        Платежи по машканте и кредитам с привязкой к Прайму остаются стабильными. Следующее заседание Банка Израиля — <b>19 октября 2026 (16:00)</b>.
-      </div>
-      <div style="display:flex;justify-content:flex-end">
-        <a href="mashkanta.html" style="font-size:11.5px;font-weight:800;color:var(--green);text-decoration:none">Пересчитать машканту →</a>
-      </div>
+      <a href="mashkanta.html" style="font-size:11px;font-weight:800;color:var(--green);text-decoration:none;white-space:nowrap">Машканта →</a>
     </div>
 
     <!-- 2. РЕШЕНИЕ ПО БЕНЗИНУ -->
-    <div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;border-inline-start:4px solid #1e3a5f">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;flex-wrap:wrap;gap:4px">
-        <span style="font-size:12px;font-weight:850;color:var(--ink)">⛽ Цена бензина 95 на сентябрь 2026</span>
-        <span style="font-size:10.5px;font-weight:800;color:#1e3a5f;background:#e8eef7;padding:2px 7px;border-radius:5px">🟢 С 1 СЕНТЯБРЯ</span>
+    <div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 11px;border-inline-start:3.5px solid #1e3a5f;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">
+      <div style="min-width:0;flex:1">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:1px">
+          <span style="font-size:12px;font-weight:850;color:var(--ink)">⛽ Бензин 95 (с 01.09)</span>
+          <span style="font-size:9px;font-weight:800;color:#c15045;background:#fdeeee;padding:1px 5px;border-radius:4px">+0.61 ₪ (+8.2%)</span>
+        </div>
+        <div style="font-size:11.5px;color:var(--ink);font-weight:700" id="dec-fuel-val">8.09 ₪ / литр</div>
       </div>
-      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px">
-        <span style="font-size:18px;font-weight:900;color:var(--ink)" id="dec-fuel-val">8.09 ₪ / литр</span>
-        <span style="font-size:11px;font-weight:800;color:var(--red)">+0.61 ₪ (+8.15%)</span>
-      </div>
-      <div style="font-size:11.5px;color:var(--muted);line-height:1.4;margin-bottom:6px">
-        Минэнерго обновило официальный тариф: полный бак (50 л) подорожает на 30.50 ₪. Эйлат (без НДС) — 6.91 ₪. Следующий пересмотр — <b>30 сентября 2026</b>.
-      </div>
-      <div style="display:flex;justify-content:flex-end">
-        <a href="benzin.html" style="font-size:11.5px;font-weight:800;color:#1e3a5f;text-decoration:none">Калькулятор расходов на авто →</a>
-      </div>
+      <a href="benzin.html" style="font-size:11px;font-weight:800;color:#1e3a5f;text-decoration:none;white-space:nowrap">Калькулятор авто →</a>
     </div>
 
     <!-- 3. ИНДЕКС МАДАД (ЦСБ) -->
-    <div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;border-inline-start:4px solid #e07a1f">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;flex-wrap:wrap;gap:4px">
-        <span style="font-size:12px;font-weight:850;color:var(--ink)">📊 Индекс потребительских цен (Мадад)</span>
-        <span style="font-size:10.5px;font-weight:800;color:#b45309;background:#fef3c7;padding:2px 7px;border-radius:5px">🟢 ЦСБ ИЮЛЬ</span>
+    <div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 11px;border-inline-start:3.5px solid #e07a1f;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">
+      <div style="min-width:0;flex:1">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:1px">
+          <span style="font-size:12px;font-weight:850;color:var(--ink)">📊 Инфляция Мадад (ЦСБ)</span>
+          <span style="font-size:9px;font-weight:800;color:#b45309;background:#fef3c7;padding:1px 5px;border-radius:4px">ИЮЛЬ</span>
+        </div>
+        <div style="font-size:11.5px;color:var(--ink);font-weight:700" id="dec-cpi-val">Годовая инфляция: 1.5% · Месяц +0.3%</div>
       </div>
-      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px">
-        <span style="font-size:18px;font-weight:900;color:var(--ink)" id="dec-cpi-val">Годовая инфляция: 1.5%</span>
-        <span style="font-size:11px;color:var(--muted)">(месяц +0.3%)</span>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;margin-top:4px">
-        <span style="font-size:11px;color:var(--muted)">Следующая публикация Мадада за август: <b>15 сентября (18:30)</b></span>
-        <a href="tablo.html" style="font-size:11.5px;font-weight:800;color:#b45309;text-decoration:none">Табло индексов →</a>
-      </div>
+      <a href="tablo.html" style="font-size:11px;font-weight:800;color:#b45309;text-decoration:none;white-space:nowrap">Табло индексов →</a>
     </div>
 
   </div>
 
   <!-- ИНТЕРАКТИВНЫЙ КАЛЕНДАРЬ РЕШЕНИЙ 2026 -->
-  <details style="margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 12px">
-    <summary style="padding:10px 0;font-size:12.5px;font-weight:800;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
-      <span>🗓️ Календарь всех решений и выплат 2026</span>
-      <span style="font-size:11px;color:var(--green)">Развернуть график ↓</span>
+  <details style="margin-top:8px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:0 10px">
+    <summary style="padding:8px 0;font-size:11.5px;font-weight:800;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+      <span>🗓️ Календарь решений и выплат на 2026</span>
+      <span style="font-size:10.5px;color:var(--green)">Развернуть график ▸</span>
     </summary>
-    <div style="font-size:12px;padding:4px 0 12px;display:flex;flex-direction:column;gap:7px;border-top:1px solid #f0eae0" id="dec-calendar-list">
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0">
+    <div style="font-size:11.5px;padding:4px 0 10px;display:flex;flex-direction:column;gap:6px;border-top:1px solid #f0eae0" id="dec-calendar-list">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
         <span><b>31.08.2026</b> · Заседание Банка Израиля</span>
-        <span style="font-weight:800;color:var(--green);font-size:11px">✅ Ставка 3.50% (сохранена)</span>
+        <span style="font-weight:800;color:var(--green);font-size:10.5px">✅ Ставка 3.50%</span>
       </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
         <span><b>31.08.2026</b> · Тариф на бензин 95</span>
-        <span style="font-weight:800;color:#1e3a5f;font-size:11px">✅ 8.09 ₪ (+61 агора)</span>
+        <span style="font-weight:800;color:#1e3a5f;font-size:10.5px">✅ 8.09 ₪ (+61 аг.)</span>
       </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0">
-        <span><b>12.09.2026</b> · Пособия по безработице (Автала)</span>
-        <span style="color:var(--muted);font-size:11px">⏳ через 12 дней</span>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
+        <span><b>12.09.2026</b> · Автала (Битуах Леуми)</span>
+        <span style="color:var(--muted);font-size:10.5px">⏳ через 11 дн.</span>
       </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
         <span><b>15.09.2026 (18:30)</b> · Индекс цен Мадад (ЦСБ)</span>
-        <span style="color:var(--muted);font-size:11px">⏳ через 15 дней</span>
+        <span style="color:var(--muted);font-size:10.5px">⏳ через 14 дн.</span>
       </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0">
-        <span><b>20.09.2026</b> · Детские пособия (Битуах Леуми)</span>
-        <span style="color:var(--muted);font-size:11px">⏳ через 20 дней</span>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
+        <span><b>20.09.2026</b> · Детские пособия</span>
+        <span style="color:var(--muted);font-size:10.5px">⏳ через 19 дн.</span>
       </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
         <span><b>28.09.2026</b> · Пенсии по старости / инвалидности</span>
-        <span style="color:var(--muted);font-size:11px">⏳ через 28 дней</span>
+        <span style="color:var(--muted);font-size:10.5px">⏳ через 27 дн.</span>
       </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
         <span><b>30.09.2026</b> · Пересмотр цены на бензин на октябрь</span>
-        <span style="color:var(--muted);font-size:11px">⏳ в конце месяца</span>
+        <span style="color:var(--muted);font-size:10.5px">⏳ в конце месяца</span>
       </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
         <span><b>19.10.2026 (16:00)</b> · Следующая ставка Банка Израиля</span>
-        <span style="color:var(--muted);font-size:11px">⏳ через 49 дней</span>
+        <span style="color:var(--muted);font-size:10.5px">⏳ через 48 дн.</span>
       </div>
     </div>
   </details>
@@ -1046,9 +1031,6 @@ fetch('data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json(
 }).catch(function(){});
 </script>
 </div>
-
-
-
 
 <div style="max-width:640px;margin:26px auto 0;background:linear-gradient(135deg,#c2452e,#a5372a);border-radius:16px;padding:3px;box-shadow:0 8px 22px rgba(165,55,42,.2)">
 <div style="background:#fff;border-radius:14px;padding:16px 16px 6px">
