@@ -485,6 +485,11 @@
       <div class="hero-label" data-i18n="receipt_net_label">Чистая зарплата к выплате</div>
       <div class="hero-net num" id="r_net">-</div>
       <div class="hero-sub"><span data-i18n="sankey_from">Брутто</span> <b id="r_gross">-</b> · <span data-i18n="m_takehome">Нетто от брутто</span> <b id="r_takehome">-</b></div>
+      <div style="display:flex;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap">
+        <button type="button" onclick="shareSalaryCalc('wa')" title="Отправить расчёт в WhatsApp" style="display:inline-flex;align-items:center;gap:4px;background:#25D366;color:#fff;border:none;border-radius:14px;padding:5px 11px;font-size:11px;font-weight:750;cursor:pointer;box-shadow:0 2px 6px rgba(37,211,102,.25)">💬 WhatsApp</button>
+        <button type="button" onclick="shareSalaryCalc('tg')" title="Отправить расчёт в Telegram" style="display:inline-flex;align-items:center;gap:4px;background:#0088cc;color:#fff;border:none;border-radius:14px;padding:5px 11px;font-size:11px;font-weight:750;cursor:pointer;box-shadow:0 2px 6px rgba(0,136,204,.25)">✈️ Telegram</button>
+        <button type="button" onclick="shareSalaryCalc('copy')" id="copyBtnSalary" title="Скопировать текст расчёта" style="display:inline-flex;align-items:center;gap:4px;background:#fff;color:var(--ink);border:1px solid var(--border);border-radius:14px;padding:5px 11px;font-size:11px;font-weight:750;cursor:pointer">📋 Скопировать</button>
+      </div>
     </div>
 
     <div class="acc open">
@@ -1496,5 +1501,31 @@ try { applyHash(); } catch (e) {}
 try { applyLang(); } catch (e) {}
 try { triggerHud(); } catch (e) {}
 </script>
-</body>
+<script>
+function shareSalaryCalc(target) {
+  var gross = document.getElementById("r_gross") ? document.getElementById("r_gross").textContent : "";
+  var net = document.getElementById("r_net") ? document.getElementById("r_net").textContent : "";
+  var takehome = document.getElementById("r_takehome") ? document.getElementById("r_takehome").textContent : "";
+  var text = "📊 Расчёт зарплаты в Израиле (2026):\n" +
+             "• Брутто: " + gross + "\n" +
+             "• Чистыми на руки (Нетто): " + net + " (" + takehome + ")\n\n" +
+             "🔗 Посчитать зарплату: https://exodus611.github.io/finance-portal/salary.html";
+  if (target === "wa") {
+    window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(text), "_blank");
+  } else if (target === "tg") {
+    window.open("https://t.me/share/url?url=" + encodeURIComponent("https://exodus611.github.io/finance-portal/salary.html") + "&text=" + encodeURIComponent("📊 Расчёт зарплаты в Израиле: Брутто " + gross + " ➔ Нетто " + net), "_blank");
+  } else if (target === "copy") {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function() {
+        var btn = document.getElementById("copyBtnSalary");
+        if (btn) {
+          var orig = btn.innerHTML;
+          btn.innerHTML = "<span>✅ Скопировано!</span>";
+          setTimeout(function(){ btn.innerHTML = orig; }, 2000);
+        }
+      });
+    }
+  }
+}
+</script></body>
 </html>

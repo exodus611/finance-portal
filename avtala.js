@@ -322,6 +322,15 @@
       '<div class="avt-row avt-row--total"><span>Всего за весь период (брутто)</span>' +
         '<span class="avt-row__v">' + shekel(res.totalSum) + '</span></div>' +
 
+      '<div class="calc-share-box" style="margin: 14px 0 10px 0; padding: 12px 14px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; display: flex; flex-direction: column; gap: 8px;">' +
+        '<span style="font-size: 0.82rem; font-weight: 600; color: #475569;">📤 Поделиться расчётом пособия:</span>' +
+        '<div style="display: flex; gap: 8px; flex-wrap: wrap;">' +
+          '<button type="button" onclick="window.shareAvtala(\'whatsapp\')" style="padding: 6px 12px; background: #25d366; color: #fff; border: none; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">💬 WhatsApp</button>' +
+          '<button type="button" onclick="window.shareAvtala(\'telegram\')" style="padding: 6px 12px; background: #229ed9; color: #fff; border: none; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">✈️ Telegram</button>' +
+          '<button type="button" id="copy-avt-btn" onclick="window.shareAvtala(\'copy\')" style="padding: 6px 12px; background: #475569; color: #fff; border: none; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">📋 Скопировать</button>' +
+        '</div>' +
+      '</div>' +
+
       (notices.length ? '<div class="avt-note">' + notices.join('<br><br>') + '</div>' : '') +
 
       '<h3>Как считалась дневная сумма</h3>' + ladder +
@@ -701,4 +710,34 @@
       el('#avt-status').innerHTML = '<div class="avt-warn">Не удалось загрузить данные (' +
         e.message + '). Проверьте путь к <code>' + DATA_URL + '</code>.</div>';
     });
+
+  window.shareAvtala = function(platform) {
+    var items = document.querySelectorAll('.avt-split__item .avt-money--small');
+    var daily = items[0] ? items[0].innerText.trim() : '';
+    var monthly = items[1] ? items[1].innerText.trim() : '';
+    var days = items[2] ? items[2].innerText.trim() : '';
+    var totalEl = document.querySelector('.avt-row--total .avt-row__v');
+    var total = totalEl ? totalEl.innerText.trim() : '';
+
+    var text = '💼 Мой расчёт пособия по безработице (Автала):\n' +
+               '💵 В месяц (брутто): ' + monthly + '\n' +
+               '📅 Дней выплат: ' + days + ' (' + daily + ' в день)\n' +
+               '💰 Всего за период: ' + total + '\n\n' +
+               'Калькулятор пособий Израиля: ' + window.location.href;
+
+    if (platform === 'whatsapp') {
+      window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(text), '_blank');
+    } else if (platform === 'telegram') {
+      window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(text), '_blank');
+    } else if (platform === 'copy') {
+      navigator.clipboard.writeText(text).then(function() {
+        var b = document.getElementById('copy-avt-btn');
+        if (b) {
+          var old = b.innerText;
+          b.innerText = '✅ Скопировано!';
+          setTimeout(function() { b.innerText = old; }, 2000);
+        }
+      });
+    }
+  };
 })();

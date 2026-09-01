@@ -181,6 +181,14 @@ button.primary{width:100%;background:var(--green);color:#fff;border:none;padding
 <section class="card" id="res-card" style="display:none">
 <div class="title"><div class="num">2</div><div><h2>Сколько накопится</h2><p id="res-sub"></p></div></div>
 <div id="res"></div>
+<div class="calc-share-box" style="margin: 14px 0 6px 0; padding: 12px 14px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; display: flex; flex-direction: column; gap: 8px;">
+  <span style="font-size: 0.82rem; font-weight: 600; color: #475569;">📤 Поделиться расчётом:</span>
+  <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+    <button type="button" onclick="shareHisahon('whatsapp')" style="padding: 6px 12px; background: #25d366; color: #fff; border: none; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">💬 WhatsApp</button>
+    <button type="button" onclick="shareHisahon('telegram')" style="padding: 6px 12px; background: #229ed9; color: #fff; border: none; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">✈️ Telegram</button>
+    <button type="button" id="copy-his-btn" onclick="shareHisahon('copy')" style="padding: 6px 12px; background: #475569; color: #fff; border: none; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">📋 Скопировать</button>
+  </div>
+</div>
 <p style="font-size:11.5px;color:var(--muted);margin:14px 0 0;line-height:1.6">Расчёт приблизительный: доходность фонда не гарантирована и меняется год от года. Государственные премии в 18 и 21 год учтены отдельно.</p>
 </section>
 
@@ -287,6 +295,32 @@ document.getElementById('run-btn').addEventListener('click', function(){
   render();
   document.getElementById('res-card').scrollIntoView({behavior:'smooth', block:'start'});
 });
+
+function shareHisahon(platform) {
+  var r = calcChild();
+  var trackLabel = (where === 'bank') ? 'Банк (3.0%)' : ('Фонд ' + ({low:'низкий риск (4%)',mid:'средний риск (6.5%)',high:'высокий риск (9%)'})[track]);
+  var text = '👶 Накопительная программа «Хисахон ле-коль йелед»:\n' +
+             '💰 Взнос в месяц: ' + r.monthly + ' ₪\n' +
+             '📈 Вариант: ' + trackLabel + '\n' +
+             '🎯 К 18 годам: ' + money(r.at18) + '\n' +
+             '🏆 Если не трогать до 21 года: ' + money(r.at21) + '\n\n' +
+             'Рассчитать программу для детей: ' + window.location.href;
+
+  if (platform === 'whatsapp') {
+    window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(text), '_blank');
+  } else if (platform === 'telegram') {
+    window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(text), '_blank');
+  } else if (platform === 'copy') {
+    navigator.clipboard.writeText(text).then(function() {
+      var b = document.getElementById('copy-his-btn');
+      if (b) {
+        var old = b.innerText;
+        b.innerText = '✅ Скопировано!';
+        setTimeout(function() { b.innerText = old; }, 2000);
+      }
+    });
+  }
+}
 
 (function(){
   var btn = document.getElementById('scrollToTop');
