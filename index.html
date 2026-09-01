@@ -12,15 +12,13 @@
 <link rel="canonical" href="https://exodus611.github.io/finance-portal/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Понятные финансы в Израиле — калькуляторы и живое табло экономики">
-<meta property="og:description" content="Зарплата брутто-нетто, машканта с автоподбором, пенсионный расчёт, автала, налоги и табло индикаторов. Честно, без регистрации, прямо в браузере.">
+<meta property="og:description" content="Зарплата брутто-нетто, машканта со всеми налогами, пенсионный расчёт PRO, автала и живое табло. Без регистрации, локально в браузере.">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://exodus611.github.io/finance-portal/">
 <meta property="og:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow">
-<meta name="description" content="Бесплатные финансовые калькуляторы для жизни в Израиле: зарплата брутто-нетто, машканта, пенсия, содержание авто, даты выплат Битуах Леуми и живое табло ставок.">
+<meta name="description" content="Бесплатные финансовые калькуляторы для жизни в Израиле: зарплата брутто-нетто, машканта, налоги мас рехиша/шевах, пенсия PRO, арнона и бензин.">
 <meta name="google-site-verification" content="rF1V6g7xHbSI6cvEudIr8c56nbTXMlVyZQzyeOhcSsI" />
 <meta name="mitgo-verification" content="8f9c12f9-0968-4706-b755-057de382bc8e" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +31,7 @@
   "@type": "WebSite",
   "name": "Понятные финансы в Израиле",
   "url": "https://exodus611.github.io/finance-portal/",
-  "description": "Независимые калькуляторы и словарь терминов для изучения финансовых инструментов в Израиле: зарплата, ипотека, автомобиль, кредит, аренда vs покупка, рефинансирование.",
+  "description": "Независимые калькуляторы для изучения финансовых инструментов в Израиле: зарплата, машканта, налоги, пенсия, арнона.",
   "inLanguage": "ru",
   "dateModified": "2026-09-01"
 }
@@ -52,10 +50,10 @@
   --gold:#c29b52;
   --gold-light:#faf5ea;
   --red:#c2452e;
-  --shadow:0 8px 24px rgba(26,45,37,.06);
-  --shadow-hover:0 14px 32px rgba(26,45,37,.12);
+  --red-light:#fee2e2;
+  --shadow:0 6px 20px rgba(26,45,37,.06);
+  --shadow-hover:0 10px 28px rgba(26,45,37,.11);
   --r:14px;
-  --r-sm:8px;
 }
 *{box-sizing:border-box}
 html,body{
@@ -67,14 +65,12 @@ html,body{
   background:var(--paper);
   color:var(--ink);
   font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
-  line-height:1.5;
+  line-height:1.45;
   -webkit-font-smoothing:antialiased;
 }
 .shell{
-  width:100%;
-  max-width:1120px;
+  width:min(840px,calc(100% - 24px));
   margin:0 auto;
-  padding:0 16px;
   box-sizing:border-box;
 }
 
@@ -86,15 +82,13 @@ html,body{
   position:sticky;
   top:0;
   z-index:100;
-  padding:10px 0;
-  width:100%;
+  padding:8px 0;
 }
 .header-nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
+  gap:8px;
 }
 .logo{
   display:flex;
@@ -103,35 +97,36 @@ html,body{
   text-decoration:none;
   color:var(--ink);
   font-weight:900;
-  font-size:15px;
+  font-size:14px;
   flex:0 0 auto;
 }
 .mark{
-  width:32px;
-  height:32px;
+  width:30px;
+  height:30px;
   border-radius:8px;
   background:var(--green);
   color:#fff;
   display:grid;
   place-items:center;
-  font-size:18px;
-  box-shadow:0 3px 8px rgba(8,119,90,.3);
+  font-size:16px;
+  box-shadow:0 2px 6px rgba(8,119,90,.3);
 }
 .nav-links{
   display:flex;
   align-items:center;
-  gap:10px;
-  font-size:12px;
+  gap:6px;
+  font-size:11.5px;
   font-weight:700;
-  flex-wrap:wrap;
+  overflow-x:auto;
+  white-space:nowrap;
+  padding:2px 0;
 }
 .nav-links a{
   color:var(--ink);
   text-decoration:none;
-  padding:4px 6px;
+  padding:4px 7px;
   border-radius:6px;
   transition:all .15s;
-  white-space:nowrap;
 }
 .nav-links a:hover{
   color:var(--green);
@@ -140,102 +135,122 @@ html,body{
 .nav-badge{
   background:var(--green)!important;
   color:#fff!important;
-  padding:4px 10px!important;
-  border-radius:16px!important;
-  font-size:11.5px!important;
+  padding:4px 9px!important;
+  border-radius:14px!important;
   font-weight:800!important;
-}
-.nav-badge:hover{
-  background:var(--green-hover)!important;
 }
 
 /* Hero Section */
 .hero{
-  padding:32px 0 16px;
+  padding:24px 0 14px;
   text-align:center;
 }
 .eyebrow{
-  font-size:10.5px;
+  font-size:10px;
   color:var(--green);
   font-weight:900;
   text-transform:uppercase;
-  letter-spacing:.1em;
+  letter-spacing:.08em;
   background:var(--green-light);
-  padding:3px 9px;
-  border-radius:16px;
+  padding:3px 8px;
+  border-radius:12px;
   display:inline-block;
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 .hero h1{
-  font-size:clamp(24px,4.5vw,40px);
-  line-height:1.15;
-  letter-spacing:-.03em;
-  margin:0 auto 10px;
-  max-width:800px;
+  font-size:clamp(22px,4vw,32px);
+  line-height:1.2;
+  letter-spacing:-.02em;
+  margin:0 auto 8px;
   color:var(--ink);
 }
 .hero p{
-  font-size:15px;
+  font-size:14px;
   color:var(--muted);
-  max-width:620px;
-  margin:0 auto 18px;
-  line-height:1.5;
+  max-width:580px;
+  margin:0 auto 16px;
+  line-height:1.45;
 }
 .hero-cta{
   display:flex;
   justify-content:center;
-  gap:10px;
+  gap:8px;
   flex-wrap:wrap;
-  margin-bottom:14px;
+  margin-bottom:12px;
 }
 .btn-primary{
   background:var(--green);
   color:#fff;
-  font-size:13.5px;
+  font-size:13px;
   font-weight:800;
-  padding:10px 18px;
-  border-radius:20px;
+  padding:9px 16px;
+  border-radius:18px;
   text-decoration:none;
-  box-shadow:0 4px 12px rgba(8,119,90,.25);
+  box-shadow:0 3px 10px rgba(8,119,90,.25);
   transition:all .15s;
-  display:inline-block;
 }
-.btn-primary:hover{background:var(--green-hover);transform:translateY(-1px)}
+.btn-primary:hover{background:var(--green-hover)}
 .btn-secondary{
   background:#fff;
   color:var(--ink);
   border:1px solid var(--line);
-  font-size:13.5px;
+  font-size:13px;
   font-weight:800;
-  padding:10px 16px;
-  border-radius:20px;
+  padding:9px 14px;
+  border-radius:18px;
   text-decoration:none;
   transition:all .15s;
-  display:inline-block;
 }
 .btn-secondary:hover{border-color:var(--green);color:var(--green)}
 .hero-trust{
   display:flex;
   justify-content:center;
-  gap:14px;
-  font-size:11.5px;
+  gap:12px;
+  font-size:11px;
   color:var(--muted);
   flex-wrap:wrap;
 }
 
-/* Live Barometer Strip (Full Width Grid) */
+/* Cyber Security Prominent Banner (Signature feature on 1st screen) */
+.cyber-card{
+  background:linear-gradient(135deg,#fffdf8,#fff7f6);
+  border:1.5px solid var(--red);
+  border-radius:var(--r);
+  padding:12px 14px;
+  margin:16px 0 18px;
+  box-shadow:var(--shadow);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  text-decoration:none;
+  color:var(--ink);
+  transition:all .15s;
+}
+.cyber-card:hover{transform:translateY(-1px);box-shadow:var(--shadow-hover);border-color:#991b1b}
+.cyber-phone{
+  font-size:13px;
+  font-weight:900;
+  background:var(--red);
+  color:#fff;
+  padding:4px 9px;
+  border-radius:14px;
+  white-space:nowrap;
+  flex:0 0 auto;
+}
+
+/* Live Barometer Strip (Compact 2x2 or 4x1) */
 .live-strip{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:10px;
-  margin:20px 0 28px;
-  width:100%;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:8px;
+  margin-bottom:22px;
 }
 .live-card{
   background:var(--card);
   border:1px solid var(--line);
-  border-radius:var(--r);
-  padding:12px 14px;
+  border-radius:12px;
+  padding:10px 12px;
   box-shadow:var(--shadow);
   text-decoration:none;
   color:var(--ink);
@@ -244,94 +259,137 @@ html,body{
   flex-direction:column;
   justify-content:space-between;
 }
-.live-card:hover{transform:translateY(-2px);border-color:var(--green);box-shadow:var(--shadow-hover)}
+.live-card:hover{transform:translateY(-1px);border-color:var(--green)}
 .live-tag{
-  font-size:9px;
+  font-size:8.5px;
   font-weight:900;
   padding:2px 5px;
   border-radius:4px;
   text-transform:uppercase;
-  letter-spacing:.02em;
 }
 .tag-green{background:var(--green-light);color:var(--green)}
-.tag-red{background:#fee2e2;color:#991b1b}
+.tag-red{background:var(--red-light);color:var(--red)}
 .tag-blue{background:#e0f2fe;color:#0369a1}
 .live-val{
-  font-size:16.5px;
+  font-size:15px;
   font-weight:900;
-  margin:4px 0 2px;
+  margin:3px 0 1px;
   color:var(--ink);
   line-height:1.2;
 }
 
-/* Life Scenarios Grid */
+/* Life Scenarios Grid (with integrated sub-links / ласточки) */
 .section-title{
-  font-size:20px;
+  font-size:18px;
   font-weight:900;
   letter-spacing:-.02em;
   margin:0 0 3px;
   text-align:center;
 }
 .section-sub{
-  font-size:12.5px;
+  font-size:12px;
   color:var(--muted);
   text-align:center;
-  margin:0 auto 16px;
-  max-width:580px;
+  margin:0 auto 14px;
+  max-width:540px;
 }
 .scenarios-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:10px;
-  margin-bottom:30px;
-  width:100%;
+  margin-bottom:26px;
 }
-.scenario-card{
+.scenario-box{
   background:var(--card);
   border:1px solid var(--line);
   border-radius:var(--r);
-  padding:14px 16px;
+  padding:14px;
   box-shadow:var(--shadow);
-  text-decoration:none;
-  color:var(--ink);
-  transition:all .15s;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
-.scenario-card:hover{transform:translateY(-2px);border-color:var(--green);box-shadow:var(--shadow-hover)}
-.scenario-ico{font-size:22px;margin-bottom:6px}
-.scenario-card h3{margin:0 0 4px;font-size:14.5px;font-weight:850}
-.scenario-card p{margin:0;font-size:11.5px;color:var(--muted);line-height:1.4}
+.scenario-head{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:4px;
+}
+.scenario-box h3{
+  margin:0;
+  font-size:14.5px;
+  font-weight:850;
+  color:var(--ink);
+}
+.scenario-box p{
+  margin:0 0 10px;
+  font-size:11.5px;
+  color:var(--muted);
+  line-height:1.35;
+}
+.scenario-pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px;
+  margin-top:auto;
+}
+.pill-link{
+  display:inline-flex;
+  align-items:center;
+  gap:3px;
+  background:#f4f1e9;
+  border:1px solid #ddd6c7;
+  color:var(--ink);
+  font-size:10.5px;
+  font-weight:750;
+  padding:3px 7px;
+  border-radius:10px;
+  text-decoration:none;
+  transition:all .12s;
+}
+.pill-link:hover{
+  background:var(--green-light);
+  border-color:var(--green);
+  color:var(--green);
+}
+.pill-main{
+  background:var(--green-light);
+  border-color:#b9d8ca;
+  color:var(--green);
+  font-weight:850;
+}
 
 /* Tools Catalog */
 .fx-search{
-  max-width:520px;
-  margin:0 auto 12px;
+  max-width:480px;
+  margin:0 auto 10px;
   position:relative;
   width:100%;
 }
 .fx-search input{
   width:100%;
-  padding:10px 14px 10px 38px;
+  padding:9px 12px 9px 34px;
   border:1px solid var(--line);
-  border-radius:20px;
-  font-size:13px;
+  border-radius:18px;
+  font-size:12.5px;
   background:#fff;
   outline:none;
 }
 .fx-search input:focus{border-color:var(--green);box-shadow:0 0 0 2px rgba(8,119,90,.15)}
-.fx-search-icon{position:absolute;left:14px;top:10px;font-size:14px;color:var(--muted)}
+.fx-search-icon{position:absolute;left:12px;top:9px;font-size:13px;color:var(--muted)}
 .fx-tabs{
   display:flex;
   justify-content:center;
-  gap:5px;
+  gap:4px;
   flex-wrap:wrap;
-  margin-bottom:16px;
+  margin-bottom:14px;
 }
 .fx-tab{
   background:#fff;
   border:1px solid var(--line);
-  border-radius:16px;
-  padding:5px 12px;
-  font-size:11.5px;
+  border-radius:14px;
+  padding:4px 10px;
+  font-size:11px;
   font-weight:750;
   color:var(--ink);
   cursor:pointer;
@@ -341,38 +399,36 @@ html,body{
 .tool-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
-  gap:10px;
-  margin-bottom:28px;
-  width:100%;
+  gap:8px;
+  margin-bottom:24px;
 }
 .tool-card{
   background:var(--card);
   border:1px solid var(--line);
-  border-radius:var(--r);
-  padding:14px;
+  border-radius:12px;
+  padding:12px;
   box-shadow:var(--shadow);
   text-decoration:none;
   color:var(--ink);
   transition:all .15s;
   display:flex;
-  gap:10px;
+  gap:9px;
   align-items:flex-start;
 }
-.tool-card:hover{transform:translateY(-2px);border-color:var(--green);box-shadow:var(--shadow-hover)}
-.tool-icon{font-size:22px;flex:0 0 auto}
+.tool-card:hover{transform:translateY(-1px);border-color:var(--green);box-shadow:var(--shadow-hover)}
+.tool-icon{font-size:20px;flex:0 0 auto}
 .tool-info{min-width:0;flex:1}
-.tool-title{margin:0 0 2px;font-size:13.5px;font-weight:850;color:var(--ink)}
-.tool-desc{margin:0;font-size:11px;color:var(--muted);line-height:1.35}
+.tool-title{margin:0 0 2px;font-size:13px;font-weight:850;color:var(--ink)}
+.tool-desc{margin:0;font-size:11px;color:var(--muted);line-height:1.3}
 
 /* Accordion Calendar */
 .acc-box{
   background:var(--card);
   border:1px solid var(--line);
-  border-radius:var(--r);
-  padding:12px 16px;
-  margin-bottom:24px;
+  border-radius:12px;
+  padding:10px 14px;
+  margin-bottom:20px;
   box-shadow:var(--shadow);
-  width:100%;
 }
 .acc-summary{
   cursor:pointer;
@@ -381,82 +437,45 @@ html,body{
   justify-content:space-between;
   align-items:center;
   font-weight:850;
-  font-size:13.5px;
+  font-size:13px;
 }
 .acc-summary::-webkit-details-marker{display:none}
 
-/* Cyber Banner Card */
-.cyber-banner{
-  background:#fffdf8;
-  border:1px solid #c2452e;
-  border-radius:var(--r);
-  padding:14px 16px;
-  box-shadow:var(--shadow);
-  margin-bottom:28px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  text-decoration:none;
-  color:var(--ink);
-  flex-wrap:wrap;
-  width:100%;
-}
-.cyber-banner:hover{border-color:#991b1b;box-shadow:var(--shadow-hover)}
-
-/* Trust & Security */
+/* Trust Section */
 .trust-banner{
   background:linear-gradient(135deg,#fffdf8,#f8f4eb);
   border:1px solid var(--line);
-  border-radius:var(--r);
-  padding:20px 16px;
-  margin-bottom:30px;
+  border-radius:12px;
+  padding:16px 14px;
+  margin-bottom:24px;
   box-shadow:var(--shadow);
-  width:100%;
 }
 .trust-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:12px;
-  margin-top:14px;
-  width:100%;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:8px;
+  margin-top:10px;
 }
 
 /* Footer */
 footer{
   border-top:1px solid var(--line);
   background:#fffdf8;
-  padding:30px 0 40px;
-  font-size:11.5px;
+  padding:24px 0 32px;
+  font-size:11px;
   color:var(--muted);
-  margin-top:30px;
-  width:100%;
+  margin-top:24px;
 }
 .footer-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:20px;
-  margin-bottom:24px;
-  width:100%;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:16px;
+  margin-bottom:18px;
 }
-.footer-col h4{margin:0 0 8px;font-size:12.5px;color:var(--ink)}
-.footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px}
+.footer-col h4{margin:0 0 6px;font-size:12px;color:var(--ink)}
+.footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px}
 .footer-col a{color:var(--muted);text-decoration:none}
 .footer-col a:hover{color:var(--green)}
-
-/* Responsive adjustments */
-@media(max-width:768px){
-  .header-nav{flex-direction:column;align-items:flex-start;gap:8px}
-  .nav-links{width:100%;overflow-x:auto;white-space:nowrap;padding-bottom:4px;gap:6px}
-  .hero{padding:24px 0 12px}
-  .live-strip{grid-template-columns:1fr 1fr}
-  .scenarios-grid{grid-template-columns:1fr}
-}
-@media(max-width:480px){
-  .live-strip{grid-template-columns:1fr}
-  .hero-cta{flex-direction:column}
-  .btn-primary,.btn-secondary{width:100%;text-align:center}
-}
 </style>
 <script data-goatcounter="https://finance-portal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -466,11 +485,11 @@ footer{
   <div class="shell header-nav">
     <a href="index.html" class="logo">
       <div class="mark">₪</div>
-      <span>Понятные финансы <span style="font-size:11px;font-weight:600;color:var(--muted)">Израиль</span></span>
+      <span>Понятные финансы <span style="font-size:10.5px;font-weight:600;color:var(--muted)">Израиль</span></span>
     </a>
     <div class="nav-links">
       <a href="tablo.html">📊 Табло</a>
-      <a href="#tools">💼 Калькуляторы</a>
+      <a href="#tools">💼 Каталог 24</a>
       <a href="discounts.html">🛍️ Скидки</a>
       <a href="cyber.html">🛡️ Киберщит</a>
       <a href="about.html">ℹ️ О проекте</a>
@@ -482,116 +501,180 @@ footer{
 <main class="shell">
   <!-- Hero Section -->
   <section class="hero">
-    <span class="eyebrow">НЕЗАВИСИМЫЙ ФИНАНСОВЫЙ ПОРТАЛ ИЗРАИЛЯ · 2026</span>
+    <span class="eyebrow">НЕЗАВИСИМЫЙ ПОРТАЛ РАСЧЁТОВ В ИЗРАИЛЕ · 2026</span>
     <h1>Цифры вашей жизни в Израиле — честно и без посредников</h1>
-    <p>Калькуляторы зарплаты, машканты и пенсионных накоплений. Все расчёты работают конфиденциально прямо в браузере без регистрации.</p>
+    <p>Калькуляторы зарплаты, машканты, налогов и пенсионных накоплений. Все расчёты выполняются конфиденциально прямо в браузере без регистрации.</p>
     <div class="hero-cta">
-      <a href="salary.html" class="btn-primary">💰 Посчитать зарплату (брутто → нетто)</a>
-      <a href="mashkanta.html" class="btn-secondary">🏠 Калькулятор машканты</a>
-      <a href="tablo.html" class="btn-secondary">📊 Живое табло экономики</a>
+      <a href="salary.html" class="btn-primary">💰 Зарплата брутто → нетто</a>
+      <a href="mashkanta.html" class="btn-secondary">🏠 Автоподбор машканты</a>
+      <a href="tablo.html" class="btn-secondary">📊 Табло ставок</a>
     </div>
     <div class="hero-trust">
-      <span>🔒 <b>100% приватность:</b> данные не покидают ваше устройство</span>
-      <span>🏛️ <b>Официальные шлюзы:</b> Bank of Israel, BTL, CBS, Минэнерго</span>
+      <span>🔒 <b>100% приватность</b>: расчёты в браузере</span>
+      <span>🏛️ <b>Официальные шлюзы</b>: BoI, BTL, CBS, Минэнерго</span>
     </div>
   </section>
 
-  <!-- Live Barometer Strip (Full Width) -->
+  <!-- 🛡️ Signature Cyber Security Card (Right on 1st screen) -->
+  <a href="cyber.html" class="cyber-card">
+    <div style="display:flex;align-items:center;gap:10px;min-width:0;flex:1">
+      <span style="font-size:24px;flex:0 0 auto">🛡️</span>
+      <div style="min-width:0">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:1px;flex-wrap:wrap">
+          <span style="font-size:13px;font-weight:850;color:var(--ink)">Киберщит: защита от телефонных и SMS-мошенников</span>
+          <span style="font-size:8.5px;font-weight:900;background:var(--red-light);color:var(--red);padding:1px 5px;border-radius:4px">LIVE</span>
+        </div>
+        <div style="font-size:11px;color:var(--muted);line-height:1.3">Сводка Киберштаба: звонки от «службы безопасности банка» и поддельные SMS Doar Israel</div>
+      </div>
+    </div>
+    <span class="cyber-phone">📞 119 · Разбор схем →</span>
+  </a>
+
+  <!-- Live Barometer Strip -->
   <section class="live-strip" id="live-barometer">
-    <!-- Card 1: Bank of Israel -->
+    <!-- 1: Bank of Israel -->
     <a href="mashkanta.html" class="live-card">
       <div style="display:flex;justify-content:space-between;align-items:center">
-        <span style="font-size:11.5px;font-weight:800;color:var(--muted)">🏦 БАНК ИЗРАИЛЯ</span>
-        <span class="live-tag tag-green">📉 СНИЖЕНА НА 0.25%</span>
+        <span style="font-size:10.5px;font-weight:800;color:var(--muted)">🏦 БАНК ИЗРАИЛЯ</span>
+        <span class="live-tag tag-green">📉 -0.25%</span>
       </div>
       <div class="live-val" id="bar-boi">Ставка 3.25% · Прайм 4.75%</div>
-      <div style="font-size:11px;color:var(--muted)">Платежи по машканте снижаются →</div>
+      <div style="font-size:10.5px;color:var(--muted)">Машканта снижается →</div>
     </a>
 
-    <!-- Card 2: Gas 95 -->
+    <!-- 2: Gas 95 -->
     <a href="benzin.html" class="live-card">
       <div style="display:flex;justify-content:space-between;align-items:center">
-        <span style="font-size:11.5px;font-weight:800;color:var(--muted)">⛽ БЕНЗИН 95 (С 01.09)</span>
-        <span class="live-tag tag-red">🔺 +16 АГОРОТ</span>
+        <span style="font-size:10.5px;font-weight:800;color:var(--muted)">⛽ БЕНЗИН 95 (01.09)</span>
+        <span class="live-tag tag-red">🔺 +16 АГ.</span>
       </div>
       <div class="live-val" id="bar-fuel">8.25 ₪ / литр</div>
-      <div style="font-size:11px;color:var(--muted)">Рекорд 2012 года · Бак: 412.50 ₪ →</div>
+      <div style="font-size:10.5px;color:var(--muted)">Рекорд 2012 г. · Бак 412.50 ₪ →</div>
     </a>
 
-    <!-- Card 3: Inflation CPI -->
+    <!-- 3: Inflation CPI -->
     <a href="tablo.html" class="live-card">
       <div style="display:flex;justify-content:space-between;align-items:center">
-        <span style="font-size:11.5px;font-weight:800;color:var(--muted)">📊 ИНФЛЯЦИЯ (МАДАД)</span>
+        <span style="font-size:10.5px;font-weight:800;color:var(--muted)">📊 ИНФЛЯЦИЯ (МАДАД)</span>
         <span class="live-tag tag-blue">ЦСБ ИЮЛЬ</span>
       </div>
       <div class="live-val" id="bar-cpi">Годовая: 1.5% · Месяц +0.3%</div>
-      <div style="font-size:11px;color:var(--muted)">След. публикация 15.09 в 18:30 →</div>
+      <div style="font-size:10.5px;color:var(--muted)">След. публикация 15.09 →</div>
     </a>
 
-    <!-- Card 4: BTL Payouts -->
+    <!-- 4: BTL Payouts -->
     <a href="#calendar" class="live-card">
       <div style="display:flex;justify-content:space-between;align-items:center">
-        <span style="font-size:11.5px;font-weight:800;color:var(--muted)">🗓️ БИТУАХ ЛЕУМИ</span>
-        <span class="live-tag tag-green">СЕНТЯБРЬ 2026</span>
+        <span style="font-size:10.5px;font-weight:800;color:var(--muted)">🗓️ БИТУАХ ЛЕУМИ</span>
+        <span class="live-tag tag-green">СЕНТЯБРЬ</span>
       </div>
       <div class="live-val">12.09 · 20.09 · 28.09</div>
-      <div style="font-size:11px;color:var(--muted)">График всех пособий на месяц →</div>
+      <div style="font-size:10.5px;color:var(--muted)">График всех выплат →</div>
     </a>
   </section>
 
-  <!-- 4 Life Scenarios -->
-  <section style="margin-bottom:30px">
-    <h2 class="section-title">С чего начать? Выберите вашу ситуацию</h2>
-    <p class="section-sub">Собрали главные калькуляторы и правила под 4 самые частые жизненные задачи в Израиле</p>
+  <!-- 4 Life Scenarios with ALL Linked Sub-calculators (ласточки) -->
+  <section style="margin-bottom:24px">
+    <h2 class="section-title">С чего начать? Выберите вашу задачу</h2>
+    <p class="section-sub">Внутри каждой карточки — переход во все связанные калькуляторы и законы</p>
     
     <div class="scenarios-grid">
-      <!-- Scenario 1 -->
-      <a href="salary.html" class="scenario-card">
-        <div class="scenario-ico">🧳</div>
-        <h3>Новый репатриант (Оле)</h3>
-        <p>Расчёт зарплаты со льготными баллами (некудот зикуй), корзина абсорбции и скидки на арнону.</p>
-      </a>
+      <!-- Scenario 1: Оле Хадаш -->
+      <div class="scenario-box">
+        <div>
+          <div class="scenario-head">
+            <span style="font-size:20px">🧳</span>
+            <h3>Новый репатриант (Оле)</h3>
+          </div>
+          <p>Всё для первого года: льготные налоговые баллы, скидки на налоги, аренда и государственные выплаты.</p>
+        </div>
+        <div class="scenario-pills">
+          <a href="salary.html" class="pill-link pill-main">💰 Зарплата Оле →</a>
+          <a href="arnona.html" class="pill-link">🏢 Скидка на арнону</a>
+          <a href="mas-rehisha.html" class="pill-link">🏛️ Мас Рехиша 0%</a>
+          <a href="hisahon-yeled.html" class="pill-link">👶 58 ₪/мес детям</a>
+          <a href="valuta.html" class="pill-link">💱 Валюта</a>
+          <a href="slovar.html" class="pill-link">📖 Словарь терминов</a>
+          <a href="nko.html" class="pill-link">🤝 Помощь НКО</a>
+        </div>
+      </div>
 
-      <!-- Scenario 2 -->
-      <a href="mashkanta.html" class="scenario-card">
-        <div class="scenario-ico">🏠</div>
-        <h3>Покупка первой квартиры</h3>
-        <p>Автоподбор машканты из 67 000+ комбинаций, порог 75%, налог мас рехиша 0% и мадад бния.</p>
-      </a>
+      <!-- Scenario 2: Машканта и Жильё -->
+      <div class="scenario-box">
+        <div>
+          <div class="scenario-head">
+            <span style="font-size:20px">🏠</span>
+            <h3>Покупка квартиры и машканта</h3>
+          </div>
+          <p>Полный цикл сделки: автоподбор тамхиля, все сопутствующие налоги, рефинансирование и досрочное погашение.</p>
+        </div>
+        <div class="scenario-pills">
+          <a href="mashkanta.html" class="pill-link pill-main">🏠 Автоподбор машканты →</a>
+          <a href="mas-rehisha.html" class="pill-link">🏛️ Мас Рехиша (налог)</a>
+          <a href="mas-shevach.html" class="pill-link">📉 Мас Шевах</a>
+          <a href="mihzur-mashkanta.html" class="pill-link">🔄 Рефинансирование</a>
+          <a href="siluk-mukdam.html" class="pill-link">💎 Досрочное погашение</a>
+          <a href="arenda-vs-pokupka.html" class="pill-link">⚖️ Аренда vs покупка</a>
+          <a href="dira.html" class="pill-link">🏗️ Дира бэ-Анаха</a>
+        </div>
+      </div>
 
-      <!-- Scenario 3 -->
-      <a href="avtala.html" class="scenario-card">
-        <div class="scenario-ico">💼</div>
-        <h3>Смена работы / увольнение</h3>
-        <p>Калькулятор авталы (пособие по безработице), компенсация пицуим и оздоровительные (451.50 ₪).</p>
-      </a>
+      <!-- Scenario 3: Зарплата, увольнение, работа -->
+      <div class="scenario-box">
+        <div>
+          <div class="scenario-head">
+            <span style="font-size:20px">💼</span>
+            <h3>Работа, зарплата и увольнение</h3>
+          </div>
+          <p>Проверка расчётного листа (тлуш), пособие по безработице, компенсация пицуим и обновлённые оздоровительные.</p>
+        </div>
+        <div class="scenario-pills">
+          <a href="salary.html" class="pill-link pill-main">💰 Брутто → нетто →</a>
+          <a href="avtala.html" class="pill-link">📋 Автала (безработица)</a>
+          <a href="havraa.html" class="pill-link">🏖️ Оздоровительные 451.50 ₪</a>
+          <a href="nekudot-zikuy.html" class="pill-link">🏷️ Некудот зикуй</a>
+          <a href="keren-hishtalmut.html" class="pill-link">🎓 Керен Ишталмут</a>
+        </div>
+      </div>
 
-      <!-- Scenario 4 -->
-      <a href="pension-calc.html" class="scenario-card">
-        <div class="scenario-ico">🧓</div>
-        <h3>Пенсия и сбережения</h3>
-        <p>Профессиональный расчёт пенсионного капитала, налоговая корзина «Кибуа Зхуйот» и Керен Ишталмут.</p>
-      </a>
+      <!-- Scenario 4: Пенсия и сбережения -->
+      <div class="scenario-box">
+        <div>
+          <div class="scenario-head">
+            <span style="font-size:20px">🧓</span>
+            <h3>Пенсия, сбережения и капитал</h3>
+          </div>
+          <p>Моделирование пенсионного фонда, освобождение от налогов «Кибуа Зхуйот» (161д) и доходность денежных фондов.</p>
+        </div>
+        <div class="scenario-pills">
+          <a href="pension-calc.html" class="pill-link pill-main">💼 Пенсионный PRO →</a>
+          <a href="pension-gap.html" class="pill-link">📉 Пенсионный разрыв</a>
+          <a href="keren-hishtalmut.html" class="pill-link">🎓 Керен Ишталмут</a>
+          <a href="keren-kaspit.html" class="pill-link">💵 Керен Каспит</a>
+          <a href="pikadon-vs-keren.html" class="pill-link">⚖️ Депозит vs Фонд</a>
+          <a href="hisahon-yeled.html" class="pill-link">👶 Сбережения ребёнку</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Tools Catalog (24 calculators) -->
-  <section id="tools" style="margin-bottom:30px">
-    <h2 class="section-title">Все 24 калькулятора и справочника</h2>
-    <p class="section-sub">Быстрый поиск и фильтрация по категориям — все инструменты работают прямо в браузере</p>
+  <!-- Complete Catalog with Filters -->
+  <section id="tools" style="margin-bottom:24px">
+    <h2 class="section-title">Каталог всех инструментов</h2>
+    <p class="section-sub">Быстрый поиск и разбивка по категориям</p>
 
     <div class="fx-search">
       <span class="fx-search-icon">🔍</span>
-      <input type="search" id="tool-search" placeholder="Поиск: зарплата, машканта, пенсия, керен ишталмут, авто..." oninput="filterTools()">
+      <input type="search" id="tool-search" placeholder="Поиск: зарплата, машканта, мас рехиша, пенсия, арнона..." oninput="filterTools()">
     </div>
 
     <div class="fx-tabs">
       <button class="fx-tab active" onclick="switchCategory('popular', this)">🔥 Популярное</button>
-      <button class="fx-tab" onclick="switchCategory('salary', this)">💰 Зарплата и налоги</button>
+      <button class="fx-tab" onclick="switchCategory('salary', this)">💰 Зарплата и работа</button>
       <button class="fx-tab" onclick="switchCategory('housing', this)">🏠 Жильё и машканта</button>
-      <button class="fx-tab" onclick="switchCategory('pension', this)">💼 Пенсия и накопления</button>
+      <button class="fx-tab" onclick="switchCategory('pension', this)">💼 Пенсия и сбережения</button>
       <button class="fx-tab" onclick="switchCategory('auto', this)">🚗 Авто и кредиты</button>
-      <button class="fx-tab" onclick="switchCategory('all', this)">📋 Все 24 инструмента</button>
+      <button class="fx-tab" onclick="switchCategory('all', this)">📋 Все инструменты</button>
     </div>
 
     <div class="tool-grid" id="tools-container">
@@ -600,7 +683,7 @@ footer{
         <span class="tool-icon">💰</span>
         <div class="tool-info">
           <h3 class="tool-title">Калькулятор зарплаты</h3>
-          <p class="tool-desc">Брутто → нетто с учётом налоговых ступеней 2026, некудот зикуй и пенсионных отчислений</p>
+          <p class="tool-desc">Брутто → нетто: налоговые ступени 2026, некудот зикуй и пенсионные взносы</p>
         </div>
       </a>
 
@@ -608,40 +691,157 @@ footer{
       <a href="mashkanta.html" class="tool-card" data-cat="housing popular" data-tags="машканта ипотека жилье банк прайм калац миштана">
         <span class="tool-icon">🏠</span>
         <div class="tool-info">
-          <h3 class="tool-title">Калькулятор машканты</h3>
-          <p class="tool-desc">Автоподбор оптимального тамхиля из 67 000 вариантов и стресс-тест на рост ставок</p>
+          <h3 class="tool-title">Автоподбор машканты</h3>
+          <p class="tool-desc">Оптимальный тамхиль из 67 000 вариантов и стресс-тест на рост ставок</p>
         </div>
       </a>
 
-      <!-- 3. Pension PRO -->
-      <a href="pension-calc.html" class="tool-card" data-cat="pension popular" data-tags="пенсия пенсионные накопления кибуа зхуйот 161д битуах леуми">
+      <!-- 3. Mas Rehisha -->
+      <a href="mas-rehisha.html" class="tool-card" data-cat="housing" data-tags="мас рехиша налог на покупку квартиры жилье олим">
+        <span class="tool-icon">🏛️</span>
+        <div class="tool-info">
+          <h3 class="tool-title">Налог Мас Рехиша</h3>
+          <p class="tool-desc">Ступени налога на покупку жилья: порог 0% до 1.98 млн ₪ и льгота для олим</p>
+        </div>
+      </a>
+
+      <!-- 4. Mas Shevach -->
+      <a href="mas-shevach.html" class="tool-card" data-cat="housing" data-tags="мас шевах налог на прирост стоимости продажа квартиры">
+        <span class="tool-icon">📉</span>
+        <div class="tool-info">
+          <h3 class="tool-title">Налог Мас Шевах</h3>
+          <p class="tool-desc">Налог на прирост стоимости при продаже недвижимости и условия освобождения</p>
+        </div>
+      </a>
+
+      <!-- 5. Mihzur Mashkanta -->
+      <a href="mihzur-mashkanta.html" class="tool-card" data-cat="housing" data-tags="рефинансирование михзур машканта штраф выгода">
+        <span class="tool-icon">🔄</span>
+        <div class="tool-info">
+          <h3 class="tool-title">Рефинансирование машканты</h3>
+          <p class="tool-desc">Стоит ли менять ипотеку: расчёт чистой выгоды с учётом банковских штрафов</p>
+        </div>
+      </a>
+
+      <!-- 6. Siluk Mukdam -->
+      <a href="siluk-mukdam.html" class="tool-card" data-cat="housing" data-tags="досрочное погашение силук мукдам инвестиции выгода">
+        <span class="tool-icon">💎</span>
+        <div class="tool-info">
+          <h3 class="tool-title">Погашение vs Инвестиции</h3>
+          <p class="tool-desc">Что выгоднее: закрыть часть машканты досрочно или вложить свободные деньги</p>
+        </div>
+      </a>
+
+      <!-- 7. Arenda vs Pokupka -->
+      <a href="arenda-vs-pokupka.html" class="tool-card" data-cat="housing" data-tags="аренда покупка жилье съем сравнение">
+        <span class="tool-icon">⚖️</span>
+        <div class="tool-info">
+          <h3 class="tool-title">Аренда vs Покупка</h3>
+          <p class="tool-desc">Математическое сравнение покупки квартиры с ипотекой против долгосрочной аренды</p>
+        </div>
+      </a>
+
+      <!-- 8. Dira beAnaha -->
+      <a href="dira.html" class="tool-card" data-cat="housing" data-tags="дира бэ анаха мехир лемиштакен лотерея жилье">
+        <span class="tool-icon">🏗️</span>
+        <div class="tool-info">
+          <h3 class="tool-title">Дира бэ-Анаха (Мехир ле-Миштакен)</h3>
+          <p class="tool-desc">Оценка скидки от рыночной цены, график платежей и привязка к мадад бния</p>
+        </div>
+      </a>
+
+      <!-- 9. Arnona -->
+      <a href="arnona.html" class="tool-card" data-cat="housing popular" data-tags="арнона муниципальный налог скидка олим">
+        <span class="tool-icon">🏢</span>
+        <div class="tool-info">
+          <h3 class="tool-title">Скидки на арнону</h3>
+          <p class="tool-desc">Тарифы арноны по городам Израиля и проверка права на скидку до 90%</p>
+        </div>
+      </a>
+
+      <!-- 10. Pension PRO -->
+      <a href="pension-calc.html" class="tool-card" data-cat="pension popular" data-tags="пенсия пенсионные накопления кибуа зхуйот 161д">
         <span class="tool-icon">💼</span>
         <div class="tool-info">
-          <h3 class="tool-title">Пенсионные накопления (PRO)</h3>
-          <p class="tool-desc">Моделирование капитала, расчёт чистой ежемесячной пенсии и налоговой льготы 9(а)</p>
+          <h3 class="tool-title">Пенсионный расчёт (PRO)</h3>
+          <p class="tool-desc">Моделирование капитала, расчёт чистой пенсии и корзина «Кибуа Зхуйот» (161д)</p>
         </div>
       </a>
 
-      <!-- 4. Avtala -->
+      <!-- 11. Pension Gap -->
+      <a href="pension-gap.html" class="tool-card" data-cat="pension" data-tags="пенсионный разрыв падение дохода пенсия">
+        <span class="tool-icon">📉</span>
+        <div class="tool-info">
+          <h3 class="tool-title">Пенсионный разрыв</h3>
+          <p class="tool-desc">На сколько упадёт доход после выхода на пенсию и сколько нужно докладывать</p>
+        </div>
+      </a>
+
+      <!-- 12. Keren Hishtalmut -->
+      <a href="keren-hishtalmut.html" class="tool-card" data-cat="pension popular" data-tags="керен ишталмут фонд повышения квалификации">
+        <span class="tool-icon">🎓</span>
+        <div class="tool-info">
+          <h3 class="tool-title">Керен Ишталмут</h3>
+          <p class="tool-desc">Фонд повышения квалификации: безналоговый лимит и сложный процент за 6 лет</p>
+        </div>
+      </a>
+
+      <!-- 13. Keren Kaspit -->
+      <a href="keren-kaspit.html" class="tool-card" data-cat="pension" data-tags="керен каспит денежный фонд проценты налог">
+        <span class="tool-icon">💵</span>
+        <div class="tool-info">
+          <h3 class="tool-title">Денежные фонды (Керен Каспит)</h3>
+          <p class="tool-desc">Доходность денежных фондов и налоговое преимущество (налог только с реального дохода)</p>
+        </div>
+      </a>
+
+      <!-- 14. Pikadon vs Keren -->
+      <a href="pikadon-vs-keren.html" class="tool-card" data-cat="pension" data-tags="депозит пикадон керен каспит сравнение банк">
+        <span class="tool-icon">⚖️</span>
+        <div class="tool-info">
+          <h3 class="tool-title">Депозит vs Керен Каспит</h3>
+          <p class="tool-desc">Сравнение банковского вклада и денежного фонда с учётом инфляции и налогов</p>
+        </div>
+      </a>
+
+      <!-- 15. Hisahon Leyeled -->
+      <a href="hisahon-yeled.html" class="tool-card" data-cat="pension" data-tags="накопления на ребенка хисахон лейелед 58 шекелей">
+        <span class="tool-icon">👶</span>
+        <div class="tool-info">
+          <h3 class="tool-title">Накопления на ребёнка</h3>
+          <p class="tool-desc">58 ₪/мес от Битуах Леуми — сколько накопится в банке и инвестиционном фонде</p>
+        </div>
+      </a>
+
+      <!-- 16. Avtala -->
       <a href="avtala.html" class="tool-card" data-cat="salary popular" data-tags="автала безработица битуах леуми увольнение">
         <span class="tool-icon">📋</span>
         <div class="tool-info">
           <h3 class="tool-title">Калькулятор авталы</h3>
-          <p class="tool-desc">Пособие по безработице: размер дневной выплаты, количество дней и сроки перевода</p>
+          <p class="tool-desc">Пособие по безработице: дневная выплата, количество дней и даты начислений</p>
         </div>
       </a>
 
-      <!-- 5. Keren Hishtalmut -->
-      <a href="keren-hishtalmut.html" class="tool-card" data-cat="pension popular" data-tags="керен ишталмут фонд повышения квалификации накопления">
-        <span class="tool-icon">🎓</span>
+      <!-- 17. Havraa -->
+      <a href="havraa.html" class="tool-card" data-cat="salary" data-tags="оздоровительные дмей хавраа ставка 451">
+        <span class="tool-icon">🏖️</span>
         <div class="tool-info">
-          <h3 class="tool-title">Керен Ишталмут</h3>
-          <p class="tool-desc">Фонд повышения квалификации: безналоговый потолок 2026 и сложный процент за 6 лет</p>
+          <h3 class="tool-title">Оздоровительные (Дмей Хавраа)</h3>
+          <p class="tool-desc">Новая ставка 451.50 ₪/день — проверка размера начислений и доплаты</p>
         </div>
       </a>
 
-      <!-- 6. Gas & Auto -->
-      <a href="benzin.html" class="tool-card" data-cat="auto popular" data-tags="бензин топливо авто машина расходы">
+      <!-- 18. Nekudot Zikuy -->
+      <a href="nekudot-zikuy.html" class="tool-card" data-cat="salary" data-tags="некудот зикуй налоговые баллы дети олим">
+        <span class="tool-icon">🏷️</span>
+        <div class="tool-info">
+          <h3 class="tool-title">Налоговые баллы (Некудот Зикуй)</h3>
+          <p class="tool-desc">Расчёт стоимости баллов (242 ₪/балл): дети, алия, учёба, академическая степень</p>
+        </div>
+      </a>
+
+      <!-- 19. Gas Price -->
+      <a href="benzin.html" class="tool-card" data-cat="auto popular" data-tags="бензин топливо заправка 8.25 акциз">
         <span class="tool-icon">⛽</span>
         <div class="tool-info">
           <h3 class="tool-title">Калькулятор бензина</h3>
@@ -649,75 +849,66 @@ footer{
         </div>
       </a>
 
-      <!-- 7. Arnona -->
-      <a href="arnona.html" class="tool-card" data-cat="housing popular" data-tags="арнона муниципальный налог скидка репатриант">
-        <span class="tool-icon">🏢</span>
-        <div class="tool-info">
-          <h3 class="tool-title">Калькулятор арноны</h3>
-          <p class="tool-desc">Муниципальный налог по городам Израиля и проверка права на скидку до 90%</p>
-        </div>
-      </a>
-
-      <!-- 8. Discounts -->
-      <a href="discounts.html" class="tool-card" data-cat="popular" data-tags="скидки промокоды акции магазины супермаркеты">
-        <span class="tool-icon">🛍️</span>
-        <div class="tool-info">
-          <h3 class="tool-title">Скидки и промокоды</h3>
-          <p class="tool-desc">Живой агрегатор акций в 60+ городах Израиля: супермаркеты, аптеки, одежда, электроника</p>
-        </div>
-      </a>
-
-      <!-- 9. Havraa -->
-      <a href="havraa.html" class="tool-card" data-cat="salary" data-tags="оздоровительные хавраа дмей хавраа">
-        <span class="tool-icon">🏖️</span>
-        <div class="tool-info">
-          <h3 class="tool-title">Оздоровительные (Дмей Хавраа)</h3>
-          <p class="tool-desc">Новая ставка 451.50 ₪/день — проверка размера выплаты и доплаты за прошлые месяцы</p>
-        </div>
-      </a>
-
-      <!-- 10. Hisahon Leyeled -->
-      <a href="hisahon-yeled.html" class="tool-card" data-cat="pension" data-tags="хисахон лейелед накопления на ребенка битуах леуми">
-        <span class="tool-icon">👶</span>
-        <div class="tool-info">
-          <h3 class="tool-title">Накопления на ребёнка</h3>
-          <p class="tool-desc">Государственная программа: 58 ₪/мес от Битуах Леуми — сколько накопится к 18 и 21 годам</p>
-        </div>
-      </a>
-
-      <!-- 11. Mas Rehisha -->
-      <a href="mas-rehisha.html" class="tool-card" data-cat="housing" data-tags="мас рехиша налог на покупку квартиры недвижимость">
-        <span class="tool-icon">🏛️</span>
-        <div class="tool-info">
-          <h3 class="tool-title">Налог на покупку (Мас Рехиша)</h3>
-          <p class="tool-desc">Ступени налога на единственную квартиру (порог 0% до 1.98 млн ₪) и инвестиционную</p>
-        </div>
-      </a>
-
-      <!-- 12. Auto Maintenance -->
-      <a href="auto.html" class="tool-card" data-cat="auto" data-tags="автомобиль владение машина страховка тест техосмотр">
+      <!-- 20. Auto Maintenance -->
+      <a href="auto.html" class="tool-card" data-cat="auto" data-tags="автомобиль машина содержание страховка хова макиф">
         <span class="tool-icon">🚗</span>
         <div class="tool-info">
-          <h3 class="tool-title">Стоимость содержания авто</h3>
+          <h3 class="tool-title">Содержание автомобиля</h3>
           <p class="tool-desc">Полная стоимость владения: бензин, страховка (хова+макиф), техосмотр и амортизация</p>
         </div>
       </a>
 
-      <!-- 13. Tablo -->
-      <a href="tablo.html" class="tool-card" data-cat="popular" data-tags="табло экономика ставка прайм мадад курсы валют">
-        <span class="tool-icon">📊</span>
+      <!-- 21. Consumer Credit -->
+      <a href="kredit.html" class="tool-card" data-cat="auto" data-tags="кредит ссуда прайм банк переплата проценты">
+        <span class="tool-icon">💳</span>
         <div class="tool-info">
-          <h3 class="tool-title">Живое табло экономики</h3>
-          <p class="tool-desc">Сводка ключевых индикаторов: ставка Банка Израиля, мадад, курсы валют и минимальная зарплата</p>
+          <h3 class="tool-title">Калькулятор кредита</h3>
+          <p class="tool-desc">Переплата по потребительским кредитам и ссудам с привязкой к Прайму (4.75%)</p>
         </div>
       </a>
 
-      <!-- 14. Slovar -->
+      <!-- 22. Currency Converter -->
+      <a href="valuta.html" class="tool-card" data-cat="popular" data-tags="валюта доллар евро шекель курс конвертер">
+        <span class="tool-icon">💱</span>
+        <div class="tool-info">
+          <h3 class="tool-title">Конвертер валют</h3>
+          <p class="tool-desc">Официальные курсы Банка Израиля и реальный рыночный курс обмена шекеля</p>
+        </div>
+      </a>
+
+      <!-- 23. Economic Tablo -->
+      <a href="tablo.html" class="tool-card" data-cat="popular" data-tags="табло экономика ставка прайм мадад минималка">
+        <span class="tool-icon">📊</span>
+        <div class="tool-info">
+          <h3 class="tool-title">Живое табло экономики</h3>
+          <p class="tool-desc">Сводка ключевых индикаторов: ставка БИ, мадад, курсы валют и минимальная зарплата</p>
+        </div>
+      </a>
+
+      <!-- 24. Financial Dictionary -->
       <a href="slovar.html" class="tool-card" data-cat="popular" data-tags="словарь термины иврит банки машканта тлуш">
         <span class="tool-icon">📖</span>
         <div class="tool-info">
-          <h3 class="tool-title">Словарь финансовых терминов</h3>
-          <p class="tool-desc">Понятные объяснения банковских терминов с ивритом в скобках: от «тамхиль» до «пицуим»</p>
+          <h3 class="tool-title">Словарь терминов</h3>
+          <p class="tool-desc">Объяснение финансовых и банковских терминов с ивритом в скобках</p>
+        </div>
+      </a>
+
+      <!-- 25. Specialist License Checker -->
+      <a href="proverka-specialista.html" class="tool-card" data-cat="popular" data-tags="проверка специалиста лицензия консультант реестр">
+        <span class="tool-icon">🔍</span>
+        <div class="tool-info">
+          <h3 class="tool-title">Проверка специалистов</h3>
+          <p class="tool-desc">Инструкция по проверке лицензий страховых агентов и консультантов по машкантам</p>
+        </div>
+      </a>
+
+      <!-- 26. Discounts Aggregator -->
+      <a href="discounts.html" class="tool-card" data-cat="popular" data-tags="скидки промокоды акции магазины супермаркеты">
+        <span class="tool-icon">🛍️</span>
+        <div class="tool-info">
+          <h3 class="tool-title">Скидки и промокоды</h3>
+          <p class="tool-desc">Агрегатор скидок в 60+ городах Израиля: супермаркеты, аптеки, электроника</p>
         </div>
       </a>
     </div>
@@ -728,10 +919,10 @@ footer{
     <details>
       <summary class="acc-summary">
         <span>🗓️ График выплат Битуах Леуми и решений Банка Израиля (2026)</span>
-        <span style="color:var(--green);font-size:12px">Развернуть график ▸</span>
+        <span style="color:var(--green);font-size:11.5px">Развернуть график ▸</span>
       </summary>
-      <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--line);display:grid;gap:7px;font-size:12.5px">
-        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px"><span><b>31.08.2026</b> · Заседание Банка Израиля</span><span style="font-weight:800;color:var(--green)">✅ Ставка снижена до 3.25% (Прайм 4.75%)</span></div>
+      <div style="margin-top:10px;padding-top:8px;border-top:1px solid var(--line);display:grid;gap:6px;font-size:12px">
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px"><span><b>31.08.2026</b> · Заседание Банка Израиля</span><span style="font-weight:800;color:var(--green)">✅ Ставка снижена: 3.25% (Прайм 4.75%)</span></div>
         <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px"><span><b>01.09.2026</b> · Тариф на бензин 95</span><span style="font-weight:800;color:#991b1b">✅ 8.25 ₪ (+16 агорот)</span></div>
         <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px"><span><b>12.09.2026</b> · Автала (пособие по безработице)</span><span style="color:var(--muted)">⏳ через 11 дн.</span></div>
         <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px"><span><b>15.09.2026 (18:30)</b> · Индекс цен Мадад (ЦСБ)</span><span style="color:var(--muted)">⏳ через 14 дн.</span></div>
@@ -742,46 +933,29 @@ footer{
     </details>
   </section>
 
-  <!-- Cyber Security Compact Card -->
-  <section style="margin-bottom:28px">
-    <a href="cyber.html" class="cyber-banner">
-      <div style="display:flex;align-items:center;gap:12px;min-width:0;flex:1">
-        <span style="font-size:26px;flex:0 0 auto">🛡️</span>
-        <div style="min-width:0">
-          <div style="display:flex;align-items:center;gap:6px;margin-bottom:2px;flex-wrap:wrap">
-            <h3 style="margin:0;font-size:14.5px;color:var(--ink)">Киберщит: защита от телефонных и SMS-мошенников</h3>
-            <span style="font-size:9px;font-weight:800;background:#fee2e2;color:#991b1b;padding:1px 6px;border-radius:4px">ОФИЦИАЛЬНО</span>
-          </div>
-          <p style="margin:0;font-size:11.5px;color:var(--muted);line-height:1.3">Сводка Киберштаба: звонки от «службы безопасности банков», SMS от почты и телефон 119</p>
-        </div>
-      </div>
-      <span style="font-size:12px;font-weight:800;color:var(--red);white-space:nowrap;flex:0 0 auto">Открыть разбор →</span>
-    </a>
-  </section>
-
   <!-- Trust & Privacy Section -->
   <section class="trust-banner">
-    <div style="text-align:center;max-width:600px;margin:0 auto">
+    <div style="text-align:center;max-width:540px;margin:0 auto">
       <span class="eyebrow" style="background:#fff">ПОЛНАЯ ПРОЗРАЧНОСТЬ</span>
-      <h2 style="margin:0 0 6px;font-size:18px">Почему жители Израиля считают у нас</h2>
-      <p style="font-size:12px;color:var(--muted);margin:0">Мы создали инструмент, которому сами доверяем свои финансы</p>
+      <h2 style="margin:0 0 4px;font-size:16.5px">Почему жители Израиля считают у нас</h2>
+      <p style="font-size:11.5px;color:var(--muted);margin:0">Мы создали инструмент, которому сами доверяем свои финансы</p>
     </div>
 
     <div class="trust-grid">
-      <div style="background:#fff;padding:12px 14px;border-radius:10px;border:1px solid var(--line)">
-        <div style="font-size:18px;margin-bottom:4px">🔒</div>
-        <h4 style="margin:0 0 2px;font-size:13.5px">100% приватность</h4>
-        <p style="margin:0;font-size:11px;color:var(--muted)">Никаких регистраций и паролей. Ваши доходы и расчёты выполняются локально в браузере и не уходят на сервер.</p>
+      <div style="background:#fff;padding:10px 12px;border-radius:10px;border:1px solid var(--line)">
+        <div style="font-size:16px;margin-bottom:2px">🔒</div>
+        <h4 style="margin:0 0 2px;font-size:12.5px">100% приватность</h4>
+        <p style="margin:0;font-size:10.5px;color:var(--muted)">Все расчёты выполняются исключительно локально в браузере и не уходят на сервер.</p>
       </div>
-      <div style="background:#fff;padding:12px 14px;border-radius:10px;border:1px solid var(--line)">
-        <div style="font-size:18px;margin-bottom:4px">🏛️</div>
-        <h4 style="margin:0 0 2px;font-size:13.5px">Государственные данные</h4>
-        <p style="margin:0;font-size:11px;color:var(--muted)">Ставки и законы синхронизируются напрямую с API Банка Израиля, Битуах Леуми, Минэнерго и ЦСБ.</p>
+      <div style="background:#fff;padding:10px 12px;border-radius:10px;border:1px solid var(--line)">
+        <div style="font-size:16px;margin-bottom:2px">🏛️</div>
+        <h4 style="margin:0 0 2px;font-size:12.5px">Официальные шлюзы</h4>
+        <p style="margin:0;font-size:10.5px;color:var(--muted)">Ставки и законы синхронизируются с API Банка Израиля, Битуах Леуми, Минэнерго и ЦСБ.</p>
       </div>
-      <div style="background:#fff;padding:12px 14px;border-radius:10px;border:1px solid var(--line)">
-        <div style="font-size:18px;margin-bottom:4px">⚖️</div>
-        <h4 style="margin:0 0 2px;font-size:13.5px">Без скрытой рекламы</h4>
-        <p style="margin:0;font-size:11px;color:var(--muted)">Мы не продаём кредиты и не навязываем посредников. Вы получаете точную модель и сами принимаете решения.</p>
+      <div style="background:#fff;padding:10px 12px;border-radius:10px;border:1px solid var(--line)">
+        <div style="font-size:16px;margin-bottom:2px">⚖️</div>
+        <h4 style="margin:0 0 2px;font-size:12.5px">Без скрытой рекламы</h4>
+        <p style="margin:0;font-size:10.5px;color:var(--muted)">Мы не продаём кредиты и не навязываем посредников. Вы получаете точный расчёт.</p>
       </div>
     </div>
   </section>
@@ -790,44 +964,46 @@ footer{
 <footer>
   <div class="shell footer-grid">
     <div class="footer-col">
-      <div class="logo" style="margin-bottom:8px">
-        <div class="mark" style="width:24px;height:24px;font-size:13px">₪</div>
-        <span style="font-size:13px">Понятные финансы</span>
+      <div class="logo" style="margin-bottom:6px">
+        <div class="mark" style="width:22px;height:22px;font-size:12px">₪</div>
+        <span style="font-size:12px">Понятные финансы</span>
       </div>
-      <p style="margin:0;line-height:1.5">Независимый информационный портал по финансовой грамотности и расчётам в Израиле.</p>
+      <p style="margin:0;line-height:1.4">Независимый информационный портал по финансовой грамотности и расчётам в Израиле.</p>
     </div>
     <div class="footer-col">
-      <h4>Калькуляторы</h4>
+      <h4>Жильё и машканта</h4>
+      <ul>
+        <li><a href="mashkanta.html">Автоподбор машканты</a></li>
+        <li><a href="mas-rehisha.html">Налог Мас Рехиша</a></li>
+        <li><a href="mas-shevach.html">Налог Мас Шевах</a></li>
+        <li><a href="mihzur-mashkanta.html">Рефинансирование</a></li>
+        <li><a href="arnona.html">Скидки на арнону</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Зарплата и пенсия</h4>
       <ul>
         <li><a href="salary.html">Зарплата брутто-нетто</a></li>
-        <li><a href="mashkanta.html">Автоподбор машканты</a></li>
-        <li><a href="pension-calc.html">Пенсионный расчёт (PRO)</a></li>
+        <li><a href="pension-calc.html">Пенсионный расчёт PRO</a></li>
         <li><a href="avtala.html">Пособие по безработице</a></li>
-        <li><a href="benzin.html">Калькулятор бензина</a></li>
+        <li><a href="keren-hishtalmut.html">Керен Ишталмут</a></li>
+        <li><a href="havraa.html">Оздоровительные</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Справочники</h4>
       <ul>
         <li><a href="tablo.html">Живое табло экономики</a></li>
-        <li><a href="discounts.html">Скидки и промокоды</a></li>
         <li><a href="cyber.html">Киберщит и мошенники</a></li>
-        <li><a href="slovar.html">Словарь терминов на иврите</a></li>
-        <li><a href="arnona.html">Скидки на арнону</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>О проекте</h4>
-      <ul>
-        <li><a href="about.html">Принципы и источники данных</a></li>
-        <li><a href="contact.html">Обратная связь и контакты</a></li>
+        <li><a href="discounts.html">Скидки и промокоды</a></li>
+        <li><a href="about.html">О проекте и источниках</a></li>
         <li><a href="https://t.me/+YOUR_CHANNEL" target="_blank">Telegram-канал</a></li>
       </ul>
     </div>
   </div>
-  <div class="shell" style="border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+  <div class="shell" style="border-top:1px solid var(--line);padding-top:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px">
     <span>© 2026 Понятные финансы в Израиле. Все расчёты являются ориентировочными.</span>
-    <span>Расчёты выполняются локально на вашем устройстве.</span>
+    <span>Все вычисления производятся локально на вашем устройстве.</span>
   </div>
 </footer>
 
@@ -855,7 +1031,7 @@ function filterTools() {
   });
 }
 
-// Fetch live rates from tablo.json
+// Live rates fetch
 fetch('data/tablo.json', {cache: 'no-cache'})
   .then(r => r.ok ? r.json() : null)
   .then(d => {
