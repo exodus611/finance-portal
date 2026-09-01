@@ -135,9 +135,43 @@ h1{font-size:clamp(20px,3.6vw,28px);line-height:1.2;margin:4px 0 6px;letter-spac
   .deal-img-wrap{height:150px}
   .grid{grid-template-columns:1fr}
 }
+
+/* LOCK GATE STYLES */
+#lock-gate{position:fixed;inset:0;background:var(--paper);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px}
+.lock-box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px 24px;width:100%;max-width:380px;text-align:center;box-shadow:0 12px 32px rgba(26,45,37,.1)}
+.lock-icon{width:56px;height:56px;border-radius:50%;background:var(--green-light);color:var(--green);font-size:26px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.lock-box h2{margin:0 0 8px;font-size:20px;font-weight:900}
+.lock-box p{margin:0 0 20px;font-size:13px;color:var(--muted);line-height:1.4}
+.lock-input{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:16px;text-align:center;letter-spacing:3px;font-weight:700;margin-bottom:12px;background:#fff}
+.lock-input:focus{outline:2px solid var(--green);border-color:var(--green)}
+.lock-btn{width:100%;padding:12px;background:var(--green);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:800;cursor:pointer;transition:background .15s,transform .15s}
+.lock-btn:hover{background:var(--green2);transform:translateY(-1px)}
+.lock-btn:active{transform:scale(.98)}
+.lock-err{margin-top:8px;font-size:11.5px;font-weight:750;color:var(--red);display:none}
+.lock-exit-btn{background:transparent;border:none;color:var(--muted);font-size:11px;font-weight:750;margin-top:12px;cursor:pointer;text-decoration:underline}
+.shake{animation:shake .35s ease-in-out}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+
 </style>
 </head>
 <body>
+
+<!-- PASSWORD GATE -->
+<div id="lock-gate">
+  <div class="lock-box" id="lock-card">
+    <div class="lock-icon">🔒</div>
+    <h2>Закрытый доступ</h2>
+    <p>Модуль агрегатора скидок «Тов Ли» находится в режиме закрытого просмотра. Введите PIN-код доступа:</p>
+    <form onsubmit="handleUnlock(event)">
+      <input type="password" id="gate-pass" class="lock-input" placeholder="Введите PIN..." autocomplete="current-password" autofocus>
+      <button type="submit" class="lock-btn">Войти в каталог</button>
+      <div id="gate-err" class="lock-err">⚠️ Неверный пароль доступа (PIN: 2026)</div>
+    </form>
+    <button type="button" class="lock-exit-btn" onclick="location.href='index.html'">← Вернуться на главную</button>
+  </div>
+</div>
+
+<div id="main-content" style="display:none">
 
 <header class="top">
   <div class="shell topbar">
@@ -149,7 +183,8 @@ h1{font-size:clamp(20px,3.6vw,28px);line-height:1.2;margin:4px 0 6px;letter-spac
       </div>
     </a>
     <div style="display:flex;align-items:center;gap:8px">
-      <span style="font-size:11px;background:var(--green-light);color:var(--green);padding:3px 8px;border-radius:6px;font-weight:800">🟢 24 активных акции сегодня</span>
+      <button type="button" onclick="lockPage()" style="border:1px solid var(--line);background:#fff;padding:4px 8px;border-radius:6px;font-size:10.5px;font-weight:750;color:var(--muted);cursor:pointer">🔒 Закрыть</button>
+      <span style="font-size:11px;background:var(--green-light);color:var(--green);padding:3px 8px;border-radius:6px;font-weight:800">🟢 24 активных акции</span>
       <a class="back" href="index.html">← На главную</a>
     </div>
   </div>
@@ -379,6 +414,7 @@ h1{font-size:clamp(20px,3.6vw,28px);line-height:1.2;margin:4px 0 6px;letter-spac
     </div>
   </div>
 </main>
+</div><!-- /main-content -->
 
 <script>
 // Базовая дата: 31 августа 2026
@@ -1066,6 +1102,50 @@ async function initData() {
   }
   applyFilter();
 }
+
+/* ==========================================================================
+   PASSWORD ACCESS GATE (PIN: 2026 or discounts2026)
+   ========================================================================== */
+const VALID_PASSWORDS = ["2026", "discounts2026", "pension2026"];
+
+function handleUnlock(e) {
+  if (e) e.preventDefault();
+  const input = document.getElementById('gate-pass');
+  const val = input.value.trim();
+  const err = document.getElementById('gate-err');
+  const card = document.getElementById('lock-card');
+
+  if (VALID_PASSWORDS.includes(val)) {
+    sessionStorage.setItem('discounts_gate_auth', 'granted');
+    revealCatalog();
+  } else {
+    err.style.display = 'block';
+    card.classList.remove('shake');
+    void card.offsetWidth;
+    card.classList.add('shake');
+    input.value = '';
+    input.focus();
+  }
+}
+
+function revealCatalog() {
+  document.getElementById('lock-gate').style.display = 'none';
+  document.getElementById('main-content').style.display = 'block';
+}
+
+function lockPage() {
+  sessionStorage.removeItem('discounts_gate_auth');
+  document.getElementById('main-content').style.display = 'none';
+  document.getElementById('lock-gate').style.display = 'flex';
+  document.getElementById('gate-pass').value = '';
+  document.getElementById('gate-err').style.display = 'none';
+}
+
+// Auto-unlock if session active
+if (sessionStorage.getItem('discounts_gate_auth') === 'granted') {
+  revealCatalog();
+}
+
 initData();
 </script>
 

@@ -1,14 +1,14 @@
 {
   "_comment": "Данные табло. Заполняется scripts/update.py из официальных источников.",
-  "updated": "2026-08-27",
+  "updated": "2026-08-31",
   "updated_by": "auto",
   "boi": {
     "rate": 0.035,
     "prime": 0.05,
-    "asof": "2026-08-27",
-    "next_decision": "2026-08-31",
+    "asof": "2026-08-31",
+    "next_decision": "2026-10-19",
     "prev_rate": 0.0375,
-    "changed": "2026-07-09"
+    "changed": "2026-08-31"
   },
   "cpi": {
     "value": 105.1,
