@@ -607,6 +607,24 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 <b>Министерство строительства и жилья</b> (отдельное от Битуах леуми ведомство). Продолжает помощь с арендой после окончания сааль клита — до конца 5-го года репатриации (6-го для родителей-одиночек). Момент начала выплат зависит от точной даты вашей репатриации.
 </div>
 </details>
+
+<script>
+fetch('data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null}).then(function(d){
+  if(!d) return;
+  if(d.boi){
+    var boiEl=document.getElementById('dec-boi-val');
+    if(boiEl) boiEl.textContent='Ставка '+(d.boi.rate*100).toFixed(2)+'% · Прайм '+(d.boi.prime*100).toFixed(2)+'%';
+  }
+  if(d.fuel){
+    var fuelEl=document.getElementById('dec-fuel-val');
+    if(fuelEl) fuelEl.textContent=d.fuel.price_95.toFixed(2)+' ₪ / литр';
+  }
+  if(d.cpi){
+    var cpiEl=document.getElementById('dec-cpi-val');
+    if(cpiEl) cpiEl.textContent='Годовая инфляция: '+(d.cpi.yoy*100).toFixed(1)+'%';
+  }
+}).catch(function(){});
+</script>
 </div>
 
 <p style="font-size:10px;color:var(--muted);margin:0 0 14px" id="pay-note">* дата берётся напрямую с официальной страницы Битуах леуми — иногда отличается от «чистого» 28-го числа из-за их внутреннего порядка обработки праздников и выходных</p>
@@ -1009,31 +1027,27 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
     </div>
   </details>
-</div>
-
-<div style="max-width:640px;margin:22px auto 0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px" id="digest-block">
-<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-<span style="font-size:18px">🗞️</span>
-<span style="font-size:13.5px;font-weight:800;color:var(--ink)">Что изменилось за неделю</span>
-<span style="font-size:10px;color:var(--muted);margin-inline-start:auto" id="digest-updated"></span>
-</div>
-<p style="font-size:13px;color:#3d4a3e;line-height:1.6;margin:0" id="digest-text">На этой неделе ставка Банка Израиля осталась без изменений на уровне 3,50%. Годовая инфляция держится на уровне 1,6%. Цена бензина выросла на 61 агору по сравнению с прошлым месяцем. Курс доллара — около 3,01 ₪.</p>
-</div>
 
 <script>
-fetch('data/digest.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():Promise.reject()}).then(function(d){
-  var textEl=document.getElementById('digest-text');
-  var updEl=document.getElementById('digest-updated');
-  if(textEl && d.digest) textEl.textContent=d.digest;
-  if(updEl && d.updated){
-    var dt=new Date(d.updated+'T00:00:00');
-    updEl.textContent='обновлено '+dt.toLocaleDateString('ru-RU',{day:'numeric',month:'long'});
+fetch('data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null}).then(function(d){
+  if(!d) return;
+  if(d.boi){
+    var boiEl=document.getElementById('dec-boi-val');
+    if(boiEl) boiEl.textContent='Ставка '+(d.boi.rate*100).toFixed(2)+'% · Прайм '+(d.boi.prime*100).toFixed(2)+'%';
   }
-}).catch(function(){
-  var block=document.getElementById('digest-block');
-  if(block) block.style.display='none';
-});
+  if(d.fuel){
+    var fuelEl=document.getElementById('dec-fuel-val');
+    if(fuelEl) fuelEl.textContent=d.fuel.price_95.toFixed(2)+' ₪ / литр';
+  }
+  if(d.cpi){
+    var cpiEl=document.getElementById('dec-cpi-val');
+    if(cpiEl) cpiEl.textContent='Годовая инфляция: '+(d.cpi.yoy*100).toFixed(1)+'%';
+  }
+}).catch(function(){});
 </script>
+</div>
+
+
 
 
 <div style="max-width:640px;margin:26px auto 0;background:linear-gradient(135deg,#c2452e,#a5372a);border-radius:16px;padding:3px;box-shadow:0 8px 22px rgba(165,55,42,.2)">
@@ -1063,6 +1077,24 @@ fetch('data/digest.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json
 
   <p class="tb-scam-disclaimer">Это информационный агрегатор публичных официальных предупреждений Национального управления кибербезопасности Израиля и независимых новостных публикаций. Не является юридической консультацией. Полные тексты и обновления — в <a href="https://t.me/Israel_Cyber" target="_blank" rel="noopener noreferrer">официальном канале агентства</a>.</p>
 </details>
+
+<script>
+fetch('data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null}).then(function(d){
+  if(!d) return;
+  if(d.boi){
+    var boiEl=document.getElementById('dec-boi-val');
+    if(boiEl) boiEl.textContent='Ставка '+(d.boi.rate*100).toFixed(2)+'% · Прайм '+(d.boi.prime*100).toFixed(2)+'%';
+  }
+  if(d.fuel){
+    var fuelEl=document.getElementById('dec-fuel-val');
+    if(fuelEl) fuelEl.textContent=d.fuel.price_95.toFixed(2)+' ₪ / литр';
+  }
+  if(d.cpi){
+    var cpiEl=document.getElementById('dec-cpi-val');
+    if(cpiEl) cpiEl.textContent='Годовая инфляция: '+(d.cpi.yoy*100).toFixed(1)+'%';
+  }
+}).catch(function(){});
+</script>
 </div>
 </div>
 
@@ -1283,6 +1315,24 @@ fetch('data/digest.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json
 </div>
 <p style="font-size:10px;color:var(--muted);margin:8px 0 0">Даты 2026 года, по данным Битуах леуми, банков и еврейского календаря. Часы могут отличаться у конкретного отделения — уточняйте на месте. Прошедшие праздники оставлены для справки на следующий год (даты будут другими — еврейский календарь смещается).</p>
 </details>
+
+<script>
+fetch('data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null}).then(function(d){
+  if(!d) return;
+  if(d.boi){
+    var boiEl=document.getElementById('dec-boi-val');
+    if(boiEl) boiEl.textContent='Ставка '+(d.boi.rate*100).toFixed(2)+'% · Прайм '+(d.boi.prime*100).toFixed(2)+'%';
+  }
+  if(d.fuel){
+    var fuelEl=document.getElementById('dec-fuel-val');
+    if(fuelEl) fuelEl.textContent=d.fuel.price_95.toFixed(2)+' ₪ / литр';
+  }
+  if(d.cpi){
+    var cpiEl=document.getElementById('dec-cpi-val');
+    if(cpiEl) cpiEl.textContent='Годовая инфляция: '+(d.cpi.yoy*100).toFixed(1)+'%';
+  }
+}).catch(function(){});
+</script>
 </div>
 </div>
 </div>
@@ -1379,6 +1429,24 @@ fetch('data/digest.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json
 <details class="faq-item fade-in" style="margin-bottom:10px"><summary style="cursor:pointer;font-weight:800;color:var(--green);padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;list-style:none">Это сайт банка или финансового советника?</summary><p style="margin:8px 4px 0;font-size:13px;color:var(--muted)">Нет. Это независимый информационный проект — мы не аффилированы ни с одним банком, брокером или советником и не получаем комиссии за то, что вы что-то купите или оформите.</p></details>
 <details class="faq-item fade-in" style="margin-bottom:10px"><summary style="cursor:pointer;font-weight:800;color:var(--green);padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;list-style:none">Что такое «автоподбор» в калькуляторе машканты?</summary><p style="margin:8px 4px 0;font-size:13px;color:var(--muted)">Это алгоритм, который перебирает свыше 67 000 комбинаций долей и сроков ипотечных треков и находит вариант, оптимальный под вашу цель — вместо того, чтобы вы подбирали пропорции вручную.</p></details>
 <details class="faq-item fade-in"><summary style="cursor:pointer;font-weight:800;color:var(--green);padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;list-style:none">Почему в словаре термины на русском и в скобках на иврите?</summary><p style="margin:8px 4px 0;font-size:13px;color:var(--muted)">Чтобы вы понимали суть по-русски, но при этом узнавали официальное название термина, если увидите его в документе банка или расчётном листе на иврите.</p></details>
+
+<script>
+fetch('data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null}).then(function(d){
+  if(!d) return;
+  if(d.boi){
+    var boiEl=document.getElementById('dec-boi-val');
+    if(boiEl) boiEl.textContent='Ставка '+(d.boi.rate*100).toFixed(2)+'% · Прайм '+(d.boi.prime*100).toFixed(2)+'%';
+  }
+  if(d.fuel){
+    var fuelEl=document.getElementById('dec-fuel-val');
+    if(fuelEl) fuelEl.textContent=d.fuel.price_95.toFixed(2)+' ₪ / литр';
+  }
+  if(d.cpi){
+    var cpiEl=document.getElementById('dec-cpi-val');
+    if(cpiEl) cpiEl.textContent='Годовая инфляция: '+(d.cpi.yoy*100).toFixed(1)+'%';
+  }
+}).catch(function(){});
+</script>
 </div>
 </section>
 </main>
