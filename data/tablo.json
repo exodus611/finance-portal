@@ -3,11 +3,11 @@
   "updated": "2026-09-01",
   "updated_by": "auto",
   "boi": {
-    "rate": 0.035,
-    "prime": 0.05,
+    "rate": 0.0325,
+    "prime": 0.0475,
     "asof": "2026-09-01",
     "next_decision": "2026-10-19",
-    "prev_rate": 0.0375,
+    "prev_rate": 0.035,
     "changed": "2026-08-31"
   },
   "cpi": {
@@ -176,10 +176,10 @@
     "apartment_type": "3-комнатная квартира"
   },
   "fuel": {
-    "price_95": 8.09,
-    "prev_price": 7.48,
-    "full_service_extra": 0.25,
-    "period": "2026-08",
+    "price_95": 8.25,
+    "prev_price": 8.09,
+    "full_service_extra": 0.26,
+    "period": "2026-09",
     "name_ru": "Бензин 95, самообслуживание"
   }
 }
