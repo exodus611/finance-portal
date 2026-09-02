@@ -340,7 +340,7 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
   // Даты живые: если число месяца уже прошло, показываем следующий месяц,
   // чтобы блок не завис на прошедшей дате, как это было с бегущей строкой.
   (function renderBituah(){
-    var box=document.getElementById('bl-rows');
+    var box=document.getElementById("bl-rows");
     if(!box) return;
     function daysTo(d){
       var t=new Date(); t.setHours(0,0,0,0);
@@ -354,32 +354,31 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
     }
     function nextDate(iso){
       if(!iso) return null;
-      var a=iso.split('-'), y=+a[0], m=+a[1]-1, day=+a[2];
+      var a=iso.split("-"), y=+a[0], m=+a[1]-1, day=+a[2];
       var d=new Date(y,m,day);
       if(daysTo(d)>=0) return d;               // дата ещё впереди — она точная
-      // Перематываем вперёд ПОКА дата в прошлом, а не ровно на один месяц:
       for(var k=1;k<=24;k++){
         var n=shiftFwd(new Date(y,m+k,day));
         if(daysTo(n)>=0) return n;
       }
       return null;
     }
-    function pad(n){return n<10?'0'+n:''+n}
+    function pad(n){return n<10?"0"+n:""+n}
     var ITEMS=[
-      {k:'unemployment', icon:'📋', ru:'Пособие по безработице и гарантия дохода', he:'דמי אבטלה, הבטחת הכנסה'},
-      {k:'children',     icon:'👶', ru:'Пособие на детей', he:'קצבת ילדים'},
-      {k:'long_term',    icon:'🧓', ru:'Пособие по старости, инвалидность и другие', he:'קצבאות ארוכות מועד'},
-      {k:'self_employed',icon:'💼', ru:'Взносы: самозанятые и работодатели', he:'תשלום דמי ביטוח'}
+      {k:"unemployment", icon:"📋", ru:"Пособие по безработице и гарантия дохода", he:"דמי אבטלה, הבטחת הכנסה"},
+      {k:"children",     icon:"👶", ru:"Пособие на детей", he:"קצבת ילדים"},
+      {k:"long_term",    icon:"🧓", ru:"Пособие по старости, инвалидность и другие", he:"קצבאות ארוכות מועד"},
+      {k:"self_employed",icon:"💼", ru:"Взносы: самозанятые и работодатели", he:"תשלום דמי ביטוח"}
     ];
-    var ML=p.month_label||'';
+    var ML=p.month_label||"";
     var rows=ITEMS.map(function(it){
       var d=nextDate(p[it.k]);
       if(!d) return null;
-      var iso=d.getFullYear()+'-'+pad(d.getMonth()+1);
+      var iso=d.getFullYear()+"-"+pad(d.getMonth()+1);
       return {it:it,d:d,days:daysTo(d),est:ML?iso!==ML:false};
     }).filter(Boolean);
     rows.sort(function(a,b){return (a.est?1:0)-(b.est?1:0)||a.d-b.d});
-    if(!rows.length){ box.innerHTML=''; return; }
+    if(!rows.length){ box.innerHTML=""; return; }
 
     function getGoogleCalUrl(title, d, details) {
       var y = d.getFullYear();
@@ -398,88 +397,104 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 
     window.__btl_calendar_rows = rows;
 
-    window.downloadAllBtlIcs = function() {
-      if (!window.__btl_calendar_rows || !window.__btl_calendar_rows.length) return;
+    window.openRemindModal = function(idx) {
+      var r = window.__btl_calendar_rows[idx];
+      if (!r) return;
+      window.__active_remind_row = r;
+      var titleEl = document.getElementById("remind-item-title");
+      var gcalBtn = document.getElementById("remind-gcal-btn");
+      var dateFormatted = pad(r.d.getDate()) + "." + pad(r.d.getMonth() + 1) + "." + r.d.getFullYear();
+      if (titleEl) {
+        titleEl.textContent = r.it.ru + " — " + dateFormatted;
+      }
+      if (gcalBtn) {
+        gcalBtn.href = getGoogleCalUrl(r.it.ru + " (Битуах Леуми)", r.d, "Официальная дата выплаты пособия: " + r.it.ru + " (" + r.it.he + ").");
+      }
+      var m = document.getElementById("remind-modal");
+      if (m) m.style.display = "flex";
+    };
+
+    window.closeRemindModal = function() {
+      var m = document.getElementById("remind-modal");
+      if (m) m.style.display = "none";
+    };
+
+    window.triggerAppleRemind = function() {
+      var r = window.__active_remind_row;
+      if (!r) return;
+      var d = r.d;
+      var y = d.getFullYear();
+      var m = pad(d.getMonth() + 1);
+      var dt = pad(d.getDate());
+      var start = "" + y + m + dt;
+      var next = new Date(d);
+      next.setDate(next.getDate() + 1);
+      var end = "" + next.getFullYear() + pad(next.getMonth() + 1) + pad(next.getDate());
       var lines = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
         "PRODID:-//Finance Portal Israel//RU",
         "CALSCALE:GREGORIAN",
-        "METHOD:PUBLISH"
+        "METHOD:PUBLISH",
+        "BEGIN:VEVENT",
+        "SUMMARY:" + r.it.ru + " (Битуах Леуми)",
+        "DESCRIPTION:Официальная дата выплаты пособия: " + r.it.ru + " (" + r.it.he + ")\nhttps://exodus611.github.io/finance-portal/",
+        "DTSTART;VALUE=DATE:" + start,
+        "DTEND;VALUE=DATE:" + end,
+        "STATUS:CONFIRMED",
+        "END:VEVENT",
+        "END:VCALENDAR"
       ];
-      window.__btl_calendar_rows.forEach(function(r) {
-        var d = r.d;
-        var y = d.getFullYear();
-        var m = pad(d.getMonth() + 1);
-        var dt = pad(d.getDate());
-        var start = "" + y + m + dt;
-        var next = new Date(d);
-        next.setDate(next.getDate() + 1);
-        var end = "" + next.getFullYear() + pad(next.getMonth() + 1) + pad(next.getDate());
-        lines.push(
-          "BEGIN:VEVENT",
-          "SUMMARY:" + r.it.ru + " (Битуах Леуми)",
-          "DESCRIPTION:Официальная дата выплаты пособия: " + r.it.ru + " (" + r.it.he + ")\nhttps://exodus611.github.io/finance-portal/",
-          "DTSTART;VALUE=DATE:" + start,
-          "DTEND;VALUE=DATE:" + end,
-          "STATUS:CONFIRMED",
-          "END:VEVENT"
-        );
-      });
-      lines.push("END:VCALENDAR");
       var blob = new Blob([lines.join("\r\n")], { type: "text/calendar;charset=utf-8" });
       var a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = "bituah-leumi-payments.ics";
+      a.download = "remind-" + r.it.k + ".ics";
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
+      closeRemindModal();
     };
 
     box.innerHTML=rows.map(function(r,idx){
-      var when=r.days===0?'сегодня':(r.days===1?'завтра':'через '+r.days+' дн.');
-      if(r.est) when='ориентировочно';
+      var when=r.days===0?"сегодня":(r.days===1?"завтра":"через "+r.days+" дн.");
+      if(r.est) when="ориентировочно";
       var soon=idx===0;
-      var calUrl = getGoogleCalUrl(r.it.ru + ' (Битуах Леуми)', r.d, 'Официальная дата выплаты пособия: ' + r.it.ru + ' (' + r.it.he + ').');
-      return '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;background:'+
-        (soon?'#eaf6f0':'var(--paper)')+';border:1px solid '+(soon?'#b9d8ca':'transparent')+
-        ';border-radius:10px;padding:9px 12px">'+
-        '<span style="font-size:12.5px;color:var(--ink);min-width:0">'+r.it.icon+' '+r.it.ru+
-        '<span style="display:block;font-size:10.5px;color:var(--muted)" lang="he" dir="rtl">'+r.it.he+'</span></span>'+
-        '<div style="display:flex;align-items:center;gap:8px;flex:0 0 auto">'+
-        '<span style="text-align:right;white-space:nowrap"><b style="font-size:14px;color:var(--green)">'+
-        (r.est?'~':'')+pad(r.d.getDate())+'.'+pad(r.d.getMonth()+1)+'</b>'+
-        '<span style="display:block;font-size:10.5px;color:'+(soon?'#08775a':'var(--muted)')+';font-weight:'+(soon?'800':'500')+'">'+when+'</span></span>'+
-        '<a href="'+calUrl+'" target="_blank" rel="noopener" title="Добавить дату в Google Календарь" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;background:'+(soon?'#cce6d8':'#e4ded2')+';color:#15251f;text-decoration:none;font-size:13px" aria-label="Добавить в Google Календарь">📅</a>'+
-        '</div>'+
-        '</div>';
-    }).join('') +
-    '<div style="display:flex;justify-content:flex-end;margin-top:8px">'+
-      '<button type="button" onclick="downloadAllBtlIcs()" style="display:inline-flex;align-items:center;gap:5px;background:none;border:1px solid var(--line);border-radius:12px;padding:4px 10px;font-size:11px;font-weight:700;color:var(--muted);cursor:pointer">'+
-        '📥 Сохранить все даты в календарь (.ics)'+
-      '</button>'+
-    '</div>';
+      return "<div style=\"display:flex;justify-content:space-between;align-items:center;gap:10px;background:"+
+        (soon?"#eaf6f0":"var(--paper)")+";border:1px solid "+(soon?"#b9d8ca":"transparent")+
+        ";border-radius:12px;padding:9px 12px;flex-wrap:wrap\">"+
+        "<span style=\"font-size:12.5px;color:var(--ink);min-width:0;flex:1 1 180px\">"+r.it.icon+" "+r.it.ru+
+        "<span style=\"display:block;font-size:10.5px;color:var(--muted)\" lang=\"he\" dir=\"rtl\">"+r.it.he+"</span></span>"+
+        "<div style=\"display:flex;align-items:center;gap:8px;flex:0 0 auto\">"+
+        "<span style=\"text-align:right;white-space:nowrap\"><b style=\"font-size:14px;color:var(--green)\">"+
+        (r.est?"~":"")+pad(r.d.getDate())+"."+pad(r.d.getMonth()+1)+"</b>"+
+        "<span style=\"display:block;font-size:10.5px;color:"+(soon?"#08775a":"var(--muted)")+";font-weight:"+(soon?"800":"500")+"\">"+when+"</span></span>"+
+        "<button type=\"button\" onclick=\"openRemindModal("+idx+")\" title=\"Добавить напоминание в календарь\" style=\"display:inline-flex;align-items:center;gap:4px;background:#fff;border:1px solid "+(soon?"#b9d8ca":"#ddd6c7")+";color:#08775a;font-size:11px;font-weight:750;padding:5px 9px;border-radius:9px;cursor:pointer;white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,.04)\">"+
+        "🔔 В календарь"+
+        "</button>"+
+        "</div>"+
+        "</div>";
+    }).join("");
 
     // Подсказка в свёрнутом заголовке: ближайшая выплата видна сразу,
     // без раскрытия блока — чтобы понятно было, ради чего нажимать.
-    var teaser=document.getElementById('bl-teaser');
+    var teaser=document.getElementById("bl-teaser");
     if(teaser){
       var n=rows[0];
-      var w=n.days===0?'сегодня':(n.days===1?'завтра':'через '+n.days+' дн.');
-      teaser.textContent='Ближайшая: '+n.it.ru.toLowerCase()+' — '+w+' ('+
-        pad(n.d.getDate())+'.'+pad(n.d.getMonth()+1)+')';
+      var w=n.days===0?"сегодня":(n.days===1?"завтра":"через "+n.days+" дн.");
+      teaser.textContent="Ближайшая: "+n.it.ru.toLowerCase()+" — "+w+" ("+
+        pad(n.d.getDate())+"."+pad(n.d.getMonth()+1)+")";
     }
 
     // Расшифровка «длинных пособий» — 11 видов одной датой
     var anyEst=rows.some(function(r){return r.est});
-    var note=document.getElementById('bl-est-note');
-    if(note) note.style.display=anyEst?'block':'none';
-    var ll=document.getElementById('bl-long-list');
+    var note=document.getElementById("bl-est-note");
+    if(note) note.style.display=anyEst?"block":"none";
+    var ll=document.getElementById("bl-long-list");
     if(ll && p.long_term_items && p.long_term_items.length){
-      ll.innerHTML='Все они приходят в одну дату — '+
+      ll.innerHTML="Все они приходят в одну дату — "+
         p.long_term_items.map(function(x){
-          return '<span style="white-space:nowrap">'+x.ru+' (<span lang="he" dir="rtl">'+x.he+'</span>)</span>';
-        }).join(' · ')+'.';
+          return "<span style=\"white-space:nowrap\">"+x.ru+" (<span lang=\"he\" dir=\"rtl\">"+x.he+"</span>)</span>";
+        }).join(" · ")+".";
     }
   })();
 
@@ -645,7 +660,7 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 <span style="flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;background:#eaf6f0;color:#08775a;font-size:10px;font-weight:800;padding:4px 9px;border-radius:20px;white-space:nowrap"><span class="home-live-dot"></span>ВСЕ ДАТЫ ▸</span>
 </summary>
 
-<p style="font-size:11.5px;color:var(--muted);margin:12px 0 12px;line-height:1.5">Даты каждый месяц разные — берём их прямо с официальной страницы расписания. Ближайшая выделена зелёным.</p>
+<p style="font-size:11.5px;color:var(--muted);margin:12px 0 12px;line-height:1.5">Даты каждый месяц разные — берём прямо с официального расписания. Нажмите <b>«🔔 В календарь»</b> напротив вашего пособия, чтобы дата автоматически сохранилась в телефон и напомнила о выплате.</p>
 
 <div id="bl-rows" style="display:flex;flex-direction:column;gap:7px;margin-bottom:12px"></div>
 
@@ -1535,4 +1550,44 @@ fetch('data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json(
   els.forEach(function(e){ obs.observe(e); });
 })();
 </script>
+
+<div id="remind-modal" onclick="if(event.target===this)closeRemindModal()" style="display:none;position:fixed;inset:0;background:rgba(21,37,31,.6);z-index:9999;align-items:center;justify-content:center;padding:16px;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)">
+  <div style="background:#fffdf8;border:1px solid #ddd6c7;border-radius:18px;max-width:420px;width:100%;padding:20px;box-shadow:0 20px 50px rgba(0,0,0,.3);position:relative">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:24px">🔔</span>
+        <div>
+          <h3 style="margin:0;font-size:16px;color:var(--ink)">Напомнить о выплате</h3>
+          <p id="remind-item-title" style="margin:2px 0 0;font-size:12px;color:var(--green);font-weight:700"></p>
+        </div>
+      </div>
+      <button type="button" onclick="closeRemindModal()" style="background:none;border:none;font-size:24px;color:var(--muted);cursor:pointer;padding:0 6px;line-height:1" aria-label="Закрыть">×</button>
+    </div>
+    <p style="font-size:12px;color:var(--muted);margin:0 0 14px;line-height:1.45">
+      Выберите ваше устройство — дата откроется в вашем календаре, и телефон автоматически напомнит о выплате:
+    </p>
+    <div style="display:flex;flex-direction:column;gap:9px">
+      <a id="remind-gcal-btn" href="#" target="_blank" rel="noopener" onclick="closeRemindModal()" style="display:flex;align-items:center;gap:10px;padding:12px 14px;background:#eaf6f0;border:1px solid #b9d8ca;border-radius:12px;text-decoration:none;color:#08775a;font-weight:800;font-size:13px">
+        <span style="font-size:22px">📱</span>
+        <div style="flex:1">
+          <div>Google Календарь (Android / ПК)</div>
+          <div style="font-size:11px;font-weight:500;color:var(--muted)">Откроется календарь — нажмите «Сохранить»</div>
+        </div>
+        <span style="font-size:16px">→</span>
+      </a>
+      <button type="button" id="remind-apple-btn" onclick="triggerAppleRemind()" style="display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f4f1e9;border:1px solid #ddd6c7;border-radius:12px;color:var(--ink);font-weight:800;font-size:13px;cursor:pointer;text-align:left;font-family:inherit">
+        <span style="font-size:22px">🍏</span>
+        <div style="flex:1">
+          <div>Apple Календарь (iPhone / iPad / Mac)</div>
+          <div style="font-size:11px;font-weight:500;color:var(--muted)">Добавит напоминание в стандартный календарь iOS</div>
+        </div>
+        <span style="font-size:16px">→</span>
+      </button>
+    </div>
+    <div style="margin-top:14px;text-align:center">
+      <button type="button" onclick="closeRemindModal()" style="background:none;border:none;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer">Закрыть</button>
+    </div>
+  </div>
+</div>
+
 </body></html>
