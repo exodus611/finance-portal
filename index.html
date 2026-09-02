@@ -46,8 +46,8 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-
 .privacy{font-size:12px;color:var(--muted)}
 .hero{padding:40px 0 10px;text-align:center}
 .eyebrow{font-size:12px;color:var(--green);font-weight:900;text-transform:uppercase;letter-spacing:.09em}
-.hero h1{font-size:clamp(32px,6vw,56px);line-height:1.05;letter-spacing:-.04em;margin:12px auto 16px;max-width:760px}
-.hero p{font-size:17px;color:var(--muted);max-width:620px;margin:0 auto}
+.hero h1{font-size:clamp(28px,5.5vw,52px);line-height:1.1;letter-spacing:-.04em;margin:12px auto 16px;max-width:760px}
+.hero p{font-size:16px;color:var(--muted);max-width:620px;margin:0 auto}
 .tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:34px 0}
 .tool-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 18px;box-shadow:var(--shadow);text-decoration:none;color:var(--ink);transition:transform .2s,box-shadow .2s,border-color .2s}
 .tool-card:hover{transform:translateY(-3px);border-color:var(--green);box-shadow:0 20px 48px rgba(26,45,37,.14)}
@@ -358,8 +358,6 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
       var d=new Date(y,m,day);
       if(daysTo(d)>=0) return d;               // дата ещё впереди — она точная
       // Перематываем вперёд ПОКА дата в прошлом, а не ровно на один месяц:
-      // если бот не обновлял файл пару месяцев, одного шага не хватало
-      // и на экране появлялось «через −1 дн.».
       for(var k=1;k<=24;k++){
         var n=shiftFwd(new Date(y,m+k,day));
         if(daysTo(n)>=0) return n;
@@ -383,20 +381,84 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
     rows.sort(function(a,b){return (a.est?1:0)-(b.est?1:0)||a.d-b.d});
     if(!rows.length){ box.innerHTML=''; return; }
 
+    function getGoogleCalUrl(title, d, details) {
+      var y = d.getFullYear();
+      var m = pad(d.getMonth() + 1);
+      var day = pad(d.getDate());
+      var next = new Date(d);
+      next.setDate(next.getDate() + 1);
+      var ny = next.getFullYear();
+      var nm = pad(next.getMonth() + 1);
+      var nd = pad(next.getDate());
+      return "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+        "&text=" + encodeURIComponent(title) +
+        "&dates=" + (""+y+m+day) + "/" + (""+ny+nm+nd) +
+        "&details=" + encodeURIComponent(details + "\n\nИсточник: https://exodus611.github.io/finance-portal/");
+    }
+
+    window.__btl_calendar_rows = rows;
+
+    window.downloadAllBtlIcs = function() {
+      if (!window.__btl_calendar_rows || !window.__btl_calendar_rows.length) return;
+      var lines = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Finance Portal Israel//RU",
+        "CALSCALE:GREGORIAN",
+        "METHOD:PUBLISH"
+      ];
+      window.__btl_calendar_rows.forEach(function(r) {
+        var d = r.d;
+        var y = d.getFullYear();
+        var m = pad(d.getMonth() + 1);
+        var dt = pad(d.getDate());
+        var start = "" + y + m + dt;
+        var next = new Date(d);
+        next.setDate(next.getDate() + 1);
+        var end = "" + next.getFullYear() + pad(next.getMonth() + 1) + pad(next.getDate());
+        lines.push(
+          "BEGIN:VEVENT",
+          "SUMMARY:" + r.it.ru + " (Битуах Леуми)",
+          "DESCRIPTION:Официальная дата выплаты пособия: " + r.it.ru + " (" + r.it.he + ")\nhttps://exodus611.github.io/finance-portal/",
+          "DTSTART;VALUE=DATE:" + start,
+          "DTEND;VALUE=DATE:" + end,
+          "STATUS:CONFIRMED",
+          "END:VEVENT"
+        );
+      });
+      lines.push("END:VCALENDAR");
+      var blob = new Blob([lines.join("\r\n")], { type: "text/calendar;charset=utf-8" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "bituah-leumi-payments.ics";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    };
+
     box.innerHTML=rows.map(function(r,idx){
       var when=r.days===0?'сегодня':(r.days===1?'завтра':'через '+r.days+' дн.');
       if(r.est) when='ориентировочно';
       var soon=idx===0;
+      var calUrl = getGoogleCalUrl(r.it.ru + ' (Битуах Леуми)', r.d, 'Официальная дата выплаты пособия: ' + r.it.ru + ' (' + r.it.he + ').');
       return '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;background:'+
         (soon?'#eaf6f0':'var(--paper)')+';border:1px solid '+(soon?'#b9d8ca':'transparent')+
-        ';border-radius:10px;padding:10px 12px">'+
+        ';border-radius:10px;padding:9px 12px">'+
         '<span style="font-size:12.5px;color:var(--ink);min-width:0">'+r.it.icon+' '+r.it.ru+
         '<span style="display:block;font-size:10.5px;color:var(--muted)" lang="he" dir="rtl">'+r.it.he+'</span></span>'+
+        '<div style="display:flex;align-items:center;gap:8px;flex:0 0 auto">'+
         '<span style="text-align:right;white-space:nowrap"><b style="font-size:14px;color:var(--green)">'+
         (r.est?'~':'')+pad(r.d.getDate())+'.'+pad(r.d.getMonth()+1)+'</b>'+
         '<span style="display:block;font-size:10.5px;color:'+(soon?'#08775a':'var(--muted)')+';font-weight:'+(soon?'800':'500')+'">'+when+'</span></span>'+
+        '<a href="'+calUrl+'" target="_blank" rel="noopener" title="Добавить дату в Google Календарь" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;background:'+(soon?'#cce6d8':'#e4ded2')+';color:#15251f;text-decoration:none;font-size:13px" aria-label="Добавить в Google Календарь">📅</a>'+
+        '</div>'+
         '</div>';
-    }).join('');
+    }).join('') +
+    '<div style="display:flex;justify-content:flex-end;margin-top:8px">'+
+      '<button type="button" onclick="downloadAllBtlIcs()" style="display:inline-flex;align-items:center;gap:5px;background:none;border:1px solid var(--line);border-radius:12px;padding:4px 10px;font-size:11px;font-weight:700;color:var(--muted);cursor:pointer">'+
+        '📥 Сохранить все даты в календарь (.ics)'+
+      '</button>'+
+    '</div>';
 
     // Подсказка в свёрнутом заголовке: ближайшая выплата видна сразу,
     // без раскрытия блока — чтобы понятно было, ради чего нажимать.
@@ -476,32 +538,32 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 </div>
 
 <div class="fx-list" id="fx-list">
-<a class="fx-row" data-cat="other" data-popular="1" href="discounts.html" aria-label="Агрегатор скидок и промокодов в Израиле — Тов Ли"><div class="fx-ico" style="background:#fff2e6;color:#e65100">🛍️</div><div class="fx-txt"><h3>Скидки и купоны (Тов Ли) <span style="font-size:10px;font-weight:900;color:#fff;background:#08775a;border-radius:10px;padding:2px 7px;vertical-align:middle">🔒 PIN</span></h3><p>Wolt, KSP, iHerb, супермаркеты — точные сроки и города</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="salary" href="havraa.html" aria-label="Калькулятор оздоровительных — новая ставка 2026 и проверка недоплаты"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">🏖️</div><div class="fx-txt"><h3>Оздоровительные <span style="font-size:10px;font-weight:900;color:#fff;background:var(--red);border-radius:10px;padding:2px 7px;vertical-align:middle">НОВОЕ</span></h3><p>Ставку подняли до 451,50 ₪ за день — посчитайте доплату</p></div></a>
-<a class="fx-row" data-cat="pension" data-popular="1" href="hisahon-yeled.html" aria-label="Калькулятор накоплений на каждого ребёнка"><div class="fx-ico" style="background:#fbf3e3;color:var(--gold)">👶</div><div class="fx-txt"><h3>Накопления на ребёнка</h3><p>58 ₪ в месяц от государства — сколько будет к 18 и 21 году</p></div></a>
-<a class="fx-row" data-cat="salary" data-popular="1" href="salary.html" aria-label="Калькулятор зарплаты — брутто/нетто, выходное пособие, согласование налога, пенсионер"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">💰</div><div class="fx-txt"><h3>Зарплата</h3><p>Брутто↔нетто, выходное пособие, 2 работы, работающий пенсионер</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="housing" data-popular="1" href="mashkanta.html" aria-label="Калькулятор машканты — расчёт и автоподбор ипотечных стратегий"><div class="fx-ico" style="background:#fbf3e3;color:var(--gold)">🏠</div><div class="fx-txt"><h3>Машканта</h3><p>Автоподбор из 67 000+ комбинаций, стресс-тест</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="auto" data-popular="1" href="auto.html" aria-label="Калькулятор стоимости автомобиля"><div class="fx-ico" style="background:#eaf1f6;color:var(--blue)">🚗</div><div class="fx-txt"><h3>Автомобиль</h3><p>Реальная стоимость владения, не только цена в объявлении</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="auto" data-popular="1" href="kredit.html" aria-label="Калькулятор кредита — платёж и переплата по ссуде"><div class="fx-ico" style="background:#fdeceb;color:#b84b3e">💳</div><div class="fx-txt"><h3>Кредит</h3><p>Платёж, переплата, сравнение сроков</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="housing" href="arenda-vs-pokupka.html" aria-label="Калькулятор сравнения аренды и покупки квартиры"><div class="fx-ico" style="background:#e6f2f0;color:#0d8a7a">⚖️</div><div class="fx-txt"><h3>Аренда vs покупка</h3><p>Что накопит больше капитала — снимать или купить</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="housing" href="mihzur-mashkanta.html" aria-label="Калькулятор рефинансирования машканты"><div class="fx-ico" style="background:#eef0fb;color:#4a5aa8">🔄</div><div class="fx-txt"><h3>Рефинансирование</h3><p>Стоит ли переоформить машканту на новых условиях</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="housing" href="siluk-mukdam.html" aria-label="Калькулятор досрочного погашения или инвестирования"><div class="fx-ico" style="background:#fdf6e3;color:#b8860b">💎</div><div class="fx-txt"><h3>Погашение vs инвестиции</h3><p>Что выгоднее с учётом штрафа и налога</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="housing" href="mas-rehisha.html" aria-label="Калькулятор налога на покупку квартиры мас рехиша"><div class="fx-ico" style="background:#e6f0ea;color:#2c5f8a">🏛️</div><div class="fx-txt"><h3>Мас рехиша</h3><p>Налог на покупку квартиры — все ступени 2026 и льготы</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="housing" href="mas-shevach.html" aria-label="Калькулятор налога на прибыль при продаже квартиры мас шевах"><div class="fx-ico" style="background:#fdeceb;color:#8a3a3a">📉</div><div class="fx-txt"><h3>Мас шевах</h3><p>Налог при продаже — пропорциональное освобождение, не «всё или ничего»</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="housing" href="dira.html" aria-label="Дира бе-ханаха — статус розыгрыша льготного жилья"><div class="fx-ico" style="background:#eaf1f6;color:#30779a">🏗️</div><div class="fx-txt"><h3>Дира бе-ханаха</h3><p>Статус розыгрыша, что готовится, где реально был шанс за 5 лет</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="housing" href="arnona.html" aria-label="Скидка на арнону — кому положена по закону"><div class="fx-ico" style="background:#f3ece0;color:#8a5a2b">🏛️</div><div class="fx-txt"><h3>Скидка на арнону</h3><p>Репатрианты, пожилые, инвалиды, низкий доход — размеры по закону</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="salary" data-popular="1" href="avtala.html" aria-label="Пособие по безработице дмей автала"><div class="fx-ico" style="background:#fdece8;color:#c2452e">📋</div><div class="fx-txt"><h3>Дмей автала</h3><p>Уволили? Сколько заплатят, сколько дней, куда идти по шагам</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="pension" data-popular="1" href="pension-calc.html" aria-label="Расчёт пенсионных накоплений и выплат 2026"><div class="fx-ico" style="background:#e8f5f1;color:#08775a">💼</div><div class="fx-txt"><h3>Пенсионные накопления (PRO) <span style="font-size:10px;background:#08775a;color:#fff;padding:2px 6px;border-radius:6px;font-weight:800;vertical-align:middle">🔒 PIN</span></h3><p>Точный расчет: микадем, пенсия фонда, пособие Эзрах Ватик, налоги и Кибуа Зхуйот (161д)</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="pension" href="pension-gap.html" aria-label="Калькулятор пенсионного разрыва"><div class="fx-ico" style="background:#f2eefa;color:#7857b8">🧓</div><div class="fx-txt"><h3>Пенсионный разрыв</h3><p>Хватит ли вам на пенсии — честно, с кицват зикна</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="pension" data-popular="1" href="keren-hishtalmut.html" aria-label="Калькулятор фонда повышения квалификации"><div class="fx-ico" style="background:#eafaf3;color:#0a8f6b">🎓</div><div class="fx-txt"><h3>Фонд повышения квалификации</h3><p>Рост фонда без налога — с правильными двумя потолками для самозанятых</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="salary" href="nekudot-zikuy.html" aria-label="Калькулятор налоговых баллов некудот зикуй"><div class="fx-ico" style="background:#fef2e0;color:#c2790b">🎯</div><div class="fx-txt"><h3>Некудот зикуй</h3><p>Сколько баллов вам положено и сколько это в шекелях</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="pension" href="keren-kaspit.html" aria-label="Калькулятор керен каспит — доход и налог с прибыли"><div class="fx-ico" style="background:#eaf6f0;color:#08775a">🧮</div><div class="fx-txt"><h3>Керен каспит: налог</h3><p>Доход за 1–2 года, инфляция, налог 25% и сумма чистыми</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="pension" href="pikadon-vs-keren.html" aria-label="Пикадон или керен каспит — что выгоднее"><div class="fx-ico" style="background:#eaf6f0;color:#08775a">🏦</div><div class="fx-txt"><h3>Пикадон vs керен каспит</h3><p>Банк даёт 4,5%, фонд 3,5% — что выгоднее чистыми</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="economy" href="valuta.html" aria-label="Конвертер валют, курс шекеля, корзина валют"><div class="fx-ico" style="background:#e6f0fa;color:#2f6df6">💱</div><div class="fx-txt"><h3>Курс валют</h3><p>Конвертер, корзина валют, график за год, официальный vs рыночный</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="economy" data-popular="1" href="tablo.html" aria-label="Экономика Израиля сегодня"><div class="fx-ico" style="background:#eaf6f0;color:#08775a">📊</div><div class="fx-txt"><h3>Экономика сегодня</h3><p>Ставка, мадад, курсы валют, минималка — живое табло</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="auto" href="benzin.html" aria-label="Цена на бензин в Израиле"><div class="fx-ico" style="background:#e8eef7;color:#1e3a5f">⛽</div><div class="fx-txt"><h3>Цена на бензин</h3><p>Из чего складывается литр, доля государства, сравнение с Европой</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="other" href="slovar.html" aria-label="Словарь финансовых терминов"><div class="fx-ico" style="background:#f2eefa;color:var(--purple)">📖</div><div class="fx-txt"><h3>Словарь терминов</h3><p>Что банк говорит и что это значит на самом деле</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="other" href="nko.html" aria-label="Благотворительные организации Израиля"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">🤝</div><div class="fx-txt"><h3>Благотворительные НКО</h3><p>Крупные проверенные организации + как проверить любую самому</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="other" data-popular="1" href="discounts.html" aria-label="Агрегатор скидок и промокодов в Израиле — Тов Ли" data-keywords="скидки акции промокоды купоны распродажи тов ли дисконт клубы карты лояльности супермаркеты шопинг кешбэк מבצעים קופונים הנחות"><div class="fx-ico" style="background:#fff2e6;color:#e65100">🛍️</div><div class="fx-txt"><h3>Скидки и купоны (Тов Ли) <span style="font-size:10px;font-weight:900;color:#fff;background:#08775a;border-radius:10px;padding:2px 7px;vertical-align:middle">🔒 PIN</span></h3><p>Wolt, KSP, iHerb, супермаркеты — точные сроки и города</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="salary" href="havraa.html" aria-label="Калькулятор оздоровительных — новая ставка 2026 и проверка недоплаты" data-keywords="оздоровительные дмей хавраа авраа отпускные 451 418 перерасчет недоплата стаж частный сектор госсектор דמי הבראה הבראה"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">🏖️</div><div class="fx-txt"><h3>Оздоровительные <span style="font-size:10px;font-weight:900;color:#fff;background:var(--red);border-radius:10px;padding:2px 7px;vertical-align:middle">НОВОЕ</span></h3><p>Ставку подняли до 451,50 ₪ за день — посчитайте доплату</p></div></a>
+<a class="fx-row" data-cat="pension" data-popular="1" href="hisahon-yeled.html" aria-label="Калькулятор накоплений на каждого ребёнка" data-keywords="детские накопления хисахон ле коль йелед сбережения детям 58 шекелей битуах леуми удвоение вклад 18 лет 21 год חיסכון לכל ילד"><div class="fx-ico" style="background:#fbf3e3;color:var(--gold)">👶</div><div class="fx-txt"><h3>Накопления на ребёнка</h3><p>58 ₪ в месяц от государства — сколько будет к 18 и 21 году</p></div></a>
+<a class="fx-row" data-cat="salary" data-popular="1" href="salary.html" aria-label="Калькулятор зарплаты — брутто/нетто, выходное пособие, согласование налога, пенсионер" data-keywords="зарплата брутто нетто налог калькулятор зарплаты тлуш маскорет подоходный налог мас ахнаса ступени налога пицуим увольнение согласование тиум мас некудот зикуй баллы сверхурочные שכר ברוטו נטו"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">💰</div><div class="fx-txt"><h3>Зарплата</h3><p>Брутто↔нетто, выходное пособие, 2 работы, работающий пенсионер</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" data-popular="1" href="mashkanta.html" aria-label="Калькулятор машканты — расчёт и автоподбор ипотечных стратегий" data-keywords="ипотека машканта калькулятор машканты ссуда прайм калац миштана процентная ставка банк погашение платеж ежемесячный взнос משכנתא ריבית פריים"><div class="fx-ico" style="background:#fbf3e3;color:var(--gold)">🏠</div><div class="fx-txt"><h3>Машканта</h3><p>Автоподбор из 67 000+ комбинаций, стресс-тест</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="auto" data-popular="1" href="auto.html" aria-label="Калькулятор стоимости автомобиля" data-keywords="авто машина автомобиль расходы на авто покупка машины содержание бензин страховка тест ришуй то техосмотр амортизация רכב עלות רכב"><div class="fx-ico" style="background:#eaf1f6;color:var(--blue)">🚗</div><div class="fx-txt"><h3>Автомобиль</h3><p>Реальная стоимость владения, не только цена в объявлении</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="auto" data-popular="1" href="kredit.html" aria-label="Калькулятор кредита — платёж и переплата по ссуде" data-keywords="кредит ссуда ссуды процент заем долг переплата овердрафт банк хова הלוואה ריבית אשראי"><div class="fx-ico" style="background:#fdeceb;color:#b84b3e">💳</div><div class="fx-txt"><h3>Кредит</h3><p>Платёж, переплата, сравнение сроков</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="arenda-vs-pokupka.html" aria-label="Калькулятор сравнения аренды и покупки квартиры" data-keywords="аренда съем покупка квартиры аренда или покупка жилье недвижимость инвестиции שכירות מול קנייה דירה"><div class="fx-ico" style="background:#e6f2f0;color:#0d8a7a">⚖️</div><div class="fx-txt"><h3>Аренда vs покупка</h3><p>Что накопит больше капитала — снимать или купить</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="mihzur-mashkanta.html" aria-label="Калькулятор рефинансирования машканты" data-keywords="рефинансирование машканты михзур машканта перерасчет ипотеки снижение ставки выгода штраф за досрочное погашение מחזור משכנתא"><div class="fx-ico" style="background:#eef0fb;color:#4a5aa8">🔄</div><div class="fx-txt"><h3>Рефинансирование</h3><p>Стоит ли переоформить машканту на новых условиях</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="siluk-mukdam.html" aria-label="Калькулятор досрочного погашения или инвестирования" data-keywords="досрочное погашение машканты силук мукдам закрыть ипотеку или инвестировать штраф комиссия погасить кредит סילוק מוקדם משכנתא"><div class="fx-ico" style="background:#fdf6e3;color:#b8860b">💎</div><div class="fx-txt"><h3>Погашение vs инвестиции</h3><p>Что выгоднее с учётом штрафа и налога</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="mas-rehisha.html" aria-label="Калькулятор налога на покупку квартиры мас рехиша" data-keywords="мас рехиша налог на покупку квартиры недвижимость ступени налога первая квартира единственная инвестор מס רכישה דירה יחידה"><div class="fx-ico" style="background:#e6f0ea;color:#2c5f8a">🏛️</div><div class="fx-txt"><h3>Мас рехиша</h3><p>Налог на покупку квартиры — все ступени 2026 и льготы</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="mas-shevach.html" aria-label="Калькулятор налога на прибыль при продаже квартиры мас шевах" data-keywords="мас шевах налог на прибыль продажа квартиры налог на прирост стоимости освобождение льгота налог с продажи מס שבח מקרקעין"><div class="fx-ico" style="background:#fdeceb;color:#8a3a3a">📉</div><div class="fx-txt"><h3>Мас шевах</h3><p>Налог при продаже — пропорциональное освобождение, не «всё или ничего»</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="dira.html" aria-label="Дира бе-ханаха — статус розыгрыша льготного жилья" data-keywords="дира бе ханаха квартира со скидкой льготное жилье мехир ле миштакен мехир матара лотерея розыгрыш министерство строительства דירה בהנחה מחיר למשתכן"><div class="fx-ico" style="background:#eaf1f6;color:#30779a">🏗️</div><div class="fx-txt"><h3>Дира бе-ханаха</h3><p>Статус розыгрыша, что готовится, где реально был шанс за 5 лет</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="housing" href="arnona.html" aria-label="Скидка на арнону — кому положена по закону" data-keywords="скидка на арнону арнона муниципальный налог скидка мэрия ирия льготы по доходу инвалидность пенсионер репатриант הנחה בארנונה ארנונה"><div class="fx-ico" style="background:#f3ece0;color:#8a5a2b">🏛️</div><div class="fx-txt"><h3>Скидка на арнону</h3><p>Репатрианты, пожилые, инвалиды, низкий доход — размеры по закону</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="salary" data-popular="1" href="avtala.html" aria-label="Пособие по безработице дмей автала" data-keywords="автала безработица пособие по безработице дмей автала биржа труда лишкат таасука увольнение уход по собственному халат расчет дней битуах леуми דמי אבטלה שירות התעסוקה"><div class="fx-ico" style="background:#fdece8;color:#c2452e">📋</div><div class="fx-txt"><h3>Дмей автала</h3><p>Уволили? Сколько заплатят, сколько дней, куда идти по шагам</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="pension" data-popular="1" href="pension-calc.html" aria-label="Расчёт пенсионных накоплений и выплат 2026" data-keywords="пенсия расчет пенсии пенсионный калькулятор накопления кибуа зхуйот 161д 161 д пенсионный возраст 67 62 65 купат гемель битуах менахалим пенсионный фонд пошаговый расчет פנסיה קיבוע זכויות"><div class="fx-ico" style="background:#e8f5f1;color:#08775a">💼</div><div class="fx-txt"><h3>Пенсионные накопления (PRO) <span style="font-size:10px;background:#08775a;color:#fff;padding:2px 6px;border-radius:6px;font-weight:800;vertical-align:middle">🔒 PIN</span></h3><p>Точный расчет: микадем, пенсия фонда, пособие Эзрах Ватик, налоги и Кибуа Зхуйот (161д)</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="pension" href="pension-gap.html" aria-label="Калькулятор пенсионного разрыва" data-keywords="пенсионный разрыв пенсия падение дохода замещение зарплаты пенсионер сколько не хватает пенсия разрыв פער פנסיוני"><div class="fx-ico" style="background:#f2eefa;color:#7857b8">🧓</div><div class="fx-txt"><h3>Пенсионный разрыв</h3><p>Хватит ли вам на пенсии — честно, с кицват зикна</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="pension" data-popular="1" href="keren-hishtalmut.html" aria-label="Калькулятор фонда повышения квалификации" data-keywords="керен ишталмут фонд повышения квалификации безналоговый вывод 6 лет освобождение от налога на прибыль инвестиции קרן השתלמות"><div class="fx-ico" style="background:#eafaf3;color:#0a8f6b">🎓</div><div class="fx-txt"><h3>Фонд повышения квалификации</h3><p>Рост фонда без налога — с правильными двумя потолками для самозанятых</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="salary" href="nekudot-zikuy.html" aria-label="Калькулятор налоговых баллов некудот зикуй" data-keywords="некудот зикуй льготные налоговые баллы скидка на подоходный налог дети оле хадаш академическая степень развод мать одиночка репатриант נקודות זיכוי מס הכנסה"><div class="fx-ico" style="background:#fef2e0;color:#c2790b">🎯</div><div class="fx-txt"><h3>Некудот зикуй</h3><p>Сколько баллов вам положено и сколько это в шекелях</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="pension" href="keren-kaspit.html" aria-label="Калькулятор керен каспит — доход и налог с прибыли" data-keywords="керен каспит денежный фонд инвестиции защита от инфляции налог на реальную прибыль доходность альтернатива вкладу קרן כספית"><div class="fx-ico" style="background:#eaf6f0;color:#08775a">🧮</div><div class="fx-txt"><h3>Керен каспит: налог</h3><p>Доход за 1–2 года, инфляция, налог 25% и сумма чистыми</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="pension" href="pikadon-vs-keren.html" aria-label="Пикадон или керен каспит — что выгоднее" data-keywords="пикадон или керен каспит банковский вклад депозит сравнение процентов налог 15 процентов 25 процентов פיקדון מול קרן כספית"><div class="fx-ico" style="background:#eaf6f0;color:#08775a">🏦</div><div class="fx-txt"><h3>Пикадон vs керен каспит</h3><p>Банк даёт 4,5%, фонд 3,5% — что выгоднее чистыми</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="economy" href="valuta.html" aria-label="Конвертер валют, курс шекеля, корзина валют" data-keywords="валюта курс доллара курс евро шекель обмен валют конвертер корзина валют банк израиля доллар к шекелю שער הדולר יורו שקל המרת מטבע"><div class="fx-ico" style="background:#e6f0fa;color:#2f6df6">💱</div><div class="fx-txt"><h3>Курс валют</h3><p>Конвертер, корзина валют, график за год, официальный vs рыночный</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="economy" data-popular="1" href="tablo.html" aria-label="Экономика Израиля сегодня" data-keywords="табло экономики экономика израиля сегодня инфляция индекс цен мадад ставка банка израиля прайм бензин мадад ле цархан מדד המחירים לצרכן ריבית בנק ישראל"><div class="fx-ico" style="background:#eaf6f0;color:#08775a">📊</div><div class="fx-txt"><h3>Экономика сегодня</h3><p>Ставка, мадад, курсы валют, минималка — живое табло</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="auto" href="benzin.html" aria-label="Цена на бензин в Израиле" data-keywords="бензин цена на бензин заправка октан 95 топливо 8.25 акциз бло налог эйлат מחיר הדלק בנזין 95"><div class="fx-ico" style="background:#e8eef7;color:#1e3a5f">⛽</div><div class="fx-txt"><h3>Цена на бензин</h3><p>Из чего складывается литр, доля государства, сравнение с Европой</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="other" href="slovar.html" aria-label="Словарь финансовых терминов" data-keywords="словарь финансовых терминов иврит русский перевод тлуш маскорет мас ахнаса битуах леуми тофес 101 тофес 161 словарь терминов מילון מונחים"><div class="fx-ico" style="background:#f2eefa;color:var(--purple)">📖</div><div class="fx-txt"><h3>Словарь терминов</h3><p>Что банк говорит и что это значит на самом деле</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="other" href="nko.html" aria-label="Благотворительные организации Израиля" data-keywords="нко амута амутот благотворительность помощь фонды волонтеры права репатриантов юридическая помощь עמותות סיוע"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">🤝</div><div class="fx-txt"><h3>Благотворительные НКО</h3><p>Крупные проверенные организации + как проверить любую самому</p></div><span class="fx-arrow">→</span></a>
 </div>
 
 <style>
@@ -530,7 +592,7 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
    она добавляла по строке к каждой из 20 карточек. */
 .fx-txt p{display:none}
 .fx-arrow{display:none}
-@media(max-width:560px){.fx-list{grid-template-columns:1fr 1fr;gap:6px}.fx-txt h3{font-size:12px;white-space:normal}.fx-ico{width:26px;height:26px;flex:0 0 26px;font-size:14px}}
+@media(max-width:560px){.fx-search input{font-size:16px}.fx-list{grid-template-columns:1fr 1fr;gap:6px}.fx-txt h3{font-size:12px;white-space:normal}.fx-ico{width:26px;height:26px;flex:0 0 26px;font-size:14px}}
 </style>
 <script>
 (function(){
