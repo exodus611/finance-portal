@@ -434,11 +434,17 @@ details summary::-webkit-details-marker { display: none; }
         </div>
         <div class="f">
           <label>Семейный статус</label>
-          <div class="seg" id="seg-status">
+          <div class="seg" id="seg-status" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:6px">
             <button type="button" class="on" data-v="couple">В браке / Семья</button>
-            <button type="button" data-v="single">Одинокий родитель (<span lang="he" dir="rtl">הורה יחיד</span>)</button>
+            <button type="button" data-v="single_parent">Одинокий родитель (<span lang="he" dir="rtl">הורה יחיד</span>)</button>
+            <button type="button" data-v="single_no_kids">Одинокий без детей (<span lang="he" dir="rtl">יחיד ללא ילדים</span>)</button>
           </div>
         </div>
+      </div>
+
+      <div id="info-no-kids" style="display:none;background:#fef7e7;border:1px solid #f6d89b;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:12px;color:#784f08;line-height:1.45">
+        <b>ℹ️ Правило для одиноких без детей (<span lang="he" dir="rtl">יחיד ללא ילדים</span>):</b><br>
+        По Закону Израиля граждане без несовершеннолетних детей имеют право на «Маанак авода» строго начиная с <b>возраста 55 лет</b>. Если вам меньше 55 лет, выплата положена только при наличии хотя бы 1 ребёнка младше 19 лет.
       </div>
 
       <div class="row3">
@@ -446,11 +452,11 @@ details summary::-webkit-details-marker { display: none; }
           <label>Возраст заявителя (лет)</label>
           <input type="number" id="in-age" value="38" min="18" max="99">
         </div>
-        <div class="f">
+        <div class="f" id="wrap-kids">
           <label>Детей до 19 лет</label>
           <input type="number" id="in-kids" value="2" min="0" max="15">
         </div>
-        <div class="f">
+        <div class="f" id="wrap-toddlers">
           <label>Из них малышей до 3 лет</label>
           <input type="number" id="in-toddlers" value="1" min="0" max="5">
         </div>
@@ -687,6 +693,39 @@ var state = {
   status: 'couple'
 };
 
+function updateStatusUI() {
+  var wrapSpouse = document.getElementById('wrap-spouse-info');
+  var infoNoKids = document.getElementById('info-no-kids');
+  var wrapKids = document.getElementById('wrap-kids');
+  var wrapToddlers = document.getElementById('wrap-toddlers');
+  var inKids = document.getElementById('in-kids');
+  var inToddlers = document.getElementById('in-toddlers');
+
+  if (state.status === 'single_no_kids') {
+    if (wrapSpouse) wrapSpouse.style.display = 'none';
+    if (infoNoKids) infoNoKids.style.display = 'block';
+    if (wrapKids) wrapKids.style.opacity = '0.4';
+    if (wrapToddlers) wrapToddlers.style.opacity = '0.4';
+    if (inKids) { inKids.value = 0; inKids.disabled = true; }
+    if (inToddlers) { inToddlers.value = 0; inToddlers.disabled = true; }
+  } else if (state.status === 'single_parent') {
+    if (wrapSpouse) wrapSpouse.style.display = 'none';
+    if (infoNoKids) infoNoKids.style.display = 'none';
+    if (wrapKids) wrapKids.style.opacity = '1';
+    if (wrapToddlers) wrapToddlers.style.opacity = '1';
+    if (inKids) { inKids.disabled = false; if (+inKids.value === 0) inKids.value = 1; }
+    if (inToddlers) { inToddlers.disabled = false; }
+  } else {
+    // couple
+    if (wrapSpouse) wrapSpouse.style.display = 'block';
+    if (infoNoKids) infoNoKids.style.display = 'none';
+    if (wrapKids) wrapKids.style.opacity = '1';
+    if (wrapToddlers) wrapToddlers.style.opacity = '1';
+    if (inKids) { inKids.disabled = false; }
+    if (inToddlers) { inToddlers.disabled = false; }
+  }
+}
+
 function bindSeg(id, key) {
   var btns = document.querySelectorAll('#' + id + ' button');
   btns.forEach(function(b) {
@@ -695,8 +734,7 @@ function bindSeg(id, key) {
       b.classList.add('on');
       state[key] = b.getAttribute('data-v');
       if (key === 'status') {
-        var wrap = document.getElementById('wrap-spouse-wage');
-        if (wrap) wrap.style.display = (state.status === 'single') ? 'none' : 'block';
+        updateStatusUI();
       }
     });
   });
@@ -732,10 +770,33 @@ function calculate() {
   }
 
   var isWoman6065 = (isWoman && age >= 60 && age <= 65);
-  var hasQualifyingFamily = (kids >= 1 && age >= 21) || (age >= 55) || isWoman6065;
+  var isSingleNoKids = (state.status === 'single_no_kids');
+  var isSingleParent = (state.status === 'single_parent');
 
-  if (!hasQualifyingFamily) {
-    blockers.push('Для получения выплаты в возрасте до 55 лет необходимо иметь хотя бы одного ребёнка младше 19 лет.');
+  if (isSingleNoKids) {
+    kids = 0;
+    toddlers = 0;
+    if (age < 55) {
+      blockers.push('По Закону Израиля (סעיף 2 לחוק) граждане без детей младше 19 лет имеют право на «Маанак авода» строго с возраста 55 лет. В возрасте до 55 лет выплата без детей не положена.');
+    }
+  } else if (isSingleParent) {
+    if (kids < 1) {
+      blockers.push('Для статуса «Одинокий родитель» (הורה יחיד) необходимо указать хотя бы одного ребёнка младше 19 лет.');
+    }
+    if (age < 21) {
+      blockers.push('Минимальный возраст заявителя с детьми составляет 21 год.');
+    }
+  } else {
+    // couple
+    if (kids === 0) {
+      if (age < 55) {
+        blockers.push('Для граждан без несовершеннолетних детей право на выплату наступает строго с 55 лет. В возрасте до 55 лет необходимо иметь хотя бы 1 ребёнка младше 19 лет.');
+      }
+    } else {
+      if (age < 21) {
+        blockers.push('Минимальный возраст заявителя с детьми составляет 21 год.');
+      }
+    }
   }
 
   // Bracket limits
@@ -745,7 +806,7 @@ function calculate() {
   var peakHigh = 5300;
   var maxMonthlyBase = 480;
 
-  if (isSingle) {
+  if (isSingleParent) {
     minIncome = 1510;
     if (kids >= 3) {
       maxIncome = 13660;
@@ -764,6 +825,13 @@ function calculate() {
     peakLow = 3800;
     peakHigh = 5200;
     maxMonthlyBase = 650;
+  } else if (isSingleNoKids || kids === 0) {
+    // Age 55+ without kids
+    minIncome = 2450;
+    maxIncome = 6850;
+    peakLow = 4200;
+    peakHigh = 5200;
+    maxMonthlyBase = 480;
   } else if (kids >= 3) {
     minIncome = 2450;
     maxIncome = 8020;
