@@ -1,0 +1,875 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08775a">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://exodus611.github.io/finance-portal/maanak-avoda.html">
+<title>Маанак авода (מענק עבודה) 2026 — калькулятор отрицательного подоходного налога</title>
+<meta name="description" content="Калькулятор «Маанак авода» (מענק עבודה / מס הכנסה שלילי) 2026: проверка права на выплату до 16 000 ₪, точные даты подачи, все исключения закона и онлайн-инструкция gov.il.">
+<meta name="keywords" content="маанак авода, מענק עבודה, отрицательный подоходный налог, מס הכנסה שלילי, налоговое управление, רשות המסים, выплата работающим, пособие на ясли, מענק לפעוטות, טופס 106, טופס 126">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Калькулятор Маанак Авода (מענק עבודה) — отрицательный подоходный налог в Израиле">
+<meta property="og:description" content="Проверьте право на государственную выплату до 16 000 ₪ на счёт. Официальные пороги, точные даты и пошаговая онлайн-подача.">
+<meta property="og:url" content="https://exodus611.github.io/finance-portal/maanak-avoda.html">
+<meta property="og:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
+<meta property="og:locale" content="ru_RU">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор Маанак Авода (מענק עבודה) 2026",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "ru",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "ILS" },
+  "description": "Бесплатный калькулятор проверки права и расчёта выплаты «Маанак авода» (отрицательный подоходный налог) по закону Налогового управления Израиля."
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Зачем государство выплачивает Маанак авода (מענק עבודה)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Государство выплачивает эту субсидию для поощрения участия граждан в рынке труда и сокращения бедности среди работающих семей, делая выход на работу финансово более выгодным, чем получение социальных пособий."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как налоговая проверяет доходы (формы 106 и 126)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Работодатели передают годовой отчёт 126 в Налоговое управление до 30 апреля, а работник получает форму 106 до 31 марта. Налоговая служба автоматически сопоставляет эти данные в мае-июне, поэтому первые выплаты начинаются с 15 июля."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "В какие сроки можно подавать заявление?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Подача за 2025 рабочий год открыта с 1 января 2026 года до 31 декабря 2027 года. Подача за 2024 рабочий год открыта до 31 декабря 2026 года."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Когда деньги поступают на банковский счёт?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "При подаче до 30 июня выплата перечисляется 4 частями (15 июля, 15 октября, 15 декабря, 15 февраля). При подаче с 1 июля по 30 сентября — 3 частями. При подаче до 30 ноября — 2 частями. При подаче в декабре — вся сумма 15 февраля."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --ink: #15251f;
+  --muted: #5a6660;
+  --paper: #f4f1e9;
+  --card: #fffdf8;
+  --line: #ddd6c7;
+  --green: #08775a;
+  --green2: #0d9671;
+  --gold: #c29b52;
+  --red: #b84b3e;
+  --blue: #30779a;
+  --purple: #7857b8;
+  --shadow: 0 16px 40px rgba(26,45,37,.08);
+  --r: 18px;
+}
+html { scroll-behavior: smooth; overflow-x: hidden; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  line-height: 1.45;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+button, input, select { font: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 2px;
+}
+.shell { width: min(760px, calc(100% - 28px)); margin: auto; }
+.top { padding: 18px 0; }
+.topbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; row-gap: 6px; }
+.logo { display: flex; align-items: center; gap: 11px; font-weight: 850; text-decoration: none; color: var(--ink); }
+.mark {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, var(--green2), var(--green) 70%);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  font-weight: 900;
+  box-shadow: 0 6px 18px rgba(8,119,90,.35);
+  border: 2px solid rgba(255,255,255,.55);
+}
+a.back { font-size: 12px; font-weight: 800; color: var(--green); text-decoration: none; white-space: nowrap; }
+
+.hero { padding: 24px 0 10px; text-align: center; }
+.eyebrow { font-size: 11.5px; color: var(--green); font-weight: 900; text-transform: uppercase; letter-spacing: .09em; }
+.hero h1 { font-size: clamp(23px, 4.8vw, 36px); line-height: 1.15; letter-spacing: -.03em; margin: 8px auto 10px; max-width: 660px; }
+.hero p { font-size: 14px; color: var(--muted); max-width: 600px; margin: 0 auto; line-height: 1.5; }
+
+.hebrew-term { font-family: "Segoe UI", Tahoma, Arial, sans-serif; font-weight: 700; }
+
+.pill-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 14px 0 4px; }
+.pill { background: #eaf6f0; color: var(--green); border-radius: 20px; padding: 5px 12px; font-size: 11.5px; font-weight: 700; border: 1px solid #b9d8ca; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 16px 0;
+  box-shadow: var(--shadow);
+}
+.title { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+.num {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: var(--green);
+  color: #fff;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+  flex: 0 0 30px;
+  font-size: 13px;
+}
+.title h2 { margin: 0 0 2px; font-size: 17px; }
+.title p { margin: 0; font-size: 12px; color: var(--muted); }
+
+.seg { display: flex; gap: 6px; margin-bottom: 14px; }
+.seg button {
+  flex: 1;
+  padding: 10px 6px;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 750;
+  color: var(--muted);
+  transition: all .15s;
+}
+.seg button.on { background: var(--green); color: #fff; border-color: var(--green); }
+
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+@media (max-width: 560px) {
+  .row2, .row3 { grid-template-columns: 1fr; }
+  .card { padding: 16px 14px; }
+}
+
+.f { margin-bottom: 14px; }
+.f label { display: block; font-size: 12px; font-weight: 800; color: var(--muted); margin-bottom: 5px; }
+.f input, .f select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 14px;
+  background: #fff;
+  color: var(--ink);
+}
+@media (max-width: 560px) { .f input, .f select { font-size: 16px; } }
+
+.checkbox-box {
+  background: #fdf6f5;
+  border: 1px solid #f0d0cb;
+  border-radius: 12px;
+  padding: 14px;
+  margin: 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.checkbox-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.checkbox-item input { margin-top: 3px; accent-color: var(--red); width: 17px; height: 17px; flex: 0 0 17px; }
+
+.primary-btn {
+  width: 100%;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 13px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background .15s;
+}
+.primary-btn:hover { background: var(--green2); }
+
+.res-box {
+  border-radius: var(--r);
+  padding: 18px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+.res-box.ok { background: #eaf6f0; border: 1px solid #b9d8ca; }
+.res-box.fail { background: #fdf2f2; border: 1px solid #f5c2c2; }
+
+.res-lbl { font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .03em; margin-bottom: 4px; }
+.res-sum { font-size: 2.2rem; font-weight: 900; letter-spacing: -1px; line-height: 1.1; }
+.res-sub { font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+
+.rrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  font-size: 13px;
+}
+.rrow:last-child { border-bottom: none; }
+.rrow.bold { font-weight: 800; }
+
+.table-wrap { overflow-x: auto; margin: 12px 0; }
+.cond-table { width: 100%; border-collapse: collapse; font-size: 12px; text-align: left; }
+.cond-table th { background: #eef4f1; padding: 8px 10px; font-weight: 800; border-bottom: 2px solid var(--line); color: var(--ink); }
+.cond-table td { padding: 8px 10px; border-bottom: 1px solid var(--line); color: var(--ink); }
+.cond-table tr:nth-child(even) td { background: rgba(0,0,0,.02); }
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0;
+}
+@media (max-width: 560px) {
+  .timeline-grid { grid-template-columns: 1fr; }
+}
+
+.t-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+}
+.t-head { font-size: 12.5px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+.t-dates { font-size: 11.5px; color: var(--green); font-weight: 800; margin-bottom: 4px; }
+.t-desc { font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+details summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-weight: 750; font-size: 13.5px; }
+details summary::-webkit-details-marker { display: none; }
+.acc-body { font-size: 12.5px; color: var(--muted); line-height: 1.6; padding-top: 10px; border-top: 1px solid var(--line); margin-top: 10px; }
+</style>
+</head>
+
+<body>
+<div class="shell">
+  <header class="top">
+    <div class="topbar">
+      <a class="logo" href="index.html">
+        <div class="mark">₪</div>
+        <div>
+          <div style="font-size:14px;font-weight:900;line-height:1.2">Понятные финансы</div>
+          <div style="font-size:11px;color:var(--muted)">Израиль · 2026</div>
+        </div>
+      </a>
+      <a class="back" href="index.html">← Все калькуляторы</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="eyebrow">НАЛОГОВОЕ УПРАВЛЕНИЕ · רשות המסים</span>
+      <h1>Маанак авода (<span lang="he" dir="rtl" class="hebrew-term">מענק עבודה</span>) — калькулятор выплаты</h1>
+      <p>Отрицательный подоходный налог (<span lang="he" dir="rtl" class="hebrew-term">מס הכנסה שלילי</span>): прямая государственная выплата работающим жителям Израиля с невысоким доходом. До <b>16 000 ₪ в год</b> прямым переводом на банковский счёт.</p>
+      <div class="pill-row">
+        <span class="pill">💵 До 16 000 ₪ в год</span>
+        <span class="pill">👩 Женщинам +150%</span>
+        <span class="pill">👶 Надбавка на ясли (<span lang="he" dir="rtl">מענק לפעוטות</span>)</span>
+        <span class="pill">💻 Онлайн-подача 3 минуты</span>
+      </div>
+    </section>
+
+    <!-- ТЕОРИЯ: ЗАЧЕМ ГОСУДАРСТВО ЭТО ВЫПЛАЧИВАЕТ? -->
+    <section class="card" style="background:#f9fbf9;border-color:#b9d8ca">
+      <div class="title" style="margin-bottom:8px">
+        <div class="num" style="background:#0d9671">?</div>
+        <div>
+          <h2>Зачем государство выплачивает эти деньги?</h2>
+          <p>Экономический смысл Закона об отрицательном подоходном налоге</p>
+        </div>
+      </div>
+      <div style="font-size:12.5px;color:var(--ink);line-height:1.6">
+        В 2007 году Кнессет принял специальный закон (<span lang="he" dir="rtl">חוק להגדלת שיעור ההשתתפות בכוח העבודה ולצמצום פערים</span>). Главная цель государства — <b>поощрять людей работать, а не сидеть на социальных пособиях</b>.<br>
+        Если человек устраивается на неполную ставку или невысокую зарплату, государство напрямую доплачивает ему премию на банковский счёт. Это делает выход на работу значительно выгоднее для семейного бюджета, чем жизнь исключительно на пособия по обеспечению дохода (<span lang="he" dir="rtl">הבטחת הכנסה</span>).
+      </div>
+    </section>
+
+    <!-- СВОДНАЯ ТАБЛИЦА ПОРОГОВ (СТАТИЧНЫЙ SEO-КОНТЕНТ) -->
+    <section class="card">
+      <div class="title">
+        <div class="num">1</div>
+        <div>
+          <h2>Официальные пороги дохода по Закону Израиля</h2>
+          <p>Среднемесячный доход брутто (общий заработок за год ÷ количество отработанных месяцев)</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="cond-table">
+          <thead>
+            <tr>
+              <th>Категория заявителя</th>
+              <th>Коридор дохода в месяц</th>
+              <th>Ориентир выплаты за год</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Родители (1–2 ребёнка до 19 лет)</b> или возраст <b>55+ без детей</b></td>
+              <td>от <b>2 450 ₪</b> до <b>7 289 ₪</b></td>
+              <td>до <b>5 760 ₪</b> (женщинам до <b>8 640 ₪</b>)</td>
+            </tr>
+            <tr>
+              <td><b>Родители (3+ детей до 19 лет)</b></td>
+              <td>от <b>2 450 ₪</b> до <b>8 020 ₪</b></td>
+              <td>до <b>6 480 ₪</b> (женщинам до <b>9 720 ₪</b>)</td>
+            </tr>
+            <tr>
+              <td><b>Одинокий родитель (<span lang="he" dir="rtl">הורה יחיד</span>)</b> с 1–2 детьми</td>
+              <td>от <b>1 510 ₪</b> до <b>11 190 ₪</b></td>
+              <td>до <b>9 840 ₪</b></td>
+            </tr>
+            <tr>
+              <td><b>Одинокий родитель (<span lang="he" dir="rtl">הורה יחיד</span>)</b> с 3+ детьми</td>
+              <td>от <b>1 510 ₪</b> до <b>13 660 ₪</b></td>
+              <td>до <b>13 800 ₪</b> (+ ясли до 16 000 ₪)</td>
+            </tr>
+            <tr>
+              <td><b>Женщины 60–65 лет</b> (переходный пенсионный возраст)</td>
+              <td>от <b>920 ₪</b> до <b>8 930 ₪</b></td>
+              <td>до <b>7 800 ₪</b></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:11.5px;color:var(--muted);margin:8px 0 0;line-height:1.4">
+        * Выплата максимальна в середине диапазона (при зарплате 4 500 – 5 500 ₪) и снижается к краям.
+      </p>
+    </section>
+
+    <!-- ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР СО ВСЕМИ ПОДВОДНЫМИ КАМНЯМИ -->
+    <section class="card">
+      <div class="title">
+        <div class="num">2</div>
+        <div>
+          <h2>Проверка права и персональный расчёт</h2>
+          <p>Выберите год и внесите фактические данные о доходах</p>
+        </div>
+      </div>
+
+      <div class="f">
+        <label>Проверяемый налоговый год (<span lang="he" dir="rtl">שנת מס</span>)</label>
+        <div class="seg" id="seg-year">
+          <button type="button" class="on" data-v="2025">2025 год (подача: 01.01.2026 – 31.12.2027)</button>
+          <button type="button" data-v="2024">2024 год (подача: 01.01.2025 – 31.12.2026)</button>
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="f">
+          <label>Пол заявителя</label>
+          <div class="seg" id="seg-gender">
+            <button type="button" class="on" data-v="female">Женщина (<span lang="he" dir="rtl">אישה</span> · +150%)</button>
+            <button type="button" data-v="male">Мужчина (<span lang="he" dir="rtl">גבר</span>)</button>
+          </div>
+        </div>
+        <div class="f">
+          <label>Семейный статус</label>
+          <div class="seg" id="seg-status">
+            <button type="button" class="on" data-v="couple">В браке / Семья</button>
+            <button type="button" data-v="single">Одинокий родитель (<span lang="he" dir="rtl">הורה יחיד</span>)</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row3">
+        <div class="f">
+          <label>Возраст заявителя (лет)</label>
+          <input type="number" id="in-age" value="38" min="18" max="99">
+        </div>
+        <div class="f">
+          <label>Детей до 19 лет</label>
+          <input type="number" id="in-kids" value="2" min="0" max="15">
+        </div>
+        <div class="f">
+          <label>Из них малышей до 3 лет</label>
+          <input type="number" id="in-toddlers" value="1" min="0" max="5">
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="f">
+          <label>Ваш среднемесячный доход брутто (₪)</label>
+          <input type="number" id="in-wage" value="5200" step="100" placeholder="Зарплата или доход эсека">
+        </div>
+        <div class="f">
+          <label>Месяцев работы в этом году</label>
+          <input type="number" id="in-months" value="12" min="1" max="12">
+        </div>
+      </div>
+
+      <div class="f" id="wrap-spouse-wage">
+        <label>Доход супруга / супруги в месяц брутто (₪)</label>
+        <input type="number" id="in-spouse-wage" value="0" step="500" placeholder="0 если не работает">
+        <span style="font-size:11px;color:var(--muted)">При совокупном доходе супруга свыше 8 500 ₪ семейная выплата пропорционально снижается.</span>
+      </div>
+
+      <!-- ПОДВОДНЫЕ КАМНИ (ЗАКОНОДАТЕЛЬНЫЕ ДИСКВАЛИФИКАТОРЫ) -->
+      <div class="checkbox-box">
+        <div style="font-size:12px;font-weight:800;color:var(--red);display:flex;align-items:center;gap:6px">
+          <span>⚠️</span> Законодательные ограничения (проверьте перед подачей):
+        </div>
+        <label class="checkbox-item">
+          <input type="checkbox" id="chk-property">
+          <span><b>Вторая недвижимость:</b> у меня или супруга(и) есть более 50% прав на <u>любой второй объект недвижимости</u>, кроме единственной квартиры для жилья (вторая квартира, коммерческое помещение, магазин, земельный участок, унаследованная доля).</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" id="chk-relative">
+          <span><b>Работа у родственников:</b> я работаю по найму у близкого родственника (супруг, родители, дети) или в компании, принадлежащей им (такой доход по закону не даёт права на выплату).</span>
+        </label>
+      </div>
+
+      <button type="button" class="primary-btn" id="btn-calc">Проверить право и рассчитать →</button>
+    </section>
+
+    <!-- РЕЗУЛЬТАТ РАСЧЁТА -->
+    <section class="card" id="res-card" style="display:none">
+      <div class="title">
+        <div class="num">3</div>
+        <div>
+          <h2>Результат проверки</h2>
+          <p id="res-status-text"></p>
+        </div>
+      </div>
+
+      <div id="res-box-wrapper"></div>
+      <div id="res-breakdown"></div>
+
+      <div id="maanak-share" style="display:flex;justify-content:center;gap:6px;margin-top:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:12px">
+        <button type="button" onclick="shareMaanak('wa')" style="display:inline-flex;align-items:center;gap:4px;background:#25D366;color:#fff;border:none;border-radius:14px;padding:6px 12px;font-size:11.5px;font-weight:750;cursor:pointer;box-shadow:0 2px 6px rgba(37,211,102,.25)">💬 WhatsApp</button>
+        <button type="button" onclick="shareMaanak('tg')" style="display:inline-flex;align-items:center;gap:4px;background:#0088cc;color:#fff;border:none;border-radius:14px;padding:6px 12px;font-size:11.5px;font-weight:750;cursor:pointer;box-shadow:0 2px 6px rgba(0,136,204,.25)">✈️ Telegram</button>
+        <button type="button" onclick="shareMaanak('copy')" id="copyBtnMaanak" style="display:inline-flex;align-items:center;gap:4px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:6px 12px;font-size:11.5px;font-weight:750;cursor:pointer">📋 Скопировать</button>
+      </div>
+
+      <div style="margin-top:14px;padding:14px;background:#eef4f1;border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div style="font-size:12px;color:var(--ink)">
+          <b>Как получить деньги:</b> подайте бесплатную заявку онлайн на сайте Налогового управления (<span lang="he" dir="rtl">רשות המסים</span>) без посредников и комиссий.
+        </div>
+        <a href="https://www.gov.il/he/service/grant-request" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;background:var(--green);color:#fff;text-decoration:none;font-size:12px;font-weight:800;padding:8px 14px;border-radius:10px;white-space:nowrap">
+          Подать онлайн на gov.il ↗
+        </a>
+      </div>
+      <p style="font-size:11px;color:var(--muted);margin:10px 0 0;line-height:1.4">
+        * Расчёт носит ориентировочный характер на основании критериев Закона об отрицательном подоходном налоге. Окончательное решение выносит Налоговое управление при автоматической сверке годовых отчётов (формы 106 / 1301).
+      </p>
+    </section>
+
+    <!-- КАК НАЛОГОВАЯ ПРОВЕРЯЕТ ДОХОДЫ: ТОФЕС 106 И 126 -->
+    <section class="card">
+      <div class="title">
+        <div class="num">4</div>
+        <div>
+          <h2>Как налоговая проверяет отчёты: формы 106, 126 и 1301</h2>
+          <p>Почему выплаты начинаются только в июле, а не сразу в январе</p>
+        </div>
+      </div>
+
+      <div style="font-size:12.5px;color:var(--ink);line-height:1.6;margin-bottom:12px">
+        В Израиле налогообложение считается <b>суммарно за полный календарный год (с 1 января по 31 декабря)</b>. Поэтому процесс сверки данных выглядит так:
+      </div>
+
+      <div class="timeline-grid">
+        <div class="t-card">
+          <div class="t-head">1. Годовой отчёт работника (טופס 106)</div>
+          <div class="t-dates">Выдаётся до 31 марта</div>
+          <div class="t-desc">
+            Работодатель обязан сформировать и выдать работнику итоговый годовой отчёт обо всех начислениях (<span lang="he" dir="rtl">טופס 106</span>) до 31 марта следующего года.
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-head">2. Отчёт работодателя в налоговую (טופס 126)</div>
+          <div class="t-dates">Сдаётся до 30 апреля</div>
+          <div class="t-desc">
+            Работодатель централизованно передаёт цифровой отчёт обо всех сотрудниках (<span lang="he" dir="rtl">טופס 126</span>) в Налоговое управление (<span lang="he" dir="rtl">רשות המסים</span>).
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-head">3. Автоматическая сверка базы данных</div>
+          <div class="t-dates">Май – Июнь</div>
+          <div class="t-desc">
+            Налоговая служба автоматически сопоставляет поданное вами заявление с отчётами 126 от всех ваших работодателей и рассчитывает точную сумму выплаты.
+          </div>
+        </div>
+
+        <div class="t-card" style="background:#eaf6f0;border-color:#b9d8ca">
+          <div class="t-head" style="color:#08775a">4. Первый перевод на банковский счёт</div>
+          <div class="t-dates">15 июля</div>
+          <div class="t-desc">
+            Именно поэтому первый платёж за прошлый год перечисляется <b>15 июля</b> — когда все работодатели страны уже сдали годовые отчёты.
+          </div>
+        </div>
+      </div>
+      <p style="font-size:11.5px;color:var(--muted);margin:8px 0 0;line-height:1.4">
+        * <b>Важно:</b> подать заявление онлайн на <a href="https://www.gov.il/he/service/grant-request" target="_blank" rel="noopener" style="color:var(--green);font-weight:750">gov.il</a> можно уже с января. Ваша заявка сохранится в системе и будет автоматически рассчитана, как только работодатель сдаст отчёт.
+      </p>
+    </section>
+
+    <!-- ТОЧНЫЕ СРОКИ ПОДАЧИ И ГРАФИК ВЫПЛАТ -->
+    <section class="card">
+      <div class="title">
+        <div class="num">5</div>
+        <div>
+          <h2>Точные сроки подачи и график выплат</h2>
+          <p>Официальный календарь Налогового управления Израиля (<span lang="he" dir="rtl">רשות המסים</span>)</p>
+        </div>
+      </div>
+
+      <div style="background:#f4f1e9;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:12px">
+        <b style="font-size:13px;color:var(--ink);display:block;margin-bottom:6px">📅 Календарные сроки подачи заявлений:</b>
+        <div style="font-size:12px;color:var(--ink);line-height:1.6">
+          • <b>За 2025 рабочий год:</b> подача открыта с <b>01.01.2026</b> до <b>31.12.2027</b> (2 полных года).<br>
+          • <b>За 2024 рабочий год:</b> подача открыта с <b>01.01.2025</b> до <b>31.12.2026</b> (успейте подать до конца 2026 г.!).
+        </div>
+      </div>
+
+      <div style="font-size:12.5px;font-weight:800;color:var(--ink);margin:14px 0 6px">
+        💳 Когда деньги поступят на счёт (зависит от даты подачи онлайн):
+      </div>
+
+      <div class="timeline-grid">
+        <div class="t-card">
+          <div class="t-head">Окно 1: подача до 30 июня</div>
+          <div class="t-dates">4 равных платежа</div>
+          <div class="t-desc">
+            1-я выплата: <b>15 июля</b><br>
+            2-я выплата: <b>15 октября</b><br>
+            3-я выплата: <b>15 декабря</b><br>
+            4-я выплата: <b>15 февраля</b> (следующего года)
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-head">Окно 2: подача с 1 июля по 30 сентября</div>
+          <div class="t-dates">3 равных платежа</div>
+          <div class="t-desc">
+            1-я выплата: <b>15 октября</b><br>
+            2-я выплата: <b>15 декабря</b><br>
+            3-я выплата: <b>15 февраля</b>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-head">Окно 3: подача с 1 октября по 30 ноября</div>
+          <div class="t-dates">2 равных платежа</div>
+          <div class="t-desc">
+            1-я выплата: <b>15 декабря</b><br>
+            2-я выплата: <b>15 февраля</b>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-head">Окно 4: подача в декабре (1 – 31 декабря)</div>
+          <div class="t-dates">1 единый платёж</div>
+          <div class="t-desc">
+            Вся сумма целиком выплачивается <b>15 февраля</b> следующего года.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПОШАГОВАЯ ИНСТРУКЦИЯ ОНЛАЙН-ПОДАЧИ -->
+    <section class="card">
+      <div class="title">
+        <div class="num">6</div>
+        <div>
+          <h2>Как подать заявку онлайн за 3 минуты</h2>
+          <p>Бесплатно на государственном портале без посредников</p>
+        </div>
+      </div>
+
+      <div style="font-size:12.5px;color:var(--ink);line-height:1.6">
+        1. Перейдите на официальный портал Налогового управления: <a href="https://www.gov.il/he/service/grant-request" target="_blank" rel="noopener" style="color:var(--green);font-weight:800">gov.il/he/service/grant-request</a>.<br>
+        2. Войдите через государственную систему идентификации (<span lang="he" dir="rtl">מערכת ההזדהות הלאומית</span>) по номеру удостоверения личности (<span lang="he" dir="rtl">תעודת זהות</span>).<br>
+        3. Укажите реквизиты вашего банковского счёта (банк, отделение, номер счёта).<br>
+        4. <b>Наёмным работникам:</b> никакие справки или зарплатные листы (<span lang="he" dir="rtl">תלושי שכר</span>) прикреплять <u>не нужно</u> — налоговая служба проверяет доходы автоматически по отчётам 106 / 126 от работодателей.<br>
+        5. <b>Индивидуальным предпринимателям (<span lang="he" dir="rtl">עצמאים</span>):</b> перед подачей убедитесь, что вы сдали годовой отчёт (<span lang="he" dir="rtl">דוח שנתי - טופס 1301</span>) за проверяемый год.<br>
+        6. Подтвердите отправку. Статус рассмотрения можно отслеживать в личном кабинете.
+      </div>
+    </section>
+
+    <!-- АККОРДЕОНЫ С ОТВЕТАМИ НА ВОПРОСЫ И НЮАНСЫ -->
+    <details class="card">
+      <summary>
+        <span>⚠️ Почему отказывают тем, у кого есть доля в квартире родителей?</span>
+        <span style="color:var(--green)">▸</span>
+      </summary>
+      <div class="acc-body">
+        Это самый частый повод для отказа. Статья 3 Закона чётко определяет: если у заявителя или его супруга есть <b>более 50% доли в любом объекте недвижимости</b>, кроме единственной квартиры для собственного проживания, право на выплату аннулируется полностью (0 ₪). Это касается унаследованных долей, коммерческих складов, магазинов и земельных участков под застройку.
+      </div>
+    </details>
+
+    <details class="card">
+      <summary>
+        <span>👶 Что такое надбавка на малышей (מענק לפעוטות)?</span>
+        <span style="color:var(--green)">▸</span>
+      </summary>
+      <div class="acc-body">
+        Это специальная государственная субсидия на детей ясельного возраста. Работающие родители детей в возрасте <b>до 3 лет</b> получают дополнительную прибавку к «Маанак авода» в размере <b>до 470 – 940 ₪ в месяц</b> на каждого ребёнка. Наш калькулятор автоматически учитывает эту надбавку при расчёте.
+      </div>
+    </details>
+  </main>
+</div>
+
+<script>
+var state = {
+  year: '2025',
+  gender: 'female',
+  status: 'couple'
+};
+
+function bindSeg(id, key) {
+  var btns = document.querySelectorAll('#' + id + ' button');
+  btns.forEach(function(b) {
+    b.addEventListener('click', function() {
+      btns.forEach(function(x) { x.classList.remove('on'); });
+      b.classList.add('on');
+      state[key] = b.getAttribute('data-v');
+      if (key === 'status') {
+        var wrap = document.getElementById('wrap-spouse-wage');
+        if (wrap) wrap.style.display = (state.status === 'single') ? 'none' : 'block';
+      }
+    });
+  });
+}
+bindSeg('seg-year', 'year');
+bindSeg('seg-gender', 'gender');
+bindSeg('seg-status', 'status');
+
+function money(n) {
+  return Math.round(n).toLocaleString('ru-RU') + ' ₪';
+}
+
+function calculate() {
+  var age = +document.getElementById('in-age').value || 0;
+  var kids = +document.getElementById('in-kids').value || 0;
+  var toddlers = Math.min(kids, +document.getElementById('in-toddlers').value || 0);
+  var wage = +document.getElementById('in-wage').value || 0;
+  var months = Math.min(12, Math.max(1, +document.getElementById('in-months').value || 12));
+  var spouseWage = (state.status === 'single') ? 0 : (+document.getElementById('in-spouse-wage').value || 0);
+  var hasExtraProp = document.getElementById('chk-property').checked;
+  var worksForRel = document.getElementById('chk-relative').checked;
+  var isWoman = (state.gender === 'female');
+  var isSingle = (state.status === 'single');
+
+  var blockers = [];
+
+  // Absolute blockers
+  if (hasExtraProp) {
+    blockers.push('Владение более 50% доли в дополнительной недвижимости (вторая квартира, земля, магазин, унаследованная доля) по закону аннулирует право на выплату.');
+  }
+  if (worksForRel) {
+    blockers.push('Зарплата, полученная от близких родственников (супруг, родители, дети), исключается из расчёта по закону.');
+  }
+
+  var isWoman6065 = (isWoman && age >= 60 && age <= 65);
+  var hasQualifyingFamily = (kids >= 1 && age >= 21) || (age >= 55) || isWoman6065;
+
+  if (!hasQualifyingFamily) {
+    blockers.push('Для получения выплаты в возрасте до 55 лет необходимо иметь хотя бы одного ребёнка младше 19 лет.');
+  }
+
+  // Bracket limits
+  var minIncome = 2450;
+  var maxIncome = 7289;
+  var peakLow = 4300;
+  var peakHigh = 5300;
+  var maxMonthlyBase = 480;
+
+  if (isSingle) {
+    minIncome = 1510;
+    if (kids >= 3) {
+      maxIncome = 13660;
+      peakLow = 4800;
+      peakHigh = 6200;
+      maxMonthlyBase = 1100;
+    } else {
+      maxIncome = 11190;
+      peakLow = 4500;
+      peakHigh = 5800;
+      maxMonthlyBase = 820;
+    }
+  } else if (isWoman6065) {
+    minIncome = 920;
+    maxIncome = 8930;
+    peakLow = 3800;
+    peakHigh = 5200;
+    maxMonthlyBase = 650;
+  } else if (kids >= 3) {
+    minIncome = 2450;
+    maxIncome = 8020;
+    peakLow = 4400;
+    peakHigh = 5500;
+    maxMonthlyBase = 540;
+  }
+
+  if (wage < minIncome) {
+    blockers.push('Среднемесячный доход (' + money(wage) + ') ниже минимального порога для вашей категории (' + money(minIncome) + ').');
+  } else if (wage > maxIncome) {
+    blockers.push('Среднемесячный доход (' + money(wage) + ') превышает максимальный порог (' + money(maxIncome) + ').');
+  }
+
+  var resBox = document.getElementById('res-box-wrapper');
+  var resBd = document.getElementById('res-breakdown');
+  var resCard = document.getElementById('res-card');
+  var resSub = document.getElementById('res-status-text');
+
+  resCard.style.display = 'block';
+
+  if (blockers.length > 0) {
+    resSub.textContent = 'По введённым критериям выплата не положена';
+    resBox.innerHTML = '<div class="res-box fail">' +
+      '<div class="res-lbl" style="color:var(--red)">Отказ в выплате</div>' +
+      '<div class="res-sum" style="color:var(--red)">0 ₪</div>' +
+      '<div class="res-sub">Обнаружены несоответствия критериям закона</div>' +
+      '</div>';
+
+    var bHtml = '<div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px">';
+    bHtml += '<b style="color:var(--red);font-size:13px;display:block;margin-bottom:8px">Причины отказа:</b>';
+    blockers.forEach(function(b) {
+      bHtml += '<div style="font-size:12px;color:var(--ink);margin-bottom:6px;display:flex;gap:6px"><span>❌</span><span>' + b + '</span></div>';
+    });
+    bHtml += '</div>';
+    resBd.innerHTML = bHtml;
+    resCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
+
+  // Calculation curve
+  var baseMonthly = 0;
+  if (wage <= peakLow) {
+    var rate = (wage - minIncome) / (peakLow - minIncome);
+    baseMonthly = maxMonthlyBase * rate;
+  } else if (wage <= peakHigh) {
+    baseMonthly = maxMonthlyBase;
+  } else {
+    var rate = (maxIncome - wage) / (maxIncome - peakHigh);
+    baseMonthly = maxMonthlyBase * rate;
+  }
+
+  if (isWoman) {
+    baseMonthly *= 1.5;
+  }
+
+  var toddlerMonthly = 0;
+  if (toddlers > 0) {
+    toddlerMonthly = Math.min(toddlers * 470, 940);
+  }
+
+  var totalMonthly = baseMonthly + toddlerMonthly;
+  var spouseWarning = '';
+
+  if (!isSingle && spouseWage > 8500) {
+    var factor = Math.max(0.0, 1.0 - (spouseWage - 8500) / 10000.0);
+    totalMonthly *= factor;
+    if (factor < 0.95) {
+      spouseWarning = 'Доход супруга (' + money(spouseWage) + ') частично снижает семейную выплату.';
+    }
+  }
+
+  var totalAnnual = Math.round(totalMonthly * months);
+  var baseAnnual = Math.round(baseMonthly * months);
+  var toddlerAnnual = Math.round(toddlerMonthly * months);
+
+  resSub.textContent = 'Вам положена выплата за ' + state.year + ' налоговый год';
+  resBox.innerHTML = '<div class="res-box ok">' +
+    '<div class="res-lbl" style="color:var(--green)">Ориентировочная сумма к выплате</div>' +
+    '<div class="res-sum" style="color:var(--green)">' + money(totalAnnual) + '</div>' +
+    '<div class="res-sub">Примерно ' + money(totalMonthly) + ' в месяц за ' + months + ' отработанных месяцев</div>' +
+    '</div>';
+
+  var bdHtml = '<div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px">';
+  bdHtml += '<div class="rrow"><span>Базовая выплата по доходу:</span><b>' + money(baseAnnual) + ' (' + money(baseMonthly) + '/мес)</b></div>';
+  if (isWoman) {
+    bdHtml += '<div class="rrow" style="color:var(--green)"><span>Надбавка работающей женщине (+150%):</span><b>Включена (+50%)</b></div>';
+  }
+  if (toddlerAnnual > 0) {
+    bdHtml += '<div class="rrow" style="color:var(--green)"><span>Субсидия на ясли («Маанак пеутот» / <span lang="he" dir="rtl">מענק לפעוטות</span> на ' + toddlers + ' ' + (toddlers === 1 ? 'ребёнка' : 'детей') + ' до 3 лет):</span><b>+' + money(toddlerAnnual) + '</b></div>';
+  }
+  bdHtml += '<div class="rrow"><span>Отработано месяцев:</span><b>' + months + ' из 12</b></div>';
+  bdHtml += '<div class="rrow bold" style="font-size:14px;color:var(--green);border-top:1px solid var(--line);padding-top:10px;margin-top:6px"><span>ИТОГО К ВЫПЛАТЕ НА СЧЁТ:</span><b>' + money(totalAnnual) + '</b></div>';
+  if (spouseWarning) {
+    bdHtml += '<div style="margin-top:8px;font-size:11.5px;color:var(--muted);background:#fff9e6;padding:8px;border-radius:8px">ℹ️ ' + spouseWarning + '</div>';
+  }
+  bdHtml += '</div>';
+
+  resBd.innerHTML = bdHtml;
+  window.__last_maanak_res = { totalAnnual: totalAnnual, year: state.year, months: months };
+  resCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+document.getElementById('btn-calc').addEventListener('click', calculate);
+
+function shareMaanak(target) {
+  var data = window.__last_maanak_res;
+  var sumStr = data ? money(data.totalAnnual) : 'до 16 000 ₪';
+  var yr = data ? data.year : '2025';
+  var text = '💵 Расчёт «Маанак авода» (מענק עבודה ' + yr + '):\n' +
+             '• Положено к выплате: ' + sumStr + '\n' +
+             '• Прямой перевод на банковский счёт от Налогового управления Израиля (רשות המסים)\n\n' +
+             'Проверить своё право на выплату: https://exodus611.github.io/finance-portal/maanak-avoda.html';
+  if (target === 'wa') {
+    window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(text), '_blank');
+  } else if (target === 'tg') {
+    window.open('https://t.me/share/url?url=' + encodeURIComponent('https://exodus611.github.io/finance-portal/maanak-avoda.html') + '&text=' + encodeURIComponent('💵 Маанак Авода: мне положено ' + sumStr), '_blank');
+  } else if (target === 'copy') {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function() {
+        var btn = document.getElementById('copyBtnMaanak');
+        if (btn) {
+          var orig = btn.innerHTML;
+          btn.innerHTML = '<span>✅ Скопировано!</span>';
+          setTimeout(function() { btn.innerHTML = orig; }, 2000);
+        }
+      });
+    }
+  }
+}
+</script>
+<script data-goatcounter="https://exodus611.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
