@@ -348,8 +348,8 @@ details summary::-webkit-details-marker { display: none; }
           <p style="margin:0;font-size:11px;color:var(--ink);line-height:1.4">Закон даёт ровно 2 года. Если не подать заявление за 2024 рабочий год до <b>31 декабря 2026 года</b>, эти деньги навсегда сгорят в пользу государства.</p>
         </div>
         <div style="background:rgba(255,255,255,.8);border-radius:10px;padding:10px 12px;border:1px solid rgba(194,155,82,.35)">
-          <b style="font-size:12px;color:#784f08;display:block;margin-bottom:3px">👥 Оба супруга проверяют отдельно</b>
-          <p style="margin:0;font-size:11px;color:var(--ink);line-height:1.4">Каждый работающий супруг в семье имеет право на свою отдельную выплату, если его личный доход попадает в диапазон. Проверьте мужа и жену по очереди!</p>
+          <b style="font-size:12px;color:#784f08;display:block;margin-bottom:3px">👥 На каждого супруга свой бланк</b>
+          <p style="margin:0;font-size:11px;color:var(--ink);line-height:1.4">Каждый работающий супруг подаёт <b>своё личное заявление</b> под своим ТЗ. Доходы не суммируются: если работают оба, каждый получает свою выплату!</p>
         </div>
       </div>
     </section>
@@ -467,10 +467,9 @@ details summary::-webkit-details-marker { display: none; }
         </div>
       </div>
 
-      <div class="f" id="wrap-spouse-wage">
-        <label>Доход супруга / супруги в месяц брутто (₪)</label>
-        <input type="number" id="in-spouse-wage" value="0" step="500" placeholder="0 если не работает">
-        <span style="font-size:11px;color:var(--muted)">При совокупном доходе супруга свыше 8 500 ₪ семейная выплата пропорционально снижается.</span>
+      <div id="wrap-spouse-info" style="background:#f0f9f5;border:1px solid #b9d8ca;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:12px;color:var(--ink);line-height:1.45">
+        <b style="color:var(--green)">👥 Правило для супругов (<span lang="he" dir="rtl">בני זוג</span>):</b><br>
+        Каждый работающий супруг рассчитывает выплату <b>по своему личному доходу</b> и подаёт <b>своё отдельное заявление</b> со своего личного кабинета под своим Теудат Зеут. Доходы супругов <u>не суммируются</u>: если работают оба супруга и оба проходят по критериям — семья получает <b>две выплаты</b>! В анкете данные супруга указываются исключительно для проверки отсутствия второй недвижимости (>50%) и сверки детей.
       </div>
 
       <!-- ПОДВОДНЫЕ КАМНИ (ЗАКОНОДАТЕЛЬНЫЕ ДИСКВАЛИФИКАТОРЫ) -->
@@ -514,7 +513,7 @@ details summary::-webkit-details-marker { display: none; }
         <div style="font-size:12px;color:var(--ink)">
           <b>Как получить деньги:</b> подайте бесплатную заявку онлайн на сайте Налогового управления (<span lang="he" dir="rtl">רשות המסים</span>) без посредников и комиссий.
         </div>
-        <a href="https://www.gov.il/he/service/grant-request" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;background:var(--green);color:#fff;text-decoration:none;font-size:12px;font-weight:800;padding:8px 14px;border-radius:10px;white-space:nowrap">
+        <a href="https://www.gov.il/he/service/submitting-an-online-claim-for-job-grant" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;background:var(--green);color:#fff;text-decoration:none;font-size:12px;font-weight:800;padding:8px 14px;border-radius:10px;white-space:nowrap">
           Подать онлайн на gov.il ↗
         </a>
       </div>
@@ -571,7 +570,7 @@ details summary::-webkit-details-marker { display: none; }
         </div>
       </div>
       <p style="font-size:11.5px;color:var(--muted);margin:8px 0 0;line-height:1.4">
-        * <b>Важно:</b> подать заявление онлайн на <a href="https://www.gov.il/he/service/grant-request" target="_blank" rel="noopener" style="color:var(--green);font-weight:750">gov.il</a> можно уже с января. Ваша заявка сохранится в системе и будет автоматически рассчитана, как только работодатель сдаст отчёт.
+        * <b>Важно:</b> подать заявление онлайн на <a href="https://www.gov.il/he/service/submitting-an-online-claim-for-job-grant" target="_blank" rel="noopener" style="color:var(--green);font-weight:750">gov.il</a> можно уже с января. Ваша заявка сохранится в системе и будет автоматически рассчитана, как только работодатель сдаст отчёт.
       </p>
     </section>
 
@@ -649,7 +648,7 @@ details summary::-webkit-details-marker { display: none; }
       </div>
 
       <div style="font-size:12.5px;color:var(--ink);line-height:1.6">
-        1. Перейдите на официальный портал Налогового управления: <a href="https://www.gov.il/he/service/grant-request" target="_blank" rel="noopener" style="color:var(--green);font-weight:800">gov.il/he/service/grant-request</a>.<br>
+        1. Перейдите на официальный портал Налогового управления: <a href="https://www.gov.il/he/service/submitting-an-online-claim-for-job-grant" target="_blank" rel="noopener" style="color:var(--green);font-weight:800">gov.il/he/service/submitting-an-online-claim-for-job-grant</a>.<br>
         2. Войдите через государственную систему идентификации (<span lang="he" dir="rtl">מערכת ההזדהות הלאומית</span>) по номеру удостоверения личности (<span lang="he" dir="rtl">תעודת זהות</span>).<br>
         3. Укажите реквизиты вашего банковского счёта (банк, отделение, номер счёта).<br>
         4. <b>Наёмным работникам:</b> никакие справки или зарплатные листы (<span lang="he" dir="rtl">תלושי שכר</span>) прикреплять <u>не нужно</u> — налоговая служба проверяет доходы автоматически по отчётам 106 / 126 от работодателей.<br>
@@ -716,7 +715,7 @@ function calculate() {
   var toddlers = Math.min(kids, +document.getElementById('in-toddlers').value || 0);
   var wage = +document.getElementById('in-wage').value || 0;
   var months = Math.min(12, Math.max(1, +document.getElementById('in-months').value || 12));
-  var spouseWage = (state.status === 'single') ? 0 : (+document.getElementById('in-spouse-wage').value || 0);
+  
   var hasExtraProp = document.getElementById('chk-property').checked;
   var worksForRel = document.getElementById('chk-relative').checked;
   var isWoman = (state.gender === 'female');
@@ -828,14 +827,6 @@ function calculate() {
 
   var totalMonthly = baseMonthly + toddlerMonthly;
   var spouseWarning = '';
-
-  if (!isSingle && spouseWage > 8500) {
-    var factor = Math.max(0.0, 1.0 - (spouseWage - 8500) / 10000.0);
-    totalMonthly *= factor;
-    if (factor < 0.95) {
-      spouseWarning = 'Доход супруга (' + money(spouseWage) + ') частично снижает семейную выплату.';
-    }
-  }
 
   var totalAnnual = Math.round(totalMonthly * months);
   var baseAnnual = Math.round(baseMonthly * months);
