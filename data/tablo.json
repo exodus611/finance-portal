@@ -1,6 +1,6 @@
 {
   "_comment": "Данные табло. Заполняется scripts/update.py из официальных источников.",
-  "updated": "2026-09-04",
+  "updated": "2026-09-07",
   "updated_by": "auto",
   "boi": {
     "rate": 0.0325,
@@ -176,10 +176,10 @@
     "apartment_type": "3-комнатная квартира"
   },
   "fuel": {
-    "price_95": 8.25,
-    "prev_price": 8.09,
+    "price_95": 7.75,
+    "prev_price": 8.25,
     "full_service_extra": 0.26,
-    "period": "2026-09",
+    "period": "2026-09 (с 07.09)",
     "name_ru": "Бензин 95, самообслуживание"
   }
 }

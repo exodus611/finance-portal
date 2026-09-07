@@ -589,7 +589,7 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 <a class="fx-row" data-cat="pension" href="pikadon-vs-keren.html" aria-label="Пикадон или керен каспит — что выгоднее" data-keywords="пикадон или керен каспит банковский вклад депозит сравнение процентов налог 15 процентов 25 процентов פיקדון מול קרן כספית"><div class="fx-ico" style="background:#eaf6f0;color:#08775a">🏦</div><div class="fx-txt"><h3>Пикадон vs керен каспит</h3><p>Банк даёт 4,5%, фонд 3,5% — что выгоднее чистыми</p></div><span class="fx-arrow">→</span></a>
 <a class="fx-row" data-cat="economy" href="valuta.html" aria-label="Конвертер валют, курс шекеля, корзина валют" data-keywords="валюта курс доллара курс евро шекель обмен валют конвертер корзина валют банк израиля доллар к шекелю שער הדולר יורו שקל המרת מטבע"><div class="fx-ico" style="background:#e6f0fa;color:#2f6df6">💱</div><div class="fx-txt"><h3>Курс валют</h3><p>Конвертер, корзина валют, график за год, официальный vs рыночный</p></div><span class="fx-arrow">→</span></a>
 <a class="fx-row" data-cat="economy" data-popular="1" href="tablo.html" aria-label="Экономика Израиля сегодня" data-keywords="табло экономики экономика израиля сегодня инфляция индекс цен мадад ставка банка израиля прайм бензин мадад ле цархан מדד המחירים לצרכן ריבית בנק ישראל"><div class="fx-ico" style="background:#eaf6f0;color:#08775a">📊</div><div class="fx-txt"><h3>Экономика сегодня</h3><p>Ставка, мадад, курсы валют, минималка — живое табло</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="auto" href="benzin.html" aria-label="Цена на бензин в Израиле" data-keywords="бензин цена на бензин заправка октан 95 топливо 8.25 акциз бло налог эйлат מחיר הדלק בנזין 95"><div class="fx-ico" style="background:#e8eef7;color:#1e3a5f">⛽</div><div class="fx-txt"><h3>Цена на бензин</h3><p>Из чего складывается литр, доля государства, сравнение с Европой</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="auto" href="benzin.html" aria-label="Цена на бензин в Израиле" data-keywords="бензин цена на бензин заправка октан 95 топливо 7.75 8.25 акциз бло налог эйлат מחיר הדלק בנזין 95"><div class="fx-ico" style="background:#e8eef7;color:#1e3a5f">⛽</div><div class="fx-txt"><h3>Цена на бензин</h3><p>Из чего складывается литр, доля государства, сравнение с Европой</p></div><span class="fx-arrow">→</span></a>
 <a class="fx-row" data-cat="other" href="slovar.html" aria-label="Словарь финансовых терминов" data-keywords="словарь финансовых терминов иврит русский перевод тлуш маскорет мас ахнаса битуах леуми тофес 101 тофес 161 словарь терминов מילון מונחים"><div class="fx-ico" style="background:#f2eefa;color:var(--purple)">📖</div><div class="fx-txt"><h3>Словарь терминов</h3><p>Что банк говорит и что это значит на самом деле</p></div><span class="fx-arrow">→</span></a>
 <a class="fx-row" data-cat="other" href="nko.html" aria-label="Благотворительные организации Израиля" data-keywords="нко амута амутот благотворительность помощь фонды волонтеры права репатриантов юридическая помощь עמותות סיוע"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">🤝</div><div class="fx-txt"><h3>Благотворительные НКО</h3><p>Крупные проверенные организации + как проверить любую самому</p></div><span class="fx-arrow">→</span></a>
 </div>
@@ -1039,10 +1039,10 @@ document.addEventListener('DOMContentLoaded', function(){
     <div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 11px;border-inline-start:3.5px solid #1e3a5f;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">
       <div style="min-width:0;flex:1">
         <div style="display:flex;align-items:center;gap:6px;margin-bottom:1px">
-          <span style="font-size:12px;font-weight:850;color:var(--ink)">⛽ Бензин 95 (с 01.09)</span>
+          <span style="font-size:12px;font-weight:850;color:var(--ink)">⛽ Бензин 95 (с 07.09)</span>
           <span style="font-size:9px;font-weight:800;color:#c15045;background:#fdeeee;padding:1px 5px;border-radius:4px">🔺 +0.16 ₪ (+2.0%)</span>
         </div>
-        <div style="font-size:11.5px;color:var(--ink);font-weight:700" id="dec-fuel-val">8.25 ₪ / литр (рекорд 2012 г.)</div>
+        <div style="font-size:11.5px;color:var(--ink);font-weight:700" id="dec-fuel-val">7.75 ₪ / литр (-0.50 ₪)</div>
       </div>
       <a href="benzin.html" style="font-size:11px;font-weight:800;color:#1e3a5f;text-decoration:none;white-space:nowrap">Калькулятор авто →</a>
     </div>
@@ -1073,8 +1073,8 @@ document.addEventListener('DOMContentLoaded', function(){
         <span style="font-weight:800;color:var(--green);font-size:10.5px">✅ Ставка снижена: 3.25% (Прайм 4.75%)</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
-        <span><b>01.09.2026</b> · Тариф на бензин 95</span>
-        <span style="font-weight:800;color:#1e3a5f;font-size:10.5px">✅ 8.25 ₪ (+16 агорот)</span>
+        <span><b>07.09.2026</b> · Тариф на бензин 95</span>
+        <span style="font-weight:800;color:var(--green);font-size:10.5px">✅ 7.75 ₪ (-50 агорот)</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
         <span><b>12.09.2026</b> · Автала (Битуах Леуми)</span>
