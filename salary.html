@@ -1511,7 +1511,7 @@ function shareSalaryCalc(target) {
              "• Чистыми на руки (Нетто): " + net + " (" + takehome + ")\n\n" +
              "🔗 Посчитать зарплату: https://exodus611.github.io/finance-portal/salary.html";
   if (target === "wa") {
-    window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(text), "_blank");
+    window.open("https://wa.me/?text=" + encodeURIComponent(text), "_blank") || (window.location.href = "https://wa.me/?text=" + encodeURIComponent(text));
   } else if (target === "tg") {
     window.open("https://t.me/share/url?url=" + encodeURIComponent("https://exodus611.github.io/finance-portal/salary.html") + "&text=" + encodeURIComponent("📊 Расчёт зарплаты в Израиле: Брутто " + gross + " ➔ Нетто " + net), "_blank");
   } else if (target === "copy") {

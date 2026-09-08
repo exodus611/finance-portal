@@ -307,7 +307,7 @@ function shareHisahon(platform) {
              'Рассчитать программу для детей: ' + window.location.href;
 
   if (platform === 'whatsapp') {
-    window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(text), '_blank');
+    window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank') || (window.location.href = 'https://wa.me/?text=' + encodeURIComponent(text));
   } else if (platform === 'telegram') {
     window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(text), '_blank');
   } else if (platform === 'copy') {

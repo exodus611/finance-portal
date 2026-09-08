@@ -295,7 +295,7 @@ function shareHavraa(target) {
   }
   text += "\n🔗 Калькулятор оздоровительных: https://exodus611.github.io/finance-portal/havraa.html";
   if (target === "wa") {
-    window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(text), "_blank");
+    window.open("https://wa.me/?text=" + encodeURIComponent(text), "_blank") || (window.location.href = "https://wa.me/?text=" + encodeURIComponent(text));
   } else if (target === "tg") {
     window.open("https://t.me/share/url?url=" + encodeURIComponent("https://exodus611.github.io/finance-portal/havraa.html") + "&text=" + encodeURIComponent("🏖️ Оздоровительные 2026: положено " + money(r.due)), "_blank");
   } else if (target === "copy") {
