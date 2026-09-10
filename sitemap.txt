@@ -6,7 +6,6 @@ https://exodus611.github.io/finance-portal/mashkanta.html
 https://exodus611.github.io/finance-portal/pension-calc.html
 https://exodus611.github.io/finance-portal/avtala.html
 https://exodus611.github.io/finance-portal/benzin.html
-https://exodus611.github.io/finance-portal/discounts.html
 https://exodus611.github.io/finance-portal/arnona.html
 https://exodus611.github.io/finance-portal/mas-rehisha.html
 https://exodus611.github.io/finance-portal/mas-shevach.html
