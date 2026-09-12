@@ -1004,6 +1004,7 @@ let lang = 'fr';
 let LOCALE = 'fr-FR';
 // Le portail est francophone ; l’hébreu reste la deuxième langue — l’original
 // des termes, tel qu’il apparaît sur le bulletin de paie.
+const LANGS = ['fr', 'he', 'ru'];
 const LANG_NAMES = { he: 'עברית', ru: 'РУС', fr: 'FR' };
 function t(key) { return (I18N[lang] && I18N[lang][key]) || I18N.ru[key] || key; }
 
