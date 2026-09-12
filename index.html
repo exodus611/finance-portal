@@ -506,45 +506,6 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 
 
 <section class="section" id="hot" style="margin-top:16px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px;max-width:900px;margin:0 auto">
-
-<a href="maanak-avoda.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 12px;box-shadow:var(--shadow-sm);transition:border-color .15s,transform .15s">
-<span style="font-size:22px;flex:0 0 auto">💵</span>
-<div style="min-width:0;flex:1">
-<div style="display:flex;align-items:center;gap:6px;margin-bottom:2px">
-<span style="font-size:12.5px;font-weight:850;color:var(--ink)">Маанак авода: до 16 000 ₪</span>
-<span style="font-size:9px;font-weight:900;color:#fff;background:var(--red);border-radius:10px;padding:1px 6px">ВАЖНО</span>
-</div>
-<p style="margin:0;font-size:11px;color:var(--muted);line-height:1.3">Выплата от Налоговой — проверка права и онлайн-подача</p>
-</div>
-<span style="color:var(--muted);font-size:14px">→</span>
-</a>
-
-<a href="havraa.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 12px;box-shadow:var(--shadow-sm);transition:border-color .15s,transform .15s">
-<span style="font-size:22px;flex:0 0 auto">🏖️</span>
-<div style="min-width:0;flex:1">
-<div style="display:flex;align-items:center;gap:6px;margin-bottom:2px">
-<span style="font-size:12.5px;font-weight:850;color:var(--ink)">Оздоровительные: 451,50 ₪/день</span>
-<span style="font-size:9px;font-weight:900;color:#fff;background:var(--red);border-radius:10px;padding:1px 6px">НОВОЕ</span>
-</div>
-<p style="margin:0;font-size:11px;color:var(--muted);line-height:1.3">Ставку подняли — проверьте размер доплаты</p>
-</div>
-<span style="color:var(--muted);font-size:14px">→</span>
-</a>
-
-<a href="hisahon-yeled.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 12px;box-shadow:var(--shadow-sm);transition:border-color .15s,transform .15s">
-<span style="font-size:22px;flex:0 0 auto">👶</span>
-<div style="min-width:0;flex:1">
-<div style="display:flex;align-items:center;gap:6px;margin-bottom:2px">
-<span style="font-size:12.5px;font-weight:850;color:var(--ink)">Накопления на ребёнка</span>
-<span style="font-size:9px;font-weight:900;color:#8a6012;background:var(--gold-light);border:1px solid rgba(194,155,82,.3);border-radius:10px;padding:1px 6px">ГОСПРОГРАММА</span>
-</div>
-<p style="margin:0;font-size:11px;color:var(--muted);line-height:1.3">58 ₪/мес от государства — проверка начислений</p>
-</div>
-<span style="color:var(--muted);font-size:14px">→</span>
-</a>
-
-</div>
 </section>
 
 <h2 style="text-align:center;font-size:22px;letter-spacing:-.02em;max-width:600px;margin:28px auto 4px">Выберите калькулятор</h2>
@@ -564,8 +525,9 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 </div>
 
 <div class="fx-list" id="fx-list">
-<a class="fx-row" data-cat="salary" href="havraa.html" aria-label="Калькулятор оздоровительных — новая ставка 2026 и проверка недоплаты" data-keywords="оздоровительные дмей хавраа авраа отпускные 451 418 перерасчет недоплата стаж частный сектор госсектор דמי הבראה הבראה"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">🏖️</div><div class="fx-txt"><h3>Оздоровительные <span style="font-size:10px;font-weight:900;color:#fff;background:var(--red);border-radius:10px;padding:2px 7px;vertical-align:middle">НОВОЕ</span></h3><p>Ставку подняли до 451,50 ₪ за день — посчитайте доплату</p></div></a>
-<a class="fx-row" data-cat="salary" data-popular="1" href="maanak-avoda.html" aria-label="Маанак авода — калькулятор отрицательного подоходного налога" data-keywords="маанак авода מענק עבודה отрицательный подоходный налог מס הכנסה שלילי выплата работающим решут мисим רשות המסים субсидия на ясли מענק לפעוטות"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">💵</div><div class="fx-txt"><h3>Маанак авода <span style="font-size:10px;font-weight:900;color:#fff;background:var(--red);border-radius:10px;padding:2px 7px;vertical-align:middle">НОВОЕ</span></h3><p>Отрицательный подоходный налог — до 16 000 ₪ на банковский счёт</p></div><span class="fx-arrow">→</span></a>
+<!-- Закреплённые: самое востребованное -->
+<a class="fx-row" data-cat="salary" data-popular="1" href="maanak-avoda.html" aria-label="Маанак авода — калькулятор отрицательного подоходного налога" data-keywords="маанак авода מענק עבודה отрицательный подоходный налог מס הכנסה שלילי выплата работающим решут мисим רשות המסים субсидия на ясли מענק לפעוטות"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">💵</div><div class="fx-txt"><h3>Маанак авода</h3><p>Отрицательный подоходный налог — до 16 000 ₪ на банковский счёт</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="salary" href="havraa.html" aria-label="Калькулятор оздоровительных — новая ставка 2026 и проверка недоплаты" data-keywords="оздоровительные дмей хавраа авраа отпускные 451 418 перерасчет недоплата стаж частный сектор госсектор דמי הבראה הבראה"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">🏖️</div><div class="fx-txt"><h3>Оздоровительные</h3><p>Ставку подняли до 451,50 ₪ за день — посчитайте доплату</p></div></a>
 <a class="fx-row" data-cat="pension" data-popular="1" href="hisahon-yeled.html" aria-label="Калькулятор накоплений на каждого ребёнка" data-keywords="детские накопления хисахон ле коль йелед сбережения детям 58 шекелей битуах леуми удвоение вклад 18 лет 21 год חיסכון לכל ילד"><div class="fx-ico" style="background:#fbf3e3;color:var(--gold)">👶</div><div class="fx-txt"><h3>Накопления на ребёнка</h3><p>58 ₪ в месяц от государства — сколько будет к 18 и 21 году</p></div></a>
 <a class="fx-row" data-cat="salary" data-popular="1" href="salary.html" aria-label="Калькулятор зарплаты — брутто/нетто, выходное пособие, согласование налога, пенсионер" data-keywords="зарплата брутто нетто налог калькулятор зарплаты тлуш маскорет подоходный налог мас ахнаса ступени налога пицуим увольнение согласование тиум мас некудот зикуй баллы сверхурочные שכר ברוטו נטו"><div class="fx-ico" style="background:#eaf6f0;color:var(--green)">💰</div><div class="fx-txt"><h3>Зарплата</h3><p>Брутто↔нетто, выходное пособие, 2 работы, работающий пенсионер</p></div><span class="fx-arrow">→</span></a>
 <a class="fx-row" data-cat="housing" data-popular="1" href="mashkanta.html" aria-label="Калькулятор машканты — расчёт и автоподбор ипотечных стратегий" data-keywords="ипотека машканта калькулятор машканты ссуда прайм калац миштана процентная ставка банк погашение платеж ежемесячный взнос משכנתא ריבית פריים"><div class="fx-ico" style="background:#fbf3e3;color:var(--gold)">🏠</div><div class="fx-txt"><h3>Машканта</h3><p>Автоподбор из 67 000+ комбинаций, стресс-тест</p></div><span class="fx-arrow">→</span></a>
@@ -581,8 +543,8 @@ fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 <a class="fx-row" data-cat="salary" data-popular="1" href="avtala.html" aria-label="Пособие по безработице дмей автала" data-keywords="автала безработица пособие по безработице дмей автала биржа труда лишкат таасука увольнение уход по собственному халат расчет дней битуах леуми דמי אבטלה שירות התעסוקה"><div class="fx-ico" style="background:#fdece8;color:#c2452e">📋</div><div class="fx-txt"><h3>Дмей автала</h3><p>Уволили? Сколько заплатят, сколько дней, куда идти по шагам</p></div><span class="fx-arrow">→</span></a>
 <a class="fx-row" data-cat="pension" data-popular="1" href="pension-calc.html" aria-label="Расчёт пенсионных накоплений и выплат 2026" data-keywords="пенсия расчет пенсии пенсионный калькулятор накопления кибуа зхуйот 161д 161 д пенсионный возраст 67 62 65 купат гемель битуах менахалим пенсионный фонд пошаговый расчет פנסיה קיבוע זכויות"><div class="fx-ico" style="background:#e8f5f1;color:#08775a">💼</div><div class="fx-txt"><h3>Пенсионные накопления (PRO) <span style="font-size:10px;background:#08775a;color:#fff;padding:2px 6px;border-radius:6px;font-weight:800;vertical-align:middle">🔒 PIN</span></h3><p>Точный расчет: микадем, пенсия фонда, пособие Эзрах Ватик, налоги и Кибуа Зхуйот (161д)</p></div><span class="fx-arrow">→</span></a>
 <a class="fx-row" data-cat="pension" href="pension-gap.html" aria-label="Калькулятор пенсионного разрыва" data-keywords="пенсионный разрыв пенсия падение дохода замещение зарплаты пенсионер сколько не хватает пенсия разрыв פער פנסיוני"><div class="fx-ico" style="background:#f2eefa;color:#7857b8">🧓</div><div class="fx-txt"><h3>Пенсионный разрыв</h3><p>Хватит ли вам на пенсии — честно, с кицват зикна</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="pension" data-popular="1" href="siud.html" aria-label="Сиюд — уход за пожилыми: 6 уровней, часы ухода и суммы 2026" data-keywords="сиуд סיעוד уход за пожилыми стариками часы ухода сиделка опекунка помощь на дому битуах леуми уровни ухода 2026"><div class="fx-ico" style="background:#f2eefa;color:#7857b8">🤲</div><div class="fx-txt"><h3>Сиюд — уход <span style="font-size:10px;font-weight:900;color:#fff;background:var(--red);border-radius:10px;padding:2px 7px;vertical-align:middle">НОВОЕ</span></h3><p>6 уровней: часы ухода и до 7 440 ₪/мес — положен ли уход близким</p></div><span class="fx-arrow">→</span></a>
-<a class="fx-row" data-cat="economy" data-popular="1" href="payments.html" aria-label="Даты выплат Битуах Леуми — когда придут деньги" data-keywords="битуах леуми даты выплат расписание когда придут деньги выплаты битуах леуми september когда платят битуах леуми даты выплат ביטוח לאומי"><div class="fx-ico" style="background:#ebf4ff;color:#2b6cb0">🗓️</div><div class="fx-txt"><h3>Даты выплат Битуах Леуми <span style="font-size:10px;font-weight:900;color:#fff;background:var(--red);border-radius:10px;padding:2px 7px;vertical-align:middle">НОВОЕ</span></h3><p>Когда придут деньги в этом месяце — обновляется автоматически</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="pension" data-popular="1" href="siud.html" aria-label="Сиюд — уход за пожилыми: 6 уровней, часы ухода и суммы 2026" data-keywords="сиуд סיעוד уход за пожилыми стариками часы ухода сиделка опекунка помощь на дому битуах леуми уровни ухода 2026"><div class="fx-ico" style="background:#f2eefa;color:#7857b8">🤲</div><div class="fx-txt"><h3>Сиюд — уход</h3><p>6 уровней: часы ухода и до 7 440 ₪/мес — положен ли уход близким</p></div><span class="fx-arrow">→</span></a>
+<a class="fx-row" data-cat="economy" data-popular="1" href="payments.html" aria-label="Даты выплат Битуах Леуми — когда придут деньги" data-keywords="битуах леуми даты выплат расписание когда придут деньги выплаты битуах леуми september когда платят битуах леуми даты выплат ביטוח לאומי"><div class="fx-ico" style="background:#ebf4ff;color:#2b6cb0">🗓️</div><div class="fx-txt"><h3>Даты выплат Битуах Леуми</h3><p>Когда придут деньги в этом месяце — обновляется автоматически</p></div><span class="fx-arrow">→</span></a>
 <a class="fx-row" data-cat="pension" data-popular="1" href="keren-hishtalmut.html" aria-label="Калькулятор фонда повышения квалификации" data-keywords="керен ишталмут фонд повышения квалификации безналоговый вывод 6 лет освобождение от налога на прибыль инвестиции קרן השתלמות"><div class="fx-ico" style="background:#eafaf3;color:#0a8f6b">🎓</div><div class="fx-txt"><h3>Фонд повышения квалификации</h3><p>Рост фонда без налога — с правильными двумя потолками для самозанятых</p></div><span class="fx-arrow">→</span></a>
 <a class="fx-row" data-cat="salary" href="nekudot-zikuy.html" aria-label="Калькулятор налоговых баллов некудот зикуй" data-keywords="некудот зикуй льготные налоговые баллы скидка на подоходный налог дети оле хадаш академическая степень развод мать одиночка репатриант נקודות זיכוי מס הכנסה"><div class="fx-ico" style="background:#fef2e0;color:#c2790b">🎯</div><div class="fx-txt"><h3>Некудот зикуй</h3><p>Сколько баллов вам положено и сколько это в шекелях</p></div><span class="fx-arrow">→</span></a>
 <a class="fx-row" data-cat="pension" href="keren-kaspit.html" aria-label="Калькулятор керен каспит — доход и налог с прибыли" data-keywords="керен каспит денежный фонд инвестиции защита от инфляции налог на реальную прибыль доходность альтернатива вкладу קרן כספית"><div class="fx-ico" style="background:#eaf6f0;color:#08775a">🧮</div><div class="fx-txt"><h3>Керен каспит: налог</h3><p>Доход за 1–2 года, инфляция, налог 25% и сумма чистыми</p></div><span class="fx-arrow">→</span></a>
