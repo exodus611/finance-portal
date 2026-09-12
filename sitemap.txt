@@ -33,3 +33,4 @@ https://exodus611.github.io/finance-portal/article_budget_leaks.html
 https://exodus611.github.io/finance-portal/contact.html
 https://exodus611.github.io/finance-portal/about.html
 https://exodus611.github.io/finance-portal/cyber.html
+https://exodus611.github.io/finance-portal/fr/arnona.html

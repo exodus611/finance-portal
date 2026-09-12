@@ -1,0 +1,614 @@
+{
+ "meta": {
+  "title": "Réduction de l'arnona : à qui elle est accordée selon la loi",
+  "subtitle": "Ce que la loi permet, quel article l'établit et ce qu'il faut faire",
+  "updated": "2026-08-04",
+  "updated_human": "4 août 2026",
+  "year": 2026,
+  "note": "Données actualisées à partir de sources officielles. Les taux indiqués ci-dessous sont les plafonds fixés par l'État."
+ },
+ "hierarchy": {
+  "intro": "La réduction de l'arnona repose sur trois niveaux distincts. Il ne faut pas les confondre : les pourcentages ne figurent pas dans la loi, mais dans un règlement d'application, et le chiffre définitif est fixé par votre municipalité.",
+  "levels": [
+   {
+    "n": "1",
+    "kind": "Loi",
+    "name_ru": "Hok aésderim béméchék hamédina",
+    "name_he": "חוק ההסדרים במשק המדינה (תיקוני חקיקה להשגת יעדי התקציב), התשנ״ג–1992",
+    "article": "article 12(b)",
+    "what": "Donne au ministre de l'Intérieur le pouvoir de fixer les règles et les taux maximaux des réductions. La loi elle-même ne contient aucun pourcentage."
+   },
+   {
+    "n": "2",
+    "kind": "Règlement d'application",
+    "name_ru": "Takanot aésderim béméchék hamédina (hanaha me-arnona)",
+    "name_he": "תקנות הסדרים במשק המדינה (הנחה מארנונה), התשנ״ג–1993",
+    "article": "article 2 et suivants",
+    "what": "Énumère toutes les catégories et les plafonds de réduction. C'est le document principal sur lequel repose toute cette page."
+   },
+   {
+    "n": "3",
+    "kind": "Arrêté de votre municipalité",
+    "name_ru": "Tzav arnona",
+    "name_he": "צו ארנונה",
+    "article": "adopté chaque année",
+    "what": "La municipalité fixe le tarif au mètre carré et détermine le pourcentage exact de réduction dans la limite du plafond autorisé."
+   }
+  ]
+ },
+ "key_warning": {
+  "title": "L'essentiel : « jusqu'à 90 % » et « 90 % » ne sont pas la même chose",
+  "quote_he": "מועצה רשאית לקבוע הנחה… הנחה שאינה עולה על 90 אחוזים",
+  "quote_ru": "« Le conseil peut accorder une réduction… une réduction n'excédant pas 90 pour cent »",
+  "body": [
+   "Le mot « rashit » (רשאית) signifie « peut », et non « doit ». Et « che-éna olé al » (שאינה עולה על) veut dire « n'excédant pas ».",
+   "Le pourcentage indiqué est donc un plafond, pas une promesse. Le chiffre définitif est fixé par la municipalité dans son tzav arnona (צו ארנונה) de l'année en cours.",
+   "C'est pourquoi cette page écrit partout « jusqu'à ». Pour connaître le chiffre exact de votre ville, renseignez-vous au service de recouvrement de l'arnona ou consultez le tzav arnona sur le site de votre municipalité."
+  ],
+  "exception": "Cas à part : les personnes âgées. Leur réduction repose aussi sur une loi distincte, Hok ezrachim vatikim (חוק האזרחים הוותיקים, 1999), article 9(guimel) — les règles y sont plus strictes, avec vérification des revenus."
+ },
+ "ole": {
+  "title": "Si vous êtes un nouvel immigrant (olé hadach)",
+  "lead": "C'est le cas le plus simple de tous. Pas de vérification de revenus, pas de commission, la décision ne dépend de l'appréciation de personne : soit vous êtes dans les délais, soit non.",
+  "name_ru": "olé",
+  "name_he": "עולה",
+  "ceiling_percent": 90,
+  "area_limit_m2": 100,
+  "months_benefit": 12,
+  "months_window": 24,
+  "article": "2(alef)(6)(alef) et 2(alef)(6)(bet)",
+  "rule": "Réduction jusqu'à 90 pour cent sur les 100 premiers mètres carrés du logement, pendant 12 mois au cours des 24 premiers.",
+  "start_from": [
+   "du jour de l'inscription au registre de la population comme olé en vertu de la Loi du Retour (חוק השבות, 1950),",
+   "ou du jour de la délivrance du certificat ezrah olé (אזרח עולה) par le ministère de l'Alya et de l'Intégration."
+  ],
+  "documents": [
+   "Carte d'identité avec son annexe safakh (ספח), où figure l'adresse — copie.",
+   "Teoudat olé (תעודת עולה) du ministère de l'Intérieur ou certificat ezrah olé (אזרח עולה) du ministère de l'Alya et de l'Intégration — copie.",
+   "Si vous avez habité auparavant dans une autre ville : attestation de cette ville confirmant que vous n'y avez pas bénéficié de la réduction pour olé.",
+   "Si le logement est loué : contrat de location en cours de validité."
+  ],
+  "renter_note": "La réduction revient au ma'hzik bé-nékhess (מחזיק בנכס) — celui qui occupe effectivement le logement et à dont nom le compte arnona est ouvert. Il n'est pas nécessaire d'être propriétaire. Une location est un cas tout à fait courant : la municipalité demandera simplement de montrer le contrat.",
+  "dependent": {
+   "title": "Cas particulier : l'olé dépendant de l'aide d'autrui",
+   "ceiling_percent": 80,
+   "article": "2(א)(6א)",
+   "rule": "Jusqu'à 80 pour cent sur toute la surface du logement, sans limite de durée.",
+   "condition": "Pour ceux dont le Bitouah Leumi (ביטוח לאומי) a reconnu le droit à l'allocation spéciale pour olé ou à la guémlat sioud (גמלת סיעוד) pour olé.",
+   "document": "Attestation récente de droit délivrée par le Bitouah Leumi (ביטוח לאומי)."
+  }
+ },
+ "calc": {
+  "title": "Estimer l'ordre de grandeur",
+  "lead": "Prenez le montant directement sur votre facture d'arnona — le calcul se fera avec vos vrais chiffres, et non avec des moyennes.",
+  "disclaimer": "Ce calcul se base sur le plafond légal, ce n'est pas une promesse. Ce que votre municipalité accorde exactement figure dans son tzav arnona (צו ארנונה) de l'année.",
+  "period_options": [
+   {
+    "id": "month",
+    "label": "par mois",
+    "months": 1
+   },
+   {
+    "id": "bimonth",
+    "label": "par deux mois",
+    "months": 2
+   },
+   {
+    "id": "year",
+    "label": "par an",
+    "months": 12
+   }
+  ],
+  "area_note": "Si le logement dépasse 100 mètres carrés, la réduction se calcule uniquement sur la part de la facture correspondant aux 100 premiers mètres."
+ },
+ "categories": [
+  {
+   "article": "2(א)(1)(א)",
+   "who": "Personne âgée percevant une pension de vieillesse, une pension de survivant, une allocation de personnes à charge ou une allocation pour accident du travail",
+   "term_ru": "ezrá'h vatik",
+   "term_he": "אזרח ותיק",
+   "ceiling": "jusqu'à 25%",
+   "limits": "100 mètres carrés",
+   "effort": "attestation",
+   "note": "Il y a une vérification des revenus selon une loi distincte sur les citoyens âgés."
+  },
+  {
+   "article": "2(א)(1)(ב)",
+   "who": "Personne âgée qui perçoit en plus l'allocation de revenu minimum garanti",
+   "term_ru": "avta'hat ahnassa",
+   "term_he": "הבטחת הכנסה",
+   "ceiling": "jusqu'à 100%",
+   "limits": "100 mètres carrés",
+   "effort": "attestation",
+   "note": "Le taux le plus élevé parmi les réductions pour personnes âgées."
+  },
+  {
+   "article": "2(א)(2)(א)",
+   "who": "Personne invalide percevant une allocation mensuelle complète, avec un taux d'incapacité d'au moins 75 pour cent",
+   "term_ru": "nahé",
+   "term_he": "נכה",
+   "ceiling": "jusqu'à 80%",
+   "limits": "—",
+   "effort": "attestation",
+   "note": "Attestation du Bitouah Leumi (ביטוח לאומי)."
+  },
+  {
+   "article": "2(א)(2)(ב)",
+   "who": "Personne invalide à qui une incapacité d'au moins 75 pour cent a été reconnue à vie jusqu'à la retraite",
+   "term_ru": "nahé",
+   "term_he": "נכה",
+   "ceiling": "jusqu'à 80%",
+   "limits": "—",
+   "effort": "attestation",
+   "note": ""
+  },
+  {
+   "article": "2(א)(3)",
+   "who": "Personne avec une invalidité médicale reconnue d'au moins 90 pour cent",
+   "term_ru": "nahé",
+   "term_he": "נכה",
+   "ceiling": "jusqu'à 40%",
+   "limits": "—",
+   "effort": "attestation",
+   "note": ""
+  },
+  {
+   "article": "2(א)(4)",
+   "who": "Prisonnier de Sion et membres de leur famille, ainsi que les bénéficiaires d'allocations pour persécutions nazies — d'Allemagne, des Pays-Bas, d'Autriche, de Belgique",
+   "term_ru": "assir Tsiyon",
+   "term_he": "אסיר ציון",
+   "ceiling": "jusqu'à 66%",
+   "limits": "70 mètres carrés, et si plus de quatre personnes vivent ensemble — 90",
+   "effort": "attestation",
+   "note": ""
+  },
+  {
+   "article": "2(א)(5)",
+   "who": "Personne titulaire du certificat d'aveugle",
+   "term_ru": "teoudat ivér",
+   "term_he": "תעודת עיוור",
+   "ceiling": "jusqu'à 90%",
+   "limits": "—",
+   "effort": "un document",
+   "note": ""
+  },
+  {
+   "article": "2(א)(6)",
+   "who": "Olé (nouvel immigrant) au titre de la Loi du Retour ou titulaire du certificat de citoyen-olé",
+   "term_ru": "olé",
+   "term_he": "עולה",
+   "ceiling": "jusqu'à 90%",
+   "limits": "100 mètres carrés, 12 mois au cours des 24 premiers",
+   "effort": "un document",
+   "note": "Pas de vérification de revenus. La procédure la plus simple de toutes."
+  },
+  {
+   "article": "2(א)(6א)",
+   "who": "Olé dépendant de l'aide d'autrui",
+   "term_ru": "olé talouy be-ezrat azeulat",
+   "term_he": "עולה התלוי בעזרת הזולת",
+   "ceiling": "jusqu'à 80%",
+   "limits": "toute la surface, sans limite de durée",
+   "effort": "attestation",
+   "note": ""
+  },
+  {
+   "article": "2(א)(6ב)",
+   "who": "Personne ayant servi dans l'armée du Liban-Sud (Tsadal) et son conjoint",
+   "term_ru": "ich Tsadal",
+   "term_he": "איש צד״ל",
+   "ceiling": "jusqu'à 90%",
+   "limits": "100 mètres carrés, 12 mois au cours des 36 premiers",
+   "effort": "attestation",
+   "note": ""
+  },
+  {
+   "article": "2(א)(7)(ג)",
+   "who": "Bénéficiaire de l'allocation de soins",
+   "term_ru": "guémlat sioud",
+   "term_he": "גמלת סיעוד",
+   "ceiling": "jusqu'à 70%",
+   "limits": "—",
+   "effort": "attestation",
+   "note": ""
+  },
+  {
+   "article": "2(א)(8)",
+   "who": "Personne dont le revenu mensuel moyen est modeste — le taux dépend du revenu et du nombre de personnes vivant dans le logement",
+   "term_ru": "ahnassa nemoukha",
+   "term_he": "הכנסה נמוכה",
+   "ceiling": "selon le tableau, jusqu'à 90%",
+   "limits": "—",
+   "effort": "commission",
+   "note": "La procédure la plus lourde : attestations de revenus sur 12 mois pour tous les occupants, la décision revient à la commission des réductions."
+  },
+  {
+   "article": "2(א)(10)",
+   "who": "Parent isolé d'un enfant de moins de 18 ans — ou de 21 ans si l'enfant vit avec le parent et effectue son service",
+   "term_ru": "horé ya'hid",
+   "term_he": "הורה יחיד",
+   "ceiling": "jusqu'à 20%",
+   "limits": "—",
+   "effort": "attestation",
+   "note": ""
+  },
+  {
+   "article": "2(א)(11)",
+   "who": "Famille ayant un enfant invalide percevant l'allocation correspondante",
+   "term_ru": "yéled nahé",
+   "term_he": "ילד נכה",
+   "ceiling": "jusqu'à 33%",
+   "limits": "100 mètres carrés",
+   "effort": "attestation",
+   "note": ""
+  },
+  {
+   "article": "3ו",
+   "who": "Réserviste actif",
+   "term_ru": "hayaïl milouïm païl",
+   "term_he": "חייל מילואים פעיל",
+   "ceiling": "jusqu'à 5%",
+   "limits": "—",
+   "effort": "un document",
+   "note": "La municipalité accorde cette réduction à sa discrétion, elle n'y est pas tenue. Il faut le certificat de réserviste actif."
+  },
+  {
+   "article": "3ז",
+   "who": "Commandant dans la réserve active",
+   "term_ru": "mefaked milouïm païl",
+   "term_he": "מפקד מילואים פעיל",
+   "ceiling": "régime particulier",
+   "limits": "—",
+   "effort": "un document",
+   "note": ""
+  },
+  {
+   "article": "3ב",
+   "who": "Habitants de Kiryat Shmona et de Shlomi",
+   "term_ru": "",
+   "term_he": "",
+   "ceiling": "régime particulier",
+   "limits": "—",
+   "effort": "attestation",
+   "note": ""
+  },
+  {
+   "article": "3ג",
+   "who": "Habitants de Sdérot et des localités entourant la bande de Gaza",
+   "term_ru": "otef Azza",
+   "term_he": "עוטף עזה",
+   "ceiling": "régime particulier",
+   "limits": "—",
+   "effort": "attestation",
+   "note": ""
+  },
+  {
+   "article": "14ה",
+   "who": "Militaires blessés à la guerre, policiers et membres de leurs familles",
+   "term_ru": "",
+   "term_he": "",
+   "ceiling": "régime particulier",
+   "limits": "il y a une limite pour les grands logements selon l'article 14(vav)",
+   "effort": "attestation",
+   "note": ""
+  },
+  {
+   "article": "12",
+   "who": "Premier propriétaire d'un bâtiment neuf inoccupé",
+   "term_ru": "binyan hadach raq",
+   "term_he": "בניין חדש ריק",
+   "ceiling": "jusqu'à 100%",
+   "limits": "jusqu'à 12 mois consécutifs",
+   "effort": "attestation",
+   "note": "Après 12 mois, une réduction selon l'article 13 reste possible."
+  },
+  {
+   "article": "13",
+   "who": "Local inoccupé et non utilisé",
+   "term_ru": "nékhess raq",
+   "term_he": "נכס ריק",
+   "ceiling": "régime particulier",
+   "limits": "—",
+   "effort": "attestation",
+   "note": ""
+  }
+ ],
+ "effort_legend": [
+  {
+   "id": "un document",
+   "label": "Un seul document",
+   "desc": "Il suffit de joindre une copie du certificat. Pas de contrôle de revenus, pas de commission."
+  },
+  {
+   "id": "attestation",
+   "label": "Une attestation est requise",
+   "desc": "Il faudra une attestation récente de l'organisme concerné — le plus souvent du Bitouah Leumi (ביטוח לאומי)."
+  },
+  {
+   "id": "commission",
+   "label": "Décision en commission",
+   "desc": "Attestations de revenus sur 12 mois pour tous les occupants. La décision revient à la vaadat hanahot (ועדת הנחות) — la commission des réductions — et le résultat n'est pas garanti d'avance."
+  }
+ ],
+ "income_table": {
+  "title": "Plafonds de revenus pour la réduction maximale",
+  "article": "2(alef)(8), première annexe",
+  "year": 2026,
+  "ceiling": "jusqu'à 90%",
+  "indexation": "Les montants sont révisés chaque 1er janvier en fonction de l'évolution du salaire minimum — on compare sa valeur au 20 mai des deux années précédentes. Le tableau actualisé est publié par le directeur général du ministère de l'Intérieur.",
+  "change_2026": "Depuis 2026, le revenu mensuel moyen se calcule uniquement sur la moyenne des 12 mois. La possibilité de retenir la moyenne sur 3 mois a été supprimée.",
+  "rows": [
+   {
+    "people": "1 personne",
+    "income": "jusqu'à 3 513 ₪"
+   },
+   {
+    "people": "2 personnes",
+    "income": "jusqu'à 5 621 ₪"
+   },
+   {
+    "people": "3 personnes",
+    "income": "jusqu'à 7 449 ₪"
+   },
+   {
+    "people": "4 personnes",
+    "income": "jusqu'à 8 996 ₪"
+   },
+   {
+    "people": "5 personnes",
+    "income": "jusqu'à 10 541 ₪"
+   },
+   {
+    "people": "6 personnes",
+    "income": "jusqu'à 11 948 ₪"
+   },
+   {
+    "people": "7 personnes",
+    "income": "jusqu'à 13 352 ₪"
+   },
+   {
+    "people": "8 personnes",
+    "income": "jusqu'à 14 618 ₪"
+   },
+   {
+    "people": "9 personnes",
+    "income": "jusqu'à 15 743 ₪"
+   }
+  ],
+  "note": "Pour les taux de réduction inférieurs — 70, 50 et 30 pour cent — les plafonds de revenus sont plus élevés. À partir de 10 personnes, un montant fixe s'ajoute au plafond de neuf pour chaque personne supplémentaire."
+ },
+ "common_rules": [
+  {
+   "article": "17",
+   "title": "Les réductions ne se cumulent pas",
+   "name_ru": "meni'at kefel hahanaha",
+   "name_he": "מניעת כפל ההנחה",
+   "body": "Si vous remplissez plusieurs conditions à la fois, une seule réduction sera accordée. Mieux vaut comparer à l'avance laquelle est la plus avantageuse et demander celle-là."
+  },
+  {
+   "article": "16",
+   "title": "Une dette annule la réduction déjà obtenue",
+   "name_ru": "bitoul hahanaha",
+   "name_he": "ביטול ההנחה",
+   "body": "Si le solde de l'arnona de l'année n'est pas réglé avant le 31 décembre, la réduction est annulée rétroactivement et le montant est réclamé avec majorations. Peu de gens le savent, et cela concerne aussi ceux qui ont déjà bénéficié de la réduction. Mettez-vous un rappel pour décembre — cela suffit."
+  },
+  {
+   "article": "—",
+   "title": "Une réduction pour un seul logement",
+   "name_ru": "",
+   "name_he": "",
+   "body": "Uniquement pour le logement où vous vivez réellement et à dont nom le compte arnona est ouvert."
+  },
+  {
+   "article": "20, 21",
+   "title": "Il y a des délais de dépôt",
+   "name_ru": "",
+   "name_he": "",
+   "body": "Les modalités et les délais de dépôt sont décrits aux articles 20 et 21. Dans certaines municipalités, la réduction peut même être accordée rétroactivement — les règles varient d'une ville à l'autre, renseignez-vous."
+  }
+ ],
+ "steps": {
+  "title": "Que faire, étape par étape",
+  "items": [
+   {
+    "n": "1",
+    "title": "Examinez votre facture",
+    "body": "Repérez sur la facture d'arnona la superficie retenue et le montant. Si la superficie facturée dépasse celle de votre logement réel, c'est un motif de contestation à part — voir la section sur les désaccords."
+   },
+   {
+    "n": "2",
+    "title": "Déterminez votre motif",
+    "body": "Dans le tableau ci-dessus, trouvez l'article qui correspond à votre situation. Si plusieurs s'appliquent, choisissez celui au taux le plus élevé : une seule réduction sera accordée."
+   },
+   {
+    "n": "3",
+    "title": "Rassemblez les documents",
+    "body": "Pour un olé : carte d'identité avec annexe, teoudat olé (תעודת עולה) et contrat de location si le logement est loué. Pour les autres motifs, le plus souvent une attestation récente de l'organisme suffit."
+   },
+   {
+    "n": "4",
+    "title": "Déposez la demande",
+    "body": "Adressez-vous au service de recouvrement de l'arnona de votre municipalité — agaf legviyat arnona (אגף לגביית ארנונה). Beaucoup de municipalités proposent le formulaire en téléchargement ou un dépôt en ligne."
+   },
+   {
+    "n": "5",
+    "title": "Attendez la réponse et vérifiez la facture",
+    "body": "À la facture suivante, regardez si une ligne de réduction apparaît. Sinon, demandez au même service où en est votre dossier."
+   }
+  ]
+ },
+ "appeal": {
+  "title": "Si vous n'êtes pas d'accord avec le calcul",
+  "lead": "On peut contester, par exemple, si la superficie indiquée sur la facture est supérieure à la réalité ou si le payeur n'est pas celui qui vit dans le logement. Les délais sont stricts : ne tardez pas.",
+  "warning": "Le dépôt d'une opposition ne dispense pas de payer l'arnona. Il faut continuer à payer pendant l'instruction du dossier.",
+  "steps": [
+   {
+    "n": "1",
+    "name_ru": "hassaga",
+    "name_he": "השגה",
+    "title": "Opposition au trésorier municipal",
+    "days": "90 jours à compter de la réception de la facture"
+   },
+   {
+    "n": "2",
+    "name_ru": "",
+    "name_he": "",
+    "title": "Réponse du chef du service arnona",
+    "days": "60 jours, prolongeables à 90. Sans réponse dans le délai, l'opposition est réputée acceptée"
+   },
+   {
+    "n": "3",
+    "name_ru": "erar",
+    "name_he": "ערר",
+    "title": "Recours devant la commission d'appel municipale",
+    "days": "30 jours à compter de la réponse"
+   },
+   {
+    "n": "4",
+    "name_ru": "",
+    "name_he": "",
+    "title": "Saisine du tribunal administratif",
+    "days": "contre la décision de la commission"
+   }
+  ]
+ },
+ "faq": [
+  {
+   "q": "Je loue mon logement. La réduction est pour moi ou pour le propriétaire ?",
+   "a": "La réduction revient à celui qui occupe effectivement le logement et à dont nom le compte arnona est ouvert — en hébreu ma'hzik bé-nékhess (מחזיק בנכס). Si le compte est à votre nom, c'est vous qui déposez la demande, et la municipalité demandera le contrat de location. Si le compte est resté au nom du propriétaire, la réduction ne peut pas être attribuée sur votre motif."
+  },
+  {
+   "q": "Pourquoi écrit-on partout « jusqu'à 90 % » et non « 90 % » ?",
+   "a": "Parce que le règlement l'écrit ainsi : « une réduction n'excédant pas 90 pour cent ». L'État fixe un plafond, et le chiffre exact est déterminé par chaque municipalité dans son tzav arnona (צו ארנונה). Il peut varier d'une ville à l'autre."
+  },
+  {
+   "q": "La municipalité peut-elle refuser la réduction à un olé ?",
+   "a": "La liste des catégories est fermée et fixée par l'État : la municipalité ne peut pas en exclure les olim. Mais c'est elle qui détermine le pourcentage exact dans la limite du plafond. Pour le chiffre de votre ville, interrogez le service de recouvrement de l'arnona."
+  },
+  {
+   "q": "J'ai deux motifs à la fois. Seront-ils cumulés ?",
+   "a": "Non. L'article 17 l'interdit formellement : une seule réduction sera accordée. Autant calculer à l'avance laquelle est la plus avantageuse."
+  },
+  {
+   "q": "J'ai dépassé le délai de la réduction pour olé. Que faire ?",
+   "a": "Rien n'est perdu : d'autres motifs subsistent. Consultez le tableau — la réduction sur revenus, l'âge, l'invalidité ou le statut de parent isolé peuvent s'appliquer. Et dans certaines municipalités, la réduction peut même être accordée rétroactivement : les règles varient, cela vaut la peine de demander."
+  },
+  {
+   "q": "Est-ce vraiment compliqué ?",
+   "a": "Cela dépend du motif, c'est indiqué dans le tableau. Pour un olé : une demande et une copie du certificat, sans contrôle de revenus. La réduction sur revenus est plus lourde : attestations sur 12 mois pour tous les occupants, et décision en commission."
+  },
+  {
+   "q": "La réduction peut-elle être reprise ?",
+   "a": "Oui, selon l'article 16 — si le solde de l'arnona de l'année n'est pas réglé avant le 31 décembre, la réduction est annulée rétroactivement. Un rappel pour décembre et une vérification qu'il ne reste aucune dette suffisent."
+  },
+  {
+   "q": "Où trouver le tzav arnona de ma ville ?",
+   "a": "Sur le site de la municipalité, généralement dans la rubrique consacrée à l'arnona. On y trouve le tarif au mètre carré et les taux de réduction de l'année en cours. Introuvable ? Appelez le service de recouvrement de l'arnona et demandez."
+  }
+ ],
+ "glossary": [
+  {
+   "ru": "arnona",
+   "he": "ארנונה",
+   "desc": "taxe municipale sur le logement, payée pour l'usage du bien"
+  },
+  {
+   "ru": "hanaha me-arnona",
+   "he": "הנחה מארנונה",
+   "desc": "réduction de l'arnona"
+  },
+  {
+   "ru": "tzav arnona",
+   "he": "צו ארנונה",
+   "desc": "arrêté municipal annuel fixant les tarifs et les taux de réduction"
+  },
+  {
+   "ru": "ma'hzik bé-nékhess",
+   "he": "מחזיק בנכס",
+   "desc": "celui qui occupe effectivement le logement — pas nécessairement le propriétaire"
+  },
+  {
+   "ru": "teoudat olé",
+   "he": "תעודת עולה",
+   "desc": "certificat d'olim (nouvel immigrant)"
+  },
+  {
+   "ru": "ezrah olé",
+   "he": "אזרח עולה",
+   "desc": "statut de citoyen-olé et certificat correspondant"
+  },
+  {
+   "ru": "safakh",
+   "he": "ספח",
+   "desc": "annexe de la carte d'identité où figure l'adresse"
+  },
+  {
+   "ru": "agaf legviyat arnona",
+   "he": "אגף לגביית ארנונה",
+   "desc": "service de recouvrement de l'arnona en mairie — c'est là qu'on dépose la demande"
+  },
+  {
+   "ru": "vaadat hanahot",
+   "he": "ועדת הנחות",
+   "desc": "commission des réductions, examine les dossiers sur revenus"
+  },
+  {
+   "ru": "hassaga",
+   "he": "השגה",
+   "desc": "opposition au calcul de l'arnona, déposée auprès du trésorier municipal"
+  },
+  {
+   "ru": "erar",
+   "he": "ערר",
+   "desc": "recours devant la commission d'appel"
+  },
+  {
+   "ru": "Bitouah Leumi",
+   "he": "ביטוח לאומי",
+   "desc": "l'Assurance nationale (sécurité sociale israélienne)"
+  },
+  {
+   "ru": "avta'hat ahnassa",
+   "he": "הבטחת הכנסה",
+   "desc": "allocation de revenu minimum garanti"
+  },
+  {
+   "ru": "guémlat sioud",
+   "he": "גמלת סיעוד",
+   "desc": "allocation de soins (dépendance)"
+  },
+  {
+   "ru": "ezrá'h vatik",
+   "he": "אזרח ותיק",
+   "desc": "citoyen âgé"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Texte du règlement sur les réductions d'arnona",
+   "he": "תקנות הסדרים במשק המדינה (הנחה מארנונה), התשנ״ג–1993",
+   "url": "https://he.wikisource.org/wiki/תקנות_הסדרים_במשק_המדינה_(הנחה_מארנונה)"
+  },
+  {
+   "name": "Ministère de l'Intérieur, section taxes et réductions",
+   "he": "משרד הפנים",
+   "url": "https://www.gov.il/he/departments/guides/tax?chapterIndex=2"
+  },
+  {
+   "name": "Kol Zkhout : réduction d'arnona pour les olim",
+   "he": "כל-זכות",
+   "url": "https://www.kolzchut.org.il/he/הנחה_בארנונה_לעולים_חדשים"
+  },
+  {
+   "name": "Kol Zkhout : réduction d'arnona pour revenus modestes",
+   "he": "כל-זכות",
+   "url": "https://www.kolzchut.org.il/he/הנחה_בארנונה_לבעלי_הכנסה_נמוכה"
+  },
+  {
+   "name": "Liste de toutes les collectivités locales",
+   "he": "רשימת הרשויות המקומיות",
+   "url": "https://www.masham.org.il/רשויות-מקומיות/"
+  }
+ ],
+ "disclaimer": "Cette page rassemble ce qui est établi par la loi et son règlement d'application, avec référence aux articles précis. Ce n'est ni une consultation ni la promesse d'un montant : la décision sur votre demande appartient à la municipalité. Les calculs sont effectués directement sur votre appareil ; aucune donnée n'est envoyée ni conservée."
+}
