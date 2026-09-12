@@ -36,3 +36,4 @@ https://exodus611.github.io/finance-portal/cyber.html
 https://exodus611.github.io/finance-portal/fr/arnona.html
 https://exodus611.github.io/finance-portal/fr/payments.html
 https://exodus611.github.io/finance-portal/fr/hisahon-yeled.html
+https://exodus611.github.io/finance-portal/fr/avtala.html
