@@ -68,7 +68,7 @@
    "Si vous avez habité auparavant dans une autre ville : attestation de cette ville confirmant que vous n'y avez pas bénéficié de la réduction pour olé.",
    "Si le logement est loué : contrat de location en cours de validité."
   ],
-  "renter_note": "La réduction revient au ma'hzik bé-nékhess (מחזיק בנכס) — celui qui occupe effectivement le logement et à dont nom le compte arnona est ouvert. Il n'est pas nécessaire d'être propriétaire. Une location est un cas tout à fait courant : la municipalité demandera simplement de montrer le contrat.",
+  "renter_note": "La réduction revient au ma'hzik bé-nékhess (מחזיק בנכס) — celui qui occupe effectivement le logement et dont le nom figure sur le compte d'arnona. Il n'est pas nécessaire d'être propriétaire. Une location est un cas tout à fait courant : la municipalité demandera simplement de montrer le contrat.",
   "dependent": {
    "title": "Cas particulier : l'olé dépendant de l'aide d'autrui",
    "ceiling_percent": 80,
@@ -107,7 +107,7 @@
    "who": "Personne âgée percevant une pension de vieillesse, une pension de survivant, une allocation de personnes à charge ou une allocation pour accident du travail",
    "term_ru": "ezrá'h vatik",
    "term_he": "אזרח ותיק",
-   "ceiling": "jusqu'à 25%",
+   "ceiling": "jusqu'à 25 %",
    "limits": "100 mètres carrés",
    "effort": "attestation",
    "note": "Il y a une vérification des revenus selon une loi distincte sur les citoyens âgés."
@@ -117,7 +117,7 @@
    "who": "Personne âgée qui perçoit en plus l'allocation de revenu minimum garanti",
    "term_ru": "avta'hat ahnassa",
    "term_he": "הבטחת הכנסה",
-   "ceiling": "jusqu'à 100%",
+   "ceiling": "jusqu'à 100 %",
    "limits": "100 mètres carrés",
    "effort": "attestation",
    "note": "Le taux le plus élevé parmi les réductions pour personnes âgées."
@@ -127,7 +127,7 @@
    "who": "Personne invalide percevant une allocation mensuelle complète, avec un taux d'incapacité d'au moins 75 pour cent",
    "term_ru": "nahé",
    "term_he": "נכה",
-   "ceiling": "jusqu'à 80%",
+   "ceiling": "jusqu'à 80 %",
    "limits": "—",
    "effort": "attestation",
    "note": "Attestation du Bitouah Leumi (ביטוח לאומי)."
@@ -137,7 +137,7 @@
    "who": "Personne invalide à qui une incapacité d'au moins 75 pour cent a été reconnue à vie jusqu'à la retraite",
    "term_ru": "nahé",
    "term_he": "נכה",
-   "ceiling": "jusqu'à 80%",
+   "ceiling": "jusqu'à 80 %",
    "limits": "—",
    "effort": "attestation",
    "note": ""
@@ -147,7 +147,7 @@
    "who": "Personne avec une invalidité médicale reconnue d'au moins 90 pour cent",
    "term_ru": "nahé",
    "term_he": "נכה",
-   "ceiling": "jusqu'à 40%",
+   "ceiling": "jusqu'à 40 %",
    "limits": "—",
    "effort": "attestation",
    "note": ""
@@ -157,7 +157,7 @@
    "who": "Prisonnier de Sion et membres de leur famille, ainsi que les bénéficiaires d'allocations pour persécutions nazies — d'Allemagne, des Pays-Bas, d'Autriche, de Belgique",
    "term_ru": "assir Tsiyon",
    "term_he": "אסיר ציון",
-   "ceiling": "jusqu'à 66%",
+   "ceiling": "jusqu'à 66 %",
    "limits": "70 mètres carrés, et si plus de quatre personnes vivent ensemble — 90",
    "effort": "attestation",
    "note": ""
@@ -167,7 +167,7 @@
    "who": "Personne titulaire du certificat d'aveugle",
    "term_ru": "teoudat ivér",
    "term_he": "תעודת עיוור",
-   "ceiling": "jusqu'à 90%",
+   "ceiling": "jusqu'à 90 %",
    "limits": "—",
    "effort": "un document",
    "note": ""
@@ -177,7 +177,7 @@
    "who": "Olé (nouvel immigrant) au titre de la Loi du Retour ou titulaire du certificat de citoyen-olé",
    "term_ru": "olé",
    "term_he": "עולה",
-   "ceiling": "jusqu'à 90%",
+   "ceiling": "jusqu'à 90 %",
    "limits": "100 mètres carrés, 12 mois au cours des 24 premiers",
    "effort": "un document",
    "note": "Pas de vérification de revenus. La procédure la plus simple de toutes."
@@ -187,7 +187,7 @@
    "who": "Olé dépendant de l'aide d'autrui",
    "term_ru": "olé talouy be-ezrat azeulat",
    "term_he": "עולה התלוי בעזרת הזולת",
-   "ceiling": "jusqu'à 80%",
+   "ceiling": "jusqu'à 80 %",
    "limits": "toute la surface, sans limite de durée",
    "effort": "attestation",
    "note": ""
@@ -197,7 +197,7 @@
    "who": "Personne ayant servi dans l'armée du Liban-Sud (Tsadal) et son conjoint",
    "term_ru": "ich Tsadal",
    "term_he": "איש צד״ל",
-   "ceiling": "jusqu'à 90%",
+   "ceiling": "jusqu'à 90 %",
    "limits": "100 mètres carrés, 12 mois au cours des 36 premiers",
    "effort": "attestation",
    "note": ""
@@ -207,7 +207,7 @@
    "who": "Bénéficiaire de l'allocation de soins",
    "term_ru": "guémlat sioud",
    "term_he": "גמלת סיעוד",
-   "ceiling": "jusqu'à 70%",
+   "ceiling": "jusqu'à 70 %",
    "limits": "—",
    "effort": "attestation",
    "note": ""
@@ -217,7 +217,7 @@
    "who": "Personne dont le revenu mensuel moyen est modeste — le taux dépend du revenu et du nombre de personnes vivant dans le logement",
    "term_ru": "ahnassa nemoukha",
    "term_he": "הכנסה נמוכה",
-   "ceiling": "selon le tableau, jusqu'à 90%",
+   "ceiling": "selon le tableau, jusqu'à 90 %",
    "limits": "—",
    "effort": "commission",
    "note": "La procédure la plus lourde : attestations de revenus sur 12 mois pour tous les occupants, la décision revient à la commission des réductions."
@@ -227,7 +227,7 @@
    "who": "Parent isolé d'un enfant de moins de 18 ans — ou de 21 ans si l'enfant vit avec le parent et effectue son service",
    "term_ru": "horé ya'hid",
    "term_he": "הורה יחיד",
-   "ceiling": "jusqu'à 20%",
+   "ceiling": "jusqu'à 20 %",
    "limits": "—",
    "effort": "attestation",
    "note": ""
@@ -237,7 +237,7 @@
    "who": "Famille ayant un enfant invalide percevant l'allocation correspondante",
    "term_ru": "yéled nahé",
    "term_he": "ילד נכה",
-   "ceiling": "jusqu'à 33%",
+   "ceiling": "jusqu'à 33 %",
    "limits": "100 mètres carrés",
    "effort": "attestation",
    "note": ""
@@ -247,7 +247,7 @@
    "who": "Réserviste actif",
    "term_ru": "hayaïl milouïm païl",
    "term_he": "חייל מילואים פעיל",
-   "ceiling": "jusqu'à 5%",
+   "ceiling": "jusqu'à 5 %",
    "limits": "—",
    "effort": "un document",
    "note": "La municipalité accorde cette réduction à sa discrétion, elle n'y est pas tenue. Il faut le certificat de réserviste actif."
@@ -297,7 +297,7 @@
    "who": "Premier propriétaire d'un bâtiment neuf inoccupé",
    "term_ru": "binyan hadach raq",
    "term_he": "בניין חדש ריק",
-   "ceiling": "jusqu'à 100%",
+   "ceiling": "jusqu'à 100 %",
    "limits": "jusqu'à 12 mois consécutifs",
    "effort": "attestation",
    "note": "Après 12 mois, une réduction selon l'article 13 reste possible."
@@ -334,7 +334,7 @@
   "title": "Plafonds de revenus pour la réduction maximale",
   "article": "2(alef)(8), première annexe",
   "year": 2026,
-  "ceiling": "jusqu'à 90%",
+  "ceiling": "jusqu'à 90 %",
   "indexation": "Les montants sont révisés chaque 1er janvier en fonction de l'évolution du salaire minimum — on compare sa valeur au 20 mai des deux années précédentes. Le tableau actualisé est publié par le directeur général du ministère de l'Intérieur.",
   "change_2026": "Depuis 2026, le revenu mensuel moyen se calcule uniquement sur la moyenne des 12 mois. La possibilité de retenir la moyenne sur 3 mois a été supprimée.",
   "rows": [
@@ -397,7 +397,7 @@
    "title": "Une réduction pour un seul logement",
    "name_ru": "",
    "name_he": "",
-   "body": "Uniquement pour le logement où vous vivez réellement et à dont nom le compte arnona est ouvert."
+   "body": "Uniquement pour le logement où vous vivez réellement et dont le nom figure sur le compte d'arnona."
   },
   {
    "article": "20, 21",
@@ -475,7 +475,7 @@
  "faq": [
   {
    "q": "Je loue mon logement. La réduction est pour moi ou pour le propriétaire ?",
-   "a": "La réduction revient à celui qui occupe effectivement le logement et à dont nom le compte arnona est ouvert — en hébreu ma'hzik bé-nékhess (מחזיק בנכס). Si le compte est à votre nom, c'est vous qui déposez la demande, et la municipalité demandera le contrat de location. Si le compte est resté au nom du propriétaire, la réduction ne peut pas être attribuée sur votre motif."
+   "a": "La réduction revient à celui qui occupe effectivement le logement et dont le nom figure sur le compte d'arnona — en hébreu ma'hzik bé-nékhess (מחזיק בנכס). Si le compte est à votre nom, c'est vous qui déposez la demande, et la municipalité demandera le contrat de location. Si le compte est resté au nom du propriétaire, la réduction ne peut pas être attribuée sur votre motif."
   },
   {
    "q": "Pourquoi écrit-on partout « jusqu'à 90 % » et non « 90 % » ?",
