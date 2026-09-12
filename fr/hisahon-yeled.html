@@ -1,0 +1,336 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08775a">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://exodus611.github.io/finance-portal/fr/hisahon-yeled.html">
+<link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/hisahon-yeled.html">
+<link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/hisahon-yeled.html">
+<link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/hisahon-yeled.html">
+<title>Épargne pour chaque enfant 2026 — calculateur (חיסכון לכל ילד)</title>
+<meta name="description" content="L’État dépose 58 ₪ par mois pour chaque enfant. Calculez ce qui sera accumulé à 18 et 21 ans, découvrez où se trouve votre argent et comment changer de fonds.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Épargne pour chaque enfant (חיסכון לכל ילד)">
+<meta property="og:description" content="L’écart entre « rien configuré » et « bien réglé » est presque d’un facteur cinq. Calculez votre cas.">
+<meta property="og:url" content="https://exodus611.github.io/finance-portal/fr/hisahon-yeled.html">
+<meta property="og:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="fr_FR">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Calculateur d’épargne pour enfant","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Calcul de l’épargne du programme national pour chaque enfant jusqu’à 18 et 21 ans.","offers":{"@type":"Offer","price":"0","priceCurrency":"ILS"},"inLanguage":"fr"}
+</script>
+<style>
+:root{--ink:#15251f;--muted:#5a6660;--paper:#f4f1e9;--card:#fffdf8;--line:#ddd6c7;--green:#08775a;--green2:#0d9671;--gold:#c29b52;--red:#b84b3e;--blue:#30779a;--purple:#7857b8;--shadow:0 16px 40px rgba(26,45,37,.08);--r:18px}
+html{scroll-behavior:smooth;overflow-x:hidden}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.45;overflow-x:hidden;max-width:100vw}
+button,input,select{font:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+.shell{width:min(760px,calc(100% - 28px));margin:auto}
+.top{padding:18px 0}
+.topbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;row-gap:6px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:850}
+.mark{width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,var(--green2),var(--green) 70%);color:#fff;display:grid;place-items:center;font-size:32px;font-weight:900;box-shadow:0 6px 18px rgba(8,119,90,.45);border:2px solid rgba(255,255,255,.55)}
+a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none;white-space:nowrap}
+.hero{padding:30px 0 10px;text-align:center}
+.eyebrow{font-size:12px;color:var(--green);font-weight:900;text-transform:uppercase;letter-spacing:.09em}
+.hero h1{font-size:clamp(24px,5vw,38px);line-height:1.15;letter-spacing:-.03em;margin:10px auto 12px;max-width:620px}
+.hero p{font-size:14.5px;color:var(--muted);max-width:580px;margin:0 auto}
+.live{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:16px 0 0}
+.pill{background:#eaf6f0;color:var(--green);border-radius:20px;padding:6px 13px;font-size:12px;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;margin:18px 0;box-shadow:var(--shadow)}
+.title{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.num{width:32px;height:32px;border-radius:10px;background:var(--green);color:#fff;font-weight:900;display:grid;place-items:center;flex:0 0 32px;font-size:14px}
+.title h2{margin:0 0 3px;font-size:18px}
+.title p{margin:0;font-size:12.5px;color:var(--muted)}
+.seg{display:flex;gap:8px;margin-bottom:16px}
+.seg button{flex:1;padding:11px 8px;border:1px solid var(--line);background:#fff;border-radius:11px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:700;color:var(--muted)}
+.seg button.on{background:var(--green);color:#fff;border-color:var(--green)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px}
+@media(max-width:560px){.row2,.row3{grid-template-columns:1fr}}
+.f{margin-bottom:16px}
+.f label{display:block;font-size:12px;font-weight:800;color:var(--muted);margin-bottom:6px}
+.f label .sub{font-weight:500;color:var(--muted);text-transform:none;letter-spacing:0}
+.f input,.f select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:11px;font-size:14px;background:#fff;color:var(--ink)}
+.primary{width:100%;background:var(--green);color:#fff;border:none;border-radius:14px;padding:14px;font-size:14.5px;font-weight:800;cursor:pointer;margin-top:6px}
+.primary:hover{background:var(--green2)}
+.verdict{border-radius:var(--r);padding:22px 20px;margin-bottom:16px;text-align:center;background:#eaf6f0;border:1px solid #b9d8ca}
+.v-lbl{font-size:12.5px;margin-bottom:6px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.v-num{font-size:2.2rem;font-weight:900;letter-spacing:-1px;line-height:1.1;color:var(--green)}
+.v-sub{font-size:12.5px;margin-top:8px;color:var(--muted)}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+@media(max-width:560px){.kpi{grid-template-columns:1fr}}
+.k{background:var(--card);border-radius:12px;padding:14px;text-align:center;border:1px solid var(--line)}
+.k .n{font-size:18px;font-weight:900}
+.k .l{font-size:11px;color:var(--muted);margin-top:3px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{padding:9px 7px;text-align:right;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+th{font-size:10.5px;color:var(--muted);font-weight:800;text-transform:uppercase}
+td.pos{color:var(--green);font-weight:800}
+tfoot td{font-weight:900;border-bottom:0;border-top:2px solid var(--ink)}
+.note{border-radius:12px;padding:14px 16px;margin-bottom:12px;font-size:12.5px}
+.note b{display:block;margin-bottom:4px}
+.n-warn{background:#fff9e9;border-left:4px solid var(--gold)}
+.n-ok{background:#eaf6f0;border-left:4px solid var(--green)}
+.n-bad{background:#fff6f4;border-left:4px solid var(--red)}
+.n-info{background:#eaf1f6;border-left:4px solid var(--blue)}
+.term{background:#fff;border:1px dashed var(--line);padding:1px 5px;border-radius:5px;font-size:.94em}
+details{border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-top:10px;background:#fff}
+details summary{cursor:pointer;font-weight:800;font-size:13px;color:var(--green)}
+details p{margin-top:8px;font-size:12.5px;color:var(--muted);line-height:1.6}
+.disclaimer{font-size:11px;color:var(--muted);line-height:1.6;background:#fff9e9;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:14px 16px;margin-top:14px}
+.view-tabs{width:min(760px,calc(100% - 28px));margin:14px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);position:sticky;top:8px;z-index:95}
+.view-tab{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 6px;border-radius:9px;border:none;background:transparent;color:var(--muted);font-family:inherit;font-size:12px;font-weight:800;cursor:pointer}
+.view-tab b{font-size:10px;font-weight:600;opacity:.75}
+.view-tab.active{background:var(--green);color:#fff}
+.view-tab.active b{color:#fff;opacity:.85}
+.view-tab:hover:not(.active){background:var(--paper);color:var(--green)}
+.view-panel{display:none}
+.view-panel.active{display:block}
+@media(max-width:560px){.view-tabs{width:calc(100% - 18px);position:relative;top:auto}.view-tab{padding:8px 4px;font-size:10.5px}}
+.result-modal-overlay{display:none;position:fixed;inset:0;background:rgba(21,37,31,.55);z-index:200;align-items:flex-end;justify-content:center}
+.result-modal-overlay.show{display:flex}
+.result-modal{background:var(--card);border-radius:18px 18px 0 0;max-width:480px;width:100%;padding:20px 20px 22px;box-shadow:0 -8px 30px rgba(0,0,0,.25);animation:modalUp .22s ease-out}
+@media(min-width:640px){.result-modal-overlay{align-items:center;padding:20px}.result-modal{border-radius:18px}}
+@keyframes modalUp{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}
+.result-modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px}
+.result-modal-head h3{margin:0;font-size:17px;color:var(--green)}
+.result-modal-close{border:none;background:var(--paper);color:var(--muted);width:30px;height:30px;border-radius:50%;font-size:15px;cursor:pointer;flex:0 0 30px}
+.result-modal-big{font-size:27px;font-weight:900;color:var(--ink);margin:6px 0 2px}
+.result-modal-sub{font-size:12px;color:var(--muted);margin-bottom:12px}
+.result-modal-rows{display:grid;gap:6px;margin-bottom:14px}
+.result-modal-row{display:flex;flex-direction:column;gap:4px;font-size:12.5px;background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:10px 12px}
+.result-modal-row span{font-size:10.5px;font-weight:900;text-transform:uppercase;letter-spacing:.03em;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:5px;margin-bottom:1px}
+.result-modal-row b{font-weight:600;color:var(--ink);line-height:1.5}
+.result-modal-actions{display:flex;gap:8px}
+.result-modal-actions button{flex:1;border-radius:11px;padding:11px;font-weight:850;font-size:13px;cursor:pointer;border:1px solid var(--line)}
+.result-modal-actions .rm-primary{background:var(--green);color:#fff;border-color:var(--green)}
+.result-modal-actions .rm-secondary{background:transparent;color:var(--muted)}
+</style><style>
+.f{margin-bottom:14px}
+.f label{display:block;font-size:12.5px;font-weight:700;margin-bottom:6px;color:var(--ink)}
+.f .sub{font-weight:500;color:var(--muted)}
+.f input,.f select{width:100%;padding:11px;border:1px solid var(--line);border-radius:11px;font-size:14.5px;box-sizing:border-box;background:#fff}
+button.primary{width:100%;background:var(--green);color:#fff;border:none;padding:13px;border-radius:11px;font-size:14.5px;font-weight:800;cursor:pointer}
+.rrow{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.rrow:last-child{border-bottom:none}
+.rrow b{font-size:15px;white-space:nowrap}
+.rrow.big{background:#eaf6f0;margin:6px -12px;padding:13px 12px;border-radius:10px;border-bottom:none}
+.rrow.big b{font-size:19px;color:var(--green)}
+</style>
+</head><body>
+<header class="top"><div class="shell topbar"><div class="logo"><span class="mark">₪</span><span>Finances d’Israël, simplement</span></div><a class="back" href="../index.html">← Accueil</a>
+<span style="display:inline-flex;border:1.5px solid var(--green,#08775a);border-radius:11px;overflow:hidden;font-size:13px;font-weight:800;line-height:1;white-space:nowrap;vertical-align:middle"><a href="../hisahon-yeled.html" style="padding:8px 13px;text-decoration:none;color:var(--green,#08775a);background:#fff" aria-label="Русская версия">RU</a><b style="padding:8px 13px;color:#fff;background:var(--green,#08775a)">FR</b></span>
+<select onchange="if(this.value)location.href=this.value" style="font-size:11.5px;font-weight:700;color:var(--green);border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:#fff;margin-inline-start:8px;cursor:pointer">
+<option value="">Tous les calculateurs ▾</option>
+<option value="../salary.html">💰 Salaire</option>
+<option value="../mashkanta.html">🏠 Hypothèque (machkanta)</option>
+<option value="../auto.html">🚗 Voiture</option>
+<option value="../kredit.html">💳 Crédit</option>
+<option value="../arenda-vs-pokupka.html">⚖️ Louer ou acheter</option>
+<option value="../mihzur-mashkanta.html">🔄 Renégociation</option>
+<option value="../siluk-mukdam.html">💎 Remboursement ou investissement</option>
+<option value="../mas-rehisha.html">🏛️ Droits de mutation</option>
+<option value="../mas-shevach.html">📉 Plus-value</option><option value="../nekudot-zikuy.html">🎯 Points de crédit fiscal</option><option value="../valuta.html">💱 Taux de change</option><option value="../pikadon-vs-keren.html">🏦 Dépôt ou fonds capitalisant</option><option value="../tablo.html">📊 Économie du jour</option><option value="../benzin.html">⛽ Prix de l’essence</option><option value="../arnona.html">🏛️ Réduction d’arnona</option><option value="../dira.html">🏗️ Logement subventionné</option><option value="../avtala.html">📋 Allocations de chômage</option>
+<option value="../havraa.html">🏖️ Havraa (convalescence)</option><option value="../hisahon-yeled.html">👶 Épargne pour chaque enfant</option>
+<option value="../pension-gap.html">🧓 Écart de pension</option>
+<option value="../nko.html">🤝 Associations caritatives</option><option value="../slovar.html">📖 Glossaire</option>
+</select>
+</div></header>
+
+<section class="hero shell">
+<div class="eyebrow">Données 2026</div>
+<h1>Épargne pour chaque enfant (<span lang="he" dir="rtl">חיסכון לכל ילד</span>)</h1>
+<p>L’État dépose 58 ₪ par mois sur le compte de chaque enfant jusqu’à ses 18 ans. Où est cet argent et combien il rapportera dépend du choix du parent. L’écart entre « rien fait » et « bien configuré » atteint un facteur cinq.</p>
+<div class="live"><span class="pill">L’État <b>58 ₪/mois</b></span><span class="pill">Avec doublement <b>116 ₪/mois</b></span><span class="pill">Frais jusqu’à 21 ans payés par le <b>Bitouah Leumi</b></span></div>
+</section>
+<main class="shell">
+
+<section class="card">
+<div class="title"><div class="num">1</div><div><h2>Votre enfant</h2><p>Calculons ce qui s’accumulera</p></div></div>
+
+<div class="row2">
+  <div class="f"><label>Âge de l’enfant aujourd’hui, en années</label>
+    <input type="number" id="age" value="5" min="0" max="20" step="1"></div>
+  <div class="f"><label>Déjà épargné, ₪ <span class="sub">— si vous le savez</span></label>
+    <input type="number" id="have" value="0" min="0" step="500"></div>
+</div>
+
+<div class="f"><label>Où va l’argent</label>
+<div class="seg" id="seg-where">
+  <button type="button" data-v="bank">Banque</button>
+  <button type="button" class="on" data-v="gemel">Fonds (guémel)</button>
+</div></div>
+
+<div class="f" id="track-wrap"><label>Niveau de risque du fonds</label>
+<div class="seg" id="seg-track">
+  <button type="button" data-v="low">Faible</button>
+  <button type="button" data-v="mid">Moyen</button>
+  <button type="button" class="on" data-v="high">Élevé</button>
+</div></div>
+
+<label class="chk" style="display:flex;gap:10px;align-items:flex-start;margin:14px 0;font-size:13.5px;cursor:pointer">
+<input type="checkbox" id="doubling" style="margin-top:3px;width:18px;height:18px;flex:0 0 auto">
+<span>Je double le versement — j’ajoute 58 ₪ de l’allocation enfants<small style="display:block;color:var(--muted);font-size:12px;margin-top:2px">L’allocation enfants est réduite d’autant</small></span></label>
+
+<button class="primary" id="run-btn" type="button">Calculer →</button>
+</section>
+
+<section class="card" id="res-card" style="display:none">
+<div class="title"><div class="num">2</div><div><h2>Combien s’accumulera</h2><p id="res-sub"></p></div></div>
+<div id="res"></div>
+<div class="calc-share-box" style="margin: 14px 0 6px 0; padding: 12px 14px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; display: flex; flex-direction: column; gap: 8px;">
+  <span style="font-size: 0.82rem; font-weight: 600; color: #475569;">📤 Partager le calcul :</span>
+  <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+    <button type="button" onclick="shareHisahon('whatsapp')" style="padding: 6px 12px; background: #25d366; color: #fff; border: none; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">💬 WhatsApp</button>
+    <button type="button" onclick="shareHisahon('telegram')" style="padding: 6px 12px; background: #229ed9; color: #fff; border: none; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">✈️ Telegram</button>
+    <button type="button" id="copy-his-btn" onclick="shareHisahon('copy')" style="padding: 6px 12px; background: #475569; color: #fff; border: none; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">📋 Copier</button>
+  </div>
+</div>
+<p style="font-size:11.5px;color:var(--muted);margin:14px 0 0;line-height:1.6">Le calcul est approximatif : le rendement du fonds n’est pas garanti et varie d’une année à l’autre. Les primes d’État à 18 et 21 ans sont comptées à part.</p>
+</section>
+
+<section class="card">
+<div class="title"><div class="num">3</div><div><h2>Où est mon argent et comment le vérifier</h2><p>Cinq minutes dans l’espace personnel</p></div></div>
+<ol style="margin:0;padding-inline-start:18px;font-size:13.5px;line-height:1.8;color:var(--ink)">
+<li>Connectez-vous à l’espace personnel du <b>Bitouah Leumi</b> — <a href="https://www.btl.gov.il" target="_blank" rel="noopener" style="color:var(--green);font-weight:700">btl.gov.il</a></li>
+<li>Regardez trois choses : <b>où</b> est l’argent (banque ou fonds), quel <b>profil de risque</b> est choisi et <b>combien</b> s’est déjà accumulé</li>
+<li>Le site officiel du programme avec le calculateur du Bitouah Leumi — <a href="https://hly.gov.il" target="_blank" rel="noopener" style="color:var(--green);font-weight:700">hly.gov.il</a></li>
+<li>Comparer rendement et frais de tous les fonds : le portail d’État <a href="https://gemelnet.cma.gov.il" target="_blank" rel="noopener" style="color:var(--green);font-weight:700">Gemel-net</a></li>
+</ol>
+<div style="background:#fbf3e3;border-radius:12px;padding:14px;margin-top:16px;font-size:13px;line-height:1.65">
+<b>À savoir :</b>
+<ul style="margin:8px 0 0;padding-inline-start:18px">
+<li>Si le parent n’a rien choisi, l’argent va par défaut <b>dans le fonds à risque élevé</b> — sur le long terme c’est généralement plus rentable que la banque, mais beaucoup l’ignorent.</li>
+<li><b>Passer de la banque au fonds est possible, l’inverse non.</b> Depuis 2025, il est permis d’arrêter les versements en banque et d’ouvrir un fonds.</li>
+<li>Le profil de risque au sein du fonds et le fonds lui-même se changent <b>à tout moment, gratuitement</b>.</li>
+<li>Les frais jusqu’à 21 ans sont payés par le Bitouah Leumi, pas par vous.</li>
+<li>L’argent est <b>au nom de l’enfant</b> ; il peut le retirer à 18 ans ; s’il attend jusqu’à 21 ans, l’État ajoute une prime supplémentaire.</li>
+<li>En cas de maladie grave mettant la vie en danger, un retrait anticipé est possible sur décision de la commission médicale.</li>
+</ul>
+</div>
+</section>
+
+</main>
+
+<nav id="rel-links" aria-label="Calculatrices liées" style="width:min(760px,calc(100% - 28px));margin:8px auto 0;padding:16px 0"><div style="font-size:12px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">À lire également</div><a href="../keren-hishtalmut.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Keren hishtalmut</a><a href="../pikadon-vs-keren.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Pikadon ou keren capitalisant</a><a href="../pension-gap.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Écart de pension</a><a href="../salary.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Calculateur de salaire</a></nav>
+<footer class="shell" style="padding:26px 0 50px;color:var(--muted);font-size:11px;text-align:center">Finances d’Israël, simplement · épargne pour enfant · ce n’est pas un conseil financier · <a href="../contact.html" style="color:var(--green);font-weight:800;text-decoration:none">Nous écrire</a></footer>
+
+<button id="scrollToTop" title="Haut de page" aria-label="Remonter en haut" style="display:none;position:fixed;bottom:20px;right:20px;width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;border:none;font-size:18px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.2);z-index:150">↑</button>
+
+<script>
+var MONTHLY = 58;
+var BONUS_18 = 582;
+var BONUS_21 = 582;
+var RATES = {bank:0.03, low:0.04, mid:0.065, high:0.09};
+var where = 'gemel', track = 'high';
+
+function bindSeg(id, cb){
+  document.querySelectorAll('#'+id+' button').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('#'+id+' button').forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on');
+      cb(b.getAttribute('data-v'));
+    });
+  });
+}
+bindSeg('seg-where', function(v){
+  where = v;
+  document.getElementById('track-wrap').style.display = (v === 'gemel') ? 'block' : 'none';
+});
+bindSeg('seg-track', function(v){ track = v; });
+
+function money(n){
+  return Math.round(n).toLocaleString('fr-FR') + ' \u20aa';
+}
+
+/* Накопление помесячно: остаток растёт, сверху ежемесячный взнос */
+function grow(start, monthly, years, annualRate){
+  var m = annualRate / 12;
+  var months = Math.round(years * 12);
+  var v = start;
+  for (var i = 0; i < months; i++){ v = v * (1 + m) + monthly; }
+  return v;
+}
+
+function calcChild(){
+  var age = Math.min(20, Math.max(0, +document.getElementById('age').value || 0));
+  var have = Math.max(0, +document.getElementById('have').value || 0);
+  var dbl = document.getElementById('doubling').checked;
+  var monthly = dbl ? MONTHLY * 2 : MONTHLY;
+  var rate = (where === 'bank') ? RATES.bank : RATES[track];
+  var yearsTo18 = Math.max(0, 18 - age);
+  var at18 = grow(have, monthly, yearsTo18, rate) + BONUS_18;
+  /* с 18 до 21 взносов уже нет, деньги просто лежат */
+  var at21 = grow(at18, 0, 3, rate) + BONUS_21;
+  var putIn = have + monthly * yearsTo18 * 12;
+  return {age:age, monthly:monthly, rate:rate, at18:at18, at21:at21, putIn:putIn, years:yearsTo18};
+}
+
+function render(){
+  var r = calcChild();
+  var rows = '';
+  rows += '<div class="rrow"><span>Versement mensuel</span><b>' + r.monthly + ' \u20aa</b></div>';
+  rows += '<div class="rrow"><span>Durée restante</span><b>' + r.years + ' ans</b></div>';
+  rows += '<div class="rrow"><span>Rendement attendu</span><b>' + (r.rate*100).toFixed(1).replace('.',',') + '% par an</b></div>';
+  rows += '<div class="rrow"><span>Total versé</span><b>' + money(r.putIn) + '</b></div>';
+  rows += '<div class="rrow big"><span>À 18 ans</span><b>' + money(r.at18) + '</b></div>';
+  rows += '<div class="rrow big"><span>Si on laisse jusqu’à 21 ans</span><b>' + money(r.at21) + '</b></div>';
+
+  /* сравнение: что было бы в банке по умолчанию без удвоения */
+  var age = r.age, have = Math.max(0, +document.getElementById('have').value || 0);
+  var base = grow(have, MONTHLY, Math.max(0, 18-age), RATES.bank) + BONUS_18;
+  if (r.at18 > base + 100){
+    rows += '<div class="rrow" style="color:var(--green)"><span>Plus qu’en banque sans doublement</span><b>+' + money(r.at18 - base) + '</b></div>';
+  }
+  document.getElementById('res').innerHTML = rows;
+  document.getElementById('res-sub').textContent = (where === 'bank')
+    ? 'Argent en banque' : 'Fonds, niveau de risque : ' + ({low:'faible',mid:'moyen',high:'élevé'})[track];
+  document.getElementById('res-card').style.display = 'block';
+}
+
+document.getElementById('run-btn').addEventListener('click', function(){
+  render();
+  document.getElementById('res-card').scrollIntoView({behavior:'smooth', block:'start'});
+});
+
+function shareHisahon(platform) {
+  var r = calcChild();
+  var trackLabel = (where === 'bank') ? 'Banque (3,0 %)' : ('Fonds ' + ({low:'risque faible (4 %)',mid:'risque moyen (6,5 %)',high:'risque élevé (9 %)'})[track]);
+  var text = '👶 Programme d’épargne « Hisahon le-kol yéled » :\n' +
+             '💰 Versement mensuel : ' + r.monthly + ' ₪\n' +
+             '📈 Option : ' + trackLabel + '\n' +
+             '🎯 À 18 ans : ' + money(r.at18) + '\n' +
+             '🏆 Si on laisse jusqu’à 21 ans : ' + money(r.at21) + '\n\n' +
+             'Calculer pour vos enfants : ' + window.location.href;
+
+  if (platform === 'whatsapp') {
+    window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank') || (window.location.href = 'https://wa.me/?text=' + encodeURIComponent(text));
+  } else if (platform === 'telegram') {
+    window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(text), '_blank');
+  } else if (platform === 'copy') {
+    navigator.clipboard.writeText(text).then(function() {
+      var b = document.getElementById('copy-his-btn');
+      if (b) {
+        var old = b.innerText;
+        b.innerText = '✅ Copié !';
+        setTimeout(function() { b.innerText = old; }, 2000);
+      }
+    });
+  }
+}
+
+(function(){
+  var btn = document.getElementById('scrollToTop');
+  window.addEventListener('scroll', function(){ btn.style.display = window.scrollY > 400 ? 'block' : 'none'; });
+  btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+})();
+</script>
+<script data-goatcounter="https://exodus611.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body></html>

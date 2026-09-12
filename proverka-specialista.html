@@ -387,7 +387,7 @@
         <h2>Как пользоваться</h2>
         <div class="side-list">
           <div class="side-item"><span class="num">1</span><div><b>Выберите профессию.</b><br><span class="muted">Например: нотариус, маклер, инвестиционный консультант.</span></div></div>
-          <div class="side-item"><span class="num">2</span><div><b>Откройте официальный сайт.</b><br><span class="muted">Используйте оригинал или ссылку через переводчик.</span></div></div>
+          <div class="side-item"><span class="num">2</span><div><b>Откройте официальный сайт.</b><br><span class="muted">Оригинал + встроенный перевод браузера — инструкция ниже на странице.</span></div></div>
           <div class="side-item"><span class="num">3</span><div><b>Введите имя, город или лицензию.</b><br><span class="muted">Ниже есть перевод полей с иврита.</span></div></div>
           <div class="side-item"><span class="num">4</span><div><b>Сверьте статус.</b><br><span class="muted">Ищите слова: בתוקף, פעיל, מספר רישיון.</span></div></div>
         </div>
@@ -414,7 +414,7 @@
           <option value="checklist">Только чеклист</option>
         </select>
       </div>
-      <p class="small muted" style="margin-top:6px">* Кнопка «С переводом» не всегда срабатывает — у многих ивритских гос. сайтов перевод браузера работает нестабильно или не работает вовсе. Надёжнее использовать словарь терминов внутри карточки («Подробнее»).</p>
+      <p class="small muted" style="margin-top:6px">* Google закрыл сервис автоматического перевода сайтов — старые ссылки «с переводом» больше не работают. Кнопка «Как перевести?» ведёт к четырём рабочим способам (перевод браузера, Safari, нейронка по скриншоту, Google Lens). Термины формы — в «Подробнее» каждой карточки и в мини-словаре ниже.</p>
       <div class="chips">
         <span class="chip green">✓ официальные источники</span>
         <span class="chip blue">↗ открытие в новом окне</span>
@@ -446,8 +446,8 @@
         <p class="muted">Откройте официальный сайт → нажмите правой кнопкой мыши → <b>“Перевести на русский”</b>. На телефоне: меню <b>⋮</b> → <b>Перевести</b>.</p>
       </details>
       <details>
-        <summary>Способ 2 — Google Translate-ссылка</summary>
-        <p class="muted">На карточках есть кнопка “Открыть с переводом”. Иногда перевод ломает сложные формы. Если так случилось — откройте оригинал в Chrome и включите перевод страницы.</p>
+        <summary>Способ 2 — Safari на iPhone / iPad</summary>
+        <p class="muted">Откройте официальный сайт → в адресной строке нажмите кнопку <b>АА</b> → <b>«Перевести на русский»</b>. Google в 2025 году закрыл автоматический перевод ивритских гос. сайтов через ссылки — встроенный перевод браузера работает надёжнее.</p>
       </details>
       <details>
         <summary>Способ 3 — нейронка по скриншоту</summary>
@@ -780,11 +780,6 @@
       "dictionary": dictionary.map(([he, ru]) => `${he} = ${ru}`).join("\n")
     };
 
-    function translateUrl(url) {
-      if (!url || url.startsWith('#')) return url;
-      return `https://translate.google.com/translate?sl=auto&tl=ru&u=${encodeURIComponent(url)}`;
-    }
-
     function cardPrompt(item, city) {
       const cityLine = city ? `Ищу в городе/районе: ${city}. ` : '';
       return `Найди специалистов в Израиле: ${item.title} / ${item.he}. ${cityLine}Официальный сайт для поиска: ${item.url}. ВАЖНО: если у тебя есть доступ к интернету — САМ зайди на сайт, выполни поиск и ВЫПИШИ ПРЯМО В ОТВЕТЕ конкретные имена, номера лицензий и контакты, которые нашёл — не отправляй меня «зайдите на сайт сами», я не понимаю иврит. Если доступа к интернету нет — объясни, какие поля на иврите что означают, чтобы я сам мог заполнить форму, а результат пришлю тебе скриншотом для перевода. Мне нужен список подходящих специалистов, а не проверка одного уже известного имени. Ключевые слова: ${item.terms.map(t => t[0] + ' = ' + t[1]).join('; ')}. Не проси и не обрабатывай личные документы, пароли, банковские данные или SMS-коды.` + LANG_RULE;
@@ -837,7 +832,7 @@
           <div class="card-actions">
             ${checklist ? `<a class="btn primary" href="#mortgage-checklist">Чеклист</a>` : `<a class="btn primary" href="${item.url}" target="_blank" rel="noopener noreferrer">Официальный сайт</a>`}
             ${(!checklist && item.altUrl) ? `<a class="btn" href="${item.altUrl}" target="_blank" rel="noopener noreferrer">Доп. ссылка</a>` : ''}
-            ${(!checklist) ? `<a class="btn" href="${translateUrl(item.url)}" target="_blank" rel="noopener noreferrer">С переводом*</a>` : ''}
+            ${(!checklist) ? `<a class="btn" href="#translate-help">Как перевести?</a>` : ''}
             <button class="btn" data-card-copy="${encodeURIComponent(item.title)}">Промпт</button>
           </div>
         `;
