@@ -46,3 +46,4 @@ https://exodus611.github.io/finance-portal/fr/keren-hishtalmut.html
 https://exodus611.github.io/finance-portal/fr/pension-gap.html
 https://exodus611.github.io/finance-portal/fr/mas-shevach.html
 https://exodus611.github.io/finance-portal/fr/mas-rehisha.html
+https://exodus611.github.io/finance-portal/fr/auto.html
