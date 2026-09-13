@@ -1,36 +1,39 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Конвертер валют Израиль 2026 — курс шекеля к доллару, рублю, евро онлайн</title>
-<meta name="description" content="Курс шекеля онлайн: доллар, евро, рубль, гривна, тенге. Официальный курс Банка Израиля и рыночный. Конвертер, корзина валют, график за год. Обновляется автоматически.">
+<title>Convertisseur de devises Israël 2026 — cours du shekel face au dollar, au rouble, à l’euro en direct</title>
+<meta name="description" content="Cours du shekel en direct : dollar, euro, rouble, hryvnia, tenge. Taux officiel de la Banque d’Israël et taux du marché. Convertisseur, panier de devises, graphique sur un an. Mise à jour automatique.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://exodus611.github.io/finance-portal/valuta.html">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://exodus611.github.io/finance-portal/fr/valuta.html">
+<link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/valuta.html">
+<link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/valuta.html">
+<link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/valuta.html">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta name="google-site-verification" content="rF1V6g7xHbSI6cvEudIr8c56nbTXMlVyZQzyeOhcSsI">
 <script data-goatcounter="https://finance-portal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <meta property="og:type" content="website">
-<meta property="og:title" content="Конвертер валют Израиль — курс шекеля онлайн">
-<meta property="og:description" content="Официальный курс Банка Израиля и рыночный. Корзина валют, графики, конвертер.">
-<meta property="og:url" content="https://exodus611.github.io/finance-portal/valuta.html">
+<meta property="og:title" content="Convertisseur de devises Israël — cours du shekel en direct">
+<meta property="og:description" content="Taux officiel de la Banque d’Israël et taux du marché. Panier de devises, graphiques, convertisseur.">
+<meta property="og:url" content="https://exodus611.github.io/finance-portal/fr/valuta.html">
 <meta property="og:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta property="og:locale" content="ru_RU">
+<meta property="og:locale" content="fr_FR">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Конвертер валют — курс шекеля",
+  "name": "Convertisseur de devises — cours du shekel",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web",
-  "description": "Конвертер 160+ валют, официальный курс Банка Израиля и рыночный, корзина валют, график за год.",
+  "description": "Convertisseur de plus de 160 devises, taux officiel de la Banque d’Israël et taux du marché, panier de devises, graphique sur un an.",
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "ILS"},
-  "inLanguage": "ru"
+  "inLanguage": "fr"
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,8 +43,8 @@
 html{overflow-x:hidden}
 body{margin:0;overflow-x:hidden;max-width:100vw}
 /* ══════════════════════════════════════════════════════════════════════
-   Конвертер валют. Всё изолировано в .fx-root — не конфликтует с порталом.
-   Переменные с префиксом --fx-.
+   Convertisseur de devises. Tout est isolé dans .fx-root — aucun conflit avec le portail.
+   Variables préfixées par --fx-.
    ══════════════════════════════════════════════════════════════════════ */
 .fx-root{
   --fx-bg:#fbfcfe;
@@ -108,7 +111,7 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
 .fx-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
 .fx-lead{font-size:17.5px;color:var(--fx-text-2);max-width:74ch}
 
-/* ─── Шапка ─── */
+/* ─── En-tête ─── */
 .fx-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
 .fx-eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;
   letter-spacing:.07em;text-transform:uppercase;color:var(--fx-brand);
@@ -126,7 +129,7 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
   transition:transform .15s,border-color .15s}
 .fx-iconbtn:hover{border-color:var(--fx-brand);color:var(--fx-brand);transform:translateY(-1px)}
 
-/* ─── Тикер ─── */
+/* ─── Ticker ─── */
 .fx-ticker{display:flex;gap:9px;overflow-x:auto;max-width:100%;padding:4px 2px 10px;margin-block:18px 6px;
   scrollbar-width:thin;scroll-snap-type:x proximity}
 .fx-ticker::-webkit-scrollbar{height:5px}
@@ -143,7 +146,7 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
 .fx-tick__d{font-size:12.5px;font-weight:650}
 .fx-up{color:var(--fx-up)} .fx-down{color:var(--fx-down)}
 
-/* ─── Табы ─── */
+/* ─── Onglets ─── */
 .fx-tabs{display:flex;gap:5px;padding:5px;margin-block:24px 18px;max-width:100%;background:var(--fx-surface);
   border:1px solid var(--fx-border);border-radius:var(--fx-r-md);width:fit-content;max-width:100%;
   overflow-x:auto;scrollbar-width:none}
@@ -159,7 +162,7 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
 @media (prefers-reduced-motion:reduce){.fx-panel{animation:none}}
 .fx-panel[hidden]{display:none}
 
-/* ─── Конвертер ─── */
+/* ─── Convertisseur ─── */
 .fx-conv{display:grid;gap:14px}
 .fx-row2{display:grid;grid-template-columns:minmax(0,1fr) 54px minmax(0,1fr);gap:12px;align-items:end}
 .fx-row2>*{min-width:0}
@@ -206,7 +209,7 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
 .fx-btn--sm{padding:8px 14px;font-size:13.5px;min-height:38px}
 .fx-actions{display:flex;gap:9px;flex-wrap:wrap;margin-block-start:6px}
 
-/* ─── Карточки сравнения ─── */
+/* ─── Cartes de comparaison ─── */
 .fx-cmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(172px,1fr));gap:11px}
 .fx-cmp__i{background:var(--fx-surface);border:1px solid var(--fx-border);
   border-radius:var(--fx-r-md);padding:15px;position:relative;overflow:hidden}
@@ -216,7 +219,7 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
   text-transform:uppercase;letter-spacing:.05em}
 .fx-cmp__v{font-size:23px;font-weight:750;letter-spacing:-.02em;display:block;margin-block-start:3px}
 
-/* ─── Корзина ─── */
+/* ─── Panier ─── */
 .fx-basket{display:grid;gap:10px}
 .fx-brow{display:grid;grid-template-columns:minmax(0,132px) minmax(0,1fr) auto 38px;gap:11px;align-items:center;
   padding:13px;background:var(--fx-surface);border:1px solid var(--fx-border);
@@ -248,7 +251,7 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
 .fx-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;
   margin-inline-end:6px;vertical-align:middle}
 
-/* ─── График ─── */
+/* ─── Graphique ─── */
 .fx-chart{width:100%;height:260px;display:block;margin-block:8px}
 .fx-chart .line{fill:none;stroke:url(#fxgrad);stroke-width:2.75;stroke-linejoin:round;stroke-linecap:round}
 .fx-chart .area{fill:url(#fxfill);stroke:none}
@@ -260,7 +263,7 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
   text-transform:uppercase;letter-spacing:.05em}
 .fx-stat__v{font-size:20px;font-weight:750;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 
-/* ─── Таблица ─── */
+/* ─── Tableau ─── */
 .fx-table{width:100%;min-width:520px;border-collapse:separate;border-spacing:0;font-size:15px;margin-block:12px}
 .fx-table th{background:var(--fx-surface);font-size:11.5px;font-weight:700;text-transform:uppercase;
   letter-spacing:.05em;color:var(--fx-muted);padding:11px 13px;text-align:start;
@@ -316,27 +319,12 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
 <div style="width:min(1200px,calc(100% - 28px));margin:auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;font-family:Inter,system-ui,sans-serif">
 <div style="display:flex;align-items:center;gap:11px;font-weight:850">
 <span style="width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#0d9671,#08775a 70%);color:#fff;display:grid;place-items:center;font-size:24px;font-weight:900;box-shadow:0 6px 18px rgba(8,119,90,.35)">₪</span>
-<span style="color:#15251f;font-size:14px">Понятные финансы в Израиле</span>
+<span style="color:#15251f;font-size:14px">Finances d’Israël, simplement</span>
 </div>
 <div style="display:flex;align-items:center;gap:8px">
-<a href="index.html" style="font-size:12px;font-weight:800;color:#08775a;text-decoration:none;white-space:nowrap">← На главную</a><span style="display:inline-flex;border:1.5px solid var(--green,#08775a);border-radius:11px;overflow:hidden;font-size:13px;font-weight:800;line-height:1;white-space:nowrap;vertical-align:middle"><b style="padding:8px 13px;color:#fff;background:var(--green,#08775a)">RU</b><a href="fr/valuta.html" style="padding:8px 13px;text-decoration:none;color:var(--green,#08775a);background:#fff" aria-label="Version française">FR</a></span>
-<select onchange="if(this.value)location.href=this.value" style="font-size:11.5px;font-weight:700;color:#08775a;border:1px solid #ddd6c7;border-radius:8px;padding:6px 8px;background:#fff;cursor:pointer">
-<option value="">Все калькуляторы ▾</option>
-<option value="salary.html">💰 Зарплата</option>
-<option value="mashkanta.html">🏠 Машканта</option>
-<option value="auto.html">🚗 Автомобиль</option>
-<option value="kredit.html">💳 Кредит</option>
-<option value="arenda-vs-pokupka.html">⚖️ Аренда vs покупка</option>
-<option value="mihzur-mashkanta.html">🔄 Рефинансирование</option>
-<option value="siluk-mukdam.html">💎 Погашение vs инвестиции</option>
-<option value="mas-rehisha.html">🏛️ Мас рехиша</option>
-<option value="mas-shevach.html">📉 Мас шевах</option>
-<option value="pension-gap.html">🧓 Пенсионный разрыв</option>
-<option value="keren-hishtalmut.html">🎓 Фонд повышения квалификации</option>
-<option value="nekudot-zikuy.html">🎯 Некудот зикуй</option><option value="tablo.html">📊 Экономика сегодня</option><option value="benzin.html">⛽ Цена на бензин</option><option value="arnona.html">🏛️ Скидка на арнону</option><option value="dira.html">🏗️ Дира бе-ханаха</option><option value="avtala.html">📋 Дмей автала</option>
-<option value="havraa.html">🏖️ Оздоровительные</option><option value="hisahon-yeled.html">👶 Накопления на ребёнка</option>
-<option value="nko.html">🤝 Благотворительные НКО</option><option value="slovar.html">📖 Словарь терминов</option>
-</select>
+<a href="../index.html" style="font-size:12px;font-weight:800;color:#08775a;text-decoration:none;white-space:nowrap">← Accueil</a><span style="display:inline-flex;border:1.5px solid var(--green,#08775a);border-radius:11px;overflow:hidden;font-size:13px;font-weight:800;line-height:1;white-space:nowrap;vertical-align:middle"><a href="../valuta.html" style="padding:8px 13px;text-decoration:none;color:var(--green,#08775a);background:#fff" aria-label="Русская версия">RU</a><b style="padding:8px 13px;color:#fff;background:var(--green,#08775a)">FR</b></span>
+<select onchange="if(this.value)location.href=this.value" style="font-size:11.5px;font-weight:700;color:var(--green);border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:#fff;margin-inline-start:8px;cursor:pointer"><option value="">Tous les calculateurs ▾</option><option value="../salary.html">💰 Salaire</option><option value="../mashkanta.html">🏠 Hypothèque (machkanta)</option><option value="../kredit.html">💳 Crédit</option><option value="../arenda-vs-pokupka.html">⚖️ Louer ou acheter</option><option value="../mihzur-mashkanta.html">🔄 Renégociation</option><option value="../siluk-mukdam.html">💎 Remboursement ou investissement</option><option value="../mas-rehisha.html">🏛️ Droits de mutation</option><option value="../mas-shevach.html">📉 Plus-value (mas shevach)</option><option value="../pension-gap.html">🧓 Écart de pension</option><option value="../keren-hishtalmut.html">🎓 Fonds de formation (hishtalmut)</option><option value="../nekudot-zikuy.html">🎯 Points de crédit fiscal</option><option value="../pikadon-vs-keren.html">🏦 Dépôt ou fonds capitalisant</option><option value="../tablo.html">📊 Économie du jour</option><option value="../benzin.html">⛽ Prix de l’essence</option><option value="../arnona.html">🏛️ Réduction d’arnona</option><option value="../dira.html">🏗️ Logement subventionné</option><option value="../avtala.html">📋 Allocations de chômage</option>
+<option value="../havraa.html">🏖️ Havraa (convalescence)</option><option value="../hisahon-yeled.html">👶 Épargne pour chaque enfant</option><option value="../nko.html">🤝 Associations caritatives</option><option value="../slovar.html">📖 Glossaire</option></select>
 </div>
 </div>
 </header>
@@ -345,54 +333,54 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
 
   <div class="fx-head">
     <div>
-      <span class="fx-eyebrow"><span class="fx-live"></span>Курсы обновляются автоматически</span>
-      <h1>Конвертер валют Израиль</h1>
+      <span class="fx-eyebrow"><span class="fx-live"></span>Cours mis à jour automatiquement</span>
+      <h1>Convertisseur de devises Israël</h1>
     </div>
-    <button type="button" class="fx-iconbtn" id="fx-theme" title="Сменить тему" aria-label="Сменить тему">◐</button>
+    <button type="button" class="fx-iconbtn" id="fx-theme" title="Changer de thème" aria-label="Changer de thème">◐</button>
   </div>
 
-  <p class="fx-lead">Два курса сразу: <strong>официальный курс Банка Израиля</strong> — по нему считают
-  налоги и таможню, и <strong>рыночный</strong> — ближе к тому, что вы увидите в обменнике
-  или банковском приложении.</p>
+  <p class="fx-lead">Deux taux d’emblée : le <strong>taux officiel de la Banque d’Israël</strong> — celui utilisé pour
+  les impôts et la douane — et le <strong>taux du marché</strong> — plus proche de ce que vous verrez au bureau
+  de change ou dans l’application bancaire.</p>
 
-  <div class="fx-ticker" id="fx-ticker" aria-label="Текущие курсы"></div>
+  <div class="fx-ticker" id="fx-ticker" aria-label="Cours actuels"></div>
   <div id="fx-status"></div>
 
-  <div class="fx-tabs" role="tablist" aria-label="Инструменты">
+  <div class="fx-tabs" role="tablist" aria-label="Outils">
     <button type="button" class="fx-tab" role="tab" data-tab="conv" aria-selected="true"
-            aria-controls="fx-p-conv" id="fx-t-conv">Конвертер</button>
+            aria-controls="fx-p-conv" id="fx-t-conv">Convertisseur</button>
     <button type="button" class="fx-tab" role="tab" data-tab="basket" aria-selected="false"
-            aria-controls="fx-p-basket" id="fx-t-basket">Корзина валют</button>
+            aria-controls="fx-p-basket" id="fx-t-basket">Panier de devises</button>
     <button type="button" class="fx-tab" role="tab" data-tab="chart" aria-selected="false"
-            aria-controls="fx-p-chart" id="fx-t-chart">График</button>
+            aria-controls="fx-p-chart" id="fx-t-chart">Graphique</button>
     <button type="button" class="fx-tab" role="tab" data-tab="table" aria-selected="false"
-            aria-controls="fx-p-table" id="fx-t-table">Все курсы</button>
+            aria-controls="fx-p-table" id="fx-t-table">Tous les cours</button>
   </div>
 
-  <!-- ══ КОНВЕРТЕР ══ -->
+  <!-- ══ CONVERTISSEUR ══ -->
   <div class="fx-panel" role="tabpanel" data-panel="conv" id="fx-p-conv" aria-labelledby="fx-t-conv">
     <div style="display:flex;align-items:center;gap:10px;margin-block-end:14px;font-size:13px">
       <label style="display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none">
         <input type="checkbox" id="fx-realistic-toggle" style="width:36px;height:20px;cursor:pointer">
-        <span>Считать по реальному курсу обменника (со спредом), а не по среднему рыночному</span>
+        <span>Calculer au taux réel du bureau de change (avec spread), et non au taux moyen du marché</span>
       </label>
     </div>
     <div class="fx-conv">
       <div class="fx-row2">
         <div class="fx-field">
-          <label for="fx-a1">Отдаём</label>
+          <label for="fx-a1">Vous donnez</label>
           <div class="fx-inputwrap">
             <input class="fx-amount" type="text" inputmode="decimal" size="1" id="fx-a1" value="1000" autocomplete="off">
-            <select class="fx-sel" id="fx-c1" aria-label="Исходная валюта"></select>
+            <select class="fx-sel" id="fx-c1" aria-label="Devise source"></select>
           </div>
         </div>
-        <button type="button" class="fx-swap" id="fx-swap" title="Поменять местами"
-                aria-label="Поменять валюты местами">⇅</button>
+        <button type="button" class="fx-swap" id="fx-swap" title="Inverser"
+                aria-label="Inverser les devises">⇅</button>
         <div class="fx-field">
-          <label for="fx-a2">Получаем</label>
+          <label for="fx-a2">Vous recevez</label>
           <div class="fx-inputwrap">
             <input class="fx-amount" type="text" inputmode="decimal" size="1" id="fx-a2" autocomplete="off">
-            <select class="fx-sel" id="fx-c2" aria-label="Целевая валюта"></select>
+            <select class="fx-sel" id="fx-c2" aria-label="Devise cible"></select>
           </div>
         </div>
       </div>
@@ -403,27 +391,27 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
       <div class="fx-cmp" id="fx-cmp"></div>
 
       <div class="fx-actions">
-        <button type="button" class="fx-btn fx-btn--ghost" id="fx-share">Скопировать ссылку</button>
-        <button type="button" class="fx-btn fx-btn--ghost" id="fx-tobasket">Добавить в корзину →</button>
+        <button type="button" class="fx-btn fx-btn--ghost" id="fx-share">Copier le lien</button>
+        <button type="button" class="fx-btn fx-btn--ghost" id="fx-tobasket">Ajouter au panier →</button>
       </div>
     </div>
   </div>
 
-  <!-- ══ КОРЗИНА ══ -->
+  <!-- ══ PANIER ══ -->
   <div class="fx-panel" role="tabpanel" data-panel="basket" id="fx-p-basket" aria-labelledby="fx-t-basket" hidden>
-    <p style="margin-top:0">Внесите накопления в разных валютах — увидите общую сумму в шекелях
-    и как она изменилась за месяц. Данные хранятся <strong>только в вашем браузере</strong>.</p>
+    <p style="margin-top:0">Saisissez vos économies en différentes devises — vous verrez le total en shekels
+    et son évolution sur un mois. Les données restent <strong>dans votre navigateur uniquement</strong>.</p>
 
     <div class="fx-basket" id="fx-basket"></div>
 
     <div class="fx-actions">
-      <button type="button" class="fx-btn fx-btn--ghost fx-btn--sm" id="fx-badd">+ Добавить валюту</button>
-      <button type="button" class="fx-btn fx-btn--ghost fx-btn--sm" id="fx-bclear">Очистить</button>
-      <button type="button" class="fx-btn fx-btn--ghost fx-btn--sm" id="fx-bshare">Поделиться корзиной</button>
+      <button type="button" class="fx-btn fx-btn--ghost fx-btn--sm" id="fx-badd">+ Ajouter une devise</button>
+      <button type="button" class="fx-btn fx-btn--ghost fx-btn--sm" id="fx-bclear">Effacer</button>
+      <button type="button" class="fx-btn fx-btn--ghost fx-btn--sm" id="fx-bshare">Partager le panier</button>
     </div>
 
     <div class="fx-total">
-      <span class="fx-total__l">Всего в шекелях</span>
+      <span class="fx-total__l">Total en shekels</span>
       <span class="fx-total__v" id="fx-btotal" aria-live="polite">0 ₪</span>
     </div>
 
@@ -432,96 +420,96 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
     <div id="fx-bchange"></div>
   </div>
 
-  <!-- ══ ГРАФИК ══ -->
+  <!-- ══ GRAPHIQUE ══ -->
   <div class="fx-panel" role="tabpanel" data-panel="chart" id="fx-p-chart" aria-labelledby="fx-t-chart" hidden>
     <div class="fx-quick" id="fx-chart-cur"></div>
     <div class="fx-quick" style="margin-block-start:10px" id="fx-chart-per"></div>
     <div class="fx-stats" id="fx-chart-stats"></div>
     <svg class="fx-chart" id="fx-chart" viewBox="0 0 760 260" preserveAspectRatio="none"
-         role="img" aria-label="График курса"></svg>
+         role="img" aria-label="Graphique du cours"></svg>
     <p class="fx-hint" id="fx-chart-note"></p>
   </div>
 
-  <!-- ══ ВСЕ КУРСЫ ══ -->
+  <!-- ══ TOUS LES COURS ══ -->
   <div class="fx-panel" role="tabpanel" data-panel="table" id="fx-p-table" aria-labelledby="fx-t-table" hidden>
-    <p class="fx-hint" style="margin-top:0">Сколько шекелей стоит одна единица валюты. Официальный курс
-    Банк Израиля публикует по будням около 9:20 — он есть не для всех валют.</p>
+    <p class="fx-hint" style="margin-top:0">Combien vaut une unité de devise en shekels. La Banque d’Israël publie
+    le taux officiel les jours ouvrés vers 9 h 20 — il n’existe pas pour toutes les devises.</p>
     <div class="fx-scroll">
       <table class="fx-table" id="fx-alltable">
-        <thead><tr><th>Валюта</th><th class="num">Рыночный</th><th class="num">Банк Израиля</th>
-        <th class="num">За сутки</th></tr></thead>
+        <thead><tr><th>Devise</th><th class="num">Marché</th><th class="num">Banque d’Israël</th>
+        <th class="num">Sur 24 h</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
   </div>
 
-  <!-- ══ ТЕКСТ ══ -->
-  <h2>Какой курс вам нужен</h2>
-  <p>В Израиле в ходу два разных курса, и путаница между ними стоит денег.</p>
+  <!-- ══ TEXTE ══ -->
+  <h2>Quel taux vous faut-il</h2>
+  <p>En Israël, deux taux différents coexistent — et les confondre coûte cher.</p>
 
-  <h3>Официальный курс Банка Израиля</h3>
-  <p>«Шаар йациг» <span dir="rtl">(שער יציג)</span>, <em>ша́ар яци́г</em> — представительный курс.
-  Публикуется по будням около 9:20 утра и действует весь день. По нему считают налоги, таможенные
-  пошлины, судебные суммы и отчётность. В выходные и праздники не обновляется — действует курс
-  последнего рабочего дня.</p>
+  <h3>Le taux officiel de la Banque d’Israël</h3>
+  <p>Le « chaar yatsig » <span dir="rtl">(שער יציג)</span> — <em>taux représentatif</em>.
+  Publié les jours ouvrés vers 9 h 20 du matin, il reste valable toute la journée. C’est lui qui sert à
+  calculer les impôts, les droits de douane, les sommes judiciaires et la comptabilité. Le week-end et les
+  jours fériés, il n’est pas mis à jour — c’est le taux du dernier jour ouvré qui s’applique.</p>
 
-  <h3>Рыночный курс</h3>
-  <p>Меняется постоянно в течение дня. Он ближе к тому, что вы увидите при переводе или в обменнике.
-  Но и он не равен тому, что вы получите на руки: банки и обменники добавляют свою наценку.</p>
+  <h3>Le taux du marché</h3>
+  <p>Il change constamment au fil de la journée. Il est plus proche de ce que vous verrez lors d’un virement
+  ou au bureau de change. Mais lui non plus n’est pas ce que vous recevrez : les banques et les bureaux de change ajoutent leur marge.</p>
 
-  <div class="fx-warn"><strong>Сколько теряется на обмене.</strong> Банк обычно берёт 1,5–3% от суммы,
-  обменник в туристическом месте — до 5%, а карта при оплате за границей добавляет комиссию
-  за конвертацию около 2,5–3%. На тысяче долларов разница между хорошим и плохим курсом легко
-  достигает 100–150 шекелей. Сравнивайте с курсом на этой странице — он показывает базу без наценок.</div>
+  <div class="fx-warn"><strong>Ce que l’échange vous coûte.</strong> Une banque prend généralement 1,5–3 % de la somme,
+  un bureau de change touristique jusqu’à 5 %, et une carte qui paie à l’étranger ajoute une commission
+  de conversion d’environ 2,5–3 %. Sur mille dollars, la différence entre un bon et un mauvais cours
+  atteint facilement 100–150 shekels. Comparez avec le cours de cette page — il affiche la base, sans marges.</div>
 
-  <h2>Частые вопросы</h2>
+  <h2>Questions fréquentes</h2>
   <div class="fx-faq">
-    <details><summary>Почему курс здесь отличается от курса в моём банке?</summary>
-      <p>Здесь показан базовый курс без наценок. Банки и обменники добавляют свою маржу — обычно
-      1,5–3%, плюс иногда фиксированную комиссию за операцию. Сравнив свой курс с базовым, вы сразу
-      увидите, сколько с вас берут сверху.</p></details>
-    <details><summary>Какой курс нужен для налоговой и таможни?</summary>
-      <p>Официальный курс Банка Израиля на нужную дату. Он же используется при расчёте пошлины
-      на посылки и при декларировании доходов из-за границы.</p></details>
-    <details><summary>Почему в выходные курс не меняется?</summary>
-      <p>Банк Израиля публикует официальный курс только по рабочим дням. В пятницу вечером, субботу
-      и праздники действует курс последнего рабочего дня. Рыночный курс при этом может немного двигаться.</p></details>
-    <details><summary>Данные корзины куда-то отправляются?</summary>
-      <p>Нет. Всё хранится в памяти вашего браузера и никуда не передаётся. Если очистите данные
-      браузера — корзина исчезнет. Ссылкой на корзину можно поделиться: суммы зашиваются
-      прямо в адрес страницы.</p></details>
-    <details><summary>Насколько свежие данные?</summary>
-      <p>Рыночные курсы обновляются несколько раз в сутки, официальный курс Банка Израиля — по будням
-      утром. Точное время последнего обновления показано под строкой курсов. Если интернета нет,
-      страница покажет последние сохранённые значения и предупредит об этом.</p></details>
+    <details><summary>Pourquoi le cours affiché ici diffère-t-il de celui de ma banque ?</summary>
+      <p>Le cours affiché ici est le cours de base, sans marges. Les banques et les bureaux de change ajoutent
+      leur marge — généralement 1,5–3 %, plus parfois une commission fixe par opération. En comparant
+      votre cours au cours de base, vous verrez immédiatement combien on vous prend en plus.</p></details>
+    <details><summary>Quel taux pour l’impôt et la douane ?</summary>
+      <p>Le taux officiel de la Banque d’Israël à la date voulue. C’est aussi lui qui sert au calcul des droits
+      sur les colis et à la déclaration des revenus de l’étranger.</p></details>
+    <details><summary>Pourquoi le cours ne change-t-il pas le week-end ?</summary>
+      <p>La Banque d’Israël publie le taux officiel uniquement les jours ouvrés. Le vendredi soir, le samedi
+      et les jours fériés, c’est le taux du dernier jour ouvré qui s’applique. Le cours du marché, lui, peut bouger légèrement.</p></details>
+    <details><summary>Les données du panier sont-elles envoyées quelque part ?</summary>
+      <p>Non. Tout est conservé dans la mémoire de votre navigateur et n’est transmis nulle part. Si vous
+      effacez les données du navigateur, le panier disparaît. Le lien vers le panier peut être partagé :
+      les montants sont intégrés directement dans l’adresse de la page.</p></details>
+    <details><summary>Les données sont-elles à jour ?</summary>
+      <p>Les cours du marché sont actualisés plusieurs fois par jour, le taux officiel de la Banque d’Israël — le
+      matin des jours ouvrés. L’heure exacte de la dernière mise à jour est indiquée sous le bandeau des cours.
+      Sans internet, la page affichera les dernières valeurs enregistrées et vous en avertira.</p></details>
   </div>
 
   <div class="fx-meta">
-    <p><strong>Источники данных:</strong></p>
+    <p><strong>Sources des données :</strong></p>
     <ul>
-      <li><a href="https://www.boi.org.il/" target="_blank" rel="noopener nofollow">Банк Израиля</a>
-        — официальный представительный курс</li>
+      <li><a href="https://www.boi.org.il/" target="_blank" rel="noopener nofollow">Banque d’Israël</a>
+        — taux officiel représentatif</li>
       <li><a href="https://www.exchangerate-api.com/" target="_blank" rel="noopener nofollow">ExchangeRate-API</a>
-        — рыночные курсы, открытый доступ</li>
+        — cours du marché, accès libre</li>
       <li><a href="https://frankfurter.dev/" target="_blank" rel="noopener nofollow">Frankfurter</a>
-        — исторические данные на основе публикаций Европейского центрального банка</li>
+        — données historiques basées sur les publications de la Banque centrale européenne</li>
     </ul>
-    <p class="fx-hint">Курсы носят справочный характер. Фактический курс сделки определяет банк
-    или обменный пункт. Расчёты выполняются в вашем браузере, никакие данные не собираются.</p>
+    <p class="fx-hint">Les cours sont donnés à titre indicatif. Le taux réel de la transaction est fixé
+    par la banque ou le bureau de change. Les calculs s’effectuent dans votre navigateur ; aucune donnée n’est collectée.</p>
   </div>
 </div>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"WebApplication","name":"Конвертер валют Израиль","applicationCategory":"FinanceApplication",
- "operatingSystem":"Any","inLanguage":"ru","offers":{"@type":"Offer","price":"0","priceCurrency":"ILS"}},
+{"@type":"WebApplication","name":"Convertisseur de devises Israël","applicationCategory":"FinanceApplication",
+ "operatingSystem":"Any","inLanguage":"fr","offers":{"@type":"Offer","price":"0","priceCurrency":"ILS"}},
 {"@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Почему курс отличается от курса в банке?","acceptedAnswer":{"@type":"Answer",
- "text":"Здесь показан базовый курс без наценок. Банки и обменники добавляют маржу 1,5–3%, плюс иногда фиксированную комиссию."}},
-{"@type":"Question","name":"Какой курс нужен для налоговой и таможни?","acceptedAnswer":{"@type":"Answer",
- "text":"Официальный представительный курс Банка Израиля на нужную дату. Он же применяется при расчёте пошлины на посылки."}},
-{"@type":"Question","name":"Почему в выходные курс не меняется?","acceptedAnswer":{"@type":"Answer",
- "text":"Банк Израиля публикует официальный курс только по рабочим дням. В выходные действует курс последнего рабочего дня."}}
+{"@type":"Question","name":"Pourquoi le cours diffère-t-il de celui de la banque ?","acceptedAnswer":{"@type":"Answer",
+ "text":"Le cours affiché ici est le cours de base, sans marges. Les banques et les bureaux de change ajoutent une marge de 1,5–3 %, plus parfois une commission fixe."}},
+{"@type":"Question","name":"Quel taux pour l’impôt et la douane ?","acceptedAnswer":{"@type":"Answer",
+ "text":"Le taux officiel représentatif de la Banque d’Israël à la date voulue. Il sert aussi au calcul des droits sur les colis."}},
+{"@type":"Question","name":"Pourquoi le cours ne change-t-il pas le week-end ?","acceptedAnswer":{"@type":"Answer",
+ "text":"La Banque d’Israël publie le taux officiel uniquement les jours ouvrés. Le week-end, c’est le taux du dernier jour ouvré qui s’applique."}}
 ]}]}
 </script>
 
@@ -531,21 +519,21 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
   var root = document.getElementById('fx-root');
   if (!root) return;
 
-  /* ═══ Источники. У всех проверен CORS, ключи не нужны ═══ */
+  /* ═══ Sources. CORS vérifié pour toutes, aucune clé nécessaire ═══ */
   var API = {
     market:  'https://open.er-api.com/v6/latest/ILS',
     history: 'https://api.frankfurter.dev/v1/',
-    // API Банка Израиля отвечает 404 на браузерный Origin — читаем локальный файл,
-    // который обновляет GitHub Actions. Без файла страница работает, колонка пустая.
-    official: 'data/rates.json'
+    // L’API de la Banque d’Israël renvoie 404 à un Origin navigateur — on lit un fichier local,
+    // mis à jour par GitHub Actions. Sans lui, la page fonctionne, la colonne reste vide.
+    official: '../data/rates.json'
   };
 
-  var NAMES = {ILS:'Шекель',USD:'Доллар США',EUR:'Евро',RUB:'Рубль',UAH:'Гривна',GBP:'Фунт',
-    KZT:'Тенге',GEL:'Лари',TRY:'Лира',CHF:'Франк',CAD:'Канад. доллар',AUD:'Австрал. доллар',
-    PLN:'Злотый',CZK:'Крона',HUF:'Форинт',RON:'Лей',BGN:'Лев',MDL:'Молд. лей',AMD:'Драм',
-    AZN:'Манат',UZS:'Сум',KGS:'Сом',BYN:'Бел. рубль',THB:'Бат',JPY:'Иена',CNY:'Юань',
-    INR:'Рупия',SEK:'Швед. крона',NOK:'Норв. крона',DKK:'Дат. крона',ZAR:'Ранд',AED:'Дирхам',
-    JOD:'Динар',EGP:'Егип. фунт'};
+  var NAMES = {ILS:'Shekel',USD:'Dollar américain',EUR:'Euro',RUB:'Rouble',UAH:'Hryvnia',GBP:'Livre',
+    KZT:'Tenge',GEL:'Lari',TRY:'Livre turque',CHF:'Franc',CAD:'Dollar canadien',AUD:'Dollar australien',
+    PLN:'Zloty',CZK:'Couronne',HUF:'Forint',RON:'Leu',BGN:'Lev',MDL:'Leu moldave',AMD:'Dram',
+    AZN:'Manat',UZS:'Soum',KGS:'Som',BYN:'Rouble biélorusse',THB:'Baht',JPY:'Yen',CNY:'Yuan',
+    INR:'Roupie',SEK:'Couronne suédoise',NOK:'Couronne norvégienne',DKK:'Couronne danoise',ZAR:'Rand',AED:'Dirham',
+    JOD:'Dinar',EGP:'Livre égyptienne'};
   var FLAGS = {ILS:'🇮🇱',USD:'🇺🇸',EUR:'🇪🇺',RUB:'🇷🇺',UAH:'🇺🇦',GBP:'🇬🇧',KZT:'🇰🇿',GEL:'🇬🇪',
     TRY:'🇹🇷',CHF:'🇨🇭',CAD:'🇨🇦',AUD:'🇦🇺',PLN:'🇵🇱',CZK:'🇨🇿',HUF:'🇭🇺',RON:'🇷🇴',BGN:'🇧🇬',
     MDL:'🇲🇩',AMD:'🇦🇲',AZN:'🇦🇿',UZS:'🇺🇿',KGS:'🇰🇬',BYN:'🇧🇾',THB:'🇹🇭',JPY:'🇯🇵',CNY:'🇨🇳',
@@ -556,7 +544,7 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
 
   var D = {market:{},official:{},prev:{},updated:null,officialDate:null,offline:false,list:[]};
 
-  var nf = function (n,d){return new Intl.NumberFormat('ru-RU',
+  var nf = function (n,d){return new Intl.NumberFormat('fr-FR',
     {minimumFractionDigits:d,maximumFractionDigits:d}).format(n);};
   function money(n){var a=Math.abs(n);return nf(n,a>=1000?0:a>=10?2:4);}
   function rate(n){var a=Math.abs(n);return nf(n,a>=100?2:a>=1?4:6);}
@@ -591,16 +579,16 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
     if(cached&&cached.market){D.market=cached.market;D.official=cached.official||{};
       D.updated=cached.updated;D.officialDate=cached.officialDate;D.prev=cached.prev||{};}
     return fetchJSON(API.market).then(function(j){
-      if(!j||!j.rates)throw new Error('нет данных');
+      if(!j||!j.rates)throw new Error('pas de données');
       var m={};
       Object.keys(j.rates).forEach(function(c){var v=j.rates[c];
-        if(v&&isFinite(v)&&v>0)m[c]=1/v;});   // шекелей за 1 единицу
+        if(v&&isFinite(v)&&v>0)m[c]=1/v;});   // shekels pour 1 unité
       m.ILS=1;
       D.prev=(cached&&cached.market)?cached.market:{};
       D.market=m; D.updated=j.time_last_update_utc||new Date().toUTCString(); D.offline=false;
       return fetchJSON(API.official,6000).catch(function(){return null;});
     }).then(function(off){
-      if(off&&off.fx&&!off.rates){ off={rates:off.fx, date:off.updated}; } // наш формат rates.json -> ожидаемый модулем
+      if(off&&off.fx&&!off.rates){ off={rates:off.fx, date:off.updated}; } // notre format rates.json -> format attendu par le module
       if(off&&off.rates){D.official=off.rates;D.officialDate=off.date||off.updated;}
       D.list=Object.keys(D.market).filter(function(c){return c!=='ILS';}).sort();
       save(LS+'-rates',{market:D.market,official:D.official,updated:D.updated,
@@ -615,15 +603,15 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
   function renderStatus(){
     var when=D.updated?new Date(D.updated):null, s=el('#fx-status');
     if(D.offline){
-      s.innerHTML='<div class="fx-warn"><strong>Нет связи с сервером курсов.</strong> Показаны последние '+
-        'сохранённые значения'+(when?' от '+when.toLocaleString('ru-RU'):'')+'.</div>';
+      s.innerHTML='<div class="fx-warn"><strong>Pas de connexion au serveur de cours.</strong> Dernières valeurs '+
+        'enregistrées'+(when?' du '+when.toLocaleString('fr-FR'):'')+' affichées.</div>';
       return;
     }
     var bits=[];
-    if(when)bits.push('Обновлено '+when.toLocaleString('ru-RU',
+    if(when)bits.push('Mis à jour le '+when.toLocaleString('fr-FR',
       {day:'numeric',month:'long',hour:'2-digit',minute:'2-digit'}));
-    if(D.officialDate)bits.push('официальный курс Банка Израиля на '+
-      new Date(D.officialDate).toLocaleDateString('ru-RU'));
+    if(D.officialDate)bits.push('taux officiel de la Banque d’Israël du '+
+      new Date(D.officialDate).toLocaleDateString('fr-FR'));
     s.innerHTML='<p class="fx-hint" style="margin:0 0 2px">'+bits.join(' · ')+'</p>';
   }
 
@@ -655,17 +643,17 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
     el('#fx-a1').value=H.amt||'1000';
   }
 
-  var SPREAD=0.03; // типичный суммарный спред обменника/банка — 1.5% в каждую сторону
-  D.realistic=false; // по умолчанию — средний рыночный курс
+  var SPREAD=0.03; // spread total typique bureau de change/banque — 1,5 % de chaque côté
+  D.realistic=false; // par défaut — cours moyen du marché
 
-  // Продаёте валюту c (получаете ILS) — обменник покупает у вас по курсу похуже (ниже)
+  // Vous vendez la devise c (vous recevez des ILS) — le bureau de change l’achète moins cher (plus bas)
   function toILS(a,c){
     if(c==='ILS')return a;
     var m=D.market[c]||0;
     var rate=D.realistic?m*(1-SPREAD/2):m;
     return a*rate;
   }
-  // Покупаете валюту c (тратите ILS) — обменник продаёт вам по курсу похуже (выше)
+  // Vous achetez la devise c (vous dépensez des ILS) — le bureau de change vous la vend plus cher (plus élevé)
   function fromILS(a,c){
     if(c==='ILS')return a;
     var m=D.market[c]||1;
@@ -695,27 +683,27 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
     var box=el('#fx-cmp'), pair=(c1!=='ILS'?c1:c2);
     if(pair==='ILS'){box.innerHTML='';return;}
     var mk=D.market[pair], of=D.official[pair];
-    var sellToYou=mk*(1+SPREAD/2);   // обменник продаёт вам валюту — курс хуже (дороже)
-    var buyFromYou=mk*(1-SPREAD/2);  // обменник покупает у вас валюту — курс хуже (дешевле)
-    var html='<div class="fx-cmp__i"><span class="fx-cmp__l">Рыночный курс (средний)</span>'+
+    var sellToYou=mk*(1+SPREAD/2);   // le bureau de change vous vend la devise — cours moins bon (plus cher)
+    var buyFromYou=mk*(1-SPREAD/2);  // le bureau de change vous achète la devise — cours moins bon (moins cher)
+    var html='<div class="fx-cmp__i"><span class="fx-cmp__l">Cours du marché (moyen)</span>'+
       '<span class="fx-cmp__v fx-num">'+rate(mk)+' ₪</span></div>';
-    html+='<div class="fx-cmp__i"><span class="fx-cmp__l">Купить '+pair+' — вам продают</span>'+
+    html+='<div class="fx-cmp__i"><span class="fx-cmp__l">Acheter '+pair+' — on vous vend</span>'+
       '<span class="fx-cmp__v fx-num">'+rate(sellToYou)+' ₪</span>'+
-      '<span class="fx-hint">дороже среднего — оценка</span></div>';
-    html+='<div class="fx-cmp__i"><span class="fx-cmp__l">Продать '+pair+' — у вас покупают</span>'+
+      '<span class="fx-hint">plus cher que la moyenne — estimation</span></div>';
+    html+='<div class="fx-cmp__i"><span class="fx-cmp__l">Vendre '+pair+' — on vous l’achète</span>'+
       '<span class="fx-cmp__v fx-num">'+rate(buyFromYou)+' ₪</span>'+
-      '<span class="fx-hint">дешевле среднего — оценка</span></div>';
+      '<span class="fx-hint">moins cher que la moyenne — estimation</span></div>';
     if(of){
       var diff=(mk-of)/of*100;
-      html+='<div class="fx-cmp__i"><span class="fx-cmp__l">Банк Израиля</span>'+
+      html+='<div class="fx-cmp__i"><span class="fx-cmp__l">Banque d’Israël</span>'+
         '<span class="fx-cmp__v fx-num">'+rate(of)+' ₪</span>'+
-        '<span class="fx-hint '+(diff>=0?'fx-up':'fx-down')+'">разница '+nf(Math.abs(diff),2)+'%</span></div>';
+        '<span class="fx-hint '+(diff>=0?'fx-up':'fx-down')+'">écart '+nf(Math.abs(diff),2)+' %</span></div>';
     }
     var amt=parseNum(el('#fx-a1').value)||0, ilsSum=toILS(amt,c1);
     if(ilsSum>0){
-      html+='<div class="fx-cmp__i"><span class="fx-cmp__l">Потеря при наценке 2%</span>'+
+      html+='<div class="fx-cmp__i"><span class="fx-cmp__l">Perte avec une marge de 2 %</span>'+
         '<span class="fx-cmp__v fx-num">−'+money(ilsSum*0.02)+' ₪</span>'+
-        '<span class="fx-hint">типичная маржа банка</span></div>';
+        '<span class="fx-hint">marge typique d’une banque</span></div>';
     }
     box.innerHTML=html;
   }
@@ -730,7 +718,7 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
     });
   }
 
-  /* ═══ Корзина ═══ */
+  /* ═══ Panier ═══ */
   var basket=[];
   function loadBasket(){
     if(H.b){
@@ -745,17 +733,17 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
   function renderBasket(){
     var box=el('#fx-basket');
     if(!basket.length){
-      box.innerHTML='<p class="fx-hint">Корзина пуста. Добавьте валюту кнопкой ниже.</p>';
+      box.innerHTML='<p class="fx-hint">Le panier est vide. Ajoutez une devise avec le bouton ci-dessous.</p>';
     }else{
       var opts=['ILS'].concat(D.list);
       box.innerHTML=basket.map(function(r,i){
         return '<div class="fx-brow">'+
-          '<select data-bc="'+i+'" aria-label="Валюта">'+opts.map(function(c){
+          '<select data-bc="'+i+'" aria-label="Devise">'+opts.map(function(c){
             return '<option value="'+c+'"'+(c===r.cur?' selected':'')+'>'+flag(c)+' '+c+'</option>';
           }).join('')+'</select>'+
-          '<input type="text" inputmode="decimal" size="1" data-ba="'+i+'" value="'+r.amt+'" aria-label="Сумма">'+
+          '<input type="text" inputmode="decimal" size="1" data-ba="'+i+'" value="'+r.amt+'" aria-label="Montant">'+
           '<span class="fx-brow__ils" data-bi="'+i+'"></span>'+
-          '<button type="button" class="fx-brow__del" data-bd="'+i+'" aria-label="Удалить">×</button></div>';
+          '<button type="button" class="fx-brow__del" data-bd="'+i+'" aria-label="Supprimer">×</button></div>';
       }).join('');
       els('[data-bc]').forEach(function(s){s.addEventListener('change',function(){
         basket[+s.getAttribute('data-bc')].cur=s.value;calcBasket();persistBasket();});});
@@ -802,20 +790,20 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
         });
         if(!ok||old<=0)return;
         var diff=total-old, pc=diff/old*100;
-        el('#fx-bchange').innerHTML='<div class="fx-note">За последний месяц корзина '+
-          (diff>=0?'подорожала':'подешевела')+' на <strong class="'+(diff>=0?'fx-up':'fx-down')+
-          '">'+money(Math.abs(diff))+' ₪ ('+nf(Math.abs(pc),2)+'%)</strong> — только за счёт курсов.</div>';
+        el('#fx-bchange').innerHTML='<div class="fx-note">Sur le dernier mois, le panier '+
+          (diff>=0?'a gagné':'a perdu')+' <strong class="'+(diff>=0?'fx-up':'fx-down')+
+          '">'+money(Math.abs(diff))+' ₪ ('+nf(Math.abs(pc),2)+'% )</strong> — uniquement par l’effet des cours.</div>';
       }).catch(function(){});
   }
 
-  /* ═══ График ═══ */
+  /* ═══ Graphique ═══ */
   var chartCur=H.ch||'USD', chartPer=H.cp||'90';
 
   function renderChartControls(){
     el('#fx-chart-cur').innerHTML=['USD','EUR','GBP','CHF','JPY'].map(function(c){
       return '<button type="button" class="fx-chip" data-cc="'+c+'" aria-pressed="'+
         (c===chartCur)+'">'+flag(c)+' '+c+'</button>';}).join('');
-    el('#fx-chart-per').innerHTML=[['30','Месяц'],['90','3 месяца'],['365','Год']].map(function(p){
+    el('#fx-chart-per').innerHTML=[['30','Mois'],['90','3 mois'],['365','An']].map(function(p){
       return '<button type="button" class="fx-chip" data-cp="'+p[0]+'" aria-pressed="'+
         (p[0]===chartPer)+'">'+p[1]+'</button>';}).join('');
     els('[data-cc]').forEach(function(b){b.addEventListener('click',function(){
@@ -826,7 +814,7 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
 
   function drawChart(){
     var svg=el('#fx-chart');
-    svg.innerHTML='<text x="380" y="130" text-anchor="middle">Загружаем данные…</text>';
+    svg.innerHTML='<text x="380" y="130" text-anchor="middle">Chargement des données…</text>';
     var end=new Date(), start=new Date();
     start.setDate(start.getDate()-parseInt(chartPer,10));
     var url=API.history+start.toISOString().slice(0,10)+'..'+end.toISOString().slice(0,10)+
@@ -834,10 +822,10 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
     var h=readHash(); h.ch=chartCur; h.cp=chartPer; writeHash(h);
 
     fetchJSON(url,14000).then(function(j){
-      if(!j||!j.rates)throw new Error('нет данных');
+      if(!j||!j.rates)throw new Error('pas de données');
       var pts=Object.keys(j.rates).sort().map(function(d){
         var v=j.rates[d][chartCur]; return v?{d:d,v:1/v}:null;}).filter(Boolean);
-      if(pts.length<2)throw new Error('мало точек');
+      if(pts.length<2)throw new Error('trop peu de points');
 
       var vals=pts.map(function(p){return p.v;});
       var min=Math.min.apply(null,vals), max=Math.max.apply(null,vals);
@@ -871,15 +859,15 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
 
       var chg=(l.v-f.v)/f.v*100;
       el('#fx-chart-stats').innerHTML=
-        stat('Сейчас',rate(l.v)+' ₪')+
-        stat('Минимум',rate(Math.min.apply(null,vals))+' ₪')+
-        stat('Максимум',rate(Math.max.apply(null,vals))+' ₪')+
-        stat('Изменение','<span class="'+(chg>=0?'fx-up':'fx-down')+'">'+
+        stat('Actuel',rate(l.v)+' ₪')+
+        stat('Minimum',rate(Math.min.apply(null,vals))+' ₪')+
+        stat('Maximum',rate(Math.max.apply(null,vals))+' ₪')+
+        stat('Variation','<span class="'+(chg>=0?'fx-up':'fx-down')+'">'+
           (chg>=0?'+':'−')+nf(Math.abs(chg),2)+'%</span>');
-      el('#fx-chart-note').textContent='Курс 1 '+chartCur+' в шекелях. Данные Европейского '+
-        'центрального банка, публикуются по будням. Точек на графике: '+pts.length+'.';
+      el('#fx-chart-note').textContent='Cours de 1 '+chartCur+' en shekels. Données de la '+
+        'Banque centrale européenne, publiées les jours ouvrés. Points sur le graphique : '+pts.length+'.';
     }).catch(function(){
-      svg.innerHTML='<text x="380" y="130" text-anchor="middle">Не удалось загрузить историю</text>';
+      svg.innerHTML='<text x="380" y="130" text-anchor="middle">Impossible de charger l’historique</text>';
       el('#fx-chart-stats').innerHTML='';
     });
 
@@ -895,7 +883,7 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
       return '<tr><td><span class="fx-flag">'+flag(c)+'</span><strong>'+c+'</strong> '+
         '<span class="fx-hint">'+name(c)+'</span></td>'+
         '<td class="num">'+rate(v)+' ₪</td>'+
-        '<td class="num">'+(of?rate(of)+' ₪ <span class="fx-badge fx-badge--ok">офиц.</span>':'—')+'</td>'+
+        '<td class="num">'+(of?rate(of)+' ₪ <span class="fx-badge fx-badge--ok">offic.</span>':'—')+'</td>'+
         '<td class="num '+(d==null?'':(d>=0?'fx-up':'fx-down'))+'">'+
         (d==null?'—':(d>=0?'+':'−')+nf(Math.abs(d),2)+'%')+'</td></tr>';
     }).join('');
@@ -923,7 +911,7 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
   function copyLink(btn,label){
     var t=btn.textContent;
     if(navigator.clipboard)navigator.clipboard.writeText(location.href);
-    btn.textContent=label||'Скопировано ✓';
+    btn.textContent=label||'Copié ✓';
     setTimeout(function(){btn.textContent=t;},1800);
   }
 
@@ -936,7 +924,7 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
     });
   }
 
-  // Скелетоны, пока грузятся курсы
+  // Squelettes pendant le chargement des cours
   el('#fx-ticker').innerHTML=TICKER.map(function(){return '<div class="fx-skel"></div>';}).join('');
 
   loadRates().then(function(){
@@ -953,7 +941,7 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
     el('#fx-share').addEventListener('click',function(){copyLink(this);});
     el('#fx-bshare').addEventListener('click',function(){
       var h=readHash(); h.b=basket.map(function(r){return r.cur+':'+r.amt;}).join(',');
-      h.t='basket'; writeHash(h); copyLink(this,'Ссылка скопирована ✓');});
+      h.t='basket'; writeHash(h); copyLink(this,'Lien copié ✓');});
     el('#fx-tobasket').addEventListener('click',function(){
       basket.push({cur:el('#fx-c1').value,amt:parseNum(el('#fx-a1').value)});
       persistBasket(); renderBasket(); activate('basket');});
@@ -969,12 +957,12 @@ body{margin:0;overflow-x:hidden;max-width:100vw}
     },600000);
   }).catch(function(e){
     el('#fx-ticker').innerHTML='';
-    el('#fx-status').innerHTML='<div class="fx-warn"><strong>Не удалось загрузить курсы.</strong> '+
-      'Проверьте соединение и обновите страницу. ('+e.message+')</div>';
+    el('#fx-status').innerHTML='<div class="fx-warn"><strong>Impossible de charger les cours.</strong> '+
+      'Vérifiez votre connexion et rechargez la page. ('+e.message+')</div>';
   });
 })();
 </script>
-<nav id="rel-links" aria-label="Смежные калькуляторы" style="width:min(760px,calc(100% - 28px));margin:8px auto 0;padding:16px 0"><div style="font-size:12px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Читайте также</div><a href="tablo.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Экономика сегодня</a><a href="benzin.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Цена на бензин</a><a href="pikadon-vs-keren.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Пикадон или керен каспит</a><a href="slovar.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Словарь терминов</a></nav>
-<footer style="width:min(1200px,calc(100% - 28px));margin:26px auto 40px;color:#5a6660;font-size:11px;text-align:center;font-family:Inter,system-ui,sans-serif">Понятные финансы в Израиле · курс валют · не финансовая консультация · <a href="contact.html" style="color:#08775a;font-weight:800;text-decoration:none">Написать нам</a></footer>
+<nav id="rel-links" aria-label="Calculateurs similaires" style="width:min(760px,calc(100% - 28px));margin:8px auto 0;padding:16px 0"><div style="font-size:12px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">À lire aussi</div><a href="../tablo.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Économie du jour</a><a href="../benzin.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Prix de l’essence</a><a href="../pikadon-vs-keren.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Dépôt ou fonds capitalisant</a><a href="../slovar.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Glossaire</a></nav>
+<footer style="width:min(1200px,calc(100% - 28px));margin:26px auto 40px;color:#5a6660;font-size:11px;text-align:center;font-family:Inter,system-ui,sans-serif">Finances d’Israël, simplement · cours de change · ne constitue pas un conseil financier · <a href="../contact.html" style="color:#08775a;font-weight:800;text-decoration:none">Nous écrire</a></footer>
 </body>
 </html>
