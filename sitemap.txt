@@ -49,3 +49,4 @@ https://exodus611.github.io/finance-portal/fr/mas-rehisha.html
 https://exodus611.github.io/finance-portal/fr/auto.html
 https://exodus611.github.io/finance-portal/fr/kredit.html
 https://exodus611.github.io/finance-portal/fr/valuta.html
+https://exodus611.github.io/finance-portal/fr/tablo.html
