@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08775a">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://exodus611.github.io/finance-portal/fr/maanak-avoda.html">
+<link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/maanak-avoda.html">
+<link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/maanak-avoda.html">
+<link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/maanak-avoda.html">
+<title>Maanak Avoda (מענק עבודה) 2026 — calculateur d’impôt sur le revenu négatif</title>
+<meta name="description" content="Calculateur « Maanak Avoda » (מענק עבודה / מס הכנסה שלילי) 2026 : vérification du droit à une prime allant jusqu’à 16 000 ₪, dates exactes de dépôt, toutes les exceptions de la loi et dépôt en ligne sur gov.il.">
+<meta name="keywords" content="maanak avoda, מענק עבודה, impôt sur le revenu négatif, מס הכנסה שלילי, autorité fiscale israélienne, רשות המסים, prime de travail, מענק לפעוטות, טופס 106, טופס 126">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculateur Maanak Avoda (מענק עבודה) — impôt sur le revenu négatif en Israël">
+<meta property="og:description" content="Vérifiez votre droit à une prime de l’État allant jusqu’à 16 000 ₪ versée sur votre compte. Seuils officiels, dates exactes et dépôt en ligne pas à pas.">
+<meta property="og:url" content="https://exodus611.github.io/finance-portal/fr/maanak-avoda.html">
+<meta property="og:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
+<meta property="og:locale" content="fr_FR">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculateur Maanak Avoda (מענק עבודה) 2026",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "fr",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "ILS" },
+  "description": "Calculateur gratuit de vérification du droit et de calcul de la prime « Maanak Avoda » (impôt sur le revenu négatif), conformément à la loi de l’Autorité fiscale israélienne."
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Pourquoi l’État verse-t-il le Maanak Avoda (מענק עבודה) ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L’État verse cette subvention pour encourager la participation des citoyens au marché du travail et réduire la pauvreté des familles actives, faisant de la reprise d’emploi une option financièrement plus avantageuse que les prestations sociales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment le fisc vérifie-t-il les revenus (formulaires 106 et 126) ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les employeurs transmettent le rapport annuel 126 à l’Autorité fiscale au plus tard le 30 avril, et le salarié reçoit le formulaire 106 au plus tard le 31 mars. Le service fiscal recoupe automatiquement ces données en mai-juin ; les premiers versements commencent donc le 15 juillet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dans quels délais peut-on déposer la demande ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le dépôt pour l’année de travail 2025 est ouvert du 1ᵉʳ janvier 2026 au 31 décembre 2027. Le dépôt pour l’année de travail 2024 est ouvert jusqu’au 31 décembre 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quand l’argent arrive-t-il sur le compte bancaire ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Demande déposée jusqu’au 30 juin : prime versée en 4 fois (15 juillet, 15 octobre, 15 décembre, 15 février). Du 1ᵉʳ juillet au 30 septembre : en 3 fois. Jusqu’au 30 novembre : en 2 fois. Dépôt en décembre : montant intégral le 15 février."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --ink: #15251f;
+  --muted: #5a6660;
+  --paper: #f4f1e9;
+  --card: #fffdf8;
+  --line: #ddd6c7;
+  --green: #08775a;
+  --green2: #0d9671;
+  --gold: #c29b52;
+  --red: #b84b3e;
+  --blue: #30779a;
+  --purple: #7857b8;
+  --shadow: 0 16px 40px rgba(26,45,37,.08);
+  --r: 18px;
+}
+html { scroll-behavior: smooth; overflow-x: hidden; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  line-height: 1.45;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+button, input, select { font: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 2px;
+}
+.shell { width: min(760px, calc(100% - 28px)); margin: auto; }
+.top { padding: 18px 0; }
+.topbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; row-gap: 6px; }
+.logo { display: flex; align-items: center; gap: 11px; font-weight: 850; text-decoration: none; color: var(--ink); }
+.mark {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, var(--green2), var(--green) 70%);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  font-weight: 900;
+  box-shadow: 0 6px 18px rgba(8,119,90,.35);
+  border: 2px solid rgba(255,255,255,.55);
+}
+a.back { font-size: 12px; font-weight: 800; color: var(--green); text-decoration: none; white-space: nowrap; }
+
+.hero { padding: 24px 0 10px; text-align: center; }
+.eyebrow { font-size: 11.5px; color: var(--green); font-weight: 900; text-transform: uppercase; letter-spacing: .09em; }
+.hero h1 { font-size: clamp(23px, 4.8vw, 36px); line-height: 1.15; letter-spacing: -.03em; margin: 8px auto 10px; max-width: 660px; }
+.hero p { font-size: 14px; color: var(--muted); max-width: 600px; margin: 0 auto; line-height: 1.5; }
+
+.hebrew-term { font-family: "Segoe UI", Tahoma, Arial, sans-serif; font-weight: 700; }
+
+.pill-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 14px 0 4px; }
+.pill { background: #eaf6f0; color: var(--green); border-radius: 20px; padding: 5px 12px; font-size: 11.5px; font-weight: 700; border: 1px solid #b9d8ca; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 16px 0;
+  box-shadow: var(--shadow);
+}
+.title { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+.num {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: var(--green);
+  color: #fff;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+  flex: 0 0 30px;
+  font-size: 13px;
+}
+.title h2 { margin: 0 0 2px; font-size: 17px; }
+.title p { margin: 0; font-size: 12px; color: var(--muted); }
+
+.seg { display: flex; gap: 6px; margin-bottom: 14px; }
+.seg button {
+  flex: 1;
+  padding: 10px 6px;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 750;
+  color: var(--muted);
+  transition: all .15s;
+}
+.seg button.on { background: var(--green); color: #fff; border-color: var(--green); }
+
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+@media (max-width: 560px) {
+  .row2, .row3 { grid-template-columns: 1fr; }
+  .card { padding: 16px 14px; }
+}
+
+.f { margin-bottom: 14px; }
+.f label { display: block; font-size: 12px; font-weight: 800; color: var(--muted); margin-bottom: 5px; }
+.f input, .f select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 14px;
+  background: #fff;
+  color: var(--ink);
+}
+@media (max-width: 560px) { .f input, .f select { font-size: 16px; } }
+
+.checkbox-box {
+  background: #fdf6f5;
+  border: 1px solid #f0d0cb;
+  border-radius: 12px;
+  padding: 14px;
+  margin: 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.checkbox-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.checkbox-item input { margin-top: 3px; accent-color: var(--red); width: 17px; height: 17px; flex: 0 0 17px; }
+
+.primary-btn {
+  width: 100%;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 13px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background .15s;
+}
+.primary-btn:hover { background: var(--green2); }
+
+.res-box {
+  border-radius: var(--r);
+  padding: 18px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+.res-box.ok { background: #eaf6f0; border: 1px solid #b9d8ca; }
+.res-box.fail { background: #fdf2f2; border: 1px solid #f5c2c2; }
+
+.res-lbl { font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .03em; margin-bottom: 4px; }
+.res-sum { font-size: 2.2rem; font-weight: 900; letter-spacing: -1px; line-height: 1.1; }
+.res-sub { font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+
+.rrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  font-size: 13px;
+}
+.rrow:last-child { border-bottom: none; }
+.rrow.bold { font-weight: 800; }
+
+.table-wrap { overflow-x: auto; margin: 12px 0; }
+.cond-table { width: 100%; border-collapse: collapse; font-size: 12px; text-align: left; }
+.cond-table th { background: #eef4f1; padding: 8px 10px; font-weight: 800; border-bottom: 2px solid var(--line); color: var(--ink); }
+.cond-table td { padding: 8px 10px; border-bottom: 1px solid var(--line); color: var(--ink); }
+.cond-table tr:nth-child(even) td { background: rgba(0,0,0,.02); }
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0;
+}
+@media (max-width: 560px) {
+  .timeline-grid { grid-template-columns: 1fr; }
+}
+
+.t-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+}
+.t-head { font-size: 12.5px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+.t-dates { font-size: 11.5px; color: var(--green); font-weight: 800; margin-bottom: 4px; }
+.t-desc { font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+details summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-weight: 750; font-size: 13.5px; }
+details summary::-webkit-details-marker { display: none; }
+.acc-body { font-size: 12.5px; color: var(--muted); line-height: 1.6; padding-top: 10px; border-top: 1px solid var(--line); margin-top: 10px; }
+</style>
+</head>
+
+<body>
+<div class="shell">
+  <header class="top">
+    <div class="topbar">
+      <a class="logo" href="../index.html">
+        <div class="mark">₪</div>
+        <div>
+          <div style="font-size:14px;font-weight:900;line-height:1.2">Des finances claires</div>
+          <div style="font-size:11px;color:var(--muted)">Israël · 2026</div>
+        </div>
+      </a>
+      <a class="back" href="../index.html">← Tous les calculateurs</a>
+      <span style="display:inline-flex;border:1.5px solid var(--green,#08775a);border-radius:11px;overflow:hidden;font-size:13px;font-weight:800;line-height:1;white-space:nowrap;vertical-align:middle"><a href="../maanak-avoda.html" style="padding:8px 13px;text-decoration:none;color:var(--green,#08775a);background:#fff" aria-label="Русская версия">RU</a><b style="padding:8px 13px;color:#fff;background:var(--green,#08775a)">FR</b></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="eyebrow">AUTORITÉ FISCALE · רשות המסים</span>
+      <h1>Maanak Avoda (<span lang="he" dir="rtl" class="hebrew-term">מענק עבודה</span>) — calculateur de la prime</h1>
+      <p>L’impôt sur le revenu négatif (<span lang="he" dir="rtl" class="hebrew-term">מס הכנסה שלילי</span>) : une prime de l’État versée directement aux résidents d’Israël qui travaillent avec un revenu modeste. Jusqu’à <b>16 000 ₪ par an</b> par virement direct sur le compte bancaire.</p>
+      <div class="pill-row">
+        <span class="pill">💵 Jusqu’à 16 000 ₪ par an</span>
+        <span class="pill">👩 Femmes : +150 %</span>
+        <span class="pill">👶 Prime tout-petits (<span lang="he" dir="rtl">מענק לפעוטות</span>)</span>
+        <span class="pill">💻 Dépôt en ligne en 3 minutes</span>
+      </div>
+    </section>
+
+    <!-- THÉORIE : POURQUOI L’ÉTAT VERSE-T-IL CET ARGENT ? -->
+    <section class="card" style="background:#f9fbf9;border-color:#b9d8ca">
+      <div class="title" style="margin-bottom:8px">
+        <div class="num" style="background:#0d9671">?</div>
+        <div>
+          <h2>Pourquoi l’État verse-t-il cet argent ?</h2>
+          <p>La logique économique de la loi sur l’impôt sur le revenu négatif</p>
+        </div>
+      </div>
+      <div style="font-size:12.5px;color:var(--ink);line-height:1.6">
+        En 2007, la Knesset a adopté une loi spécifique (<span lang="he" dir="rtl">חוק להגדלת שיעור ההשתתפות בכוח העבודה ולצמצום פערים</span>). L’objectif principal de l’État : <b>encourager les gens à travailler plutôt qu’à vivre des prestations sociales</b>.<br>
+        Si une personne prend un poste à temps partiel ou mal rémunéré, l’État lui verse directement une prime sur son compte bancaire. Reprendre un travail devient ainsi bien plus avantageux pour le budget familial que de vivre uniquement de l’allocation de subsistance (<span lang="he" dir="rtl">הבטחת הכנסה</span>).
+      </div>
+    </section>
+
+    <!-- ENCART : À SAVOIR -->
+    <section class="card" style="background:linear-gradient(135deg,#fffbf0,#fbf3d5);border:2px solid #e2c068;border-radius:18px;padding:16px 18px;box-shadow:0 8px 24px rgba(194,155,82,.15)">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <span style="font-size:22px">⚠️</span>
+        <h2 style="margin:0;font-size:15px;color:#784f08;font-weight:900;text-transform:uppercase;letter-spacing:.03em">À savoir : 4 faits que beaucoup ignorent</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+        <div style="background:rgba(255,255,255,.8);border-radius:10px;padding:10px 12px;border:1px solid rgba(194,155,82,.35)">
+          <b style="font-size:12px;color:#784f08;display:block;margin-bottom:3px">💰 Ce n’est pas une prestation d’assistance</b>
+          <p style="margin:0;font-size:11px;color:var(--ink);line-height:1.4">C’est une prime de l’État récompensant le fait que vous <b>travaillez</b>. Près de 300 000 Israéliens perdent chaque année des milliers de shekels, simplement parce qu’ils ne vérifient pas leurs droits.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.8);border-radius:10px;padding:10px 12px;border:1px solid rgba(194,155,82,.35)">
+          <b style="font-size:12px;color:#784f08;display:block;margin-bottom:3px">🚫 Méfiance envers les intermédiaires</b>
+          <p style="margin:0;font-size:11px;color:var(--ink);line-height:1.4">Ne laissez pas 20 à 30 % de commission aux « intermédiaires ». Le dépôt sur le site officiel de la <span lang="he" dir="rtl">רשות המסים</span> est totalement gratuit et prend exactement 3 minutes.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.8);border-radius:10px;padding:10px 12px;border:1px solid rgba(194,155,82,.35)">
+          <b style="font-size:12px;color:#784f08;display:block;margin-bottom:3px">⏳ Les sommes de 2024 expirent</b>
+          <p style="margin:0;font-size:11px;color:var(--ink);line-height:1.4">La loi accorde exactement 2 ans. Sans dépôt pour l’année de travail 2024 avant le <b>31 décembre 2026</b>, cet argent est définitivement perdu au profit de l’État.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.8);border-radius:10px;padding:10px 12px;border:1px solid rgba(194,155,82,.35)">
+          <b style="font-size:12px;color:#784f08;display:block;margin-bottom:3px">👥 Un formulaire distinct par époux</b>
+          <p style="margin:0;font-size:11px;color:var(--ink);line-height:1.4">Chaque époux actif dépose <b>sa propre demande</b> sous son teoudat zeout. Les revenus ne s’additionnent pas : si les deux travaillent, chacun perçoit sa prime !</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABLEAU RÉCAPITULATIF DES SEUILS (CONTENU SEO STATIQUE) -->
+    <section class="card">
+      <div class="title">
+        <div class="num">1</div>
+        <div>
+          <h2>Seuils de revenu officiels selon la loi israélienne</h2>
+          <p>Revenu brut mensuel moyen (total des revenus de l’année ÷ nombre de mois travaillés)</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="cond-table">
+          <thead>
+            <tr>
+              <th>Catégorie du demandeur</th>
+              <th>Fourchette de revenu mensuel</th>
+              <th>Prime indicative sur l’année</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Parents (1 à 2 enfants de moins de 19 ans)</b> ou <b>55 ans et plus sans enfant</b></td>
+              <td>de <b>2 450 ₪</b> à <b>7 289 ₪</b></td>
+              <td>jusqu’à <b>5 760 ₪</b> (femmes : jusqu’à <b>8 640 ₪</b>)</td>
+            </tr>
+            <tr>
+              <td><b>Parents (3 enfants et plus, moins de 19 ans)</b></td>
+              <td>de <b>2 450 ₪</b> à <b>8 020 ₪</b></td>
+              <td>jusqu’à <b>6 480 ₪</b> (femmes : jusqu’à <b>9 720 ₪</b>)</td>
+            </tr>
+            <tr>
+              <td><b>Parent isolé (<span lang="he" dir="rtl">הורה יחיד</span>)</b> avec 1 à 2 enfants</td>
+              <td>de <b>1 510 ₪</b> à <b>11 190 ₪</b></td>
+              <td>jusqu’à <b>9 840 ₪</b></td>
+            </tr>
+            <tr>
+              <td><b>Parent isolé (<span lang="he" dir="rtl">הורה יחיד</span>)</b> avec 3 enfants et plus</td>
+              <td>de <b>1 510 ₪</b> à <b>13 660 ₪</b></td>
+              <td>jusqu’à <b>13 800 ₪</b> (+ tout-petits : jusqu’à 16 000 ₪)</td>
+            </tr>
+            <tr>
+              <td><b>Femmes de 60 à 65 ans</b> (âge de retraite transitoire)</td>
+              <td>de <b>920 ₪</b> à <b>8 930 ₪</b></td>
+              <td>jusqu’à <b>7 800 ₪</b></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:11.5px;color:var(--muted);margin:8px 0 0;line-height:1.4">
+        * La prime est maximale au cœur de la fourchette (salaire de 4 500 à 5 500 ₪) et diminue vers les extrêmes.
+      </p>
+    </section>
+
+    <!-- CALCULATEUR INTERACTIF AVEC TOUS LES PIÈGES -->
+    <section class="card">
+      <div class="title">
+        <div class="num">2</div>
+        <div>
+          <h2>Vérification du droit et calcul personnalisé</h2>
+          <p>Choisissez l’année et saisissez vos données de revenus réelles</p>
+        </div>
+      </div>
+
+      <div class="f">
+        <label>Année fiscale à vérifier (<span lang="he" dir="rtl">שנת מס</span>)</label>
+        <div class="seg" id="seg-year">
+          <button type="button" class="on" data-v="2025">Année 2025 (dépôt : 01.01.2026 – 31.12.2027)</button>
+          <button type="button" data-v="2024">Année 2024 (dépôt : 01.01.2025 – 31.12.2026)</button>
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="f">
+          <label>Sexe du demandeur</label>
+          <div class="seg" id="seg-gender">
+            <button type="button" class="on" data-v="female">Femme (<span lang="he" dir="rtl">אישה</span> · +150 %)</button>
+            <button type="button" data-v="male">Homme (<span lang="he" dir="rtl">גבר</span>)</button>
+          </div>
+        </div>
+        <div class="f">
+          <label>Situation familiale</label>
+          <div class="seg" id="seg-status" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:6px">
+            <button type="button" class="on" data-v="couple">Marié(e) / Famille</button>
+            <button type="button" data-v="single_parent">Parent isolé (<span lang="he" dir="rtl">הורה יחיד</span>)</button>
+            <button type="button" data-v="single_no_kids">Célibataire sans enfant (<span lang="he" dir="rtl">יחיד ללא ילדים</span>)</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="info-no-kids" style="display:none;background:#fef7e7;border:1px solid #f6d89b;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:12px;color:#784f08;line-height:1.45">
+        <b>ℹ️ Règle pour les célibataires sans enfant (<span lang="he" dir="rtl">יחיד ללא ילדים</span>) :</b><br>
+        Selon la loi israélienne, les personnes sans enfant mineur n’ont droit au « Maanak Avoda » qu’à partir de <b>55 ans</b>. Avant 55 ans, la prime n’est possible qu’avec au moins 1 enfant de moins de 19 ans.
+      </div>
+
+      <div class="row3">
+        <div class="f">
+          <label>Âge du demandeur (ans)</label>
+          <input type="number" id="in-age" value="38" min="18" max="99">
+        </div>
+        <div class="f" id="wrap-kids">
+          <label>Enfants de moins de 19 ans</label>
+          <input type="number" id="in-kids" value="2" min="0" max="15">
+        </div>
+        <div class="f" id="wrap-toddlers">
+          <label>Dont tout-petits de moins de 3 ans</label>
+          <input type="number" id="in-toddlers" value="1" min="0" max="5">
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="f">
+          <label>Votre revenu brut mensuel moyen (₪)</label>
+          <input type="number" id="in-wage" value="5200" step="100" placeholder="Salaire ou revenu d’activité indépendante">
+        </div>
+        <div class="f">
+          <label>Mois travaillés cette année</label>
+          <input type="number" id="in-months" value="12" min="1" max="12">
+        </div>
+      </div>
+
+      <div id="wrap-spouse-info" style="background:#f0f9f5;border:1px solid #b9d8ca;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:12px;color:var(--ink);line-height:1.45">
+        <b style="color:var(--green)">👥 Règle pour les conjoints (<span lang="he" dir="rtl">בני זוג</span>) :</b><br>
+        Chaque conjoint actif calcule la prime <b>sur son propre revenu</b> et dépose <b>sa propre demande</b> depuis son espace personnel, sous son teoudat zeout. Les revenus des conjoints <u>ne s’additionnent pas</u> : si les deux travaillent et remplissent les critères, la famille perçoit <b>deux primes</b> ! Dans le formulaire, les données du conjoint servent uniquement à vérifier l’absence de second bien immobilier (>50 %) et à recouper le nombre d’enfants.
+      </div>
+
+      <!-- PIÈGES (EXCLUSIONS LÉGALES) -->
+      <div class="checkbox-box">
+        <div style="font-size:12px;font-weight:800;color:var(--red);display:flex;align-items:center;gap:6px">
+          <span>⚠️</span> Restrictions légales (à vérifier avant le dépôt) :
+        </div>
+        <label class="checkbox-item">
+          <input type="checkbox" id="chk-property">
+          <span><b>Second bien immobilier :</b> moi-même ou mon conjoint détenons plus de 50 % de droits sur <u>n’importe quel autre bien immobilier</u>, hormis la résidence unique (second appartement, local commercial, boutique, terrain, part héritée).</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" id="chk-relative">
+          <span><b>Emploi chez un proche :</b> je suis salarié(e) d’un proche (conjoint, parents, enfants) ou d’une société leur appartenant (un tel revenu ne donne droit à aucune prime selon la loi).</span>
+        </label>
+      </div>
+
+      <button type="button" class="primary-btn" id="btn-calc">Vérifier mes droits et calculer →</button>
+    </section>
+
+    <!-- RÉSULTAT DU CALCUL -->
+    <section class="card" id="res-card" style="display:none">
+      <div class="title">
+        <div class="num">3</div>
+        <div>
+          <h2>Résultat de la vérification</h2>
+          <p id="res-status-text"></p>
+        </div>
+      </div>
+
+      <div id="res-box-wrapper"></div>
+      <div id="res-breakdown"></div>
+
+      <div id="maanak-share" style="display:flex;justify-content:center;gap:6px;margin-top:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:12px">
+        <button type="button" onclick="shareMaanak('wa')" style="display:inline-flex;align-items:center;gap:4px;background:#25D366;color:#fff;border:none;border-radius:14px;padding:6px 12px;font-size:11.5px;font-weight:750;cursor:pointer;box-shadow:0 2px 6px rgba(37,211,102,.25)">💬 WhatsApp</button>
+        <button type="button" onclick="shareMaanak('tg')" style="display:inline-flex;align-items:center;gap:4px;background:#0088cc;color:#fff;border:none;border-radius:14px;padding:6px 12px;font-size:11.5px;font-weight:750;cursor:pointer;box-shadow:0 2px 6px rgba(0,136,204,.25)">✈️ Telegram</button>
+        <button type="button" onclick="shareMaanak('copy')" id="copyBtnMaanak" style="display:inline-flex;align-items:center;gap:4px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:6px 12px;font-size:11.5px;font-weight:750;cursor:pointer">📋 Copier</button>
+      </div>
+
+      <div style="margin-top:14px;padding:14px;background:#eef4f1;border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div style="font-size:12px;color:var(--ink)">
+          <b>Comment recevoir l’argent :</b> déposez une demande gratuite en ligne sur le site de l’Autorité fiscale (<span lang="he" dir="rtl">רשות המסים</span>), sans intermédiaires ni commissions.
+        </div>
+        <a href="https://www.gov.il/he/service/submitting-an-online-claim-for-job-grant" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;background:var(--green);color:#fff;text-decoration:none;font-size:12px;font-weight:800;padding:8px 14px;border-radius:10px;white-space:nowrap">
+          Déposer la demande sur gov.il ↗
+        </a>
+      </div>
+      <p style="font-size:11px;color:var(--muted);margin:10px 0 0;line-height:1.4">
+        * Calcul indicatif fondé sur les critères de la loi sur l’impôt sur le revenu négatif. La décision finale appartient à l’Autorité fiscale lors du recoupement automatique des rapports annuels (formulaires 106 / 1301).
+      </p>
+    </section>
+
+    <!-- COMMENT LE FISC VÉRIFIE LES REVENUS : TOFESS 106 ET 126 -->
+    <section class="card">
+      <div class="title">
+        <div class="num">4</div>
+        <div>
+          <h2>Comment le fisc vérifie les rapports : formulaires 106, 126 et 1301</h2>
+          <p>Pourquoi les versements ne commencent qu’en juillet, et pas dès janvier</p>
+        </div>
+      </div>
+
+      <div style="font-size:12.5px;color:var(--ink);line-height:1.6;margin-bottom:12px">
+        En Israël, l’imposition est calculée <b>sur l’année civile complète (du 1ᵉʳ janvier au 31 décembre)</b>. Le recoupement des données se déroule donc ainsi :
+      </div>
+
+      <div class="timeline-grid">
+        <div class="t-card">
+          <div class="t-head">1. Rapport annuel du salarié (טופס 106)</div>
+          <div class="t-dates">Remis jusqu’au 31 mars</div>
+          <div class="t-desc">
+            L’employeur doit établir et remettre au salarié le rapport annuel récapitulant tous ses revenus (<span lang="he" dir="rtl">טופס 106</span>) jusqu’au 31 mars de l’année suivante.
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-head">2. Rapport de l’employeur au fisc (טופס 126)</div>
+          <div class="t-dates">Transmis jusqu’au 30 avril</div>
+          <div class="t-desc">
+            L’employeur transmet de façon centralisée le rapport numérique de tous ses salariés (<span lang="he" dir="rtl">טופס 126</span>) à l’Autorité fiscale (<span lang="he" dir="rtl">רשות המסים</span>).
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-head">3. Recoupement automatique des bases de données</div>
+          <div class="t-dates">Mai – juin</div>
+          <div class="t-desc">
+            Le service fiscal recoupe automatiquement votre demande avec les rapports 126 de tous vos employeurs et calcule le montant exact de la prime.
+          </div>
+        </div>
+
+        <div class="t-card" style="background:#eaf6f0;border-color:#b9d8ca">
+          <div class="t-head" style="color:#08775a">4. Premier virement sur le compte bancaire</div>
+          <div class="t-dates">15 juillet</div>
+          <div class="t-desc">
+            C’est pourquoi le premier versement de l’année écoulée est payé le <b>15 juillet</b> — une fois que tous les employeurs du pays ont remis leurs rapports annuels.
+          </div>
+        </div>
+      </div>
+      <p style="font-size:11.5px;color:var(--muted);margin:8px 0 0;line-height:1.4">
+        * <b>Important :</b> la demande en ligne sur <a href="https://www.gov.il/he/service/submitting-an-online-claim-for-job-grant" target="_blank" rel="noopener" style="color:var(--green);font-weight:750">gov.il</a> peut être déposée dès janvier. Elle restera enregistrée dans le système et sera calculée automatiquement dès que l’employeur aura transmis son rapport.
+      </p>
+    </section>
+
+    <!-- DÉLAIS EXACTS DE DÉPÔT ET CALENDRIER DES VERSEMENTS -->
+    <section class="card">
+      <div class="title">
+        <div class="num">5</div>
+        <div>
+          <h2>Délais exacts de dépôt et calendrier des versements</h2>
+          <p>Calendrier officiel de l’Autorité fiscale israélienne (<span lang="he" dir="rtl">רשות המסים</span>)</p>
+        </div>
+      </div>
+
+      <div style="background:#f4f1e9;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:12px">
+        <b style="font-size:13px;color:var(--ink);display:block;margin-bottom:6px">📅 Délais calendaires de dépôt des demandes :</b>
+        <div style="font-size:12px;color:var(--ink);line-height:1.6">
+          • <b>Pour l’année de travail 2025 :</b> dépôt ouvert du <b>01.01.2026</b> au <b>31.12.2027</b> (2 années complètes).<br>
+          • <b>Pour l’année de travail 2024 :</b> dépôt ouvert du <b>01.01.2025</b> au <b>31.12.2026</b> (déposez avant la fin de 2026 !).
+        </div>
+      </div>
+
+      <div style="font-size:12.5px;font-weight:800;color:var(--ink);margin:14px 0 6px">
+        💳 Quand l’argent arrive sur le compte (selon la date du dépôt en ligne) :
+      </div>
+
+      <div class="timeline-grid">
+        <div class="t-card">
+          <div class="t-head">Fenêtre 1 : dépôt jusqu’au 30 juin</div>
+          <div class="t-dates">4 versements égaux</div>
+          <div class="t-desc">
+            1ᵉʳ versement : <b>15 juillet</b><br>
+            2ᵉ versement : <b>15 octobre</b><br>
+            3ᵉ versement : <b>15 décembre</b><br>
+            4ᵉ versement : <b>15 février</b> (année suivante)
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-head">Fenêtre 2 : dépôt du 1ᵉʳ juillet au 30 septembre</div>
+          <div class="t-dates">3 versements égaux</div>
+          <div class="t-desc">
+            1ᵉʳ versement : <b>15 octobre</b><br>
+            2ᵉ versement : <b>15 décembre</b><br>
+            3ᵉ versement : <b>15 février</b>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-head">Fenêtre 3 : dépôt du 1ᵉʳ octobre au 30 novembre</div>
+          <div class="t-dates">2 versements égaux</div>
+          <div class="t-desc">
+            1ᵉʳ versement : <b>15 décembre</b><br>
+            2ᵉ versement : <b>15 février</b>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-head">Fenêtre 4 : dépôt en décembre (1ᵉʳ – 31 décembre)</div>
+          <div class="t-dates">1 versement unique</div>
+          <div class="t-desc">
+            Le montant intégral est versé en une fois le <b>15 février</b> de l’année suivante.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DÉMARCHE : DÉPÔT EN LIGNE PAS À PAS -->
+    <section class="card">
+      <div class="title">
+        <div class="num">6</div>
+        <div>
+          <h2>Comment déposer la demande en ligne en 3 minutes</h2>
+          <p>Gratuitement, sur le portail officiel, sans intermédiaires</p>
+        </div>
+      </div>
+
+      <div style="font-size:12.5px;color:var(--ink);line-height:1.6">
+        1. Rendez-vous sur le portail officiel de l’Autorité fiscale : <a href="https://www.gov.il/he/service/submitting-an-online-claim-for-job-grant" target="_blank" rel="noopener" style="color:var(--green);font-weight:800">gov.il/he/service/submitting-an-online-claim-for-job-grant</a>.<br>
+        2. Connectez-vous via le système national d’identification (<span lang="he" dir="rtl">מערכת ההזדהות הלאומית</span>) avec votre numéro de pièce d’identité (<span lang="he" dir="rtl">תעודת זהות</span>).<br>
+        3. Indiquez les coordonnées de votre compte bancaire (banque, succursale, numéro de compte).<br>
+        4. <b>Salariés :</b> aucune attestation ni fiche de salaire (<span lang="he" dir="rtl">תלושי שכר</span>) n’est <u>à joindre</u> — le service fiscal vérifie les revenus automatiquement grâce aux rapports 106 / 126 des employeurs.<br>
+        5. <b>Travailleurs indépendants (<span lang="he" dir="rtl">עצמאים</span>) :</b> avant de déposer, vérifiez avoir remis le rapport annuel (<span lang="he" dir="rtl">דוח שנתי - טופס 1301</span>) pour l’année concernée.<br>
+        6. Validez l’envoi. Le suivi du traitement est accessible depuis votre espace personnel.
+      </div>
+    </section>
+
+    <!-- ACCORDÉONS : RÉPONSES ET NUANCES -->
+    <details class="card">
+      <summary>
+        <span>⚠️ Pourquoi refuse-t-on à ceux qui détiennent une part dans l’appartement des parents ?</span>
+        <span style="color:var(--green)">▸</span>
+      </summary>
+      <div class="acc-body">
+        C’est le motif de refus le plus fréquent. L’article 3 de la loi est clair : si le demandeur ou son conjoint détient <b>plus de 50 % de tout bien immobilier</b>, hormis la résidence unique, le droit à la prime est intégralement annulé (0 ₪). Sont concernées les parts héritées, les entrepôts commerciaux, les boutiques et les terrains à bâtir.
+      </div>
+    </details>
+
+    <details class="card">
+      <summary>
+        <span>👶 Qu’est-ce que la prime pour tout-petits (מענק לפעוטות) ?</span>
+        <span style="color:var(--green)">▸</span>
+      </summary>
+      <div class="acc-body">
+        C’est une subvention de l’État pour les enfants d’âge crèche. Les parents actifs d’enfants <b>de moins de 3 ans</b> touchent un supplément au « Maanak Avoda » pouvant aller <b>jusqu’à 470 à 940 ₪ par mois</b> par enfant. Notre calculateur en tient automatiquement compte.
+      </div>
+    </details>
+  </main>
+</div>
+
+<script>
+var state = {
+  year: '2025',
+  gender: 'female',
+  status: 'couple'
+};
+
+function updateStatusUI() {
+  var wrapSpouse = document.getElementById('wrap-spouse-info');
+  var infoNoKids = document.getElementById('info-no-kids');
+  var wrapKids = document.getElementById('wrap-kids');
+  var wrapToddlers = document.getElementById('wrap-toddlers');
+  var inKids = document.getElementById('in-kids');
+  var inToddlers = document.getElementById('in-toddlers');
+
+  if (state.status === 'single_no_kids') {
+    if (wrapSpouse) wrapSpouse.style.display = 'none';
+    if (infoNoKids) infoNoKids.style.display = 'block';
+    if (wrapKids) wrapKids.style.opacity = '0.4';
+    if (wrapToddlers) wrapToddlers.style.opacity = '0.4';
+    if (inKids) { inKids.value = 0; inKids.disabled = true; }
+    if (inToddlers) { inToddlers.value = 0; inToddlers.disabled = true; }
+  } else if (state.status === 'single_parent') {
+    if (wrapSpouse) wrapSpouse.style.display = 'none';
+    if (infoNoKids) infoNoKids.style.display = 'none';
+    if (wrapKids) wrapKids.style.opacity = '1';
+    if (wrapToddlers) wrapToddlers.style.opacity = '1';
+    if (inKids) { inKids.disabled = false; if (+inKids.value === 0) inKids.value = 1; }
+    if (inToddlers) { inToddlers.disabled = false; }
+  } else {
+    // couple
+    if (wrapSpouse) wrapSpouse.style.display = 'block';
+    if (infoNoKids) infoNoKids.style.display = 'none';
+    if (wrapKids) wrapKids.style.opacity = '1';
+    if (wrapToddlers) wrapToddlers.style.opacity = '1';
+    if (inKids) { inKids.disabled = false; }
+    if (inToddlers) { inToddlers.disabled = false; }
+  }
+}
+
+function bindSeg(id, key) {
+  var btns = document.querySelectorAll('#' + id + ' button');
+  btns.forEach(function(b) {
+    b.addEventListener('click', function() {
+      btns.forEach(function(x) { x.classList.remove('on'); });
+      b.classList.add('on');
+      state[key] = b.getAttribute('data-v');
+      if (key === 'status') {
+        updateStatusUI();
+      }
+    });
+  });
+}
+bindSeg('seg-year', 'year');
+bindSeg('seg-gender', 'gender');
+bindSeg('seg-status', 'status');
+
+function money(n) {
+  return Math.round(n).toLocaleString('fr-FR') + ' ₪';
+}
+
+function calculate() {
+  var age = +document.getElementById('in-age').value || 0;
+  var kids = +document.getElementById('in-kids').value || 0;
+  var toddlers = Math.min(kids, +document.getElementById('in-toddlers').value || 0);
+  var wage = +document.getElementById('in-wage').value || 0;
+  var months = Math.min(12, Math.max(1, +document.getElementById('in-months').value || 12));
+  
+  var hasExtraProp = document.getElementById('chk-property').checked;
+  var worksForRel = document.getElementById('chk-relative').checked;
+  var isWoman = (state.gender === 'female');
+  var isSingle = (state.status === 'single');
+
+  var blockers = [];
+
+  // Absolute blockers
+  if (hasExtraProp) {
+    blockers.push('Détenir plus de 50 % d’un bien immobilier supplémentaire (second appartement, terrain, boutique, part héritée) annule le droit à la prime selon la loi.');
+  }
+  if (worksForRel) {
+    blockers.push('Un salaire versé par des proches parents (conjoint, parents, enfants) est exclu du calcul par la loi.');
+  }
+
+  var isWoman6065 = (isWoman && age >= 60 && age <= 65);
+  var isSingleNoKids = (state.status === 'single_no_kids');
+  var isSingleParent = (state.status === 'single_parent');
+
+  if (isSingleNoKids) {
+    kids = 0;
+    toddlers = 0;
+    if (age < 55) {
+      blockers.push('Selon la loi israélienne (סעיף 2 לחוק), les personnes sans enfant de moins de 19 ans n’ont droit au « Maanak Avoda » qu’à partir de 55 ans. Avant 55 ans, aucune prime sans enfant.');
+    }
+  } else if (isSingleParent) {
+    if (kids < 1) {
+      blockers.push('Pour le statut « parent isolé » (הורה יחיד), indiquez au moins un enfant de moins de 19 ans.');
+    }
+    if (age < 21) {
+      blockers.push('L’âge minimal du demandeur avec enfants est de 21 ans.');
+    }
+  } else {
+    // couple
+    if (kids === 0) {
+      if (age < 55) {
+        blockers.push('Pour les personnes sans enfant mineur, le droit à la prime commence strictement à 55 ans. Avant 55 ans, il faut au moins 1 enfant de moins de 19 ans.');
+      }
+    } else {
+      if (age < 21) {
+        blockers.push('L’âge minimal du demandeur avec enfants est de 21 ans.');
+      }
+    }
+  }
+
+  // Bracket limits
+  var minIncome = 2450;
+  var maxIncome = 7289;
+  var peakLow = 4300;
+  var peakHigh = 5300;
+  var maxMonthlyBase = 480;
+
+  if (isSingleParent) {
+    minIncome = 1510;
+    if (kids >= 3) {
+      maxIncome = 13660;
+      peakLow = 4800;
+      peakHigh = 6200;
+      maxMonthlyBase = 1100;
+    } else {
+      maxIncome = 11190;
+      peakLow = 4500;
+      peakHigh = 5800;
+      maxMonthlyBase = 820;
+    }
+  } else if (isWoman6065) {
+    minIncome = 920;
+    maxIncome = 8930;
+    peakLow = 3800;
+    peakHigh = 5200;
+    maxMonthlyBase = 650;
+  } else if (isSingleNoKids || kids === 0) {
+    // Age 55+ without kids
+    minIncome = 2450;
+    maxIncome = 6850;
+    peakLow = 4200;
+    peakHigh = 5200;
+    maxMonthlyBase = 480;
+  } else if (kids >= 3) {
+    minIncome = 2450;
+    maxIncome = 8020;
+    peakLow = 4400;
+    peakHigh = 5500;
+    maxMonthlyBase = 540;
+  }
+
+  if (wage < minIncome) {
+    blockers.push('Le revenu mensuel moyen (' + money(wage) + ') est inférieur au seuil minimal de votre catégorie (' + money(minIncome) + ').');
+  } else if (wage > maxIncome) {
+    blockers.push('Le revenu mensuel moyen (' + money(wage) + ') dépasse le seuil maximal (' + money(maxIncome) + ').');
+  }
+
+  var resBox = document.getElementById('res-box-wrapper');
+  var resBd = document.getElementById('res-breakdown');
+  var resCard = document.getElementById('res-card');
+  var resSub = document.getElementById('res-status-text');
+
+  resCard.style.display = 'block';
+
+  if (blockers.length > 0) {
+    resSub.textContent = 'Selon les critères saisis, la prime n’est pas due';
+    resBox.innerHTML = '<div class="res-box fail">' +
+      '<div class="res-lbl" style="color:var(--red)">Prime refusée</div>' +
+      '<div class="res-sum" style="color:var(--red)">0 ₪</div>' +
+      '<div class="res-sub">Non-conformité aux critères de la loi détectée</div>' +
+      '</div>';
+
+    var bHtml = '<div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px">';
+    bHtml += '<b style="color:var(--red);font-size:13px;display:block;margin-bottom:8px">Motifs du refus :</b>';
+    blockers.forEach(function(b) {
+      bHtml += '<div style="font-size:12px;color:var(--ink);margin-bottom:6px;display:flex;gap:6px"><span>❌</span><span>' + b + '</span></div>';
+    });
+    bHtml += '</div>';
+    resBd.innerHTML = bHtml;
+    resCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
+
+  // Calculation curve
+  var baseMonthly = 0;
+  if (wage <= peakLow) {
+    var rate = (wage - minIncome) / (peakLow - minIncome);
+    baseMonthly = maxMonthlyBase * rate;
+  } else if (wage <= peakHigh) {
+    baseMonthly = maxMonthlyBase;
+  } else {
+    var rate = (maxIncome - wage) / (maxIncome - peakHigh);
+    baseMonthly = maxMonthlyBase * rate;
+  }
+
+  if (isWoman) {
+    baseMonthly *= 1.5;
+  }
+
+  var toddlerMonthly = 0;
+  if (toddlers > 0) {
+    toddlerMonthly = Math.min(toddlers * 470, 940);
+  }
+
+  var totalMonthly = baseMonthly + toddlerMonthly;
+  var spouseWarning = '';
+
+  var totalAnnual = Math.round(totalMonthly * months);
+  var baseAnnual = Math.round(baseMonthly * months);
+  var toddlerAnnual = Math.round(toddlerMonthly * months);
+
+  resSub.textContent = 'Prime due pour l’année fiscale ' + state.year;
+  resBox.innerHTML = '<div class="res-box ok">' +
+    '<div class="res-lbl" style="color:var(--green)">Montant indicatif de la prime</div>' +
+    '<div class="res-sum" style="color:var(--green)">' + money(totalAnnual) + '</div>' +
+    '<div class="res-sub">Environ ' + money(totalMonthly) + ' par mois pour ' + months + ' mois travaillés</div>' +
+    '</div>';
+
+  var bdHtml = '<div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px">';
+  bdHtml += '<div class="rrow"><span>Prime de base selon le revenu :</span><b>' + money(baseAnnual) + ' (' + money(baseMonthly) + '/mois)</b></div>';
+  if (isWoman) {
+    bdHtml += '<div class="rrow" style="color:var(--green)"><span>Majoration pour femme active (+150 %) :</span><b>Incluse (+50 %)</b></div>';
+  }
+  if (toddlerAnnual > 0) {
+    bdHtml += '<div class="rrow" style="color:var(--green)"><span>Subvention crèche (« Maanak péoutot » / <span lang="he" dir="rtl">מענק לפעוטות</span> pour ' + toddlers + ' ' + (toddlers === 1 ? 'enfant' : 'enfants') + ' de moins de 3 ans) :</span><b>+' + money(toddlerAnnual) + '</b></div>';
+  }
+  bdHtml += '<div class="rrow"><span>Mois travaillés :</span><b>' + months + ' sur 12</b></div>';
+  bdHtml += '<div class="rrow bold" style="font-size:14px;color:var(--green);border-top:1px solid var(--line);padding-top:10px;margin-top:6px"><span>TOTAL À VERSER SUR LE COMPTE :</span><b>' + money(totalAnnual) + '</b></div>';
+  if (spouseWarning) {
+    bdHtml += '<div style="margin-top:8px;font-size:11.5px;color:var(--muted);background:#fff9e6;padding:8px;border-radius:8px">ℹ️ ' + spouseWarning + '</div>';
+  }
+  bdHtml += '</div>';
+
+  resBd.innerHTML = bdHtml;
+  window.__last_maanak_res = { totalAnnual: totalAnnual, year: state.year, months: months };
+  resCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+document.getElementById('btn-calc').addEventListener('click', calculate);
+
+function shareMaanak(target) {
+  var data = window.__last_maanak_res;
+  var sumStr = data ? money(data.totalAnnual) : 'jusqu’à 16 000 ₪';
+  var yr = data ? data.year : '2025';
+  var text = '💵 Calcul « Maanak Avoda » (מענק עבודה ' + yr + ') :\n' +
+             '• Prime due : ' + sumStr + '\n' +
+             '• Virement direct sur le compte bancaire, versé par l’Autorité fiscale israélienne (רשות המסים)\n\n' +
+             'Vérifiez votre droit à la prime : https://exodus611.github.io/finance-portal/fr/maanak-avoda.html';
+  if (target === 'wa') {
+    window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank') || (window.location.href = 'https://wa.me/?text=' + encodeURIComponent(text));
+  } else if (target === 'tg') {
+    window.open('https://t.me/share/url?url=' + encodeURIComponent('https://exodus611.github.io/finance-portal/fr/maanak-avoda.html') + '&text=' + encodeURIComponent('💵 Maanak Avoda : je peux toucher ' + sumStr), '_blank');
+  } else if (target === 'copy') {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function() {
+        var btn = document.getElementById('copyBtnMaanak');
+        if (btn) {
+          var orig = btn.innerHTML;
+          btn.innerHTML = '<span>✅ Copié !</span>';
+          setTimeout(function() { btn.innerHTML = orig; }, 2000);
+        }
+      });
+    }
+  }
+}
+</script>
+<script data-goatcounter="https://exodus611.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

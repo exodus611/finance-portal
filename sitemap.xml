@@ -33,9 +33,21 @@
   </url>
   <url>
     <loc>https://exodus611.github.io/finance-portal/maanak-avoda.html</loc>
-    <lastmod>2026-09-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/maanak-avoda.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/maanak-avoda.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/maanak-avoda.html"/>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://exodus611.github.io/finance-portal/fr/maanak-avoda.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/maanak-avoda.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/maanak-avoda.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/maanak-avoda.html"/>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://exodus611.github.io/finance-portal/mashkanta.html</loc>
