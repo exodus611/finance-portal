@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calculateur de salaire Israël 2026 — du brut au net, combien sur votre compte</title>
-<meta name="description" content="Combien toucherez-vous net : calculateur de salaire Israël 2026. Paliers d’imposition, Bitouah Leumi, retraite, points de crédit. Calcul inverse — quel brut demander. Gratuit, sans inscription.">
+<title>Salaire net en Israël — simulateur brut/net 2026</title>
+<meta name="description" content="Calculez votre salaire net en Israël (brut → net), le coût employeur et les cotisations. Gratuit, à jour 2026.">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230E6E4E'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white' font-family='monospace'>&#8362;</text></svg>">
 <meta name="theme-color" content="#0E6E4E">
@@ -465,7 +465,7 @@
   </div>
 
   <span class="eyebrow" data-i18n="eyebrow">Mis à jour : janvier 2026</span><span class="pill" data-i18n="pill">✓ impôts-2026</span>
-  <h1 data-i18n="h1">Calculateur Net 2026</h1>
+  <h1 data-i18n="h1">Simulateur de salaire en Israël : calculez votre net</h1>
   <p class="updated" data-i18n="updated">Paliers d’imposition · Bitouah Leumi · points de crédit — année fiscale 2026</p>
   <p data-i18n="intro">Calculateur gratuit sur les paliers d’imposition à jour : heures supplémentaires, retraite, indemnité de licenciement, coordination des impôts, calcul du brut à partir du net et projection annuelle. Tout se calcule uniquement dans votre navigateur — aucune donnée n’est envoyée.</p>
 
@@ -546,7 +546,7 @@
         <label><span data-i18n="lbl_travel">Remboursement trajet sans impôt (₪)</span><span class="info-dot" data-i18n-title="travel_title" title="Le remboursement des frais de trajet, jusqu’au plafond légal, s’ajoute au salaire net sans être imposé.">?</span></label>
         <input type="number" id="s_travel" value="0" step="10" min="0">
         <div class="cred-row">
-          <label><span data-i18n="lbl_points">Points de crédit (nékoudot)</span><span class="info-dot" data-i18n-title="points_title" title="Résident : 2,25 points (≈544 ₪ de réduction par mois). Femme : +0,5 ; enfants, nouvel immigrant et autres cas — ajoutez selon vos droits. Un point = 242 ₪ par mois.">?</span></label>
+          <label><span data-i18n="lbl_points">Points de crédit (nékoudot zikouy)</span><span class="info-dot" data-i18n-title="points_title" title="Résident : 2,25 points (≈544 ₪ de réduction par mois). Femme : +0,5 ; enfants, nouvel immigrant et autres cas — ajoutez selon vos droits. Un point = 242 ₪ par mois.">?</span></label>
           <input type="number" id="s_points" value="2.25" step="0.25" min="0">
           <div class="nek-rings" id="nekRings" aria-hidden="true"></div>
         </div>
@@ -941,7 +941,7 @@ const I18N = {
     lang_title: "Changer de langue",
     eyebrow: "Mis à jour : janvier 2026",
     pill: "✓ impôts-2026",
-    h1: "Calculateur Net 2026",
+    h1: "Simulateur de salaire en Israël : calculez votre net",
     updated: "Paliers d’imposition · Bitouah Leumi · points de crédit — année fiscale 2026",
     intro: "Calculateur gratuit sur les paliers d’imposition à jour : heures supplémentaires, retraite, indemnité de licenciement, coordination des impôts, calcul du brut à partir du net et projection annuelle. Tout se calcule uniquement dans votre navigateur — aucune donnée n’est envoyée.",
     info_box: "Pourquoi la retenue mensuelle varie : l’employeur extrapole sur l’année — il multiplie le salaire du mois par 12 et calcule l’impôt sur ce montant. Une prime ou une augmentation en cours d’année fausse la retenue mensuelle. En fin d’année, la régularisation avec le fisc restitue le trop-perçu.",
@@ -959,7 +959,7 @@ const I18N = {
     s_pens_h: "🏦 Cotisations retraite", s_pens_sub: "La cotisation du salarié réduit le revenu imposable (dans la limite autorisée).",
     lbl_pension: "Cotisation retraite du salarié", pension_opt_default: "Par défaut (6 %)", pension_opt_high: "Majorée (7 %)", pension_opt_custom: "Pourcentage personnalisé",
     lbl_keren: "Fonds de formation (keren hishtalmut), % salarié", lbl_pension_custom: "% retraite personnalisé",
-    s_cred_h: "🎫 Points de crédit", lbl_points: "Points de crédit (nékoudot)", points_title: "Résident : 2,25 points (≈544 ₪ de réduction par mois). Femme : +0,5 ; enfants, nouvel immigrant et autres cas — ajoutez selon vos droits. Un point = 242 ₪ par mois.",
+    s_cred_h: "🎫 Points de crédit", lbl_points: "Points de crédit (nékoudot zikouy)", points_title: "Résident : 2,25 points (≈544 ₪ de réduction par mois). Femme : +0,5 ; enfants, nouvel immigrant et autres cas — ajoutez selon vos droits. Un point = 242 ₪ par mois.",
     s_detail_h: "📊 Détail des retenues",
     row_gross: "Brut total", row_taxable: "Revenu imposable", row_tax: "Impôt sur le revenu (après crédits)", row_yesef: "Taxe complémentaire mas yesef (au-delà de 60 130 ₪)",
     row_bl: "Bitouah Leumi + santé", row_pension: "Cotisations du salarié (retraite+fonds)", row_travel: "Trajet (non imposé, s’ajoute)",
