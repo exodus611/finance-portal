@@ -294,9 +294,21 @@
   </url>
   <url>
     <loc>https://exodus611.github.io/finance-portal/kredit.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/kredit.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/kredit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/kredit.html"/>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://exodus611.github.io/finance-portal/fr/kredit.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/kredit.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/kredit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/kredit.html"/>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://exodus611.github.io/finance-portal/valuta.html</loc>
