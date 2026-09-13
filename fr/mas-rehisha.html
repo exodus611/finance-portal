@@ -302,14 +302,14 @@ function calc(){
 
   if(st==='nonres'){
     var t=v*NONRES;
-    h+='<div class="verdict"><div class="v-lbl">Impôt à l\u2019achat</div>'+
+    h+='<div class="verdict"><div class="v-lbl">Impôt à l’achat</div>'+
        '<div class="v-num">'+fmt(t)+' ₪</div>'+
        '<div class="v-sub">6 % dès le premier shekel</div>'+
        '<div class="v-eff">taux effectif 6,00 %</div></div>';
     h+='<div class="note n-info"><b>Immobilier non résidentiel</b>'+
        '<span class="law" lang="he" dir="rtl">תקנה 2(1)</span> — taux unique de 6 % sur toute la valeur, sans paliers ni exonération. '+
        'Si vous achetez un terrain pour construire un logement et obtenez le permis de construire dans les 24 mois, '+
-       'un remboursement de 1/6 de l\u2019impôt versé est possible (environ '+fmt(t/6)+' ₪).</div>';
+       'un remboursement de 1/6 de l’impôt versé est possible (environ '+fmt(t/6)+' ₪).</div>';
     document.getElementById('out').innerHTML=h;
     document.getElementById('results-wrap') && document.getElementById('results-wrap').classList.add('show');
     return {big:fmt(t)+' ₪', sub:'6 % — bien non résidentiel'};
@@ -345,7 +345,7 @@ function calc(){
   if(isDis){
     var r5=calcDisabled(v,singleLike);
     routes.push({key:'disabled',name:'Avantage handicapé / victime',law:'תקנה 11',
-      desc:singleLike&&v<=DISABLED_THRESHOLD?'exonération jusqu\u2019au premier palier, puis 0,5 %':'0,5 % dès le premier shekel',
+      desc:singleLike&&v<=DISABLED_THRESHOLD?'exonération jusqu’au premier palier, puis 0,5 %':'0,5 % dès le premier shekel',
       total:r5.total,rows:r5.rows});
   }
 
@@ -353,14 +353,14 @@ function calc(){
   var best=routes[0];
   var eff=v>0?(best.total/v*100):0;
 
-  h+='<div class="verdict"><div class="v-lbl">Impôt à l\u2019achat</div>'+
+  h+='<div class="verdict"><div class="v-lbl">Impôt à l’achat</div>'+
      '<div class="v-num">'+fmt(best.total)+' ₪</div>'+
      '<div class="v-sub">'+best.name+'</div>'+
      '<div class="v-eff">taux effectif '+eff.toFixed(2).replace('.',',')+' % de la valeur</div></div>';
 
   if(routes.length>1){
     h+='<div style="margin-bottom:10px"><b style="font-size:14px">Les parcours possibles</b>'+
-       '<p style="font-size:12px;color:var(--muted);margin:4px 0 10px">Le calculateur choisit le plus avantageux. Un avantage fiscal n\u2019est pas toujours meilleur que les paliers ordinaires — comparez.</p></div>';
+       '<p style="font-size:12px;color:var(--muted);margin:4px 0 10px">Le calculateur choisit le plus avantageux. Un avantage fiscal n’est pas toujours meilleur que les paliers ordinaires — comparez.</p></div>';
     routes.forEach(function(rt,i){
       h+='<div class="route'+(i===0?' best':'')+'"><div><div class="nm">'+(i===0?'✓ ':'')+rt.name+'</div>'+
          '<div class="ds"><span class="law" lang="he" dir="rtl">'+rt.law+'</span> '+rt.desc+'</div></div>'+
@@ -369,7 +369,7 @@ function calc(){
   }
 
   h+='<div style="margin-top:20px;margin-bottom:10px"><b style="font-size:14px">Détail par paliers</b>'+
-     '<p style="font-size:12px;color:var(--muted);margin:4px 0 10px">Le taux ne s\u2019applique pas à toute la somme, mais à la part de la valeur comprise dans chaque palier.</p></div>'+
+     '<p style="font-size:12px;color:var(--muted);margin:4px 0 10px">Le taux ne s’applique pas à toute la somme, mais à la part de la valeur comprise dans chaque palier.</p></div>'+
      '<div style="overflow:auto"><table><thead><tr><th>Tranche de la valeur</th><th>Taux</th><th>Montant de la tranche</th><th>Impôt</th></tr></thead><tbody>';
   best.rows.forEach(function(r){
     h+='<tr><td>'+fmt(r.from)+' – '+fmt(r.to)+'</td>'+
@@ -386,54 +386,54 @@ function calc(){
     var deadline=buyDate?addMonths(buyDate,months):null;
     var addl=calcBrackets(v,B.additional).total;
     var risk=addl-best.total;
-    h+='<div class="note n-bad"><b>⏳ L\u2019essentiel : le délai de vente de l\u2019ancien appartement</b>'+
-       'Vous payez aux taux de la résidence unique <strong>à condition</strong> de vendre l\u2019ancien appartement dans les délais. '+
+    h+='<div class="note n-bad"><b>⏳ L’essentiel : le délai de vente de l’ancien appartement</b>'+
+       'Vous payez aux taux de la résidence unique <strong>à condition</strong> de vendre l’ancien appartement dans les délais. '+
        (fromWho==='dev'
          ? '<span class="law" lang="he" dir="rtl">סעיף 9(ג1ג)(2)(ב)</span> — <strong>12 mois</strong> à compter de la date à laquelle le promoteur devait vous remettre la possession selon le contrat.'
          : '<span class="law" lang="he" dir="rtl">סעיף 9(ג1ג)(2)(א)</span> — <strong>24 mois</strong> à compter de la signature du contrat.')+
        (deadline?'<br><br><strong>Votre date limite : environ '+fmtD(deadline)+'</strong>':'')+
-       '<br><br>En cas de dépassement — régularisation rétroactive aux taux de l\u2019appartement supplémentaire : '+
+       '<br><br>En cas de dépassement — régularisation rétroactive aux taux de l’appartement supplémentaire : '+
        '<strong>'+fmt(addl)+' ₪</strong> au lieu de '+fmt(best.total)+' ₪. Écart <strong>'+fmt(risk)+' ₪</strong>, plus intérêts et indexation.</div>';
     h+='<div class="note n-warn"><b>La règle de délai a changé trois fois</b>'+
-       'Du 01.06.2023 au 31.05.2025, 18 mois s\u2019appliquaient (norme transitoire). Depuis le 01.06.2025, retour aux 24 mois. '+
+       'Du 01.06.2023 au 31.05.2025, 18 mois s’appliquaient (norme transitoire). Depuis le 01.06.2025, retour aux 24 mois. '+
        'Une proposition de loi visant à revenir à 18 mois avance à la Knesset — avant la transaction, vérifiez la norme en vigueur auprès de votre avocat.</div>';
   }
 
   if(isOleh){
     if(best.key==='olehNew'){
       var vsSingle=calcBrackets(v,B.single).total;
-      h+='<div class="note n-ok"><b>L\u2019avantage de l\u2019oleh joue en votre faveur</b>'+
-         '<span class="law" lang="he" dir="rtl">תקנה 12א</span> accorde 0 % jusqu\u2019à '+fmt(FIRST_TIER)+' ₪ et seulement 0,5 % jusqu\u2019à '+fmt(6055070)+' ₪. '+
+      h+='<div class="note n-ok"><b>L’avantage de l’oleh joue en votre faveur</b>'+
+         '<span class="law" lang="he" dir="rtl">תקנה 12א</span> accorde 0 % jusqu’à '+fmt(FIRST_TIER)+' ₪ et seulement 0,5 % jusqu’à '+fmt(6055070)+' ₪. '+
          'Économie par rapport aux paliers ordinaires : <strong>'+fmt(vsSingle-best.total)+' ₪</strong>.</div>';
     } else if(best.key==='single'&&routes.some(function(r){return r.key.indexOf('oleh')===0})){
-      h+='<div class="note n-warn"><b>L\u2019avantage de l\u2019oleh n\u2019est PAS avantageux pour vous</b>'+
-         'Les paliers ordinaires de la résidence unique donnent un impôt plus faible. N\u2019appliquez pas l\u2019avantage automatiquement, au seul prétexte qu\u2019il est acquis — '+
-         'c\u2019est une erreur courante et coûteuse.</div>';
+      h+='<div class="note n-warn"><b>L’avantage de l’oleh n’est PAS avantageux pour vous</b>'+
+         'Les paliers ordinaires de la résidence unique donnent un impôt plus faible. N’appliquez pas l’avantage automatiquement, au seul prétexte qu’il est acquis — '+
+         'c’est une erreur courante et coûteuse.</div>';
     }
     if(!olehDate){
       h+='<div class="note n-info"><b>Indiquez la date de votre alya</b>'+
-         'D\u2019elle dépend la norme applicable. Pour les olim antérieurs au 15.08.2024, un choix existe entre '+
+         'D’elle dépend la norme applicable. Pour les olim antérieurs au 15.08.2024, un choix existe entre '+
          '<span class="law" lang="he" dir="rtl">תקנה 12</span> et <span class="law" lang="he" dir="rtl">תקנה 12א</span>.</div>';
     }
-    h+='<div class="note n-info"><b>Conditions de l\u2019avantage de l\u2019oleh</b>'+
-       'Période : de l\u2019année précédant la première entrée en Israël jusqu\u2019à 7 ans après. Le service militaire régulier et national ne compte pas dans les 7 ans. '+
-       'Nécessaires : visa d\u2019oleh selon l\u2019art. 2 de la Loi du retour, teoudat oleh selon l\u2019art. 3, ou permis A1. L\u2019avantage est accordé une seule fois.</div>';
+    h+='<div class="note n-info"><b>Conditions de l’avantage de l’oleh</b>'+
+       'Période : de l’année précédant la première entrée en Israël jusqu’à 7 ans après. Le service militaire régulier et national ne compte pas dans les 7 ans. '+
+       'Nécessaires : visa d’oleh selon l’art. 2 de la Loi du retour, teoudat oleh selon l’art. 3, ou permis A1. L’avantage est accordé une seule fois.</div>';
   }
 
   if(isDis){
-    h+='<div class="note n-info"><b>Conditions de l\u2019avantage de la takana 11</b>'+
-       'Accordé <strong>au plus deux fois dans la vie</strong>, et l\u2019appartement doit servir de logement au titulaire. '+
-       'Une attestation de la Bitouah Leumi ou du ministère de la Défense sur le taux d\u2019incapacité est exigée.</div>';
+    h+='<div class="note n-info"><b>Conditions de l’avantage de la takana 11</b>'+
+       'Accordé <strong>au plus deux fois dans la vie</strong>, et l’appartement doit servir de logement au titulaire. '+
+       'Une attestation de la Bitouah Leumi ou du ministère de la Défense sur le taux d’incapacité est exigée.</div>';
   }
 
   if(st==='additional'||st==='foreign'){
     var asSingle=calcBrackets(v,B.single).total;
     h+='<div class="note n-warn"><b>Écart avec le statut de résidence unique — '+fmt(best.total-asSingle)+' ₪</b>'+
-       'Si c\u2019est votre seul appartement en Israël, ou si vous vendez celui que vous détenez — vous avez droit aux taux de la résidence unique. '+
-       'À vérifier : une part jusqu\u2019à 1/3 dans un autre appartement, ou 1/2 dans un bien hérité, <strong>ne fait pas perdre</strong> le statut.</div>';
+       'Si c’est votre seul appartement en Israël, ou si vous vendez celui que vous détenez — vous avez droit aux taux de la résidence unique. '+
+       'À vérifier : une part jusqu’à 1/3 dans un autre appartement, ou 1/2 dans un bien hérité, <strong>ne fait pas perdre</strong> le statut.</div>';
     if(st==='foreign'){
       h+='<div class="note n-info"><b>Résident étranger devenu résident israélien</b>'+
-         'Une disposition permettait à l\u2019acheteur devenu résident dans les 27 mois suivant l\u2019achat d\u2019obtenir rétroactivement les taux de la résidence unique. '+
+         'Une disposition permettait à l’acheteur devenu résident dans les 27 mois suivant l’achat d’obtenir rétroactivement les taux de la résidence unique. '+
          'Vérifiez son actualité auprès de votre avocat.</div>';
     }
   }
@@ -443,7 +443,7 @@ function calc(){
      'Si le conjoint possède un appartement, il compte comme le vôtre, et le statut de résidence unique est perdu.</div>';
 
   h+='<div class="note n-warn"><b>Délais de déclaration et de paiement</b>'+
-     'Déclaration au « missouy mekarka\u2019in » — <strong>30 jours</strong> de la signature du contrat. Paiement — <strong>60 jours</strong>. '+
+     'Déclaration au « missouy mekarka’in » — <strong>30 jours</strong> de la signature du contrat. Paiement — <strong>60 jours</strong>. '+
      'Tout retard entraîne intérêts, indexation et amendes.</div>';
 
   h+='</div>';
@@ -456,7 +456,7 @@ function calc(){
 
 function runAndShowModal(){
   var r = calc();
-  showResultModal('Impôt à l\u2019achat (mas rehisha)', r.big, r.sub,
+  showResultModal('Impôt à l’achat (mas rehisha)', r.big, r.sub,
     r.eff ? [['Taux effectif', r.eff]] : [],
     '📊 Voir le détail et les parcours', function(){setActiveView('result');});
 }
