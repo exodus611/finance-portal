@@ -3,7 +3,19 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://exodus611.github.io/finance-portal/</loc>
-    <lastmod>2026-09-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/"/>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://exodus611.github.io/finance-portal/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/"/>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
