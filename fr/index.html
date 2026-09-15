@@ -176,16 +176,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     // Les dates viennent de la page officielle du calendrier (scripts/update_payments.py).
     var pay=window.__paymentsData||{};
     var BL=[
-      {k:'unemployment',  label:'Allocation chômage et garantie de revenu (<span lang="he" dir="rtl">דמי אבטלה, הבטחת הכנסה</span>)', href:'avtala.html'},
-      {k:'self_employed', label:'Cotisations Bituah Leumi — indépendants et employeurs', href:'salary.html'},
-      {k:'children',      label:'Allocations familiales (<span lang="he" dir="rtl">קצבת ילדים</span>)', href:'tablo.html'},
-      {k:'long_term',     label:'Retraite, invalidité, sioud et autres (<span lang="he" dir="rtl">קצבאות ארוכות מועד</span>)', href:'pension-gap.html'}
+      {k:'unemployment',  label:'Allocation chômage et garantie de revenu (<span lang="he" dir="rtl">דמי אבטלה, הבטחת הכנסה</span>)', plain:'Allocation chômage et garantie de revenu', he:'דמי אבטלה, הבטחת הכנסה', href:'avtala.html'},
+      {k:'self_employed', label:'Cotisations Bituah Leumi — indépendants et employeurs', plain:'Cotisations Bituah Leumi — indépendants et employeurs', he:'תשלום דמי ביטוח', href:'salary.html'},
+      {k:'children',      label:'Allocations familiales (<span lang="he" dir="rtl">קצבת ילדים</span>)', plain:'Allocations familiales', he:'קצבת ילדים', href:'tablo.html'},
+      {k:'long_term',     label:'Retraite, invalidité, sioud et autres (<span lang="he" dir="rtl">קצבאות ארוכות מועד</span>)', plain:'Retraite, invalidité, sioud et autres', he:'קצבאות ארוכות מועד', href:'pension-gap.html'}
     ];
+    // Les dates pour les rappels « dans le calendrier » sont calculées ici :
+    // le grand bloc avec les mêmes dates plus bas a été retiré (doublon).
+    window.__payEvents=window.__payEvents||{};
     BL.forEach(function(b){
       var d=blNext(pay[b.k], b.k==='self_employed');
       var ml=(window.__paymentsData||{}).month_label||'';
       var em=d?(d.getFullYear()+'-'+(d.getMonth()+1<10?'0':'')+(d.getMonth()+1)):'';
-      if(d && (!ml || em===ml)) events.push({label:b.label, date:d, href:b.href, bl:b.k});
+      if(!d) return;
+      window.__payEvents[b.k]={k:b.k, plain:b.plain, he:b.he, d:d, est:!!(ml&&em!==ml)};
+      if(!ml || em===ml) events.push({label:b.label, date:d, href:b.href, bl:b.k});
     });
 
     // On filtre tout ce qui est passé : avant, une date périmée restait
@@ -210,9 +215,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     panel.innerHTML=events.map(function(e){
       var d=daysUntil(e.date);
       var when=d===0?'aujourd\u2019hui':(d===1?'demain':'dans '+d+' j.');
-      var row='<a href="'+e.href+'" style="display:flex;justify-content:space-between;gap:10px;color:#3d4a3e;text-decoration:none;padding:6px 0;border-bottom:1px solid #ddd6c7">'+
+      // Versements du Bituah Leumi — avec bouton « dans le calendrier » :
+      // le rappel vit dans cette même liste, plus de bloc dupliqué plus bas.
+      var bell=e.bl?'<button type="button" onclick="openRemindModal(\''+e.bl+'\')" title="Rappel dans le calendrier" style="flex:0 0 auto;background:#eaf6f0;border:1px solid #b9d8ca;color:#08775a;font-size:12px;font-weight:800;padding:5px 9px;border-radius:9px;cursor:pointer">🔔</button>':'';
+      var row='<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid #ddd6c7">'+
+        '<a href="'+e.href+'" style="display:flex;justify-content:space-between;gap:10px;flex:1;min-width:0;color:#3d4a3e;text-decoration:none">'+
         '<span>'+e.label+'</span><span style="white-space:nowrap;font-weight:700;color:#08775a">'+fmtDate(e.date)+
-        ' <span style="font-weight:500;color:#5a6660">· '+when+'</span></span></a>';
+        ' <span style="font-weight:500;color:#5a6660">· '+when+'</span></span></a>'+bell+'</div>';
       // Les « allocations de long terme » — une seule date pour 11 versements. On détaille,
       // pour que chacun trouve le sien, sans deviner derrière une formulation générale.
       if(e.bl==='long_term' && pay.long_term_items && pay.long_term_items.length){
@@ -223,7 +232,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       }
       return row;
     }).join('')+
-    '<div style="font-size:10.5px;color:#5a6660;padding:8px 0 0;line-height:1.5">Les dates sont reprises automatiquement de la page officielle du calendrier de paiement du Bituah Leumi. Si la date est passée — le mois suivant est affiché.</div>';
+    '<div style="font-size:10.5px;color:#5a6660;padding:8px 0 0;line-height:1.5">Les dates sont reprises automatiquement de la page officielle du calendrier de paiement du Bituah Leumi. Si la date est passée — le mois suivant est affiché. <a href="payments.html" style="color:#08775a;font-weight:700">Calendrier complet, saal klita et aide au loyer →</a></div>';
   };
   // Recalcul à minuit : une page ouverte des jours entiers (téléphone en fond),
   // n'affiche plus les « aujourd'hui » d'hier.
@@ -328,181 +337,80 @@ fetch('../data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 }).catch(function(){});
 
 LT_FR={'Пособие по старости':'Retraite (kitsvat ezrach vatik)','Пособие по потере кормильца':'Pension de réversion','Пособие по инвалидности':'Allocation d\u2019invalidité','Пособие на ребёнка-инвалида':'Allocation pour enfant handicapé','Особые услуги для тяжёлых инвалидов':'Services spéciaux (invalidité lourde)','Пособие на передвижение':'Allocation de mobilité','Пострадавшим на производстве':'Victimes du travail','Алименты':'Pension alimentaire','Реабилитация':'Réhabilitation','Уход (сиюд)':'Soins de longue durée (sioud)','Узники Сиона':'Prisonniers de Sion'};
-var MONTHS_FR=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+
+/* Rappels de versement : la date et l'intitulé viennent du ticker (window.__payEvents),
+   pour ne pas calculer deux fois la même chose ni dupliquer les dates sur la page. */
+function __remPad(n){return n<10?'0'+n:''+n}
+function getGoogleCalUrl(title, d, details) {
+  var y = d.getFullYear();
+  var m = __remPad(d.getMonth() + 1);
+  var day = __remPad(d.getDate());
+  var next = new Date(d);
+  next.setDate(next.getDate() + 1);
+  var ny = next.getFullYear();
+  var nm = __remPad(next.getMonth() + 1);
+  var nd = __remPad(next.getDate());
+  return "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+    "&text=" + encodeURIComponent(title) +
+    "&dates=" + (""+y+m+day) + "/" + (""+ny+nm+nd) +
+    "&details=" + encodeURIComponent(details + "\n\nSource : https://exodus611.github.io/finance-portal/fr/");
+}
+window.openRemindModal = function(k) {
+  var r = (window.__payEvents||{})[k];
+  if (!r) return;
+  window.__active_remind_row = r;
+  var titleEl = document.getElementById("remind-item-title");
+  var gcalBtn = document.getElementById("remind-gcal-btn");
+  var dateFormatted = __remPad(r.d.getDate()) + "." + __remPad(r.d.getMonth() + 1) + "." + r.d.getFullYear();
+  if (titleEl) titleEl.textContent = r.plain + " — " + dateFormatted;
+  if (gcalBtn) gcalBtn.href = getGoogleCalUrl(r.plain + " (Bituah Leumi)", r.d, "Date officielle de versement de l\u2019allocation : " + r.plain + " (" + r.he + ").");
+  var m = document.getElementById("remind-modal");
+  if (m) m.style.display = "flex";
+};
+window.closeRemindModal = function() {
+  var m = document.getElementById("remind-modal");
+  if (m) m.style.display = "none";
+};
+window.triggerAppleRemind = function() {
+  var r = window.__active_remind_row;
+  if (!r) return;
+  var d = r.d;
+  var y = d.getFullYear();
+  var m = __remPad(d.getMonth() + 1);
+  var dt = __remPad(d.getDate());
+  var start = "" + y + m + dt;
+  var next = new Date(d);
+  next.setDate(next.getDate() + 1);
+  var end = "" + next.getFullYear() + __remPad(next.getMonth() + 1) + __remPad(next.getDate());
+  var lines = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//Finance Portal Israel//FR",
+    "CALSCALE:GREGORIAN",
+    "METHOD:PUBLISH",
+    "BEGIN:VEVENT",
+    "SUMMARY:" + r.plain + " (Bituah Leumi)",
+    "DESCRIPTION:Date officielle de versement de l\u2019allocation : " + r.plain + " (" + r.he + ")\nhttps://exodus611.github.io/finance-portal/fr/",
+    "DTSTART;VALUE=DATE:" + start,
+    "DTEND;VALUE=DATE:" + end,
+    "STATUS:CONFIRMED",
+    "END:VEVENT",
+    "END:VCALENDAR"
+  ];
+  var blob = new Blob([lines.join("\r\n")], { type: "text/calendar;charset=utf-8" });
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "remind-" + r.k + ".ics";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  closeRemindModal();
+};
+
+/* Le ticker a pu s'afficher avant (données pas encore chargées) —
+   on le redessine avec la date du Bituah Leumi déjà vérifiée. */
 fetch('../data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():Promise.reject()}).then(function(p){
   window.__paymentsData=p;
-  // Les lignes de versement sont dessinées par le bloc « Institut national d'assurance » plus bas —
-  // il affiche les dates réelles avec report au mois suivant.
-  var lbl=document.getElementById('pay-month-label');
-  if(lbl && p.month_label){
-    var parts=p.month_label.split('-');
-    lbl.textContent='en '+MONTHS_FR[parseInt(parts[1],10)-1]+' '+parts[0];
-  }
-
-  // ---- Bloc séparé « Institut national d'assurance » ----
-  // Dates réelles : si le jour du mois est passé, on affiche le mois suivant,
-  // pour que le bloc ne reste pas figé sur une date passée, comme le ticker avant lui.
-  (function renderBituah(){
-    var box=document.getElementById("bl-rows");
-    if(!box) return;
-    function daysTo(d){
-      var t=new Date(); t.setHours(0,0,0,0);
-      var x=new Date(d); x.setHours(0,0,0,0);
-      return Math.round((x-t)/86400000);
-    }
-    function shiftFwd(d){                      // le Bituah Leumi décale en avant vers un jour ouvré
-      var dow=d.getDay();
-      if(dow===6) d.setDate(d.getDate()+2);
-      return d;
-    }
-    function nextDate(iso){
-      if(!iso) return null;
-      var a=iso.split("-"), y=+a[0], m=+a[1]-1, day=+a[2];
-      var d=new Date(y,m,day);
-      if(daysTo(d)>=0) return d;               // la date est encore devant — elle est exacte
-      for(var k=1;k<=24;k++){
-        var n=shiftFwd(new Date(y,m+k,day));
-        if(daysTo(n)>=0) return n;
-      }
-      return null;
-    }
-    function pad(n){return n<10?"0"+n:""+n}
-    var ITEMS=[
-      {k:"unemployment", icon:"📋", ru:"Allocation chômage et garantie de revenu", he:"דמי אבטלה, הבטחת הכנסה"},
-      {k:"children",     icon:"👶", ru:"Allocations familiales", he:"קצבת ילדים"},
-      {k:"long_term",    icon:"🧓", ru:"Retraite, invalidité et autres", he:"קצבאות ארוכות מועד"},
-      {k:"self_employed",icon:"💼", ru:"Cotisations : indépendants et employeurs", he:"תשלום דמי ביטוח"}
-    ];
-    var ML=p.month_label||"";
-    var rows=ITEMS.map(function(it){
-      var d=nextDate(p[it.k]);
-      if(!d) return null;
-      var iso=d.getFullYear()+"-"+pad(d.getMonth()+1);
-      return {it:it,d:d,days:daysTo(d),est:ML?iso!==ML:false};
-    }).filter(Boolean);
-    rows.sort(function(a,b){return (a.est?1:0)-(b.est?1:0)||a.d-b.d});
-    if(!rows.length){ box.innerHTML=""; return; }
-
-    function getGoogleCalUrl(title, d, details) {
-      var y = d.getFullYear();
-      var m = pad(d.getMonth() + 1);
-      var day = pad(d.getDate());
-      var next = new Date(d);
-      next.setDate(next.getDate() + 1);
-      var ny = next.getFullYear();
-      var nm = pad(next.getMonth() + 1);
-      var nd = pad(next.getDate());
-      return "https://calendar.google.com/calendar/render?action=TEMPLATE" +
-        "&text=" + encodeURIComponent(title) +
-        "&dates=" + (""+y+m+day) + "/" + (""+ny+nm+nd) +
-        "&details=" + encodeURIComponent(details + "\n\nSource : https://exodus611.github.io/finance-portal/fr/");
-    }
-
-    window.__btl_calendar_rows = rows;
-
-    window.openRemindModal = function(idx) {
-      var r = window.__btl_calendar_rows[idx];
-      if (!r) return;
-      window.__active_remind_row = r;
-      var titleEl = document.getElementById("remind-item-title");
-      var gcalBtn = document.getElementById("remind-gcal-btn");
-      var dateFormatted = pad(r.d.getDate()) + "." + pad(r.d.getMonth() + 1) + "." + r.d.getFullYear();
-      if (titleEl) {
-        titleEl.textContent = r.it.ru + " — " + dateFormatted;
-      }
-      if (gcalBtn) {
-        gcalBtn.href = getGoogleCalUrl(r.it.ru + " (Bituah Leumi)", r.d, "Date officielle de versement de l\u2019allocation : " + r.it.ru + " (" + r.it.he + ").");
-      }
-      var m = document.getElementById("remind-modal");
-      if (m) m.style.display = "flex";
-    };
-
-    window.closeRemindModal = function() {
-      var m = document.getElementById("remind-modal");
-      if (m) m.style.display = "none";
-    };
-
-    window.triggerAppleRemind = function() {
-      var r = window.__active_remind_row;
-      if (!r) return;
-      var d = r.d;
-      var y = d.getFullYear();
-      var m = pad(d.getMonth() + 1);
-      var dt = pad(d.getDate());
-      var start = "" + y + m + dt;
-      var next = new Date(d);
-      next.setDate(next.getDate() + 1);
-      var end = "" + next.getFullYear() + pad(next.getMonth() + 1) + pad(next.getDate());
-      var lines = [
-        "BEGIN:VCALENDAR",
-        "VERSION:2.0",
-        "PRODID:-//Finance Portal Israel//FR",
-        "CALSCALE:GREGORIAN",
-        "METHOD:PUBLISH",
-        "BEGIN:VEVENT",
-        "SUMMARY:" + r.it.ru + " (Bituah Leumi)",
-        "DESCRIPTION:Date officielle de versement de l\u2019allocation : " + r.it.ru + " (" + r.it.he + ")\nhttps://exodus611.github.io/finance-portal/fr/",
-        "DTSTART;VALUE=DATE:" + start,
-        "DTEND;VALUE=DATE:" + end,
-        "STATUS:CONFIRMED",
-        "END:VEVENT",
-        "END:VCALENDAR"
-      ];
-      var blob = new Blob([lines.join("\r\n")], { type: "text/calendar;charset=utf-8" });
-      var a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = "remind-" + r.it.k + ".ics";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      closeRemindModal();
-    };
-
-    box.innerHTML=rows.map(function(r,idx){
-      var when=r.days===0?"aujourd\u2019hui":(r.days===1?"demain":"dans "+r.days+" j.");
-      if(r.est) when="estimation";
-      var soon=idx===0;
-      return "<div style=\"display:flex;justify-content:space-between;align-items:center;gap:10px;background:"+
-        (soon?"#eaf6f0":"var(--paper)")+";border:1px solid "+(soon?"#b9d8ca":"transparent")+
-        ";border-radius:12px;padding:9px 12px;flex-wrap:wrap\">"+
-        "<span style=\"font-size:12.5px;color:var(--ink);min-width:0;flex:1 1 180px\">"+r.it.icon+" "+r.it.ru+
-        "<span style=\"display:block;font-size:10.5px;color:var(--muted)\" lang=\"he\" dir=\"rtl\">"+r.it.he+"</span></span>"+
-        "<div style=\"display:flex;align-items:center;gap:8px;flex:0 0 auto\">"+
-        "<span style=\"text-align:right;white-space:nowrap\"><b style=\"font-size:14px;color:var(--green)\">"+
-        (r.est?"~":"")+pad(r.d.getDate())+"."+pad(r.d.getMonth()+1)+"</b>"+
-        "<span style=\"display:block;font-size:10.5px;color:"+(soon?"#08775a":"var(--muted)")+";font-weight:"+(soon?"800":"500")+"\">"+when+"</span></span>"+
-        "<button type=\"button\" onclick=\"openRemindModal("+idx+")\" title=\"Ajouter un rappel dans le calendrier\" style=\"display:inline-flex;align-items:center;gap:4px;background:#fff;border:1px solid "+(soon?"#b9d8ca":"#ddd6c7")+";color:#08775a;font-size:11px;font-weight:750;padding:5px 9px;border-radius:9px;cursor:pointer;white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,.04)\">"+
-        "🔔 Dans le calendrier"+
-        "</button>"+
-        "</div>"+
-        "</div>";
-    }).join("");
-
-    // Indice dans l'en-tête replié : le prochain versement est visible d'emblée,
-    // sans ouvrir le bloc — pour comprendre pourquoi cliquer.
-    var teaser=document.getElementById("bl-teaser");
-    if(teaser){
-      var n=rows[0];
-      var w=n.days===0?"aujourd\u2019hui":(n.days===1?"demain":"dans "+n.days+" j.");
-      teaser.textContent="Prochain : "+n.it.ru+" — "+w+" ("+
-        pad(n.d.getDate())+"."+pad(n.d.getMonth()+1)+")";
-    }
-
-    // Détail des « allocations de long terme » — 11 prestations à une même date
-    var anyEst=rows.some(function(r){return r.est});
-    var note=document.getElementById("bl-est-note");
-    if(note) note.style.display=anyEst?"block":"none";
-    var ll=document.getElementById("bl-long-list");
-    if(ll && p.long_term_items && p.long_term_items.length){
-      ll.innerHTML="Toutes sont versées à la même date — "+
-        p.long_term_items.map(function(x){
-          return "<span style=\"white-space:nowrap\">"+(LT_FR[x.ru]||x.ru)+" (<span lang=\"he\" dir=\"rtl\">"+x.he+"</span>)</span>";
-        }).join(" · ")+".";
-    }
-  })();
-
-  // Le ticker a pu s'afficher avant (tant que ces données n'étaient pas chargées) —
-  // on le redessine avec la date du Bituah Leumi déjà vérifiée.
   if(window.__renderTicker && window.__tabloData) window.__renderTicker(window.__tabloData);
 }).catch(function(){});
 </script>
@@ -623,83 +531,16 @@ fetch('../data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r
 <!-- ВЫПЛАТЫ БИТУАХ ЛЕУМИ — отдельный заметный блок.
      Раньше был свёрнут в гармошке на 68% страницы: человек, которому нужна
      дата пособия, его просто не находил и вынужден был ждать бегущую строку. -->
-<div style="max-width:640px;margin:26px auto 0" id="bituah-block">
-<div style="background:linear-gradient(135deg,#0d9671,#08775a);border-radius:18px;padding:3px;box-shadow:0 10px 28px rgba(8,119,90,.25)">
-<div style="background:#fffdf8;border-radius:15px;padding:18px 16px 14px">
-
-<!-- Replié : seul l'en-tête est visible, le contenu s'ouvre au clic,
-     pour ne pas occuper l'écran de ceux qui n'ont pas besoin des dates. -->
-<details id="bl-details">
-<summary style="cursor:pointer;list-style:none;display:flex;align-items:center;gap:9px">
-<span style="font-size:24px">🏛️</span>
-<div style="flex:1;min-width:0">
-<h2 style="margin:0;font-size:16.5px;line-height:1.25;color:var(--ink)">Institut national d’assurance</h2>
-<div style="font-size:11.5px;color:var(--muted);margin-top:1px">Bituah Leumi (<span lang="he" dir="rtl">ביטוח לאומי</span>) — quand les allocations sont versées</div>
-<div id="bl-teaser" style="font-size:11.5px;color:var(--green);font-weight:800;margin-top:5px"></div>
-</div>
-<span style="flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;background:#eaf6f0;color:#08775a;font-size:10px;font-weight:800;padding:4px 9px;border-radius:20px;white-space:nowrap"><span class="home-live-dot"></span>TOUTES LES DATES ▸</span>
-</summary>
-
-<p style="font-size:11.5px;color:var(--muted);margin:12px 0 12px;line-height:1.5">Les dates changent chaque mois — nous les prenons directement du calendrier officiel. Touchez <b>« 🔔 Dans le calendrier »</b> à côté de votre allocation : la date s’enregistrera dans votre téléphone et vous rappellera le versement.</p>
-
-<div id="bl-rows" style="display:flex;flex-direction:column;gap:7px;margin-bottom:12px"></div>
-
-<details style="background:var(--paper);border-radius:10px;padding:0 12px;margin-bottom:7px">
-<summary style="padding:10px 0;font-size:12.5px;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
-<span>🧓 Ce que regroupent les « allocations de long terme »</span><span style="font-size:11px;font-weight:700;color:var(--green)">11 prestations ▸</span>
-</summary>
-<div id="bl-long-list" style="font-size:11.5px;color:var(--muted);line-height:1.75;padding:0 0 11px"></div>
-</details>
-
-<div style="display:flex;flex-direction:column;gap:7px;margin-bottom:12px">
-<details style="background:var(--paper);border-radius:10px;padding:0 12px">
-<summary style="padding:9px 0;font-size:12.5px;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
-<span>✈️ Saal klita (panier d’absorption)</span><span style="font-size:11px;font-weight:700;color:var(--muted)">selon la date d’alya ▸</span>
-</summary>
-<div style="font-size:11px;color:var(--muted);line-height:1.6;padding:0 0 10px">
-Ministère de l’Alya et de l’Intégration. Une partie en espèces à l’aéroport dès l’arrivée, le reste en <b>6 versements mensuels</b> sur le compte. Montants 2026 : célibataire ≈ 20 491 ₪, couple ≈ 39 065 ₪, famille avec 2 enfants ≈ 61 000 ₪ (pour les six premiers mois). La date exacte dépend de votre date d’alya — elle n’est pas commune à tous.
-</div>
-</details>
-<details style="background:var(--paper);border-radius:10px;padding:0 12px">
-<summary style="padding:9px 0;font-size:12.5px;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
-<span>🏠 Aide au loyer après le saal klita</span><span style="font-size:11px;font-weight:700;color:var(--muted)">selon la date d’alya ▸</span>
-</summary>
-<div style="font-size:11px;color:var(--muted);line-height:1.6;padding:0 0 10px">
-<b>Ministère de la Construction et du Logement</b> (organisme distinct du Bituah Leumi). Prolonge l’aide au loyer après la fin du saal klita — jusqu’à la fin de la 5 ᵉ année après l’alya (6 ᵉ pour les parents isolés). Le début des versements dépend de votre date exacte d’alya.
-</div>
-</details>
-
-<script>
-fetch('../data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null}).then(function(d){
-  if(!d) return;
-  if(d.boi){
-    var boiEl=document.getElementById('dec-boi-val');
-    if(boiEl) boiEl.textContent='Taux '+(d.boi.rate*100).toFixed(2).replace('.',',')+' % · Prime '+(d.boi.prime*100).toFixed(2).replace('.',',')+' %';
-  }
-  if(d.fuel){
-    var fuelEl=document.getElementById('dec-fuel-val');
-    if(fuelEl) fuelEl.textContent=d.fuel.price_95.toFixed(2).replace('.',',')+' ₪ / litre';
-  }
-  if(d.cpi){
-    var cpiEl=document.getElementById('dec-cpi-val');
-    if(cpiEl) cpiEl.textContent='Inflation annuelle : '+(d.cpi.yoy*100).toFixed(1).replace('.',',')+' %';
-  }
-}).catch(function(){});
-</script>
+<!-- Versements Bituah Leumi : un lien compact au lieu du grand bloc —
+     dates et rappels dans le ticker en haut, détails sur la page dédiée. -->
+<div style="max-width:640px;margin:18px auto 0">
+<a href="payments.html" style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0d9671,#08775a);border-radius:14px;padding:10px 14px;color:#fff;text-decoration:none;box-shadow:0 6px 18px rgba(8,119,90,.18)">
+<span style="font-size:18px">🏛️</span>
+<span style="flex:1;font-size:13px;font-weight:800">Dates de versement du Bituah Leumi</span>
+<span style="font-size:11px;font-weight:700;opacity:.92;white-space:nowrap">calendrier et rappels →</span>
+</a>
 </div>
 
-<p style="font-size:10px;color:var(--muted);margin:0 0 14px" id="pay-note">* la date est reprise directement de la page officielle du Bituah Leumi — elle diffère parfois du « 28 du mois » théorique à cause de leur ordre interne de traitement des jours fériés et des week-ends</p>
-
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
-<a href="avtala.html" style="flex:1 1 130px;text-align:center;font-size:12px;font-weight:800;color:#fff;background:var(--green);border-radius:20px;padding:9px 12px;text-decoration:none">Calculateur avtala →</a>
-<a href="pension-gap.html" style="flex:1 1 130px;text-align:center;font-size:12px;font-weight:800;color:var(--green);background:transparent;border:1px solid var(--green);border-radius:20px;padding:9px 12px;text-decoration:none">Écart de pension →</a>
-</div>
-<p style="font-size:10px;color:var(--muted);margin:10px 0 0;text-align:center">Source : <a href="https://www.btl.gov.il/Pages/BenefitsPaymentDates.aspx" target="_blank" rel="noopener nofollow" style="color:var(--green);font-weight:700">la page officielle des dates de versement</a> · actualisé automatiquement</p>
-</details>
-
-</div>
-</div>
-</div>
 
 <div style="max-width:640px;margin:18px auto 0;background:linear-gradient(135deg,#0d9671,#08775a);border-radius:14px;padding:2px;box-shadow:0 6px 18px rgba(8,119,90,.18)">
 <div style="background:#fff;border-radius:12px;padding:12px 13px">
@@ -708,16 +549,16 @@ fetch('../data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 <span style="font-size:14.5px;font-weight:900;color:var(--ink);line-height:1.2;flex:1">Requête intelligente — trouve ce à quoi vous n’auriez pas pensé</span>
 <span style="font-size:9px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:#fff;background:var(--green);border-radius:20px;padding:3px 8px;white-space:nowrap">★ chez nous</span>
 </div>
-<p style="font-size:11.5px;color:var(--muted);margin:0 0 8px;line-height:1.4">Décrivez <b>qui</b> il vous faut (médecin, avocat, artisan, magasin) → nous assemblons une requête précise pour une IA avec accès à Internet. Par défaut, la recherche porte sur <b>Israël</b> ; à l’étranger — seulement si vous nommez le pays.</p>
-<div id="sp-chips" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;justify-content:center"></div>
-<textarea id="univ-query" placeholder="ex. : dentiste pédiatrique à Tel-Aviv, francophone&#10;ou : toiletteur pour chien à Rishon, coiffeur, répétiteur…" rows="2" style="width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:10px;font-size:13.5px;box-sizing:border-box;margin-bottom:8px;font-family:inherit;resize:vertical;line-height:1.4"></textarea>
+<p style="font-size:11.5px;color:var(--muted);margin:0 0 8px;line-height:1.4">Décrivez, <b>qui</b> il vous faut (médecin, avocat, artisan, magasin) — nous assemblons une requête précise pour une IA avec recherche web. Par défaut : Israël.</p>
+<div id="sp-chips" style="display:flex;flex-wrap:nowrap;gap:5px;margin-bottom:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin"></div>
+<textarea id="univ-query" placeholder="ex. : dentiste pédiatrique à Tel-Aviv, francophone&#10;ou : toiletteur pour chien à Rishon, coiffeur, répétiteur…" rows="3" style="width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:10px;font-size:13.5px;box-sizing:border-box;margin-bottom:8px;font-family:inherit;resize:vertical;line-height:1.4"></textarea>
 <div style="display:flex;gap:8px">
 <button onclick="copyUnivPrompt()" style="flex:1;background:var(--green);color:#fff;border:none;padding:10px;border-radius:9px;font-size:13px;font-weight:700;cursor:pointer">🧠 Générer et copier la requête</button>
 <button onclick="clearUnivPrompt()" title="Effacer le champ" style="flex:0 0 auto;background:#fff;color:var(--muted);border:1px solid var(--line);padding:10px 14px;border-radius:9px;font-size:13px;font-weight:700;cursor:pointer">✕</button>
 </div>
 <p id="sp-hint" style="margin:6px 0 0;font-size:11px;font-weight:700;color:var(--blue)"></p>
 <p id="univ-copied" style="display:none;margin:6px 0 0;color:var(--green);font-weight:700;font-size:12px">✓ Copié ! Collez-le dans le chat avec l’IA.</p>
-<p style="font-size:10px;color:var(--muted);margin:7px 0 0;line-height:1.4">⚠️ La réponse est générée par une IA. La région est détectée automatiquement (par défaut — Israël). Les meilleurs résultats viennent des IA avec recherche web en direct : Perplexity, ChatGPT avec navigation, Copilot, Gemini.</p>
+<p style="font-size:10px;color:var(--muted);margin:7px 0 0;line-height:1.4">⚠️ Réponse générée par une IA avec recherche web en direct — au mieux avec Perplexity, ChatGPT, Copilot ou Gemini.</p>
 </div>
 </div>
 
