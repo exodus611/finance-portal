@@ -1,2 +1,0 @@
-НЕТ DEPLOY_TOKEN — применить нельзя, только диагностика
-WORKFLOW_RAN Wed Sep 16 18:42:06 UTC 2026
