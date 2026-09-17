@@ -4,6 +4,28 @@
   "entries": [
     {
       "date": "2026-09-17",
+      "tag": "новая страница",
+      "tag_fr": "nouvelle page",
+      "ru_title": "Автахат ахнаса — новая страница: пособие по прожиточному минимуму со своей таблицей сумм",
+      "ru_text": "Автахат ахнаса (הבטחת הכנסה) упоминалась на сайте только абзацем внутри страницы социальной надбавки — отдельной страницы не было, и найти её было негде. Теперь это полноценная страница: официальная таблица сумм с 01.01.2026 по трём возрастным группам и шести составам семьи, граница дохода от работы, при которой сохраняется право на частичную выплату, проверка права по вашим цифрам, условие 24 месяцев резидентства с исключениями для репатриантов (12 месяцев в первые 5 лет после алии), тест дохода и имущества (накопления, недвижимость, машина), вычеты из пособия, бланки בל/5619 и בל/430, сроки выплаты и правила выезда за границу. Появились плитки на обеих главных, ссылки из раздела «Не путать» и из словаря терминов.",
+      "fr_title": "Havtahat hahnasa — nouvelle page : l'allocation de subsistance et son barème",
+      "fr_text": "La havtahat hahnasa (הבטחת הכנסה) n'était mentionnée qu'en quelques lignes dans la page du complément de revenu — aucune page dédiée n'existait. C'est désormais une page complète : barème officiel en vigueur au 01.01.2026 par tranche d'âge et composition du foyer, seuil de revenu du travail au-delà duquel le droit s'éteint, vérification du droit selon vos chiffres, condition des 24 mois de résidence avec les exceptions pour les nouveaux immigrants (12 mois dans les 5 ans suivant l'alya), test des revenus et du patrimoine (épargne, immobilier, voiture), retenues sur l'allocation, formulaires בל/5619 et בל/430, calendrier des versements et règles de voyage à l'étranger. Ajout des tuiles sur les deux accueils, de liens depuis la section « À ne pas confondre » et depuis le glossaire.",
+      "links": [
+        {
+          "href": "avtahat-ahnasa.html",
+          "ru": "Пособие по прожиточному минимуму",
+          "fr": "Version russe"
+        },
+        {
+          "href": "fr/avtahat-ahnasa.html",
+          "ru": "Французская версия",
+          "fr": "Allocation de subsistance"
+        }
+      ],
+      "fr_only": false
+    },
+    {
+      "date": "2026-09-17",
       "tag": "разъяснение",
       "tag_fr": "clarification",
       "ru_title": "Разъяснено: ашламат ахнаса и автахат ахнаса — это разные выплаты",
