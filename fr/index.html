@@ -880,8 +880,8 @@ document.addEventListener('DOMContentLoaded', function(){
     <div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 11px;border-inline-start:3.5px solid var(--green);display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">
       <div style="min-width:0;flex:1">
         <div style="display:flex;align-items:center;gap:6px;margin-bottom:1px">
-          <span style="font-size:12px;font-weight:850;color:var(--ink)">🏦 Banque d’Israël (31.08)</span>
-          <span style="font-size:9px;font-weight:800;color:var(--green);background:var(--green-light);padding:1px 5px;border-radius:4px">📉 BAISSÉE DE 0,25%</span>
+          <span style="font-size:12px;font-weight:850;color:var(--ink)" id="dec-boi-label">🏦 Banque d’Israël</span>
+          <span id="dec-boi-badge" style="font-size:9px;font-weight:800;color:var(--green);background:var(--green-light);padding:1px 5px;border-radius:4px">—</span>
         </div>
         <div style="font-size:11.5px;color:var(--ink);font-weight:700" id="dec-boi-val">Taux 3,25 % · Prime 4,75 %</div>
       </div>
@@ -892,8 +892,8 @@ document.addEventListener('DOMContentLoaded', function(){
     <div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 11px;border-inline-start:3.5px solid #1e3a5f;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">
       <div style="min-width:0;flex:1">
         <div style="display:flex;align-items:center;gap:6px;margin-bottom:1px">
-          <span style="font-size:12px;font-weight:850;color:var(--ink)">⛽ Essence 95 (dès le 07.09)</span>
-          <span style="font-size:9px;font-weight:800;color:#c15045;background:#fdeeee;padding:1px 5px;border-radius:4px">🔺 +0,16 ₪ (+2,0 %)</span>
+          <span style="font-size:12px;font-weight:850;color:var(--ink)" id="dec-fuel-label">⛽ Essence 95</span>
+          <span id="dec-fuel-badge" style="font-size:9px;font-weight:800;color:var(--green);background:#eaf6f0;padding:1px 5px;border-radius:4px">—</span>
         </div>
         <div style="font-size:11.5px;color:var(--ink);font-weight:700" id="dec-fuel-val">7,75 ₪ / litre (−0,50 ₪)</div>
       </div>
@@ -905,7 +905,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div style="min-width:0;flex:1">
         <div style="display:flex;align-items:center;gap:6px;margin-bottom:1px">
           <span style="font-size:12px;font-weight:850;color:var(--ink)">📊 Inflation madad (CBS)</span>
-          <span style="font-size:9px;font-weight:800;color:#b45309;background:#fef3c7;padding:1px 5px;border-radius:4px">JUILLET</span>
+          <span id="dec-cpi-badge" style="font-size:9px;font-weight:800;color:#b45309;background:#fef3c7;padding:1px 5px;border-radius:4px">—</span>
         </div>
         <div style="font-size:11.5px;color:var(--ink);font-weight:700" id="dec-cpi-val">Inflation annuelle : 1,5 % · Mois +0,3 %</div>
       </div>
@@ -920,59 +920,130 @@ document.addEventListener('DOMContentLoaded', function(){
       <span>🗓️ Calendrier des décisions et versements 2026</span>
       <span style="font-size:10.5px;color:var(--green)">Ouvrir le calendrier ▸</span>
     </summary>
-    <div style="font-size:11.5px;padding:4px 0 10px;display:flex;flex-direction:column;gap:6px;border-top:1px solid #f0eae0" id="dec-calendar-list">
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
-        <span><b>31.08.2026</b> · Réunion de la Banque d’Israël</span>
-        <span style="font-weight:800;color:var(--green);font-size:10.5px">✅ Taux abaissé : 3,25 % (Prime 4,75 %)</span>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
-        <span><b>07.09.2026</b> · Tarif essence 95</span>
-        <span style="font-weight:800;color:var(--green);font-size:10.5px">✅ 7,75 ₪ (−50 agorot)</span>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
-        <span><b>12.09.2026</b> · Avtala (Bituah Leumi)</span>
-        <span style="color:var(--muted);font-size:10.5px">⏳ dans 11 j.</span>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
-        <span><b>15.09.2026 (18:30)</b> · Indice des prix madad (CBS)</span>
-        <span style="color:var(--muted);font-size:10.5px">⏳ dans 14 j.</span>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
-        <span><b>20.09.2026</b> · Allocations familiales</span>
-        <span style="color:var(--muted);font-size:10.5px">⏳ dans 19 j.</span>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
-        <span><b>28.09.2026</b> · Retraite / invalidité</span>
-        <span style="color:var(--muted);font-size:10.5px">⏳ dans 27 j.</span>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
-        <span><b>30.09.2026</b> · Révision du prix de l’essence pour octobre</span>
-        <span style="color:var(--muted);font-size:10.5px">⏳ fin de mois</span>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0">
-        <span><b>19.10.2026 (16:00)</b> · Prochain taux de la Banque d’Israël</span>
-        <span style="color:var(--muted);font-size:10.5px">⏳ dans 48 j.</span>
-      </div>
+    <div style="font-size:11.5px;padding:4px 0 10px;display:flex;flex-direction:column;gap:6px;border-top:1px solid #f0eae0" id="dec-calendar-list"></div>
     </div>
   </details>
 
 <script>
-fetch('../data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null}).then(function(d){
-  if(!d) return;
-  if(d.boi){
-    var boiEl=document.getElementById('dec-boi-val');
-    if(boiEl) boiEl.textContent='Taux '+(d.boi.rate*100).toFixed(2).replace('.',',')+' % · Prime '+(d.boi.prime*100).toFixed(2).replace('.',',')+' %';
+/* CARTES ÉCONOMIQUES + CALENDRIER VIVANTS (version française)
+   Mêmes données que la version russe : ../data/tablo.json, ../data/payments.json, ../data/benzin.json.
+   Tout est calculé dans le navigateur (dates, montants, badges, « dans N jours ») :
+   la page ne se fige plus entre deux mises à jour automatiques.
+   Particularités françaises : dates « 31 août 2026 », format des nombres fr-FR (virgule décimale),
+   pluriel « dans 1 jour / 2 jours ». */
+(function(){
+  var MOIS=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+  function d0(x){x.setHours(0,0,0,0);return x}
+  function isoDate(s){var p=String(s||'').split('-');return p.length===3&&p[0]?new Date(+p[0],+p[1]-1,+p[2]):null}
+  function fmtD(d){return d.getDate()+' '+MOIS[d.getMonth()]+' '+d.getFullYear()}
+  function fmtDM(d){return d.getDate()+' '+MOIS[d.getMonth()]}
+  function daysTo(d){return Math.round((d0(new Date(d))-d0(new Date()))/86400000)}
+  function whenPhrase(d){var n=daysTo(d);return n===0?"aujourd’hui":(n===1?'demain':'dans '+n+' jours')}
+  function num(n,dec){return n.toLocaleString('fr-FR',{minimumFractionDigits:dec||0,maximumFractionDigits:dec||0})}
+  function money(n){return num(Math.round(n*100)/100,2)+' ₪'}
+  function pct(x,dec){return num(x,dec==null?2:dec)+' %'}
+  function weekdayForward(d){var w=d.getDay();if(w===6){d.setDate(d.getDate()+2)}else if(w===5){d.setDate(d.getDate()+1)}return d}
+  function cbsShift(y,m){var d=new Date(y,m,15);var w=d.getDay();if(w===5){d.setDate(d.getDate()-1)}else if(w===6){d.setDate(d.getDate()-2)}return d}
+  function nextCbs(){var n=new Date(),y=n.getFullYear(),m=n.getMonth();var d=cbsShift(y,m);if(d0(d)<=d0(new Date())){d=cbsShift(y,m+1)}return d}
+  function nextMonthFirst(){var n=new Date();return new Date(n.getFullYear(),n.getMonth()+1,1)}
+  function setTxt(id,t){var e=document.getElementById(id);if(e){e.textContent=t}}
+
+  window.__renderHome=function(tablo,pay,fuel){
+    tablo=tablo||{};pay=pay||{};fuel=fuel||{};
+    var boi=tablo.boi||{},cpi=tablo.cpi||{},f=fuel.price||{},fmeta=fuel.meta||{};
+
+    /* ---- carte : Banque d'Israël ---- */
+    if(boi.rate!=null){
+      setTxt('dec-boi-val','Taux '+pct(boi.rate*100)+' · Prime '+pct(boi.prime*100));
+      var bd=isoDate(boi.changed);
+      if(bd){setTxt('dec-boi-label','🏦 Banque d’Israël (depuis le '+fmtDM(bd)+')')}
+      var badge=document.getElementById('dec-boi-badge');
+      if(badge&&boi.prev_rate!=null){
+        var pp=Math.round((boi.rate-boi.prev_rate)*10000)/100;
+        if(pp<0){badge.textContent='📉 BAISSÉE DE '+pct(Math.abs(pp))+' pt';badge.style.color='var(--green)';badge.style.background='var(--green-light)'}
+        else if(pp>0){badge.textContent='📈 HAUSSÉE DE '+pct(pp)+' pt';badge.style.color='#c15045';badge.style.background='#fdeeee'}
+        else {badge.textContent='INCHANGÉE'}
+      }
+    }
+    /* ---- carte : essence ---- */
+    if(f.self!=null){
+      setTxt('dec-fuel-val',money(f.self)+' / litre'+(f.diff!=null?' ('+(f.diff>0?'+':'')+money(f.diff).replace(' ₪',' ₪')+')':''));
+      var fd=isoDate(fmeta.updated);
+      if(fd){setTxt('dec-fuel-label','⛽ Essence 95 (dès le '+fmtDM(fd)+')')}
+      var fb=document.getElementById('dec-fuel-badge');
+      if(fb&&f.diff_pct!=null){
+        var up=f.diff_pct>0;
+        fb.textContent=(up?'🔺 +':'🔻 ')+pct(f.diff_pct,1);
+        fb.style.color=up?'#c15045':'var(--green)';
+        fb.style.background=up?'#fdeeee':'#eaf6f0';
+      }
+    }
+    /* ---- carte : inflation ---- */
+    if(cpi.yoy!=null){
+      setTxt('dec-cpi-val','Inflation annuelle : '+pct(cpi.yoy*100,1)+(cpi.mom!=null?' · Mois '+(cpi.mom>0?'+':'')+pct(cpi.mom*100,1):''));
+      var pm=isoDate(cpi.period+'-01');
+      if(pm){var e=document.getElementById('dec-cpi-badge');if(e){e.textContent=MOIS[pm.getMonth()].toUpperCase()}}
+    }
+
+    /* ---- calendrier : d'abord le passé (avec le résultat), puis l'à-venir ---- */
+    var past=[],next=[];
+    if(boi.changed&&boi.rate!=null){
+      var res='✅ Taux maintenu : '+pct(boi.rate*100);
+      if(boi.prev_rate!=null&&boi.rate<boi.prev_rate){res='✅ Taux abaissé : '+pct(boi.rate*100)+' (prime '+pct(boi.prime*100)+')'}
+      else if(boi.prev_rate!=null&&boi.rate>boi.prev_rate){res='✅ Taux relevé : '+pct(boi.rate*100)}
+      past.push({d:isoDate(boi.changed),label:'Réunion de la Banque d’Israël',res:res});
+    }
+    if(fmeta.updated&&f.self!=null){
+      past.push({d:isoDate(fmeta.updated),label:'Tarif essence 95',
+                 res:'✅ '+money(f.self)+(f.diff!=null?' ('+(f.diff>0?'+':'')+money(f.diff)+')':'')});
+    }
+    var BL=[['unemployment','Allocations chômage (avtala)','avtala.html'],
+            ['self_employed','Cotisations indépendants et employeurs','../salary.html'],
+            ['long_term','Retraite, invalidité, sioud, allocations de longue durée','pension-gap.html'],
+            ['children','Allocations familiales (kitsvat yeladim)','tablo.html']];
+    BL.forEach(function(row){
+      var src=isoDate(pay[row[0]]);if(!src){return}
+      var n=new Date(),d=new Date(n.getFullYear(),n.getMonth(),src.getDate());
+      if(daysTo(d)<0){d=new Date(n.getFullYear(),n.getMonth()+1,src.getDate())}
+      weekdayForward(d);
+      next.push({d:d,label:row[1],href:row[2],bl:true});
+    });
+    var nd=isoDate(boi.next_decision);
+    if(nd){next.push({d:nd,label:'Décision de la Banque d’Israël sur le taux',href:'tablo.html'})}
+    next.push({d:nextCbs(),label:'Indice des prix à la consommation (madad)',href:'tablo.html'});
+    next.push({d:nextMonthFirst(),label:'Révision du prix de l’essence pour le mois suivant',href:'../benzin.html'});
+    next=next.filter(function(e){return e.d&&!isNaN(e.d)&&daysTo(e.d)>=0}).sort(function(a,b){return a.d-b.d});
+
+    var list=document.getElementById('dec-calendar-list');
+    if(!list){return}
+    var html='';
+    past.forEach(function(e){
+      if(!e.d||isNaN(e.d)){return}
+      html+='<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:4px 0">'+
+            '<span><b>'+fmtD(e.d)+'</b> · '+e.label+'</span>'+
+            '<span style="font-weight:800;color:var(--green);font-size:10.5px;white-space:nowrap">'+e.res+'</span></div>';
+    });
+    next.forEach(function(e){
+      html+='<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:4px 0">'+
+            '<span><b>'+fmtD(e.d)+'</b> · '+e.label+'</span>'+
+            '<span style="color:var(--muted);font-size:10.5px;white-space:nowrap">'+(e.bl?'🔔 ':'')+'⏳ '+whenPhrase(e.d)+'</span></div>';
+    });
+    html+='<div style="font-size:10px;color:var(--muted);padding:8px 0 0;border-top:1px dashed var(--line);margin-top:6px">'+
+          'Dates et montants calculés dans le navigateur à partir de tablo.json, payments.json et benzin.json'+
+          (tablo.updated?' · données du '+tablo.updated:'')+'</div>';
+    list.innerHTML=html;
+  };
+
+  function load(){
+    function g(u){return fetch(u,{cache:'no-cache'}).then(function(r){return r.ok?r.json():null}).catch(function(){return null})}
+    Promise.all([g('../data/tablo.json'),g('../data/payments.json'),g('../data/benzin.json')])
+      .then(function(a){window.__renderHome(a[0],a[1],a[2])});
   }
-  if(d.fuel){
-    var fuelEl=document.getElementById('dec-fuel-val');
-    if(fuelEl) fuelEl.textContent=d.fuel.price_95.toFixed(2).replace('.',',')+' ₪ / litre';
-  }
-  if(d.cpi){
-    var cpiEl=document.getElementById('dec-cpi-val');
-    if(cpiEl) cpiEl.textContent='Inflation annuelle : '+(d.cpi.yoy*100).toFixed(1).replace('.',',')+' %';
-  }
-}).catch(function(){});
+  load();
+  setInterval(load,600000);   /* si la page reste ouverte toute la nuit : on recalcule « dans N jours » */
+})();
 </script>
+
 </div>
 
 <div style="max-width:640px;margin:26px auto 0;background:linear-gradient(135deg,#c2452e,#a5372a);border-radius:16px;padding:3px;box-shadow:0 8px 22px rgba(165,55,42,.2)">
@@ -1003,23 +1074,7 @@ fetch('../data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
   <p class="tb-scam-disclaimer">Agrégateur d’information des avertissements publics officiels de l’Autorité nationale de cybersécurité et de la presse. Ne constitue pas un conseil juridique. Textes complets et mises à jour — sur la <a href="https://t.me/Israel_Cyber" target="_blank" rel="noopener noreferrer">chaîne officielle</a> (en hébreu). Ci-dessous : l’original hébreu de chaque message frauduleux et des signaux d’alerte.</p>
 </details>
 
-<script>
-fetch('../data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null}).then(function(d){
-  if(!d) return;
-  if(d.boi){
-    var boiEl=document.getElementById('dec-boi-val');
-    if(boiEl) boiEl.textContent='Taux '+(d.boi.rate*100).toFixed(2).replace('.',',')+' % · Prime '+(d.boi.prime*100).toFixed(2).replace('.',',')+' %';
-  }
-  if(d.fuel){
-    var fuelEl=document.getElementById('dec-fuel-val');
-    if(fuelEl) fuelEl.textContent=d.fuel.price_95.toFixed(2).replace('.',',')+' ₪ / litre';
-  }
-  if(d.cpi){
-    var cpiEl=document.getElementById('dec-cpi-val');
-    if(cpiEl) cpiEl.textContent='Inflation annuelle : '+(d.cpi.yoy*100).toFixed(1).replace('.',',')+' %';
-  }
-}).catch(function(){});
-</script>
+
 </div>
 </div>
 
@@ -1231,23 +1286,7 @@ Fête d’un jour, tombée un vendredi en 2026 — banques et administrations fe
 <p style="font-size:10px;color:var(--muted);margin:8px 0 0">Dates 2026, d’après le Bituah Leumi, les banques et le calendrier juif. Les horaires peuvent varier selon l’agence — vérifiez sur place. Les fêtes passées restent à titre de référence pour l’année suivante (les dates changeront — le calendrier juif se décale).</p>
 </details>
 
-<script>
-fetch('../data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null}).then(function(d){
-  if(!d) return;
-  if(d.boi){
-    var boiEl=document.getElementById('dec-boi-val');
-    if(boiEl) boiEl.textContent='Taux '+(d.boi.rate*100).toFixed(2).replace('.',',')+' % · Prime '+(d.boi.prime*100).toFixed(2).replace('.',',')+' %';
-  }
-  if(d.fuel){
-    var fuelEl=document.getElementById('dec-fuel-val');
-    if(fuelEl) fuelEl.textContent=d.fuel.price_95.toFixed(2).replace('.',',')+' ₪ / litre';
-  }
-  if(d.cpi){
-    var cpiEl=document.getElementById('dec-cpi-val');
-    if(cpiEl) cpiEl.textContent='Inflation annuelle : '+(d.cpi.yoy*100).toFixed(1).replace('.',',')+' %';
-  }
-}).catch(function(){});
-</script>
+
 </div>
 </div>
 </div>
@@ -1344,28 +1383,12 @@ fetch('../data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.js
 <details class="faq-item fade-in" style="margin-bottom:10px"><summary style="cursor:pointer;font-weight:800;color:var(--green);padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;list-style:none">Qu’est-ce que la « sélection automatique » du calculateur de machkanta ?</summary><p style="margin:8px 4px 0;font-size:13px;color:var(--muted)">C’est un algorithme qui passe en revue plus de 67 000 combinaisons de parts et de durées des pistes hypothécaires et trouve la formule optimale pour votre objectif — au lieu de chercher les proportions à la main.</p></details>
 <details class="faq-item fade-in"><summary style="cursor:pointer;font-weight:800;color:var(--green);padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;list-style:none">Pourquoi le glossaire donne-t-il les termes en russe, avec l’hébreu entre parenthèses ?</summary><p style="margin:8px 4px 0;font-size:13px;color:var(--muted)">La page du glossaire est encore en russe — mais son principe reste : comprendre le sens dans une langue claire et reconnaître le nom officiel du terme dans les documents de la banque ou la fiche de paie en hébreu.</p></details>
 
-<script>
-fetch('../data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null}).then(function(d){
-  if(!d) return;
-  if(d.boi){
-    var boiEl=document.getElementById('dec-boi-val');
-    if(boiEl) boiEl.textContent='Taux '+(d.boi.rate*100).toFixed(2).replace('.',',')+' % · Prime '+(d.boi.prime*100).toFixed(2).replace('.',',')+' %';
-  }
-  if(d.fuel){
-    var fuelEl=document.getElementById('dec-fuel-val');
-    if(fuelEl) fuelEl.textContent=d.fuel.price_95.toFixed(2).replace('.',',')+' ₪ / litre';
-  }
-  if(d.cpi){
-    var cpiEl=document.getElementById('dec-cpi-val');
-    if(cpiEl) cpiEl.textContent='Inflation annuelle : '+(d.cpi.yoy*100).toFixed(1).replace('.',',')+' %';
-  }
-}).catch(function(){});
-</script>
+
 </div>
 </section>
 </main>
 
-<footer class="shell footer">Finances d’Israël, simplement — projet d’information indépendant, sans lien avec les banques, les courtiers ou les conseillers financiers. Conçu pour comprendre les outils financiers et décider soi-même, en connaissance de cause. Les calculs sont indicatifs. Les conditions réelles dépendent de votre situation personnelle, de la banque, de la date du calcul et de la législation en vigueur. · <a href="../contact.html" style="color:var(--green);font-weight:800;text-decoration:none">Nous écrire</a> · <span style="white-space:nowrap">🇷🇺 <i style="font-style:normal">Доступно и по-русски:</i> <a href="../index.html" style="color:var(--green);font-weight:800;text-decoration:none">полная версия сайта</a></span></footer>
+<footer class="shell footer">Finances d’Israël, simplement — projet d’information indépendant, sans lien avec les banques, les courtiers ou les conseillers financiers. Conçu pour comprendre les outils financiers et décider soi-même, en connaissance de cause. Les calculs sont indicatifs. Les conditions réelles dépendent de votre situation personnelle, de la banque, de la date du calcul et de la législation en vigueur. · <a href="../contact.html" style="color:var(--green);font-weight:800;text-decoration:none">Nous écrire</a> · <span style="white-space:nowrap">🇷🇺 <i style="font-style:normal">Aussi en russe :</i> <a href="../index.html" style="color:var(--green);font-weight:800;text-decoration:none">version complète du site</a></span></footer>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

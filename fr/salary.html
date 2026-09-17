@@ -1113,7 +1113,7 @@ function checkSectorMinimum() {
   const floor = isFullTime ? info.monthly : info.hourly * hours;
   if (base > 0 && base < floor) {
     warnEl.style.display = 'block';
-    if (amountEl) amountEl.textContent = floor.toLocaleString('ru-RU', {maximumFractionDigits: 2}) + ' ₪';
+    if (amountEl) amountEl.textContent = floor.toLocaleString('fr-FR', {maximumFractionDigits: 2}) + ' ₪';
   } else {
     warnEl.style.display = 'none';
   }
