@@ -123,6 +123,10 @@ select,input[type=number]{font:inherit;padding:8px 10px;border:1px solid var(--l
   <div class="brand">₪ Finances d'Israël, simplement <small>Retraite, impôts et Bituah Leumi · 2026</small></div>
   <span class="spacer"></span>
   <a href="index.html" style="font-weight:800;text-decoration:none;font-size:.86rem">← Accueil</a>
+  <span style="display:inline-flex;border:1.5px solid var(--green);border-radius:11px;overflow:hidden;font-size:13px;font-weight:800;line-height:1;white-space:nowrap">
+    <a href="../index.html" style="padding:8px 13px;text-decoration:none;color:var(--green);background:#fff" aria-label="Русская версия сайта — на главную" title="Русская версия сайта — на главную">RU</a>
+    <b style="padding:8px 13px;color:#fff;background:var(--green)">FR</b>
+  </span>
   <span style="display:inline-flex;gap:4px;align-items:center" role="group" aria-label="Taille du texte">
     <button class="fsbtn" id="fs1" aria-pressed="true" onclick="setFs('')">A</button>
     <button class="fsbtn" id="fs2" aria-pressed="false" onclick="setFs('big')">A+</button>
@@ -314,6 +318,7 @@ select,input[type=number]{font:inherit;padding:8px 10px;border:1px solid var(--l
 <footer>
   <p><b>Mise à jour : 17 septembre 2026.</b> Barèmes français 2026 (retenue à la source des non-résidents) et plafonds israéliens 2026 (pension ouvrant droit 9 430 ₪, taux maximal 57,5 %).</p>
   <p>Page d'information, <b>sans valeur de conseil juridique ou fiscal</b>. Le projet n'est lié ni à l'administration fiscale française, ni à l'administration fiscale israélienne, ni au Bituah Leumi. La qualification de votre situation dépend de votre dossier — faites-la valider par un professionnel.</p>
+  <p style="margin-bottom:6px"><span style="display:inline-flex;border:1.5px solid var(--green);border-radius:11px;overflow:hidden;font-size:12.5px;font-weight:800;line-height:1;white-space:nowrap"><a href="../index.html" style="padding:7px 12px;text-decoration:none;color:var(--green);background:#fff">Русская версия сайта</a><b style="padding:7px 12px;color:#fff;background:var(--green)">FR</b></span></p>
   <p>À lire aussi : <a href="ashlamat-ahnasa.html">complément de revenu (achlamat hahnasa)</a> · <a href="pension-gap.html">compléter une pension israélienne trop faible</a> · <a href="tablo.html">taux, inflation et indice des prix</a> · <a href="index.html">← Tous les simulateurs</a> · <a href="contact.html">Signaler une erreur</a></p>
 </footer>
 </div>
@@ -403,4 +408,15 @@ select,input[type=number]{font:inherit;padding:8px 10px;border:1px solid var(--l
   calcRas();
 })();
 </script>
+
+<style>@media(max-width:700px){.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}}</style>
+<script>/* таблицы на телефоне: широкие не вылетают за экран, а прокручиваются */
+(function(){document.querySelectorAll('table').forEach(function(t){
+  if(t.parentElement&&t.parentElement.classList.contains('table-scroll')){return}
+  var need=!t.rows[0]||t.rows[0].cells.length>=3;
+  if(!need){return}
+  var w=document.createElement('div');w.className='table-scroll';
+  w.style.cssText='overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%';
+  t.parentNode.insertBefore(w,t);w.appendChild(t);
+})})();</script>
 </body></html>

@@ -900,5 +900,16 @@
 })();
 </script>
 <footer style="width:min(1200px,calc(100% - 28px));margin:26px auto 40px;color:#5a6660;font-size:11px;text-align:center;font-family:Inter,system-ui,sans-serif">Понятные финансы в Израиле · проверка специалиста · не юридическая консультация · <a href="contact.html" style="color:#08775a;font-weight:800;text-decoration:none">Написать нам</a> · <a href="about.html" style="color:#08775a;font-weight:800;text-decoration:none">О проекте</a></footer>
+
+<style>@media(max-width:700px){.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}}</style>
+<script>/* таблицы на телефоне: широкие не вылетают за экран, а прокручиваются */
+(function(){document.querySelectorAll('table').forEach(function(t){
+  if(t.parentElement&&t.parentElement.classList.contains('table-scroll')){return}
+  var need=!t.rows[0]||t.rows[0].cells.length>=3;
+  if(!need){return}
+  var w=document.createElement('div');w.className='table-scroll';
+  w.style.cssText='overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%';
+  t.parentNode.insertBefore(w,t);w.appendChild(t);
+})})();</script>
 </body>
 </html>

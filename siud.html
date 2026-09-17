@@ -245,4 +245,15 @@ function shareSiud(target) {
 }
 </script>
 <script data-goatcounter="https://finance-portal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<style>@media(max-width:700px){.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}}</style>
+<script>/* таблицы на телефоне: широкие не вылетают за экран, а прокручиваются */
+(function(){document.querySelectorAll('table').forEach(function(t){
+  if(t.parentElement&&t.parentElement.classList.contains('table-scroll')){return}
+  var need=!t.rows[0]||t.rows[0].cells.length>=3;
+  if(!need){return}
+  var w=document.createElement('div');w.className='table-scroll';
+  w.style.cssText='overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%';
+  t.parentNode.insertBefore(w,t);w.appendChild(t);
+})})();</script>
 </body></html>

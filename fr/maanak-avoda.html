@@ -300,7 +300,7 @@ details summary::-webkit-details-marker { display: none; }
         </div>
       </a>
       <a class="back" href="index.html">← Tous les calculateurs</a>
-      <span style="display:inline-flex;border:1.5px solid var(--green,#08775a);border-radius:11px;overflow:hidden;font-size:13px;font-weight:800;line-height:1;white-space:nowrap;vertical-align:middle"><a href="maanak-avoda.html" style="padding:8px 13px;text-decoration:none;color:var(--green,#08775a);background:#fff" aria-label="Русская версия">RU</a><b style="padding:8px 13px;color:#fff;background:var(--green,#08775a)">FR</b></span>
+      <span style="display:inline-flex;border:1.5px solid var(--green,#08775a);border-radius:11px;overflow:hidden;font-size:13px;font-weight:800;line-height:1;white-space:nowrap;vertical-align:middle"><a href="../maanak-avoda.html" style="padding:8px 13px;text-decoration:none;color:var(--green,#08775a);background:#fff" aria-label="Русская версия">RU</a><b style="padding:8px 13px;color:#fff;background:var(--green,#08775a)">FR</b></span>
     </div>
   </header>
 
@@ -960,5 +960,16 @@ function shareMaanak(target) {
 }
 </script>
 <script data-goatcounter="https://exodus611.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<style>@media(max-width:700px){.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}}</style>
+<script>/* таблицы на телефоне: широкие не вылетают за экран, а прокручиваются */
+(function(){document.querySelectorAll('table').forEach(function(t){
+  if(t.parentElement&&t.parentElement.classList.contains('table-scroll')){return}
+  var need=!t.rows[0]||t.rows[0].cells.length>=3;
+  if(!need){return}
+  var w=document.createElement('div');w.className='table-scroll';
+  w.style.cssText='overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%';
+  t.parentNode.insertBefore(w,t);w.appendChild(t);
+})})();</script>
 </body>
 </html>
