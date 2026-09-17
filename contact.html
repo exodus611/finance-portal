@@ -82,7 +82,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 <p class="lead">Нашли ошибку в расчёте, неточность в термине или есть идея, чего не хватает? Форма ниже уходит напрямую нам — без регистрации и без сохранения где-либо, кроме самого письма.</p>
 
 <div class="card">
-<form id="feedback-form" action="https://formspree.io/f/ВСТАВЬ_СЮДА_СВОЙ_ID_ФОРМЫ" method="POST">
+<form id="feedback-form" action="https://formspree.io/f/xwvgrgbp" method="POST">
+<input type="hidden" name="_subject" value="Сообщение с сайта: финансы Израиля">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px" aria-hidden="true">
 <label>Ваше имя (необязательно)</label>
 <input type="text" name="name" placeholder="Как к вам обращаться">
 
@@ -122,7 +124,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
    3) если пусто — текст копируется в буфер, и предлагается Telegram.
    Пока не заполнено, форма не «молчит»: сообщение пользователя не теряется.
    =============================================== */
-var CONTACT_FORMSPREE = '';   /* 1. ID формы на formspree.io — письма придут вам, адрес в коде не появляется */
+var CONTACT_FORMSPREE = 'xwvgrgbp';   /* 1. ID формы на formspree.io — письма придут вам, адрес в коде не появляется */
 var CONTACT_EMAIL     = '';   /* 2. либо отдельный ящик для сайта (лучше НЕ основной) */
 var CONTACT_BOT_URL   = '';   /* 3. либо URL Cloudflare Worker, который пересылает в ваш Telegram-бот */
 var CONTACT_TELEGRAM  = '';   /* запасной вариант: чат/группа, где посетитель может написать (канал не подходит) */
@@ -184,9 +186,9 @@ var CONTACT_TELEGRAM  = '';   /* запасной вариант: чат/гру�
       fetch('https://formspree.io/f/' + CONTACT_FORMSPREE, {method:'POST', body:data, headers:{'Accept':'application/json'}})
         .then(function(r){
           if(r.ok){ form.style.display = 'none'; document.getElementById('success-box').classList.add('show'); }
-          else { showFallback('Отправка не удалась. Текст не потерян: скопируйте его и отправьте в Telegram.'); }
+          else { showFallback('Отправка не удалась. Текст не потерян — он ниже, скопируйте его.'); }
         })
-        .catch(function(){ showFallback('Нет связи. Текст не потерян: скопируйте его и отправьте в Telegram.'); });
+        .catch(function(){ showFallback('Нет связи с сервисом отправки. Текст не потерян — он ниже, скопируйте его.'); });
       return;
     }
     /* 2) указан e-mail — открываем почтовый клиент */

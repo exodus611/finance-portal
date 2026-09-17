@@ -86,7 +86,9 @@ footer{padding:26px 0 40px;font-size:12px;color:var(--muted);text-align:center}
 </div>
 
 <section class="card">
-  <form id="feedback-form" action="https://formspree.io/f/ВСТАВЬ_СЮДА_СВОЙ_ID_ФОРМЫ" method="POST">
+  <form id="feedback-form" action="https://formspree.io/f/xwvgrgbp" method="POST">
+<input type="hidden" name="_subject" value="Message du site : finances d'Israël">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px" aria-hidden="true">
     <label for="f-name">Votre nom (facultatif)</label>
     <input type="text" id="f-name" name="name" placeholder="Comment vous appeler">
     <label for="f-email">E-mail pour la réponse (facultatif)</label>
@@ -139,7 +141,7 @@ footer{padding:26px 0 40px;font-size:12px;color:var(--muted);text-align:center}
    3) Si les deux sont vides : le message est copié et Telegram est proposé.
    Rien ne casse tant que ce n'est pas rempli — et rien n'est perdu pour le visiteur.
    ====================================================================== */
-var CONTACT_FORMSPREE = '';   /* 1. ID du formulaire formspree.io — l'e-mail reste privé */
+var CONTACT_FORMSPREE = 'xwvgrgbp';   /* 1. ID du formulaire formspree.io — l'e-mail reste privé */
 var CONTACT_EMAIL     = '';   /* 2. ou une boîte dédiée au site (pas la principale) */
 var CONTACT_BOT_URL   = '';   /* 3. ou l'URL d'un Cloudflare Worker qui relaie vers votre bot Telegram */
 var CONTACT_TELEGRAM  = '';   /* secours : un chat/groupe où l'on peut écrire (une chaîne ne convient pas) */
