@@ -4,6 +4,57 @@
   "entries": [
     {
       "date": "2026-09-17",
+      "tag": "мобильные",
+      "tag_fr": "mobile",
+      "ru_title": "Таблицы больше не вылезают за экран телефона",
+      "ru_text": "Широкие таблицы (три колонки и больше) на узком экране прокручиваются по горизонтали внутри своего блока. Там, где таблица и так помещалась, вид не изменился.",
+      "fr_title": "Les tableaux ne débordent plus de l'écran sur mobile",
+      "fr_text": "Les tableaux larges (trois colonnes et plus) défilent horizontalement dans leur bloc sur écran étroit. Là où le tableau tenait déjà, l'affichage est inchangé.",
+      "links": [
+        {
+          "href": "arnona.html",
+          "ru": "Пример: арнона",
+          "fr": "Exemple : arnona"
+        }
+      ],
+      "fr_only": false
+    },
+    {
+      "date": "2026-09-17",
+      "tag": "индексация",
+      "tag_fr": "indexation",
+      "ru_title": "Новые страницы поданы поисковым системам",
+      "ru_text": "Bing, Yandex, Seznam и Naver уведомлены автоматически (IndexNow): поданы все 61 адреса из карты сайта, при каждом обновлении подача повторяется только для новых страниц. Для Google индексирование запрашивается вручную в Search Console — список адресов по приоритету собран отдельно.",
+      "fr_title": "Nouvelles pages soumises aux moteurs de recherche",
+      "fr_text": "Bing, Yandex, Seznam et Naver sont notifiés automatiquement (IndexNow) : les 61 adresses du plan du site ont été soumises, et chaque mise à jour ne renvoie que les nouvelles pages. Pour Google, l'indexation se demande manuellement dans la Search Console.",
+      "links": [
+        {
+          "href": "sitemap.xml",
+          "ru": "Карта сайта (61 адрес)",
+          "fr": "Plan du site (61 adresses)"
+        }
+      ],
+      "fr_only": false
+    },
+    {
+      "date": "2026-09-17",
+      "tag": "исправление",
+      "tag_fr": "correction",
+      "ru_title": "Переключатель языка FR→RU исправлен",
+      "ru_text": "На французских страницах кнопка RU вела на саму же французскую страницу — вернуться на русскую версию было невозможно (в обратную сторону переключение работало). Исправлено на всех 23 французских страницах; там, где русская версия темы отсутствует, кнопка ведёт на русскую главную и это подписано.",
+      "fr_title": "Sélecteur de langue FR→RU corrigé",
+      "fr_text": "Sur les pages françaises, le bouton RU renvoyait vers la page française elle-même : impossible de revenir à la version russe. Corrigé sur les 23 pages françaises ; là où la version russe n'existe pas, le bouton mène à l'accueil russe, comme indiqué.",
+      "links": [
+        {
+          "href": "fr/changelog.html",
+          "ru": "Проверить на французской странице",
+          "fr": "Vérifier sur une page française"
+        }
+      ],
+      "fr_only": false
+    },
+    {
+      "date": "2026-09-17",
       "tag": "новая страница",
       "tag_fr": "nouvelle page",
       "ru_title": "Пенсия из Франции у израильского резидента: кто и как облагает",
@@ -11,7 +62,11 @@
       "fr_title": "Retraite française et résidence israélienne : qui impose quoi",
       "fr_text": "Article 18 (pension privée imposée seulement dans l'État de résidence), article 19 (pension publique imposée en France), double exonération des dix premières années après l'aliya puis imposition en Israël. Avec un calculateur de retenue à la source des non-résidents (barème 2026) et un test en trois questions.",
       "links": [
-        {"href": "fr/retraite-france-israel.html", "ru": "Открыть страницу", "fr": "Ouvrir la page"}
+        {
+          "href": "fr/retraite-france-israel.html",
+          "ru": "Открыть страницу",
+          "fr": "Ouvrir la page"
+        }
       ],
       "fr_only": true
     },
@@ -24,8 +79,16 @@
       "fr_title": "Les messages du formulaire arrivent vraiment",
       "fr_text": "Le formulaire des deux pages contact (russe et française) envoie désormais réellement le message, avec une protection anti-robots. Si le service est indisponible, le texte s'affiche dans un champ à copier : rien n'est perdu.",
       "links": [
-        {"href": "contact.html", "ru": "Русская форма", "fr": "Formulaire russe"},
-        {"href": "fr/contact.html", "ru": "Французская форма", "fr": "Formulaire français"}
+        {
+          "href": "contact.html",
+          "ru": "Русская форма",
+          "fr": "Formulaire russe"
+        },
+        {
+          "href": "fr/contact.html",
+          "ru": "Французская форма",
+          "fr": "Formulaire français"
+        }
       ]
     },
     {
@@ -37,8 +100,16 @@
       "fr_title": "Les dates du calendrier sont désormais visibles pour les moteurs de recherche",
       "fr_text": "Le calendrier (versements du Bituah Leumi, décision de la Banque d'Israël, indice des prix, essence) est dessiné dans le navigateur à partir des fichiers de données : les dates n'existaient pas dans le HTML. Elles y sont maintenant inscrites sur les deux pages d'accueil, et un test automatique compare le texte statique et l'affichage réel.",
       "links": [
-        {"href": "index.html", "ru": "Главная (развернуть «Календарь решений и выплат»)", "fr": "Accueil (déplier le calendrier)"},
-        {"href": "fr/index.html", "ru": "Французская главная", "fr": "Accueil français"}
+        {
+          "href": "index.html",
+          "ru": "Главная (развернуть «Календарь решений и выплат»)",
+          "fr": "Accueil (déplier le calendrier)"
+        },
+        {
+          "href": "fr/index.html",
+          "ru": "Французская главная",
+          "fr": "Accueil français"
+        }
       ]
     },
     {
@@ -50,8 +121,16 @@
       "fr_title": "Calculateur du complément de revenu du Bituah Leumi (achlamat hahnasa)",
       "fr_text": "Jusqu'où le Bituah Leumi complète la pension de vieillesse : plafonds 2026 par âge et situation familiale, seuils de revenus et d'épargne, vérification du droit en cas de pension partielle. Versions russe et française, traduites à la main.",
       "links": [
-        {"href": "ashlamat-ahnasa.html", "ru": "Русская версия", "fr": "Version russe"},
-        {"href": "fr/ashlamat-ahnasa.html", "ru": "Французская версия", "fr": "Version française"}
+        {
+          "href": "ashlamat-ahnasa.html",
+          "ru": "Русская версия",
+          "fr": "Version russe"
+        },
+        {
+          "href": "fr/ashlamat-ahnasa.html",
+          "ru": "Французская версия",
+          "fr": "Version française"
+        }
       ]
     },
     {
@@ -63,8 +142,16 @@
       "fr_title": "Pages françaises : glossaire, à propos, contact",
       "fr_text": "38 termes en cinq catégories (Bituah Leumi, impôts, banque, travail, retraite) avec l'original hébreu, pour lire les courriers du fisc et du Bituah Leumi. Plus les pages « à propos » et « contact » et une image dédiée aux réseaux sociaux.",
       "links": [
-        {"href": "fr/slovar.html", "ru": "Словарь (по-французски)", "fr": "Glossaire"},
-        {"href": "fr/about.html", "ru": "О проекте", "fr": "À propos"}
+        {
+          "href": "fr/slovar.html",
+          "ru": "Словарь (по-французски)",
+          "fr": "Glossaire"
+        },
+        {
+          "href": "fr/about.html",
+          "ru": "О проекте",
+          "fr": "À propos"
+        }
       ],
       "fr_only": true
     },
@@ -77,7 +164,11 @@
       "fr_title": "Calendrier des décisions et des versements sur l'accueil (RU + FR)",
       "fr_text": "Une seule requête vers les fichiers de données au lieu de quatre doublons : taux de la Banque d'Israël et prime, inflation annuelle, essence 95, prochains versements, avec les jours restants calculés automatiquement.",
       "links": [
-        {"href": "tablo.html", "ru": "Табло индексов", "fr": "Tableau de bord"}
+        {
+          "href": "tablo.html",
+          "ru": "Табло индексов",
+          "fr": "Tableau de bord"
+        }
       ]
     }
   ]
