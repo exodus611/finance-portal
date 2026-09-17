@@ -122,9 +122,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
    3) если пусто — текст копируется в буфер, и предлагается Telegram.
    Пока не заполнено, форма не «молчит»: сообщение пользователя не теряется.
    =============================================== */
-var CONTACT_FORMSPREE = '';
-var CONTACT_EMAIL     = '';
-var CONTACT_TELEGRAM  = 'https://t.me/recall_Israel';
+var CONTACT_FORMSPREE = '';   /* 1. ID формы на formspree.io — письма придут вам, адрес в коде не появляется */
+var CONTACT_EMAIL     = '';   /* 2. либо отдельный ящик для сайта (лучше НЕ основной) */
+var CONTACT_BOT_URL   = '';   /* 3. либо URL Cloudflare Worker, который пересылает в ваш Telegram-бот */
+var CONTACT_TELEGRAM  = '';   /* запасной вариант: чат/группа, где посетитель может написать (канал не подходит) */
 
 (function(){
   var form = document.getElementById('feedback-form');
@@ -158,10 +159,24 @@ var CONTACT_TELEGRAM  = 'https://t.me/recall_Israel';
   }
   function showFallback(msg){
     if(msg && fbText){ fbText.textContent = msg; }
+    var area = document.getElementById('fallback-copy');
+    if(area){ area.value = compose(); }
+    if(tg && CONTACT_TELEGRAM){ tg.style.display = 'inline-block'; tg.href = CONTACT_TELEGRAM; }
     if(fbBox){ fbBox.style.display = 'block'; fbBox.scrollIntoView({behavior:'smooth', block:'center'}); }
   }
 
   form.addEventListener('submit', function(e){
+    /* 0) пересылка в Telegram через свой Worker — адрес почты вообще не нужен */
+    if(CONTACT_BOT_URL){
+      e.preventDefault();
+      fetch(CONTACT_BOT_URL, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({topic:value('topic'), name:value('name'), email:value('email'), page:(document.referrer||location.href), message:value('message')})})
+        .then(function(r){
+          if(r.ok){ form.style.display='none'; document.getElementById('success-box').classList.add('show'); }
+          else { showFallback('Не получилось отправить. Текст не потерян: скопируйте его и отправьте нам напрямую.'); }
+        })
+        .catch(function(){ showFallback('Нет связи. Текст не потерян: скопируйте его и отправьте нам напрямую.'); });
+      return;
+    }
     /* 1) Formspree настроен — отправляем по-настоящему */
     if(CONTACT_FORMSPREE){
       e.preventDefault();

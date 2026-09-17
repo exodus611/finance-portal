@@ -110,8 +110,9 @@ footer{padding:26px 0 40px;font-size:12px;color:var(--muted);text-align:center}
 
   <div id="fallback-box" class="note n-warn" style="display:none">
     <b>Votre message est copié dans le presse-papiers.</b>
-    <span id="fallback-text">Le formulaire n'est pas encore relié à un service d'envoi : collez le texte dans notre canal Telegram et nous le verrons tout de suite.</span>
-    <div><a class="btn-ghost" id="fallback-tg" href="https://t.me/recall_Israel" target="_blank" rel="noopener noreferrer">Ouvrir Telegram →</a></div>
+    <span id="fallback-text">Le formulaire n'est pas encore relié à un service d'envoi : transmettez-nous ce texte par le moyen de votre choix.</span>
+    <textarea id="fallback-copy" readonly style="width:100%;min-height:110px;margin-top:8px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:12.5px;color:var(--ink);background:#fff"></textarea>
+    <div><a class="btn-ghost" id="fallback-tg" href="#" style="display:none">Nous écrire →</a></div>
   </div>
 </section>
 
@@ -138,9 +139,10 @@ footer{padding:26px 0 40px;font-size:12px;color:var(--muted);text-align:center}
    3) Si les deux sont vides : le message est copié et Telegram est proposé.
    Rien ne casse tant que ce n'est pas rempli — et rien n'est perdu pour le visiteur.
    ====================================================================== */
-var CONTACT_FORMSPREE = '';
-var CONTACT_EMAIL     = '';
-var CONTACT_TELEGRAM  = 'https://t.me/recall_Israel';
+var CONTACT_FORMSPREE = '';   /* 1. ID du formulaire formspree.io — l'e-mail reste privé */
+var CONTACT_EMAIL     = '';   /* 2. ou une boîte dédiée au site (pas la principale) */
+var CONTACT_BOT_URL   = '';   /* 3. ou l'URL d'un Cloudflare Worker qui relaie vers votre bot Telegram */
+var CONTACT_TELEGRAM  = '';   /* secours : un chat/groupe où l'on peut écrire (une chaîne ne convient pas) */
 
 (function(){
   var form=document.getElementById('feedback-form');
@@ -180,12 +182,25 @@ var CONTACT_TELEGRAM  = 'https://t.me/recall_Israel';
     }
   }
   function showFallback(text){
-    if(fbBox){fbBox.style.display='block'}
     if(text&&fbText){fbText.textContent=text}
-    if(fbBox){fbBox.scrollIntoView({behavior:'smooth',block:'center'})}
+    var area=document.getElementById('fallback-copy');
+    if(area){area.value=compose()}
+    if(tg&&CONTACT_TELEGRAM){tg.style.display='inline-block';tg.href=CONTACT_TELEGRAM}
+    if(fbBox){fbBox.style.display='block';fbBox.scrollIntoView({behavior:'smooth',block:'center'})}
   }
 
   form.addEventListener('submit', function(e){
+    /* 0) relais vers Telegram via votre Worker — aucun e-mail nulle part */
+    if(CONTACT_BOT_URL){
+      e.preventDefault();
+      fetch(CONTACT_BOT_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({topic:value('topic'),name:value('name'),email:value('email'),page:(document.referrer||location.href),message:value('message')})})
+        .then(function(r){
+          if(r.ok){form.style.display='none';document.getElementById('success-box').classList.add('show')}
+          else{showFallback('L\'envoi a échoué. Votre texte n\'est pas perdu : copiez-le et envoyez-le nous directement.')}
+        })
+        .catch(function(){showFallback('Pas de connexion. Votre texte n\'est pas perdu : copiez-le et envoyez-le nous directement.')});
+      return;
+    }
     /* 1) Formspree configuré : envoi réel */
     if(CONTACT_FORMSPREE){
       e.preventDefault();
