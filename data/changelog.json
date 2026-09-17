@@ -4,6 +4,28 @@
   "entries": [
     {
       "date": "2026-09-17",
+      "tag": "правка",
+      "tag_fr": "correction",
+      "ru_title": "Страница автахат ахнаса переписана в общем формате и выведена на главное табло",
+      "ru_text": "Страница о пособии по прожиточному минимуму выпадала из общего вида сайта: у неё не было привычных шагов расчёта, а текст получился тяжёлым — длинные фразы, лишние отступления, местами опечатки (например, «самоsанятые» с латинской буквой внутри слова). Что сделано: калькулятор приведён к общему формату «Шаг 1. Кто вы по данным Битуах Леуми» и «Шаг 2. Что получается», появились быстрые кнопки подстановки дохода, разделы переименованы под общий стиль, длинные предложения разобраны на короткие, опечатки исправлены. Все суммы прежние — официальная таблица с 01.01.2026 не менялась. Главное: плитка страницы получила флаг «популярное» и теперь стоит на главной сразу под плиткой социальной надбавки — до этого она была вне переднего табло и найти её можно было только прокруткой списка.",
+      "fr_title": "La page havtahat hahnasa a été réécrite au format habituel et placée sur le tableau principal",
+      "fr_text": "La page de l'allocation de subsistance sortait du format général : pas d'étapes de calcul, un texte lourd — phrases longues, digressions — et quelques coquilles (par exemple « самоsанятые », avec une lettre latine au milieu du mot). Corrections : le simulateur suit désormais le format « Étape 1 — votre situation » et « Étape 2 — le résultat », des boutons de saisie rapide du revenu ont été ajoutés, les titres de sections reprennent le style du site, les phrases longues ont été découpées et les coquilles corrigées. Les montants sont inchangés — barème officiel du 01.01.2026. Surtout : la tuile de la page a reçu le statut « populaire » et figure maintenant sur l'accueil juste sous celle du complément de revenu — elle se trouvait auparavant hors du tableau principal, introuvable sans faire défiler la liste. Sur l'accueil français, deux tuiles ont été ajoutées (complément de revenu et allocation de subsistance), et une tuile « Sioud » pointait encore vers la page russe alors que la version française existe.",
+      "links": [
+        {
+          "href": "avtahat-ahnasa.html",
+          "ru": "Страница пособия",
+          "fr": "Version russe"
+        },
+        {
+          "href": "fr/avtahat-ahnasa.html",
+          "ru": "Французская версия",
+          "fr": "Allocation de subsistance"
+        }
+      ],
+      "fr_only": false
+    },
+    {
+      "date": "2026-09-17",
       "tag": "новая страница",
       "tag_fr": "nouvelle page",
       "ru_title": "Автахат ахнаса — новая страница: пособие по прожиточному минимуму со своей таблицей сумм",

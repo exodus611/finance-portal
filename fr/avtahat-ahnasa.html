@@ -69,18 +69,18 @@
 </div></header>
 
 <div class="wrap">
-  <h1>Havtahat hahnasa — l'allocation de subsistance 2026
-    <span class="he">הבטחת הכנסה · allocation complète pour qui n'a ni revenu ni droit à d'autres versements</span>
+  <h1>Allocation de subsistance (havtahat hahnasa) — vérification du droit et montants 2026
+    <span class="he">הבטחת הכנסה · l'allocation complète quand il n'y a ni revenu ni droit à d'autres versements</span>
   </h1>
   <p class="lead"><span class="badge">Montants du Bituah Leumi · 2026</span>
-  C'est une <b>allocation autonome</b>, pas un complément de pension : elle est versée à ceux qui n'ont ni revenu du travail ni droit à d'autres prestations — maladie, invalidité, accident du travail, chômage de longue durée. Depuis 2026, une personne seule de 25 à 54 ans touche <b>2 076 ₪</b> par mois, et un parent isolé de 55 ans et plus avec deux enfants jusqu'à <b>5 289 ₪</b>. Pour les nouveaux immigrants, l'obstacle principal est la <b>condition de 24 mois de résidence</b> — mais elle comporte des exceptions dont on ne parle pas toujours au guichet.</p>
+  La havtahat hahnasa est une <b>allocation autonome</b>, pas un complément de pension. Elle est versée à ceux qui n'ont ni revenu du travail ni droit à d'autres prestations : maladie, invalidité, accident du travail, chômage de longue durée. Une personne seule de 25 à 54 ans touche <b>2 076 ₪</b> par mois. Un parent isolé de 55 ans et plus avec deux enfants, jusqu'à <b>5 289 ₪</b>. Pour les nouveaux immigrants, l'obstacle principal est la <b>condition de 24 mois de résidence</b> — mais elle comporte des exceptions.</p>
 
   <div class="note">
-    <b>Ceci est une estimation, pas une décision du Bituah Leumi.</b> Le montant dépend de l'âge, de la composition du foyer, des revenus, du patrimoine et de l'inscription au service de l'emploi. Seul l'institut calcule le droit exact, avec ses données — il met à disposition <a href="https://www.btl.gov.il/Simulators/Pages/IncomeSupportCalc.aspx" rel="nofollow noopener" target="_blank">son simulateur officiel</a>. Les chiffres ci-dessous proviennent du barème du Bituah Leumi en vigueur au 01.01.2026.
+    <b>Ceci est une estimation, pas une décision du Bituah Leumi.</b> Le montant dépend de l'âge, de la composition du foyer, des revenus, du patrimoine et de l'inscription au service de l'emploi. Seul l'institut calcule le droit exact — il met à disposition <a href="https://www.btl.gov.il/Simulators/Pages/IncomeSupportCalc.aspx" rel="nofollow noopener" target="_blank">son simulateur officiel</a>. Les chiffres de cette page proviennent du barème du Bituah Leumi en vigueur au 01.01.2026.
   </div>
 
   <div class="card">
-    <h2 style="margin-top:0">Vérification en une minute : droit et montant</h2>
+    <h2 style="margin-top:0">Étape 1 — votre situation</h2>
     <div class="grid">
       <label class="field">Tranche d'âge
         <select id="band">
@@ -88,7 +88,7 @@
           <option value="25-54" selected>25–54 ans</option>
           <option value="55">55 ans — âge de la retraite</option>
         </select>
-        <span class="hint">Ce sont trois barèmes distincts, pas un seul</span>
+        <span class="hint">Trois barèmes distincts : le montant change avec l'âge</span>
       </label>
       <label class="field">Composition du foyer
         <select id="family">
@@ -100,27 +100,34 @@
           <option value="couple2">Couple + 2 enfants et plus</option>
         </select>
       </label>
-      <label class="field">Service de l'emploi (compte pour les 20–24 ans)
+      <label class="field">Service de l'emploi
         <select id="reg">
           <option value="yes" selected>Inscrit comme demandeur d'emploi</option>
           <option value="no">Dispensé de pointage</option>
         </select>
-        <span class="hint">À partir de 25 ans, le montant n'en dépend plus</span>
+        <span class="hint">N'influence le montant qu'avant 25 ans</span>
       </label>
       <label class="field">Revenu du travail, ₪ par mois (brut)
         <input type="number" id="income" value="0" min="0" step="1" inputmode="numeric">
         <span class="hint">L'allocation chômage (avtala) compte comme revenu du travail</span>
+        <span class="mini">
+          <button type="button" onclick="setVal('income',0)">sans emploi · 0</button>
+          <button type="button" onclick="setVal('income',3000)">3 000 ₪</button>
+          <button type="button" onclick="setVal('income',5000)">5 000 ₪</button>
+        </span>
       </label>
     </div>
+
+    <h2>Étape 2 — le résultat</h2>
     <button type="button" id="calcBtn"
       style="width:100%;padding:14px;border:0;border-radius:13px;background:var(--green);color:#fff;font-size:1.05rem;font-weight:850;cursor:pointer">
-      Vérifier mon droit
+      Calculer l'allocation
     </button>
     <div id="out" aria-live="polite"></div>
   </div>
 
-  <h2>Montants 2026 : le barème officiel</h2>
-  <p>La colonne « revenu limite » n'indique pas la prestation mais le seuil : à ce niveau de revenu du travail, l'allocation est ramenée à zéro. Entre zéro et ce seuil, la prestation est partielle et seul le Bituah Leumi en calcule le montant exact.</p>
+  <h2>Montants 2026 : le barème du Bituah Leumi</h2>
+  <p>La colonne « revenu limite » donne un seuil, pas la prestation. À ce niveau de revenu du travail, le versement tombe à zéro. Entre zéro et ce seuil, la prestation est partielle : plus le revenu s'en approche, plus elle diminue.</p>
 
   <h3 style="margin-bottom:6px">20–24 ans</h3>
   <table>
@@ -134,7 +141,7 @@
       <tr><td>Parent isolé + 2 enfants et plus</td><td>4 049 ₪</td><td>4 049 ₪</td><td>9 865 ₪</td></tr>
     </tbody>
   </table>
-  <p class="src">Pourquoi deux montants : avant 25 ans, la prestation dépend de l'inscription au service de l'emploi. Pour les familles avec enfants, la différence ne s'applique pas.</p>
+  <p class="src">Avant 25 ans, le montant dépend du service de l'emploi : 1 661 ₪ pour une personne seule inscrite, 2 076 ₪ si elle est dispensée de pointage. Pour les familles avec enfants, la différence ne s'applique pas.</p>
 
   <h3 style="margin-bottom:6px">25–54 ans</h3>
   <table>
@@ -161,79 +168,84 @@
       <tr><td>Parent isolé + 2 enfants et plus</td><td>5 289 ₪</td><td>12 506 ₪</td></tr>
     </tbody>
   </table>
-  <p class="src">À partir de l'âge de la retraite, le barème change : le montant correspond à la pension de vieillesse avec complément de revenu — de 4 375 ₪ pour une personne seule avant 70 ans à 7 048 ₪ pour un couple après 80 ans. Détails sur la page <a href="ashlamat-ahnasa.html">achlamat hahnasa</a>.</p>
+  <p class="src">Après l'âge de la retraite, le barème change : le montant correspond à la pension de vieillesse avec complément de revenu — de 4 375 ₪ pour une personne seule avant 70 ans à 7 048 ₪ pour un couple après 80 ans. Le détail se trouve sur la page <a href="ashlamat-ahnasa.html">du complément de revenu</a>.</p>
 
-  <h2>Première condition : 24 mois de résidence</h2>
+  <h2>Résidence : 24 mois — et quand la règle cède</h2>
   <div class="card">
-    <p style="margin-top:0">L'allocation est réservée aux personnes <b>résidentes d'Israël depuis au moins 24 mois consécutifs</b>. C'est sur cette condition que les refus tombent le plus souvent pour ceux qui sont arrivés un an ou deux plus tôt : au guichet on entend « pas 24 mois » — et la discussion s'arrête là.</p>
-    <p><b>Mais la règle n'est pas absolue.</b> Le droit est examiné avec des exceptions dès que la personne (ou son conjoint) relève d'un seul de ces cas :</p>
+    <p style="margin-top:0">L'allocation est réservée aux personnes résidentes d'Israël depuis <b>au moins 24 mois consécutifs</b>. C'est sur cette condition que tombent le plus souvent les refus pour ceux qui sont arrivés un an ou deux plus tôt : au guichet on entend « pas 24 mois » — et la discussion s'arrête là.</p>
+    <p><b>Mais la règle n'est pas absolue.</b> Le droit est examiné avec des exceptions dès que la personne ou son conjoint remplit l'une de ces conditions :</p>
     <ul>
-      <li>percevoir du Bituah Leumi l'une des prestations suivantes : pension de vieillesse, pension de réversion, rente d'accident du travail, allocation aux proches d'une victime d'accident du travail, ou indemnité pour un bénévole blessé en mission ;</li>
-      <li><b>être un nouvel immigrant ayant séjourné 12 mois dans le pays</b> (pas nécessairement d'affilée) et se trouver <b>dans les 5 ans suivant l'alya</b> ;</li>
-      <li>au-delà de 5 ans après l'alya : ajouter l'une de ces situations — parent isolé, séparation du conjoint, maladie, grossesse, séjour en institution ou cure de désintoxication.</li>
+      <li>percevoir du Bituah Leumi une pension de vieillesse, de réversion, une rente d'accident du travail ou l'allocation versée aux proches d'une victime d'accident du travail ;</li>
+      <li>percevoir l'indemnité d'un bénévole blessé en mission ;</li>
+      <li><b>être un nouvel immigrant ayant séjourné 12 mois dans le pays</b> — pas nécessairement d'affilée — si l'on se trouve <b>dans les 5 ans suivant l'alya</b> ;</li>
+      <li>au-delà de 5 ans après l'alya, ajouter l'une de ces situations : parent isolé, séparation du conjoint, maladie, grossesse, séjour en institution ou cure de désintoxication.</li>
     </ul>
-    <p style="margin-bottom:0">Il existe par ailleurs une voie propre aux premiers mois : pendant la <b>seconde moitié de la première année</b>, après la fin du « sal klita », le ministère de l'Alya peut verser une allocation de subsistance (avtahat kiyum). Elle s'adresse notamment aux femmes enceintes, aux personnes malades ou hospitalisées, à celles qui s'occupent d'un proche malade, aux familles monoparentales et aux immigrants en situation de handicap.</p>
+    <p style="margin-bottom:0">Il existe aussi une voie propre aux premiers mois. Pendant la <b>seconde moitié de la première année</b> en Israël, après la fin du « sal klita », le ministère de l'Alya peut verser une allocation de subsistance (avtahat kiyum). Elle s'adresse notamment aux femmes enceintes, aux malades et aux hospitalisés. Y sont également éligibles ceux qui s'occupent d'un proche malade, les familles monoparentales et les immigrants en situation de handicap.</p>
   </div>
 
-  <h2>Qui n'y a pas droit</h2>
+  <h2>Qui essuiera un refus</h2>
   <ul>
     <li>les personnes hébergées en institution dont l'entretien est entièrement à la charge de l'État, de l'Agence juive, d'une municipalité ou d'une institution religieuse ;</li>
     <li>les militaires du service obligatoire et leur conjoint ;</li>
     <li>les membres d'un kibboutz ou d'un moshav coopératif et leur conjoint ;</li>
-    <li>les élèves et étudiants des universités, lycées, yechivot et établissements religieux — sauf ceux orientés par le service de l'emploi vers une formation professionnelle, et les parents isolés étudiants qui remplissent leurs conditions ;</li>
+    <li>les élèves et étudiants des universités, lycées, yechivot et établissements religieux. Exception : ceux orientés par le service de l'emploi vers une formation professionnelle, et les parents isolés étudiants qui remplissent leurs conditions ;</li>
     <li>ceux qui <b>refusent un emploi convenable</b> ou la coopération avec le service de l'emploi — pendant deux mois ; et les candidats aux examens du barreau ou d'expert-comptable — pendant les deux mois précédant l'examen.</li>
   </ul>
 
-  <h2>Le service de l'emploi : sans lui, pas d'allocation</h2>
+  <h2>Service de l'emploi : sans inscription, pas d'allocation</h2>
   <div class="card">
-    <p style="margin-top:0">Le droit suppose une inscription au service de l'emploi (לשכת התעסוקה) et le pointage comme demandeur d'emploi — pour vous et pour votre conjoint s'il y en a un. L'inscription peut se faire en ligne, mais il faut se présenter à l'agence <b>dans les 15 jours</b> suivant cette inscription initiale ; les jours comptent à partir de la date d'inscription en ligne.</p>
-    <p>Ne pointent pas seulement les chômeurs : ceux qui travaillent pour un faible salaire, les élèves d'une formation professionnelle (orientés par le service, en journée, 12 mois maximum), les parents isolés qui étudient (il faut avoir perçu l'allocation 16 mois sur les 20 précédant la rentrée ; le versement dure jusqu'à 36 mois), les indépendants à faible revenu et ceux qui créent une entreprise.</p>
-    <p style="margin-bottom:0">Une dispense de pointage existe dans certains cas — l'âge de la retraite, par exemple — mais elle doit être obtenue, pas supposée.</p>
+    <p style="margin-top:0">Il faut s'inscrire au service de l'emploi (לשכת התעסוקה) et pointer comme demandeur d'emploi — pour vous et pour votre conjoint s'il y en a un. L'inscription se fait en ligne, mais il faut se présenter à l'agence <b>dans les 15 jours</b> ; les jours comptent depuis la date de l'inscription en ligne.</p>
+    <p>Ne pointent pas seulement les chômeurs : ceux qui travaillent pour un faible salaire ; les élèves d'une formation professionnelle (orientés par le service, en journée, 12 mois maximum) ; les parents isolés qui étudient — ils reçoivent jusqu'à 36 mois de versement si l'allocation a déjà été perçue 16 mois sur les 20 précédant la rentrée ; les indépendants à faible revenu et ceux qui créent une entreprise.</p>
+    <p style="margin-bottom:0">Une dispense de pointage existe dans certains cas, par exemple à l'âge de la retraite. Mais elle doit être obtenue, pas supposée.</p>
   </div>
 
-  <h2>Le test des revenus : ce qui compte et ce qui ne compte pas</h2>
+  <h2>Revenus : ce qui compte, ce qui ne compte pas</h2>
   <div class="card">
-    <p style="margin-top:0"><b>Comptent comme revenus :</b> salaire et revenu du travail, allocation chômage (avtala), pensions et rentes, revenus du patrimoine. <b>Pour un couple</b>, les revenus des deux conjoints sont pris en compte — et les deux conjoints sont vérifiés sur l'ensemble des conditions.</p>
-    <p><b>Ne comptent pas</b> (sans effet sur le droit) : les allocations familiales, l'allocation pour enfant handicapé, l'allocation de services spéciaux, l'allocation de mobilité, l'allocation de dépendance (sioud), les indemnités de subsistance de la veuve et de l'orphelin, les rentes spécifiques aux victimes d'accidents du travail, les versements aux Justes parmi les nations, ainsi que l'aide matérielle volontaire de proches, de la communauté ou d'associations — y compris régulière.</p>
-    <p style="margin-bottom:0">La pension alimentaire qu'une personne verse sur décision de justice pour ses enfants ou son ex-conjoint est <b>déduite</b> de son revenu pris en compte.</p>
+    <p style="margin-top:0"><b>Comptent comme revenus :</b> salaire et revenu du travail, allocation chômage (avtala), pensions et rentes, revenus du patrimoine. Pour un couple, les revenus des deux conjoints sont pris en compte, et les deux sont vérifiés sur l'ensemble des conditions.</p>
+    <p><b>Ne comptent pas</b> et restent sans effet sur le droit : les allocations familiales, l'allocation pour enfant handicapé, l'allocation de services spéciaux, l'allocation de mobilité et l'allocation de dépendance (sioud). N'entrent pas non plus en compte les indemnités de subsistance de la veuve et de l'orphelin, les rentes spécifiques aux victimes d'accidents du travail et les versements aux Justes parmi les nations. N'entre pas non plus en compte l'aide matérielle volontaire de proches, de la communauté ou d'associations — même régulière.</p>
+    <p style="margin-bottom:0">La pension alimentaire versée sur décision de justice pour ses enfants ou son ex-conjoint est <b>déduite</b> du revenu pris en compte.</p>
   </div>
 
   <h2>Patrimoine : épargne, immobilier, voiture</h2>
   <div class="card">
     <h3 style="margin:0 0 6px">Épargne financière</h3>
-    <p style="margin-top:0">Jusqu'à <b>41 528 ₪</b> (personne seule) et <b>62 292 ₪</b> (couple), l'épargne n'a aucun effet sur le droit. Au-delà, l'institut calcule un revenu théorique au taux de <b>4,17 % par an ÷ 12</b>. À partir de <b>117 173 ₪</b>, des paliers s'ajoutent — les pourcentages dépendent de l'âge, de la composition du foyer et du montant, et diffèrent avant et après 55 ans : avant 55 ans, 1,5 % sur la part au-delà de 117 173 ₪, 3 % au-delà de 166 112 ₪ et 5 % au-delà de 332 224 ₪ ; à partir de 55 ans, 1,5 % au-delà de 117 173 ₪, 3 % au-delà de 373 752 ₪ (couple) et 5 % au-delà de 747 504 ₪.</p>
+    <p style="margin-top:0">Jusqu'à <b>41 528 ₪</b> pour une personne seule et <b>62 292 ₪</b> pour un couple, l'épargne n'a aucun effet sur le droit. Au-delà, l'institut calcule un revenu théorique au taux de <b>4,17 % par an ÷ 12</b>. À partir de <b>117 173 ₪</b>, des paliers s'ajoutent, calculés selon l'âge, la composition du foyer et le montant. Avant 55 ans : 1,5 % sur la part au-delà de 117 173 ₪, 3 % au-delà de 166 112 ₪ et 5 % au-delà de 332 224 ₪. À partir de 55 ans : 1,5 % au-delà de 117 173 ₪, 3 % au-delà de 373 752 ₪ (couple) et 5 % au-delà de 747 504 ₪.</p>
     <h3 style="margin:14px 0 6px">Immobilier</h3>
-    <p style="margin-top:0">Le logement où vit le foyer n'est pas pris en compte — seul compte un bien <b>supplémentaire</b>. Le revenu est calculé d'après la valeur, même si le bien n'est pas loué : <b>résidentiel 3 % ÷ 12, commercial 5 % ÷ 12, agricole 0 %</b>. Au-delà de <b>292 931 ₪</b> de valeur, un second palier s'applique avec des pourcentages additionnels. Exemple : un terrain agricole de 500 000 ₪ représente environ <b>797 ₪</b> de revenu mensuel pris en compte.</p>
+    <p style="margin-top:0">Le logement où vit le foyer n'est pas pris en compte. Seul compte un bien <b>supplémentaire</b>, et c'est sa valeur qui sert de base, même s'il n'est pas loué : <b>résidentiel 3 % ÷ 12, commercial 5 % ÷ 12, agricole 0 %</b>. Au-delà de <b>292 931 ₪</b>, un second palier s'applique. Exemple : un terrain agricole de 500 000 ₪ représente environ <b>797 ₪</b> de revenu mensuel pris en compte.</p>
     <h3 style="margin:14px 0 6px">Voiture</h3>
-    <p style="margin-bottom:0">Une voiture d'une valeur allant jusqu'à <b>46 138 ₪</b> ne fait pas obstacle au droit. Entre <b>46 138 et 65 343 ₪</b>, le droit est maintenu pour les personnes ayant atteint l'âge de la retraite, les bénéficiaires d'une pension de réversion et les proches d'une victime d'accident du travail. Au-delà, une somme calculée d'après la valeur du véhicule et la situation professionnelle est retenue sur l'allocation.</p>
+    <p style="margin-bottom:0">Une voiture jusqu'à <b>46 138 ₪</b> ne fait pas obstacle au droit. Entre <b>46 138 et 65 343 ₪</b>, le droit est maintenu pour les personnes ayant atteint l'âge de la retraite, les bénéficiaires d'une pension de réversion et les proches d'une victime d'accident du travail. Au-delà, une somme calculée d'après la valeur du véhicule et la situation professionnelle est retenue sur l'allocation.</p>
   </div>
 
-  <h2>Ce qui est déduit de l'allocation</h2>
-  <ul>
-    <li><b>123 ₪</b> — cotisation minimale d'assurance maladie lorsque la personne ne travaille pas ;</li>
-    <li><b>779 ₪</b> — si le conjoint n'est pas résident d'Israël, ou s'il est entièrement à la charge de l'État, de l'Agence juive ou d'une municipalité ;</li>
-    <li>les femmes <b>nées entre 1960 et 1964</b> bénéficient d'une majoration de <b>825 ₪</b> à partir du mois de leurs 62 ans et jusqu'à l'âge de la retraite — en compensation du relèvement de cet âge de 62 à 65 ans.</li>
-  </ul>
+  <h2>Ce qui est retenu et ce que l'allocation ouvre en plus</h2>
+  <div class="card">
+    <p style="margin-top:0"><b>Retenues sur l'allocation :</b> 123 ₪ de cotisation minimale d'assurance maladie lorsque la personne ne travaille pas ; 779 ₪ si le conjoint n'est pas résident d'Israël ou s'il est entièrement à la charge de l'État, de l'Agence juive ou d'une municipalité.</p>
+    <p><b>Majoration :</b> les femmes nées entre 1960 et 1964 perçoivent <b>825 ₪</b> à partir du mois de leurs 62 ans et jusqu'à l'âge de la retraite. C'est la compensation du relèvement de cet âge de 62 à 65 ans.</p>
+    <p><b>En plus du versement,</b> les bénéficiaires entrent dans les listes ouvrant droit à des avantages — souvent plus importants que l'allocation elle-même. À vérifier auprès de votre agence et de la mairie : réduction d'arnona, avantages sur les transports, la santé et la redevance télévision, aide au loyer.</p>
+    <div class="links">
+      <a href="arnona.html">🏛️ Réduction d'arnona</a>
+      <a href="siud.html">🤲 Sioud — soins à domicile</a>
+      <a href="ashlamat-ahnasa.html">💼 Complément de revenu (pension)</a>
+      <a href="payments.html">🗓️ Dates de versement du Bituah Leumi</a>
+      <a href="avtala.html">📄 Allocation chômage</a>
+      <a href="slovar.html">📖 Glossaire</a>
+    </div>
+  </div>
 
   <h2>Comment déposer la demande</h2>
   <div class="card">
-    <ul style="margin-top:0">
-      <li><b>Formulaire בל/5619</b> — demande d'allocation de subsistance si vous ne percevez pas de pension de vieillesse ni de pension de réversion. Il se dépose à l'agence du Bituah Leumi ; en parallèle, l'inscription au service de l'emploi est nécessaire.</li>
-      <li><b>Formulaire בל/430</b> — si une pension de vieillesse ou de réversion est déjà attribuée : il s'agit alors du complément à la pension, traité sur la page <a href="ashlamat-ahnasa.html">achlamat hahnasa</a>.</li>
-      <li>À joindre : les relevés bancaires des 12 derniers mois, les justificatifs de revenus de toutes origines (les vôtres et ceux du conjoint), l'attestation de valeur du patrimoine ; en cas d'arrêt ou de réduction d'activité, une confirmation de l'employeur.</li>
-      <li>Le droit court <b>à partir du mois de la demande</b>. Pour les personnes ayant déjà atteint l'âge de la retraite, un versement rétroactif est possible — <b>jusqu'à 12 mois</b> ; le complément à une pension de réversion est versé pour une période allant jusqu'à 6 mois avant la demande. Les avantages liés à l'allocation ne sont pas accordés rétroactivement.</li>
-      <li>Tout changement (revenus, situation familiale, adresse) doit être signalé à l'institut <b>dans les 30 jours</b>.</li>
-    </ul>
+    <p style="margin-top:0"><b>Formulaire בל/5619</b> — demande d'allocation de subsistance si vous ne percevez pas de pension de vieillesse ou de réversion. Il se dépose à l'agence du Bituah Leumi, et l'inscription au service de l'emploi se fait en parallèle.</p>
+    <p><b>Formulaire בל/430</b> — si une pension est déjà attribuée : il s'agit alors du complément à la pension, traité sur la <a href="ashlamat-ahnasa.html">page dédiée avec simulateur</a>.</p>
+    <p><b>Documents :</b> relevés bancaires des 12 derniers mois ; justificatifs de revenus de toutes origines, les vôtres et ceux du conjoint ; attestation de valeur du patrimoine ; en cas d'arrêt ou de réduction d'activité, une confirmation de l'employeur.</p>
+    <p><b>Délais :</b> le droit court à partir du mois de la demande. Pour les personnes ayant déjà atteint l'âge de la retraite, un versement rétroactif est possible — <b>jusqu'à 12 mois</b>. Le complément à une pension de réversion est versé jusqu'à 6 mois avant la demande. Les avantages liés à l'allocation ne sont pas accordés rétroactivement.</p>
+    <p><b>Date de versement :</b> l'argent arrive le <b>12 du mois</b>, pour le mois précédent. Certaines dates sont décalées par les jours fériés — nous tenons à jour le <a href="payments.html">calendrier des versements</a>.</p>
+    <p style="margin-bottom:0"><b>Important :</b> tout changement — revenus, situation familiale, adresse — doit être signalé à l'institut <b>dans les 30 jours</b>.</p>
   </div>
-
-  <h2>Quand l'argent arrive</h2>
-  <p>L'allocation est virée sur le compte indiqué dans la demande le <b>12 du mois</b>, pour le mois précédent. Certaines dates sont décalées par les jours fériés — nous tenons à jour le <a href="payments.html">calendrier des versements</a>.</p>
 
   <h2>Voyages à l'étranger</h2>
   <ul>
     <li>Un <b>mois entier</b> passé à l'étranger : pas d'allocation pour ce mois.</li>
     <li>Premier voyage de l'année civile : l'allocation est maintenue pour le mois du départ et celui du retour. Chaque voyage suivant : ces mois ne sont pas payés.</li>
-    <li>Soins à l'étranger impossibles en Israël, avec l'autorisation du ministère de la Santé : l'allocation est conservée jusqu'à 6 mois (idem pour le proche qui accompagne).</li>
+    <li>Soins à l'étranger impossibles en Israël, avec l'autorisation du ministère de la Santé : l'allocation est conservée jusqu'à 6 mois. Idem pour le proche qui accompagne.</li>
     <li>Un déplacement pour les obsèques d'un proche parent, jusqu'à 3 semaines, ne compte pas comme un « voyage » et ne fait pas perdre le droit.</li>
   </ul>
 
@@ -246,34 +258,24 @@
       <tr><td><b>Avtala</b><br>אבטלה</td><td>Allocation chômage, relevant d'une autre branche d'assurance</td><td>Ceux qui ont perdu leur emploi après la durée minimale de travail</td><td>Calculée d'après le salaire antérieur — voir la <a href="avtala.html">page sur l'avtala</a></td></tr>
     </tbody>
   </table>
-  <p class="src">Les deux premières prestations découlent de la même loi (חוק הבטחת הכנסה, 1980) : l'allocation complète s'appelle הבטחת הכנסה, la partielle השלמת הכנסה. En cas de refus de l'une, il vaut la peine de vérifier l'autre : les formulaires, les seuils et les conditions diffèrent.</p>
+  <p class="src">Les deux premières prestations découlent de la même loi (חוק הבטחת הכנסה, 1980) : l'allocation complète s'appelle הבטחת הכנסה, la partielle השלמת הכנסה. En cas de refus de l'une, vérifiez l'autre : les formulaires, les seuils et les conditions diffèrent.</p>
 
   <h2>Questions fréquentes</h2>
   <details class="card"><summary style="cursor:pointer;font-weight:800">J'ai 32 ans et j'ai fait mon alya il y a un an. Ai-je droit à l'allocation ?</summary>
-    <p style="margin-bottom:0">La règle générale est de 24 mois de résidence, et au guichet le refus s'appuiera probablement sur ce point. Mais les nouveaux immigrants bénéficient d'une exception : le droit est examiné si vous avez séjourné 12 mois dans le pays (pas nécessairement d'affilée) et si vous êtes dans les 5 ans suivant votre alya. S'y ajoute, dans les premiers mois après la fin du « sal klita », l'aide du ministère de l'Alya (avtahat kiyum), ouverte notamment aux femmes enceintes, aux malades, à ceux qui s'occupent d'un proche malade, aux parents isolés et aux immigrants en situation de handicap. La bonne démarche : déposer la demande avec les documents d'alya, plutôt que de repartir après le premier « non ».</p>
+    <p style="margin-bottom:0">La règle générale est de 24 mois de résidence, et au guichet le refus s'appuiera probablement sur elle. Mais les nouveaux immigrants bénéficient d'une exception : le droit est examiné si vous avez séjourné 12 mois dans le pays — pas nécessairement d'affilée — et si vous êtes dans les 5 ans suivant votre alya. S'y ajoute, dans les premiers mois après la fin du « sal klita », l'aide du ministère de l'Alya (avtahat kiyum), ouverte notamment aux femmes enceintes, aux malades, à ceux qui s'occupent d'un proche malade, aux parents isolés et aux immigrants en situation de handicap. La bonne démarche : déposer la demande avec les documents d'alya, plutôt que de repartir après le premier « non ».</p>
   </details>
   <details class="card"><summary style="cursor:pointer;font-weight:800">Je perçois déjà une pension de vieillesse. Ai-je droit à la havtahat hahnasa ?</summary>
-    <p style="margin-bottom:0">Après l'âge de la retraite, le barème de la havtahat hahnasa ne s'applique plus : le montant correspond à la pension de vieillesse avec complément de revenu (de 4 375 ₪ pour une personne seule et 6 912 ₪ pour un couple avant 70 ans). C'est formellement la même loi, mais une autre branche — nous y consacrons une <a href="ashlamat-ahnasa.html">page dédiée avec simulateur</a>.</p>
+    <p style="margin-bottom:0">Après l'âge de la retraite, le barème de la havtahat hahnasa ne s'applique plus : le montant correspond à la pension de vieillesse avec complément de revenu — de 4 375 ₪ pour une personne seule et 6 912 ₪ pour un couple avant 70 ans. C'est formellement la même loi, mais une autre branche ; nous y consacrons une <a href="ashlamat-ahnasa.html">page dédiée avec simulateur</a>.</p>
   </details>
   <details class="card"><summary style="cursor:pointer;font-weight:800">J'ai mon appartement et une voiture : est-ce un obstacle ?</summary>
-    <p style="margin-bottom:0">Le logement que vous habitez n'est pas pris en compte — seul un bien supplémentaire l'est. Une voiture jusqu'à 46 138 ₪ ne fait pas obstacle au droit ; entre 46 138 et 65 343 ₪, le droit est maintenu pour les personnes à l'âge de la retraite, les bénéficiaires d'une pension de réversion et les proches d'une victime d'accident du travail ; pour les autres, une somme calculée est retenue sur l'allocation.</p>
+    <p style="margin-bottom:0">Le logement que vous habitez n'est pas pris en compte — seul un bien supplémentaire l'est. Une voiture jusqu'à 46 138 ₪ ne fait pas obstacle au droit. Entre 46 138 et 65 343 ₪, le droit est maintenu pour les personnes à l'âge de la retraite, les bénéficiaires d'une pension de réversion et les proches d'une victime d'accident du travail ; pour les autres, une somme calculée est retenue sur l'allocation.</p>
   </details>
   <details class="card"><summary style="cursor:pointer;font-weight:800">Combien d'épargne puis-je avoir ?</summary>
-    <p style="margin-bottom:0">Jusqu'à 41 528 ₪ pour une personne seule et 62 292 ₪ pour un couple, l'épargne est sans effet. Au-delà, un revenu théorique est calculé au taux de 4,17 % par an divisé par 12, et à partir de 117 173 ₪ des paliers s'ajoutent. Repère : 100 000 ₪ pour une personne seule représentent environ 203 ₪ de revenu théorique par mois — insuffisant en soi pour faire perdre le droit.</p>
+    <p style="margin-bottom:0">Jusqu'à 41 528 ₪ pour une personne seule et 62 292 ₪ pour un couple, l'épargne est sans effet. Au-delà, un revenu théorique est calculé à 4,17 % par an ÷ 12, et à partir de 117 173 ₪ des paliers s'ajoutent. Repère : 100 000 ₪ pour une personne seule représentent environ 203 ₪ de revenu théorique par mois — insuffisant en soi pour faire perdre le droit.</p>
   </details>
   <details class="card"><summary style="cursor:pointer;font-weight:800">À partir de quel mois l'allocation est-elle versée si je dépose la demande aujourd'hui ?</summary>
     <p style="margin-bottom:0">Le droit court à partir du mois de la demande. Pour ceux qui ont déjà atteint l'âge de la retraite, un versement rétroactif pouvant aller jusqu'à 12 mois est possible ; le complément à une pension de réversion est versé jusqu'à 6 mois avant la demande. La demande vaut donc la peine même en cas de doute : au pire, vous recevrez un refus motivé, contestable.</p>
   </details>
-
-  <div class="card">
-    <h2 style="margin-top:0">Pour aller plus loin</h2>
-    <ul style="margin-bottom:0">
-      <li><a href="ashlamat-ahnasa.html">Complément de revenu de la pension (achlamat hahnasa)</a> — pour une pension inférieure au plafond</li>
-      <li><a href="avtala.html">Allocation chômage (avtala)</a> — montants et prolongations</li>
-      <li><a href="payments.html">Calendrier des versements</a> — quand l'argent arrive</li>
-      <li><a href="slovar.html">Glossaire</a> — le sens des mots employés par le Bituah Leumi</li>
-    </ul>
-  </div>
 
   <footer>
     <p><b>Mise à jour : 17 septembre 2026. Montants en vigueur au 01.01.2026.</b> Sources : barème des montants sur btl.gov.il («<span dir="rtl">סכום הקצבה</span>» de la rubrique <span dir="rtl">הבטחת הכנסה</span>), conditions du droit et test du patrimoine — btl.gov.il et le portail kolzchut.org.il ; formulaires בל/5619 et בל/430.</p>
@@ -315,8 +317,10 @@ var FAMNAME = {
   couple:'Couple', couple1:'Couple + 1 enfant', couple2:'Couple + 2 enfants et plus'
 };
 function fmt(n){
-  return Math.round(n).toLocaleString('fr-FR').replace(/\u202F|\u00A0/g,' ') + ' ₪';
+  n = Math.round(n);
+  return n.toLocaleString('fr-FR').replace(/\u202F|\u00A0/g,' ') + ' ₪';
 }
+function setVal(id,v){ document.getElementById(id).value = v; }
 function setFs(cls){
   document.documentElement.className = cls;
   document.getElementById('fs1').setAttribute('aria-pressed', cls === '' ? 'true':'false');
@@ -339,10 +343,10 @@ function calc(){
     html += '<p style="margin:8px 0 0">Montant maximal pour votre situation, en l\'absence de revenu. Si vous ne travaillez pas, 123 ₪ de cotisation maladie sont retenus : vous recevrez donc environ <b>' + fmt(amount - 123) + '</b>.</p>';
   } else if(inc <= t.cap){
     html += '<div class="result"><div class="big">Droit possible à un versement partiel</div>';
-    html += '<p style="margin:8px 0 0">Votre revenu de ' + fmt(inc) + ' reste sous le seuil de ' + fmt(t.cap) + ' pour votre situation : l\'allocation sera réduite, mais pas annulée. Plus le revenu approche du seuil, plus le versement diminue. Seul le Bituah Leumi calcule le montant exact : <a href="https://www.btl.gov.il/Simulators/Pages/IncomeSupportCalc.aspx" rel="nofollow noopener" target="_blank">simulateur officiel</a>.</p>';
+    html += '<p style="margin:8px 0 0">Votre revenu de ' + fmt(inc) + ' reste sous le seuil de ' + fmt(t.cap) + ' — l\'allocation sera réduite, mais pas annulée. Plus le revenu s\'en approche, plus le versement diminue. Seul le Bituah Leumi calcule le montant exact : <a href="https://www.btl.gov.il/Simulators/Pages/IncomeSupportCalc.aspx" rel="nofollow noopener" target="_blank">simulateur officiel</a>.</p>';
   } else {
     html += '<div class="result no"><div class="big">Avec ce revenu, le droit est improbable</div>';
-    html += '<p style="margin:8px 0 0">Votre revenu de ' + fmt(inc) + ' dépasse le seuil de ' + fmt(t.cap) + '. À retenir : si le revenu baisse, le droit réapparaît — à partir du mois de la baisse.</p>';
+    html += '<p style="margin:8px 0 0">Votre revenu de ' + fmt(inc) + ' dépasse le seuil de ' + fmt(t.cap) + '. Si le revenu baisse, le droit réapparaît — à partir du mois de la baisse.</p>';
   }
 
   html += '<div class="rows">'
