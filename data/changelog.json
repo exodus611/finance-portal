@@ -4,6 +4,23 @@
   "entries": [
     {
       "date": "2026-09-17",
+      "tag": "французская версия",
+      "tag_fr": "version française",
+      "ru_title": "Новая французская страница: сиюд — пособие по уходу за пожилыми",
+      "ru_text": "До этого французские страницы отправляли читателя в русскую версию темы. Теперь у сиюда есть полноценная французская страница: 6 уровней с часами ухода и суммами, тест дохода (100 % / 50 % / нет права), четыре условия, пошаговая подача заявления с телефонами, сравнение с пособием «специальные сервисы» и с частной страховкой по уходу, FAQ. Данные: Битуах Леуми, действуют с 01.04.2026.",
+      "fr_title": "Nouvelle page française : le sioud, allocation de dépendance",
+      "fr_text": "Les pages françaises renvoyaient jusqu'ici vers la version russe du sujet. Le sioud dispose maintenant de sa propre page en français : les 6 niveaux avec heures d'aide et montants, le test de revenus (100 % / 50 % / aucun droit), les quatre conditions, la démarche pas à pas avec les numéros de téléphone, la comparaison avec l'allocation « services spéciaux » et l'assurance dépendance privée, et une FAQ. Données du Bituah Leumi en vigueur depuis le 01.04.2026.",
+      "links": [
+        {
+          "href": "fr/siud.html",
+          "ru": "Французская страница про сиюд",
+          "fr": "La page sioud en français"
+        }
+      ],
+      "fr_only": false
+    },
+    {
+      "date": "2026-09-17",
       "tag": "мобильные",
       "tag_fr": "mobile",
       "ru_title": "Таблицы больше не вылезают за экран телефона",
