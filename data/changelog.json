@@ -4,6 +4,45 @@
   "entries": [
     {
       "date": "2026-09-17",
+      "tag": "навигация",
+      "tag_fr": "navigation",
+      "ru_title": "Калькулятор социальной надбавки появился в списке на главной",
+      "ru_text": "Страница и калькулятор были готовы раньше, но с русской главной на них не вело ни одной ссылки — найти их можно было только из статей. Теперь есть плитка «Социальная надбавка к пенсии» в разделе пенсионных тем рядом с сиюдом.",
+      "fr_title": "Le simulateur du complément de revenu apparaît sur l'accueil",
+      "fr_text": "La page existait déjà, mais rien n'y menait depuis l'accueil : on ne la trouvait que depuis les articles. Une carte « Complément de revenu (pension) » figure désormais dans les thèmes retraite, à côté du sioud.",
+      "links": [
+        {
+          "href": "index.html",
+          "ru": "Русская главная — раздел про пенсии",
+          "fr": "Accueil russe — thèmes retraite"
+        }
+      ],
+      "fr_only": false
+    },
+    {
+      "date": "2026-09-17",
+      "tag": "сверено с источником",
+      "tag_fr": "vérifié à la source",
+      "ru_title": "Накопления и надбавка: добавлена официальная механика Битуах Леуми с 01.01.2026",
+      "ru_text": "Раньше страница говорила только «накопления выше порога — нужна проверка». Теперь описана сама механика и она же считается в калькуляторе: с суммы выше необлагаемых 41 528 ₪ (одинокий) или 62 292 ₪ (пара) институт считает условный доход по средней ставке 4,17 % годовых, делённой на 12; от 103 327 ₪ расчёт ступенчатый (состав семьи, возраст, размер). Добавлено про дополнительную недвижимость: 3 % для жилой, 5 % для коммерческой, со ступенями выше 292 931 ₪. Пример расчёта: 100 000 ₪ у одинокого → 203 ₪ условного дохода в месяц.",
+      "fr_title": "Épargne et complément : mécanique officielle du Bituah Leumi depuis le 01.01.2026",
+      "fr_text": "La page se contentait d'un « vérification nécessaire » au-delà du seuil. Désormais la mécanique est décrite et intégrée au simulateur : sur la part dépassant 41 528 ₪ (personne seule) ou 62 292 ₪ (couple), l'institut calcule un revenu théorique au taux moyen de 4,17 % par an ÷ 12 ; à partir de 103 327 ₪ le calcul devient progressif (ménage, âge, montant). Ajout pour l'immobilier : 3 % pour le résidentiel, 5 % pour le commercial, avec paliers au-delà de 292 931 ₪. Exemple : 100 000 ₪ pour une personne seule → 203 ₪ de revenu théorique par mois.",
+      "links": [
+        {
+          "href": "ashlamat-ahnasa.html",
+          "ru": "Калькулятор и раздел (русский)",
+          "fr": "Version russe"
+        },
+        {
+          "href": "fr/ashlamat-ahnasa.html",
+          "ru": "Французская версия",
+          "fr": "Simulateur et section (français)"
+        }
+      ],
+      "fr_only": false
+    },
+    {
+      "date": "2026-09-17",
       "tag": "французская версия",
       "tag_fr": "version française",
       "ru_title": "Новая французская страница: сиюд — пособие по уходу за пожилыми",
