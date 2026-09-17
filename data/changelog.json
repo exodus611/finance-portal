@@ -1,0 +1,84 @@
+{
+  "_comment": "Журнал изменений сайта. Правится руками, страницы changelog.html и fr/changelog.html генерируются из него: python3 scripts/make_changelog.py",
+  "updated": "2026-09-17",
+  "entries": [
+    {
+      "date": "2026-09-17",
+      "tag": "новая страница",
+      "tag_fr": "nouvelle page",
+      "ru_title": "Пенсия из Франции у израильского резидента: кто и как облагает",
+      "ru_text": "Французская пенсия у человека, живущего в Израиле, — отдельная тема со своими правилами: статья 18 соглашения (частная пенсия облагается только в стране проживания), статья 19 (пенсия госслужащего остаётся во Франции), двойное освобождение первых 10 лет после алии и обложение в Израиле после них. На странице: разбор по первоисточникам, калькулятор французского налога у источника (шкала 2026) и определитель ситуации из трёх вопросов.",
+      "fr_title": "Retraite française et résidence israélienne : qui impose quoi",
+      "fr_text": "Article 18 (pension privée imposée seulement dans l'État de résidence), article 19 (pension publique imposée en France), double exonération des dix premières années après l'aliya puis imposition en Israël. Avec un calculateur de retenue à la source des non-résidents (barème 2026) et un test en trois questions.",
+      "links": [
+        {"href": "fr/retraite-france-israel.html", "ru": "Открыть страницу", "fr": "Ouvrir la page"}
+      ],
+      "fr_only": true
+    },
+    {
+      "date": "2026-09-17",
+      "tag": "формы обратной связи",
+      "tag_fr": "formulaires de contact",
+      "ru_title": "Сообщения с формы теперь действительно доходят",
+      "ru_text": "Раньше в форме стояла незаполненная заглушка, а запасной вариант вёл в Telegram-канал, куда писать нельзя. Теперь форма на обеих страницах контактов (русской и французской) отправляет сообщение реально, с защитой от ботов; скрытая ловушка отсекает автоматический спам, а если сервис недоступен — текст показывается в поле для копирования, чтобы ничего не терялось.",
+      "fr_title": "Les messages du formulaire arrivent vraiment",
+      "fr_text": "Le formulaire des deux pages contact (russe et française) envoie désormais réellement le message, avec une protection anti-robots. Si le service est indisponible, le texte s'affiche dans un champ à copier : rien n'est perdu.",
+      "links": [
+        {"href": "contact.html", "ru": "Русская форма", "fr": "Formulaire russe"},
+        {"href": "fr/contact.html", "ru": "Французская форма", "fr": "Formulaire français"}
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "tag": "календарь выплат",
+      "tag_fr": "calendrier des versements",
+      "ru_title": "Даты выплат в календаре на главной стали видны поисковым системам",
+      "ru_text": "Календарь (сроки выплат Битуах Леуми, решение Банка Израиля по ставке, индекс цен, пересмотр цены бензина) рисуется в браузере из файлов данных — в исходном HTML дат не было вообще, то есть поисковик их не видел. Теперь даты вписаны в разметку на обеих главных страницах, а специальный тест сверяет статичный текст с тем, что видит браузер: расхождение останавливает автообновление.",
+      "fr_title": "Les dates du calendrier sont désormais visibles pour les moteurs de recherche",
+      "fr_text": "Le calendrier (versements du Bituah Leumi, décision de la Banque d'Israël, indice des prix, essence) est dessiné dans le navigateur à partir des fichiers de données : les dates n'existaient pas dans le HTML. Elles y sont maintenant inscrites sur les deux pages d'accueil, et un test automatique compare le texte statique et l'affichage réel.",
+      "links": [
+        {"href": "index.html", "ru": "Главная (развернуть «Календарь решений и выплат»)", "fr": "Accueil (déplier le calendrier)"},
+        {"href": "fr/index.html", "ru": "Французская главная", "fr": "Accueil français"}
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "tag": "калькулятор",
+      "tag_fr": "calculateur",
+      "ru_title": "Калькулятор социальной надбавки Битуах Леуми (иврит: ашламат ахнаса)",
+      "ru_text": "Сколько Битуах Леуми доплачивает к пенсии по старости: потолки 2026 по возрасту и составу семьи, пороги по доходу и по сбережениям, отдельная проверка на право при частичной пенсии. Есть русская и французская версии — не машинный перевод.",
+      "fr_title": "Calculateur du complément de revenu du Bituah Leumi (achlamat hahnasa)",
+      "fr_text": "Jusqu'où le Bituah Leumi complète la pension de vieillesse : plafonds 2026 par âge et situation familiale, seuils de revenus et d'épargne, vérification du droit en cas de pension partielle. Versions russe et française, traduites à la main.",
+      "links": [
+        {"href": "ashlamat-ahnasa.html", "ru": "Русская версия", "fr": "Version russe"},
+        {"href": "fr/ashlamat-ahnasa.html", "ru": "Французская версия", "fr": "Version française"}
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "tag": "французское направление",
+      "tag_fr": "version française",
+      "ru_title": "Французские страницы: словарь терминов, «О проекте», «Контакты»",
+      "ru_text": "38 терминов на пять категорий (Битуах Леуми, налоги, банк, работа, пенсия) с ивритским оригиналом — чтобы читать письма из налоговой и от Битуах Леуми с пониманием. Плюс страницы «О проекте» и «Контакты» и своя картинка для соцсетей.",
+      "fr_title": "Pages françaises : glossaire, à propos, contact",
+      "fr_text": "38 termes en cinq catégories (Bituah Leumi, impôts, banque, travail, retraite) avec l'original hébreu, pour lire les courriers du fisc et du Bituah Leumi. Plus les pages « à propos » et « contact » et une image dédiée aux réseaux sociaux.",
+      "links": [
+        {"href": "fr/slovar.html", "ru": "Словарь (по-французски)", "fr": "Glossaire"},
+        {"href": "fr/about.html", "ru": "О проекте", "fr": "À propos"}
+      ],
+      "fr_only": true
+    },
+    {
+      "date": "2026-09-17",
+      "tag": "живые данные",
+      "tag_fr": "données en direct",
+      "ru_title": "Календарь решений и выплат на главной (RU + FR)",
+      "ru_text": "Один запрос к файлам данных вместо четырёх дублей: ставка Банка Израиля и прайм, годовая инфляция, цена бензина 95, ближайшие выплаты — с автоматическим пересчётом «через сколько дней». Ничего не зашито в разметку, поэтому страница не устаревает между автообновлениями.",
+      "fr_title": "Calendrier des décisions et des versements sur l'accueil (RU + FR)",
+      "fr_text": "Une seule requête vers les fichiers de données au lieu de quatre doublons : taux de la Banque d'Israël et prime, inflation annuelle, essence 95, prochains versements, avec les jours restants calculés automatiquement.",
+      "links": [
+        {"href": "tablo.html", "ru": "Табло индексов", "fr": "Tableau de bord"}
+      ]
+    }
+  ]
+}

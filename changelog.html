@@ -1,0 +1,137 @@
+<!doctype html><html lang="ru" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08775a">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="canonical" href="https://exodus611.github.io/finance-portal/changelog.html">
+<link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/changelog.html">
+<link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/changelog.html">
+<link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/changelog.html">
+<title>Что нового на сайте — журнал изменений</title>
+<meta name="description" content="Журнал изменений портала: новые страницы и калькуляторы, исправленные ошибки, обновления данных. Каждая запись с датой и ссылкой — чтобы было видно, что именно изменилось.">
+<meta name="robots" content="index, follow">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "inLanguage": "ru", "name": "Что нового на сайте — журнал изменений", "datePublished": "2026-09-17", "dateModified": "2026-09-17", "description": "Журнал изменений портала: новые страницы и калькуляторы, исправленные ошибки, обновления данных. Каждая запись с датой и ссылкой — чтобы было видно, что именно изменилось."}</script>
+<style>
+
+  :root{
+    --bg:#F3EFE4; --paper:#f4f1e9; --card:#fffdf8; --ink:#15251f; --muted:#5a6660;
+    --line:#ddd6c7; --green:#08775a; --green2:#0d9671; --gold:#c29b52; --blue:#317aa1;
+    --shadow:0 16px 40px rgba(26,45,37,.08);
+  }
+  *{box-sizing:border-box}
+  html{font-size:17px}
+  html.big{font-size:19px}
+  html.xbig{font-size:21px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+  a{color:var(--green)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 16px 64px}
+  header.top{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+  .top-in{max-width:960px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .brand{font-weight:850;letter-spacing:-.2px;font-size:1rem}
+  .brand small{display:block;font-weight:600;color:var(--muted);font-size:.72rem;letter-spacing:.4px;text-transform:uppercase}
+  .spacer{flex:1}
+  .fsbtn{border:1px solid var(--line);background:#fff;border-radius:9px;padding:4px 9px;font-weight:800;font-size:.78rem;color:var(--green);cursor:pointer}
+  .fsbtn[aria-pressed="true"]{background:var(--green);color:#fff;border-color:var(--green)}
+  h1{font-size:1.72rem;line-height:1.2;margin:26px 0 8px;letter-spacing:-.5px}
+  h1 .he{font-weight:600;color:var(--muted);font-size:.95rem;display:block;direction:rtl;margin-top:4px}
+  h2{font-size:1.22rem;margin:34px 0 10px;letter-spacing:-.3px}
+  h3{font-size:1.02rem;margin:20px 0 6px}
+  p,li{color:#22332c}
+  .lead{font-size:1.02rem;color:#33443c}
+  .badge{display:inline-block;background:#eaf5f0;color:var(--green);border:1px solid #cfe7de;border-radius:999px;padding:3px 10px;font-size:.74rem;font-weight:800;letter-spacing:.3px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);margin:14px 0}
+  .note{background:#fff8e8;border:1px solid #ecdcb6;border-radius:14px;padding:14px 16px;font-size:.92rem}
+  .note b{color:#7a5a12}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  label.field{display:block;font-size:.86rem;font-weight:700;margin-bottom:14px}
+  label.field span.hint{display:block;font-weight:500;color:var(--muted);font-size:.78rem;margin-top:2px}
+  input,select{width:100%;margin-top:6px;padding:11px 12px;border:1px solid var(--line);border-radius:11px;
+    background:#fff;font-size:1rem;font-family:inherit;color:var(--ink)}
+  input:focus,select:focus{outline:2px solid #b9dfd2;border-color:var(--green2)}
+  .mini{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .mini button{border:1px dashed var(--line);background:#fff;border-radius:9px;padding:6px 10px;font-size:.78rem;font-weight:700;color:var(--green);cursor:pointer}
+  details.helper{margin:-6px 0 16px;font-size:.88rem}
+  details.helper summary{cursor:pointer;color:var(--green);font-weight:700}
+  .result{border-radius:16px;padding:18px;margin:16px 0;border:2px solid var(--green2);background:linear-gradient(180deg,#f2fbf7,#fff)}
+  .result.no{border-color:#d9b7b7;background:linear-gradient(180deg,#fdf4f4,#fff)}
+  .result.warn{border-color:var(--gold);background:linear-gradient(180deg,#fffaf0,#fff)}
+  .big{font-size:2.35rem;font-weight:900;letter-spacing:-1px;line-height:1.1}
+  .big small{font-size:1rem;font-weight:700;color:var(--muted)}
+  .rows{display:flex;flex-direction:column;gap:0;margin-top:12px;border-top:1px dashed var(--line)}
+  .row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
+  .row b{font-variant-numeric:tabular-nums}
+  .ok{color:var(--green);font-weight:800}
+  .bad{color:#b4504f;font-weight:800}
+  .amb{color:#8a6a1a;font-weight:800}
+  table{width:100%;border-collapse:collapse;font-size:.86rem;margin:10px 0}
+  th,td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  th{background:#f7f4ec;font-size:.78rem;text-transform:uppercase;letter-spacing:.3px;color:var(--muted)}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .scroll{overflow-x:auto}
+  ol.steps{padding-left:20px}
+  ol.steps li{margin-bottom:8px}
+  .links a{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:11px;padding:9px 12px;margin:4px 6px 4px 0;text-decoration:none;font-weight:700;font-size:.9rem}
+  footer{border-top:1px solid var(--line);margin-top:30px;padding-top:16px;font-size:.8rem;color:var(--muted)}
+  .src{font-size:.8rem;color:var(--muted)}
+  @media print{.top,.fsbtn{display:none}.card{box-shadow:none}}
+
+
+.cl-head{display:flex;gap:16px;flex-wrap:wrap;align-items:baseline;justify-content:space-between}
+.cl-row{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:14px 0;border-top:1px solid var(--line)}
+.cl-row:first-of-type{border-top:0}
+@media(max-width:640px){.cl-row{grid-template-columns:1fr;gap:6px}}
+.cl-when{font-size:.85rem;color:var(--muted)}
+.cl-when b{display:block;font-size:.95rem;color:var(--ink)}
+.cl-tag{display:inline-block;margin-top:4px;background:#eaf5f0;color:var(--green);border:1px solid #cfe7de;border-radius:999px;padding:2px 9px;font-size:.7rem;font-weight:800}
+.cl-what h3{margin:0 0 6px;font-size:1rem;letter-spacing:-.2px}
+.cl-what p{margin:0;font-size:.92rem}
+.cl-links{margin-top:8px;display:flex;gap:12px;flex-wrap:wrap;font-size:.86rem;font-weight:750}
+.cl-onlyfr{font-size:.75rem;font-weight:700;color:var(--muted);margin-inline-start:6px}
+
+</style>
+</head><body>
+<div class="wrap">
+<header class="top"><div class="top-in">
+  <div class="brand">₪ Понятные финансы в Израиле <small>Калькуляторы и разборы · 2026</small></div>
+  <span class="spacer"></span>
+  <a href="index.html" style="font-weight:800;text-decoration:none;font-size:.86rem">← На главную</a>
+</div></header>
+
+<h1>Что нового на сайте</h1>
+<p class="lead">Здесь видно всё, что меняется на сайте: новые страницы и калькуляторы, исправленные ошибки, обновления данных и форм. Каждая запись — с датой и ссылкой. Свежие изменения сверху.</p>
+
+<div class="card">
+<div class="cl-row">
+  <div class="cl-when"><b>17.09.2026</b><span class="cl-tag">новая страница</span></div>
+  <div class="cl-what"><h3>Пенсия из Франции у израильского резидента: кто и как облагает<span class="cl-onlyfr">(страница на французском)</span></h3><p>Французская пенсия у человека, живущего в Израиле, — отдельная тема со своими правилами: статья 18 соглашения (частная пенсия облагается только в стране проживания), статья 19 (пенсия госслужащего остаётся во Франции), двойное освобождение первых 10 лет после алии и обложение в Израиле после них. На странице: разбор по первоисточникам, калькулятор французского налога у источника (шкала 2026) и определитель ситуации из трёх вопросов.</p><div class="cl-links"><a href="fr/retraite-france-israel.html">Открыть страницу →</a></div></div>
+</div><div class="cl-row">
+  <div class="cl-when"><b>17.09.2026</b><span class="cl-tag">формы обратной связи</span></div>
+  <div class="cl-what"><h3>Сообщения с формы теперь действительно доходят</h3><p>Раньше в форме стояла незаполненная заглушка, а запасной вариант вёл в Telegram-канал, куда писать нельзя. Теперь форма на обеих страницах контактов (русской и французской) отправляет сообщение реально, с защитой от ботов; скрытая ловушка отсекает автоматический спам, а если сервис недоступен — текст показывается в поле для копирования, чтобы ничего не терялось.</p><div class="cl-links"><a href="contact.html">Русская форма →</a><a href="fr/contact.html">Французская форма →</a></div></div>
+</div><div class="cl-row">
+  <div class="cl-when"><b>17.09.2026</b><span class="cl-tag">календарь выплат</span></div>
+  <div class="cl-what"><h3>Даты выплат в календаре на главной стали видны поисковым системам</h3><p>Календарь (сроки выплат Битуах Леуми, решение Банка Израиля по ставке, индекс цен, пересмотр цены бензина) рисуется в браузере из файлов данных — в исходном HTML дат не было вообще, то есть поисковик их не видел. Теперь даты вписаны в разметку на обеих главных страницах, а специальный тест сверяет статичный текст с тем, что видит браузер: расхождение останавливает автообновление.</p><div class="cl-links"><a href="index.html">Главная (развернуть «Календарь решений и выплат») →</a><a href="fr/index.html">Французская главная →</a></div></div>
+</div><div class="cl-row">
+  <div class="cl-when"><b>17.09.2026</b><span class="cl-tag">калькулятор</span></div>
+  <div class="cl-what"><h3>Калькулятор социальной надбавки Битуах Леуми (иврит: ашламат ахнаса)</h3><p>Сколько Битуах Леуми доплачивает к пенсии по старости: потолки 2026 по возрасту и составу семьи, пороги по доходу и по сбережениям, отдельная проверка на право при частичной пенсии. Есть русская и французская версии — не машинный перевод.</p><div class="cl-links"><a href="ashlamat-ahnasa.html">Русская версия →</a><a href="fr/ashlamat-ahnasa.html">Французская версия →</a></div></div>
+</div><div class="cl-row">
+  <div class="cl-when"><b>17.09.2026</b><span class="cl-tag">французское направление</span></div>
+  <div class="cl-what"><h3>Французские страницы: словарь терминов, «О проекте», «Контакты»<span class="cl-onlyfr">(страница на французском)</span></h3><p>38 терминов на пять категорий (Битуах Леуми, налоги, банк, работа, пенсия) с ивритским оригиналом — чтобы читать письма из налоговой и от Битуах Леуми с пониманием. Плюс страницы «О проекте» и «Контакты» и своя картинка для соцсетей.</p><div class="cl-links"><a href="fr/slovar.html">Словарь (по-французски) →</a><a href="fr/about.html">О проекте →</a></div></div>
+</div><div class="cl-row">
+  <div class="cl-when"><b>17.09.2026</b><span class="cl-tag">живые данные</span></div>
+  <div class="cl-what"><h3>Календарь решений и выплат на главной (RU + FR)</h3><p>Один запрос к файлам данных вместо четырёх дублей: ставка Банка Израиля и прайм, годовая инфляция, цена бензина 95, ближайшие выплаты — с автоматическим пересчётом «через сколько дней». Ничего не зашито в разметку, поэтому страница не устаревает между автообновлениями.</p><div class="cl-links"><a href="tablo.html">Табло индексов →</a></div></div>
+</div>
+</div>
+
+<h2>Как читать этот журнал</h2>
+<div class="card">
+  <ul><li><b>Как понять, что вы видите свежую версию.</b> Если страница выглядит по-старому, нажмите <b>Ctrl+F5</b> (на телефоне — обновите страницу, потянув вниз, или откройте в приватном окне): GitHub Pages кэширует файлы до 10 минут. Затем сверьте дату внизу страницы с последней записью журнала.</li><li><b>Кто и когда обновляет сайт.</b> Часть данных обновляется автоматически из официальных источников: ставка Банка Израиля, индекс потребительских цен, цена бензина, даты выплат Битуах Леуми. Остальное — вручную; каждая правка попадает в этот журнал с датой.</li><li><b>Замечание или ошибка.</b> Если видите устаревшее число или неточность — напишите через форму: <a href="contact.html">контакты</a>. Исправления тоже фиксируются здесь.</li></ul>
+  <p class="src" style="margin-bottom:0">Дата последнего изменения сайта — внизу каждой страницы. Этот журнал обновляется вместе с сайтом.</p>
+</div>
+
+<footer>
+  <p><b>Обновлено 2026-09-17</b></p>
+  <p>Страница информации, без юридической силы. Проект не связан с Банком Израиля, Битуах Леуми и налоговой.</p>
+  <p><a href="index.html">← На главную</a> · <a href="contact.html">Контакты</a></p>
+</footer>
+</div>
+</body></html>

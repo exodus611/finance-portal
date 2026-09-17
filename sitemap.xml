@@ -480,4 +480,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://exodus611.github.io/finance-portal/changelog.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/changelog.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/changelog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/changelog.html"/>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://exodus611.github.io/finance-portal/fr/changelog.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/changelog.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/changelog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/changelog.html"/>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
