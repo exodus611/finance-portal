@@ -44,6 +44,7 @@ button,input,select{font:inherit}
 .term-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;margin:14px 0;box-shadow:var(--shadow)}
 .term-tag{display:inline-block;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:#fff;background:var(--green);border-radius:20px;padding:4px 11px;margin-bottom:11px}
 .term-tag.tag-auto{background:var(--blue)}
+.tag-nii{background:var(--green)}
 .term-tag.tag-mortgage{background:var(--gold)}
 .term-tag.tag-bank{background:var(--purple)}
 .term-card h2{margin:0 0 12px;font-size:21px}
@@ -100,12 +101,35 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 <input type="text" id="term-search" placeholder="🔍 Искать термин, например «прайм» или «овердрафт»" style="width:100%;padding:13px 16px;border:1px solid var(--line);border-radius:14px;font-size:14px;font-family:inherit;background:var(--card);color:var(--ink);box-shadow:var(--shadow)">
 </div>
 
+<article class="term-card" data-cat="nii">
+<span class="term-tag tag-nii">Битуах Леуми</span>
+<h2>Ашламат ахнаса (השלמת הכנסה) <button class="copy-btn" onclick="copyTerm(this,'השלמת הכנסה')" type="button" title="Скопировать иврит" style="border:none;background:#eef0ea;border-radius:6px;padding:2px 7px;font-size:12px;cursor:pointer;vertical-align:middle">📋</button></h2>
+<div class="term-says">В письме от Битуах Леуми: «אושרה לך תוספת השלמת הכנסה לקצבת אזרח ותיק».</div>
+<div class="term-block">
+<div class="term-plain"><b>По-человечески</b>Это <b>социальная надбавка к пенсии</b>: институт доплачивает разницу между вашей пенсией и минимумом, установленным для вашего состава семьи и возраста. Выплата <b>частичная</b> — она дополняет то, что уже есть: пенсию по старости, пенсию по потере кормильца, зарплату или пособие по безработице.</div>
+<div class="term-money"><b>Сколько это в шекелях</b>2026 год: одинокий — доход доводят до <span class="big">4 375 / 4 418 / 4 460 ₪</span> (до 70 / 70–80 / 80+); пара — до <span class="big">6 912 / 6 981 / 7 048 ₪</span>. Пенсию можно пересчитать в <a href="ashlamat-ahnasa.html">калькуляторе социальной надбавки</a>.</div>
+<div class="term-howto"><b>Что важно</b>Не путать с <b>автахат ахнаса</b> — там другой бланк, другие пороги и требование 24 месяцев проживания в Израиле.</div>
+</div>
+</article>
+
+<article class="term-card" data-cat="nii">
+<span class="term-tag tag-nii">Битуах Леуми</span>
+<h2>Автахат ахнаса (הבטחת הכנסה) <button class="copy-btn" onclick="copyTerm(this,'הבטחת הכנסה')" type="button" title="Скопировать иврит" style="border:none;background:#eef0ea;border-radius:6px;padding:2px 7px;font-size:12px;cursor:pointer;vertical-align:middle">📋</button></h2>
+<div class="term-says">В отделении Битуах Леуми: «Вы не можете претендовать на הבטחת הכנסה, подавайте на השלמת הכנסה».</div>
+<div class="term-block">
+<div class="term-plain"><b>По-человечески</b><b>Полное</b> пособие по прожиточному минимуму — для тех, у кого нет ни дохода, ни права на другие выплаты: болезнь, инвалидность, производственная травма, длительная безработица. Возраст: с 20 лет и до пенсионного, а после него — если пенсия не назначена.</div>
+<div class="term-money"><b>Сколько это в шекелях</b>2026 год: одинокий — <span class="big">2 076 ₪</span> в 25–54 года и <span class="big">2 596 ₪</span> с 55 лет до пенсионного возраста; пара — 2 855 ₪ и 3 893 ₪ соответственно.</div>
+<div class="term-howto"><b>Что важно</b>Требование резидентства жёстче, чем у надбавки к пенсии: не менее <b>24 месяцев</b> непрерывного проживания в Израиле. Именно от этого условия чаще всего отказывают новым репатриантам.</div>
+</div>
+</article>
+
 <div class="filter-row">
 <button class="filter-btn active" data-f="all" onclick="filterTerms('all',this)">Все термины</button>
 <button class="filter-btn" data-f="bank" onclick="filterTerms('bank',this)">🏦 Банк и счёт</button>
 <button class="filter-btn" data-f="mortgage" onclick="filterTerms('mortgage',this)">🏠 Ипотека</button>
 <button class="filter-btn" data-f="salary" onclick="filterTerms('salary',this)">💰 Зарплата</button>
 <button class="filter-btn" data-f="auto" onclick="filterTerms('auto',this)">🚗 Автомобиль</button>
+<button class="filter-btn" data-f="nii" onclick="filterTerms('nii',this)">🏛️ Битуах Леуми</button>
 </div>
 
 <article class="term-card" data-cat="bank">

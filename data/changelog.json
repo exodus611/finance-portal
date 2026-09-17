@@ -4,6 +4,33 @@
   "entries": [
     {
       "date": "2026-09-17",
+      "tag": "разъяснение",
+      "tag_fr": "clarification",
+      "ru_title": "Разъяснено: ашламат ахнаса и автахат ахнаса — это разные выплаты",
+      "ru_text": "Оба названия звучат похоже, и русскоязычные читатели путают их постоянно — а бланки, пороги и условия у них разные. Добавлена таблица сравнения: чем отличается частичное пособие (доплата до минимума к уже назначенной пенсии, зарплате или автале) от полного (для тех, у кого нет ни дохода, ни права на другие выплаты), суммы 2026 по обоим, требование 24 месяцев проживания в Израиле для автахат ахнаса и подсказка «как быстро понять свой случай». Оба термина добавлены в словарь на русском и французском, а в русском словаре появилась категория «Битуах Леуми» (раньше её не было — русская версия словаря отставала от французской).",
+      "fr_title": "Clarification : achlamat hahnasa et havtahat hahnasa sont deux prestations distinctes",
+      "fr_text": "Les deux noms se ressemblent et sont constamment confondus — or les formulaires, les seuils et les conditions diffèrent. Ajout d'un tableau comparatif : prestation partielle (la différence jusqu'au minimum, en plus d'une pension, d'un salaire ou d'une allocation chômage) contre prestation complète (pour ceux qui n'ont ni revenu ni droit à d'autres versements), montants 2026 pour les deux, condition de 24 mois de résidence en Israël pour la havtahat hahnasa, et un repère « dans quel cas suis-je ? ». Les deux termes entrent aussi dans le glossaire, en russe et en français.",
+      "links": [
+        {
+          "href": "ashlamat-ahnasa.html",
+          "ru": "Таблица сравнения (русский)",
+          "fr": "Version russe"
+        },
+        {
+          "href": "fr/ashlamat-ahnasa.html",
+          "ru": "Французская версия",
+          "fr": "Tableau comparatif (français)"
+        },
+        {
+          "href": "slovar.html",
+          "ru": "Словарь терминов",
+          "fr": "Glossaire"
+        }
+      ],
+      "fr_only": false
+    },
+    {
+      "date": "2026-09-17",
       "tag": "навигация",
       "tag_fr": "navigation",
       "ru_title": "Калькулятор социальной надбавки появился в списке на главной",
