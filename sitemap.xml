@@ -427,4 +427,31 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://exodus611.github.io/finance-portal/fr/slovar.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/slovar.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/slovar.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/slovar.html"/>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://exodus611.github.io/finance-portal/fr/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/contact.html"/>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://exodus611.github.io/finance-portal/fr/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/about.html"/>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

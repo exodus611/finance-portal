@@ -110,32 +110,85 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 </div>
 </div>
 
-<p class="privacy-note">Форма работает через сторонний сервис Formspree. Мы не храним ваши данные на своей стороне — сообщение просто пересылается нам на почту.</p>
+<p class="privacy-note">Сообщение уходит либо через сервис отправки форм, либо открывается в вашем почтовом клиенте, либо копируется в буфер обмена с подсказкой, куда его отправить. Данные на нашей стороне не хранятся.</p>
 </main>
 <nav id="rel-links" aria-label="Смежные калькуляторы" style="width:min(760px,calc(100% - 28px));margin:8px auto 0;padding:16px 0"><div style="font-size:12px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Читайте также</div><a href="salary.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Калькулятор зарплаты</a><a href="mashkanta.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Машканта</a><a href="slovar.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Словарь терминов</a><a href="tablo.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Экономика сегодня</a></nav>
 <footer class="shell footer">Понятные финансы в Израиле · независимый информационный проект</footer>
 
 <script>
-const form = document.getElementById('feedback-form');
-form.addEventListener('submit', async function(e){
-  e.preventDefault();
-  const data = new FormData(form);
-  try {
-    const resp = await fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: {'Accept': 'application/json'}
-    });
-    if (resp.ok) {
-      form.style.display = 'none';
-      document.getElementById('success-box').classList.add('show');
-    } else {
-      alert('Не получилось отправить. Проверьте, что форма на Formspree настроена (ID формы вставлен верно), и попробуйте ещё раз.');
-    }
-  } catch(err) {
-    alert('Ошибка отправки. Проверьте подключение к интернету и попробуйте ещё раз.');
+/* ============ НАСТРОЙКА: одна строка ============
+   1) ID формы Formspree (formspree.io, бесплатно): например 'mqkrwabc' — форма заработает сразу.
+   2) либо e-mail: форма будет открывать почтовый клиент посетителя.
+   3) если пусто — текст копируется в буфер, и предлагается Telegram.
+   Пока не заполнено, форма не «молчит»: сообщение пользователя не теряется.
+   =============================================== */
+var CONTACT_FORMSPREE = '';
+var CONTACT_EMAIL     = '';
+var CONTACT_TELEGRAM  = 'https://t.me/recall_Israel';
+
+(function(){
+  var form = document.getElementById('feedback-form');
+  if(!form) return;
+  var fbBox = document.getElementById('fallback-box');
+  var fbText = document.getElementById('fallback-text');
+  var tg = document.getElementById('fallback-tg');
+  if(tg && CONTACT_TELEGRAM){ tg.href = CONTACT_TELEGRAM; }
+
+  function value(name){
+    var el = form.querySelector('[name="'+name+'"]');
+    return el ? el.value.trim() : '';
   }
-});
+  function compose(){
+    return [
+      'Тема: ' + value('topic'),
+      value('name')  ? 'Имя: ' + value('name') : '',
+      value('email') ? 'Email: ' + value('email') : '',
+      'Страница: ' + (document.referrer || location.href),
+      '',
+      value('message')
+    ].filter(Boolean).join('\n');
+  }
+  function copy(text){
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).catch(function(){}); }
+    else{
+      var t = document.createElement('textarea'); t.value = text; document.body.appendChild(t); t.select();
+      try{ document.execCommand('copy'); }catch(e){}
+      document.body.removeChild(t);
+    }
+  }
+  function showFallback(msg){
+    if(msg && fbText){ fbText.textContent = msg; }
+    if(fbBox){ fbBox.style.display = 'block'; fbBox.scrollIntoView({behavior:'smooth', block:'center'}); }
+  }
+
+  form.addEventListener('submit', function(e){
+    /* 1) Formspree настроен — отправляем по-настоящему */
+    if(CONTACT_FORMSPREE){
+      e.preventDefault();
+      var data = new FormData(form);
+      fetch('https://formspree.io/f/' + CONTACT_FORMSPREE, {method:'POST', body:data, headers:{'Accept':'application/json'}})
+        .then(function(r){
+          if(r.ok){ form.style.display = 'none'; document.getElementById('success-box').classList.add('show'); }
+          else { showFallback('Отправка не удалась. Текст не потерян: скопируйте его и отправьте в Telegram.'); }
+        })
+        .catch(function(){ showFallback('Нет связи. Текст не потерян: скопируйте его и отправьте в Telegram.'); });
+      return;
+    }
+    /* 2) указан e-mail — открываем почтовый клиент */
+    if(CONTACT_EMAIL){
+      e.preventDefault();
+      location.href = 'mailto:' + CONTACT_EMAIL +
+        '?subject=' + encodeURIComponent('[Сайт] ' + value('topic')) +
+        '&body=' + encodeURIComponent(compose());
+      return;
+    }
+    /* 3) ничего не настроено — копируем текст и предлагаем Telegram */
+    e.preventDefault();
+    copy(compose());
+    if(CONTACT_TELEGRAM){ window.open(CONTACT_TELEGRAM, '_blank', 'noopener'); }
+    showFallback('Ваш текст скопирован в буфер обмена: вставьте его в открывшемся Telegram.');
+  });
+})();
 </script>
 
 <button id="scrollToTop" title="Наверх" aria-label="Прокрутить наверх" style="display:none;position:fixed;bottom:20px;right:20px;width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;border:none;font-size:18px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.2);z-index:150">↑</button>
