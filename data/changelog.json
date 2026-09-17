@@ -4,6 +4,28 @@
   "entries": [
     {
       "date": "2026-09-17",
+      "tag": "оформление",
+      "tag_fr": "mise en forme",
+      "ru_title": "Страница автахат ахнаса оформлена как остальные: карточки, таблицы и шаги вместо простыней текста",
+      "ru_text": "Первый вариант страницы получился «газетным»: длинные абзацы без рамок, обычные списки, голые таблицы. Теперь всё разложено по тому же шаблону, что у страницы социальной надбавки: каждый блок данных — в карточке, широкие таблицы — в карточке с горизонтальной прокруткой на телефоне, процедура подачи — нумерованными шагами, сверху и снизу — карточки со ссылками-кнопками. Пять тем, что были списками (кому откажут, доход, имущество, поездки, сравнение названий), стали таблицами с двумя-тремя колонками: «Ситуация → Что проверяет Битуах Леуми». Добавлен блок-помощник «подхожу ли я под исключение по резидентству»: вводите месяцы резидентства и годы с алии — получаете вывод по вашему случаю. Содержание и суммы не менялись.",
+      "fr_title": "La page havtahat hahnasa est mise en forme comme les autres : cartes, tableaux et étapes au lieu de blocs de texte",
+      "fr_text": "La première version de la page faisait « journal » : longs paragraphes sans encadrés, listes classiques, tableaux nus. Tout est désormais rangé dans le même gabarit que la page du complément de revenu : chaque bloc de données dans une carte, les tableaux larges dans une carte à défilement horizontal sur mobile, la procédure en étapes numérotées, et en haut comme en bas des cartes de liens-boutons. Cinq thèmes qui étaient des listes (qui essuiera un refus, revenus, patrimoine, voyages, comparaison des noms) sont devenus des tableaux à deux ou trois colonnes « Situation → ce que vérifie le Bituah Leumi ». Ajout d'un bloc d'aide « suis-je concerné par une exception sur la résidence » : vous saisissez vos mois de résidence et vos années depuis l'alya, vous obtenez la conclusion pour votre cas. Contenu et montants inchangés.",
+      "links": [
+        {
+          "href": "avtahat-ahnasa.html",
+          "ru": "Страница пособия",
+          "fr": "Version russe"
+        },
+        {
+          "href": "fr/avtahat-ahnasa.html",
+          "ru": "Французская версия",
+          "fr": "Allocation de subsistance"
+        }
+      ],
+      "fr_only": false
+    },
+    {
+      "date": "2026-09-17",
       "tag": "правка",
       "tag_fr": "correction",
       "ru_title": "Страница автахат ахнаса переписана в общем формате и выведена на главное табло",
