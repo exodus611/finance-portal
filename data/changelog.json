@@ -335,6 +335,22 @@
           "fr": "Calculateur de retraite"
         }
       ]
+    },
+    {
+      "date": "2026-09-25",
+      "tag": "французская версия",
+      "tag_fr": "version française",
+      "ru_title": "Французская версия страницы «Пикадон или керен каспит»",
+      "ru_text": "Двенадцатая французская страница: калькулятор сравнения банковского вклада и денежного фонда переведён вручную — те же суммы, та же логика расчёта, те же четыре раскрывающихся блока. На французской странице налог и доходность считаются так же, как по-русски, а ставка Банка Израиля и инфляция подставляются с общего табло. Семнадцать французских страниц, которые отправляли читателя в русскую версию, теперь ведут на французскую.",
+      "fr_title": "Version française : Pikadon ou keren kaspit",
+      "fr_text": "Douzième page française : le calculateur qui compare le dépôt bancaire bloqué et le fonds monétaire est traduit à la main — mêmes montants, même logique de calcul, mêmes quatre blocs dépliants. L’impôt et le rendement s’y calculent exactement comme en russe, et le taux de la Banque d’Israël ainsi que l’inflation sont insérés depuis le tableau de bord commun. Les dix-sept pages françaises qui renvoyaient vers la version russe pointent désormais vers la version française.",
+      "links": [
+        {
+          "href": "fr/pikadon-vs-keren.html",
+          "ru": "Pikadon или керен каспит (FR)",
+          "fr": "Pikadon ou keren kaspit"
+        }
+      ]
     }
   ]
 }
