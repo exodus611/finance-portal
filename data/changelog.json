@@ -319,38 +319,6 @@
           "fr": "Tableau de bord"
         }
       ]
-    },
-    {
-      "date": "2026-09-25",
-      "tag": "доступ",
-      "tag_fr": "accès",
-      "ru_title": "Пенсионный калькулятор открыт для всех: пароль снят",
-      "ru_text": "Блокировка по паролю убрана целиком: затемняющий экран, проверка SHA-256, кнопка «Закрыть» в шапке и хранение доступа в сессии удалены — страница открывается сразу. Ссылки на главной (RU и FR) больше не помечены «PRO» и «PIN», вместо них метка «бесплатно» / «gratuit». Законные ограничения внутри калькулятора остались и это не платный доступ: пособие Эзрах Ватик и кибуа зхуйот показываются только с официального возраста.",
-      "fr_title": "Calculateur de retraite ouvert à tous : mot de passe supprimé",
-      "fr_text": "Le blocage par mot de passe a été entièrement retiré : écran de superposition, vérification SHA-256, bouton « Fermer » et mémorisation de l'accès supprimés — la page s'ouvre directement. Les liens des accueils RU et FR ne portent plus les mentions « PRO » et « PIN », remplacées par « gratuit ». Les limitations légales internes subsistent et ne relèvent pas d'un accès payant : l'allocation Ezra'h Vatik et le kiboua zkhioyot ne s'affichent qu'à partir de l'âge officiel.",
-      "links": [
-        {
-          "href": "pension-calc.html",
-          "ru": "Пенсионный калькулятор",
-          "fr": "Calculateur de retraite"
-        }
-      ]
-    },
-    {
-      "date": "2026-09-25",
-      "tag": "французская версия",
-      "tag_fr": "version française",
-      "ru_title": "Французская версия страницы «Пикадон или керен каспит»",
-      "ru_text": "Двенадцатая французская страница: калькулятор сравнения банковского вклада и денежного фонда переведён вручную — те же суммы, та же логика расчёта, те же четыре раскрывающихся блока. На французской странице налог и доходность считаются так же, как по-русски, а ставка Банка Израиля и инфляция подставляются с общего табло. Семнадцать французских страниц, которые отправляли читателя в русскую версию, теперь ведут на французскую.",
-      "fr_title": "Version française : Pikadon ou keren kaspit",
-      "fr_text": "Douzième page française : le calculateur qui compare le dépôt bancaire bloqué et le fonds monétaire est traduit à la main — mêmes montants, même logique de calcul, mêmes quatre blocs dépliants. L’impôt et le rendement s’y calculent exactement comme en russe, et le taux de la Banque d’Israël ainsi que l’inflation sont insérés depuis le tableau de bord commun. Les dix-sept pages françaises qui renvoyaient vers la version russe pointent désormais vers la version française.",
-      "links": [
-        {
-          "href": "fr/pikadon-vs-keren.html",
-          "ru": "Pikadon или керен каспит (FR)",
-          "fr": "Pikadon ou keren kaspit"
-        }
-      ]
     }
   ]
 }
