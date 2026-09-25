@@ -319,6 +319,22 @@
           "fr": "Tableau de bord"
         }
       ]
+    },
+    {
+      "date": "2026-09-25",
+      "tag": "доступ",
+      "tag_fr": "accès",
+      "ru_title": "Пенсионный калькулятор открыт для всех: пароль снят",
+      "ru_text": "Блокировка по паролю убрана целиком: затемняющий экран, проверка SHA-256, кнопка «Закрыть» в шапке и хранение доступа в сессии удалены — страница открывается сразу. Ссылки на главной (RU и FR) больше не помечены «PRO» и «PIN», вместо них метка «бесплатно» / «gratuit». Законные ограничения внутри калькулятора остались и это не платный доступ: пособие Эзрах Ватик и кибуа зхуйот показываются только с официального возраста.",
+      "fr_title": "Calculateur de retraite ouvert à tous : mot de passe supprimé",
+      "fr_text": "Le blocage par mot de passe a été entièrement retiré : écran de superposition, vérification SHA-256, bouton « Fermer » et mémorisation de l'accès supprimés — la page s'ouvre directement. Les liens des accueils RU et FR ne portent plus les mentions « PRO » et « PIN », remplacées par « gratuit ». Les limitations légales internes subsistent et ne relèvent pas d'un accès payant : l'allocation Ezra'h Vatik et le kiboua zkhioyot ne s'affichent qu'à partir de l'âge officiel.",
+      "links": [
+        {
+          "href": "pension-calc.html",
+          "ru": "Пенсионный калькулятор",
+          "fr": "Calculateur de retraite"
+        }
+      ]
     }
   ]
 }

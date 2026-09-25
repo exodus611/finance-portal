@@ -8,7 +8,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308775a'/><text x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='900' fill='white' text-anchor='middle'>₪</text></svg>">
-<title>Расчёт пенсионных накоплений и выплат 2026 (PRO) — Финансовый Портал Израиля</title>
+<title>Пенсионный калькулятор Израиля 2026 — накопления, микадем, Эзрах Ватик, кибуа зхуйот</title>
 <meta name="robots" content="index, follow">
 <meta name="description" content="Полный расчёт пенсии в Израиле: возраст от 60 лет, точный микадем, пособие Эзрах Ватик Битуах Леуми, налог на здоровье (ст. 345б), налоги (кибуа зхуйот) и пенсионные треки.">
 <link rel="canonical" href="https://exodus611.github.io/finance-portal/pension-calc.html"/>
@@ -135,28 +135,12 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
 .disclaimer-accord summary{color:var(--muted);font-size:12px}
 .disclaimer-accord .accord-content{color:var(--muted);font-size:11px}
 
-/* Password Gate Screen */
-#lock-gate{position:fixed;inset:0;background:rgba(21,37,31,.78);backdrop-filter:blur(8px);z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px}
-.lock-box{background:#fff;border-radius:20px;padding:26px 20px;max-width:380px;width:100%;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.2);animation:popIn .25s ease-out}
-@keyframes popIn{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
-.lock-icon{width:54px;height:54px;border-radius:16px;background:var(--green-light);color:var(--green);display:grid;place-items:center;font-size:26px;margin:0 auto 12px;box-shadow:0 4px 14px rgba(8,119,90,.15)}
-.lock-box h2{margin:0 0 6px;font-size:18px;font-weight:850;color:var(--ink)}
-.lock-box p{margin:0 0 16px;font-size:12px;color:var(--muted);line-height:1.4}
-.lock-input{width:100%;padding:10px 12px;border:2px solid var(--line);border-radius:10px;font-size:15px;text-align:center;letter-spacing:.1em;font-weight:800;color:var(--ink);margin-bottom:10px;transition:border-color .15s}
-.lock-input:focus{border-color:var(--green);outline:none}
-.lock-btn{width:100%;padding:10px;background:var(--green);color:#fff;border:none;border-radius:10px;font-size:13.5px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(8,119,90,.25);transition:all .15s}
-.lock-btn:hover{background:var(--green2)}
-.lock-btn:active{transform:scale(.98)}
-.lock-err{margin-top:8px;font-size:11.5px;font-weight:750;color:var(--red);display:none}
-.lock-exit-btn{background:transparent;border:none;color:var(--muted);font-size:11px;font-weight:750;margin-top:12px;cursor:pointer;text-decoration:underline}
-.shake{animation:shake .35s ease-in-out}
-@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
 </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Калькулятор пенсионных накоплений (PRO) Израиль",
+  "name": "Калькулятор пенсионных накоплений Израиль 2026",
   "url": "https://exodus611.github.io/finance-portal/pension-calc.html",
   "description": "Моделирование пенсионного капитала, расчёт чистой ежемесячной пенсии, налоговых льгот по статье 9(а) (Кибуа Зхуйот) и пособия по старости Битуах Леуми.",
   "applicationCategory": "FinanceApplication",
@@ -167,22 +151,7 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
 </head>
 <body>
 
-<!-- PASSWORD GATE -->
-<div id="lock-gate">
-  <div class="lock-box" id="lock-card">
-    <div class="lock-icon">🔒</div>
-    <h2>Закрытый доступ</h2>
-    <p>Профессиональный модуль пенсионного планирования Израиля. Введите пароль доступа:</p>
-    <form onsubmit="handleUnlock(event)">
-      <input type="password" id="gate-pass" class="lock-input" placeholder="Введите пароль..." autocomplete="current-password" autofocus>
-      <button type="submit" class="lock-btn">Войти в калькулятор</button>
-      <div id="gate-err" class="lock-err">⚠️ Неверный пароль доступа</div>
-    </form>
-    <button type="button" class="lock-exit-btn" onclick="location.href='index.html'">← Вернуться на главную</button>
-  </div>
-</div>
-
-<div class="shell" id="main-content" style="display:none">
+<div class="shell" id="main-content">
   <header class="top">
     <div class="topbar">
       <a class="logo" href="index.html">
@@ -193,7 +162,6 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
         </div>
       </a>
       <div style="display:flex;align-items:center;gap:8px">
-        <button type="button" onclick="lockPage()" style="border:1px solid var(--line);background:#fff;padding:4px 8px;border-radius:6px;font-size:10.5px;font-weight:750;color:var(--muted);cursor:pointer">🔒 Закрыть</button>
         <a class="back" href="index.html">← Главная</a>
       </div>
     </div>
@@ -201,6 +169,7 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
 
   <div class="hero">
     <div class="badge">⚖️ Официальная база Управления рынка капитала и Битуах Леуми</div>
+    <div class="badge" style="background:#e8f5f1;border-color:var(--green);color:var(--green)">🔓 Свободный доступ: пароль больше не нужен — с 25.09.2026</div>
     <h1>Расчёт пенсионных накоплений и выплат 2026</h1>
     <p>Точный расчет: микадем, пособие Эзрах Ватик Битуах Леуми, налог на здоровье с ранней пенсии (ст. 345б) и льготы Кибуа Зхуйот (161д).</p>
   </div>
@@ -613,58 +582,6 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
 <nav id="rel-links" aria-label="Смежные калькуляторы" style="width:min(760px,calc(100% - 28px));margin:8px auto 0;padding:16px 0"><div style="font-size:12px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Читайте также</div><a href="pension-gap.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Пенсионный разрыв</a><a href="keren-hishtalmut.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Керен ишталмут</a><a href="salary.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Проверить точные пенсионные удержания</a><a href="siud.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Сиюд — уход за пожилыми</a></nav>
 
 <script>
-/* ==========================================================================
-   PASSWORD ACCESS GATE (PIN / Password: 2026 or pension2026)
-   ========================================================================== */
-const VALID_HASHES = [
-  "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab", // 2026
-  "06f37aadc312e3c21c2c4020bd754b8616e9dd8a78a4e3f8ec5f518b80d1c128"  // pension2026
-];
-
-async function sha256(str) {
-  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
-  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
-}
-
-async function handleUnlock(e) {
-  if (e) e.preventDefault();
-  const input = document.getElementById('gate-pass');
-  const val = input.value.trim();
-  const err = document.getElementById('gate-err');
-  const card = document.getElementById('lock-card');
-  
-  const hash = await sha256(val);
-  if (VALID_HASHES.includes(hash) || val === "2026" || val === "pension2026") {
-    sessionStorage.setItem('pension_gate_auth', 'granted');
-    revealCalculator();
-  } else {
-    err.style.display = 'block';
-    card.classList.remove('shake');
-    void card.offsetWidth;
-    card.classList.add('shake');
-    input.value = '';
-    input.focus();
-  }
-}
-
-function revealCalculator() {
-  document.getElementById('lock-gate').style.display = 'none';
-  document.getElementById('main-content').style.display = 'block';
-  updateQuickButtons();
-  calc();
-}
-
-function lockPage() {
-  sessionStorage.removeItem('pension_gate_auth');
-  location.reload();
-}
-
-function checkAccess() {
-  if (sessionStorage.getItem('pension_gate_auth') === 'granted') {
-    revealCalculator();
-  }
-}
-
 /* ==========================================================================
    ISRAEL PENSION ADVISOR CALCULATION ENGINE (2026)
    Exact Actuarial & Tax Standard (Capital Market Authority & BTL 345b)
@@ -1221,7 +1138,8 @@ function renderScenarios(curCapital, seniority, aliyahAge, isMarried, spousePct,
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  checkAccess();
+  updateQuickButtons();
+  calc();
 });
 </script>
 
