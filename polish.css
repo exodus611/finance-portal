@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Шрифт Inter — локально, без запросов к внешним сервисам.
+   Страницы уже просят «Inter» в font-family, но почти нигде его не было:
+   у кого шрифт не установлен, сайт открывался в случайном системном.
+   Один вариативный файл на подмножество символов перекрывает все насыщенности
+   (100–900), поэтому файлов всего четыре: латиница, латиница-расширенная
+   (французский), кириллица, кириллица-расширенная.
+   Иврит намеренно не покрывается: им пишут короткие термины, и системный
+   шрифт здесь уместнее и легче.
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('fonts/inter-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+                 U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('fonts/inter-latin-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+                 U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+                 U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('fonts/inter-cyrillic-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('fonts/inter-cyrillic-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+                 U+FE2E-FE2F;
+}
+
+/* ==========================================================================
+   polish.css — общая «полировка» оформления для всех страниц портала.
+
+   Подключается последней (после локальных стилей страницы), поэтому только
+   уточняет оформление и не перекрашивает то, что сделано на страницах:
+   типографика, фокус, полосы прокрутки, печать, уважение системных настроек.
+
+   Правило правок: сюда можно добавлять только то, что безопасно для ЛЮБОЙ
+   страницы сайта. Точечные правки делаются в самих страницах.
+   ========================================================================== */
+
+/* ---------- 1. Типографика ---------- */
+
+/* Ровнее сглаживание шрифтов на macOS/iOS */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Заголовки не «рвут» последнюю строку, абзацы без висячих строк */
+h1, h2, h3, h4 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+/* Мобильный Safari не должен сам «увеличивать» мелкий текст при повороте */
+html { -webkit-text-size-adjust: 100%; }
+
+/* При переходе по якорю заголовок не прячется под липкую шапку */
+[id] { scroll-margin-top: 72px; }
+
+/* ---------- 2. Цифры ---------- */
+
+/* Цифры одинаковой ширины: суммы в таблицах и результатах не «дышат» */
+table,
+.sum-row, .result-row, .row, .kv, .val, .num,
+.scenario-table, .fx-row, .sum-row * {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 3. Взаимодействие ---------- */
+
+/* Мягкое выделение текста в цвете сайта */
+::selection { background: rgba(8, 119, 90, .18); }
+
+/* На телефоне тап не заливает элемент серым прямоугольником */
+a, button, summary, label, input, select {
+  -webkit-tap-highlight-color: rgba(8, 119, 90, .14);
+}
+
+/* Видимый фокус — только для клавиатуры, мышь не «подсвечивает» лишнее */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #08775a;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Раскрывающиеся блоки выглядят кликабельными */
+details > summary { cursor: pointer; }
+
+/* ---------- 4. Ничего не вылезает за экран ---------- */
+
+img, svg, iframe, video { max-width: 100%; }
+
+/* Длинные слова и ссылки не рвут вёрстку по горизонтали */
+body { overflow-wrap: break-word; }
+
+/* Элементы форм, ссылки-сноски и подсветка — в цвете сайта */
+input, select, textarea { accent-color: #08775a; }
+hr { border: 0; border-top: 1px solid var(--line, #ddd6c7); margin: 20px 0; }
+mark { background: rgba(194, 155, 82, .28); color: inherit; border-radius: 3px; padding: 0 2px; }
+abbr[title] { text-decoration: underline dotted; cursor: help; }
+
+/* ---------- 5. Полосы прокрутки ---------- */
+
+/* Тонкая полоса прокрутки страницы — только там, где есть мышь */
+@media (pointer: fine) {
+  html { scrollbar-width: thin; scrollbar-color: rgba(21, 37, 31, .25) transparent; }
+  html::-webkit-scrollbar { width: 10px; }
+  html::-webkit-scrollbar-track { background: transparent; }
+  html::-webkit-scrollbar-thumb {
+    background: rgba(21, 37, 31, .22);
+    border: 3px solid transparent;
+    border-radius: 10px;
+    background-clip: content-box;
+  }
+  html::-webkit-scrollbar-thumb:hover { background: rgba(21, 37, 31, .38); background-clip: content-box; }
+}
+
+/* Широкие таблицы прокручиваются аккуратной полосой, а не «рвут» страницу */
+.table-scroll,
+.table-scroll-wrap,
+.tablewrap {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(8, 119, 90, .35) transparent;
+  overscroll-behavior-x: contain;
+}
+.table-scroll::-webkit-scrollbar,
+.table-scroll-wrap::-webkit-scrollbar,
+.tablewrap::-webkit-scrollbar { height: 8px; }
+.table-scroll::-webkit-scrollbar-track,
+.table-scroll-wrap::-webkit-scrollbar-track,
+.tablewrap::-webkit-scrollbar-track { background: transparent; }
+.table-scroll::-webkit-scrollbar-thumb,
+.table-scroll-wrap::-webkit-scrollbar-thumb,
+.tablewrap::-webkit-scrollbar-thumb {
+  background: rgba(8, 119, 90, .3);
+  border-radius: 8px;
+}
+
+/* ---------- 6. Уважаем системные настройки ---------- */
+
+/* Плавная прокрутка к якорям, если пользователь не просил «меньше движения» */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+/* ---------- 7. Печать ---------- */
+
+@media print {
+  body { background: #fff !important; }
+  /* Лишнее на бумаге: бегущая строка, кнопки, навигация, липкие панели */
+  #ticker-bar, #ticker-panel, #scrollToTop, .scrollToTop,
+  #rel-links, .no-print, button, iframe, video { display: none !important; }
+  .card, details, section, table, tr { break-inside: avoid; }
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #666;
+    word-break: break-all;
+  }
+}

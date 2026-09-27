@@ -1,7 +1,70 @@
 {
   "_comment": "Журнал изменений сайта. Правится руками, страницы changelog.html и fr/changelog.html генерируются из него: python3 scripts/make_changelog.py",
-  "updated": "2026-09-17",
+  "updated": "2026-09-27",
   "entries": [
+    {
+      "date": "2026-09-27",
+      "tag": "шрифты",
+      "tag_fr": "polices",
+      "ru_title": "Шрифт Inter теперь лежит на самом сайте — страницы выглядят одинаково на всех устройствах",
+      "ru_text": "Страницы просили шрифт Inter, но почти нигде его не было: только шесть страниц подгружали его из интернета, остальные открывались тем системным шрифтом, который стоит у человека, — от этого один и тот же сайт выглядел по-разному на разных телефонах и компьютерах. Теперь Inter подключён локально, со своего домена: четыре файла (латиница, латиница расширенная для французского, кириллица, кириллица расширенная), один файл перекрывает все насыщенности от тонкой до сверхжирной. Запросов к внешним сервисам ради шрифта больше нет — страница не ждёт чужих серверов и не отдаёт им данные о посетителях. С tablo и valuta (и их французских версий) внешние подключения Inter убраны. Иврит намеренно оставлен на системном шрифте: им на сайте пишут короткие термины, а весить страница будет меньше.",
+      "fr_title": "La police Inter est désormais hébergée sur le site : les pages s’affichent à l’identique partout",
+      "fr_text": "Les pages demandaient la police Inter, mais elle n’existait presque nulle part : seules six pages la chargeaient depuis Internet, les autres s’ouvraient avec la police système installée chez chacun — le même site n’avait donc pas la même tête d’un téléphone ou d’un ordinateur à l’autre. Inter est maintenant servie en local, depuis le site : quatre fichiers (latin, latin étendu pour le français, cyrillique, cyrillique étendu), un seul fichier couvrant toutes les graisses de la plus fine à la plus épaisse. Plus aucune requête vers un service externe pour une police : la page n’attend pas des serveurs tiers et ne leur transmet rien. Les pages tablo et valuta (et leurs versions françaises) ne chargent plus Inter depuis l’extérieur. L’hébreu reste volontairement en police système : le site n’écrit que des termes courts en hébreu, et la page reste ainsi plus légère.",
+      "links": [
+        {
+          "href": "index.html",
+          "ru": "Главная страница",
+          "fr": "Page d’accueil"
+        },
+        {
+          "href": "tablo.html",
+          "ru": "Экономика сегодня",
+          "fr": "L’économie aujourd’hui"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "tag": "оформление",
+      "tag_fr": "mise en forme",
+      "ru_title": "Единый слой оформления для всех страниц и починка там, где страницы выглядели сломанными",
+      "ru_text": "Первым делом починено то, что бросалось в глаза как поломка. Страница киберщита отдавала содержимое дважды: файл был склеен из двух копий, и посреди текста торчало «ype html». У французской страницы арноны внизу висел обрывком кусок разметки со ссылкой. На страницах маанак авода, дат выплат и пенсионных накоплений (и их французских версиях) не было футера — страница просто обрывалась. Дальше — общее: появился файл polish.css, подключённый на всех страницах последним. Он не перекрашивает то, что сделано в самих страницах, а добавляет ровный рендеринг шрифтов, аккуратные переносы в заголовках, цифры одинаковой ширины (суммы в таблицах больше не «дышат»), зелёные чекбоксы и переключатели вместо синих системных, тонкие полосы прокрутки, видимый фокус при переходе с клавиатуры и уважение системной настройки «меньше движения»; при печати убирается лишняя навигация. На 12 страницах добавлен theme-color — на телефоне шапка браузера окрашивается в цвет сайта. Одиннадцать слишком длинных заголовков сокращены, чтобы они не обрезались в поиске и во вкладках. В журнале изменений поправлена вложенность заголовков. Таблицы на телефоне проверены: широкие прокручиваются, за экран не вылезают.",
+      "fr_title": "Une couche de mise en forme commune à toutes les pages et réparation des pages qui semblaient cassées",
+      "fr_text": "D’abord ce qui se voyait comme une panne. La page du bouclier cyber affichait son contenu deux fois : le fichier était la fusion de deux copies, avec un « ype html » planté au milieu du texte. En bas de la page arnona française traînait un morceau de balisage avec un lien. Les pages maanak avoda, dates de versement et épargne retraite (et leurs versions françaises) n’avaient aucun pied de page : la page s’arrêtait net. Ensuite, le fond commun : un fichier polish.css est chargé en dernier sur toutes les pages. Il ne repeint pas ce que chaque page a déjà fait, il ajoute un rendu des polices plus net, des retours à la ligne soignés dans les titres, des chiffres de largeur fixe (les montants des tableaux ne « respirent » plus), des cases à cocher et interrupteurs verts à la place du bleu du système, des barres de défilement fines, un focus visible au clavier et le respect du réglage « moins d’animations » ; à l’impression, la navigation superflue disparaît. Douze pages reçoivent un theme-color : sur mobile, la barre du navigateur prend la couleur du site. Onze titres trop longs ont été raccourcis pour ne plus être coupés dans les résultats de recherche et les onglets. La hiérarchie des titres du journal a été corrigée. Les tableaux ont été vérifiés sur mobile : les larges défilent, rien ne dépasse de l’écran.",
+      "links": [
+        {
+          "href": "cyber.html",
+          "ru": "Киберщит (было дублирование)",
+          "fr": "Bouclier cyber (corrigé)"
+        },
+        {
+          "href": "changelog.html",
+          "ru": "Весь журнал изменений",
+          "fr": "Tout le journal"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "tag": "доступ",
+      "tag_fr": "accès",
+      "ru_title": "Калькулятор пенсионных накоплений открыт для всех: пароль больше не нужен",
+      "ru_text": "Страница была закрыта паролем и помечена замком в меню — из-за этого расчёт пенсии, микадема, пособия Эзрах Ватик и Кибуа Зхуйот был недоступен без кода. Блокировка снята: калькулятор открывается сразу, как и остальные 24 калькулятора сайта. С главной страницы исчезли метки «(PRO)» и «🔒 PIN» — вместо них обычная плашка «калькулятор», как у соседних карточек. Замки внутри самого расчёта остались на месте, но это другой смысл: они показывают, что пособие по старости и налоговые льготы по закону недоступны раньше официального возраста выхода на пенсию. Формулы, таблицы микадема и суммы не менялись.",
+      "fr_title": "Le calculateur d’épargne retraite est ouvert à tous : plus de mot de passe",
+      "fr_text": "La page était protégée par un mot de passe et marquée d’un cadenas dans le menu : le calcul de la pension, du mikadem, de l’allocation Ezra’h Vatik et du Kiboua Zkhioyot était donc inaccessible sans code. Le blocage est levé : le calculateur s’ouvre immédiatement, comme les 24 autres calculateurs du site. Les mentions « (PRO) » et « 🔒 PIN » ont disparu de la page d’accueil, remplacées par la pastille « calculateur » habituelle. Les cadenas visibles dans le calcul lui-même restent : ils signalent, selon la loi, que l’allocation de vieillesse et les avantages fiscaux ne sont pas accessibles avant l’âge officiel de départ à la retraite. Les formules, les tables de mikadem et les montants n’ont pas changé.",
+      "links": [
+        {
+          "href": "pension-calc.html",
+          "ru": "Калькулятор пенсионных накоплений",
+          "fr": "Version russe (calculateur)"
+        },
+        {
+          "href": "pension-gap.html",
+          "ru": "Пенсионный разрыв",
+          "fr": "Écart de retraite"
+        }
+      ]
+    },
     {
       "date": "2026-09-17",
       "tag": "оформление",
