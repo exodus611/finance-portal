@@ -175,10 +175,10 @@
     "apartment_type": "3-комнатная квартира"
   },
   "fuel": {
-    "price_95": 8.27,
-    "prev_price": 7.75,
+    "price_95": 7.77,
+    "prev_price": 8.27,
     "full_service_extra": 0.26,
-    "period": "2026-10",
+    "period": "2026-10 (с 05.10)",
     "name_ru": "Бензин 95, самообслуживание"
   }
 }
