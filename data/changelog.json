@@ -4,6 +4,27 @@
   "entries": [
     {
       "date": "2026-10-14",
+      "tag": "оформление",
+      "tag_fr": "mise en forme",
+      "ru_title": "Внеочередные выплаты стали компактнее: каждая выплата — раскрывающийся блок",
+      "ru_text": "Раздел «Внеочередные и разовые выплаты» занимал слишком много места: каждая выплата была раскрыта целиком. Теперь каждая выплата — раскрывающийся блок (аккордеон). В свёрнутом виде видно главное: название, статус с датой («ожидается 28.10.2026 · через 14 дней»), краткую сумму и кому положена выплата; по нажатию открываются подробности — когда, кому, за что, как получить и ссылка на источник. Пояснения под списком (досрочные выплаты, задолженность за прошлое, как узнавать о новых выплатах) тоже стали раскрывающимися. Раздел стал в несколько раз короче, особенно на телефоне. Ссылка вида payments.html#extra-heating-elderly сразу открывает нужную выплату.",
+      "fr_title": "Les versements exceptionnels deviennent plus compacts : chaque versement est un bloc dépliable",
+      "fr_text": "La section « Versements exceptionnels et ponctuels » prenait trop de place : chaque versement était entièrement déplié. Désormais, chaque versement est un bloc dépliable (accordéon). Replié, il montre l'essentiel : le nom, le statut avec la date (« attendu le 28.10.2026 · dans 14 jours »), le montant résumé et les personnes concernées ; en touchant le bloc, on voit le détail — quand, pour qui, pourquoi, comment l'obtenir et le lien vers la source. Les explications sous la liste (versements anticipés, arriérés, comment suivre les nouveautés) sont elles aussi dépliables. La section est plusieurs fois plus courte, surtout sur téléphone. Un lien du type payments.html#extra-heating-elderly ouvre directement le versement voulu.",
+      "links": [
+        {
+          "href": "payments.html",
+          "ru": "Даты выплат Битуах Леуми",
+          "fr": "Version russe de la page"
+        },
+        {
+          "href": "fr/payments.html",
+          "ru": "Французская версия страницы",
+          "fr": "Dates des paiements du Bitouah Leumi"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-14",
       "tag": "автообновление",
       "tag_fr": "mise à jour automatique",
       "ru_title": "Внеочередные выплаты теперь обновляются сами: суммы, даты и новые объявления Битуах Леуми",

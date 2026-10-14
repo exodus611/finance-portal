@@ -30,6 +30,10 @@
         "ru": "664\u00a0₪ на семью (с 1 января 2026). Если право есть у обоих супругов, сумма делится пополам: по 332\u00a0₪ каждому.",
         "fr": "664\u00a0₪ par famille (depuis le 1er janvier 2026). Si les deux conjoints y ont droit, la somme est partagée : 332\u00a0₪ chacun."
       },
+      "amount_short": {
+        "ru": "664\u00a0₪ на семью",
+        "fr": "664\u00a0₪ par famille"
+      },
       "amount_since": "2026-01-01",
       "date": "2026-10-28",
       "date_precision": "expected",
@@ -92,6 +96,10 @@
         "ru": "От 993 до 8\u00a0984\u00a0₪ в год. Сумма зависит от уровня права: места проживания (холодные районы), степени инвалидности и вида травмы.",
         "fr": "De 993 à 8\u00a0984\u00a0₪ par an, selon le niveau de droit : lieu de résidence (zones froides), taux d’invalidité et type de blessure."
       },
+      "amount_short": {
+        "ru": "От 993 до 8\u00a0984\u00a0₪ в год",
+        "fr": "De 993 à 8\u00a0984\u00a0₪ par an"
+      },
       "month": "2026-11",
       "recurs": {
         "month": 11
@@ -148,6 +156,10 @@
         "ru": "75% среднего заработка (берутся 3 лучших месяца из последних 6 перед увольнением или отпуском), но не больше 137\u00a0₪ в день. Выплата — за период с 28.02 по 14.04.2026.",
         "fr": "75\u00a0% du salaire moyen (les 3 meilleurs mois sur les 6 derniers avant l’arrêt du travail), plafonné à 137\u00a0₪ par jour. Période indemnisée : du 28.02 au 14.04.2026."
       },
+      "amount_short": {
+        "ru": "75% заработка, до 137\u00a0₪ в день",
+        "fr": "75\u00a0% du salaire, max. 137\u00a0₪ par jour"
+      },
       "open": true,
       "when_note": {
         "ru": "деньги приходят после рассмотрения заявления. Подать его можно в течение 12 месяцев со дня вступления закона в силу (закон принят в конце марта 2026 года), то есть примерно до весны 2027 года. Точный срок смотрите на странице Битуах Леуми.",
@@ -201,6 +213,10 @@
       "amount": {
         "ru": "1\u00a0204\u00a0₪ на каждого ребёнка.",
         "fr": "1\u00a0204\u00a0₪ par enfant."
+      },
+      "amount_short": {
+        "ru": "1\u00a0204\u00a0₪ на ребёнка",
+        "fr": "1\u00a0204\u00a0₪ par enfant"
       },
       "amount_since": "2026-01-01",
       "date": "2026-08-11",

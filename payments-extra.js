@@ -252,21 +252,60 @@
 
   // ---------------------------------------------------------------- разметка
 
+  // Краткая сумма для свёрнутой карточки: поле amount_short; если его нет — первое предложение полного текста
+  // без скобок («664 ₪ на семью (с 1 января 2026). Если…» → «664 ₪ на семью»).
+  function deriveShort(text) {
+    text = String(text || "");
+    var m = /[.!?]\s+[A-ZА-ЯЁÀ-Ý]/.exec(text);
+    var first = m ? text.slice(0, m.index + 1) : text;
+    first = first.replace(/\s*\([^)]*\)/g, "").replace(/\s+,/g, ",").replace(/\s{2,}/g, " ").replace(/[.\s]+$/, "");
+    if (first.length > 90) first = first.slice(0, 87).replace(/[\s,;:]+\S*$/, "") + "…";
+    return first;
+  }
+
+  function shortAmount(item, lang) {
+    return tx(item.amount_short, lang) || deriveShort(tx(item.amount, lang));
+  }
+
+  // Ссылка вида #extra-heating-elderly раскрывает нужную карточку (можно делиться ссылкой на конкретную выплату)
+  function openFromHash(doc, hash) {
+    var id = String(hash || "").replace(/^#/, "");
+    if (!id || !doc || !doc.getElementById) return false;
+    var el = doc.getElementById(id);
+    if (el && el.tagName === "DETAILS" && /(^|\s)x-item(\s|$)/.test(el.className)) { el.open = true; return true; }
+    return false;
+  }
+
   function row(icon, label, inner) {
     return '<div class="x-r"><dt><span aria-hidden="true">' + icon + "</span> " + esc(label) + "</dt><dd>" + inner + "</dd></div>";
   }
 
+  // Карточка — раскрывающийся блок (<details>): свёрнутой видно название, статус с датой, краткую сумму и «кому»;
+  // подробности (когда, кому, за что, как получить, источник) открываются по клику.
   function card(item, st, lang, staticMode) {
     var T = I18N[lang];
     var b = badge(st, item, lang, staticMode);
     var w = whenText(item, st, lang);
     var h = [];
-    h.push('<article class="x-item x-' + esc(st.kind) + '" id="extra-' + esc(item.id) + '">');
-    h.push('<div class="x-head"><div class="x-ico" aria-hidden="true">' + esc(item.icon || "💶") + "</div>");
-    h.push('<div class="x-ttl"><b>' + esc(tx(item.title, lang)) + "</b>");
+
+    var tags = "";
+    var tg = item.tags || [];
+    for (var i = 0; i < tg.length; i++) {
+      if (T.tags[tg[i]]) tags += '<span class="x-tag">' + esc(T.tags[tg[i]]) + "</span>";
+    }
+    var short = shortAmount(item, lang);
+
+    h.push('<details class="x-item x-' + esc(st.kind) + '" id="extra-' + esc(item.id) + '">');
+    h.push('<summary><span class="x-ico" aria-hidden="true">' + esc(item.icon || "💶") + "</span>");
+    h.push('<span class="x-ttl"><b>' + esc(tx(item.title, lang)) + "</b>");
     if (item.he) h.push('<span class="x-he" lang="he" dir="rtl">' + esc(item.he) + "</span>");
-    h.push('<span class="x-badge ' + esc(b.cls) + '">' + esc(b.text) + "</span></div></div>");
-    h.push('<dl class="x-dl">');
+    h.push('<span class="x-sum"><span class="x-badge ' + esc(b.cls) + '">' + esc(b.text) + "</span>");
+    if (short) h.push('<span class="x-short"><span aria-hidden="true">💰</span> ' + esc(short) + "</span>");
+    h.push("</span>");
+    if (tags) h.push('<span class="x-tags">' + tags + "</span>");
+    h.push("</span></summary>");
+
+    h.push('<div class="x-body"><dl class="x-dl">');
 
     var amountHtml = esc(tx(item.amount, lang));
     var an = amountNote(st, item, lang);
@@ -277,15 +316,10 @@
     if (w.next) whenHtml += '<div class="x-next">' + esc(w.next) + "</div>";
     h.push(row("📅", T.labels.when, whenHtml));
 
-    var tags = "";
-    var tg = item.tags || [];
-    for (var i = 0; i < tg.length; i++) {
-      if (T.tags[tg[i]]) tags += '<span class="x-tag">' + esc(T.tags[tg[i]]) + "</span>";
-    }
     var whoList = (item.who && (item.who[lang] || item.who.ru)) || [];
     var ul = "";
     for (var j = 0; j < whoList.length; j++) ul += "<li>" + esc(whoList[j]) + "</li>";
-    h.push(row("👤", T.labels.who, (tags ? '<div class="x-tags">' + tags + "</div>" : "") + (ul ? '<ul class="x-ul">' + ul + "</ul>" : "")));
+    if (ul) h.push(row("👤", T.labels.who, '<ul class="x-ul">' + ul + "</ul>"));
 
     h.push(row("❓", T.labels.why, esc(tx(item.why, lang))));
 
@@ -310,7 +344,7 @@
         ? "🤖 Ajouté automatiquement d’après l’annonce du Bitouah Leumi du " + fmtShort(sd) + ". Vérifiez les conditions via le lien source."
         : "🤖 Добавлено автоматически из объявления Битуах Леуми от " + fmtShort(sd) + ". Сверьте условия по ссылке-источнику.") + "</div>");
     }
-    h.push("</article>");
+    h.push("</div></details>");
     return h.join("");
   }
 
@@ -378,15 +412,18 @@
     var url = (lang === "fr" ? "../" : "") + "data/payments_extra.json";
     fetch(url, { cache: "no-cache" })
       .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("http " + r.status)); })
-      .then(function (data) { box.innerHTML = render(data, lang, new Date()).html; })
+      .then(function (data) { box.innerHTML = render(data, lang, new Date()).html; openFromHash(document, location.hash); })
       .catch(function () { /* остаётся готовая разметка из сборки */ });
+    openFromHash(document, location.hash);
+    window.addEventListener("hashchange", function () { openFromHash(document, location.hash); });
   }
 
   if (typeof module !== "undefined" && module.exports) {
     module.exports = {
       render: render, stateOf: stateOf, badge: badge, parseISO: parseISO, daysBetween: daysBetween,
       esc: esc, safeUrl: safeUrl, inDays: inDays, fmtShort: fmtShort, fmtLong: fmtLong, I18N: I18N,
-      STALE_DAYS: STALE_DAYS, GRACE_DAYS: GRACE_DAYS, nextOccurrence: nextOccurrence
+      STALE_DAYS: STALE_DAYS, GRACE_DAYS: GRACE_DAYS, nextOccurrence: nextOccurrence,
+      deriveShort: deriveShort, shortAmount: shortAmount, openFromHash: openFromHash
     };
   } else if (typeof document !== "undefined") {
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
