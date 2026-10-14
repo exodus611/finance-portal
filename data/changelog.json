@@ -1,7 +1,28 @@
 {
   "_comment": "Журнал изменений сайта. Правится руками, страницы changelog.html и fr/changelog.html генерируются из него: python3 scripts/make_changelog.py",
-  "updated": "2026-09-27",
+  "updated": "2026-10-14",
   "entries": [
+    {
+      "date": "2026-10-14",
+      "tag": "выплаты",
+      "tag_fr": "versements",
+      "ru_title": "Выплаты Битуах Леуми: новый раздел про внеочередные выплаты — кому, когда, сколько и за что",
+      "ru_text": "На странице дат выплат появился раздел «Внеочередные и разовые выплаты»: пособие на отопление для пожилых (664 ₪ на семью, ожидается 28 октября), пособие на отопление для пострадавших от терактов (от 993 до 8 984 ₪, в ноябре), особая выплата работникам 67+, потерявшим работу из-за войны (до 137 ₪ в день, заявления принимаются), и школьный грант (1 204 ₪ на ребёнка, выплачен 11 августа). У каждой выплаты указано, кому она положена, когда придёт, сколько и за что, как её получить, и стоит ссылка на официальный источник Битуах Леуми; даты и суммы проверены 14 октября. Заодно исправлены пояснения на странице: долгосрочные пособия приходят 28-го (а не «около 22-го»), безработица — около 12-го, а когда дата выпадает на пятницу, субботу или праздник, деньги приходят раньше. Починена и разметка вопросов-ответов: из-за лишнего символа поисковики её раньше не читали.",
+      "fr_title": "Versements du Bitouah Leumi : nouvelle section sur les versements exceptionnels — pour qui, quand, combien et pourquoi",
+      "fr_text": "La page des dates de paiement a désormais une section « Versements exceptionnels et ponctuels » : prime de chauffage pour les seniors (664 ₪ par famille, attendue le 28 octobre), prime de chauffage pour les victimes d'actes hostiles (de 993 à 8 984 ₪, en novembre), prime spéciale pour les salariés de 67 ans et plus ayant perdu leur emploi à cause de la guerre (jusqu'à 137 ₪ par jour, demandes ouvertes) et prime de rentrée scolaire (1 204 ₪ par enfant, versée le 11 août). Pour chacune : pour qui, quand, combien, pourquoi, comment l'obtenir, avec un lien vers la source officielle du Bitouah Leumi ; dates et montants vérifiés le 14 octobre. Les explications de la page ont aussi été corrigées : les allocations de longue durée arrivent le 28 (et non « vers le 22 »), le chômage vers le 12, et lorsque la date tombe un vendredi, un chabbat ou un jour férié, l'argent arrive plus tôt. Le balisage des questions-réponses a également été réparé : à cause d'un caractère en trop, les moteurs de recherche ne le lisaient pas.",
+      "links": [
+        {
+          "href": "payments.html",
+          "ru": "Даты выплат Битуах Леуми",
+          "fr": "Version russe de la page"
+        },
+        {
+          "href": "fr/payments.html",
+          "ru": "Французская версия страницы",
+          "fr": "Dates des paiements du Bitouah Leumi"
+        }
+      ]
+    },
     {
       "date": "2026-09-27",
       "tag": "шрифты",

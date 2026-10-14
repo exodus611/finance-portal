@@ -1,0 +1,210 @@
+{
+  "_comment": "Внеочередные и разовые выплаты Битуах Леуми (RU + FR). Правится руками, формат и порядок обновления: docs/README-payments-extra.md. После правки: node scripts/build_payments_extra.js && node scripts/test_payments_extra.js",
+  "updated": "2026-10-14",
+  "verified": "2026-10-14",
+  "items": [
+    {
+      "id": "heating-elderly",
+      "icon": "🔥",
+      "tags": ["seniors"],
+      "he": "מענק חימום",
+      "title": {
+        "ru": "Пособие на отопление для пожилых (маанак химум)",
+        "fr": "Prime de chauffage pour les seniors (maanak himoum)"
+      },
+      "who": {
+        "ru": [
+          "Тем, кто достиг пенсионного возраста (мужчины — 67 лет, женщины — 62–65 в зависимости от даты рождения) и получает пособие по старости, особое пособие по старости (для репатриантов) или пособие по потере кормильца.",
+          "И при этом получает социальную надбавку к пенсии (ашламат ахнаса) хотя бы в одном из месяцев октябрь–декабрь — либо пособие по старости с доплатой к пособию по инвалидности.",
+          "В 2025 году деньги автоматически получили и пережившие Холокост."
+        ],
+        "fr": [
+          "Personnes ayant atteint l’âge de la retraite (hommes : 67 ans ; femmes : 62 à 65 ans selon la date de naissance) qui perçoivent la pension de vieillesse, la pension de vieillesse spéciale (pour les olim) ou la pension de survivant.",
+          "Et qui touchent en plus le complément de revenu (achlamat hahnasa) au moins l’un des mois d’octobre à décembre, ou la pension de vieillesse avec complément d’invalidité.",
+          "En 2025, les survivants de la Shoah l’ont aussi reçue automatiquement."
+        ]
+      },
+      "amount": {
+        "ru": "664\u00a0₪ на семью (с 1 января 2026). Если право есть у обоих супругов, сумма делится пополам: по 332\u00a0₪ каждому.",
+        "fr": "664\u00a0₪ par famille (depuis le 1er janvier 2026). Si les deux conjoints y ont droit, la somme est partagée : 332\u00a0₪ chacun."
+      },
+      "date": "2026-10-28",
+      "date_precision": "expected",
+      "when_note": {
+        "ru": "вместе с октябрьским пособием по старости. В 2025 году деньги пришли 28 и 29 октября.",
+        "fr": "avec la pension de vieillesse d’octobre. En 2025, l’argent est arrivé les 28 et 29 octobre."
+      },
+      "why": {
+        "ru": "Помощь с оплатой отопления и электричества перед зимой.",
+        "fr": "Aide pour payer le chauffage et l’électricité avant l’hiver."
+      },
+      "how": {
+        "ru": "Автоматически, вместе с пособием: заявление подавать не нужно. Если вы подходите по условиям, а денег нет, позвоните в Битуах Леуми: *9696 (линия для пожилых) или *6050.",
+        "fr": "Automatique, avec la pension : aucune demande à faire. Si vous remplissez les conditions et que l’argent n’arrive pas, appelez le Bitouah Leumi : *9696 (ligne seniors) ou *6050."
+      },
+      "internal": {
+        "href": "ashlamat-ahnasa.html",
+        "label": {
+          "ru": "Проверить, положена ли социальная надбавка (ашламат ахнаса)",
+          "fr": "Vérifier si vous avez droit au complément de revenu (achlamat hahnasa)"
+        }
+      },
+      "source": {
+        "url": "https://www.btl.gov.il/benefits/old_age/Pages/%D7%9E%D7%A2%D7%A0%D7%A7%20%D7%97%D7%99%D7%9E%D7%95%D7%9D.aspx",
+        "label": {
+          "ru": "Битуах Леуми: пособие на отопление",
+          "fr": "Bitouah Leumi : prime de chauffage"
+        }
+      },
+      "hide_after": "2027-03-31"
+    },
+    {
+      "id": "heating-hostile",
+      "icon": "🏠",
+      "tags": ["victims"],
+      "he": "מענק חימום לנפגעי פעולות איבה",
+      "title": {
+        "ru": "Пособие на отопление для пострадавших от терактов",
+        "fr": "Prime de chauffage pour les victimes d’actes hostiles"
+      },
+      "who": {
+        "ru": [
+          "Инвалидам вследствие враждебных действий (теракты и другие враждебные действия) со степенью инвалидности 50% и выше.",
+          "Не положено хронически больным, которые постоянно лежат в больнице или находятся в лечебном учреждении."
+        ],
+        "fr": [
+          "Personnes invalides à la suite d’actes hostiles (attentats et autres actions hostiles) avec un taux d’invalidité d’au moins 50\u00a0%.",
+          "Pas pour les malades chroniques hospitalisés ou placés durablement dans un établissement de soins."
+        ]
+      },
+      "amount": {
+        "ru": "От 993 до 8\u00a0984\u00a0₪ в год. Сумма зависит от уровня права: места проживания (холодные районы), степени инвалидности и вида травмы.",
+        "fr": "De 993 à 8\u00a0984\u00a0₪ par an, selon le niveau de droit : lieu de résidence (zones froides), taux d’invalidité et type de blessure."
+      },
+      "month": "2026-11",
+      "when_note": {
+        "ru": "вместе с ноябрьской выплатой.",
+        "fr": "avec le versement de novembre."
+      },
+      "why": {
+        "ru": "Оплата отопления жилья.",
+        "fr": "Pour payer le chauffage du logement."
+      },
+      "how": {
+        "ru": "Автоматически: право определяется после решения медицинской комиссии о степени инвалидности, заявление не нужно.",
+        "fr": "Automatique : le droit est fixé après la décision de la commission médicale sur le taux d’invalidité, aucune demande à faire."
+      },
+      "source": {
+        "url": "https://www.btl.gov.il/benefits/Victims_of_Hostilities/Casualties_benefits/%D7%94%D7%98%D7%91%D7%95%D7%AA%20%D7%95%D7%9E%D7%A2%D7%A0%D7%A7%D7%99%D7%9D/Pages/%D7%9E%D7%A2%D7%A0%D7%A7%20%D7%97%D7%99%D7%9E%D7%95%D7%9D.aspx",
+        "label": {
+          "ru": "Битуах Леуми: пособие на отопление для пострадавших от враждебных действий",
+          "fr": "Bitouah Leumi : prime de chauffage pour les victimes d’actes hostiles"
+        }
+      },
+      "hide_after": "2027-03-31"
+    },
+    {
+      "id": "roaring-lion-67",
+      "icon": "💼",
+      "tags": ["seniors", "workers"],
+      "he": "מענק מיוחד לבני 67 ומעלה",
+      "title": {
+        "ru": "Особая выплата работникам 67+ (операция «Рык льва»)",
+        "fr": "Prime spéciale pour les salariés de 67 ans et plus (opération « Rugissement du lion »)"
+      },
+      "who": {
+        "ru": [
+          "Наёмным работникам в возрасте 67 лет и старше, жителям Израиля, которых уволили или отправили в неоплачиваемый отпуск (халат) с 28.02.2026 минимум на 10 дней. Если отпуск начался 28.02 или 1.03, достаточно 5 дней.",
+          "Нужен стаж наёмной работы не менее 3 месяцев подряд до увольнения или отпуска.",
+          "Если вы одновременно и самозанятый: пособие положено, только если за этот период не было дохода от самозанятости. Заявление подаётся вручную, с декларацией о доходах от бухгалтера."
+        ],
+        "fr": [
+          "Salariés de 67 ans et plus, résidents d’Israël, licenciés ou mis en congé sans solde (halat) depuis le 28.02.2026 pendant au moins 10 jours (5 jours suffisent si le congé a commencé le 28.02 ou le 1.03).",
+          "Il faut avoir travaillé comme salarié au moins 3 mois consécutifs avant le licenciement ou le congé.",
+          "Si vous êtes aussi indépendant : la prime n’est versée que s’il n’y a pas eu de revenu d’indépendant sur la période. La demande se fait sur formulaire papier, avec une déclaration de revenus de l’expert-comptable."
+        ]
+      },
+      "amount": {
+        "ru": "75% среднего заработка (берутся 3 лучших месяца из последних 6 перед увольнением или отпуском), но не больше 137\u00a0₪ в день. Выплата — за период с 28.02 по 14.04.2026.",
+        "fr": "75\u00a0% du salaire moyen (les 3 meilleurs mois sur les 6 derniers avant l’arrêt du travail), plafonné à 137\u00a0₪ par jour. Période indemnisée : du 28.02 au 14.04.2026."
+      },
+      "open": true,
+      "when_note": {
+        "ru": "деньги приходят после рассмотрения заявления. Подать его можно в течение 12 месяцев со дня вступления закона в силу (закон принят в конце марта 2026 года), то есть примерно до весны 2027 года. Точный срок смотрите на странице Битуах Леуми.",
+        "fr": "l’argent arrive après examen de la demande. Elle peut être déposée dans les 12 mois suivant l’entrée en vigueur de la loi (adoptée fin mars 2026), donc environ jusqu’au printemps 2027. Vérifiez le délai exact sur la page du Bitouah Leumi."
+      },
+      "why": {
+        "ru": "Компенсация заработка тем, кто старше пенсионного возраста и, как правило, не получает пособие по безработице, но потерял работу из-за войны.",
+        "fr": "Compense la perte de revenu des salariés au-delà de l’âge de la retraite, qui n’ont en général pas droit aux allocations chômage, mais ont perdu leur travail à cause de la guerre."
+      },
+      "how": {
+        "ru": "Заявление подаётся онлайн на сайте Битуах Леуми или бланком 478 через сервис «Отправка документов».",
+        "fr": "Demande en ligne sur le site du Bitouah Leumi, ou formulaire 478 envoyé via le service « Envoi de documents »."
+      },
+      "action": {
+        "url": "https://forms.btl.gov.il/Login/MOStart/htzhrbtw26",
+        "label": {
+          "ru": "Подать заявление онлайн",
+          "fr": "Déposer la demande en ligne"
+        }
+      },
+      "source": {
+        "url": "https://www.btl.gov.il/StateOfEmergency/ShaagatHari/Pages/ManakMyocd-67.aspx",
+        "label": {
+          "ru": "Битуах Леуми: особая выплата для лиц 67+",
+          "fr": "Bitouah Leumi : prime spéciale pour les 67 ans et plus"
+        }
+      },
+      "hide_after": "2027-04-30"
+    },
+    {
+      "id": "education-grant",
+      "icon": "🎒",
+      "tags": ["families"],
+      "he": "מענק לימודים",
+      "title": {
+        "ru": "Школьный грант (маанак лимудим)",
+        "fr": "Prime de rentrée scolaire (maanak limoudim)"
+      },
+      "who": {
+        "ru": [
+          "Семьям, где ребёнка воспитывает один родитель: на каждого ребёнка 6–18 лет (родившегося с 1.01.2009 по 31.12.2020).",
+          "Семьям с 4 и более детьми, которые получают пособия по обеспечению прожиточного минимума: гарантию дохода, алименты, пособие по инвалидности, по старости или по потере кормильца."
+        ],
+        "fr": [
+          "Familles monoparentales : pour chaque enfant de 6 à 18 ans (né entre le 1.01.2009 et le 31.12.2020).",
+          "Familles de 4 enfants ou plus qui perçoivent une prestation de subsistance : revenu minimum garanti, pension alimentaire, allocation d’invalidité, de vieillesse ou de survivant."
+        ]
+      },
+      "amount": {
+        "ru": "1\u00a0204\u00a0₪ на каждого ребёнка. В 2026 году выплачено более 140 тысячам семей, всего около 335 млн ₪.",
+        "fr": "1\u00a0204\u00a0₪ par enfant. En 2026, versée à plus de 140\u00a0000 familles, pour environ 335 millions de ₪ au total."
+      },
+      "paid_on": "2026-08-11",
+      "when_note": {
+        "ru": "ежегодно в августе, перед началом учебного года.",
+        "fr": "chaque année en août, avant la rentrée."
+      },
+      "next": {
+        "ru": "Следующая выплата ожидается в августе 2027 года.",
+        "fr": "Prochain versement attendu en août 2027."
+      },
+      "why": {
+        "ru": "Расходы к началу учебного года: учебники, тетради, ранцы и другое.",
+        "fr": "Frais de rentrée : manuels, cahiers, cartables, etc."
+      },
+      "how": {
+        "ru": "Автоматически на банковский счёт родителей. Если ребёнок не подходит по году рождения, но идёт в 1-й или 12-й класс, отправьте в Битуах Леуми справку из школы. Если недавно изменился семейный статус (например, вы стали родителем-одиночкой), подайте заявление один раз на сайте Битуах Леуми.",
+        "fr": "Automatique, sur le compte bancaire des parents. Si l’enfant n’est pas dans la tranche de dates de naissance mais entre en 1re ou en 12e année scolaire, envoyez au Bitouah Leumi un certificat de scolarité. Si votre situation familiale a changé récemment (par exemple, vous êtes devenu parent isolé), faites la demande une fois sur le site du Bitouah Leumi."
+      },
+      "source": {
+        "url": "https://www.btl.gov.il/About/newspapers/Pages/education-grants2026-press.aspx",
+        "label": {
+          "ru": "Битуах Леуми: сообщение о школьном гранте 2026",
+          "fr": "Bitouah Leumi : communiqué sur la prime de rentrée 2026"
+        }
+      },
+      "hide_after": "2027-08-31"
+    }
+  ]
+}
