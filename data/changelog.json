@@ -4,6 +4,27 @@
   "entries": [
     {
       "date": "2026-10-14",
+      "tag": "автообновление",
+      "tag_fr": "mise à jour automatique",
+      "ru_title": "Внеочередные выплаты теперь обновляются сами: суммы, даты и новые объявления Битуах Леуми",
+      "ru_text": "Раздел «Внеочередные и разовые выплаты» больше не нужно вести вручную. Дважды в сутки сайт сам сверяет суммы и даты с официальными страницами Битуах Леуми (в январе, когда суммы меняются, страница обновится сама), читает новые объявления и раздел «Чрезвычайное положение» и добавляет новые выплаты. Новая выплата публикуется только после жёсткой проверки: каждая цифра и дата должны дословно найтись в тексте объявления, ссылка ведёт только на сайт Битуах Леуми. Такие карточки помечены «добавлено автоматически» и ссылкой на источник. Карточки сами проходят путь «ожидается → выплачено → следующая выплата в таком-то месяце следующего года»; разовые выплаты скрываются сами, когда срок вышел или страница на сайте Битуах Леуми удалена. Раз в неделю работа модели проверяется на настоящем образце: если что-то сломается, новые выплаты не публикуются, а на сайте остаются последние проверенные данные.",
+      "fr_title": "Les versements exceptionnels se mettent à jour tout seuls : montants, dates et nouvelles annonces du Bitouah Leumi",
+      "fr_text": "La section « Versements exceptionnels et ponctuels » n'a plus besoin d'être tenue à la main. Deux fois par jour, le site compare lui-même les montants et les dates avec les pages officielles du Bitouah Leumi (en janvier, quand les montants changent, la page se met à jour seule), lit les nouvelles annonces et la rubrique « État d'urgence » et ajoute les nouveaux versements. Un nouveau versement n'est publié qu'après une vérification stricte : chaque chiffre et chaque date doivent se retrouver mot pour mot dans le texte de l'annonce, et le lien ne mène qu'au site du Bitouah Leumi. Ces fiches portent la mention « ajouté automatiquement » et un lien vers la source. Les fiches suivent seules le cycle « attendu → versé → prochain versement tel mois de l'année suivante » ; les versements ponctuels disparaissent d'eux-mêmes quand leur échéance est passée ou que leur page est supprimée du site du Bitouah Leumi. Une fois par semaine, le fonctionnement du modèle est vérifié sur un vrai exemple : en cas de panne, aucun nouveau versement n'est publié et le site garde les dernières données vérifiées.",
+      "links": [
+        {
+          "href": "payments.html",
+          "ru": "Даты выплат Битуах Леуми",
+          "fr": "Version russe de la page"
+        },
+        {
+          "href": "fr/payments.html",
+          "ru": "Французская версия страницы",
+          "fr": "Dates des paiements du Bitouah Leumi"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-14",
       "tag": "выплаты",
       "tag_fr": "versements",
       "ru_title": "Выплаты Битуах Леуми: новый раздел про внеочередные выплаты — кому, когда, сколько и за что",

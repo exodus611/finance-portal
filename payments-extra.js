@@ -1,15 +1,21 @@
 /* Блок «Внеочередные и разовые выплаты» на страницах payments.html (RU) и fr/payments.html (FR).
  *
- * Данные: data/payments_extra.json (формат — docs/README-payments-extra.md).
- * Язык берётся из <html lang>. Одна и та же функция render() рисует блок в браузере и
- * при сборке (scripts/build_payments_extra.js вставляет готовую разметку в страницу
- * для поисковых роботов и режима без JavaScript), поэтому расхождений между ними нет.
+ * Данные: data/payments_extra.json. Их САМИ обновляет workflow update-payments-extra.yml
+ * (scripts/update_payments_extra.py); руками ничего править не нужно (docs/README-payments-extra.md).
+ * Язык берётся из <html lang>. Одна и та же функция render() рисует блок в браузере и при сборке
+ * (scripts/build_payments_extra.js вставляет готовую разметку в страницу для поисковых роботов и
+ * режима без JavaScript), поэтому расхождений между ними нет.
+ *
+ * Жизненный цикл карточки считается здесь, по часам посетителя, без ручных правок:
+ *   ожидается (дата впереди) → сегодня → [срок прошёл, 14 дней «проверьте счёт»] → следующая выплата в
+ *   таком-то месяце следующего года. Если Битуах Леуми назвал точную дату, после неё сразу «выплачено».
  * Тесты: scripts/test_payments_extra.js
  */
 (function () {
   "use strict";
 
   var DAY = 86400000;
+  var GRACE_DAYS = 14;
 
   var I18N = {
     ru: {
@@ -107,12 +113,31 @@
 
   // ---------------------------------------------------------------- состояние выплаты
 
-  // rank задаёт порядок на странице: ближайшие по дате → месяц → приём заявлений → просроченные → выплаченные
+  // Ближайшее повторение ежегодной выплаты: месяц из recurs.month, год — текущий или следующий,
+  // но всегда позже уже известной даты last (иначе сразу после выплаты «следующей» стал бы тот же месяц).
+  function nextOccurrence(rec, today, last) {
+    var m0 = rec.month - 1;
+    var y = today.getFullYear() + (m0 < today.getMonth() ? 1 : 0);
+    if (last && y * 12 + m0 <= last.getFullYear() * 12 + last.getMonth()) y = last.getFullYear() + 1;
+    return { month0: m0, year: y };
+  }
+
+  function withNext(st, item, today) {
+    var r = item.recurs;
+    if (r && typeof r.month === "number" && r.month >= 1 && r.month <= 12) st.next = nextOccurrence(r, today, st.date);
+    return st;
+  }
+
+  // rank задаёт порядок на странице: ближайшие по дате → месяц → приём заявлений → срок прошёл →
+  // выплачено → цикл закончен (ждём следующего года)
   function stateOf(item, today) {
     var d, n;
+    var grace = item.recurs && typeof item.recurs.grace_days === "number" ? item.recurs.grace_days : GRACE_DAYS;
+    var recurring = !!item.recurs;
+
     if (item.paid_on) {
       d = parseISO(item.paid_on);
-      return { kind: "paid", date: d, rank: 4 };
+      if (d) return withNext({ kind: "paid", date: d, rank: 4 }, item, today);
     }
     if (item.date) {
       d = parseISO(item.date);
@@ -120,7 +145,10 @@
         n = daysBetween(today, d);
         if (n > 0) return { kind: "upcoming", date: d, days: n, rank: 0 };
         if (n === 0) return { kind: "today", date: d, days: 0, rank: 0 };
-        return { kind: "due", date: d, rank: 3 };
+        // дату назвал сам Битуах Леуми — после неё деньги считаются выплаченными
+        if (item.date_precision !== "expected") return withNext({ kind: "paid", date: d, rank: 4 }, item, today);
+        if (-n <= grace || !recurring) return withNext({ kind: "due", date: d, rank: 3 }, item, today);
+        return withNext({ kind: "cycle", date: d, rank: 5 }, item, today);
       }
     }
     if (item.month) {
@@ -131,16 +159,26 @@
         d = new Date(y, mo, 1);
         if (tgt > cur) return { kind: "month", date: d, month: mo, year: y, current: false, rank: 1 };
         if (tgt === cur) return { kind: "month", date: d, month: mo, year: y, current: true, rank: 1 };
-        return { kind: "due", date: d, rank: 3 };
+        var end = new Date(y, mo + 1, 0);
+        var base = { date: d, month: mo, year: y, monthOnly: true };
+        if (daysBetween(end, today) <= grace || !recurring) { base.kind = "due"; base.rank = 3; }
+        else { base.kind = "cycle"; base.rank = 5; }
+        return withNext(base, item, today);
       }
     }
     return { kind: "open", date: null, rank: 2 };
+  }
+
+  function monthLabel(next, lang) {
+    var T = I18N[lang];
+    return T.monthsNom[next.month0] + " " + next.year;
   }
 
   // Текст и цвет плашки статуса. В статичном режиме (для поисковиков) отсчёта дней нет:
   // он «замёрз» бы в момент сборки.
   function badge(st, item, lang, staticMode) {
     var T = I18N[lang];
+    var fr = lang === "fr";
     var exp = item.date_precision === "expected";
     var text, cls;
     if (st.kind === "upcoming" || st.kind === "today") {
@@ -150,7 +188,7 @@
       }
       cls = exp ? "b-exp" : "b-up";
     } else if (st.kind === "month") {
-      text = lang === "fr"
+      text = fr
         ? "attendu en " + T.monthsPrep[st.month] + " " + st.year
         : T.expected + " в " + T.monthsPrep[st.month] + " " + st.year;
       if (!staticMode && st.current) text += " · " + T.thisMonth;
@@ -159,15 +197,40 @@
       text = T.open;
       cls = "b-open";
     } else if (st.kind === "due") {
-      text = lang === "fr"
+      text = fr
         ? "échéance : " + fmtShort(st.date) + " — vérifiez votre compte"
         : "срок выплаты: " + fmtShort(st.date) + " — проверьте счёт";
       cls = "b-due";
+    } else if (st.kind === "cycle") {
+      var last = st.monthOnly ? cap(T.monthsNom[st.month]) + " " + st.year : fmtShort(st.date);
+      text = (fr ? "en " + st.date.getFullYear() + " : " : "в " + st.date.getFullYear() + " г.: ") + last;
+      if (st.next) text += " · " + (fr ? "prochaine : " : "следующая: ") + monthLabel(st.next, lang);
+      cls = "b-paid";
     } else { // paid
-      text = (lang === "fr" ? "versé le " : "выплачено ") + (st.date ? fmtShort(st.date) : "");
+      text = (fr ? "versé le " : "выплачено ") + (st.date ? fmtShort(st.date) : "");
       cls = "b-paid";
     }
     return { text: text, cls: cls };
+  }
+
+  function nextLine(st, item, lang) {
+    var manual = tx(item.next, lang);
+    if (manual) return manual;
+    if (!st.next || (st.kind !== "paid" && st.kind !== "due" && st.kind !== "cycle")) return "";
+    var T = I18N[lang];
+    return lang === "fr"
+      ? "Prochain versement attendu en " + T.monthsPrep[st.next.month0] + " " + st.next.year + "."
+      : "Следующая выплата ожидается в " + T.monthsPrep[st.next.month0] + " " + st.next.year + " года.";
+  }
+
+  // Сумма прошлого года на следующий цикл: честно говорим, что новая будет объявлена в январе.
+  function amountNote(st, item, lang) {
+    if (!st.next || !item.amount_since || (st.kind !== "paid" && st.kind !== "due" && st.kind !== "cycle")) return "";
+    var s = parseISO(item.amount_since);
+    if (!s || s.getFullYear() >= st.next.year) return "";
+    return lang === "fr"
+      ? "Montant de " + s.getFullYear() + " ; le montant de " + st.next.year + " est annoncé en janvier."
+      : "Это сумма " + s.getFullYear() + " года; на " + st.next.year + " год Битуах Леуми объявляет новую сумму в январе.";
   }
 
   function whenText(item, st, lang) {
@@ -177,13 +240,14 @@
     if (item.paid_on && st.date) base = fmtLong(st.date, lang);
     else if (item.date && st.date) {
       base = fmtLong(st.date, lang);
-      if (item.date_precision === "expected") base += lang === "fr" ? " (date attendue)" : " (ожидаемая дата)";
+      if (item.date_precision === "expected" && (st.kind === "upcoming" || st.kind === "today" || st.kind === "due")) {
+        base += lang === "fr" ? " (date attendue)" : " (ожидаемая дата)";
+      }
     } else if (item.month && st.date) {
       base = cap(T.monthsNom[st.date.getMonth()]) + " " + st.date.getFullYear();
     }
     var out = base ? (note ? base + " — " + note : base) : cap(note);
-    var next = tx(item.next, lang);
-    return { main: out, next: next };
+    return { main: out, next: nextLine(st, item, lang) };
   }
 
   // ---------------------------------------------------------------- разметка
@@ -204,7 +268,10 @@
     h.push('<span class="x-badge ' + esc(b.cls) + '">' + esc(b.text) + "</span></div></div>");
     h.push('<dl class="x-dl">');
 
-    h.push(row("💰", T.labels.amount, esc(tx(item.amount, lang))));
+    var amountHtml = esc(tx(item.amount, lang));
+    var an = amountNote(st, item, lang);
+    if (an) amountHtml += '<div class="x-next">' + esc(an) + "</div>";
+    h.push(row("💰", T.labels.amount, amountHtml));
 
     var whenHtml = esc(w.main);
     if (w.next) whenHtml += '<div class="x-next">' + esc(w.next) + "</div>";
@@ -237,6 +304,12 @@
     if (su) {
       h.push('<div class="x-foot">' + esc(T.labels.source + T.colon) + '<a href="' + esc(su) + '" target="_blank" rel="noopener noreferrer">' + esc(tx(item.source.label, lang) || "btl.gov.il") + "</a></div>");
     }
+    var sd = item.auto && parseISO(item.auto.source_date);
+    if (sd) {
+      h.push('<div class="x-auto">' + esc(lang === "fr"
+        ? "🤖 Ajouté automatiquement d’après l’annonce du Bitouah Leumi du " + fmtShort(sd) + ". Vérifiez les conditions via le lien source."
+        : "🤖 Добавлено автоматически из объявления Битуах Леуми от " + fmtShort(sd) + ". Сверьте условия по ссылке-источнику.") + "</div>");
+    }
     h.push("</article>");
     return h.join("");
   }
@@ -266,7 +339,7 @@
     rows.sort(function (a, b) {
       if (a.st.rank !== b.st.rank) return a.st.rank - b.st.rank;
       var da = a.st.date ? a.st.date.getTime() : 0, db = b.st.date ? b.st.date.getTime() : 0;
-      if (da !== db) return a.st.kind === "paid" ? db - da : da - db;
+      if (da !== db) return (a.st.kind === "paid" || a.st.kind === "cycle") ? db - da : da - db;
       return a.idx - b.idx;
     });
 
@@ -312,7 +385,8 @@
   if (typeof module !== "undefined" && module.exports) {
     module.exports = {
       render: render, stateOf: stateOf, badge: badge, parseISO: parseISO, daysBetween: daysBetween,
-      esc: esc, safeUrl: safeUrl, inDays: inDays, fmtShort: fmtShort, fmtLong: fmtLong, I18N: I18N, STALE_DAYS: STALE_DAYS
+      esc: esc, safeUrl: safeUrl, inDays: inDays, fmtShort: fmtShort, fmtLong: fmtLong, I18N: I18N,
+      STALE_DAYS: STALE_DAYS, GRACE_DAYS: GRACE_DAYS, nextOccurrence: nextOccurrence
     };
   } else if (typeof document !== "undefined") {
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
