@@ -1,5 +1,22 @@
 {
   "canary": {
-    "last_try": "2026-10-14"
+    "last_try": "2026-10-14",
+    "last_ok": "2026-10-14"
+  },
+  "seen": {
+    "https://www.btl.gov.il/StateOfEmergency/ShaagatHari/MankMfoneMovtalHB/Pages/default.aspx": {
+      "date": "2026-10-14",
+      "title": "מענקים למפונים שאינם עובדים",
+      "decision": "ignored",
+      "reason": "страница удалена",
+      "at": "2026-10-14"
+    },
+    "https://www.btl.gov.il/StateOfEmergency/ShaagatHari/Pages/ManakMyocd-67.aspx": {
+      "date": "2026-10-14",
+      "title": "מענק מיוחד לבני 67 ומעלה",
+      "decision": "ignored",
+      "reason": "известный источник выплаты",
+      "at": "2026-10-14"
+    }
   }
 }
