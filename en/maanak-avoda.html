@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="en" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08775a">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://exodus611.github.io/finance-portal/en/maanak-avoda.html">
+<link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/maanak-avoda.html">
+<link rel="alternate" hreflang="en" href="https://exodus611.github.io/finance-portal/en/maanak-avoda.html">
+<link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/maanak-avoda.html">
+<link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/maanak-avoda.html">
+<link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/maanak-avoda.html">
+<link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/maanak-avoda.html">
+<link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/maanak-avoda.html">
+<title>Maanak Avodah 2026 - negative tax calculator</title>
+<meta name="description" content="Calculator &quot;Maanak Avodah&quot; (מענק עבודה / מס הכנסה שלילי) 2026: verification of eligibility for payment up to ₪16,000, exact filing dates, all exceptions of the law and online instructions gov.il.">
+<meta name="keywords" content="severance pay, מענק עבודה, negative income tax, מס הכנסה שלילי, tax office, רשות המסים, payment to workers, nursery allowance, מענק לפעוטות, טופס 106, טופס 126">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculator Maanak Avodah (מענק עבודה) - negative income tax in Israel">
+<meta property="og:description" content="Check your eligibility for government benefits up to ₪16,000 per account. Official thresholds, exact dates and step-by-step online submission.">
+<meta property="og:url" content="https://exodus611.github.io/finance-portal/maanak-avoda.html">
+<meta property="og:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
+<meta property="og:locale" content="ru_RU">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculator Maanak Avodah (מענק עבודה) 2026", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "inLanguage": "ru", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "ILS"}, "description": "Free calculator for checking eligibility and calculating Ma'anak Avodah (negative income tax) payment under the law of the Israel Tax Authority."}</script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does the state pay Maanak Avodah (מענק עבודה)?", "acceptedAnswer": {"@type": "Answer", "text": "The government pays this subsidy to encourage citizen participation in the labor market and reduce poverty among working families by making going to work financially more profitable than receiving social benefits."}}, {"@type": "Question", "name": "How does the tax office check income (forms 106 and 126)?", "acceptedAnswer": {"@type": "Answer", "text": "Employers submit their annual Form 126 to the IRS by April 30, and employees receive Form 106 by March 31. The tax office automatically collates this data in May-June, so the first payments begin on July 15."}}, {"@type": "Question", "name": "What is the deadline for submitting an application?", "acceptedAnswer": {"@type": "Answer", "text": "Filing for the 2025 business year is open from January 1, 2026 to December 31, 2027. Filing for the 2024 business year is open until December 31, 2026."}}, {"@type": "Question", "name": "When does the money arrive in the bank account?", "acceptedAnswer": {"@type": "Answer", "text": "If submitted before June 30, the payment is transferred in 4 installments (July 15, October 15, December 15, February 15). When submitted from July 1 to September 30 - in 3 parts. If submitted before November 30 - in 2 parts. If submitted in December, the entire amount is due on February 15th."}}]}</script>
+
+<style>
+:root {
+  --ink: #15251f;
+  --muted: #5a6660;
+  --paper: #f4f1e9;
+  --card: #fffdf8;
+  --line: #ddd6c7;
+  --green: #08775a;
+  --green2: #0d9671;
+  --gold: #c29b52;
+  --red: #b84b3e;
+  --blue: #30779a;
+  --purple: #7857b8;
+  --shadow: 0 16px 40px rgba(26,45,37,.08);
+  --r: 18px;
+}
+html { scroll-behavior: smooth; overflow-x: hidden; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  line-height: 1.45;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+button, input, select { font: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 2px;
+}
+.shell { width: min(760px, calc(100% - 28px)); margin: auto; }
+.top { padding: 18px 0; }
+.topbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; row-gap: 6px; }
+.logo { display: flex; align-items: center; gap: 11px; font-weight: 850; text-decoration: none; color: var(--ink); }
+.mark {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, var(--green2), var(--green) 70%);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  font-weight: 900;
+  box-shadow: 0 6px 18px rgba(8,119,90,.35);
+  border: 2px solid rgba(255,255,255,.55);
+}
+a.back { font-size: 12px; font-weight: 800; color: var(--green); text-decoration: none; white-space: nowrap; }
+
+.hero { padding: 24px 0 10px; text-align: center; }
+.eyebrow { font-size: 11.5px; color: var(--green); font-weight: 900; text-transform: uppercase; letter-spacing: .09em; }
+.hero h1 { font-size: clamp(23px, 4.8vw, 36px); line-height: 1.15; letter-spacing: -.03em; margin: 8px auto 10px; max-width: 660px; }
+.hero p { font-size: 14px; color: var(--muted); max-width: 600px; margin: 0 auto; line-height: 1.5; }
+
+.hebrew-term { font-family: "Segoe UI", Tahoma, Arial, sans-serif; font-weight: 700; }
+
+.pill-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 14px 0 4px; }
+.pill { background: #eaf6f0; color: var(--green); border-radius: 20px; padding: 5px 12px; font-size: 11.5px; font-weight: 700; border: 1px solid #b9d8ca; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 16px 0;
+  box-shadow: var(--shadow);
+}
+.title { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+.num {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: var(--green);
+  color: #fff;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+  flex: 0 0 30px;
+  font-size: 13px;
+}
+.title h2 { margin: 0 0 2px; font-size: 17px; }
+.title p { margin: 0; font-size: 12px; color: var(--muted); }
+
+.seg { display: flex; gap: 6px; margin-bottom: 14px; }
+.seg button {
+  flex: 1;
+  padding: 10px 6px;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 750;
+  color: var(--muted);
+  transition: all .15s;
+}
+.seg button.on { background: var(--green); color: #fff; border-color: var(--green); }
+
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+@media (max-width: 560px) {
+  .row2, .row3 { grid-template-columns: 1fr; }
+  .card { padding: 16px 14px; }
+}
+
+.f { margin-bottom: 14px; }
+.f label { display: block; font-size: 12px; font-weight: 800; color: var(--muted); margin-bottom: 5px; }
+.f input, .f select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 14px;
+  background: #fff;
+  color: var(--ink);
+}
+@media (max-width: 560px) { .f input, .f select { font-size: 16px; } }
+
+.checkbox-box {
+  background: #fdf6f5;
+  border: 1px solid #f0d0cb;
+  border-radius: 12px;
+  padding: 14px;
+  margin: 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.checkbox-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.checkbox-item input { margin-top: 3px; accent-color: var(--red); width: 17px; height: 17px; flex: 0 0 17px; }
+
+.primary-btn {
+  width: 100%;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 13px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background .15s;
+}
+.primary-btn:hover { background: var(--green2); }
+
+.res-box {
+  border-radius: var(--r);
+  padding: 18px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+.res-box.ok { background: #eaf6f0; border: 1px solid #b9d8ca; }
+.res-box.fail { background: #fdf2f2; border: 1px solid #f5c2c2; }
+
+.res-lbl { font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .03em; margin-bottom: 4px; }
+.res-sum { font-size: 2.2rem; font-weight: 900; letter-spacing: -1px; line-height: 1.1; }
+.res-sub { font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+
+.rrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  font-size: 13px;
+}
+.rrow:last-child { border-bottom: none; }
+.rrow.bold { font-weight: 800; }
+
+.table-wrap { overflow-x: auto; margin: 12px 0; }
+.cond-table { width: 100%; border-collapse: collapse; font-size: 12px; text-align: left; }
+.cond-table th { background: #eef4f1; padding: 8px 10px; font-weight: 800; border-bottom: 2px solid var(--line); color: var(--ink); }
+.cond-table td { padding: 8px 10px; border-bottom: 1px solid var(--line); color: var(--ink); }
+.cond-table tr:nth-child(even) td { background: rgba(0,0,0,.02); }
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0;
+}
+@media (max-width: 560px) {
+  .timeline-grid { grid-template-columns: 1fr; }
+}
+
+.t-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+}
+.t-head { font-size: 12.5px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+.t-dates { font-size: 11.5px; color: var(--green); font-weight: 800; margin-bottom: 4px; }
+.t-desc { font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+details summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-weight: 750; font-size: 13.5px; }
+details summary::-webkit-details-marker { display: none; }
+.acc-body { font-size: 12.5px; color: var(--muted); line-height: 1.6; padding-top: 10px; border-top: 1px solid var(--line); margin-top: 10px; }
+</style>
+<link rel="stylesheet" href="../polish.css">
+</head>
+
+<body>
+<div class="shell">
+  <header class="top">
+    <div class="topbar">
+      <a class="logo" href="index.html">
+        <div class="mark">₪</div>
+        <div>
+          <div style="font-size:14px;font-weight:900;line-height:1.2">Clear finances</div>
+          <div style="font-size:11px;color:var(--muted)">Israel · 2026</div>
+        </div>
+      </a>
+      <a class="back" href="index.html">← All calculators</a>
+      <span style="display:inline-flex;border:1.5px solid var(--green,#08775a);border-radius:11px;overflow:hidden;font-size:13px;font-weight:800;line-height:1;white-space:nowrap;vertical-align:middle"><b style="padding:8px 13px;color:#fff;background:var(--green,#08775a)">RU</b><a href="fr/maanak-avoda.html" style="padding:8px 13px;text-decoration:none;color:var(--green,#08775a);background:#fff" aria-label="Version française">FR</a></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="eyebrow">TAX ADMINISTRATION · רשות המסים</span>
+      <h1>Maanak Avodah (<span lang="he" dir="rtl" class="hebrew-term">מענק עבודה</span>) — payout calculator</h1>
+      <p>Negative income tax (<span lang="he" dir="rtl" class="hebrew-term">מס הכנסה שלילי</span>): direct government payment to low-income working Israelis. To <b>16,000 ₪ per year</b> direct transfer to a bank account.</p>
+      <div class="pill-row">
+        <span class="pill">💵 Up to ₪16,000 per year</span>
+        <span class="pill">👩 Women +150%</span>
+        <span class="pill">👶 Nursery allowance (<span lang="he" dir="rtl">מענק לפעוטות</span>)</span>
+        <span class="pill">💻 Online submission 3 minutes</span>
+      </div>
+    </section>
+
+    <!-- ТЕОРИЯ: ЗАЧЕМ ГОСУДАРСТВО ЭТО ВЫПЛАЧИВАЕТ? -->
+    <section class="card" style="background:#f9fbf9;border-color:#b9d8ca">
+      <div class="title" style="margin-bottom:8px">
+        <div class="num" style="background:#0d9671">?</div>
+        <div>
+          <h2>Why is the government paying this money?</h2>
+          <p>Economic meaning of the Negative Income Tax Law</p>
+        </div>
+      </div>
+      <div style="font-size:12.5px;color:var(--ink);line-height:1.6">
+        In 2007, the Knesset passed a special law (<span lang="he" dir="rtl">חוק להגדלת שיעור ההשתתפות בכוח העבודה ולצמצום פערים</span>). The main goal of the state is <b>encourage people to work rather than sit on welfare</b>.<br>
+        If a person gets a part-time job or a low salary, the state directly pays him a bonus into his bank account. This makes going to work much more beneficial for the family budget than living solely on income support benefits (<span lang="he" dir="rtl">הבטחת הכנסה</span>).
+      </div>
+    </section>
+
+    <!-- ПЛАШКА: ВАЖНО ЗНАТЬ -->
+    <section class="card" style="background:linear-gradient(135deg,#fffbf0,#fbf3d5);border:2px solid #e2c068;border-radius:18px;padding:16px 18px;box-shadow:0 8px 24px rgba(194,155,82,.15)">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <span style="font-size:22px">⚠️</span>
+        <h2 style="margin:0;font-size:15px;color:#784f08;font-weight:900;text-transform:uppercase;letter-spacing:.03em">IMPORTANT: 4 facts that many people don’t know</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+        <div style="background:rgba(255,255,255,.8);border-radius:10px;padding:10px 12px;border:1px solid rgba(194,155,82,.35)">
+          <b style="font-size:12px;color:#784f08;display:block;margin-bottom:3px">💰 This is not a poverty benefit</b>
+          <p style="margin:0;font-size:11px;color:var(--ink);line-height:1.4">This is a state bonus for being <b>are you working</b>. About 300,000 Israelis lose thousands of shekels every year simply because they don't check their eligibility.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.8);border-radius:10px;padding:10px 12px;border:1px solid rgba(194,155,82,.35)">
+          <b style="font-size:12px;color:#784f08;display:block;margin-bottom:3px">🚫 Be careful with intermediaries</b>
+          <p style="margin:0;font-size:11px;color:var(--ink);line-height:1.4">Don’t give “helpers” 20–30% of the commission. Submission on the official website <span lang="he" dir="rtl">רשות המסים</span> It's absolutely free and takes exactly 3 minutes.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.8);border-radius:10px;padding:10px 12px;border:1px solid rgba(194,155,82,.35)">
+          <b style="font-size:12px;color:#784f08;display:block;margin-bottom:3px">⏳ Money for 2024 is burned out</b>
+          <p style="margin:0;font-size:11px;color:var(--ink);line-height:1.4">The law gives exactly 2 years. If you do not apply for the 2024 work year before <b>December 31, 2026</b>, this money will forever be burned in favor of the state.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.8);border-radius:10px;padding:10px 12px;border:1px solid rgba(194,155,82,.35)">
+          <b style="font-size:12px;color:#784f08;display:block;margin-bottom:3px">👥 Each spouse has their own form</b>
+          <p style="margin:0;font-size:11px;color:var(--ink);line-height:1.4">Each working spouse submits <b>your personal statement</b> under your terms of reference. Incomes are not summed up: if both work, everyone receives their own payment!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- СВОДНАЯ ТАБЛИЦА ПОРОГОВ (СТАТИЧНЫЙ SEO-КОНТЕНТ) -->
+    <section class="card">
+      <div class="title">
+        <div class="num">1</div>
+        <div>
+          <h2>Official income thresholds under Israeli Law</h2>
+          <p>Average monthly gross income (total earnings for the year ÷ number of months worked)</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="cond-table">
+          <thead>
+            <tr>
+              <th>Applicant category</th>
+              <th>Income per month corridor</th>
+              <th>Annual payment guideline</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Parents (1–2 children under 19 years old)</b> or age <b>55+ without children</b></td>
+              <td>from <b>2 450 ₪</b> to <b>7 289 ₪</b></td>
+              <td>to <b>5 760 ₪</b> (women up to <b>8 640 ₪</b>)</td>
+            </tr>
+            <tr>
+              <td><b>Parents (3+ children under 19 years old)</b></td>
+              <td>from <b>2 450 ₪</b> to <b>8 020 ₪</b></td>
+              <td>to <b>6 480 ₪</b> (women up to <b>9 720 ₪</b>)</td>
+            </tr>
+            <tr>
+              <td><b>Single parent (<span lang="he" dir="rtl">הורה יחיד</span>)</b> with 1–2 children</td>
+              <td>from <b>1 510 ₪</b> to <b>11 190 ₪</b></td>
+              <td>to <b>9 840 ₪</b></td>
+            </tr>
+            <tr>
+              <td><b>Single parent (<span lang="he" dir="rtl">הורה יחיד</span>)</b> with 3+ children</td>
+              <td>from <b>1 510 ₪</b> to <b>13 660 ₪</b></td>
+              <td>to <b>13 800 ₪</b> (+ nursery up to 16,000 ₪)</td>
+            </tr>
+            <tr>
+              <td><b>Women 60–65 years old</b> (transitional retirement age)</td>
+              <td>from <b>920 ₪</b> to <b>8 930 ₪</b></td>
+              <td>to <b>7 800 ₪</b></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:11.5px;color:var(--muted);margin:8px 0 0;line-height:1.4">
+        * The payment is maximum in the middle of the range (for a salary of 4,500 - 5,500 ₪) and decreases towards the ends.
+      </p>
+    </section>
+
+    <!-- ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР СО ВСЕМИ ПОДВОДНЫМИ КАМНЯМИ -->
+    <section class="card">
+      <div class="title">
+        <div class="num">2</div>
+        <div>
+          <h2>Verification of eligibility and personal payment</h2>
+          <p>Select a year and enter your actual income data</p>
+        </div>
+      </div>
+
+      <div class="f">
+        <label>Tax year audited (<span lang="he" dir="rtl">שנת מס</span>)</label>
+        <div class="seg" id="seg-year">
+          <button type="button" class="on" data-v="2025">2025 (submission: 01/01/2026 – 12/31/2027)</button>
+          <button type="button" data-v="2024">2024 (submission: 01/01/2025 – 12/31/2026)</button>
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="f">
+          <label>Applicant's gender</label>
+          <div class="seg" id="seg-gender">
+            <button type="button" class="on" data-v="female">Woman (<span lang="he" dir="rtl">אישה</span> · +150%)</button>
+            <button type="button" data-v="male">Man (<span lang="he" dir="rtl">גבר</span>)</button>
+          </div>
+        </div>
+        <div class="f">
+          <label>Marital status</label>
+          <div class="seg" id="seg-status" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:6px">
+            <button type="button" class="on" data-v="couple">Married/Family</button>
+            <button type="button" data-v="single_parent">Single parent (<span lang="he" dir="rtl">הורה יחיד</span>)</button>
+            <button type="button" data-v="single_no_kids">Single without children (<span lang="he" dir="rtl">יחיד ללא ילדים</span>)</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="info-no-kids" style="display:none;background:#fef7e7;border:1px solid #f6d89b;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:12px;color:#784f08;line-height:1.45">
+        <b>ℹ️ Rule for singles without children (<span lang="he" dir="rtl">יחיד ללא ילדים</span>):</b><br>
+        According to Israeli Law, citizens without minor children have the right to Maanak Avodah strictly starting from <b>age 55 years</b>. If you are under 55 years old, payment is due only if you have at least 1 child under 19 years old.
+      </div>
+
+      <div class="row3">
+        <div class="f">
+          <label>Applicant's age (years)</label>
+          <input type="number" id="in-age" value="38" min="18" max="99">
+        </div>
+        <div class="f" id="wrap-kids">
+          <label>Children under 19 years old</label>
+          <input type="number" id="in-kids" value="2" min="0" max="15">
+        </div>
+        <div class="f" id="wrap-toddlers">
+          <label>Of these, children under 3 years of age</label>
+          <input type="number" id="in-toddlers" value="1" min="0" max="5">
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="f">
+          <label>Your average monthly gross income (₪)</label>
+          <input type="number" id="in-wage" value="5200" step="100" placeholder="Salary or income of an osek">
+        </div>
+        <div class="f">
+          <label>Months of work this year</label>
+          <input type="number" id="in-months" value="12" min="1" max="12">
+        </div>
+      </div>
+
+      <div id="wrap-spouse-info" style="background:#f0f9f5;border:1px solid #b9d8ca;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:12px;color:var(--ink);line-height:1.45">
+        <b style="color:var(--green)">👥 Rule for spouses (<span lang="he" dir="rtl">בני זוג</span>):</b><br>
+        Each working spouse calculates the payment <b>according to your personal income</b> and serves <b>its own separate statement</b> from your personal account under your Teudat Zehut. Income of spouses <u>do not add up</u>: if both spouses work and both meet the criteria, the family receives <b>two payments</b>! In the questionnaire, the spouse’s details are indicated solely to verify the absence of a second property (>50%) and reconciliation of children.
+      </div>
+
+      <!-- ПОДВОДНЫЕ КАМНИ (ЗАКОНОДАТЕЛЬНЫЕ ДИСКВАЛИФИКАТОРЫ) -->
+      <div class="checkbox-box">
+        <div style="font-size:12px;font-weight:800;color:var(--red);display:flex;align-items:center;gap:6px">
+          <span>⚠️</span> Legal restrictions (check before submitting):
+        </div>
+        <label class="checkbox-item">
+          <input type="checkbox" id="chk-property">
+          <span><b>Second property:</b> I or my spouse have more than 50% of the rights to <u>any other property</u>, except for the only apartment for housing (second apartment, commercial premises, shop, land, inherited share).</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" id="chk-relative">
+          <span><b>Working with relatives:</b> I am employed by a close relative (spouse, parents, children) or in a company owned by them (such income by law does not give the right to payment).</span>
+        </label>
+      </div>
+
+      <button type="button" class="primary-btn" id="btn-calc">Check eligibility and calculate →</button>
+    </section>
+
+    <!-- РЕЗУЛЬТАТ РАСЧЁТА -->
+    <section class="card" id="res-card" style="display:none">
+      <div class="title">
+        <div class="num">3</div>
+        <div>
+          <h2>Check result</h2>
+          <p id="res-status-text"></p>
+        </div>
+      </div>
+
+      <div id="res-box-wrapper"></div>
+      <div id="res-breakdown"></div>
+
+      <div id="maanak-share" style="display:flex;justify-content:center;gap:6px;margin-top:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:12px">
+        <button type="button" onclick="shareMaanak('wa')" style="display:inline-flex;align-items:center;gap:4px;background:#25D366;color:#fff;border:none;border-radius:14px;padding:6px 12px;font-size:11.5px;font-weight:750;cursor:pointer;box-shadow:0 2px 6px rgba(37,211,102,.25)">💬 WhatsApp</button>
+        <button type="button" onclick="shareMaanak('tg')" style="display:inline-flex;align-items:center;gap:4px;background:#0088cc;color:#fff;border:none;border-radius:14px;padding:6px 12px;font-size:11.5px;font-weight:750;cursor:pointer;box-shadow:0 2px 6px rgba(0,136,204,.25)">✈️ Telegram</button>
+        <button type="button" onclick="shareMaanak('copy')" id="copyBtnMaanak" style="display:inline-flex;align-items:center;gap:4px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:6px 12px;font-size:11.5px;font-weight:750;cursor:pointer">📋Copy</button>
+      </div>
+
+      <div style="margin-top:14px;padding:14px;background:#eef4f1;border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div style="font-size:12px;color:var(--ink)">
+          <b>How to get money:</b> Apply for free online at the IRS website (<span lang="he" dir="rtl">רשות המסים</span>) without intermediaries and commissions.
+        </div>
+        <a href="https://www.gov.il/he/service/submitting-an-online-claim-for-job-grant" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;background:var(--green);color:#fff;text-decoration:none;font-size:12px;font-weight:800;padding:8px 14px;border-radius:10px;white-space:nowrap">
+          Apply online at gov.il ↗
+        </a>
+      </div>
+      <p style="font-size:11px;color:var(--muted);margin:10px 0 0;line-height:1.4">
+        *Calculation is indicative based on the criteria of the Negative Income Tax Act. The final decision is made by the IRS upon automatic reconciliation of annual reports (Forms 106 / 1301).
+      </p>
+    </section>
+
+    <!-- КАК НАЛОГОВАЯ ПРОВЕРЯЕТ ДОХОДЫ: ТОФЕС 106 И 126 -->
+    <section class="card">
+      <div class="title">
+        <div class="num">4</div>
+        <div>
+          <h2>How the tax office checks reports: forms 106, 126 and 1301</h2>
+          <p>Why do payments start only in July and not immediately in January?</p>
+        </div>
+      </div>
+
+      <div style="font-size:12.5px;color:var(--ink);line-height:1.6;margin-bottom:12px">
+        In Israel, taxation is considered <b>total for the full calendar year (from January 1 to December 31)</b>. Therefore, the data verification process looks like this:
+      </div>
+
+      <div class="timeline-grid">
+        <div class="t-card">
+          <div class="t-head">1. Employee’s annual report (טופס 106)</div>
+          <div class="t-dates">Issued until March 31st</div>
+          <div class="t-desc">
+            The employer is obliged to prepare and issue to the employee a final annual report on all accruals (<span lang="he" dir="rtl">טופס 106</span>) until March 31 of the following year.
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-head">2. Employer’s report to the tax office (טופס 126)</div>
+          <div class="t-dates">Available until April 30</div>
+          <div class="t-desc">
+            The employer centrally transmits a digital report on all employees (<span lang="he" dir="rtl">טופס 126</span>) to the Tax Office (<span lang="he" dir="rtl">רשות המסים</span>).
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-head">3. Automatic database reconciliation</div>
+          <div class="t-dates">May – June</div>
+          <div class="t-desc">
+            The IRS automatically matches the claim you submit with 126 reports from all of your employers and calculates the exact payment amount.
+          </div>
+        </div>
+
+        <div class="t-card" style="background:#eaf6f0;border-color:#b9d8ca">
+          <div class="t-head" style="color:#08775a">4. First transfer to a bank account</div>
+          <div class="t-dates">July 15</div>
+          <div class="t-desc">
+            That is why the first payment for last year is transferred <b>July 15</b> — when all employers in the country have already submitted their annual reports.
+          </div>
+        </div>
+      </div>
+      <p style="font-size:11.5px;color:var(--muted);margin:8px 0 0;line-height:1.4">
+        * <b>Important:</b> apply online for <a href="https://www.gov.il/he/service/submitting-an-online-claim-for-job-grant" target="_blank" rel="noopener" style="color:var(--green);font-weight:750">gov.il</a> possible as early as January. Your application will be saved in the system and will be automatically calculated as soon as the employer submits the report.
+      </p>
+    </section>
+
+    <!-- ТОЧНЫЕ СРОКИ ПОДАЧИ И ГРАФИК ВЫПЛАТ -->
+    <section class="card">
+      <div class="title">
+        <div class="num">5</div>
+        <div>
+          <h2>Exact deadlines for submission and payment schedule</h2>
+          <p>Official calendar of the Israel Tax Authority (<span lang="he" dir="rtl">רשות המסים</span>)</p>
+        </div>
+      </div>
+
+      <div style="background:#f4f1e9;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:12px">
+        <b style="font-size:13px;color:var(--ink);display:block;margin-bottom:6px">📅 Calendar deadlines for submitting applications:</b>
+        <div style="font-size:12px;color:var(--ink);line-height:1.6">
+          • <b>For the 2025 working year:</b> supply is open from <b>01.01.2026</b> to <b>31.12.2027</b> (2 full years).<br>
+          • <b>For the 2024 working year:</b> supply is open from <b>01.01.2025</b> to <b>31.12.2026</b> (Please submit by the end of 2026!).
+        </div>
+      </div>
+
+      <div style="font-size:12.5px;font-weight:800;color:var(--ink);margin:14px 0 6px">
+        💳 When the money arrives in the account (depending on the date of online submission):
+      </div>
+
+      <div class="timeline-grid">
+        <div class="t-card">
+          <div class="t-head">Window 1: submission by June 30</div>
+          <div class="t-dates">4 equal payments</div>
+          <div class="t-desc">
+            1st payment: <b>July 15</b><br>
+            2nd payment: <b>October 15</b><br>
+            3rd payment: <b>December 15</b><br>
+            4th payment: <b>February 15</b> (next year)
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-head">Window 2: submission from July 1 to September 30</div>
+          <div class="t-dates">3 equal payments</div>
+          <div class="t-desc">
+            1st payment: <b>October 15</b><br>
+            2nd payment: <b>December 15</b><br>
+            3rd payment: <b>February 15</b>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-head">Window 3: submission from October 1 to November 30</div>
+          <div class="t-dates">2 equal payments</div>
+          <div class="t-desc">
+            1st payment: <b>December 15</b><br>
+            2nd payment: <b>February 15</b>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-head">Window 4: December submission (December 1 – 31)</div>
+          <div class="t-dates">1 single payment</div>
+          <div class="t-desc">
+            The entire amount is paid in full <b>February 15</b> next year.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПОШАГОВАЯ ИНСТРУКЦИЯ ОНЛАЙН-ПОДАЧИ -->
+    <section class="card">
+      <div class="title">
+        <div class="num">6</div>
+        <div>
+          <h2>How to apply online in 3 minutes</h2>
+          <p>Free on the state portal without intermediaries</p>
+        </div>
+      </div>
+
+      <div style="font-size:12.5px;color:var(--ink);line-height:1.6">
+        1. Go to the official portal of the Tax Administration: <a href="https://www.gov.il/he/service/submitting-an-online-claim-for-job-grant" target="_blank" rel="noopener" style="color:var(--green);font-weight:800">gov.il/he/service/submitting-an-online-claim-for-job-grant</a>.<br>
+        2. Log in through the government identification system (<span lang="he" dir="rtl">מערכת ההזדהות הלאומית</span>) by ID number (<span lang="he" dir="rtl">תעודת זהות</span>).<br>
+        3. Provide your bank account details (bank, branch, account number).<br>
+        4. <b>For hired workers:</b> no certificates or salary slips (<span lang="he" dir="rtl">תלושי שכר</span>) attach <u>no need</u> — the tax service checks income automatically using reports 106/126 from employers.<br>
+        5. <b>Individual entrepreneurs (<span lang="he" dir="rtl">עצמאים</span>):</b> Before submitting, make sure you have submitted your annual report (<span lang="he" dir="rtl">דוח שנתי - טופס 1301</span>) for the audited year.<br>
+        6. Confirm shipment. The review status can be tracked in your personal account.
+      </div>
+    </section>
+
+    <!-- АККОРДЕОНЫ С ОТВЕТАМИ НА ВОПРОСЫ И НЮАНСЫ -->
+    <details class="card">
+      <summary>
+        <span>⚠️ Why are those who have a share in their parents’ apartment denied?</span>
+        <span style="color:var(--green)">▸</span>
+      </summary>
+      <div class="acc-body">
+        This is the most common reason for refusal. Article 3 of the Law clearly defines: if the applicant or his spouse has <b>more than 50% share in any real estate</b>, except for the only apartment for your own residence, the right to payment is canceled completely (0 ₪). This applies to inherited shares, commercial warehouses, shops and development land.
+      </div>
+    </details>
+
+    <details class="card">
+      <summary>
+        <span>👶 What is the allowance for children (מענק לפעוטות)?</span>
+        <span style="color:var(--green)">▸</span>
+      </summary>
+      <div class="acc-body">
+        This is a special government subsidy for toddlers. Working parents of older children <b>up to 3 years</b> receive an additional increase to Maanak Avodah in the amount of <b>up to 470 – 940 ₪ per month</b> for each child. Our calculator automatically takes this surcharge into account when calculating.
+      </div>
+    </details>
+  <nav id="rel-links" aria-label="Related calculators" style="width:min(760px,calc(100% - 28px));margin:8px auto 0;padding:16px 0"><div style="font-size:12px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Read also</div><a href="salary.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Salary calculator</a><a href="nekudot-zikuy.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Nekudot zikui</a><a href="havraa.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Wellness</a><a href="slovar.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Glossary of terms</a></nav>
+</main>
+</div>
+
+<script>
+var state = {
+  year: '2025',
+  gender: 'female',
+  status: 'couple'
+};
+
+function updateStatusUI() {
+  var wrapSpouse = document.getElementById('wrap-spouse-info');
+  var infoNoKids = document.getElementById('info-no-kids');
+  var wrapKids = document.getElementById('wrap-kids');
+  var wrapToddlers = document.getElementById('wrap-toddlers');
+  var inKids = document.getElementById('in-kids');
+  var inToddlers = document.getElementById('in-toddlers');
+
+  if (state.status === 'single_no_kids') {
+    if (wrapSpouse) wrapSpouse.style.display = 'none';
+    if (infoNoKids) infoNoKids.style.display = 'block';
+    if (wrapKids) wrapKids.style.opacity = '0.4';
+    if (wrapToddlers) wrapToddlers.style.opacity = '0.4';
+    if (inKids) { inKids.value = 0; inKids.disabled = true; }
+    if (inToddlers) { inToddlers.value = 0; inToddlers.disabled = true; }
+  } else if (state.status === 'single_parent') {
+    if (wrapSpouse) wrapSpouse.style.display = 'none';
+    if (infoNoKids) infoNoKids.style.display = 'none';
+    if (wrapKids) wrapKids.style.opacity = '1';
+    if (wrapToddlers) wrapToddlers.style.opacity = '1';
+    if (inKids) { inKids.disabled = false; if (+inKids.value === 0) inKids.value = 1; }
+    if (inToddlers) { inToddlers.disabled = false; }
+  } else {
+    // couple
+    if (wrapSpouse) wrapSpouse.style.display = 'block';
+    if (infoNoKids) infoNoKids.style.display = 'none';
+    if (wrapKids) wrapKids.style.opacity = '1';
+    if (wrapToddlers) wrapToddlers.style.opacity = '1';
+    if (inKids) { inKids.disabled = false; }
+    if (inToddlers) { inToddlers.disabled = false; }
+  }
+}
+
+function bindSeg(id, key) {
+  var btns = document.querySelectorAll('#' + id + ' button');
+  btns.forEach(function(b) {
+    b.addEventListener('click', function() {
+      btns.forEach(function(x) { x.classList.remove('on'); });
+      b.classList.add('on');
+      state[key] = b.getAttribute('data-v');
+      if (key === 'status') {
+        updateStatusUI();
+      }
+    });
+  });
+}
+bindSeg('seg-year', 'year');
+bindSeg('seg-gender', 'gender');
+bindSeg('seg-status', 'status');
+
+function money(n) {
+  return Math.round(n).toLocaleString('ru-RU') + ' ₪';
+}
+
+function calculate() {
+  var age = +document.getElementById('in-age').value || 0;
+  var kids = +document.getElementById('in-kids').value || 0;
+  var toddlers = Math.min(kids, +document.getElementById('in-toddlers').value || 0);
+  var wage = +document.getElementById('in-wage').value || 0;
+  var months = Math.min(12, Math.max(1, +document.getElementById('in-months').value || 12));
+  
+  var hasExtraProp = document.getElementById('chk-property').checked;
+  var worksForRel = document.getElementById('chk-relative').checked;
+  var isWoman = (state.gender === 'female');
+  var isSingle = (state.status === 'single');
+
+  var blockers = [];
+
+  // Absolute blockers
+  if (hasExtraProp) {
+    blockers.push('Owning more than 50% of the share in additional real estate (second apartment, land, store, inherited share) by law cancels the right to payment.');
+  }
+  if (worksForRel) {
+    blockers.push('Salaries received from close relatives (spouse, parents, children) are excluded from the calculation by law.');
+  }
+
+  var isWoman6065 = (isWoman && age >= 60 && age <= 65);
+  var isSingleNoKids = (state.status === 'single_no_kids');
+  var isSingleParent = (state.status === 'single_parent');
+
+  if (isSingleNoKids) {
+    kids = 0;
+    toddlers = 0;
+    if (age < 55) {
+      blockers.push('According to Israeli Law (סעיף 2 לחוק), citizens without children under 19 years of age have the right to Maanak Avodah strictly from the age of 55 years. Those under the age of 55 are not eligible for payment without children.');
+    }
+  } else if (isSingleParent) {
+    if (kids < 1) {
+      blockers.push('For the status “Single Parent” (הורה יחיד), you must indicate at least one child under 19 years of age.');
+    }
+    if (age < 21) {
+      blockers.push('The minimum age of an applicant with children is 21 years.');
+    }
+  } else {
+    // couple
+    if (kids === 0) {
+      if (age < 55) {
+        blockers.push('For citizens without minor children, the right to payment begins strictly at the age of 55. Under the age of 55, you must have at least 1 child under 19 years of age.');
+      }
+    } else {
+      if (age < 21) {
+        blockers.push('The minimum age of an applicant with children is 21 years.');
+      }
+    }
+  }
+
+  // Bracket limits
+  var minIncome = 2450;
+  var maxIncome = 7289;
+  var peakLow = 4300;
+  var peakHigh = 5300;
+  var maxMonthlyBase = 480;
+
+  if (isSingleParent) {
+    minIncome = 1510;
+    if (kids >= 3) {
+      maxIncome = 13660;
+      peakLow = 4800;
+      peakHigh = 6200;
+      maxMonthlyBase = 1100;
+    } else {
+      maxIncome = 11190;
+      peakLow = 4500;
+      peakHigh = 5800;
+      maxMonthlyBase = 820;
+    }
+  } else if (isWoman6065) {
+    minIncome = 920;
+    maxIncome = 8930;
+    peakLow = 3800;
+    peakHigh = 5200;
+    maxMonthlyBase = 650;
+  } else if (isSingleNoKids || kids === 0) {
+    // Age 55+ without kids
+    minIncome = 2450;
+    maxIncome = 6850;
+    peakLow = 4200;
+    peakHigh = 5200;
+    maxMonthlyBase = 480;
+  } else if (kids >= 3) {
+    minIncome = 2450;
+    maxIncome = 8020;
+    peakLow = 4400;
+    peakHigh = 5500;
+    maxMonthlyBase = 540;
+  }
+
+  if (wage < minIncome) {
+    blockers.push('Average monthly income (' + money(wage) + ') below the minimum threshold for your category (' + money(minIncome) + ').');
+  } else if (wage > maxIncome) {
+    blockers.push('Average monthly income (' + money(wage) + ') exceeds the maximum threshold (' + money(maxIncome) + ').');
+  }
+
+  var resBox = document.getElementById('res-box-wrapper');
+  var resBd = document.getElementById('res-breakdown');
+  var resCard = document.getElementById('res-card');
+  var resSub = document.getElementById('res-status-text');
+
+  resCard.style.display = 'block';
+
+  if (blockers.length > 0) {
+    resSub.textContent = 'Payment is not due based on the entered criteria.';
+    resBox.innerHTML = '<div class="res-box fail">' +
+      '<div class="res-lbl" style="color:var(--red)">Refusal to pay</div>' +
+      '<div class="res-sum" style="color:var(--red)">0 ₪</div>' +
+      '<div class="res-sub">Non-compliance with legal criteria found</div>' +
+      '</div>';
+
+    var bHtml = '<div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px">';
+    bHtml += '<b style="color:var(--red);font-size:13px;display:block;margin-bottom:8px">Reasons for refusal:</b>';
+    blockers.forEach(function(b) {
+      bHtml += '<div style="font-size:12px;color:var(--ink);margin-bottom:6px;display:flex;gap:6px"><span>❌</span><span>' + b + '</span></div>';
+    });
+    bHtml += '</div>';
+    resBd.innerHTML = bHtml;
+    resCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
+
+  // Calculation curve
+  var baseMonthly = 0;
+  if (wage <= peakLow) {
+    var rate = (wage - minIncome) / (peakLow - minIncome);
+    baseMonthly = maxMonthlyBase * rate;
+  } else if (wage <= peakHigh) {
+    baseMonthly = maxMonthlyBase;
+  } else {
+    var rate = (maxIncome - wage) / (maxIncome - peakHigh);
+    baseMonthly = maxMonthlyBase * rate;
+  }
+
+  if (isWoman) {
+    baseMonthly *= 1.5;
+  }
+
+  var toddlerMonthly = 0;
+  if (toddlers > 0) {
+    toddlerMonthly = Math.min(toddlers * 470, 940);
+  }
+
+  var totalMonthly = baseMonthly + toddlerMonthly;
+  var spouseWarning = '';
+
+  var totalAnnual = Math.round(totalMonthly * months);
+  var baseAnnual = Math.round(baseMonthly * months);
+  var toddlerAnnual = Math.round(toddlerMonthly * months);
+
+  resSub.textContent = 'You are entitled to payment for' + state.year + 'tax year';
+  resBox.innerHTML = '<div class="res-box ok">' +
+    '<div class="res-lbl" style="color:var(--green)">Estimated amount to be paid</div>' +
+    '<div class="res-sum" style="color:var(--green)">' + money(totalAnnual) + '</div>' +
+    '<div class=\"res-sub\">Approximately' + money(totalMonthly) + 'per month for' + months + 'months worked</div>' +
+    '</div>';
+
+  var bdHtml = '<div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px">';
+  bdHtml += '<div class="rrow"><span>Basic income payment:</span><b>' + money(baseAnnual) + ' (' + money(baseMonthly) + '/month)</b></div>';
+  if (isWoman) {
+    bdHtml += '<div class="rrow" style="color:var(--green)"><span>Supplement for working women (+150%):</span><b>Enabled (+50%)</b></div>';
+  }
+  if (toddlerAnnual > 0) {
+    bdHtml += '<div class=\"rrow\" style=\"color:var(--green)\"><span>Nursery subsidy (“Maanak peutot” / <span lang=\"he\" dir=\"rtl\">מענק לפעוטות</span> on' + toddlers + ' ' + (toddlers === 1 ? 'child' : 'children') + ' to 3 years):</span><b>+' + money(toddlerAnnual) + '</b></div>';
+  }
+  bdHtml += '<div class="rrow"><span>Months worked:</span><b>' + months + 'out of 12</b></div>';
+  bdHtml += '<div class="rrow bold" style="font-size:14px;color:var(--green);border-top:1px solid var(--line);padding-top:10px;margin-top:6px"><span>TOTAL TO BE PAID TO YOUR ACCOUNT:</span><b>' + money(totalAnnual) + '</b></div>';
+  if (spouseWarning) {
+    bdHtml += '<div style="margin-top:8px;font-size:11.5px;color:var(--muted);background:#fff9e6;padding:8px;border-radius:8px">ℹ️ ' + spouseWarning + '</div>';
+  }
+  bdHtml += '</div>';
+
+  resBd.innerHTML = bdHtml;
+  window.__last_maanak_res = { totalAnnual: totalAnnual, year: state.year, months: months };
+  resCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+document.getElementById('btn-calc').addEventListener('click', calculate);
+
+function shareMaanak(target) {
+  var data = window.__last_maanak_res;
+  var sumStr = data ? money(data.totalAnnual) : 'up to 16,000 ₪';
+  var yr = data ? data.year : '2025';
+  var text = '💵 Calculation of “Maanak Avodah” (מענק עבודה' + yr + '):\n' +
+             '• Due for payment:' + sumStr + '\n' +
+             '• Direct transfer to a bank account from the Israel Tax Authority (רשות המסים)\\n\\n' +
+             'Проверить своё право на выплату: https://exodus611.github.io/finance-portal/maanak-avoda.html';
+  if (target === 'wa') {
+    window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank') || (window.location.href = 'https://wa.me/?text=' + encodeURIComponent(text));
+  } else if (target === 'tg') {
+    window.open('https://t.me/share/url?url=' + encodeURIComponent('https://exodus611.github.io/finance-portal/maanak-avoda.html') + '&text=' + encodeURIComponent('💵 Maanak Avodah: I’m supposed to' + sumStr), '_blank');
+  } else if (target === 'copy') {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function() {
+        var btn = document.getElementById('copyBtnMaanak');
+        if (btn) {
+          var orig = btn.innerHTML;
+          btn.innerHTML = '<span>✅ Copied!</span>';
+          setTimeout(function() { btn.innerHTML = orig; }, 2000);
+        }
+      });
+    }
+  }
+}
+</script>
+<script data-goatcounter="https://exodus611.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<style>@media(max-width:700px){.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}}</style>
+<script>/* tables on the phone: wide tables do not fly off the screen, but scroll */
+(function(){document.querySelectorAll('table').forEach(function(t){
+  if(t.parentElement&&t.parentElement.classList.contains('table-scroll')){return}
+  var need=!t.rows[0]||t.rows[0].cells.length>=3;
+  if(!need){return}
+  var w=document.createElement('div');w.className='table-scroll';
+  w.style.cssText='overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%';
+  t.parentNode.insertBefore(w,t);w.appendChild(t);
+})})();</script>
+
+<footer class="shell" style="padding:26px 0 50px;color:var(--muted);font-size:11px;text-align:center">Clear finance in Israel · severance pay · not financial advice · <a href="contact.html" style="color:var(--green);font-weight:800;text-decoration:none">Write to us</a> · <a href="about.html" style="color:var(--green);font-weight:800;text-decoration:none">About the project</a> · <a href="changelog.html" style="color:var(--green);font-weight:800;text-decoration:none">What's new</a></footer>
+<style>
+.langpill{position:fixed;top:10px;right:10px;z-index:99999;display:flex;gap:14px;padding:7px 14px;border-radius:999px;background:rgba(6,11,24,.62);border:1px solid rgba(232,182,76,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:Georgia,serif}
+.langpill a{color:rgba(232,238,250,.65);text-decoration:none;font-size:11.5px;letter-spacing:.14em;font-weight:600;position:relative;padding:2px 0}
+.langpill a.on{color:#e8b64c}
+.langpill a.on::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-3px;width:4px;height:4px;border-radius:50%;background:#e8b64c}
+</style>
+<div class="langpill"><a href="../maanak-avoda.html">RU</a><a href="../fr/maanak-avoda.html">FR</a><a class="on" href="maanak-avoda.html">EN</a></div></body>
+</html>

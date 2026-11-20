@@ -1,0 +1,426 @@
+<!doctype html><html lang="en" lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308775a'/><text x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='900' fill='white' text-anchor='middle'>₪</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://exodus611.github.io/finance-portal/en/arenda-vs-pokupka.html">
+<link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/arenda-vs-pokupka.html">
+<link rel="alternate" hreflang="en" href="https://exodus611.github.io/finance-portal/en/arenda-vs-pokupka.html">
+<link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/arenda-vs-pokupka.html">
+<meta name="theme-color" content="#08775a">
+<title>Renting or buying an apartment in Israel - comparison calculator | 2026</title>
+<meta name="description" content="What is more profitable in 10, 15, 20 years - rent an apartment and invest the difference, or buy with a mortgage? Comparison of accumulated capital by year.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Renting or buying an apartment in Israel">
+<meta property="og:description" content="Comparison of accumulated capital: withdraw and invest the difference, or buy a mortgage.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://exodus611.github.io/finance-portal/arenda-vs-pokupka.html">
+<meta property="og:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Calculator renting vs buying an apartment", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "description": "Comparison of accumulated capital when renting and investing the difference versus buying an apartment with a mortgage in Israel.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "ILS"}, "inLanguage": "ru"}</script>
+<style>
+html{scroll-behavior:smooth}
+:root{--ink:#15251f;--muted:#5a6660;--paper:#f4f1e9;--card:#fffdf8;--line:#ddd6c7;--green:#08775a;--green2:#0d9671;--gold:#c29b52;--red:#b84b3e;--blue:#30779a;--purple:#7857b8;--shadow:0 16px 40px rgba(26,45,37,.08);--r:18px}
+*{box-sizing:border-box}
+html{overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.45;overflow-x:hidden;max-width:100vw}
+button,input,select{font:inherit}
+.shell{width:min(760px,calc(100% - 28px));margin:auto}
+.top{padding:18px 0}
+.topbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;row-gap:6px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:850}
+.mark{width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,var(--green2),var(--green) 70%);color:#fff;display:grid;place-items:center;font-size:32px;font-weight:900;box-shadow:0 6px 18px rgba(8,119,90,.45);border:2px solid rgba(255,255,255,.55)}
+.privacy{font-size:12px;color:var(--muted)}
+a.back{font-size:12px;font-weight:800;color:var(--green);text-decoration:none;white-space:nowrap}
+.hero{padding:30px 0 10px;text-align:center}
+.eyebrow{font-size:12px;color:var(--green);font-weight:900;text-transform:uppercase;letter-spacing:.09em}
+.hero h1{font-size:clamp(28px,5.5vw,44px);line-height:1.1;letter-spacing:-.03em;margin:10px auto 12px;max-width:640px}
+.hero p{font-size:15px;color:var(--muted);max-width:580px;margin:0 auto}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;margin:20px 0;box-shadow:var(--shadow)}
+.title{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+.num{width:32px;height:32px;border-radius:10px;background:var(--green);color:#fff;font-weight:900;display:grid;place-items:center;flex:0 0 32px;font-size:14px}
+.title h2{margin:0 0 3px;font-size:19px}
+.title p{margin:0;font-size:12.5px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field label{display:block;font-size:12px;font-weight:800;color:var(--muted);margin-bottom:6px}
+.field .wrap{display:flex;align-items:center;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.field input{border:none;background:transparent;padding:11px 12px;width:100%;font-size:14px;color:var(--ink)}
+.field .wrap span{padding:0 12px;color:var(--muted);font-size:12.5px;font-weight:700}
+.primary{width:100%;margin-top:6px;background:var(--green);color:#fff;border:none;border-radius:14px;padding:14px;font-size:14.5px;font-weight:800;cursor:pointer}
+.primary:hover{background:var(--green2)}
+.results{display:none}
+.results.show{display:block}
+.compare2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.compare2 .box{border-radius:16px;padding:18px;text-align:center}
+.compare2 .buy{background:#fbf3e3;border:1px solid #e9d9b8}
+.compare2 .rent{background:#eaf1f6;border:1px solid #c7dbe6}
+.compare2 .amount{font-size:24px;font-weight:900}
+.compare2 .buy .amount{color:var(--gold)}
+.compare2 .rent .amount{color:var(--blue)}
+.compare2 .label{font-size:11.5px;color:var(--muted);margin-top:4px}
+.winner-banner{text-align:center;padding:14px;border-radius:14px;background:#eaf6f0;border:1px solid #b9d8ca;font-size:13.5px;margin:14px 0}
+.winner-banner b{color:var(--green)}
+.scenario-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}
+.scenario-table th{background:var(--ink);color:#fff;padding:8px;text-align:right;font-weight:700}
+.scenario-table th:first-child,.scenario-table td:first-child{text-align:left}
+.scenario-table td{padding:8px;text-align:right;border-bottom:1px solid var(--line)}
+.scenario-table tr.crossover{background:#eaf6f0;font-weight:800}
+.info{background:#faf8f2;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:12px;color:var(--muted);margin-top:16px}
+.info b{color:var(--ink)}
+details{border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-top:10px;background:#fff}
+details summary{cursor:pointer;font-weight:800;font-size:13px}
+.detail{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.6}
+.disclaimer{font-size:11px;color:var(--muted);line-height:1.6;background:#fff9e9;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:14px 16px}
+.view-tabs{width:min(760px,calc(100% - 28px));margin:14px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);position:sticky;top:8px;z-index:90}
+.view-tab{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 6px;border-radius:9px;border:none;background:transparent;color:var(--muted);font-family:inherit;font-size:12px;font-weight:800;cursor:pointer}
+.view-tab b{font-size:10px;font-weight:600;opacity:.75}
+.view-tab.active{background:var(--green);color:#fff}
+.view-tab.active b{color:#fff;opacity:.85}
+.view-tab:hover:not(.active){background:var(--paper);color:var(--green)}
+.view-panel{display:none}
+.view-panel.active{display:block}
+@media(max-width:560px){.view-tabs{width:calc(100% - 18px);position:relative;top:auto}.view-tab{padding:8px 4px;font-size:10.5px}.grid,.compare2{grid-template-columns:1fr}}
+.result-modal-overlay{display:none;position:fixed;inset:0;background:rgba(21,37,31,.55);z-index:200;align-items:flex-end;justify-content:center}
+.result-modal-overlay.show{display:flex}
+.result-modal{background:var(--card);border-radius:18px 18px 0 0;max-width:480px;width:100%;padding:20px 20px 22px;box-shadow:0 -8px 30px rgba(0,0,0,.25);animation:modalUp .22s ease-out}
+@media(min-width:640px){.result-modal-overlay{align-items:center;padding:20px}.result-modal{border-radius:18px}}
+@keyframes modalUp{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}
+.result-modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px}
+.result-modal-head h3{margin:0;font-size:17px;color:var(--green)}
+.result-modal-close{border:none;background:var(--paper);color:var(--muted);width:30px;height:30px;border-radius:50%;font-size:15px;cursor:pointer;flex:0 0 30px}
+.result-modal-big{font-size:27px;font-weight:900;color:var(--ink);margin:6px 0 2px}
+.result-modal-sub{font-size:12px;color:var(--muted);margin-bottom:12px}
+.result-modal-rows{display:grid;gap:6px;margin-bottom:14px}
+.result-modal-row{display:flex;flex-direction:column;gap:4px;font-size:12.5px;background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:10px 12px}
+.result-modal-row span{font-size:10.5px;font-weight:900;text-transform:uppercase;letter-spacing:.03em;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:5px;margin-bottom:1px}
+.result-modal-row b{font-weight:600;color:var(--ink);line-height:1.5}
+.result-modal-actions{display:flex;gap:8px}
+.result-modal-actions button{flex:1;border-radius:11px;padding:11px;font-weight:850;font-size:13px;cursor:pointer;border:1px solid var(--line)}
+.result-modal-actions .rm-primary{background:var(--green);color:#fff;border-color:var(--green)}
+.result-modal-actions .rm-secondary{background:transparent;color:var(--muted)}
+.info-dot{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--muted);font-size:10px;cursor:pointer;margin-inline-start:4px;padding:0;line-height:1}
+.info-dot:hover{background:var(--green);color:#fff;border-color:var(--green)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style><script data-goatcounter="https://finance-portal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<link rel="stylesheet" href="../polish.css">
+</head>
+<body><noscript><div style="background:#fff6f4;border-bottom:2px solid #b84b3e;color:#b84b3e;text-align:center;padding:12px;font-family:sans-serif;font-size:13px">For calculators to work, JavaScript must be enabled in the browser.</div></noscript>
+<header class="top"><div class="shell topbar"><div class="logo"><span class="mark">⚖️</span><span>Clear finances in Israel</span></div><a class="back" href="index.html">← Home</a><select onchange="if(this.value)location.href=this.value" style="font-size:11.5px;font-weight:700;color:var(--green);border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:#fff;margin-inline-start:8px;cursor:pointer"><option value="">All calculators ▾</option><option value="salary.html">💰 Salary</option><option value="mashkanta.html">🏠 Mortgage</option><option value="auto.html">🚗 Car</option><option value="kredit.html">💳 Credit</option><option value="mihzur-mashkanta.html">🔄 Refinancing</option><option value="siluk-mukdam.html">💎 Redemption vs investment</option><option value="mas-rehisha.html">🏛️ Mas rehisha</option><option value="mas-shevach.html">📉 Mas Shevah</option><option value="pension-gap.html">🧓 Pension gap</option><option value="keren-hishtalmut.html">🎓 Skills Development Fund</option><option value="nekudot-zikuy.html">🎯 Nekudot zikui</option><option value="valuta.html">💱 Exchange rates</option><option value="pikadon-vs-keren.html">🏦 Deposit vs Severance fund</option><option value="tablo.html">📊 Economy today</option><option value="benzin.html">⛽ Gasoline price</option><option value="arnona.html">🏛️ Discount on Arnona</option><option value="dira.html">🏗️ Dira be-chanaha</option><option value="avtala.html">📋 Dmei avtala</option>
+<option value="havraa.html">🏖️ Wellness</option><option value="hisahon-yeled.html">👶 Savings for a child</option><option value="nko.html">🤝 Charitable NGOs</option><option value="slovar.html">📖 Glossary of terms</option></select></div></header>
+<section class="hero shell"><div class="eyebrow">Rent or purchase</div><h1>Rent and invest, or buy with a mortgage?</h1><p>We compare not payments, but how much capital will accumulate in N years in each of the two scenarios.</p><p style="margin-top:10px"><span style="background:#eaf6f0;color:var(--green);border-radius:20px;padding:5px 12px;font-size:11.5px;font-weight:700">✓ The model is relevant for 2026</span></p></section>
+
+<nav class="view-tabs" id="view-tabs">
+    <button class="view-tab active" id="tab-input" onclick="setActiveView('input')"><span>Enter</span><b>apartment and rent</b></button>
+    <button class="view-tab" id="tab-result" onclick="setActiveView('result')"><span>Result</span><b>who will save more</b></button>
+    <button class="view-tab" id="tab-explain" onclick="setActiveView('explain')"><span>Figure it out</span><b>as it is believed</b></button>
+</nav>
+
+<main class="shell">
+
+<section class="card">
+<div class="title"><span class="num">1</span><div><h2>Comparison conditions</h2><p>Take the same apartment in two scenarios: buy or rent.</p></div></div>
+<div class="grid">
+<div class="field"><label>Apartment price</label><div class="wrap"><input id="price" type="number" value="1500000" step="10000" min="0"><span>₪</span></div></div>
+<div class="field"><label>Down payment (own capital)</label><div class="wrap"><input id="downpayment" type="number" value="375000" step="10000" min="0"><span>₪</span></div></div>
+<div class="field"><label>Mortgage rate (annual)</label><div class="wrap"><input id="mortgageRate" type="number" value="5" step="0.1" min="0"><span>%</span></div></div>
+<div class="field"><label>Mortgage term</label><div class="wrap"><input id="mortgageYears" type="number" value="30" step="1" min="1"><span>years</span></div></div>
+<div class="field"><label>Rent the same apartment</label><div class="wrap"><input id="rent" type="number" value="5500" step="100" min="0"><span>₪/month</span></div></div>
+<div class="field"><label>Increase in apartment prices per year</label><div class="wrap"><input id="appreciation" type="number" value="2" step="0.1" min="0"><span>%</span></div></div>
+<div class="field"><label>Return on investment (if withdrawn)</label><div class="wrap"><input id="investReturn" type="number" value="5" step="0.1" min="0"><span>%</span></div></div>
+<div class="field"><label>Comparison horizon</label><div class="wrap"><input id="horizon" type="number" value="20" step="1" min="1"><span>years</span></div></div>
+</div>
+<button class="primary" id="run">Compare</button>
+</section>
+
+</main>
+
+<main class="shell" style="display:none" id="hidden-source">
+<section class="card results" id="results">
+<div class="title"><span class="num">2</span><div><h2>Result</h2><p>Accumulated capital over the selected horizon in each scenario.</p></div></div>
+
+<div class="compare2">
+<div class="box buy"><div class="amount" id="buyEquity">—</div><div class="label">🏠 Capital upon purchase<br>(price of the apartment minus the balance of the mortgage)</div></div>
+<div class="box rent"><div class="amount" id="rentEquity">—</div><div class="label">📈 Capital when renting<br>(contribution + invested difference)</div></div>
+</div>
+
+<div class="winner-banner" id="winnerBanner">—</div>
+
+<div class="info"><b>What will happen on different horizons?</b> Below is the same calculation after a different number of years to see if the winner changes over time.</div>
+<div id="equity-chart-wrap" style="margin-top:14px"></div>
+<div style="overflow:auto;margin-top:10px"><table class="scenario-table" id="scenarioTable"><thead><tr><th>Through</th><th>Capital: purchase</th><th>Capital: rent</th><th>More profitable</th></tr></thead><tbody></tbody></table></div>
+
+<div class="info" style="margin-top:14px">💡 The higher the mortgage rate and the lower the return on investment, the faster the purchase overtakes the rental. And vice versa: if investments are more profitable, and rent is much cheaper than a mortgage payment, rent may remain more profitable for a very long time.</div>
+</section>
+
+<section class="card">
+<div class="title"><span class="num">3</span><div><h2>How is this even considered?</h2><p>A model, not a prophecy.</p></div></div>
+
+<details open><summary>Why are not payments compared, but capital?</summary><div class="detail">Comparing “rent payment” with “mortgage payment” directly is incorrect: the mortgage payment partially goes into your own asset (the body of the debt), but rent does not. Therefore, it is more honest to compare the final capital at the end of the period: what happened to the real estate minus the remaining debt, versus what would have accumulated if the same amount (payment plus the difference in payments) was invested in another instrument. <button class="info-dot" onclick="showTermInfo('method')" type="button">ⓘ</button></div></details>
+
+<details><summary>Where does the “difference” that the tenant invests come from?</summary><div class="detail">If the mortgage payment is higher than the rent, the tenant saves the difference and invests. If the rent is higher than the mortgage payment, the model believes that the tenant has to pay this difference out of his own money, that is, his investment portfolio grows more slowly.</div></details>
+
+<details><summary>Is this an accurate forecast?</summary><div class="detail">No. Rising home prices, investment returns and future mortgage rates are assumptions, not facts, about the future. The model shows general mechanics and sensitivity to different bets, rather than a guaranteed result.</div></details>
+
+<div class="info" style="margin-top:14px">Do you want to see a detailed tamhil (distribution by Prime/Kalats/Mishtana tracks) instead of a simplified single rate? <a href="mashkanta.html" style="color:var(--green);font-weight:800;text-decoration:none">Open the full Mortgage calculator →</a></div>
+
+<div class="disclaimer" style="margin-top:14px">The calculation is a model one, to understand the mechanics of choice. Actual rates, home price increases and investment returns may differ markedly from the assumptions made here. This is not financial advice.</div>
+</section>
+</main>
+
+<nav id="rel-links" aria-label="Related calculators" style="width:min(760px,calc(100% - 28px));margin:8px auto 0;padding:16px 0"><div style="font-size:12px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Read also</div><a href="mashkanta.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Mortgage</a><a href="mas-rehisha.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Purchase tax</a><a href="dira.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Dira be-chanaha</a><a href="arnona.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Discount on Arnona</a></nav>
+<footer class="shell" style="padding:26px 0 50px;color:var(--muted);font-size:11px;text-align:center">Clear finance in Israel · rental vs purchase calculator · not financial advice · <a href="contact.html" style="color:var(--green);font-weight:800;text-decoration:none">Write to us</a> · <a href="about.html" style="color:var(--green);font-weight:800;text-decoration:none">About the project</a></footer>
+
+<script>
+function $(id){return document.getElementById(id);}
+function fmt(n){return Math.round(n).toLocaleString('ru-RU');}
+
+function annuityPayment(principal, monthlyRate, months){
+  if(monthlyRate===0) return principal/months;
+  return principal * monthlyRate / (1 - Math.pow(1+monthlyRate, -months));
+}
+function remainingBalance(principal, monthlyRate, totalMonths, monthsElapsed){
+  if(monthlyRate===0) return Math.max(0, principal - (principal/totalMonths)*monthsElapsed);
+  const pay = annuityPayment(principal, monthlyRate, totalMonths);
+  const bal = principal*Math.pow(1+monthlyRate, monthsElapsed) - pay*((Math.pow(1+monthlyRate,monthsElapsed)-1)/monthlyRate);
+  return Math.max(0, bal);
+}
+
+function computeAt(years, inputs){
+  const {price, down, mRate, mYears, rent, apprec, investReturn} = inputs;
+  const loan = Math.max(0, price - down);
+  const monthlyRate = mRate/100/12;
+  const totalMonths = mYears*12;
+  const months = Math.min(years*12, totalMonths);
+  const payment = annuityPayment(loan, monthlyRate, totalMonths);
+
+  const homeValue = price * Math.pow(1+apprec/100, years);
+  const monthsForBalance = Math.min(years*12, totalMonths);
+  const balance = totalMonths>0 ? remainingBalance(loan, monthlyRate, totalMonths, monthsForBalance) : 0;
+  const buyEquity = homeValue - balance;
+
+  // rent scenario: invest down payment + monthly difference (payment - rent) each month
+  const investMonthlyRate = investReturn/100/12;
+  let portfolio = down;
+  const totalSimMonths = years*12;
+  for(let m=0; m<totalSimMonths; m++){
+    const monthlyPaymentNow = m < totalMonths ? payment : 0;
+    const diff = monthlyPaymentNow - rent;
+    portfolio = portfolio*(1+investMonthlyRate) + diff;
+  }
+  const rentEquity = portfolio;
+
+  return {buyEquity, rentEquity, payment, homeValue, balance};
+}
+
+function getInputs(){
+  return {
+    price: parseFloat($('price').value)||0,
+    down: parseFloat($('downpayment').value)||0,
+    mRate: parseFloat($('mortgageRate').value)||0,
+    mYears: parseInt($('mortgageYears').value)||1,
+    rent: parseFloat($('rent').value)||0,
+    apprec: parseFloat($('appreciation').value)||0,
+    investReturn: parseFloat($('investReturn').value)||0
+  };
+}
+
+function drawEquityChart(points, highlightYear){
+  const W=640,H=260,padL=54,padR=14,padT=16,padB=30;
+  const plotW=W-padL-padR, plotH=H-padT-padB;
+  const maxV=Math.max(1,...points.map(p=>Math.max(p.buy,p.rent)));
+  const x=i=>padL+(plotW*i/(points.length-1));
+  const y=v=>padT+plotH-(plotH*v/maxV);
+  const pathFor=key=>points.map((p,i)=>`${i===0?'M':'L'}${x(i)},${y(p[key])}`).join(' ');
+  const fmtShort=n=>n>=1000000?(n/1000000).toFixed(1)+'M':n>=1000?Math.round(n/1000)+'K':Math.round(n);
+
+  let gridLines='';
+  for(let g=0;g<=4;g++){
+    const gv=maxV*g/4, gy=y(gv);
+    gridLines+=`<line x1="${padL}" y1="${gy}" x2="${W-padR}" y2="${gy}" stroke="var(--line)" stroke-width="1" stroke-dasharray="3,3"/>`;
+    gridLines+=`<text x="${padL-8}" y="${gy+4}" font-size="10" fill="var(--muted)" text-anchor="end">${fmtShort(gv)}</text>`;
+  }
+
+  let xLabels='';
+  points.forEach((p,i)=>{
+    xLabels+=`<text x="${x(i)}" y="${H-8}" font-size="10" fill="var(--muted)" text-anchor="middle">0 l</text>`;
+  });
+
+  let highlightLine='';
+  const hIdx=points.findIndex(p=>p.y===highlightYear);
+  if(hIdx>=0){
+    highlightLine=`<line x1="${x(hIdx)}" y1="${padT}" x2="${x(hIdx)}" y2="${H-padB}" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="4,3"/>`;
+  }
+
+  const dotsBuy=points.map((p,i)=>`<circle cx="${x(i)}" cy="${y(p.buy)}" r="3.5" fill="var(--gold)"/>`).join('');
+  const dotsRent=points.map((p,i)=>`<circle cx="${x(i)}" cy="${y(p.rent)}" r="3.5" fill="var(--blue)"/>`).join('');
+
+  const svg=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
+    ${gridLines}
+    ${highlightLine}
+    <path d="${pathFor('buy')}" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+    <path d="${pathFor('rent')}" fill="none" stroke="var(--blue)" stroke-width="2.5"/>
+    ${dotsBuy}${dotsRent}
+    ${xLabels}
+  </svg>
+  <div style="display:flex;gap:16px;justify-content:center;margin-top:8px;font-size:11.5px;color:var(--muted)">
+    <span>🟡 Purchase</span><span>🔵 Rent + investment</span>
+  </div>`;
+  document.getElementById('equity-chart-wrap').innerHTML=svg;
+}
+
+function calc(){
+  const inputs = getInputs();
+  const horizon = parseInt($('horizon').value)||1;
+  const r = computeAt(horizon, inputs);
+
+  $('buyEquity').textContent = fmt(r.buyEquity)+' ₪';
+  $('rentEquity').textContent = fmt(r.rentEquity)+' ₪';
+
+  const banner = $('winnerBanner');
+  const diff = Math.abs(r.buyEquity - r.rentEquity);
+  if(r.buyEquity > r.rentEquity){
+    banner.innerHTML = `After 0 years, <b>purchase</b> is more profitable than renting by 1 ₪ of accumulated capital`;
+  } else {
+    banner.innerHTML = `After 0 years, <b>rent with investment</b> is more profitable than buying for 1 ₪ of accumulated capital`;
+  }
+
+  const offsets = [5,10,15,20,25,30];
+  const tbody = $('scenarioTable').querySelector('tbody');
+  tbody.innerHTML='';
+  let lastLeader = null;
+  const chartPoints = [];
+  offsets.forEach(y=>{
+    const rr = computeAt(y, inputs);
+    const leader = rr.buyEquity > rr.rentEquity ? 'Purchase' : 'Rent';
+    const isCrossover = lastLeader !== null && leader !== lastLeader;
+    lastLeader = leader;
+    const tr = document.createElement('tr');
+    if(y===horizon) tr.className='crossover';
+    tr.innerHTML = `<td>0 years</td><td>${fmt(rr.buyEquity)} ₪</td><td>${fmt(rr.rentEquity)} ₪</td><td>${leader}</td>`;
+    tbody.appendChild(tr);
+    chartPoints.push({y, buy:rr.buyEquity, rent:rr.rentEquity});
+  });
+  drawEquityChart(chartPoints, horizon);
+
+  $('results').classList.add('show');
+  return {r, horizon, diff};
+}
+
+function runAndShowModal(){
+  const {r, horizon, diff} = calc();
+  const winner = r.buyEquity > r.rentEquity ? 'Buying is more profitable' : 'Renting with investment is more profitable';
+  showResultModal(
+    winner,
+    fmt(diff)+' ₪',
+    `Difference in accumulated capital after 0 years`,
+    [['Capital upon purchase', fmt(r.buyEquity)+' ₪'], ['Capital on lease', fmt(r.rentEquity)+' ₪']],
+    '📊 See by year',
+    ()=>setActiveView('result')
+  );
+}
+$('run').onclick = runAndShowModal;
+
+function buildViewPanelsSafe(){
+  const inputMain = document.querySelectorAll('main.shell')[0];
+  const hiddenMain = document.getElementById('hidden-source');
+  const inputCard = inputMain.querySelector('section.card');
+  const hiddenCards = [...hiddenMain.querySelectorAll(':scope > section.card')];
+
+  const panelInput = document.createElement('div'); panelInput.id='view-panel-input'; panelInput.className='view-panel active';
+  panelInput.appendChild(inputCard);
+
+  const panelResult = document.createElement('div'); panelResult.id='view-panel-result'; panelResult.className='view-panel';
+  panelResult.appendChild(hiddenCards[0]);
+
+  const panelExplain = document.createElement('div'); panelExplain.id='view-panel-explain'; panelExplain.className='view-panel';
+  panelExplain.appendChild(hiddenCards[1]);
+
+  inputMain.appendChild(panelInput);
+  inputMain.appendChild(panelResult);
+  inputMain.appendChild(panelExplain);
+  hiddenMain.remove();
+}
+
+function setActiveView(name){
+  document.querySelectorAll('.view-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.view-tab').forEach(t=>t.classList.remove('active'));
+  const panel=document.getElementById('view-panel-'+name), tab=document.getElementById('tab-'+name);
+  if(panel) panel.classList.add('active');
+  if(tab) tab.classList.add('active');
+  document.getElementById('view-tabs').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function showResultModal(title,bigValue,subText,rows,actionLabel,actionFn){
+  let ov=document.getElementById('result-modal-overlay');
+  if(!ov){
+    ov=document.createElement('div');ov.id='result-modal-overlay';ov.className='result-modal-overlay';
+    ov.innerHTML='<div class="result-modal"><div class="result-modal-head"><h3 id="rm-title"></h3><button class="result-modal-close" onclick="closeResultModal()">✕</button></div><div class="result-modal-big" id="rm-big"></div><div class="result-modal-sub" id="rm-sub"></div><div class="result-modal-rows" id="rm-rows"></div><div class="result-modal-actions"><button class="rm-secondary" onclick="closeResultModal()">Close</button><button class="rm-primary" id="rm-action-btn"></button></div></div>';
+    document.body.append(ov);
+    ov.addEventListener('click',e=>{if(e.target===ov)closeResultModal();});
+  }
+  document.getElementById('rm-title').textContent=title;
+  const bigEl=document.getElementById('rm-big');
+  if(bigValue){bigEl.textContent=bigValue;bigEl.style.display='';}else{bigEl.style.display='none';}
+  document.getElementById('rm-sub').textContent=subText;
+  document.getElementById('rm-rows').innerHTML=(rows||[]).map(r=>`<div class="result-modal-row"><span>${r[0]}</span><b>${r[1]}</b></div>`).join('');
+  const actBtn=document.getElementById('rm-action-btn');
+  if(actionLabel){actBtn.style.display='';actBtn.textContent=actionLabel;actBtn.onclick=()=>{closeResultModal();(actionFn||(()=>{}))();};}
+  else{actBtn.style.display='none';}
+  ov.classList.add('show');
+}
+function closeResultModal(){const ov=document.getElementById('result-modal-overlay');if(ov)ov.classList.remove('show');}
+
+const TERM_INFO = {
+  method: {
+    title: 'How is capital calculated?',
+    big:'', sub:'Two different formulas for two scenarios',
+    rows: [
+      ['Purchase', 'The cost of the apartment, taking into account the price increase, minus what is still owed to the bank at this moment'],
+      ['Rent', 'Down payment plus the difference between the mortgage payment and rent, invested each month at a given rate of return'],
+      ['Why is it more honest?', 'Both numbers are what can actually be “cashed out” at the end of the period, and not abstract payment amounts']
+    ]
+  }
+};
+function showTermInfo(key){
+  const t=TERM_INFO[key]; if(!t) return;
+  showResultModal(t.title, t.big, t.sub, t.rows, null, null);
+}
+
+document.addEventListener('DOMContentLoaded', buildViewPanelsSafe);
+</script>
+
+<button id="scrollToTop" title="Top" aria-label="Scroll to top" style="display:none;position:fixed;bottom:20px;right:20px;width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;border:none;font-size:18px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.2);z-index:150">↑</button>
+<script>
+(function(){
+  var btn = document.getElementById('scrollToTop');
+  if(!btn) return;
+  window.addEventListener('scroll', function(){
+    btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  });
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+
+<style>@media(max-width:700px){.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}}</style>
+<script>/* tables on the phone: wide tables do not fly off the screen, but scroll */
+(function(){document.querySelectorAll('table').forEach(function(t){
+  if(t.parentElement&&t.parentElement.classList.contains('table-scroll')){return}
+  var need=!t.rows[0]||t.rows[0].cells.length>=3;
+  if(!need){return}
+  var w=document.createElement('div');w.className='table-scroll';
+  w.style.cssText='overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%';
+  t.parentNode.insertBefore(w,t);w.appendChild(t);
+})})();</script>
+<style>
+.langpill{position:fixed;top:10px;right:10px;z-index:99999;display:flex;gap:14px;padding:7px 14px;border-radius:999px;background:rgba(6,11,24,.62);border:1px solid rgba(232,182,76,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:Georgia,serif}
+.langpill a{color:rgba(232,238,250,.65);text-decoration:none;font-size:11.5px;letter-spacing:.14em;font-weight:600;position:relative;padding:2px 0}
+.langpill a.on{color:#e8b64c}
+.langpill a.on::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-3px;width:4px;height:4px;border-radius:50%;background:#e8b64c}
+</style>
+<div class="langpill"><a href="../arenda-vs-pokupka.html">RU</a><a href="../arenda-vs-pokupka.html">FR</a><a class="on" href="arenda-vs-pokupka.html">EN</a></div></body></html>
