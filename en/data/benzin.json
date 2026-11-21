@@ -1,0 +1,562 @@
+{
+ "meta": {
+  "title": "Gasoline price in Israel",
+  "subtitle": "What does a liter consist of, what does it look like next to Europe and what moves the price",
+  "updated": "2026-11-05",
+  "updated_human": "November 5, 2026"
+ },
+ "price": {
+  "self": 7.85,
+  "full_add": 0.26,
+  "full": 8.11,
+  "eilat_self": 6.65,
+  "eilat_full_add": 0.22,
+  "prev": 7.35,
+  "diff": 0.5,
+  "diff_pct": 6.8,
+  "valid_from": "November 5, 2026",
+  "valid_from_iso": "2026-11-05",
+  "valid_from_note": "valid from midnight 5 November",
+  "next_update": "around November 29",
+  "record": 8.27,
+  "record_when": "October 2026",
+  "unit": "shekel per liter"
+ },
+ "breakdown": {
+  "title": "What does a liter consist of?",
+  "lead": "The price is calculated using the formula from the order on maximum prices at gas stations. Three out of four components are set by the state.",
+  "items": [
+   {
+    "name": "The fuel itself",
+    "note": "Mediterranean quotes and delivery (CIF)",
+    "val": 2.77,
+    "pct": 36,
+    "gov": false
+   },
+   {
+    "name": "Excise tax",
+    "note": "blo (בלו) - reduced by emergency decree of the Ministry of Finance",
+    "val": 3.23,
+    "pct": 41,
+    "gov": true
+   },
+   {
+    "name": "Value added tax",
+    "note": "18 percent (מע\"מ)",
+    "val": 1.2,
+    "pct": 15,
+    "gov": true
+   },
+   {
+    "name": "Sales and refueling",
+    "note": "margin standard in the order of the Ministry of Energy",
+    "val": 0.65,
+    "pct": 8,
+    "gov": false
+   }
+  ],
+  "gov_total": 4.43,
+  "gov_pct": 56,
+  "gov_note": "Of each liter, the state costs 4.43 shekels, which is about 56 percent of the price."
+ },
+ "tank": {
+  "title": "How much does a tank cost?",
+  "lead": "Indicate the volume of the tank and how often you refuel - you will see your numbers.",
+  "default_volume": 52,
+  "default_per_month": 2
+ },
+ "europe": {
+  "title": "What it looks like next to Europe",
+  "lead": "Data from the European Commission Weekly Fuel Bulletin. Updated once a week, on Thursdays.",
+  "asof": "2026-07-27",
+  "asof_human": "July 27, 2026",
+  "eurils": 3.5133,
+  "rows": [
+   {
+    "code": "IL",
+    "name": "Israel",
+    "eur": 2.3027,
+    "ils": 8.09,
+    "self": true
+   },
+   {
+    "code": "DE",
+    "name": "Germany",
+    "eur": 2.191,
+    "ils": 7.7,
+    "self": false
+   },
+   {
+    "code": "FR",
+    "name": "France",
+    "eur": 2.0571,
+    "ils": 7.23,
+    "self": false
+   },
+   {
+    "code": "GR",
+    "name": "Greece",
+    "eur": 2.017,
+    "ils": 7.09,
+    "self": false
+   },
+   {
+    "code": "IT",
+    "name": "Italy",
+    "eur": 1.9608,
+    "ils": 6.89,
+    "self": false
+   },
+   {
+    "code": "EU",
+    "name": "EU average",
+    "eur": 1.9411,
+    "ils": 6.82,
+    "self": false
+   },
+   {
+    "code": "PL",
+    "name": "Poland",
+    "eur": 1.7192,
+    "ils": 6.04,
+    "self": false
+   },
+   {
+    "code": "ES",
+    "name": "Spain",
+    "eur": 1.6445,
+    "ils": 5.78,
+    "self": false
+   },
+   {
+    "code": "CY",
+    "name": "Cyprus",
+    "eur": 1.5172,
+    "ils": 5.33,
+    "self": false
+   }
+  ],
+  "summary": {
+   "cheaper_count": 25,
+   "total": 27,
+   "vs_eu_pct": 18.6,
+   "vs_italy_pct": 17.4,
+   "text": "Of the twenty-seven countries of the European Union, refueling in twenty-five is cheaper than in Israel. More expensive only in Denmark and the Netherlands."
+  },
+  "why": "Our reason is the same as that of expensive European countries: high taxes on fuel. Where it is cheaper to refuel, the excise tax is lower, and not the cost of the oil itself - everyone buys the raw material at approximately the same price."
+ },
+ "chart": {
+  "title": "How the price has changed over two years",
+  "lead": "Each point is the last week of the month. Values ​​are in euros per liter to ensure a fair comparison.",
+  "dates": [
+   "2024-07",
+   "2024-08",
+   "2024-09",
+   "2024-10",
+   "2024-11",
+   "2024-12",
+   "2025-01",
+   "2025-02",
+   "2025-03",
+   "2025-04",
+   "2025-05",
+   "2025-06",
+   "2025-07",
+   "2025-08",
+   "2025-09",
+   "2025-10",
+   "2025-11",
+   "2025-12",
+   "2026-01",
+   "2026-02",
+   "2026-03",
+   "2026-04",
+   "2026-05",
+   "2026-06",
+   "2026-07"
+  ],
+  "series": [
+   {
+    "code": "EU",
+    "name": "EU average",
+    "values": [
+     1.7265,
+     1.679,
+     1.6111,
+     1.6392,
+     1.6446,
+     1.6521,
+     1.702,
+     1.7025,
+     1.6532,
+     1.6098,
+     1.6023,
+     1.6329,
+     1.6143,
+     1.6095,
+     1.6228,
+     1.6147,
+     1.6388,
+     1.5858,
+     1.615,
+     1.6372,
+     1.8715,
+     1.8415,
+     1.9001,
+     1.7566,
+     1.9411
+    ]
+   },
+   {
+    "code": "DE",
+    "name": "Germany",
+    "values": [
+     1.804,
+     1.746,
+     1.69,
+     1.724,
+     1.719,
+     1.741,
+     1.788,
+     1.801,
+     1.757,
+     1.742,
+     1.714,
+     1.733,
+     1.719,
+     1.709,
+     1.717,
+     1.726,
+     1.736,
+     1.704,
+     1.793,
+     1.824,
+     2.134,
+     2.144,
+     2.025,
+     1.9,
+     2.191
+    ]
+   },
+   {
+    "code": "FR",
+    "name": "France",
+    "values": [
+     1.8248,
+     1.7846,
+     1.7207,
+     1.742,
+     1.7572,
+     1.7707,
+     1.8161,
+     1.7803,
+     1.7542,
+     1.7008,
+     1.708,
+     1.7353,
+     1.7037,
+     1.7027,
+     1.7252,
+     1.6981,
+     1.7412,
+     1.667,
+     1.7237,
+     1.7103,
+     2.0091,
+     2.0158,
+     2.1085,
+     1.9353,
+     2.0571
+    ]
+   },
+   {
+    "code": "IT",
+    "name": "Italy",
+    "values": [
+     1.8515,
+     1.811,
+     1.7348,
+     1.7621,
+     1.7581,
+     1.7567,
+     1.8313,
+     1.8236,
+     1.7618,
+     1.7052,
+     1.6978,
+     1.7472,
+     1.7206,
+     1.6954,
+     1.7117,
+     1.6835,
+     1.7307,
+     1.6789,
+     1.635,
+     1.6546,
+     1.7334,
+     1.7321,
+     1.964,
+     1.8118,
+     1.9608
+    ]
+   },
+   {
+    "code": "GR",
+    "name": "Greece",
+    "values": [
+     1.883,
+     1.821,
+     1.751,
+     1.79,
+     1.783,
+     1.79,
+     1.846,
+     1.835,
+     1.782,
+     1.719,
+     1.734,
+     1.757,
+     1.745,
+     1.742,
+     1.756,
+     1.733,
+     1.766,
+     1.718,
+     1.722,
+     1.738,
+     2.046,
+     2.042,
+     2.136,
+     1.922,
+     2.017
+    ]
+   },
+   {
+    "code": "ES",
+    "name": "Spain",
+    "values": [
+     1.6115,
+     1.5657,
+     1.4826,
+     1.5072,
+     1.5108,
+     1.5251,
+     1.5792,
+     1.5705,
+     1.5114,
+     1.4703,
+     1.4587,
+     1.5011,
+     1.489,
+     1.4775,
+     1.4822,
+     1.4648,
+     1.4892,
+     1.4403,
+     1.4465,
+     1.4712,
+     1.5576,
+     1.5038,
+     1.5683,
+     1.4379,
+     1.6445
+    ]
+   },
+   {
+    "code": "CY",
+    "name": "Cyprus",
+    "values": [
+     1.5091,
+     1.4695,
+     1.3735,
+     1.3964,
+     1.3889,
+     1.3919,
+     1.4288,
+     1.4324,
+     1.394,
+     1.355,
+     1.3323,
+     1.3699,
+     1.3618,
+     1.3498,
+     1.3536,
+     1.3397,
+     1.3416,
+     1.3362,
+     1.3155,
+     1.312,
+     1.5788,
+     1.5324,
+     1.5906,
+     1.5043,
+     1.5172
+    ]
+   },
+   {
+    "code": "PL",
+    "name": "Poland",
+    "values": [
+     1.5079,
+     1.4802,
+     1.3895,
+     1.4102,
+     1.425,
+     1.4302,
+     1.4915,
+     1.4911,
+     1.4468,
+     1.373,
+     1.3648,
+     1.415,
+     1.3799,
+     1.3612,
+     1.3874,
+     1.3972,
+     1.4126,
+     1.3561,
+     1.3424,
+     1.3767,
+     1.6806,
+     1.4425,
+     1.5124,
+     1.3897,
+     1.7192
+    ]
+   }
+  ],
+  "note": "Israel is not included in this series: the European Commission collects data only for its own countries. Our price is shown separately on the plate above."
+ },
+ "drivers": {
+  "title": "What moves the price",
+  "lead": "The new price is announced two days before the end of the month. It depends on three things.",
+  "items": [
+   {
+    "n": "1",
+    "name": "Gasoline prices in the Mediterranean",
+    "body": "Take the average of the five trading days before the last two working days of the month. Not for the whole month, but specifically for these five days.",
+    "now": "Over the past thirty days, Brent oil has cost an average of $79.7 per barrel versus 102.79 in the previous thirty. This is a decrease of 22.5 percent."
+   },
+   {
+    "n": "2",
+    "name": "Dollar exchange rate",
+    "body": "Recalculation is done at the latest official rate of the Bank of Israel before the last two working days of the month.",
+    "now": "Last time the dollar strengthened by about 1.9 percent, and this added to the price."
+   },
+   {
+    "n": "3",
+    "name": "Excise and value added tax",
+    "body": "The excise tax changes rarely, usually once a year during indexation. Value added tax is considered on top of everything else, so as the price rises, its amount grows itself.",
+    "now": "Now the excise tax is 3.61 shekels per liter, the value added tax is eighteen percent."
+   }
+  ],
+  "no_forecast": "We deliberately do not give a forecast. The price depends on five trading days at the end of the month, and during this time the quotes have time to reverse: at the end of July, oil fell in price from $105 to $92 in four days. There are only facts here, and the conclusions are yours.",
+  "brent": {
+   "last": 91.82,
+   "date": "2026-07-27",
+   "avg30": 79.7,
+   "avg_prev30": 102.79,
+   "change_pct": -22.5
+  }
+ },
+ "diesel_warning": {
+  "title": "This does not apply to diesel fuel.",
+  "body": "The state sets the maximum price only for gasoline ninety-five. The Ministry of Energy does not regulate diesel fuel: the price is set by the fuel companies themselves, and it differs noticeably at different gas stations. Many people think that the advertised price applies to her."
+ },
+ "faq": [
+  {
+   "q": "Why is the price the same at all gas stations?",
+   "a": "Because this is the maximum price set by the price control order. It cannot be sold at a higher price anywhere in the country. You can get it cheaper - that’s why there are discounts on club cards and fuel devices."
+  },
+  {
+   "q": "When does the price change?",
+   "a": "At midnight on the first day of every month. They announce two days before the end of the previous month, so the price for the next month is usually known in advance."
+  },
+  {
+   "q": "Why is it cheaper in Eilat?",
+   "a": "In Eilat they do not charge value added tax, so the price there is indicated without it. The difference with the rest of the country is more than a shekel per liter."
+  },
+  {
+   "q": "How much of the price goes to the state?",
+   "a": "The excise tax and value added tax together amount to 4.85 shekels per liter - that’s sixty percent. The fuel itself accounts for about a third."
+  },
+  {
+   "q": "Why is it almost half the price in some places in Europe?",
+   "a": "The difference is almost entirely in taxes. Everyone buys raw materials at approximately the same price, but the excise tax in different countries differs significantly. Where refueling is cheap, the excise tax is low."
+  },
+  {
+   "q": "Is it possible to know the next month's price in advance?",
+   "a": "It is officially announced two days before the end of the month. Before this period, there are only estimates, and they often do not come true: last time they expected a price increase of 25–35 agorot, but it turned out to be 61."
+  }
+ ],
+ "glossary": [
+  {
+   "ru": "blo",
+   "he": "בלו",
+   "desc": "excise tax, fuel tax"
+  },
+  {
+   "ru": "mehir mirvú",
+   "he": "מחיר מרבי",
+   "desc": "limit price above which one cannot sell"
+  },
+  {
+   "ru": "sherut atsmu",
+   "he": "שירות עצמי",
+   "desc": "self-service at the gas station"
+  },
+  {
+   "ru": "sherut male",
+   "he": "שירות מלא",
+   "desc": "full service when an employee runs the charge"
+  },
+  {
+   "ru": "gasoline 95 octane",
+   "he": "בנזין 95 אוקטן",
+   "desc": "the main type of gasoline, the price of which is regulated"
+  },
+  {
+   "ru": "solar",
+   "he": "סולר",
+   "desc": "diesel fuel, price is not regulated"
+  },
+  {
+   "ru": "dalkan",
+   "he": "דלקן",
+   "desc": "automatic refueling device, often gives a discount"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Estimated prices of petroleum products at the plant outlet",
+   "he": "מחירים מחושבים למוצרי נפט",
+   "url": "https://data.gov.il/dataset/orl-prices"
+  },
+  {
+   "name": "Excise tax on petroleum products",
+   "he": "מיסי הדלק (בלו)",
+   "url": "https://data.gov.il/dataset/excise"
+  },
+  {
+   "name": "European Commission Weekly Fuel Bulletin",
+   "he": "",
+   "url": "https://energy.ec.europa.eu/data-and-analysis/weekly-oil-bulletin_en"
+  },
+  {
+   "name": "Brent crude oil prices, Energy Information Administration",
+   "he": "",
+   "url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm"
+  },
+  {
+   "name": "Euro to shekel exchange rate",
+   "he": "",
+   "url": "https://open.er-api.com/v6/latest/EUR"
+  }
+ ],
+ "disclaimer": "Prices for gasoline ninety-five are the maximum prices announced by the Ministry of Energy. European data is given as of the date indicated and converted into shekels at the current exchange rate, so if the exchange rate changes, the numbers in shekels change. Calculations are performed directly on your device, nothing is sent anywhere.",
+ "_run": {
+  "last_try": "2026-11-05",
+  "status": "updated: tariff from November 5, 2026",
+  "source": "gov.il"
+ }
+}

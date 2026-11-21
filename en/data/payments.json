@@ -1,0 +1,55 @@
+{
+ "unemployment": "2026-11-12",
+ "self_employed": "2026-11-15",
+ "children": "2026-11-20",
+ "long_term": "2026-11-28",
+ "long_term_items": [
+  {
+   "ru": "Old age benefit",
+   "he": "קצבת אזרח ותיק"
+  },
+  {
+   "ru": "Survivor's benefit",
+   "he": "קצבת שארים"
+  },
+  {
+   "ru": "Disability benefit",
+   "he": "קצבת נכות"
+  },
+  {
+   "ru": "Allowance for a disabled child",
+   "he": "קצבת ילד נכה"
+  },
+  {
+   "ru": "Special services for severely disabled people",
+   "he": "שירותים מיוחדים"
+  },
+  {
+   "ru": "Travel allowance",
+   "he": "קצבת ניידות"
+  },
+  {
+   "ru": "Victims at work",
+   "he": "נפגעי עבודה"
+  },
+  {
+   "ru": "Alimony",
+   "he": "מזונות"
+  },
+  {
+   "ru": "Rehabilitation",
+   "he": "שיקום"
+  },
+  {
+   "ru": "Care (siud)",
+   "he": "סיעוד"
+  },
+  {
+   "ru": "Prisoners of Zion",
+   "he": "אסירי ציון"
+  }
+ ],
+ "month_label": "2026-11",
+ "updated": "2026-11-05",
+ "source_url": "https://www.btl.gov.il/Pages/BenefitsPaymentDates.aspx"
+}

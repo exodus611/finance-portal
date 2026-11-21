@@ -214,7 +214,7 @@ function pad(n){return n<10?'0'+n:''+n}
 function fmtRu(d){return pad(d.getDate())+'.'+pad(d.getMonth()+1)+'.'+d.getFullYear()}
 function daysWord(n){ if(n===1) return 'Tomorrow'; var d10=n%10, d100=n%100; if(d10===1&&d100!==11) return 'through'+n+'day'; if(d10>=2&&d10<=4&&(d100<10||d100>=20)) return 'through'+n+'day'; return 'through'+n+'days'; }
 
-fetch('../data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():Promise.reject()}).then(function(p){
+fetch('data/payments.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():Promise.reject()}).then(function(p){
   window.__paymentsFull=p;
   function daysTo(d){ var t=new Date(); t.setHours(0,0,0,0); var x=new Date(d.getFullYear(),d.getMonth(),d.getDate()); return Math.round((x-t)/86400000); }
   function shiftFwd(d){ var dow=d.getDay(); if(dow===6) d.setDate(d.getDate()+2); return d; }
@@ -289,12 +289,12 @@ function sharePayments(target){
   }
 }
 </script>
-<script src="../payments-extra.js" defer></script>
+<script src="payments-extra.js" defer></script>
 <script data-goatcounter="https://finance-portal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 <footer class="shell" style="padding:26px 0 50px;color:var(--muted);font-size:11px;text-align:center">Clear finances in Israel · Bituach Leumi (National Insurance) payment dates · not financial advice · <a href="contact.html" style="color:var(--green);font-weight:800;text-decoration:none">Write to us</a> · <a href="about.html" style="color:var(--green);font-weight:800;text-decoration:none">About the project</a> · <a href="changelog.html" style="color:var(--green);font-weight:800;text-decoration:none">What's new</a></footer>
 <style>
-.langpill{position:fixed;top:10px;right:10px;z-index:99999;display:flex;gap:14px;padding:7px 14px;border-radius:999px;background:rgba(6,11,24,.62);border:1px solid rgba(232,182,76,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:Georgia,serif}
+.langpill{position:fixed;bottom:14px;right:14px;z-index:99999;display:flex;gap:14px;padding:7px 14px;border-radius:999px;background:rgba(6,11,24,.62);border:1px solid rgba(232,182,76,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:Georgia,serif}
 .langpill a{color:rgba(232,238,250,.65);text-decoration:none;font-size:11.5px;letter-spacing:.14em;font-weight:600;position:relative;padding:2px 0}
 .langpill a.on{color:#e8b64c}
 .langpill a.on::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-3px;width:4px;height:4px;border-radius:50%;background:#e8b64c}

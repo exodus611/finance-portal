@@ -1,0 +1,43 @@
+{
+ "boi_rate": 3.25,
+ "prime": 4.75,
+ "next_interest_date": "2026-11-23T00:00:00Z",
+ "cpi_index": 105.2,
+ "cpi_annual_pct": 1.1,
+ "fx": {
+  "USD": 3.326,
+  "GBP": 4.3604,
+  "JPY": 0.020908,
+  "EUR": 3.6503,
+  "AUD": 2.2183,
+  "CAD": 2.322,
+  "DKK": 0.4883,
+  "NOK": 0.3401,
+  "ZAR": 0.1904,
+  "SEK": 0.3264,
+  "CHF": 3.9477,
+  "JOD": 4.6915,
+  "LBP": 4e-05,
+  "EGP": 0.0618
+ },
+ "manual": {
+  "avg_mortgage_rate_by_term": {
+   "5": 3.57,
+   "10": 3.56,
+   "15": 3.29,
+   "20": 3.54,
+   "25": 3.44,
+   "30": 3.46
+  },
+  "avg_mortgage_rate_overall": 3.52,
+  "_checked": "2026-07-24"
+ },
+ "errors": {},
+ "updated": "2026-11-20T15:44:40.714594+00:00",
+ "updated_sources_ok": "3/3",
+ "_seed_note": "Initial file with verified values ​​as of the creation date. Then it is updated automatically via GitHub Actions (scripts/update-rates.py), except for the manual block - update it manually once a month.",
+ "boi_rate_updated": "2026-11-20T15:44:40.714594+00:00",
+ "cpi_updated": "2026-11-20T15:44:40.714594+00:00",
+ "fx_updated": "2026-11-20T15:44:40.714594+00:00",
+ "last_interest_date": "2026-08-31T16:00:00Z"
+}

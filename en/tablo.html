@@ -427,13 +427,13 @@ var SRC=root.getAttribute('data-src')||'data/tablo.json';
 var D=null;
 
 function el(s){return root.querySelector(s);}
-var nf=function(n,d){return new Intl.NumberFormat('ru-RU',
+var nf=function(n,d){return new Intl.NumberFormat('en-GB',
   {minimumFractionDigits:d,maximumFractionDigits:d}).format(n);};
 function pct(x,d){return nf(x*100,d===undefined?2:d)+'%';}
 function money(n){return nf(n,Math.abs(n)>=1000?0:2)+' ₪';}
-function dt(s){return s?new Date(s+'T00:00:00').toLocaleDateString('ru-RU',
+function dt(s){return s?new Date(s+'T00:00:00').toLocaleDateString('en-GB',
   {day:'numeric',month:'long',year:'numeric'}):'';}
-function dshort(s){return s?new Date(s+'T00:00:00').toLocaleDateString('ru-RU'):'';}
+function dshort(s){return s?new Date(s+'T00:00:00').toLocaleDateString('en-GB'):'';}
 
 function arrow(v){return v>0?'▲':v<0?'▼':'';}
 function cls(v){return v>0?'tb-up':v<0?'tb-down':'';}
@@ -502,10 +502,10 @@ function tbCityChange(){
   if(!box||val==null)return;
   var diff=val-avg;
   var diffStr=diff===0?'exactly the same as the national average':
-    (diff>0?'on'+new Intl.NumberFormat('ru-RU').format(diff)+'₪ more expensive than the national average':
-    'on'+new Intl.NumberFormat('ru-RU').format(-diff)+'₪ cheaper than the national average');
+    (diff>0?'on'+new Intl.NumberFormat('en-GB').format(diff)+'₪ more expensive than the national average':
+    'on'+new Intl.NumberFormat('en-GB').format(-diff)+'₪ cheaper than the national average');
   box.innerHTML='<strong style="font-size:20px;color:var(--tb-text)">'+
-    new Intl.NumberFormat('ru-RU').format(val)+'₪</strong>—average rent for a 3-room apartment in'+city+'<br>'+
+    new Intl.NumberFormat('en-GB').format(val)+'₪</strong>—average rent for a 3-room apartment in'+city+'<br>'+
     '<span style="opacity:.85">'+diffStr+'</span>';
 }
 window.tbCityChange=tbCityChange;
@@ -539,11 +539,11 @@ function render(){
   var rateDelta='';
   if(b.prev_rate!=null && Math.abs(b.prev_rate-b.rate)>1e-9){
     var diff=(b.rate-b.prev_rate)*100;
-    rateDelta=arrow(diff)+' '+nf(Math.abs(diff),2)+' п.п. с '+dshort(b.changed);
+    rateDelta=arrow(diff)+' '+nf(Math.abs(diff),2)+' pct. pts. since '+dshort(b.changed);
   }
 
   var nextCbs=nextCbsPublication();
-  var nextCbsStr=nextCbs.toLocaleDateString('ru-RU',{day:'numeric',month:'long'});
+  var nextCbsStr=nextCbs.toLocaleDateString('en-GB',{day:'numeric',month:'long'});
 
   window.__tbModalData=[];
   el('#tb-grid').innerHTML=
@@ -577,7 +577,7 @@ function render(){
       cities:D.rent_by_city.cities})+
     tile({kind:'fuel',icon:'⛽',label:'Gasoline 95',value:nf(D.fuel.price_95,2)+'₪/l',
       sub:'self-service · full service +'+nf(D.fuel.full_service_extra,2)+'₪/l',
-      delta:(D.fuel.price_95>=D.fuel.prev_price?'+':'')+nf((D.fuel.price_95-D.fuel.prev_price)*100,0)+' агорот с прошлого месяца',
+      delta:(D.fuel.price_95>=D.fuel.prev_price?'+':'')+nf((D.fuel.price_95-D.fuel.prev_price)*100,0)+' agorot from last month',
       dcls:cls(D.fuel.price_95-D.fuel.prev_price),
       expl:e.fuel_ru,link:['Detailed price analysis','benzin.html']});
 
@@ -667,7 +667,7 @@ fetch(SRC,{cache:'no-cache'})
   t.parentNode.insertBefore(w,t);w.appendChild(t);
 })})();</script>
 <style>
-.langpill{position:fixed;top:10px;right:10px;z-index:99999;display:flex;gap:14px;padding:7px 14px;border-radius:999px;background:rgba(6,11,24,.62);border:1px solid rgba(232,182,76,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:Georgia,serif}
+.langpill{position:fixed;bottom:14px;right:14px;z-index:99999;display:flex;gap:14px;padding:7px 14px;border-radius:999px;background:rgba(6,11,24,.62);border:1px solid rgba(232,182,76,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:Georgia,serif}
 .langpill a{color:rgba(232,238,250,.65);text-decoration:none;font-size:11.5px;letter-spacing:.14em;font-weight:600;position:relative;padding:2px 0}
 .langpill a.on{color:#e8b64c}
 .langpill a.on::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-3px;width:4px;height:4px;border-radius:50%;background:#e8b64c}

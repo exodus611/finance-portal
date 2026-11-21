@@ -1,0 +1,184 @@
+{
+ "_comment": "Scoreboard data. Filled with scripts/update.py from official sources.",
+ "updated": "2026-11-20",
+ "updated_by": "auto",
+ "boi": {
+  "rate": 0.0325,
+  "prime": 0.0475,
+  "asof": "2026-11-20",
+  "next_decision": "2026-10-19",
+  "prev_rate": 0.035,
+  "changed": "2026-11-20"
+ },
+ "cpi": {
+  "value": 105.2,
+  "yoy": 0.011,
+  "mom": -0.001,
+  "period": "2026-10",
+  "name_ru": "Consumer Price Index"
+ },
+ "construction": {
+  "value": 104.4,
+  "yoy": 0.039,
+  "mom": 0.004,
+  "period": "2026-10",
+  "name_ru": "Construction Cost Index"
+ },
+ "wage": {
+  "min_monthly": 6443.85,
+  "min_hourly": 35.4,
+  "since": "2026-04-01",
+  "avg_monthly": 13316,
+  "avg_note_ru": "national average for calculating benefits"
+ },
+ "fx": {
+  "market": {
+   "USD": 3.3018,
+   "EUR": 3.6231,
+   "RUB": 0.0402,
+   "UAH": 0.0727,
+   "GBP": 4.3285
+  },
+  "official": {
+   "USD": 3.326,
+   "GBP": 4.3604,
+   "JPY": 0.0209,
+   "EUR": 3.6503,
+   "AUD": 2.2183,
+   "CAD": 2.322,
+   "DKK": 0.4883,
+   "NOK": 0.3401,
+   "ZAR": 0.1904,
+   "SEK": 0.3264,
+   "CHF": 3.9477,
+   "JOD": 4.6915,
+   "LBP": 0.0,
+   "EGP": 0.0618
+  },
+  "official_date": "2026-11-20",
+  "prev": {
+   "USD": 3.3018,
+   "EUR": 3.6231,
+   "RUB": 0.0402,
+   "UAH": 0.0727,
+   "GBP": 4.3285
+  }
+ },
+ "explain": {
+  "rate_ru": "The main rate, which is set by the Bank of Israel approximately once every month and a half at a meeting of the board of directors. This is the base from which prime is considered - the most common type of loan in the country. As the rate rises, the monthly payment on a mortgage with a variable portion (mishtana) and on any loans tied to prime increases. Falls - the payment is reduced in the next billing month, without re-signing the contract.",
+  "prime_ru": "Prime = Bank of Israel rate + fixed surcharge of 1.5%, which has not changed for years. It is by prime that interest on most mortgage tracks, overdrafts and consumer loans is calculated - this is the most common method of lending in Israel, so the change in prime is felt by almost everyone who has a loan.",
+  "cpi_ru": "The Consumer Price Index is calculated by the Central Bureau of Statistics based on a basket of typical purchases by an average household, from groceries to housing. Officially tied to madad are: lease agreements “tsmuda le-madad”, alimony, part of government benefits and some salary agreements. If the lease agreement contains this link, the payment amount is automatically recalculated to the declared percentage, without the consent of the parties.",
+  "construction_ru": "An index separate from Madad, which calculates the rise in price of construction materials and work. The so-called “construction part” of the price of an apartment when purchased from a developer is tied to it (usually this is part of the amount that has not yet been paid at the time of delivery of the property) - while the house is being built, this part of the amount rises in price along with the index, even if the apartment itself costs a fixed amount under the contract.",
+  "min_wage_ru": "The minimum wage is set by law and is usually updated on April 1 of each year. You cannot pay less under any circumstances, including probationary periods and part-time work (recalculated in proportion to the rate). This is the general minimum - for some industries the law sets a higher threshold: security/security - 7,118.85 ₪/month (39.11 ₪/hour), cleaning/cleaning - 7,118.85 ₪/month (38.03 ₪/hour), catering - about 113% of the total minimum. You can check your industry in the salary calculator.",
+  "fx_ru": "The official rate of the Bank of Israel is published once a day and is used to calculate taxes, customs duties and government reporting. The market rate - what you actually see in the exchanger or banking application - usually differs by 1.5-3% in a direction unfavorable for you (this is the margin of the exchanger or bank).",
+  "housing_ru": "The average price of real residential purchase and sale transactions across the country is not to be confused with the construction cost index above, these are two different indicators. Published every two months based on data from the register of transactions, and not advertisements for sale - that is, it reflects what people actually paid, and not what sellers are asking for.",
+  "rent_ru": "Average rent of a 3-room apartment in 18 major cities in Israel (from 100,000 inhabitants). CSB's data is based on actual leases, not advertisements - so the figure is usually a little lower than what you see on notice boards, which often list an inflated starting price for bargaining. For apartments of a different size (1–2 or 5+ rooms), the price will differ in proportion to the area.",
+  "fuel_ru": "The maximum price for gasoline is set by the Ministry of Energy once a month (announced two days before the end of the month, valid from the 1st of the next) according to a fixed formula based on average fuel prices in the Mediterranean basin plus excise duty and VAT. This is a ceiling below which gas stations can sell (and sometimes do), but above which they have no right. With full service (not self-service) - surcharge of about 0.25 ₪/l."
+ },
+ "links": [
+  {
+   "label_ru": "Recount the mortgage",
+   "url": "mashkanta.html",
+   "trigger": "rate"
+  },
+  {
+   "label_ru": "Is it worth refinancing?",
+   "url": "mihzur-mashkanta.html",
+   "trigger": "rate"
+  },
+  {
+   "label_ru": "How much will the rent be raised?",
+   "url": "#arenda",
+   "trigger": "cpi"
+  },
+  {
+   "label_ru": "Calculate salary",
+   "url": "salary.html",
+   "trigger": "wage"
+  },
+  {
+   "label_ru": "Currency converter",
+   "url": "valuta.html",
+   "trigger": "fx"
+  },
+  {
+   "label_ru": "Tax when buying an apartment",
+   "url": "mas-rehisha.html",
+   "trigger": "construction"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Bank of Israel - discount rate",
+   "url": "https://www.boi.org.il/",
+   "role": "rate and prime"
+  },
+  {
+   "name": "Central Bureau of Statistics",
+   "url": "https://www.cbs.gov.il/",
+   "role": "price and construction cost index"
+  },
+  {
+   "name": "Bituach Leumi - minimum wage",
+   "url": "https://data.gov.il/dataset/288",
+   "role": "minimum wage, open data"
+  },
+  {
+   "name": "ExchangeRate-API",
+   "url": "https://www.exchangerate-api.com/",
+   "role": "market exchange rates"
+  }
+ ],
+ "auto": {
+  "last_run": "2026-11-20T20:38:04+00:00",
+  "ok": true,
+  "notes": [
+   "cpi: 1.1% per annum (2026-10)",
+   "construction: 3.9% per annum (2026-10)",
+   "housing: -1.5% per annum (2026-08)",
+   "Market rates updated (USD 3.3018)",
+   "Official exchange rate for 2026-11-20"
+  ],
+  "warnings": []
+ },
+ "housing": {
+  "value": 588.2,
+  "yoy": -0.015,
+  "mom": -0.002,
+  "period": "2026-08",
+  "name_ru": "Housing Price Index"
+ },
+ "rent_by_city": {
+  "national_avg": 4919,
+  "yoy": 0.043,
+  "period": "2026-03",
+  "cities": {
+   "Тель-Авив": 7015,
+   "Герцлия": 6418,
+   "Кфар-Сава": 5513,
+   "Рамат-Ган": 5488,
+   "Иерусалим": 5002,
+   "Ришон-ле-Цион": 4866,
+   "Петах-Тиква": 4720,
+   "Холон": 4602,
+   "Реховот": 4485,
+   "Нетания": 4383,
+   "Бней-Брак": 4169,
+   "Ашдод": 4155,
+   "Бат-Ям": 4094,
+   "Бейт-Шемеш": 4076,
+   "Хадера": 3651,
+   "Ашкелон": 3449,
+   "Хайфа": 3176,
+   "Беэр-Шева": 2945
+  },
+  "apartment_type": "3-room apartment"
+ },
+ "fuel": {
+  "price_95": 7.85,
+  "prev_price": 7.35,
+  "full_service_extra": 0.26,
+  "period": "2026-11 (с 05.11)",
+  "name_ru": "Gasoline 95, self-service"
+ }
+}

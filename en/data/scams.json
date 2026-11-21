@@ -1,0 +1,1200 @@
+{
+"_comment": "Fraud alerts. Source: official Telegram channel of the Israeli National Cybersecurity Authority (t.me/Israel_Cyber) and independent news (Israel Hayom). Short quotes in Hebrew - verbatim, with translation and analysis right on the page, without going to an external site.",
+"agency_ru": "Israeli National Cyber ​​Security Authority",
+"agency_he": "מערך הסייבר הלאומי",
+"agency_phone": "119",
+"source_channel": "https://t.me/Israel_Cyber",
+"updated": "2026-11-19",
+"warnings": [
+{
+"id": 447,
+"date": "2026-11-19",
+"type": "sms",
+"title": "Israel's National Cyber ​​Security Authority warns of a malicious app posing as the IRS",
+"summary": "Attackers send messages with a link to a fake website that imitates Google Play and offer to install the Tax Administration application for Android. Once installed and given permissions, it can give attackers access to messages, verification codes, camera, and remote control of the device.",
+"he_original": "⚠️ מערך הסייבר הלאומי מתריע: אפליקציה זדונית המתחזה לרשות המסים\n\nבמערך התקבלו דיווחים על הודעות המפנות לאתר המתחזה לחנות Google Play ומציע אפליקציה בשם ״רשות המסים״ למכשירי Android.\n\nמחקירת המערך עולה כי לאחר התקנה ומתן הרשאות, האפליקציה עלולה לאפשר לתוקפים גישה להודעות, לקודי אימות ולמצלמה, ואף שליטה מרחוק במכשיר.\n\nאיך מתגוננים?\n\n🔹 מורידים אפליקציות רק מהחנות הרשמית שבמכשיר, בכניסה עצמאית.\n🔹 לא מתקינים אפליקציות מקישורים בהודעות ולא מאשרים התקנה ממקור לא מוכר.\n🔹 בודקים פניות בכניסה עצמאית לאתר הרשמי של רשות המסים.\n🔹 קיבלתם קישור חשוד? העתיקו אותו בלי לפתוח ובדקו בשירות ״קליק צ׳ק״ בפורטל הס…",
+"ru_translation": "⚠️National Cyber ​​Security Administration Warns: Malicious app impersonating IRS. The department has received reports of messages that lead to a website that imitates the Google Play Store and offers an app called “Tax Office” for Android devices. A management investigation revealed that once installed and granted permissions, the app could allow attackers to access messages, verification codes and the camera, as well as remotely control the device. How to protect yourself? 🔹 Download applications only from the official store on your device by logging into it yourself. 🔹 Do not install applications using links from messages and do not confirm installation from an unknown source. 🔹 Check applications by going to the official website of the Tax Administration yourself. 🔹 Received a suspicious link? Copy it without opening it and check it through the Click-Check service on the national cybersecurity portal: https://portal.cyber.gov.il/clickcheck Already installed? Turn off Wi-Fi and mobile data, and avoid entering passwords or banking on your device. From another uninfected device, change passwords and disconnect devices that you do not recognize from accounts. Deleting the application is not enough. It is recommended to perform a full factory reset and install applications only from official stores, without automatically restoring them from an old backup. 📞 For messages and assistance: call 119 National Cyber ​​Security Authority. ❤4👍2",
+"needs_manual_translation": false,
+"what_to_notice": "What should be alarming is that the link to the application comes in a message and does not lead directly to the official Google Play. The site itself imitates the Google Play store, but is not it. The app uses the name “IRS,” although official government agencies do not distribute their apps through links in messages. Once installed, it asks for permissions to access SMS, verification codes, and the camera, which is unusual for an IRS app. Installation from an unknown source is also suggested.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/447",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 446,
+"date": "2026-11-18",
+"type": "web",
+"title": "Podcast about how technical support led to the creation of cyber weapons",
+"summary": "Israel's National Cyber ​​Security Authority has released a podcast about how remote support technology has become the basis for cyber offensive operations (NSO) and discusses ethical boundaries. This is not a scam warning, but rather educational material.",
+"he_original": "הוא רצה לפתור תקלות בטלפון מרחוק. אנשי מודיעין זיהו בטכנולוגיה שלו פוטנציאל אחר לגמרי.\n\nאיך רעיון לתמיכה טכנית הוביל לפיתוח טכנולוגיה למאבק בטרור ובפשיעה? ואיך מציבים גבולות לשימוש בה, כשאותן יכולות עלולות לשמש גם לפגיעה בפרטיות ובזכויות אדם?\n\nבפרק החדש של ״בלי ירייה אחת״, הפודקאסט של מערך הסייבר הלאומי, שי גל מארח את שלו חוליו, ממייסדי NSO, לשיחה על ההתחלה המפתיעה, על הדרך לסייבר ההתקפי ועל האחריות שמגיעה עם היכולת להיכנס לטלפון של אדם אחר.\n\n🎬 צפו בקטע קצר מהשיחה.\n\n🎧 ״מתמיכה טכנית לנשק סייבר״, חלק א׳.\nלצפייה ולהאזנה בפרק המלא בספוטיפיי:\nhttps://open.spotify.com/episode/5VmZGDCz0BPHBj7mS4gb…",
+"ru_translation": "He wanted to solve phone problems remotely. Intelligence officials saw a completely different potential in his technology. How did the idea of ​​technical support lead to the development of technology to combat terrorism and crime? And how do we set boundaries for its use when the same capabilities can be used to violate privacy and human rights? In a new episode of Without a Shot Fired, the National Cyber ​​Security Administration's podcast, Shai Gal hosts Shalev Julio, one of the founders of NSO, for a conversation about unexpected beginnings, the path to offensive cybersecurity, and the responsibility that comes with being able to log into someone else's phone. 🎬 Watch a short fragment of the conversation. 🎧 “From Tech Support to Cyber ​​Weapons,” Part 1. To watch and listen to the full episode on Spotify: https://open.spotify.com/episode/5VmZGDCz0BPHBj7mS4gby2?si=8lkpS7r7QG63vqHyrrzvpw&utm_source=copy-link 👏4👍2",
+"needs_manual_translation": false,
+"what_to_notice": "The text does not contain calls, links to phishing sites, or requests for data. This is an official post with a link to Spotify. The only thing that can be alarming is that it is not a scam warning, but a podcast. If you were expecting a warning, pay attention to the source: this is the official channel of the Israeli National Cyber ​​Security Authority, and not a scam message.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/446",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 443,
+"date": "2026-11-16",
+"type": "sms",
+"title": "Israeli cybersecurity: Yad2 spoofing via a suspicious app",
+"summary": "Israel's National Cyber ​​Security Authority warns of a fraudulent email posing as Yad2: the message leads to a fake app store site that offers to download and install a suspicious application from an unknown source.",
+"he_original": "⚠️ מערך הסייבר הלאומי מתריע: ניסיון התחזות ליד2 באמצעות אפליקציה חשודה\n\nבמערך הסייבר הלאומי התקבל דיווח על הודעה המתחזה ליד2, ומפנה להורדת אפליקציה לצורך השלמת הזמנה ומשלוח.\n\nהקישור מוביל לאתר מזויף המדמה חנות אפליקציות, כולל דירוגים ומספר הורדות, ומבקש מהמשתמש להוריד קובץ ולאשר התקנה ממקור לא מוכר.\n\nשימו לב: מדובר בניסיון התחזות, והאפליקציה החשודה נמצאת בבדיקה.\n\nאיך מתגוננים?\n\n🔹 מורידים אפליקציות רק מהחנויות הרשמיות, Google Play ו-App Store, ולא מקישורים שמתקבלים בהודעות.\n\n🔹 מתבקשים ״לאפשר התקנה ממקור זה״? לא מאשרים ולא ממשיכים בהתקנה.\n\n🔹 בודקים אילו הרשאות האפליקציה מבקשת והאם הן תואמות א…",
+"ru_translation": "⚠️National Cyber ​​Security Authority Warns: Attempt to impersonate Yad2 using suspicious app The National Cyber ​​Security Authority has received a report of an attempt to impersonate Yad2 through a message that directs people to download an app to complete an order and delivery. The link leads to a fake site that imitates an app store, including ratings and download numbers, and asks the user to download a file and confirm installation from an unknown source. Please note: this is an attempt to impersonate another person, and the suspicious application is under review. How to protect yourself? 🔹 Download applications only from the official Google Play and App Store, and not from links received in messages. 🔹 Are they asking to “allow installation from this source”? Do not allow or continue the installation. 🔹 Check what permissions the application requests and whether they are appropriate for its use. Remember: even a site that looks like an official app store can be fake. Have you received a suspicious message or already installed the application? Report to the National Cyber ​​Security Administration's 119 Center.",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, the following should be on your guard: the message supposedly comes from Yad2 with a requirement to complete the order and delivery - this is a typical social engineering technique that creates urgency. The link does not lead to the official store, but to a fake website that imitates an app store, including fake ratings and download numbers to appear authentic. The user is then asked to download a file and confirm installation from an unknown source - this is a direct sign of malware. It's also worth checking what permissions the app is asking for: if they don't match its function, it's suspicious.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/443",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 444,
+"date": "2026-11-16",
+"type": "sms",
+"title": "Israeli Ministry of Cybersecurity: malicious application disguised as Yad2",
+"summary": "Israel's National Cyber ​​Security Authority is warning of a malicious app that disguises itself as Yad2 and is distributed through messages with a link to a fake app store. Once installed, it requests access to your contacts, camera, and other device data.",
+"he_original": "⚠️ עדכון להתרעת מערך הסייבר הלאומי: אפליקציה זדונית המתחזה ליד2\n\nבהמשך להתרעה שפרסמנו על הודעות המתחזות ליד2 ומפנות להורדת אפליקציה חשודה, הושלמה בדיקת האפליקציה ונמצא כי היא מקבלת גישה לאנשי הקשר, למצלמה ולהרשאות נוספות במכשיר.\n\nנזכיר כי ההודעות מפנות לאתר מזויף המדמה חנות אפליקציות, כולל דירוגים ומספר הורדות, ומבקש מהמשתמש להוריד אפליקציה ולאשר התקנה ממקור לא מוכר.\n\n⚠️ כבר התקנתם את האפליקציה?\nמומלץ לפנות בהקדם למעבדה מקצועית לבדיקת המכשיר ולטיפול בו.\n👍6",
+"ru_translation": "⚠️National Cyber ​​Security Administration Alert Update: Malicious App Impersonating Yad2 As a follow-up to our published alert regarding messages impersonating Yad2 leading to the download of a suspicious app, a review of the app has been completed and it has been found to be accessing contacts, camera, and other permissions on the device. As a reminder, the messages lead to a fake website that imitates an app store, including ratings and download numbers, and asks the user to download the app and confirm installation from an unknown source. ⚠️ Already installed the application? It is recommended to have the device tested and processed by a professional laboratory as soon as possible. 👍6",
+"needs_manual_translation": false,
+"what_to_notice": "What should be alarming is that the message supposedly from Yad2 does not lead to the official application store, but to a fake website that imitates a store with ratings and a download counter - this creates a false impression of legitimacy. Next, the user is asked to confirm installation from an unknown source, which bypasses standard protections. After installation, the application itself requests access to contacts and camera, which is not required for the ad service.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/444",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 442,
+"date": "2026-11-11",
+"type": "sms",
+"title": "Israel: half of residents suffered from cyber threats in a year - check the links",
+"summary": "Israel's National Cybersecurity Authority reports that half of Israelis suffered a cyber attack in a year and introduces a new service called Click Check to check suspicious links without opening them. The survey showed that the majority are aware of threats, but only a third know how to check links and only 10% report suspicious messages.",
+"he_original": "⚠️ מחצית מהישראלים נפגעו ברשת בשנה האחרונה. אבל עד כמה אנחנו באמת יודעים להתגונן?\n\nלרגל שבוע הגנת הסייבר הלאומי, מפרסם מערך הסייבר הלאומי את סקר החוסן והמודעות הציבורית לאיומי הסייבר, שחושף פער מדאיג: 98% מהישראלים מודעים לאיומי סייבר, אבל רק כשליש מרגישים שיש להם מספיק ידע כדי להתמודד איתם.\n\n📊 הנה כמה מהנתונים המרכזיים:\n\n📱 67% קיבלו מסרון חשוד בחודש האחרון.\n\n🔗 רק 31% בודקים קישורים חשודים, ו־37% כלל לא יודעים כיצד והיכן לבדוק אותם.\n\n🚨 רק 10% מדווחים לרשויות על הודעות חשודות.\n\n🔐 ויש גם נתון מעודד: 61% הפעילו אימות דו־שלבי, לעומת 52% בשנת 2025.\n\nהמסקנה ברורה: מודעות לאיומים היא חשובה, אבל צר…",
+"ru_translation": "⚠️ Half of Israelis have been harmed online over the past year. But how good are we really at defending ourselves? In conjunction with National Cyber ​​Defense Week, the National Cyber ​​Security Authority is releasing a survey on resilience and public awareness of cybersecurity threats that reveals an alarming gap: 98% of Israelis are aware of cybersecurity threats, but only a third feel they have enough knowledge to counter them. 📊 Here are some of the key data points: 📱 67% have received a suspicious SMS in the last month. 🔗 Only 31% check suspicious links, and 37% do not know how and where to check them. 🚨 Only 10% report suspicious messages to authorities. 🔐 And there is also an encouraging indicator: 61% have activated two-factor authentication, compared to 52% in 2025. The message is clear: threat awareness is important, but you also need to know how to protect yourself. This is why we launched Click Check this week, a new service on the national cyber portal that allows you to check suspicious links without opening them. If the link is detected as malicious, it is also sent to the National Cyber ​​Security Authority for processing. 🛡️ Received a suspicious link? Check before you click! 🔗 https://portal.cyber.gov.il/clickcheck The survey was conducted in October 2026 among 507 Internet users aged 18 years and older by Geocartography for the National Cyber ​​Security Directorate.",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, we are not talking about a specific fraudulent message, but about an official warning. Any suspicious SMS or link received in the messenger should alert you: an unknown sender, a call to urgently follow a link, a promise of benefits or a threat of blocking. A sign of a fake may be a discrepancy between the website address and the official cyber.gov.il domain, the presence of errors in the text, or a requirement to enter personal data or bank card details. Fraudsters often disguise links as official services, so you should check the URL before clicking, or better yet, use the “Click Check” service on the portal cyber.gov.il/clickcheck, which allows you to check the link without opening it.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/442",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 438,
+"date": "2026-11-10",
+"type": "web",
+"title": "Israel's National Cyber ​​Authority offers free security tools for businesses",
+"summary": "Israel's National Cyber ​​Security Authority announces the launch of free targeted alerts and protection tools for businesses on its official portal. Business owners are encouraged to visit the website and explore the opportunities.",
+"he_original": "בעלי עסקים, אל תחכו למתקפת סייבר כדי להתחיל להתגונן 🛡️\n\nחדש ממערך הסייבר הלאומי: התרעות סייבר ממוקדות לעסק שלכם, לצד כלים ושירותים שיעזרו לכם לחזק את ההגנה עליו. הכול בפורטל הסייבר הלאומי, ללא תשלום.\n\nהיכנסו וגלו איך הפורטל יכול לעזור להגן על העסק שלכם 👇\nportal.cyber.gov.il\n🤡4",
+"ru_translation": "Business owners, don't wait for a cyber attack to start protecting yourself 🛡️ New from the National Cyber ​​Authority: targeted cyber alerts for your business, plus tools and services to help you strengthen your defenses. Everything is on the National Cyber ​​Portal, free of charge. Visit and find out how the portal can help protect your business 👇 portal.cyber.gov.il 🤡4",
+"needs_manual_translation": false,
+"what_to_notice": "This is an official post from a government agency and not a fraudulent message. However, attackers can fake such advertisements, so it is important to check: the link leads to the official cyber.gov.il domain (and not to a similar one, for example cyber-gov-il.com or with typos); the message does not require entering personal data, passwords or payment; There are no calls to follow third-party links or download attachments. If a similar text arrives in instant messenger or social networks from an unknown sender with a changed link, this is a sign of phishing.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/438",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 439,
+"date": "2026-11-10",
+"type": "web",
+"title": "Iran is developing AI for cyberattacks, Israel's National Cyber ​​Security Authority warns",
+"summary": "The head of Israel's National Cyber ​​Security Authority, Yossi Karadi, has warned that Iran is trying to use artificial intelligence for cyber attacks. He also noted the strategic threat of “war of attrition,” where attacks accumulate faster than organizations can recover.",
+"he_original": "״איראן מנסה להשיג יכולות בינה מלאכותית לביצוע מתקפות סייבר״\n\nראש מערך הסייבר הלאומי, יוסי כראדי, התריע היום בכנס שבוע הסייבר באוניברסיטת תל אביב מפני מאמציה של איראן לפתח יכולות התקפיות בסייבר באמצעות בינה מלאכותית, שעלולות לפגוע בעולם.\n\nכראדי הדגיש את הפער בין התוקפים למגנים: לתוקף מספיקים מודל אחד, יעד אחד ובחירת מועד הפעולה. המגנים נדרשים להגן על ארגונים רבים במקביל, מסביב לשעון ומול מגוון רחב של איומים.\n\nבנאומו הציג את ״מלחמת ההתשה החדשה בסייבר״: האיום האסטרטגי טמון גם בהצטברות של מתקפות לאורך זמן. כאשר קצב התקיפות עולה על קצב ההתאוששות, גם אירועים נקודתיים עלולים להצטבר לפגיעה מערכתית …",
+"ru_translation": "“Iran is trying to gain artificial intelligence capabilities to carry out cyberattacks.” The head of the National Cyber ​​Security Authority, Yossi Karadi, warned at a Cyber ​​Security Week conference at Tel Aviv University today about Iran's attempts to develop offensive cyber capabilities using artificial intelligence that could wreak havoc on the world. Karadi emphasized the gap between attackers and defenders: the attacker only needs one model, one target and timing. Defenders must protect multiple organizations simultaneously, around the clock, and against a wide range of threats. In his speech, he introduced a “new war of attrition in cyberspace”: the strategic threat also lies in the accumulation of attacks over time. When the pace of attacks exceeds the pace of recovery, even isolated incidents can accumulate into widespread systemic damage. “In the age of artificial intelligence, the race is no longer just about who attacks and who defends better, but about who acts faster.” Finally, he invited Roberta, a humanoid robot, onto the stage and asked a question linking cyber defense to security in the physical world: “When a machine operates in the physical world, are we still in control?” Photo: Dror Sitahel-Kal",
+"needs_manual_translation": false,
+"what_to_notice": "This is a legal warning and not a scam message. What should be alarming is not the message itself, but possible fakes of it: attackers may refer to the “National Cyber ​​Security Administration warning” in phishing emails or calls, demanding urgent action (follow the link, provide data, install “protective” software). Signs of a fake: an unofficial communication channel (messenger, social network), a requirement for an immediate response, links to third-party resources, a request for personal information or credentials, errors in design, lack of signature and department contacts. These warnings are published on the official websites of government agencies and do not require citizens to take immediate action following the links.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/439",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 441,
+"date": "2026-11-10",
+"type": "web",
+"title": "Cyber ​​threat: robots in the physical world are under threat of capture",
+"summary": "Israel's National Cybersecurity Authority warns that as robots penetrate the physical world, cyberattacks could lead to real-life physical dangers. The question is about maintaining control over the machines.",
+"he_original": "רוברטה גנבה את ההצגה. אבל מה קורה כשמישהו משתלט על רוברטה? 🤖\n\nראש מערך הסייבר הלאומי, יוסי כראדי, אירח רובוטית על במת שבוע הסייבר והעלה שאלה: ״כשמכונה פועלת בעולם הפיזי, האם אנחנו עדיין בשליטה?״\n\nכי כשהרובוטים יוצאים מהמסך ונכנסים לחיים שלנו, גם מתקפת סייבר יכולה להפוך לסכנה פיזית.\n\nצפו במפגש:\n👌3👍1🤔1",
+"ru_translation": "Roberta stole the show. But what happens when someone captures Roberta? 🤖 The head of the National Cyber ​​Security Directorate, Yossi Karadi, invited the robot to the stage of Cyber ​​Security Week and asked the question: “When a machine operates in the physical world, do we remain under control?” After all, when robots leave the screen and enter our lives, a cyber attack can also become a physical threat. Watch the meeting: 👌3👍1🤔1",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, this is not a typical scam, but an official warning. The appearance of robots in physical space without proper cyber protection should be alarming: if the device is connected to the network and controlled remotely, an attacker can seize control. Signs of vulnerability: lack of security updates, weak passwords, open management ports. It's also worth being critical of videos of robots that may show hacking - this is a demonstration of risk, not a call to action.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/441",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 432,
+"date": "2026-11-09",
+"type": "web",
+"title": "Israel's National Cybersecurity imitated hacking of screens in Tel Aviv",
+"summary": "Israel's National Cyber ​​Security Authority, as part of the opening of National Cyber ​​Defense Week, simulated a hacker takeover of digital screens in Tel Aviv to show how easily a cyber attack can become part of everyday life. The agency reminds that protection from cyber threats is in the hands of the people themselves, and encourages people to visit the national cyber portal.",
+"he_original": "🚨 ראיתם הבוקר את הכיתוב “HACKED” על המסכים והשלטים הדיגיטליים בתל אביב?\n\nאז לא, זו לא הייתה מתקפת סייבר אמיתית. זה היינו אנחנו 😉\n\nלרגל פתיחת שבוע הגנת הסייבר הלאומי, דימינו השתלטות של האקרים על מסכים ברחבי העיר, כדי להמחיש כמה בקלות מתקפת סייבר יכולה להפוך לחלק משגרת היום שלנו.\n\nכי אם יש משהו שחשוב לזכור, זה שאיומי הסייבר נמצאים בכל מקום, אבל גם ההגנה מפניהם נמצאת בידיים שלנו. 🛡️\n\nרוצים לדעת איך להגן על עצמכם? היכנסו לפורטל הסייבר הלאומי 👇\n\nhttps://portal.cyber.gov.il/\n\nשבוע הגנת הסייבר הלאומי | הגנה בכף היד\n👏18👎8👍2🤷‍♀1",
+"ru_translation": "🚨 Did you see \"HACKED\" on screens and digital signage in Tel Aviv this morning? Now, no, this was not a real cyber attack. That was us 😉 To kick off National Cyber ​​Defense Week, we simulated hackers taking over screens across the city to show how easily a cyber attack can become part of our daily lives. Because if there's one thing that's important to remember, it's that cyber threats are everywhere, but protecting against them is also in our hands. 🛡️ Want to know how to protect yourself? Visit the National Cyber ​​Portal 👇 https://portal.cyber.gov.il/ National Cyber ​​Defense Week | Protection in the palm of your hand 👏18👎8👍2🤷‍♀1",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, it is important to understand: the inscription “HACKED” on the screens was an official imitation, and not a real attack. It is not the message itself that should be alarming, but the context: if you see something like this on the street, you should not panic or click on unknown links that may appear in connection with such an event. Official bodies (for example, the National Cyber ​​Security Directorate) publish clarifications on their official resources, such as portal.cyber.gov.il. Signs of deception may include a request for urgent action, clicking on suspicious links, or requesting personal information on behalf of the department. In this post, the link leads to the official state portal, which confirms its authenticity.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/432",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 433,
+"date": "2026-11-09",
+"type": "web",
+"title": "Israelis warned: voting for 'dancer' is stealing your WhatsApp",
+"summary": "Fraudsters are sending requests to vote for a “talented ballerina” using a link that requires you to link your WhatsApp account. This gives attackers access to correspondence and allows them to send messages on your behalf.",
+"he_original": "⚠️ מבקשים מכם להצביע לרקדנית? אל תתנו גישה לוואטסאפ שלכם\n\nבמערך הסייבר הלאומי התקבלו דיווחים רבים על הודעות המבקשות להצביע ל״רקדנית הבלט המוכשרת ביותר״, באמצעות קישור לאתר שמבקש לחבר את חשבון הוואטסאפ.\n\nזו מלכודת: חיבור החשבון עלול לאפשר לתוקפים גישה אליו והפצת הודעות בשמכם. גם הודעה מאדם מוכר עלולה להיות זדונית.\n\nאיך מתגוננים?\n\n🔹 לא מחברים את חשבון הוואטסאפ לצורך הצבעה ולא מזינים קודי אימות או סורקים קוד QR.\n\n🔹 מוודאים עם השולח בשיחה נפרדת שההודעה אכן נשלחה על ידו.\n\n🔹 קיבלתם קישור חשוד? בדקו אותו בשירות קליק צ׳ק:\nhttps://portal.cyber.gov.il/clickcheck\n\nכבר חיברתם את החשבון? היכנסו ל״מכשירי…",
+"ru_translation": "⚠️ Are you being asked to vote for a dancer? Do not give access to your WhatsApp The National Cyber ​​Security Directorate has received many messages asking you to vote for the “most talented ballerina” via a link to a site that requires you to connect your WhatsApp account. This is a trap: connecting your account can give attackers access to it and send messages on your behalf. Even a message from someone you know can be malicious. How to protect yourself? 🔹 Do not connect your WhatsApp account to vote, do not enter verification codes or scan the QR code. 🔹 Confirm with the sender in a separate conversation that the message was actually sent by him. 🔹 Received a suspicious link? Check it through the ClickCheck service: https://portal.cyber.gov.il/clickcheck Have you already connected your account? Go to \"Linked Devices\", turn off unfamiliar devices and alert your contacts. For reporting and assistance: 119, National Cyber ​​Security Administration.",
+"needs_manual_translation": false,
+"what_to_notice": "You should be wary of: 1) please connect WhatsApp (enter the code or scan the QR code) in order to vote - legitimate competitions do not work like that; 2) the link leads to a third-party site, and not to the official service; 3) the message may come from a familiar contact - the account could be compromised, so you need to double-check in another communication channel; 4) emotional bait - “the most talented ballerina” to reduce vigilance.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/433",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 435,
+"date": "2026-11-09",
+"type": "sms",
+"title": "Check suspicious links via Click-Check on the Israeli Cybersecurity Portal",
+"summary": "Israel's National Cyber ​​Security Authority urges you to check suspicious links through the official Click-Check service on portal.cyber.gov.il before clicking on them. The reason could be messages about packages, demands for payment, or other suspicious notifications.",
+"he_original": "לא צריך להיות חיים אתגר כדי לבדוק קישור חשוד 🔎\n\nהודעה על חבילה? בקשה לתשלום? משהו מרגיש קצת פישי?\nלפני שלוחצים, בודקים עם קליק צ׳ק בפורטל הסייבר הלאומי.\n\nלבדיקת קישור 👇\nportal.cyber.gov.il/\n\nפורטל הסייבר הלאומי. הגנה בכף היד.\n👍5❤1",
+"ru_translation": "You don't need to be a superhero to check a suspicious link 🔎 Message about a package? Request for payment? Does anything seem a little fishy? Before clicking, check using “Click Check” on the National Cyber ​​Portal. To check the link 👇 portal.cyber.gov.il/ National cyber portal. Palm protection. 👍5❤1",
+"needs_manual_translation": false,
+"what_to_notice": "This post warns about typical phishing lures: a package notification, a request for payment, a feeling of “something is wrong.” Signs of a fake: an unexpected message with a link, a demand to urgently pay or receive a parcel, an unfamiliar sender. Fraudsters expect people to click on the link without checking. The official domain for verification is portal.cyber.gov.il; Any other addresses that look like government addresses, but with typos or different domains, should raise red flags.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/435",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 436,
+"date": "2026-11-09",
+"type": "web",
+"title": "National Security Service of Israel: fewer passwords and copies of documents - protection against leaks and fraud",
+"summary": "Israel's National Cybersecurity Authority has presented a draft digital identity strategy: a single sign-on system for public and private services and a national digital wallet for documents. The goal is to reduce the transfer of ID copies and reduce the risk of leaks, counterfeiting and fraud.",
+"he_original": "פחות סיסמאות, פחות צילומי תעודות זהות. יותר נוחות והגנה על המידע האישי. 🔐\n\nבמסגרת שבוע הגנת הסייבר הלאומי, אנו מציגים את טיוטת האסטרטגיה הלאומית להזדהות דיגיטלית, ובמרכזה שני מהלכים:\n\n🔹 הזדהות אחת לשירותים ממשלתיים ופרטיים: הרחבה הדרגתית של מערכת ההזדהות הלאומית לשירותי בנקאות, ביטוח ובריאות, לצמצום הצורך בתהליכי זיהוי נפרדים ובשליחת צילומי תעודות זהות.\n\n🔹 ארנק דיגיטלי לאומי: תעודות, רישיונות ואישורים רשמיים במקום אחד בטלפון, להצגה ולשיתוף מאובטח, גם בקבלת שירות פנים אל פנים.\n\nלצד צמצום הבירוקרטיה, המהלך נועד להפחית את החשיפה לדליפות מידע, להתחזויות ולהונאות באמצעות צמצום העברת צילומי מסמכי…",
+"ru_translation": "Fewer passwords, fewer ID photos. More convenience and protection of personal information. 🔐 As part of National Cyber ​​Defense Week, we are presenting a draft national digital identity strategy centered on two steps: 🔹 Unified identity for public and private services: Gradually expanding the national identity system to banking, insurance and healthcare services to reduce the need for separate identification processes and submitting photo IDs. 🔹 National digital wallet: IDs, licenses and official certificates in one place on your phone, for secure presentation and exchange, including when receiving services face-to-face. Along with cutting bureaucracy, the move aims to reduce exposure to information leaks, forgery and fraud by reducing the transfer of photographs of documents and their storage in multiple databases. Privacy is part of the plan: accounts at private organizations will remain separate, and the government will not have access to user activity on them. The system will only be used to verify identity. The strategy was developed jointly with the National Digital Authority, the Population and Immigration Authority, the Budget Division and the Accountant General of the Ministry of Finance and the Bank of Israel. 📣 We invite you to influence: the project is published on the website of the National Cyber ​​Directorate and is open for public feedback until November 30, 2026. 👍7❤4",
+"needs_manual_translation": false,
+"what_to_notice": "This is an official information post and not a warning about a specific attack. It’s not the message itself that should be alarming, but any fakes: if a link is sent on behalf of National Cybersecurity with a request to urgently download a “national digital wallet” and enter your ID details or passwords, this is phishing. This project is open for feedback on the official website until November 30, 2026, and the transition should only be through the official gov.il domain. Signs of deception: pressure of urgency, a request to send a photo of a document or confirmation codes, a mismatched sender address or links.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/436",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 437,
+"date": "2026-11-09",
+"type": "sms",
+"title": "Israel's National Cyber ​​Security Authority warns of fake WhatsApp message",
+"summary": "Israel's National Cyber ​​Security Authority warns of a false message spreading on WhatsApp that could cause panic. It is not a formal warning and should not be forwarded.",
+"he_original": "⚠️ מערך הסייבר הלאומי מתריע: הודעת כזב מופצת בוואטסאפ. אל תפיצו הלאה&amp;#33;\n\nההודעה המצורפת מופצת בימים אלה ומציגה מידע כוזב שעלול לעורר בהלה מיותרת. נדגיש כי לא מדובר בהתרעה רשמית.\n\n🔹 בודקים מידע בערוצים הרשמיים של פיקוד העורף ומערך הסייבר הלאומי.\n🔹 מעדכנים אפליקציות רק בחנויות הרשמיות, ולא דרך קישורים בהודעות.\n🔹 כבר שיתפתם? שלחו באותה קבוצה גם את ההבהרה.\n\nזכרו: גם הודעה שהועברה פעמים רבות אינה בהכרח אמינה.\n\nלדיווח על הודעות מתחזות וקישורים חשודים: 119, מערך הסייבר הלאומי.\n🔥1",
+"ru_translation": "⚠️ National Cyber ​​Security Authority warns: False message is spreading on WhatsApp. Don't forward it further! The attached message is being circulated these days and contains false information that may cause unnecessary panic. We emphasize that this is not an official warning. 🔹 Check the information in the official channels of the Home Front Command and the National Cyber ​​Security Directorate. 🔹 Update applications only in official stores, and not through links in messages. 🔹Have you already shared? Send this clarification to the same group. Remember: even a message forwarded many times is not necessarily reliable. To report fake messages and suspicious links: 119, National Cyber ​​Security Administration.",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, what should be alarming is that the message comes through WhatsApp (messenger), and not through the official channels of the Home Front Command or the National Cyber ​​Security Directorate. It contains information that may cause panic, but has no official confirmation. Also a sign of a fake is a call to spread the message further, which is typical for viral fakes. Officials never ask for warnings to be sent via instant messengers.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/437",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 431,
+"date": "2026-11-08",
+"type": "web",
+"title": "National cyber security of Israel: HACKED inscription on billboards - a famous incident",
+"summary": "Israel's National Cyber ​​Security Authority confirmed that it was aware of the appearance of HACKED on billboards and promised to provide details later. The department thanked citizens for their vigilance.",
+"he_original": "גם אתם נתקלתם בכיתוב HACKED בשלטי החוצות?\nתודה על הערנות&amp;#33;\nהנושא מוכר לנו. פרטים נוספים יימסרו בהקדם 😉\n😁12🔥4👍1🙏1",
+"ru_translation": "Have you also encountered the words HACKED on billboards? Thanks for your vigilance! We are familiar with this topic. More details will be provided soon 😉",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, it is not the department’s message itself that should be alarming, but the situation with the billboards: the inscription HACKED on street billboards may be a sign of hacking of outdoor advertising management systems. Do not attempt to interact with such screens on your own, do not draw conclusions from one word without context, and follow the official explanations of the National Cyber ​​Security Administration - only they will provide reliable information about the cause and scope of the incident.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/431",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 428,
+"date": "2026-11-04",
+"type": "web",
+"title": "Fake podcast about Israeli cybersecurity",
+"summary": "Israel's National Cyber ​​Security Authority announces a Cyber ​​Week podcast and conference, but the message is being shared via a suspicious link and could be a phishing scam.",
+"he_original": "שנים של פיתוח. רגע אחד של החלטה. ואולי לא תהיה הזדמנות שנייה.\n\nלקראת כנס Cyber Week בשבוע הבא, שי גל מארח את מייסד הכנס, אלוף (במיל׳) פרופ׳ יצחק בן ישראל, בפרק השלישי של ״בלי ירייה אחת״, הפודקאסט של מערך הסייבר הלאומי.\n\nשיחה על רעיון שנשמע פעם כמו מדע בדיוני: לחדור למחשבי האויב לא רק כדי לאסוף מידע, אלא כדי לשבש את פעולתו מבפנים.\n\nאיך בונים יכולת כזו, מתי מחליטים להפעיל אותה, ואיך מגנים על המדינה ותשתיותיה בעולם שהופך יותר ויותר דיגיטלי?\n\nהכנס יתקיים באוניברסיטת תל אביב בשותפות המערך ובהשתתפות ראש המערך, תא״ל (במיל׳) יוסי כראדי, ורבים מנשות ואנשי המערך.\n\nעד שניפגש בכנס, קבלו הצצה לפרק 🎬\n🎧 ״…",
+"ru_translation": "Years of development. One moment of decision. And perhaps there won't be a second chance. Ahead of next week's Cyber ​​Week conference, Shai Gal is hosting the conference's founder, Maj. Gen. (ret.) Prof. Yitzhak Ben-Israel, in the third episode of the National Cyber ​​Security Administration's Without a Shot Podcast. Talk about an idea that once sounded like science fiction: infiltrating enemy computers not only to gather information, but also to disrupt their operation from the inside. How do they create such an opportunity, when they decide to use it, and how do they protect the state and its infrastructure in a world that is becoming increasingly digital? The conference will take place at Tel Aviv University in partnership with the Office and with the participation of the head of the Office, Brigadier General (ret.) Yossi Karadi, and many members of the Office's staff. See you at the conference, get a taste of the episode 🎬 🎧 “The Weapon You Can't Use Twice” To watch and listen to the full episode on Spotify: https://open.spotify.com/episode/5LwLRBYJvM1ZPJL5wQkW38?si=JGQsN0FbRbKy8w6VlInRdg&utm_source=copy-link 👍2❤1👎1🙏1",
+"needs_manual_translation": false,
+"what_to_notice": "The link leads to Spotify with tracking parameters (utm_source=copy-link), which is typical for bulk emails. Mentioning high-ranking officials (Prof. Ben-Israel, General Karadi) creates trust. Emojis and the “get the idea” message can encourage conversion. Official National Cyber ​​Security Administration accounts typically do not use such links in posts. Reactions (👍2❤1👎1🙏1) look like an artificial boost.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/428",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 430,
+"date": "2026-11-04",
+"type": "web",
+"title": "Israel's National Cyber ​​Security Authority has launched a portal with free security tools",
+"summary": "Israel's National Cyber ​​Security Authority has unveiled an official portal with free tools for checking suspicious links, learning to recognize phishing, and assessing the level of protection. The portal is available at portal.cyber.gov.il.",
+"he_original": "🛡️ הגנת הסייבר שלכם, עכשיו בכף היד&amp;#33;\n\nקיבלתם קישור חשוד? רוצים לדעת עד כמה אתם מוגנים ברשת? מעכשיו יש מקום אחד שבו תוכלו לבדוק, ללמוד ולהתגונן.\n\nמערך הסייבר הלאומי משיק את פורטל הסייבר הלאומי, עם מגוון כלים ושירותים חינמיים לאזרחים, לעסקים ולארגונים.\n\n📊 למה זה חשוב? בשנה האחרונה זוהתה עלייה של כ-145% במתקפות פישינג, ומתחילת 2026 התקבלו במערך יותר מ-26 אלף דיווחים על חשדות למתקפות סייבר.\n\nמה מחכה לכם בפורטל?\n\n🔗 קליק צ’ק: בודקים קישורים חשודים בלי לפתוח אותם, ומקבלים הערכה לגבי מידת מהימנותם.\n\n🎮 זהה את המתחזה: משחק אינטראקטיבי לזיהוי הודעות פישינג.\n\n🔐 בדיקת רמת ההגנה: מגלים עד כמה אתם מוגנ…",
+"ru_translation": "🛡️ Your cyber protection is now in the palm of your hand! Received a suspicious link? Want to know how secure you are online? From now on, there is one place where you can test, learn and protect yourself. The National Cyber ​​Security Authority is launching a National Cyber ​​Portal with a variety of free tools and services for citizens, businesses and organizations. 📊 Why is this important? Over the past year, an increase of approximately 145% in phishing attacks has been detected, and since the beginning of 2026, the department has received more than 26 thousand reports of suspected cyber attacks. What awaits you on the portal? 🔗 Click-check: check suspicious links without opening them and get an assessment of their reliability. 🎮 Recognize the impostor: an interactive game to identify phishing messages. 🔐 Check your protection level: find out how protected you are and what needs to be improved. 🚨 Cyber ​​Alerts: Stay up to date with threats and protection recommendations. 🏢 For businesses and organizations: security checks, professional tools and targeted alerts. Everything is in one place, free and for everyone. We invite you to come in, try it and start protecting yourself. 👉 National cyber portal: https://portal.cyber.gov.il 👍3",
+"needs_manual_translation": false,
+"what_to_notice": "This is an official post from a government agency and not a fraudulent message. However, attackers can fake such announcements: in this case, the portal.cyber.gov.il domain belongs to the Israeli government (gov.il), which confirms the authenticity. Signs of counterfeit in possible copies: a similar but not exact domain (for example, cyber.gov.il.portal.com or portal-cyber-gov.il), calls to follow shortened links, requests for personal information or payment. This portal is free and does not require you to enter sensitive information for basic checks.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/430",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 426,
+"date": "2026-11-01",
+"type": "call",
+"title": "Israeli National Cyber ​​Authority: automated calls on behalf of Google",
+"summary": "Israel's National Cyber ​​Security Authority is warning about fraudulent robocalls in English that are posing as Google's account hack warnings and require urgent action. The agency urges you not to follow the call instructions, but to check your account yourself and report such cases to 119.",
+"he_original": "⚠️ מערך הסייבר הלאומי מתריע: שיחות אוטומטיות המתחזות לגוגל\n\nבמערך הסייבר הלאומי מתקבלים דיווחים על שיחות באנגלית המתחזות להתרעת אבטחה של גוגל. בהודעה נטען שמספר הטלפון בחשבון השתנה ושהפעילות מקורה בטהראן, איראן.\n\nאל תתנו להודעה המלחיצה לגרום לכם לפעול ללא בדיקה. עצם קבלת השיחה אינה הוכחה שהחשבון נפרץ.\n\n🔹 לא מקישים על מספרים ולא ממשיכים בשיחה החשודה. מנתקים.\n🔹 לא מוסרים סיסמאות וקודי אימות ולא מאשרים פעולות שלא יזמתם.\n🔹 בודקים את החשבון באופן עצמאי באפליקציה או באתר הרשמי של גוגל, ולא באמצעות קישור או מספר שנמסרו בפנייה.\n\nקיבלתם שיחה כזו או שכבר מסרתם פרטים? פנו למוקד 119 של מערך הסייבר הלאו…",
+"ru_translation": "⚠️ National Cyber ​​Security Administration Warns: Robocalls Impersonating Google The National Cyber ​​Security Administration is receiving reports of calls in English posing as Google security alerts. The message claims that the phone number on the account has been changed and the activity is coming from Tehran, Iran. Don't let a warning message cause you to act without checking. The mere fact of receiving a call is not proof that the account has been hacked. 🔹 Do not click on the numbers and do not continue the suspicious conversation. Hang up. 🔹 Do not share passwords or verification codes or confirm actions that you did not initiate. 🔹 Check your account yourself in the application or on the official Google website, and not using the link or number provided in the appeal. Have you received such a call or have you already provided information? Contact the National Cyber ​​Security Administration's 119 Center for reporting and consultation. 👍8❤3😨1",
+"needs_manual_translation": false,
+"what_to_notice": "You should be wary of: a call in English with an automatic voice, which appears to be the Google security service; the statement about changing the phone number in the account and activity from Tehran (Iran) - this creates a false sense of urgency and threat; please press numbers or continue the conversation; requesting passwords or verification codes; an offer to follow a link or call the number specified in the message itself. Genuine Google does not call with such warnings or ask for passwords or codes. The mere fact of a call does not mean a hack.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/426",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 427,
+"date": "2026-11-01",
+"type": "web",
+"title": "Israel warns: Fraudsters use AI to spoof online stores",
+"summary": "Israel's National Cyber ​​Security Authority warns that fraudsters are using AI to create convincing fake online stores. Citizens are urged to check sellers, not to provide card details and confirmation codes, and to check delivery status only on official websites.",
+"he_original": "🛒 המחיר יורד? אל תורידו את ההגנות\n\nחודש הקניות כבר כאן. הבינה המלאכותית יכולה לעזור למצוא מבצעים, אבל גם להפוך אתרי קניות מתחזים למשכנעים יותר. אז לפני שממלאים את העגלה, עוצרים לבדיקה:\n🔹 בודקים איפה קונים. נכנסים ישירות לאתר או לאפליקציה הרשמית ובודקים מי עומד מאחורי החנות. מחיר נמוך באופן חריג ולחץ לשלם מיד? סיבה לעצור.\n\n🔹 נעזרים ב־AI, אבל לא סומכים בעיניים עצומות. מאמתים את החנות והמחיר, ולא משתפים בצ׳אט פרטי אשראי, סיסמאות או קודי אימות.\n\n🔹 מגנים על התשלום. לא מוסרים קוד אימות לאיש ומפעילים התראות על חיובים.\n\n🔹 מחכים לחבילה? בודקים את מצב המשלוח באתר הרשמי של חברת המשלוחים, ולא דרך קישור…",
+"ru_translation": "🛒 Is the price going down? Don't turn off your protection Shopping Month is here. Artificial intelligence can help you find discounts, but it can also make fake shopping sites more convincing. Therefore, before filling your cart, stop to check: 🔹 We check where we buy. We go directly to the official website or app and check who is behind the store. Unusually low price and pressure to pay immediately? Reason to stop. 🔹 We use AI, but we don’t trust blindly. We check the store and price, and do not share credit card information, passwords or verification codes in the chat. 🔹 We protect the payment. We do not share the confirmation code with anyone and enable notifications about charges. 🔹 Are you waiting for the package? We check the delivery status on the official website of the delivery company, and not via the link in the received message. Additional recommendations from the National Cybersecurity Directorate for safe online shopping, including in the era of artificial intelligence 👇 https://www.gov.il/he/pages/shop011126 ❤2",
+"needs_manual_translation": false,
+"what_to_notice": "You should be wary of: unusually low prices and pressure to pay immediately; going to the store’s website via a link from a message or advertisement, and not directly; lack of information about the store owner; please provide your credit card details, password or confirmation code in the chat; notification of a parcel with a link that does not lead to the official website of the delivery company. Scammers use AI to make fake sites look believable, so you can't rely on visual impressions alone.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/427",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 425,
+"date": "2026-10-28",
+"type": "web",
+"title": "Israel's National Cyber ​​Authority: Protecting Election Systems, Not Warning About Fraud",
+"summary": "This is an official post from Israel's National Cyber ​​Security Authority about protecting election-related systems and preparing for Election Day. The text does not warn about a specific scam or attack.",
+"he_original": "מגנים בסייבר על החגיגה הדמוקרטית 🇮🇱\n\nאחרי חודשים של היערכות ועבודה מאומצת, מערך הסייבר הלאומי ושותפיו פועלים יחד להגנה על המערכות הקשורות לתהליך הבחירות, כדי לסייע בשמירה על מהלכו התקין.\n\nראש מערך הסייבר הלאומי, תא״ל (במיל׳) יוסי כראדי, היום מחמ״ל המערך בכנסת, על ההיערכות ועל המאמץ המשותף ביום הבחירות. צפו :\n👍9❤4😈2😇1",
+"ru_translation": "Protecting the Democratic Celebration in Cyberspace 🇮🇱 After months of preparation and hard work, the National Cyber ​​Security Administration and its partners are working together to protect systems associated with the election process to help maintain its normal course. The head of the National Cyber ​​Security Directorate, Brigadier General of the Reserve Yossi Karadi, today at the situational control center in the Knesset - about preparations and joint efforts on election day. See: 👍9❤4😈2😇1",
+"needs_manual_translation": false,
+"what_to_notice": "This post does not contain any requests, links, attachments or requests for personal information - this is an official informational message. What should be alarming is not the content of the post, but fakes of it: if a similar text comes in messenger or social networks from an unknown account, containing a call to follow a link, “check voter status,” enter bank card details, or send a code from an SMS, this is already phishing. Signs of a fake: a mismatch between the sender's name and the official account, shortened or strange links, errors in Hebrew or Russian, demands for urgency, promises of payments or fines, as well as emoji reactions copied from the original post for disguise.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/425",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 424,
+"date": "2026-10-19",
+"type": "web",
+"title": "Israel launches Operation Election Shield to protect digital systems",
+"summary": "Israel's National Cybersecurity Authority and the Central Election Commission have announced Operation Election Shield to protect digital systems serving elections. Citizens are advised to check information only on official websites, beware of disturbing links and report hacked sites to the 119 center.",
+"he_original": "🛡️ מגינים על הבחירות: יוצאים למבצע ״מגן הבחירות״\n\nמערך הסייבר הלאומי וועדת הבחירות המרכזית הכריזו על מבצע להגנת המערכות הדיגיטליות התומכות בתהליך הבחירות. ההכרזה באה בתום פגישה של ראש המערך, יוסי כראדי, עם יו״ר ועדת הבחירות המרכזית, השופט נעם סולברג, ועם מ״מ מנכ״ל הוועדה, עו״ד דין ליבנה.\n\nההצבעה בישראל נעשית בפתקי נייר. המבצע נועד להגן על המערכות שמאחורי התהליך, וכולל חיזוק ההגנה, ניטור מוגבר ואיתור מוקדם של איומים. ביום הבחירות יפעל מרכז מצב סייבר ייעודי למענה מהיר לאירועים חריגים.\n\nהמלצות לציבור:\n\n* בדקו מידע על הבחירות ישירות באתרים הרשמיים.\n* היזהרו מקישורים בהודעות שמנסות להלחיץ או לזר…",
+"ru_translation": "🛡️ Protecting elections: launching Operation Election Shield The National Cybersecurity Directorate and the Central Election Commission announced an operation to protect digital systems supporting the electoral process. The announcement was made following a meeting between the head of the Office, Yossi Karadi, and the Chairman of the Central Election Commission, Judge Noam Solberg, and the acting. the commission's general director, lawyer Dean Livne. Voting in Israel is carried out using paper ballots. The operation is designed to protect the systems behind the process and includes hardening, enhanced monitoring and early detection of threats. On Election Day, a special cyber situation center will operate to quickly respond to abnormal incidents. Recommendations for the public: * Check election information directly on official websites. * Beware of links in posts that try to scare or push you. * Check unusual messages before sharing them. * Have you encountered a hacked website? Close your browser and report to the National Cyber ​​Security Administration's 119 Center. Photo: Meir Amzaleg, for the press. 👍12",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, the warning comes from an official source and concerns election cybersecurity. You should be wary of fake messages or sites imitating official resources about elections: links in SMS or instant messengers that rush, scare or require urgent action (for example, “check if your vote has been deleted”, “confirm your data urgently”). Signs of a fake: unofficial domain, lack of connection with the websites of the Central Election Commission or the National Cybersecurity Directorate, grammatical errors, calls to follow a link from an alarm message. It is also dangerous to share unverified screenshots or hacking reports - only distribute information from official sites. If the site appears to be hacked, do not interact with it, close your browser and report to the 119 center.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/424",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 423,
+"date": "2026-10-06",
+"type": "call",
+"title": "Israeli Cyber ​​Security Warns of Scams on behalf of Binance and Other Platforms",
+"summary": "Israel's National Cyber ​​Security Authority warns of fraudulent calls and SMS messages in which attackers impersonate Binance and other well-known platforms to scam personal and account information. It is recommended not to call back, not to share passwords or codes, and to check your account only through official applications or websites.",
+"he_original": "שימו לב: ניסיונות התחזות בשם Binance ופלטפורמות מוכרות נוספות\n\nבימים האחרונים התקבלו במערך הסייבר הלאומי דיווחים על שיחות ומסרונים שמטרתם לדלות מידע אישי ופרטי חשבון.\n\nבחלק מהמקרים ההודעה מופיעה בתוך שרשור שנראה לגיטימי, טוענת לניסיון התחברות חריג ומפנה למספר טלפון שבו מתחזה מבקש פרטי דוא”ל, חשבונות פיננסיים או פרטי התחברות.\n\nמערך הסייבר הלאומי ממליץ:\n\n• לא לחזור למספר שמופיע בהודעה חשודה.\n• לא למסור סיסמאות, קודי אימות או פרטי חשבון.\n• לא להקיש מספרים או לאשר פעולה בשיחה שלא יזמתם.\n• לבדוק את החשבון רק דרך האפליקציה או האתר הרשמי.\n\nזכרו: גם הודעה שמופיעה בתוך שרשור מוכר אינה בהכרח לגיטימית.",
+"ru_translation": "Warning: attempts to impersonate Binance and other well-known platforms In recent days, the National Cyber ​​Security Administration has received reports of calls and SMS messages aimed at extorting personal information and account data. In some cases, the message appears inside a conversation thread that appears to be legitimate, claims an unusual login attempt, and directs to a phone number where the impersonator asks for email, financial account, or login information. The National Cyber ​​Security Administration recommends: • Do not call back the number listed in a suspicious message. • Do not share passwords, verification codes, or account information. • Do not press numbers or confirm an action in a call that you did not initiate. • Check your account only through the official application or website. Remember: even a message that appears in a familiar conversation thread is not necessarily legitimate.",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, you should be wary: 1) The message comes inside an existing correspondence thread, which creates a false sense of legitimacy, but in fact, scammers can forge or infiltrate message chains. 2) The statement about 'unusual input' is a typical social engineering technique that causes anxiety and a desire to act immediately. 3) Redirect to a phone number asking for email, financial account or login details - real companies never ask for such information over the phone. 4) Please provide passwords, verification codes or account information. 5) Please press numbers or confirm an action in a call that you did not initiate. 6) Even if a message looks like part of a familiar correspondence, this does not guarantee its authenticity.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/423",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 422,
+"date": "2026-10-02",
+"type": "web",
+"title": "Microsoft: Israel is second in the world in cyber attacks, threats are growing",
+"summary": "A Microsoft report puts Israel in second place in the world for cyberattacks. With threats growing and AI accelerating attacks, the head of the National Cyber ​​Security Administration warns that defenses must continually evolve.",
+"he_original": "דוח Microsoft החדש: ישראל במקום השני בעולם במתקפות סייבר\n\nדוח ההגנה הדיגיטלית החדש של Microsoft מציב את ישראל במקום השני בעולם והראשון במזרח התיכון במדד מתקפות הסייבר.\n\nהנתונים ממחישים את עוצמת האיום שעמו מתמודדת ישראל, אך גם את חשיבותו של החוסן הלאומי: היכולת להגן על אזרחים ושירותים חיוניים, לצמצם נזק ולשמור על רציפות תפקודית גם תחת מתקפות מתמשכות.\n\nהחוסן הזה נשען על מערכת הגנה לאומית משולבת ועל שיתוף פעולה בין מערך הסייבר הלאומי, גופי הביטחון, משרדי הממשלה, המשק, תעשיית הסייבר והחברות הגלובליות.\n\nראש מערך הסייבר הלאומי, יוסי כראדי:\n\n“האיומים מתגברים, והבינה המלאכותית משנה את פני המערכה בס…",
+"ru_translation": "New Microsoft report: Israel ranks second in the world for cyberattacks Microsoft's new report on digital security ranks Israel second in the world and first in the Middle East for cyberattacks. The data demonstrates the strength of the threat Israel faces, but also the importance of national resilience: the ability to protect citizens and vital services, reduce damage, and maintain functional continuity even under continuous attack. This resilience relies on a comprehensive national defense system and collaboration between the National Cyber ​​Security Authority, security agencies, government ministries, the economy, the cyber industry and global companies. National Cybersecurity Director Yossi Karadi: “Threats are intensifying, and artificial intelligence is changing the face of cyber warfare and accelerating the pace of attacks. There is no ceasefire in cyberspace, so defense must constantly evolve.” As the threats and changes brought by artificial intelligence increase, defense capabilities must continue to be adapted, collaboration strengthened, and national readiness enhanced. 👍9",
+"needs_manual_translation": false,
+"what_to_notice": "This is an official post from Israel's National Cyber ​​Security Authority and not a scam. What should be alarming is not the content itself, but possible fakes: if a similar text comes in a messenger or social network from an unknown account, with a call to follow a link, install a “protection measure” or provide personal data, this is a deception. Signs of a fake: unofficial sender, shortened links, request for urgent action, request for passwords or card details, errors in Hebrew or Russian. Officials do not ask you to click on suspicious links or ask for sensitive information in private messages.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/422",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 421,
+"date": "2026-09-22",
+"type": "web",
+"title": "Israeli Cyber ​​Security: A Podcast About Cyber ​​Disruption, Not a Fraud Alert",
+"summary": "This is not a scam alert, but a preview of a podcast from Israel's National Cyber ​​Security Authority about cyberspace as an intelligence and operational tool. There are no calls to action, links to phishing sites, or requests for personal information.",
+"he_original": "מה עושים כשיש לך סוכן בלב האויב?\n\nבעידן הסייבר, הסוכן הזה לא חייב להיות בן אדם. הוא יכול להאזין, לאסוף מידע, לשבש מערכות, להטעות ואפילו לסייע לתקיפה.\n\nאבל אז מגיעה ההחלטה הקשה: מתי ממשיכים להקשיב, ומתי מפעילים את היכולת, בידיעה שברגע שפעלת, ייתכן שגם חשפת אותה?\n\nבפרק השני של ״בלי ירייה אחת״, שי גל מארח את אלוף (במיל׳) תמיר הימן, לשעבר ראש אמ״ן וכיום ראש המכון למחקרי ביטחון לאומי, לשיחה על הסייבר ככלי מודיעיני ומבצעי, על הכוח שלו ועל הגבולות שלו.\n\n🎧 פרק 2 של ״בלי ירייה אחת״ זמין עכשיו:\nhttps://open.spotify.com/episode/6FcYMn20oNGSRMhTYH4Uqv?si=bKOxsOuHShiPw1ff-titTw&amp;utm_source=copy-link\n❤1👍1",
+"ru_translation": "What do you do when you have an agent in the very heart of the enemy? In the cyber age, this agent does not have to be human. It can eavesdrop, gather information, disrupt systems, mislead, and even aid an attack. But then comes the difficult decision: when to continue listening, and when to seize an opportunity, knowing that the moment you seize it, perhaps you have also unlocked it? In the second episode of \"Without a Shot Fired,\" Shai Gal hosts Reserve Major General Tamir Heiman, former head of AMAN and current head of the Institute for National Security Studies, for a conversation about cyberspace as an intelligence and operational tool, its power and its limits. 🎧 Episode 2 “Without a Single Shot” is available now: https://open.spotify.com/episode/6FcYMn20oNGSRMhTYH4Uqv?si=bKOxsOuHShiPw1ff-titTw&utm_source=copy-link ❤1👍1",
+"needs_manual_translation": false,
+"what_to_notice": "You should be wary of a discrepancy with expectations: if the material is presented as a warning about fraud, but it contains neither a description of the deception scheme, nor a request to follow a link, nor a request for data. The only link leads to Spotify and looks like a regular link to a podcast, not a phishing resource. There are no signs of forgery in the text itself; This is an official information post and not a scam message.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/421",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 417,
+"date": "2026-09-17",
+"type": "web",
+"title": "Israel's National Cyber ​​Authority launched a podcast about cyber warfare",
+"summary": "Israel's National Cyber ​​Security Authority has announced a new podcast, \"Without a Single Shot,\" about cyber warfare and cyber preparedness. In the first episode, director of the agency Yossi Karadi discusses threats to infrastructure and the need for preparation.",
+"he_original": "המלחמה הבאה אולי כבר התחילה, רק שעדיין לא שמענו את הירייה הראשונה.\n\n״בלי ירייה אחת״ הוא הפודקאסט החדש של מערך הסייבר הלאומי, שבוחן איך נראית מלחמה בעידן הסייבר והבינה המלאכותית, אבל גם איך מדינה נערכת אליה, בונה יכולות הגנה ומחזקת את החוסן שלה מול האיומים המשתנים.\n\nבפרק הראשון, שי גל מארח את תא״ל (במיל׳) יוסי כראדי, ראש מערך הסייבר הלאומי, לשיחה על מלחמה מסוג אחר: כזו שיכולה לפגוע בתשתיות ובשגרה גם בלי טנקים או מטוסים, ועל מה שצריך לעשות כבר היום כדי להיות מוכנים אליה.\n\nאז עד כמה אנחנו קרובים למלחמה מבוססת סייבר, והאם אפשר להקדים את האיום?\n\nלצפייה והאזנה בפרק הראשון: https://open.spotify.co…",
+"ru_translation": "The next war may have already begun, we just haven't heard the first shot yet. Without a Shot Fired is a new podcast from the National Cybersecurity Administration that explores what war looks like in the age of cyberspace and artificial intelligence, as well as how the nation prepares for it, builds defense capabilities, and strengthens its resilience in the face of changing threats. In the first episode, Shai Gal hosts Reserve Major General Yossi Karadi, head of the National Cybersecurity Directorate, for a conversation about a different kind of war: one that can wreak havoc on infrastructure and everyday life even without tanks and planes, and what we need to do today to be prepared for it. So how close are we to cyberwar, and can we get ahead of the threat? To watch and listen to the first episode: https://open.spotify.com/episode/0Tjp8FQCt6ykkLXtyBwROM?si=BpXq9mE-Qc-xtKtPi7nZYQ&utm_source=copy-link 👍8❤2👌1",
+"needs_manual_translation": false,
+"what_to_notice": "This is an official post from Israel's National Cyber ​​Security Authority and not a scam. Signs of authenticity: the link leads to the legitimate domain open.spotify.com, real positions and names are indicated (Shai Gal, Yossi Karadi), the text contains wording and emoji reactions characteristic of official Israeli departments. What could be alarming is: a demand for personal data, a call to follow a shortened link, a promise of a win or a threat - none of that is here. However, always make sure that the link is to spotify.com and not to a similar phishing domain.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/417",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 419,
+"date": "2026-09-17",
+"type": "sms",
+"title": "Phishing disguised as Booking hotel reservation confirmation",
+"summary": "Attackers send phishing messages with a link to a fake Booking website, requesting confirmation of a hotel reservation. Some messages include actual booking details, making them more convincing.",
+"he_original": "מערך הסייבר הלאומי מתריע מפני ניסיונות פישינג המתחזים להזמנות מלון\n\nהתקבלו דיווחים על הודעות הכוללות קישור לאתר המתחזה ל-Booking, ובהן בקשה לאשר הזמנת מלון.\n\nבחלק מהמקרים ההודעות כוללות פרטי הזמנה אמיתיים, כמו תאריכי שהייה ומספר הזמנה, דבר שעלול להגביר את אמינותן.\n\nמומלץ:\n• לא ללחוץ על הקישור שבהודעה.\n• לבדוק את ההזמנה ישירות באתר או באפליקציה הרשמיים.\n• במקרה של הזנת פרטי אשראי, לפנות מיד לחברת האשראי.\n• לדווח למוקד 119 של מערך הסייבר הלאומי.\n🤯2👍1",
+"ru_translation": "The National Cyber ​​Security Administration is warning about phishing attempts masquerading as hotel reservations. There have been reports of messages containing a link to a site pretending to be Booking, with a request to confirm a hotel reservation. In some cases, messages include actual booking details, such as dates of stay and reservation number, which may increase their authenticity. It is recommended: • Do not click on the link in the message. • Check your reservation directly on the official website or app. • If you enter credit card information, contact your credit card company immediately. • Report to the National Cyber ​​Security Administration's 119 Center.",
+"needs_manual_translation": false,
+"what_to_notice": "What should alert you is that the message comes with a request to confirm your reservation using a link leading to a site that only imitates Booking. Even if the message contains the actual dates of stay and reservation number (which may be obtained from data leaks), this does not guarantee the authenticity of the sender. Signs of a fake: the domain does not correspond to the official booking.com, the use of shortened or suspicious links, pressure for urgent confirmation. Do not follow the link, but check your reservation only through the official application or website.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/419",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 416,
+"date": "2026-09-16",
+"type": "web",
+"title": "Israeli Cyber ​​Security Announces Fraud Warning",
+"summary": "Israel's National Cyber ​​Security Authority published a teaser post hinting at an imminent scam warning. The text does not contain details, but draws attention to the future message.",
+"he_original": "בקרוב…\n👏11❤1🔥1😁1🖕1",
+"ru_translation": "Soon…",
+"needs_manual_translation": false,
+"what_to_notice": "There are no specific signs of fraud in this post, as it is only an announcement. However, you should be wary if such messages come from unknown senders or contain calls to follow a link or provide personal information. Official department channels usually publish warnings with specific examples and instructions.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/416",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 414,
+"date": "2026-09-11",
+"type": "web",
+"title": "Chief of Cyber ​​Staff: “We are in the midst of a technological earthquake—the world of defense must change”",
+"summary": "Amid alarming advances by AI in autonomous attacks, the head of the National Cyber ​​Security Authority gathered Israeli cyber industry executives on the eve of Rosh Hashanah and presented plans for the coming years - including...",
+"he_original": "ראש מערך הסייבר הלאומי לתעשיית הסייבר: \"אנחנו בעיצומה של רעידת אדמה טכנולוגית – עולם ההגנה חייב להשתנות\"\n \nעל רקע ההתפתחויות המדאיגות ביכולות ה-AI לבצע תקיפות אוטונומיות, כינס היום ראש מערך הסייבר הלאומי לרגל ראש השנה את בכירי תעשיית הסייבר הישראלית למפגש מיוחד שבו הציג את כיווני ההיערכות לשנים הקרובות, בהם הקמת יחידת התערבות לאומית לאירועי סייבר רחבי היקף ומעבדה לאומית לטכנולוגיות מתקדמות.\n \nראש מערך הסייבר הלאומי יוסי כראדי, אמר במפגש כי מאז יוני 2025 ישראל מתמודדת עם מערכה מתמשכת במרחב הסייבר, ללא פגיעה בתשתיות הקריטיות של המדינה. לדבריו, \"בסייבר אין הפסקות אש. גם ביום האחרון של מבצע שאג…",
+"ru_translation": "Amid alarming advances by AI in launching autonomous attacks, the head of the National Cyber ​​Security Authority today, on the eve of Rosh Hashanah, brought together leaders of the Israeli cyber industry for a special meeting, where he outlined training directions for the coming years - including the creation of a national rapid response unit for large-scale cyber incidents and a national advanced technology laboratory. The head of the department, Yossi Karradi, said at the meeting that since June 2025, Israel has been waging a continuous campaign in cyberspace - without damaging the country's critical infrastructure. In his words, “There is no ceasefire in cyber. Even on the last day of the operation...” (the text in the channel breaks off).",
+"needs_manual_translation": false,
+"what_to_notice": null,
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/414",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 415,
+"date": "2026-09-11",
+"type": "web",
+"title": "Israeli cybersecurity: forecasts for the year 5787",
+"summary": "Israel's National Cyber ​​Security Authority published a post with expert forecasts for the coming year. This is an official informational message and not a warning about a specific fraudulent attack.",
+"he_original": "איך תיראה שנת תשפ״ז בסייבר? 👀\n\nבכירי ובכירות תעשיית הסייבר הישראלית, שהתכנסו היום למפגש מיוחד עם ראש מערך הסייבר הלאומי לרגל השנה החדשה, משתפים בתחזיות שלהם לשנה שבפתח.\n\nמה יהיו האיומים, האתגרים והמגמות שיעצבו את מרחב הסייבר בשנה הקרובה?\n\nצפו בסרטון 👇\n\nשנה טובה ובטוחה בסייבר&amp;#33; 🍎🍯\n❤5",
+"ru_translation": "What will the year 5787 look like in cyberspace? 👀 Israeli cyber industry leaders, gathered today for a special meeting with the head of the National Cyber ​​Security Authority to mark the New Year, share their forecasts for the coming year. What threats, challenges and trends will shape cyberspace in the coming year? Watch the video 👇 Have a good and safe year in cyberspace! 🍎🍯 ❤5",
+"needs_manual_translation": false,
+"what_to_notice": "This post is an official message from Israel's National Cyber ​​Security Authority and does not contain any signs of fraud. However, attackers can fake such messages on behalf of the agency by adding links to phishing sites or attachments. In this particular case, one should be wary: 1) if the post was received not through official department channels (for example, in personal messages or SMS); 2) if it contained a call to follow a suspicious link or download a file; 3) if the sender requested personal data. Here is just a video announcement and congratulations, which corresponds to the official style. However, always check the source: the official pages of the department on social networks are verified.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/415",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 413,
+"date": "2026-09-10",
+"type": "sms",
+"title": "Israel's Cyber ​​Authority warns of fake SMS messages about fines for traffic violations",
+"summary": "Israel's National Cyber ​​Security Authority warns of fraudulent SMS messages that look like notifications of fines for traffic violations and are used to steal personal data and bank card data. Citizens are advised to check fines only on the official police website, and when entering card details, urgently contact the credit company.",
+"he_original": "מערך הסייבר הלאומי מזהיר מפני מסרונים מתחזים המכילים הודעות על תשלום קנס תעבורה שמטרתם לדוג פרטים אישיים ופרטי אשראי.\n\nשימו לב:\n• דוחות בודקים רק באתר הרשמי של המשטרה. \n• יש לחסום את השולח ולמחוק את ההודעה.\n• אם הזנתם פרטי אשראי, יש לפנות בהקדם לחברת האשראי.",
+"ru_translation": "The National Cyber ​​Security Administration is warning about fake SMS messages containing traffic fine payment notices that are intended to steal personal and credit card information. Please note: • You can only check fines on the official police website. • You should block the sender and delete the message. • If you entered credit card information, you must contact the credit card company as soon as possible.",
+"needs_manual_translation": false,
+"what_to_notice": "Receiving an SMS about a fine for violating traffic rules should be cause for concern: official notifications of fines usually arrive by mail or through official government services, and not in the form of an unexpected text message. Fraudsters use fear and urgency to encourage you to click on a link and pay a “fine” in order to lure out personal information and credit card details. Signs of a fake: unknown sender, link to an unofficial website, request for urgent payment, request for card details. You can only check fines on the official police website, and such a message must be blocked and deleted.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/413",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 412,
+"date": "2026-09-09",
+"type": "web",
+"title": "Do not click on suspicious links on behalf of the IRS",
+"summary": "The Office of Cybersecurity warns about phishing messages masquerading as the IRS and suggests checking suspicious links through the official service.",
+"he_original": "לפני שנלחצים, פשוט לא לוחצים&amp;#33; 📱⚠️\n\nקיבלתם הודעה או קישור שנראים כאילו נשלחו מרשות המסים וזה ניראה לכם חשוד? לפני שלוחצים או מוסרים פרטים, בודקים.\n\nבאתר רשות המסים מחכה לכם מערכת לאימות קישורים והודעות רשמיות, שבה תוכלו לבדוק אם ההודעה שקיבלתם אכן נשלחה מאיתנו.\n\n🔗 למערכת האימות לחצו על הלינק או היכנסו לאתר רשות המסים לדף המידע ״איך לזהות פישינג״ https://secapp.taxes.gov.il/sr-safe-url/main/check-url\n❤2",
+"ru_translation": "Before you panic, just don't click! 📱⚠️ Received a message or link that looks like it's from the IRS and it seems suspicious to you? Please check before clicking or transferring data. The IRS website provides a system for checking references and official communications, with which you can check whether the message you received was actually sent by us. 🔗 To go to the verification system, click on the link or go to the tax department website on the information page “How to recognize phishing” https://secapp.taxes.gov.il/sr-safe-url/main/check-url",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, you should be wary of: 1) a message or link supposedly from the tax department that looks suspicious; 2) a call to follow a link or enter personal data; 3) possible grammatical errors or unusual sender address; 4) the very fact of receiving an unexpected message from a government agency demanding urgent action.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/412",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 411,
+"date": "2026-09-08",
+"type": "web",
+"title": "Alert about phishing event on behalf of Israeli cybersecurity",
+"summary": "The post invites you to a cybersecurity event, but contains signs of fraud: an unusual date (2026), strange symbols and a lack of official details.",
+"he_original": "בעוד שלושה ימים זה קורה.\n\nבכירי ובכירות תעשיית הסייבר הישראלית נפגשים עם ראש מערך הסייבר הלאומי לשיחה על מה שמעסיק את כולנו: המערכה הלאומית בסייבר.\n\nאיומים, מגמות, אתגרים ובעיקר השאלה איך ממשיכים לחזק יחד את ההגנה על ישראל במרחב הסייבר.\n\nביום חמישי נפגשים לדבר על האתגרים, המגמות והמערכה הלאומית בסייבר.\n\n📅 10.9.2026\n❤1",
+"ru_translation": "This will happen in three days. Leading Israeli cyber industry experts meet with the head of the National Cyber ​​Security Authority to talk about what concerns us all: a national campaign in cyberspace. Threats, trends, challenges and, most importantly, the question of how to continue to strengthen Israel's defense in cyberspace together. On Thursday we will meet to discuss challenges, trends and the national campaign in cyberspace. 📅 10.9.2026 ❤1",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, the following are alarming: 1) the date of the event is indicated as 10.9.2026, which looks unrealistic for an announcement 'in three days'; 2) the presence of the symbol '❤1' at the end, which is not typical for official messages; 3) lack of specific details (place, time, registration) and links to official sources; 4) the general tone and structure may imitate official messages, but contain errors or oddities that indicate a fake.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/411",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 410,
+"date": "2026-09-07",
+"type": "web",
+"title": "Check if you're alone at home: scam alert",
+"summary": "An official warning from the Israeli cyber authority about possible fraud related to cameras or surveillance. Encourages you to check if someone is following you and follow the link for recommendations.",
+"he_original": "אתם בטוחים שאתם לבד בבית? 👀\nכדאי שתבדקו.\n\nלהמלצות הגנה &amp;gt;&amp;gt;&amp;gt;\nhttps://www.gov.il/he/pages/iot070926\n💯3❤1",
+"ru_translation": "Are you sure you are alone at home? 👀 Worth checking out. Recommendations for protection >>> https://www.gov.il/he/pages/iot070926",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, the post itself is alarming: it imitates an official message, but contains an unusual call to action and a link. Signs: use of emoji (👀) and emoticons (💯❤) in an official message, short text without specifics, link to a government website but with a suspicious path (/iot070926). Fraudsters often create fake pages that look like official pages to steal data or infect a device.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/410",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 409,
+"date": "2026-09-03",
+"type": "web",
+"title": "Security in WhatsApp groups: 6 tips from Israeli cyber defense",
+"summary": "Israel's National Cyber ​​Security Authority warns of the risks associated with using WhatsApp groups and offers 6 simple tips to improve security.",
+"he_original": "קבוצות וואטסאפ הן כלי עבודה יעיל, אבל הן גם עלולות להפוך לנקודת תורפה.\n\nמי נמצא בקבוצה? אילו קישורים נשלחים בה? ואיזה מידע עובר בין המשתתפים?\n\nריכזנו עבורכם 6 המלצות פשוטות להתנהלות בטוחה יותר בקבוצות וואטסאפ:\n❤3👏1",
+"ru_translation": "WhatsApp groups are an effective work tool, but they can also become a vulnerability. Who is in the group? What links does it send? And what information is transferred between participants? We have put together 6 simple recommendations for you to be safer in WhatsApp groups.",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, we are not talking about a specific fraudulent scheme, but about general security recommendations. However, you should pay attention to the fact that WhatsApp groups can be used by attackers for phishing, spreading malicious links or collecting information. It is important to check who is added to the group, do not click on suspicious links, and do not share confidential data.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/409",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 408,
+"date": "2026-09-02",
+"type": "sms",
+"title": "Beware: Ticket scams could lead to your mobile number being hijacked",
+"summary": "Fraudsters post fake advertisements about free tickets on social networks and trick victims into giving them an SMS confirmation code, which they use to seize control of a mobile number.",
+"he_original": "⚠️ אזהרה: הונאת כרטיסים עלולה להוביל להשתלטות על קו הסלולר\n\nמערך הסייבר הלאומי מזהיר מפני מודעות מתחזות בפייסבוק ובאינסטגרם, המציעות כרטיסים חינם או הטבות למופעים תוך התחזות לחברות מוכרות.\n\nכך פועלת ההונאה: לאחר השארת פרטים, התוקפים יוצרים קשר ומבקשים למסור “קוד אימות” שנשלח ב SMS. בפועל, הקוד עלול לשמש להשתלטות על קו הסלולר.\n\nכדי להגן על עצמכם:\n• אל תמסרו קוד אימות, גם אם הפונה מציג עצמו כנציג חברה מוכרת.\n• קראו היטב את תוכן הודעת ה SMS לפני מסירת קוד.\n• בדקו מבצעים וכרטיסים רק בערוצים הרשמיים של החברה.\n• איבדתם קליטה לאחר שמסרתם קוד? פנו מיד לחברת הסלולר.\n❤6👍1👌1",
+"ru_translation": "⚠️ Warning: Ticket scams could lead to your mobile number being hijacked The National Cyber ​​Security Administration is warning of fake ads on Facebook and Instagram offering free tickets or benefits to events by posing as well-known companies. How the scam works: After you leave your details, the scammers contact you and ask you for a “verification code” sent via SMS. In fact, this code can be used to capture your mobile number. To protect yourself: • Do not give out your verification code, even if the caller claims to be from a reputable company. • Read the contents of the SMS message carefully before sending the code. • Check promotions and tickets only on the company’s official channels. • Lost connection after transmitting the code? Contact your mobile company immediately.",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, you should be wary of: 1) too tempting offers (free tickets or benefits) on behalf of well-known companies on Facebook/Instagram; 2) please provide the confirmation code from SMS after you have left your data; 3) discrepancy between the content of the SMS and what the interlocutor says (the code may be for changing a SIM card or transferring a number); 4) pressure and urgency in communication so that you do not have time to think about it.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/408",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 407,
+"date": "2026-09-01",
+"type": "web",
+"title": "New Cyber ​​Defense for Business: Strengthening the Supply Chain",
+"summary": "Israel's National Cyber ​​Security Authority is launching a new system to assess and strengthen cyber defenses in supply chains. Businesses and suppliers are encouraged to register to improve their security levels.",
+"he_original": "גם הספקים שלכם הם חלק מההגנה 🛡️\n\nמערכת מצפ”ן החדשה של מערך הסייבר הלאומי מסייעת לעסקים ולספקים להעריך את רמת הגנת הסייבר, לזהות פערים ולחזק את שרשרת האספקה.\n\nהירשמו עכשיו וחזקו את ההגנה על העסק שלכם 👇\nhttps://www.gov.il/he/departments/topics/supply_chain2026\n🔥2",
+"ru_translation": "Your suppliers are part of the defense too 🛡️ The National Cyber ​​Security Authority's new Magzan system helps businesses and suppliers assess their cybersecurity posture, identify gaps and strengthen their supply chain. Register now and strengthen the protection of your business 👇 https://www.gov.il/he/departments/topics/supply_chain2026 🔥2",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, it is important to pay attention to the authenticity of the link: scammers can create phishing sites that imitate the official gov.il portal. Check the domain (must be gov.il) and HTTPS availability. Also beware of messages that create a sense of urgency or require immediate registration. Legal notices generally do not request that you provide personal information through a link.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/407",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 404,
+"date": "2026-08-27",
+"type": "web",
+"title": "Smartwatches can spy on you: how to protect yourself from cyber espionage",
+"summary": "Smart watches and fitness bracelets can be used by attackers to track movements and intercept data via Bluetooth. It is recommended to update devices, choose reliable manufacturers, turn off Bluetooth when not needed, and check connected devices.",
+"he_original": "השעון החכם שלכם לא רק סופר צעדים. במקרים מסוימים הוא עלול גם להשאיר עקבות באוויר. ⌚📡\n\nשעונים חכמים, צמידי כושר והתקני IoT משתמשים ב-Bluetooth Low Energy כדי לתקשר עם הטלפון, ובדרך משדרים אותות שניתנים לזיהוי בסביבה.\n\nאם מנגנוני הפרטיות אינם מיושמים כראוי, תוקף בקרבת מקום עלול לזהות את ההתקן לאורך זמן, להסיק על שגרת התנועה של המשתמש ובמקרים מסוימים גם לקלוט מידע שאינו מוגן כראוי.\n\nאיך מצמצמים סיכון?\n\n📱 עדכנו את השעון, הצמיד והטלפון באופן קבוע.\nעדכוני תוכנה כוללים גם תיקוני אבטחה ושיפורים במנגנוני Bluetooth.\n\n🔐 העדיפו מכשירים של יצרנים מוכרים ומעודכנים.\nמכשירים חדשים ועדכניים תומכים בדרך כלל …",
+"ru_translation": "Your smartwatch does more than just count steps. In some cases, they can leave traces in the air. ⌚📡 Smartwatches, fitness bracelets and IoT devices use Bluetooth Low Energy to communicate with your phone, and along the way transmit signals that can be detected in the environment. If privacy mechanisms are not implemented correctly, a nearby attacker can identify a device over time, infer the user's movement patterns, and in some cases intercept information that is not properly protected. How to reduce the risk? 📱 Update your watch, bracelet and phone regularly. Software updates include security fixes and Bluetooth improvements. 🔐 Give preference to devices from well-known and updated manufacturers. New and current devices typically support privacy mechanisms that change the device's identification address and make it more difficult to track. 📴 Don't need Bluetooth right now? Turn it off. Especially if you don't use a watch or accessory that requires constant connection. 🔗 Check what devices are connected to your phone. Remove old watches, headphones, and accessories you don't use from your Bluetooth settings, and don't accept connection requests from unfamiliar devices. Even a weak signal in the air can become part of the information about you. ❤6",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, you should be alert to: 1) Unusual behavior of a smart watch or bracelet, for example, rapid battery drain, frequent communication failures, the appearance of unknown devices in the Bluetooth list. 2) Pairing requests from unfamiliar devices. 3) If you are in a crowded place and notice that someone is staying near you for too long, they may be trying to intercept the signal. 4) Lack of firmware updates or use of outdated models without support for modern security protocols.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/404",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 405,
+"date": "2026-08-27",
+"type": "web",
+"title": "Cyberattack on a Hospital: Lessons for Leaders",
+"summary": "The post talks about a cyberattack on a medical center and encourages leaders to prepare for similar incidents by asking not “if,” but “when.”",
+"he_original": "13 באוקטובר 2021, שעה 05:45. מתקפת סייבר משתקת את מערכות המידע של המרכז הרפואי \"הלל יפה\".\n\nהפרק הראשון מתוך הסדרה ״ברגע האמת״ בה נשמע מנהלות ומנהלים בכירים שהתמודדו באומץ ובמנהיגות עם מתקפות סייבר.  \n\nפרופ&amp;#39; מיקי דודקביץ&amp;#39;, מנהל המרכז הרפואי הלל יפה, חוזר לרגעים הדרמטיים: ההתמודדות בזמן אמת, קבלת ההחלטות תחת לחץ, התובנות הניהוליות – והשאלה שכל מנהל בארגון חייב לשאול את עצמו: לא האם זה יקרה, אלא מתי?\n👍4🙈1",
+"ru_translation": "13 October 2021, 05:45. The cyber attack paralyzes the information systems of the Hillel Yaffe Medical Center. The first in the \"At the Moment of Truth\" series, featuring the voices of senior leaders who have handled cyberattacks with courage and leadership. Prof. Miki Dudkiewicz, director of Hillel Yaffe Medical Center, returns to the dramatic moments: real-time struggles, decision-making under pressure, management decisions - and the question that every organizational leader must ask himself: will it happen, and when?",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, the post is not a scam warning, but rather an informational piece about a cyber attack. However, it is important for leaders to note that the attack was aimed at a medical facility, highlighting the vulnerability of critical infrastructure. Signs: mention of a specific date and time, the name of a hospital, a link to a series of videos - all of this can be used by attackers for phishing if they send similar messages with malicious links. Therefore, you should check the authenticity of the source and do not click on suspicious links.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/405",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 402,
+"date": "2026-08-26",
+"type": "web",
+"title": "Cybersecurity: how to protect yourself from indirect injection into AI assistants",
+"summary": "Fraudsters can embed hidden instructions into the content processed by the AI ​​assistant to trick it into performing malicious actions. Users should limit AI permissions and require manual confirmation for sensitive transactions.",
+"he_original": "התוקף לא תמיד מנסה לעבוד עליכם. לפעמים הוא מנסה לעבוד על ה-AI שלכם. 🤖⚠️\n\nעוזרי AI יכולים לקרוא מיילים, לסכם אתרים ומסמכים, לגשת ליומן ולבצע פעולות בשם המשתמש.\n\nכאן נכנסת לתמונה Indirect Prompt Injection: התוקף שותל באתר, במסמך או במייל הוראה שמיועדת לעוזר ה-AI, ולעיתים מסתיר אותה מהעין.\n\nאתם מבקשים: “סכם לי את העמוד הזה”.\n\nאבל בתוך העמוד עלולה להופיע הוראה אחרת: להתעלם מהמשימה, לחשוף מידע או לבצע פעולה נוספת.\n\nאם לעוזר יש הרשאות רחבות, הוא עלול לשלוח מידע, לשנות נתונים או לבצע פעולות בחשבון.\n\nאיך מצמצמים את הסיכון?\n\n🔐 תנו לכלי AI רק את ההרשאות הנחוצות.\n\n✋ דרשו אישור ידני לפני שליחת הודעות, …",
+"ru_translation": "The attacker is not always trying to trick you. Sometimes it tries to trick your AI. 🤖⚠️ AI assistants can read emails, summarize websites and documents, access calendars, and perform actions on behalf of the user. This is where indirect prompt injection comes into play: the attacker embeds an instruction intended for an AI assistant on a website, document, or email, and sometimes hides it from view. You ask: “Summarize this page for me.” But another instruction may appear inside the page: ignore the task, disclose information, or perform an additional action. If the assistant has broad rights, he can send information, change data, or perform actions in the account. How to reduce the risk? 🔐 Give AI tools only the necessary rights. ✋ Require manual confirmation before sending messages, deleting files, making purchases and other sensitive actions. 👀 Check what actions the AI ​​is about to perform. Summarizing a site should not end with sending an email or changing settings. The more opportunities AI assistants get, the more important it is to remember: you can try to deceive them too.",
+"needs_manual_translation": false,
+"what_to_notice": "Pay attention to unexpected actions of the AI ​​assistant: if, after a request to summarize a page, it tries to send an email, change settings, or request access to data, this is a sign of a possible indirect injection of a prompt. Also be wary if there are hidden instructions on a web page or document that may not be visible during normal browsing but are interpreted by AI.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/402",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 400,
+"date": "2026-08-19",
+"type": "sms",
+"title": "Bulk SMS with OTP Codes: It's Not a Hack, But Be Careful",
+"summary": "Bulk sending of OTP codes to a phone without a request is not a hack, but an attack using legitimate services. The main danger is entering a code on a phishing site, which can lead to account takeover.",
+"he_original": "🚨 קיבלתם עשרות הודעות עם קוד אימות (OTP) בלי שביקשתם? זו לא פריצה.  \n\nביממה האחרונה שוב מקבל מערך הסייבר הלאומי דיווחים מאזרחים אודות תופעה של הצפת הודעות קוד אימות למשתמשים. מדובר בניצול של מערכות לגיטימיות לשליחת קודים – לא בפריצה לחשבון.\n\n\nאיך זה עובד?\nגורמים עוינים מזינים מספרי טלפון למנגנוני אימות באתרים ואפליקציות – וגורמים לשליחה של עשרות הודעות ברצף. 📩\n\nמה זה אומר עבורכם?\nברוב המקרים זו הטרדה, לא השתלטות על החשבון.\n\nמה עושים:\n▪️ לא להזין קוד אם לא ביקשתם אותו\n▪️ לא משתפים קוד OTP עם אף אחד – גם לא עם חבר או בן משפחה 🔐\n▪️ ניתן כאמצעי זהירות להחליף סיסמאות בחשבונות חשובים (דרך כניסה י…",
+"ru_translation": "🚨 Received dozens of messages with verification code (OTP) without asking for them? This is not a hack. Over the past 24 hours, the National Cyber ​​Security Directorate has again received reports from citizens about the phenomenon of mass mailing of verification codes to users. This is about using legitimate systems to send codes - not about hacking your account. How does this work? Hostile elements enter phone numbers into authentication mechanisms on websites and applications - and cause dozens of messages to be sent in a row. 📩 What does this mean to you? In most cases, this is harassment, not account takeover. What to do: ▪️ Do not enter the code unless you have requested it ▪️ Do not share the OTP code with anyone - not even a friend or family member 🔐 ▪️ As a precaution, you can change the passwords on important accounts (via direct login only) ▪️ It is recommended to ensure access to accounts and enable two-factor authentication, especially in mail ▪️ If there are no other signs – can be ignored. Important to know: Receiving a code in itself does not give access to your account. However, entering code on a fake site could allow an attacker to take control. The National Cyber ​​Security Administration is working to reduce and block this phenomenon. 🛡️ If the messages continue, you can contact the mobile company or the 119 center of the National Cyber ​​Security Directorate. 📞",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, you should be wary of: 1) receiving dozens of SMS with OTP codes without your request; 2) attempts to enter these codes on any sites or communicate them to anyone; 3) any suspicious sites or applications requesting an OTP code after such mailing; 4) if messages continue for a long time, this may be a sign of a targeted attack.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/400",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 379,
+"date": "2026-08-17",
+"type": "web",
+"title": "Cybersecurity: There is no truce in cyberspace",
+"summary": "The head of the National Cyber ​​Security Authority warns that cyberattacks continue even during the truce and have doubled in number. He highlights the importance of balancing cyber defense investments with business objectives, and the role of AI and quantum computing in emerging threats.",
+"he_original": "בסייבר אין הפסקת אש.\n\nגם כשהאש בעולם הפיזי שוככת, במרחב הסייבר המתקפות נמשכות. בתקופת הפסקת האש אף נרשמה הכפלה במספר המתקפות.\n\nזה היה אחד המסרים המרכזיים שהציג ראש מערך הסייבר הלאומי, יוסי כראדי, בכנס הסייבר השנתי למנכ״לי תשתיות המדינה הקריטיות, שהוביל מערך הסייבר הלאומי.\n\nליום אחד, המנכ״לים שמובילים את התשתיות החיוניות של ישראל עצרו את העיסוק השוטף והתפנו לעסוק באחד הנושאים החשובים ביותר להמשך פעילותם של הארגונים: הגנת הסייבר.\n\nבמהלך הכנס עסקנו בתמונת האיומים המשתנה, בבינה מלאכותית, במחשוב קוונטי, באבטחת ענן ובהחלטות הניהוליות הנדרשות כדי להבטיח רציפות תפקודית גם תחת מתקפת סייבר.\n\nראש המער…",
+"ru_translation": "There is no truce in cyberspace. Even when the fire in the physical world subsides, attacks continue in cyberspace. During the ceasefire, the number of attacks doubled. This was one of the key messages delivered by National Cyber ​​Security Directorate head Yossi Karadi at the annual cyber conference for CEOs of critical government infrastructure, organized by the National Cyber ​​Security Directorate. For one day, the CEOs running Israel's vital infrastructure suspended their day-to-day activities and focused on one of the most important topics for organizations to continue operating: cyber defense. During the conference, we discussed the evolving threat landscape, artificial intelligence, quantum computing, cloud security, and the management solutions needed to ensure operational continuity even during a cyberattack. The head of the department emphasized that the main task of managers is to find the right balance between investing in cyber defense and maintaining business activity and creating value. The National Cyber ​​Security Administration is committed to helping organizations find that balance and properly prepare for threats. Also participating in the conference was Reserve Brigadier General Erez Eskel, head of the National Artificial Intelligence Headquarters, who introduced the activities of the headquarters and held a conversation with the head of the department about the increasingly close connection between artificial intelligence, cybersecurity and national security. Because cyber defense is no longer just a technological issue. It is a management responsibility, a condition of functional continuity, and a key component of Israel's national sustainability. Photo: Ziv Shoshan",
+"needs_manual_translation": false,
+"what_to_notice": "This is not a warning about a specific scam, but a general statement about the increase in cyber attacks during the truce. However, it is important for users to understand that scammers become more active during such periods. You should pay attention to suspicious messages, especially those related to truce, war or emergency situations, as well as phishing attempts through email, SMS or fake sites. In this case there are no specific signs of counterfeiting, but the need for increased vigilance is emphasized.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/379",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 381,
+"date": "2026-08-17",
+"type": "call",
+"title": "Talk to your parents and grandparents before the scammers talk to them",
+"summary": "Scammers have targeted Russian-speaking seniors in Israel by posing as relatives, a bank or the police, sometimes using AI to imitate their voices. They encourage you to talk to elderly relatives and remind you of the rules: stop, interrupt the conversation, check the information.",
+"he_original": "דברו עם ההורים והסבים לפני שהעבריינים ידברו איתם.\n\n⚠️ ההונאה הזו כבר פגעה במשפחות רבות בישראל.\n\nלאחרונה מתרבים ניסיונות עוקץ שמכוונים בעיקר לאוכלוסייה המבוגרת דוברת הרוסית. עבריינים מתחזים לבני משפחה, לבנק או למשטרה, ולעיתים אף מחקים קול מוכר באמצעות בינה מלאכותית.\n\nצפו, שתפו וזכרו: עוצרים, מנתקים ומאמתים.\n\nלפרטים נוספים:\nhttps://www.gov.il/he/pages/us080726\n👍9❤6",
+"ru_translation": "Talk to your parents and grandparents before the criminals talk to them. ⚠️ This scam has already affected many families in Israel. Recently, attempts at deception have become more frequent, aimed mainly at the Russian-speaking elderly population. Criminals impersonate family members, a bank or the police, and sometimes even imitate a familiar voice using artificial intelligence. Watch, share and remember: stop, interrupt the conversation and check the information. More details: https://www.gov.il/he/pages/us080726",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, you should be wary of: 1) a call from a 'relative' asking for money or urgent help, especially if the voice seems familiar, but slightly distorted (possibly AI); 2) a call from the 'bank' or 'police' demanding immediate action, transfers or codes; 3) pressure and creation of a sense of urgency, prohibition on pausing or checking; 4) requests to keep the conversation secret; 5) unusual methods of communication (messengers, unofficial numbers).",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/381",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 383,
+"date": "2026-08-17",
+"type": "web",
+"title": "WordPress Hack Alert: Urgent Action",
+"summary": "Israel's National Cyber ​​Security Authority warns of massive hacks of WordPress sites running PHP, Nginx and MySQL stacks. Website owners are advised to urgently update components, enable two-factor authentication and limit access to the admin area.",
+"he_original": "⚠️ מערך הסייבר הלאומי מתריע מפני השחתת אתרי WordPress.\n\nלאחרונה דווח למערך הסייבר הלאומי על השחתת עשרות אתרים. מבדיקת האירועים עולה כי לכל האתרים שנפגעו מכנה משותף: הם פעלו על תשתית הכוללת WordPress, PHP, Nginx ו-MySQL.\n\nאם אתם מנהלים אתר או אחראים על תשתיות Web, מומלץ לבצע בהקדם את הפעולות הבאות:\n\n🔹 הפעילו אימות דו שלבי (MFA) לכל חשבונות הניהול.\n🔹 עדכנו את WordPress, התוספים (Plugins), ערכות העיצוב (Themes) וגרסת PHP.\n🔹 הסירו רכיבים ותוספים שאינם בשימוש.\n🔹 הגבילו את הגישה לממשק הניהול באמצעות VPN, &amp;rlm;ZTNA או רשימות IP מורשות.\n🔹 הפעילו מנגנוני הגנה מפני ניסיונות Brute Force ושכבת הגנה מסו…",
+"ru_translation": "⚠️ National Cyber ​​Security Administration warns of WordPress sites being hacked. Recently, the department received reports of hacking of dozens of sites. A review of the incidents showed that all affected sites had a common denominator: they were running on an infrastructure that included WordPress, PHP, Nginx and MySQL. If you manage a site or are responsible for web infrastructure, it is recommended that you complete the following steps as soon as possible: 🔹 Enable two-factor authentication (MFA) for all admin accounts. 🔹 Update WordPress, plugins, themes and PHP version. 🔹 Remove unused components and plugins. 🔹 Restrict access to the admin interface using VPN, ZTNA or allowed IP addresses. 🔹 Enable protection mechanisms against password attempts (Brute Force) and WAF protection level. 🔹 Monitor logs and identify suspicious activity. 📢 If you're running a WordPress site, it's a good idea to make sure your site is up to date, secure, and has the appropriate security best practices in place. ❤5🤔2",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, we are talking about a warning about a real threat, and not about phishing. However, it is important to pay attention to the following points: 1) The official source is the National Cybersecurity Authority of Israel, but scammers can fake such messages, so check the sender's address and links. 2) The text mentions specific technologies (WordPress, PHP, Nginx, MySQL) - these are typical signs of targeted attacks, but attackers can use the same language in false warnings to force users to click on malicious links. 3) Carefully check any links in such messages: they should lead to official sites, not fake pages. 4) If you receive such a message by email or instant messenger, do not click on the links, but go to the official website of the cybersecurity department yourself.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/383",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 387,
+"date": "2026-08-17",
+"type": "web",
+"title": "Beware: gifts and links in games can be a trap for data theft",
+"summary": "Online game scammers lure children with free gifts, coins or links that can lead to the theft of passwords, payment details and personal information. Parents are encouraged to discuss safe play rules with their children.",
+"he_original": "⚠️ לא תמיד אפשר לדעת מי באמת נמצא בצד השני של המשחק.\n\nמתנה בחינם, מטבעות או קישור תמים עלולים להוביל לגניבת סיסמאות, פרטי תשלום ומידע אישי.\n\nהסכנות השתנו, האחריות שלנו כהורים נשארה. צפו ודברו עם הילדים על משחק בטוח ברשת. 🎮🛡️\n\nלהמלצות ההגנה של מערך הסייבר הלאומי לחצו כאן:\nhttps://www.gov.il/he/pages/summer160726\n👍14❤1",
+"ru_translation": "⚠️ It’s not always possible to know who really is on the other side of the game. A free gift, coins or innocuous link can lead to the theft of passwords, payment details and personal information. The dangers have changed, but our responsibilities as parents remain. Watch and talk to your children about playing safely online. 🎮🛡️ For recommendations on protecting the National Cyber ​​Security Directorate, click here: https://www.gov.il/he/pages/summer160726",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, warning signs include: promises of free gifts, coins, or innocuous links in a gaming context that may lead to phishing sites or download malware. It is also important to pay attention to unexpected messages from strangers in games asking you to follow a link or enter data to receive benefits.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/387",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 388,
+"date": "2026-08-17",
+"type": "web",
+"title": "ClickFix Scam: Don't Copy the Code and Press Win+R",
+"summary": "Fraudsters hack websites (including WordPress) and display fake error or validation messages, asking users to copy the code and execute it via Win+R. This installs malware that steals passwords and data.",
+"he_original": "⚠️ מערך הסייבר הלאומי מזהיר: מתקפת ClickFix גורמת למשתמשים להתקין נוזקה בעצמם\n\nלאחרונה דווח על אתרים שנפרצו, בהם אתרי WordPress, אשר מפעילים מתווה תקיפה מסוג ClickFix.\n\nהאתר מציג הודעה מזויפת על תקלה, אימות אנושי או צורך בעדכון, ומבקש מהגולשים להעתיק קוד, לפתוח חלון באמצעות Windows + R, להדביק וללחוץ Enter.\n\n❗ אל תבצעו את הפעולות האלה. הקוד עלול להתקין נוזקה שתגנוב סיסמאות, קבצים ופרטי התחברות.\n\nנתקלתם בבקשה כזו?\n\n• סגרו מיד את האתר\n• אל תעתיקו ואל תריצו קוד\n• ודאו שהמחשב ותוכנת האבטחה מעודכנים\n• אם כבר ביצעתם את הפעולות, נתקו את המחשב מהרשת ופנו לבדיקה מקצועית\n\n📞 לדיווח חייגו 119 למערך הסי…",
+"ru_translation": "⚠️National Cyber ​​Security Administration Warns: ClickFix Attack Forces Users to Install Malware Themselves Recently, hacked sites, including WordPress sites, have been reported to launch a ClickFix-type attack pattern. The site displays a fake message about an error, human verification or update needed, and asks visitors to copy the code, open a window using Windows + R, paste and press Enter. ❗ Do not perform these actions. The code can install malware that steals passwords, files, and login information. Have you encountered such a request? • Close the site immediately • Do not copy or run the code • Make sure your computer and antivirus software are up to date • If you have already followed these steps, disconnect your computer from the network and seek a professional inspection 📞 To report, call the National Cyber ​​Security Authority on 119. 👍10❤3👏1",
+"needs_manual_translation": false,
+"what_to_notice": "You should be wary of: 1) an unexpected message about an error, human verification or update on the site, especially if it asks you to copy the code; 2) instructions to open a window using Windows + R (this is a standard way to run commands, but attackers use it to execute malicious code); 3) the requirement to paste the code and press Enter - this is a classic sign of ClickFix. Also note that the attack occurs on hacked sites that may appear legitimate.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/388",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 389,
+"date": "2026-08-17",
+"type": "web",
+"title": "Beware: spear phishing - check the sender",
+"summary": "Fraudsters use a spear phishing attack to collect information about a victim and impersonate a trusted person to extract data. It is important to verify the authenticity of the message through another channel and not share passwords.",
+"he_original": "פישינג ממוקד מתחיל בהודעה שנראית אישית ואמינה. התוקפים אוספים עליכם מידע, מתחזים לאדם מוכר או לגורם מקצועי, ומנסים לגרום לכם ללחוץ על קישור או למסור פרטים רגישים.\n\nקיבלתם פנייה חריגה? עצרו, אמתו מול השולח בערוץ נוסף ואל תמסרו סיסמאות או קודי אימות. במקרה של ספק, דווחו למוקד 119. 🔐\n🔥6❤2👏1",
+"ru_translation": "Spear phishing begins with a message that appears personal and trustworthy. Attackers collect information about you, pretend to be someone you know or a professional organization, and try to trick you into clicking on a link or handing over sensitive data. Received an unusual message? Stop, check the information through another communication channel, and do not share passwords or verification codes. If in doubt, contact the 119 center.",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, you should be wary of: an unexpected message from a friend or organization that looks personal; request to follow a link or provide a password/code; a feeling of urgency or unusualness. It is important to verify the sender through another channel (for example, call) and not share sensitive information.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/389",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 391,
+"date": "2026-08-17",
+"type": "web",
+"title": "LockBit attacks on Israeli organizations: how to reduce the risk",
+"summary": "Israel's National Cyber ​​Security Authority is warning of a wave of LockBit ransomware attacks on organizations. The attacks use phishing, stolen passwords and vulnerabilities. Recommendations on protection and actions in case of infection are given.",
+"he_original": "⚠️ ניסיונות תקיפה באמצעות LockBit: כך תפחיתו את הסיכון\n\nלאחרונה התקבלו במערך הסייבר הלאומי דיווחים על ניסיונות תקיפה ועל פעילות של גורמי איום המזוהים עם כופרת LockBit נגד ארגונים בישראל.\n\nהתוקפים מנצלים פישינג, סיסמאות שנגנבו וחולשות אבטחה כדי לחדור למערכות, לגנוב מידע ולהצפין קבצים. גם תשלום כופר אינו מבטיח את שחזור המידע או ימנע את פרסומו.\n\nכך תפחיתו את הסיכון:\n🔹 הפעילו אימות דו שלבי להתחברות מרחוק והחליפו סיסמאות משתמשים\n🔹 עדכנו באופן שוטף מערכות הפעלה, תוכנות ושרתים\n🔹 אל תפתחו קישורים או קבצים ממקור לא מוכר\n🔹 הגבילו את הגישה ל־VPN ולממשקי ניהול באמצעות VPN, רשימות IP מורשות או פתרון ZTN…",
+"ru_translation": "⚠️ LockBit Attack Attempts: How to Mitigate the Risk Recently, the National Cyber ​​Security Authority has received reports of LockBit ransomware attack attempts and threats against organizations in Israel. Attackers use phishing, stolen passwords, and security vulnerabilities to infiltrate systems, steal information, and encrypt files. Even paying a ransom does not guarantee the recovery of data or prevent its publication. How to reduce the risk: 🔹 Enable two-factor authentication for remote access and change user passwords 🔹 Regularly update operating systems, software and servers 🔹 Do not open links or files from unknown sources 🔹 Restrict access to VPN and administrative interfaces using VPNs, IP whitelists or a ZTNA solution, and avoid them directly to the Internet 🔹 Keep current backup copies isolated from the network and check the possibility of recovering data from them Are you afraid that you have been damaged? ❗ Immediately disconnect your computer from the network and the Internet ❗ Do not turn on your computer again or try to recover files yourself ❗ Do not delete files or the ransom message ❗ Contact a professional immediately and report to the National Cyber ​​Security Administration 119 Center A quick response can reduce the extent of the damage and prevent the ransomware from spreading to other computers and servers. ❤5👍3👏1😈1",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, you should be wary of: 1) Unexpected emails or messages asking you to click a link or open an attachment, especially if they look like official notifications from well-known organizations. 2) Requests for urgent actions, for example, changing a password or verifying an account. 3) Suspicious URLs that differ from official domains. 4) Messages that your files are encrypted, with a ransom demand in cryptocurrency. 5) Unusual activity on the system, such as slowdowns or the appearance of files with the .lockbit extension.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/391",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 393,
+"date": "2026-08-17",
+"type": "web",
+"title": "Warning about phishing campaign imitating SharePoint documents",
+"summary": "Fraudsters send phishing emails claiming to be SharePoint asking you to open a financial document. Clicking on the link leads to a fake Microsoft login page, where credentials and verification codes are stolen, allowing you to hijack your mailbox.",
+"he_original": "⚠️ מערך הסייבר הלאומי מתריע מפני קמפיין פישינג המתחזה לשיתוף מסמך פיננסי ב-SharePoint\n\nההודעה עשויה להישלח גם מתיבת דואר שנפרצה ולהיראות כאילו הגיעה מאדם או מארגון מוכר. הנמען מתבקש לפתוח חשבונית, דוח או מסמך תשלום ולהעבירו לבדיקה.\n\nלחיצה על הקישור מובילה לעמוד התחברות מזויף של Microsoft, שבו מתבקש המשתמש להזין פרטי חשבון ולעיתים גם להעתיק קוד אימות.\n\nהזנת הפרטים עלולה לאפשר לתוקפים להשתלט על תיבת המייל ולהפיץ ממנה הודעות פישינג נוספות.\n\nכך תתגוננו:\n\n🔹 אל תפתחו מסמך שלא ציפיתם לקבל, גם אם נשלח מאדם מוכר\n🔹 אמתו את הבקשה מול השולח בערוץ תקשורת אחר\n🔹 בדקו היטב את כתובת האתר לפני הזנת פרטים\n🔹 א…",
+"ru_translation": "⚠️ The National Cyber ​​Security Administration is warning of a phishing campaign posing as a financial document submission to SharePoint. The message can also be sent from a hacked mailbox and appear as if it came from a familiar person or organization. The recipient is asked to open an account, statement or payment document and submit it for verification. Clicking on the link leads to a fake Microsoft login page where the user is asked to enter account information and sometimes copy a verification code. Entering data could allow attackers to take over your mailbox and send additional phishing messages from it. How to protect yourself: 🔹 Do not open a document that you did not expect to receive, even if it was sent by someone you know. 🔹 Confirm the request with the sender via another communication channel. 🔹 Carefully check the site address before entering data. 🔹 Do not copy the verification code or confirm a login you do not recognize. 🔹 Enable two-factor authentication. Have you entered your details? Immediately change your password, disconnect active sessions, check whether email forwarding rules are configured, and notify information security professionals in your organization. If you suspect a cyber incident, call the National Cyber ​​Security Authority on 119. ❤5👍5👏2",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, you should be wary of: 1) An unexpected letter with a document (invoice, report, payment document) from a familiar sender, but with a request to open and check it. 2) The link leads to the Microsoft login page, but the site address may differ from the official one (for example, extra characters or subdomains). 3) Request to enter a password and verification code on a suspicious page. 4) The letter may be sent from a hacked mailbox, so even a familiar address is not a guarantee of authenticity. 5) The requirement to copy the verification code is a sign of phishing, since real services do not ask you to copy codes manually.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/393",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 394,
+"date": "2026-08-17",
+"type": "web",
+"title": "Beware: Fake messages after connecting to Wi-Fi on vacation",
+"summary": "Fraudsters use fake pages after connecting to public Wi-Fi to trick users into installing malware or entering passwords. It is important to ignore such messages and take no action.",
+"he_original": "⚠️ יוצאים לחופשה? היזהרו מהודעות חשודות לאחר התחברות ל-Wi-Fi\n\nבעונת הקיץ רבים מתחברים לרשתות Wi-Fi בבתי מלון, בנמלי תעופה ובמקומות ציבוריים.\n\nמיקרוסופט זיהתה קמפיין שבו תוקפים מציגים לאחר ההתחברות לרשת הודעות מזויפות, המבקשות להוריד עדכון, להתקין תוכנה, להריץ פקודה או להזין סיסמה.\n\nחשוב לזכור:\n\n🔹 התחברות ל-Wi-Fi אינה אמורה לדרוש התקנת תוכנה\n🔹 אל תריצו פקודות שאינכם מכירים\n🔹 אל תזינו סיסמאות או קודי אימות בעמוד חשוד\n🔹 עדכנו את המכשיר רק דרך ההגדרות או חנות היישומים הרשמית\n🔹 בפעולות רגישות, העדיפו להשתמש ברשת הסלולרית\n\nקיבלתם הודעה חריגה לאחר התחברות ל-Wi-Fi? עצרו, סגרו את העמוד ואל תפעלו לפי…",
+"ru_translation": "⚠️ Going on vacation? Beware of suspicious messages after connecting to Wi-Fi During the summer season, many people connect to Wi-Fi networks in hotels, airports and public places. Microsoft has discovered a campaign in which attackers display fake messages after connecting to the network, asking them to download an update, install software, run a command, or enter a password. Important to remember: 🔹 Connecting to Wi-Fi should not require software installation 🔹 Don't execute commands you don't know 🔹 Don't enter passwords or verification codes on a suspicious page 🔹 Update your device only through settings or the official app store 🔹 For sensitive operations, prefer the mobile network Have you received an unusual message after connecting to Wi-Fi? Stop, close the page and do not follow the instructions on it. 👍7❤5👏3",
+"needs_manual_translation": false,
+"what_to_notice": "Any message that appears immediately after connecting to Wi-Fi should alert you, especially if it requires installing updates, programs, executing commands, or entering a password. Legitimate networks do not request such actions. Also pay attention to the page address, spelling errors and unusual pop-ups.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/394",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 395,
+"date": "2026-08-17",
+"type": "web",
+"title": "Warning about phishing emails purporting to be from the IRS",
+"summary": "Fraudsters send phishing emails claiming to be from the IRS demanding payment of debt. Clicking on the link takes you to a fake payment page where personal and credit card information is stolen.",
+"he_original": "⚠️ מערך הסייבר הלאומי מתריע מפני מייל פישינג המתחזה להודעת חוב רשמית\n\nבמערך הסייבר הלאומי התקבלו דיווחים רבים על הודעת דוא”ל המתחזה לרשות המסים, ובה דרישה לתשלום חוב, בין היתר בגין דו”ח תנועה.\n\nלחיצה על הקישור בהודעה מובילה לעמוד תשלום מזויף, שנראה כאתר ממשלתי, ומבקש מהמשתמשים להזין פרטים אישיים ופרטי כרטיס אשראי.\n\nקיבלתם הודעה כזו?\n🔹 אל תלחצו על הקישור ואל תזינו פרטים.\n🔹 אל תשלמו חוב דרך קישור שהתקבל במייל או בהודעה לא צפויה.\n🔹 רוצים לבדוק אם קיים חוב? היכנסו באופן עצמאי לאתר הרשמי ב־gov.il.\n🔹 הזנתם פרטי אשראי? פנו בהקדם לחברת האשראי.\n\n📞 ניתן לדווח למערך הסייבר הלאומי בחיוג 119.\n❤5👍2",
+"ru_translation": "⚠️ National Cyber ​​Security Administration warns of phishing email masquerading as official debt notice The National Cyber ​​Security Administration has received numerous reports of an email impersonating the IRS demanding payment of debt, including a traffic fine. Clicking on the link in the message leads to a fake payment page that appears to be a government website and asks users to enter personal and credit card information. Have you received this message? 🔹 Do not click on the link or enter data. 🔹 Do not pay your debt using a link received in an email or unexpected message. 🔹 Want to check if there is a debt? Go to the official website gov.il yourself. 🔹Have you entered your credit card details? Contact your credit company immediately. 📞 All cases can be reported to the National Cyber ​​Security Directorate by calling 119. ❤5👍2",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, you should be wary of: 1) an unexpected letter from the tax department demanding payment of the debt, especially if you do not expect any debts; 2) the link in the letter leads to a page that imitates a government website, but the address may differ from the official gov.il; 3) a request for personal information and credit card information on such a page is a clear sign of phishing; 4) official authorities usually do not require payment via a link from a letter, but offer to check the debt through your personal account on the official website.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/395",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 396,
+"date": "2026-08-17",
+"type": "web",
+"title": "Security in Telegram: how to protect yourself from scammers",
+"summary": "The Israeli Cybersecurity Authority warns of scams on Telegram: fake accounts, suspicious links and attempts to steal data. Gives simple rules for safe use.",
+"he_original": "טלגרם היא כלי נוח ומהיר, אבל כמו בכל פלטפורמה, גם בה חשוב לדעת ממי מקבלים מידע ועל מה לוחצים. 🔐📲\n\nהתחזויות, קישורים חשודים וניסיונות לגנוב פרטי חשבון יכולים להופיע גם בהודעות שנראות לגמרי אמינות.\n\nאז איך משתמשים בטלגרם בצורה בטוחה יותר? ריכזנו עבורכם כמה כללים פשוטים שכדאי להכיר וליישם 👇\n\nשמרו, שתפו והעבירו הלאה. 🛡️\n🙏5❤2👍2👏1",
+"ru_translation": "Telegram is a convenient and fast tool, but as with any platform, it is important to know who you are getting information from and what you are clicking on. 🔐📲 Fake accounts, suspicious links, and attempts to steal account information can appear even in messages that look completely reliable. So how can you use Telegram more securely? We have put together a few simple rules for you that are worth knowing and applying 👇 Save, share and pass on. 🛡️",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, you should be wary of: 1) messages from unfamiliar or suspicious contacts that look official; 2) links leading to sites that require entering a password or account information; 3) requests to follow a link or download a file, especially if they come suddenly; 4) any signs that a friend or official's account has been hacked (for example, unusual communication style or urgency).",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/396",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 397,
+"date": "2026-08-17",
+"type": "web",
+"title": "National Cyber ​​Defense Week in Israel: November 8-12",
+"summary": "Official announcement of National Cyber ​​Defense Week in Israel from November 8 to 12, featuring various activities and practical tools to improve cyber literacy.",
+"he_original": "שבוע הגנת הסייבר הלאומי חוזר, והשנה עם מגוון אירועים, פעילויות, תכנים וכלים מעשיים בדגש \"הגנה בכף היד\"  שיעזרו לכולנו להתגונן טוב יותר במרחב הסייבר.\nבמהלך השבוע יתקיימו הרצאות, כנסים, סדנאות, תרגילים, פעילויות חווייתיות, כנס CyberWeek השנתי וכן יוזמות של ארגונים וחברות  - במטרה להעניק כלים שימושיים להגנת סייבר.\n\n8-12 בנובמבר - שימרו את התאריך. פרטים נוספים בקרוב.\n\nhttps://www.gov.il/he/pages/cyberdefenseweek\n👍2",
+"ru_translation": "National Cyber ​​Defense Week is back this year with a variety of events, activities, content and practical tools with an emphasis on “protection in the palm of your hand” to help us all stay better protected in cyberspace. Throughout the week, there will be lectures, conferences, seminars, exercises, interactive events, the annual CyberWeek conference, as well as initiatives by organizations and companies - with the goal of providing useful tools for cyber defense. November 8-12 - save the date. Details coming soon. https://www.gov.il/he/pages/cyberdefenseweek",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, the text is an official announcement from a government agency, so there is no sign of fraud. However, it is important to pay attention to the link: it leads to the official website gov.il, which confirms its authenticity. If the link had been changed or led to a third-party resource, this could be a sign of phishing. It's also worth checking the dates and details on the official website to ensure the information is accurate.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/397",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 398,
+"date": "2026-08-17",
+"type": "web",
+"title": "Beware: Fake invitation to meet with Israel's cybersecurity chief",
+"summary": "Fraudsters are sending out fake invitations to meet with Israel's cybersecurity chief using a phishing form to collect data.",
+"he_original": "מנהלים ומנהלות בתעשיית הסייבר הישראלית, אנשי ונשות מפתח - בואו לקחת חלק במפגש יחודי עם ראש מערך הסייבר הלאומי&amp;#33; במוקד - המערכה הלאומית בסייבר. \n\nבימים בהם מרחב הסייבר מהווה חזית פעילה ומרכזית, השותפות בין מערך הסייבר הלאומי לתעשיית הגנת הסייבר משמעותית מתמיד&amp;#33;\n\nבמפגש נציג תמונת מצב עדכנית של מגמות לאומיות ונדון באתגרים המשותפים.  \n \nבואו לשמוע, להשמיע ולהשפיע על השיח. \n\nמספר המקומות מוגבל ומותנה בקבלת אישור להשתתפות. \n\n🔗 לבקשת השתתפות נא למלא הטופס עד 25.8.26:\nhttps://forms.monday.com/forms/503ffde09cff429f45aa93b03241b752?r=euc1",
+"ru_translation": "Executives and key employees of the Israeli cyber industry, come take part in a unique meeting with the head of the National Cyber ​​Security Authority! The focus is on a national cyber campaign. In a day when cyberspace is front and center, the partnership between the National Cyber ​​Security Administration and the cyber defense industry has never been more important! At the meeting we will present an up-to-date picture of national trends and discuss common challenges. Come listen, have your say and influence the discussion. The number of places is limited and requires confirmation of participation. 🔗 To apply for participation, fill out the form before 25.8.26: https://forms.monday.com/forms/503ffde09cff429f45aa93b03241b752?r=euc1",
+"needs_manual_translation": false,
+"what_to_notice": "Please note: the link is to forms.monday.com and not to the official Israeli government website (eg gov.il). The form asks for personal information, which is typical for phishing scams. Also the date 8/25/26 looks unrealistic (next year). Official invitations from government agencies are usually sent from official domains and do not require filling out third-party forms.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/398",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": 399,
+"date": "2026-08-17",
+"type": "web",
+"title": "Warning about phishing attacks targeting journalists and public figures in Israel",
+"summary": "Israeli intelligence agencies are warning of an increase in phishing attacks against journalists and public figures. It is recommended to be vigilant, do not click on suspicious links, enable two-factor authentication, and report suspicious attempts.",
+"he_original": "שירות הביטחון הכללי ומערך הסייבר הלאומי מדווחים על עלייה בניסיונות למתקפות פישינג המוכוונות לעיתונאים ישראלים וגורמים נוספים העוסקים בפעילות ציבורית. המערך והשירות זיהו את הנסיונות ופועלים כדי למנועם ולסכלם. \n\nהמלצות מערך הסייבר הלאומי להגנה על החשבונות: \n• אימות זהות הפונה באמצעי תקשורת נוסף.\n• אין להזין סיסמאות או קודי אימות בעקבות קישור שהתקבל בהודעה, גם לא כדי להתחבר לשיחת וידאו.\n• הפעלת אימות דו-שלבי בכל החשבונות המרכזיים.\n• ביצוע בדיקה תקופתית של ההתחברות לחשבונות והסרת מכשירים או חיבורים שאינם מוכרים.\n• לדווח באופן מיידי על כל ניסיון חשוד לגורמי האבטחה בארגון ולמוקד 119 של מערך הסייב…",
+"ru_translation": "The General Security Service and the National Cyber ​​Security Directorate are reporting an increase in attempted phishing attacks targeting Israeli journalists and others engaged in public activities. The Department and the Service have detected these attempts and are taking measures to prevent and block them. National Cybersecurity Administration guidelines for protecting accounts: • Verify the identity of the person requesting using an additional means of communication. • Do not enter passwords or verification codes into a link you receive in a message, even to join a video call. • Enable two-factor authentication for all primary accounts. • Periodically check account logins and remove unknown devices or connections. • Immediately report any suspicious attempts to your organization's security team and the National Cyber ​​Security Administration's 119 Center.",
+"needs_manual_translation": false,
+"what_to_notice": "In this case, attacks are aimed at journalists and public figures. Attackers may use links in messages that lead to fake login pages, especially under the pretext of joining a video call. It's important to pay attention to unexpected messages asking for a password or code, even if they look like an invitation to a video conference. You should also verify the sender's address and use additional communication channels to confirm identity.",
+"what_not_to_do": [
+"Do not click on links or open attachments from suspicious messages",
+"Do not provide passwords, confirmation codes or card details by phone/message",
+"Check any charges and payment requests directly through the official website or application",
+"If you suspect fraud, contact the National Cyber ​​Security Administration hotline 119"
+],
+"source_url": "https://t.me/Israel_Cyber/399",
+"auto_added": true,
+"ai_analyzed": true
+},
+{
+"id": "voice-relative-trouble",
+"date": "2026-07-06",
+"type": "call",
+"title": "“Relative in Need” - a voice scam against Russian speakers",
+"summary": "Official confirmation from the agency: scammers purposefully call elderly Russian speakers, posing as a relative, bank or police - sometimes by faking a familiar voice through AI.",
+"he_original": "לאחרונה מתרבים ניסיונות עוקץ שמכוונים בעיקר לאוכלוסייה המבוגרת דוברת הרוסית. עבריינים מתחזים לבני משפחה, לבנק או למשטרה, ולעיתים אף מחקים קול מוכר באמצעות בינה מלאכותית",
+"ru_translation": "“Recently, fraud attempts have become more frequent, targeting mainly the elderly Russian-speaking population. Criminals impersonate family members, a bank or the police, and sometimes even imitate a familiar voice using artificial intelligence.”",
+"what_to_notice": "The agency writes directly - it is deliberately against Russian-speaking elderly people, not an accident. A voice on the phone can sound very similar to a real relative - AI has learned to imitate a voice from a short recording (for example, from a video on social networks).",
+"what_not_to_do": [
+"Stop, hang up - do not make a decision under pressure and haste",
+"Call a relative back directly using an already saved number, and not the one from which they called",
+"Use a pre-agreed family code word",
+"Never transfer money during a call"
+],
+"source_url": "https://t.me/Israel_Cyber/384"
+},
+{
+"id": "sms-govil-thread",
+"date": "2026-07-08",
+"type": "sms",
+"title": "Fake SMS is “embedded” in real correspondence with GOV.IL",
+"summary": "Official warning about a technical trick: a fraudulent SMS with a request for payment appears on the phone in the SAME correspondence where real messages from GOV.IL usually arrive - due to the way SMS is displayed on some phone models, and not a hack of GOV.IL itself.",
+"he_original": "בשעה האחרונה מופצות הודעות SMS מתחזות עם בקשה לביצוע תשלום וקישור מזיק המופיעות בטלפון בתוך שרשור הודעות קיים של GOV.IL",
+"ru_translation": "“In the last hour, fake SMS with a request for payment and a malicious link have been spreading, which appear on the phone inside an existing correspondence with GOV.IL”",
+"what_to_notice": "The main trap is that the message looks like “our own” - it ends up in the same chat with real government SMS. The location of a message alone does NOT prove that it is real.",
+"what_not_to_do": [
+"Do not follow the link, even if the message is in the same correspondence with real government messages",
+"Any payment must be made only through direct access to the official website, not via a link from an SMS",
+"Do not enter personal data or card details via the link"
+],
+"source_url": "https://t.me/Israel_Cyber/386"
+},
+{
+"id": "sms-fake-bamba",
+"date": "2026-06-14",
+"type": "sms",
+"title": "Fake “Win ​​500 ₪” giveaway on behalf of a famous brand",
+"summary": "The phishing message is disguised as a promotion from a well-known snack brand, with the promise of winning a certificate worth 500 shekels.",
+"he_original": "ההודעה נראית כמו שאלון תמים עם תמונה מוכרת של המותג, כפתורי תשובה ותגובות של \"זוכים\"",
+"ru_translation": "“The message looks like a harmless survey with a familiar brand image, reply buttons and comments from the “winners”",
+"what_to_notice": "Signs according to the agency’s own list: a promise of a large prize, a short survey or “draw”, a requirement to share a link on WhatsApp/Messenger, a transition to an unofficial website address. If it looks too good, it's most likely a phishing scam.",
+"what_not_to_do": [
+"Do not enter personal or card details",
+"Do not share a suspicious link with others",
+"Access only official websites and official brand applications directly"
+],
+"source_url": "https://t.me/Israel_Cyber/380"
+},
+{
+"id": "sms-pango-thread",
+"date": "2026-06-20",
+"type": "sms",
+"title": "Fake SMS on behalf of the Pango parking application - also in real correspondence",
+"summary": "Another case of the same trick: a phishing message on behalf of a popular parking payment application appears in real correspondence with this application.",
+"he_original": "מערך הסייבר הלאומי מתריע מפני הודעות פישינג המתחזות לפנגו ומופיעות בתוך שרשור ה-SMS האמיתי של החברה",
+"ru_translation": "“The Office of Cyber ​​Security is warning about phishing messages that disguise themselves as Pango and appear inside real company SMS messages.”",
+"what_to_notice": "Even if the message looks plausible and is in the right chat, this is not proof of authenticity. The only reliable way to check is to go into the application yourself, not through a link.",
+"what_not_to_do": [
+"Do not follow a link from an SMS, even if it is in the right chat",
+"Check accruals only through the application itself or the official website"
+],
+"source_url": "https://t.me/Israel_Cyber/382"
+},
+{
+"id": "sms-israel-post",
+"date": "2026-06-24",
+"type": "sms",
+"title": "Fake Israel Post website - steals data while printing",
+"summary": "A particularly dangerous scheme: a fake copy of the Israel Post website steals your entered data in real time, even before you click “send.”",
+"he_original": "המידע שמוקלד באתר מועבר לתוקפים בזמן אמת. כלומר, גם אם לא לחצתם על כפתור השליחה ולא השלמתם את התהליך, ייתכן שהפרטים שכבר הקלדתם נחשפו",
+"ru_translation": "“The information you enter on the site is transmitted to scammers in real time. That is, even if you did not click the submit button and did not complete the process, the entered data could already have been disclosed.\"",
+"what_to_notice": "Even the fact of printing data on a fake page is already a risk; you don’t have to press the “send” button. Before entering any data, check the exact website address, and if in doubt, check the link on special sites like scanmysms.com.",
+"what_not_to_do": [
+"Do not click on the link in the SMS about “unsuccessful delivery” if you were not expecting the package",
+"Check delivery status only on the official website/app of Israel Post directly",
+"Carefully check the exact website address before entering anything."
+],
+"source_url": "https://t.me/Israel_Cyber/392"
+},
+{
+"id": "extortion-camera",
+"date": "2026-07-15",
+"type": "call",
+"title": "“I hacked your computer” – extortion via email",
+"summary": "Mass mailing of letters threatening to publish a compromising video, allegedly recorded via a webcam, demanding a ransom.",
+"he_original": "פרצתי לך למחשב והקלטתי אותך מענג את עצמך",
+"ru_translation": "“I hacked your computer and recorded how you satisfy yourself” - the verbatim beginning of a real mailing recorded by Israel Hayom",
+"what_to_notice": "This is a classic \"random\" scam - sent to millions of addresses indiscriminately, no one actually hacked your device and recorded the video. The goal is to create panic and shame so that you pay without thinking.",
+"what_not_to_do": [
+"Do not follow the attached links",
+"Do not transfer payment, no matter how much you threaten - payment only provokes new demands",
+"Do not enter into correspondence - save the letter as evidence, block the sender",
+"If you have real doubts, contact 119 rather than resolve the issue yourself"
+],
+"source_url": "https://www.israelhayom.co.il/article/866445"
+},
+{
+"id": "sms-fake-invoice",
+"date": "2026-07-20",
+"type": "sms",
+"title": "Fake “invoice” letter with hidden remote access program",
+"summary": "An email supposedly from a well-known billing service, with a link to “download an invoice” - in fact, the link leads to installing a program for remote access to a computer.",
+"he_original": "מבדיקת המערך עולה כי הקישור מפנה להורדת ScreenConnect, כלי לגישה מרחוק המשמש לרוב למטרות לגיטימיות, אך במקרה זה זוהה כחלק ממתווה תקיפה זדוני",
+"ru_translation": "“Based on a management review, the link is a download for ScreenConnect, a remote access program that is typically used for legitimate purposes, but in this case was identified as part of a malicious attack pattern.”",
+"what_to_notice": "The remote access program itself is not malicious; it is used, for example, by technical support. The danger is precisely that they are trying to establish it by deception, through a letter that you did not expect.",
+"what_not_to_do": [
+"Carefully check letters about invoices/invoices, especially if you were not expecting them",
+"Do not follow links or download files from suspicious emails",
+"Do not confirm installation of remote access programs from unsolicited emails",
+"Keep your antivirus and system updated"
+],
+"source_url": "https://t.me/Israel_Cyber/390"
+},
+{
+"id": "sms-fake-domain",
+"date": "2026-07-10",
+"type": "sms",
+"title": "A real example of a fake website address in SMS",
+"summary": "Documented case: SMS with vague “bureaucratic” text and a link to an obviously fake website address.",
+"he_original": null,
+"ru_translation": "“Following the annual data update, you are invited to view the updated review status of your account. Secure login to your personal account: trsom.xyz\"",
+"what_to_notice": "Look at the address itself: “trsom.xyz” is in no way connected with real government websites (those end in .gov.il), and the ending “.xyz” is almost never used by official Israeli institutions. The name \"trsom\" is meaningless. Plus the text itself is vague - it doesn’t name any real department.",
+"what_not_to_do": [
+"Check the website address carefully - real Israeli government websites end in .gov.il",
+"Do not click on a link if the message is vague and does not name a specific agency",
+"Access the desired site directly through search"
+],
+"source_url": "https://israeleco.com/novoe-sms-moshennichestvo-v-izraile-ne-popadites/"
+}
+]
+}

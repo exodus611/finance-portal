@@ -608,7 +608,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     window.currentLang = 'ru';
     window.activeStrategy = null;
 
-    function fmt(n) { return Math.round(n).toLocaleString('ru-RU') + ' ₪'; }
+    function fmt(n) { return Math.round(n).toLocaleString('en-US') + ' ₪'; }
     function syncSlider(id, val, cb) { const el = document.getElementById(`${id}-slider`); if (el) el.value = val; cb(); }
     function syncInput(id, cb) { const el = document.getElementById(id); const s = document.getElementById(`${id}-slider`); if (el && s) el.value = s.value; cb(); }
 
@@ -817,7 +817,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     function wizardRestart(){ showWizStep(1); }
     function wizardBack(from){ showWizStep(from-1); }
     function wizardNext(from){
-      var fmtW = function(n){ return Math.round(n).toLocaleString('ru-RU')+' ₪'; };
+      var fmtW = function(n){ return Math.round(n).toLocaleString('en-US')+' ₪'; };
       if(from===1){
         var price = +document.getElementById('wiz-price').value||0;
         var status = +document.getElementById('wiz-status').value||75;
@@ -951,7 +951,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       const pct=parseFloat(document.getElementById('ltv-status').value)||75;
       const loan=Math.round(price*pct/100);
       const equity=price-loan;
-      const fmtN=n=>Math.round(n).toLocaleString('ru-RU');
+      const fmtN=n=>Math.round(n).toLocaleString('en-US');
       document.getElementById('ltv-loan').textContent=fmtN(loan)+' ₪';
       document.getElementById('ltv-equity').textContent=fmtN(equity)+' ₪';
     }
@@ -1220,7 +1220,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         window.finState.mashkantaTotal = mTotal;
         updateDebtBurden();
         document.getElementById('res-stress').innerText = fmt(stressTotal);
-        document.getElementById('res-stress-diff').innerText = Math.round(stressTotal - mTotal).toLocaleString('ru-RU');
+        document.getElementById('res-stress-diff').innerText = Math.round(stressTotal - mTotal).toLocaleString('en-US');
 
         // NEW: update global state for debt burden bar
         window.finState.mashkantaTotal = mTotal;
@@ -1377,7 +1377,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     function updateOptimizerStats(tested,fit,elapsed,shown){
       const he=window.currentLang==='he',box=document.getElementById('optimizer-stats');if(box)box.classList.add('show');
       const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v};
-      set('stat-tested',tested.toLocaleString(he?'he-IL':'ru-RU'));set('stat-fit',fit.toLocaleString(he?'he-IL':'ru-RU'));set('stat-time',elapsed<1000?Math.round(elapsed)+' '+(he?'מ״ש':'ms'):(elapsed/1000).toFixed(2)+' '+(he?'שנ׳':'с'));set('stat-shown',shown);
+      set('stat-tested',tested.toLocaleString(he?'he-IL':'en-GB'));set('stat-fit',fit.toLocaleString(he?'he-IL':'en-GB'));set('stat-time',elapsed<1000?Math.round(elapsed)+' '+(he?'מ״ש':'ms'):(elapsed/1000).toFixed(2)+' '+(he?'שנ׳':'с'));set('stat-shown',shown);
     }
 
     function renderOptimizer(tested){
@@ -1456,7 +1456,7 @@ ${he?'חישוב מידע בלבד':'Information preliminary calculation'}.`;}
         const d=document.getElementById('scenario-diff'),a=scenarioMemory.A,b=scenarioMemory.B;if(!d)return;
         if(a&&b){const dp=b.payment-a.payment,di=b.overpayment-a.overpayment;d.innerHTML=(he?'B לעומת A: ':'B relative to A:')+`0 1 2 ; 3 4 5 .`;}else{d.textContent=he?'שנו פרמטרים ושמרו שני תרחישים.':'Change the settings and save the two scripts.';}
     }
-    function refreshAnnualSchedule(){buildAnnualSchedule();const he=window.currentLang==='he';const now=new Date().toLocaleTimeString(he?'he-IL':'ru-RU',{hour:'2-digit',minute:'2-digit',second:'2-digit'});const e=document.getElementById('schedule-updated');if(e)e.textContent=(he?'עודכן ':'Updated')+now;showToast(he?'הטבלה חושבה מחדש':'The table has been recalculated');}
+    function refreshAnnualSchedule(){buildAnnualSchedule();const he=window.currentLang==='he';const now=new Date().toLocaleTimeString(he?'he-IL':'en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit'});const e=document.getElementById('schedule-updated');if(e)e.textContent=(he?'עודכן ':'Updated')+now;showToast(he?'הטבלה חושבה מחדש':'The table has been recalculated');}
     function buildAnnualSchedule(){
         const tracks=[1,2,3].map(i=>({bal:+document.getElementById(`t${i}-sum`).value||0,n:(+document.getElementById(`t${i}-years`).value||0)*12,r:(+document.getElementById(`t${i}-rate`).value||0)/1200,i,month:0}));
         tracks.forEach(t=>t.pay=calcAnnuity(t.bal,t.n/12,t.r*1200));
@@ -1609,7 +1609,7 @@ ${he?'חישוב מידע בלבד':'Information preliminary calculation'}.`;}
     function closeResultModal(){const ov=document.getElementById('result-modal-overlay');if(ov)ov.classList.remove('show');}
 
     function loadLiveRatesIntoTracks(){
-      fetch('../data/rates.json',{cache:'no-cache'}).then(r=>r.ok?r.json():Promise.reject()).then(j=>{
+      fetch('data/rates.json',{cache:'no-cache'}).then(r=>r.ok?r.json():Promise.reject()).then(j=>{
         const prime = j.prime;
         const byTerm = j.manual && j.manual.avg_mortgage_rate_by_term;
         const overall = j.manual && j.manual.avg_mortgage_rate_overall;
@@ -1621,7 +1621,7 @@ ${he?'חישוב מידע בלבד':'Information preliminary calculation'}.`;}
         const noteEl = document.getElementById('rates-live-note');
         if(noteEl && j.updated){
           const d = new Date(j.updated);
-          noteEl.textContent = '✓ Rates are updated automatically (' + (isNaN(d)?j.updated:d.toLocaleDateString('ru-RU')) + ')';
+          noteEl.textContent = '✓ Rates are updated automatically (' + (isNaN(d)?j.updated:d.toLocaleDateString('en-GB')) + ')';
           noteEl.style.display='block';
         }
         calcMashkanta();
@@ -1673,7 +1673,7 @@ ${he?'חישוב מידע בלבד':'Information preliminary calculation'}.`;}
   t.parentNode.insertBefore(w,t);w.appendChild(t);
 })})();</script>
 <style>
-.langpill{position:fixed;top:10px;right:10px;z-index:99999;display:flex;gap:14px;padding:7px 14px;border-radius:999px;background:rgba(6,11,24,.62);border:1px solid rgba(232,182,76,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:Georgia,serif}
+.langpill{position:fixed;bottom:14px;right:14px;z-index:99999;display:flex;gap:14px;padding:7px 14px;border-radius:999px;background:rgba(6,11,24,.62);border:1px solid rgba(232,182,76,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:Georgia,serif}
 .langpill a{color:rgba(232,238,250,.65);text-decoration:none;font-size:11.5px;letter-spacing:.14em;font-weight:600;position:relative;padding:2px 0}
 .langpill a.on{color:#e8b64c}
 .langpill a.on::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-3px;width:4px;height:4px;border-radius:50%;background:#e8b64c}

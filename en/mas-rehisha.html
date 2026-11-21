@@ -268,7 +268,7 @@ function calcDisabled(v,isSingle){
   }
   return {total:v*.005,rows:[{from:0,to:v,rate:.005,part:v,tax:v*.005}]};
 }
-function fmt(n){return Math.round(n).toLocaleString('ru-RU')}
+function fmt(n){return Math.round(n).toLocaleString('en-US')}
 function fmtD(d){var p=d.split('-');return p[2]+'.'+p[1]+'.'+p[0]}
 function addMonths(iso,m){
   var d=new Date(iso); var day=d.getDate();
@@ -512,9 +512,9 @@ function closeResultModal(){var ov=document.getElementById('result-modal-overlay
   btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
 })();
 
-fetch('../data/rates.json',{cache:'no-cache'})
+fetch('data/rates.json',{cache:'no-cache'})
   .then(function(r){if(!r.ok)throw 0;return r.json()})
-  .then(function(j){ if(j.updated){ var d=new Date(j.updated); if(!isNaN(d)) document.getElementById('p-upd').textContent=d.toLocaleDateString('ru-RU'); } })
+  .then(function(j){ if(j.updated){ var d=new Date(j.updated); if(!isNaN(d)) document.getElementById('p-upd').textContent=d.toLocaleDateString('en-GB'); } })
   .catch(function(){});
 
 document.addEventListener('DOMContentLoaded', buildViewPanelsSafe);
@@ -531,7 +531,7 @@ document.addEventListener('DOMContentLoaded', buildViewPanelsSafe);
   t.parentNode.insertBefore(w,t);w.appendChild(t);
 })})();</script>
 <style>
-.langpill{position:fixed;top:10px;right:10px;z-index:99999;display:flex;gap:14px;padding:7px 14px;border-radius:999px;background:rgba(6,11,24,.62);border:1px solid rgba(232,182,76,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:Georgia,serif}
+.langpill{position:fixed;bottom:14px;right:14px;z-index:99999;display:flex;gap:14px;padding:7px 14px;border-radius:999px;background:rgba(6,11,24,.62);border:1px solid rgba(232,182,76,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:Georgia,serif}
 .langpill a{color:rgba(232,238,250,.65);text-decoration:none;font-size:11.5px;letter-spacing:.14em;font-weight:600;position:relative;padding:2px 0}
 .langpill a.on{color:#e8b64c}
 .langpill a.on::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-3px;width:4px;height:4px;border-radius:50%;background:#e8b64c}

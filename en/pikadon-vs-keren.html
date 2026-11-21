@@ -258,9 +258,9 @@ Severance fund's profitability is not guaranteed. Before making a decision, chec
   function num(id){var v=parseFloat(el(id).value);return isNaN(v)?0:v}
   function money(n){
     var r=Math.round(n);
-    return (r<0?'−':'')+Math.abs(r).toLocaleString('ru-RU')+' ₪';
+    return (r<0?'−':'')+Math.abs(r).toLocaleString('en-US')+' ₪';
   }
-  function pct(n){return (Math.round(n*100)/100).toLocaleString('ru-RU')+'%'}
+  function pct(n){return (Math.round(n*100)/100).toLocaleString('en-US')+'%'}
 
   function calc(){
     var P=Math.max(0,num('amount'));
@@ -372,7 +372,7 @@ Severance fund's profitability is not guaranteed. Before making a decision, chec
   });
 
   // Подставляем сегодняшние ставку и инфляцию из нашего же табло.
-  fetch('../data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():Promise.reject()}).then(function(j){
+  fetch('data/tablo.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():Promise.reject()}).then(function(j){
     var note=[];
     if(j.boi&&typeof j.boi.rate==='number'){
       var boi=j.boi.rate*100;
@@ -418,7 +418,7 @@ Severance fund's profitability is not guaranteed. Before making a decision, chec
   t.parentNode.insertBefore(w,t);w.appendChild(t);
 })})();</script>
 <style>
-.langpill{position:fixed;top:10px;right:10px;z-index:99999;display:flex;gap:14px;padding:7px 14px;border-radius:999px;background:rgba(6,11,24,.62);border:1px solid rgba(232,182,76,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:Georgia,serif}
+.langpill{position:fixed;bottom:14px;right:14px;z-index:99999;display:flex;gap:14px;padding:7px 14px;border-radius:999px;background:rgba(6,11,24,.62);border:1px solid rgba(232,182,76,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:Georgia,serif}
 .langpill a{color:rgba(232,238,250,.65);text-decoration:none;font-size:11.5px;letter-spacing:.14em;font-weight:600;position:relative;padding:2px 0}
 .langpill a.on{color:#e8b64c}
 .langpill a.on::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-3px;width:4px;height:4px;border-radius:50%;background:#e8b64c}
