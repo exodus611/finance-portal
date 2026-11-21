@@ -604,9 +604,9 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
     <span class="hero-veil" aria-hidden="true"></span>
     <div class="hero-badge"><span class="pulse-dot" aria-hidden="true"></span><span data-i18n="hero_badge"></span></div>
     <div class="hero-chips">
-      <div class="glass-chip"><b id="chipRate">3,50%</b><span data-i18n="chip1_l"></span><i class="chip-trend" id="chipRateT">▲ 0.25</i></div>
+      <div class="glass-chip"><b id="chipRate">3,25%</b><span data-i18n="chip1_l"></span><i class="chip-trend chip-down" id="chipRateT">▼ 0.25</i></div>
       <div class="glass-chip"><b id="chipFuel">7,85 ₪</b><span data-i18n="chip2_l"></span><i class="chip-trend" id="chipFuelT">▲ 6.8%</i></div>
-      <div class="glass-chip"><b id="chipUsd">3,27 ₪</b><span data-i18n="chip3_l"></span><i class="chip-trend chip-down" id="chipUsdT">▼ 0.4%</i></div>
+      <div class="glass-chip"><b id="chipUsd">3,33 ₪</b><span data-i18n="chip3_l"></span><i class="chip-trend chip-down" id="chipUsdT">▼ 0.4%</i></div>
     </div>
   </div>
   <div class="wrap hero-body">
@@ -1195,10 +1195,10 @@ const I18N = {
   ics_name: { ru:'ShekelPRO', fr:'ShekelPRO', en:'ShekelPRO' }
 };
 const TABLO = [
-  { icon:'bank', gold:true, up:true, spark:[2,2.1,2.1,2.25,2.25,2.5,2.5,2.75,3.25,3.25,3.5],
+  { icon:'bank', gold:true, up:false, spark:[2,2.1,2.1,2.25,2.25,2.5,2.5,2.75,3.25,3.25,3.25],
     name:{ ru:'Ставка Банка Израиля', fr:'Taux de Bank Israel', en:'Bank of Israel rate' },
-    val:{ ru:'3,50<small>%</small>', fr:'3,50<small>%</small>', en:'3.50<small>%</small>' },
-    note:{ ru:'Прайм 5,00% · с 19.11', fr:'Prime 5,00 % · depuis le 19.11', en:'Prime 5.00% · since Nov 19' }, trend:'▲ 0.25' },
+    val:{ ru:'3,25<small>%</small>', fr:'3,25<small>%</small>', en:'3.25<small>%</small>' },
+    note:{ ru:'Прайм 4,75% · с 21.11', fr:'Prime 4,75 % · depuis le 21.11', en:'Prime 4.75% · since Nov 21' }, trend:'▼ 0.25' },
   { icon:'pie', up:false, spark:[3.1,2.9,2.6,2.4,2.2,1.9,1.6,1.4,1.2,1.1],
     name:{ ru:'Инфляция (мадад)', fr:'Inflation (madad)', en:'Inflation (CPI)' },
     val:{ ru:'1,1<small>%</small>', fr:'1,1<small>%</small>', en:'1.1<small>%</small>' },
@@ -1330,10 +1330,10 @@ const CYBER = [
     p:{ ru:'«Завершите заказ и доставку» — ссылка на фальшивый магазин приложений с фейковыми рейтингами. Установка из неизвестного источника = прямой признак вредоноса.', fr:'« Finalisez commande et livraison » — lien vers une fausse boutique d’applications aux faux avis. Autoriser une installation d’une source inconnue = signe certain de malware.', en:'“Complete your order and delivery” — a link to a fake app store with fake ratings. Allowing an install from an unknown source = a sure malware sign.' } }
 ];
 const TICKER = [
-  { icon:'bank', v:'3,50%', cls:'up', d:{ ru:'▲ 0.25', fr:'▲ 0.25', en:'▲ 0.25' }, n:{ ru:'Ставка Банка Израиля', fr:'Taux Bank Israel', en:'BoI rate' } },
+  { icon:'bank', v:'3,25%', cls:'down', d:{ ru:'▼ 0.25', fr:'▼ 0.25', en:'▼ 0.25' }, n:{ ru:'Ставка Банка Израиля', fr:'Taux Bank Israel', en:'BoI rate' } },
   { icon:'pie', v:'1,1%', cls:'down', d:{ ru:'▼ −0.1', fr:'▼ −0.1', en:'▼ −0.1' }, n:{ ru:'Мадад (год)', fr:'Madad (an)', en:'CPI (year)' } },
   { icon:'dollar', v:'3,27 ₪', cls:'down', d:{ ru:'▼ 0.4%', fr:'▼ 0.4 %', en:'▼ 0.4%' }, n:{ ru:'USD/₪', fr:'USD/₪', en:'USD/₪' } },
-  { icon:'euro', v:'3,58 ₪', cls:'up', d:{ ru:'▲ 0.2%', fr:'▲ 0.2 %', en:'▲ 0.2%' }, n:{ ru:'EUR/₪', fr:'EUR/₪', en:'EUR/₪' } },
+  { icon:'euro', v:'3,65 ₪', cls:'up', d:{ ru:'▲ 0.2%', fr:'▲ 0.2 %', en:'▲ 0.2%' }, n:{ ru:'EUR/₪', fr:'EUR/₪', en:'EUR/₪' } },
   { icon:'wallet', v:{ ru:'6 444 ₪', fr:'6 444 ₪', en:'6,444 ₪' }, cls:'', d:null, n:{ ru:'Минимальная зарплата', fr:'Salaire minimum', en:'Minimum wage' } },
   { icon:'briefcase', v:{ ru:'14 134 ₪', fr:'14 134 ₪', en:'14,134 ₪' }, cls:'up', d:{ ru:'▲ 0.3%', fr:'▲ 0.3 %', en:'▲ 0.3%' }, n:{ ru:'Средняя зарплата', fr:'Salaire moyen', en:'Average wage' } },
   { icon:'fuel', v:{ ru:'7,85 ₪', fr:'7,85 ₪', en:'7.85 ₪' }, cls:'up', d:{ ru:'▲ 6.8%', fr:'▲ 6.8 %', en:'▲ 6.8%' }, n:{ ru:'Бензин 95', fr:'Essence 95', en:'Petrol 95' } },
@@ -1386,7 +1386,7 @@ function applyStatic(){
   $$('.lang-seg-btn, .lang-opt, .mm-lang .chip').forEach(b => b.classList.toggle('active', b.dataset.lang === curLang));
   syncCalcCollapse();
 }
-let LIVE_ISO = '2026-11-20';
+let LIVE_ISO = '2026-11-21';
 const MONTHS_D = {
   ru: ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'],
   fr: ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'],
@@ -1415,7 +1415,7 @@ function fmtTri(n){
 }
 function renderBadge(){
   const el = document.querySelector('[data-i18n="hero_badge"]');
-  if (el) el.textContent = L('hero_badge').replace('{date}', fmtLiveDate(LIVE_ISO) || '20.11.2026');
+  if (el) el.textContent = L('hero_badge').replace('{date}', fmtLiveDate(LIVE_ISO) || '21.11.2026');
 }
 async function fetchLive(){
   if (typeof fetch !== 'function') return;
@@ -1673,7 +1673,7 @@ function renderCalcs(){
   if (cc) cc.innerHTML = L('calc_count').replace('{n}', CALCS.length);
   observeReveals();
 }
-const RATE_24 = [4.25,4.25,4.5,4.75,4.75,5.0,5.25,5.5,5.5,5.25,5.0,4.75,4.5,4.25,4.0,3.75,3.75,3.5,3.5,3.5,3.5,3.5,3.5,3.5];
+const RATE_24 = [4.25,4.25,4.5,4.75,4.75,5.0,5.25,5.5,5.5,5.25,5.0,4.75,4.5,4.25,4.0,3.75,3.75,3.5,3.5,3.5,3.5,3.5,3.5,3.25];
 function renderRateChart(){
   const box = $('#rateChart'); if (!box) return;
   const W = 600, H = 150, PADL = 30, PADR = 12, PADT = 10, PADB = 20;
