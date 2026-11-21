@@ -1,0 +1,593 @@
+{
+ "_comment": "Fichier de données unique. Rempli par scripts/auto_update.py (version russe) ; ce fichier est la traduction française.",
+ "schema_version": 1,
+ "year": 2026,
+ "updated": "2026-09-07",
+ "updated_by": "auto",
+ "rules": {
+  "age_min": 20,
+  "age_max": 67,
+  "qualification_months": 12,
+  "qualification_window_months": 18,
+  "qualification_months_soldier": 6,
+  "qualification_window_soldier": 12,
+  "resignation_wait_days": 90,
+  "halat_min_days": 30,
+  "claim_deadline_months": 12,
+  "entitlement_window_months": 12,
+  "reduced_rate_after_day": 125,
+  "daily_base_amount": 415,
+  "monthly_bituah_leumi_deduction": 48,
+  "workdays_per_month": 25,
+  "avg_months_for_calc": 6,
+  "register_within_days": 7,
+  "employer_certificate_days": 14,
+  "employer_certificate_days_if_requested": 7,
+  "pension_release_days": 15,
+  "unified_form_visit_days": 15,
+  "taasuka_visit_after_online_days": 14,
+  "waiting_days": 5,
+  "waiting_days_period_months": 4,
+  "waiting_days_refunded": true,
+  "payment_day_of_month": 12,
+  "taasuka_call_days": 7
+ },
+ "caps": {
+  "daily_first_period": 550.76,
+  "daily_after_125": 367.17,
+  "note_ru": "Les plafonds sont indexés sur le salaire moyen du pays et révisés en janvier"
+ },
+ "brackets": [
+  {
+   "upto": 207.5,
+   "rate_under28": 0.6,
+   "rate_28plus": 0.8
+  },
+  {
+   "upto": 311.0,
+   "rate_under28": 0.4,
+   "rate_28plus": 0.5
+  },
+  {
+   "upto": 415.0,
+   "rate_under28": 0.35,
+   "rate_28plus": 0.45
+  },
+  {
+   "upto": 2075.0,
+   "rate_under28": 0.25,
+   "rate_28plus": 0.3
+  }
+ ],
+ "days_table": [
+  {
+   "age_from": 45,
+   "age_to": 120,
+   "dependents_min": 0,
+   "days": 175,
+   "label_ru": "45 ans et plus"
+  },
+  {
+   "age_from": 35,
+   "age_to": 45,
+   "dependents_min": 3,
+   "days": 175,
+   "label_ru": "35–45 ans, trois personnes à charge ou plus"
+  },
+  {
+   "age_from": 35,
+   "age_to": 45,
+   "dependents_min": 0,
+   "days": 138,
+   "label_ru": "35–45 ans, moins de trois personnes à charge"
+  },
+  {
+   "age_from": 28,
+   "age_to": 35,
+   "dependents_min": 3,
+   "days": 138,
+   "label_ru": "28–35 ans, trois personnes à charge ou plus"
+  },
+  {
+   "age_from": 28,
+   "age_to": 35,
+   "dependents_min": 0,
+   "days": 100,
+   "label_ru": "28–35 ans, moins de trois personnes à charge"
+  },
+  {
+   "age_from": 25,
+   "age_to": 28,
+   "dependents_min": 3,
+   "days": 138,
+   "label_ru": "25–28 ans, trois personnes à charge ou plus"
+  },
+  {
+   "age_from": 25,
+   "age_to": 28,
+   "dependents_min": 0,
+   "days": 67,
+   "label_ru": "25–28 ans, moins de trois personnes à charge"
+  },
+  {
+   "age_from": 0,
+   "age_to": 25,
+   "dependents_min": 3,
+   "days": 138,
+   "label_ru": "moins de 25 ans, trois personnes à charge ou plus"
+  },
+  {
+   "age_from": 0,
+   "age_to": 25,
+   "dependents_min": 0,
+   "days": 50,
+   "label_ru": "moins de 25 ans, moins de trois personnes à charge"
+  }
+ ],
+ "special_cases": {
+  "discharged_soldier_days": 70,
+  "discharged_soldier_note_ru": "La première année après la démobilisation — jusqu’à 70 jours",
+  "vocational_training_days": 138,
+  "vocational_training_note_ru": "En formation professionnelle avec moins de 12 années de scolarité — jusqu’à 138 jours",
+  "women_57_67_extension": {
+   "min_age": 57,
+   "max_age": 67,
+   "min_birth_year": 1960,
+   "extended_days": 300,
+   "usage_window_months": 18,
+   "note_ru": "Les femmes de 57 à 67 ans nées après le 01.01.1960 ont droit jusqu’à 300 jours (au lieu de 175) sur 18 mois (au lieu de 12) — extension entrée en vigueur en janvier 2022 avec l’élévation de l’âge de la retraite.",
+   "source": "btl.gov.il, kolzchut.org.il — vérifié indépendamment"
+  }
+ },
+ "justified_resignation": [
+  "Dégradation substantielle des conditions de travail",
+  "État de santé du salarié ou d’un proche",
+  "Déménagement augmentant la distance au travail de plus de 60 km",
+  "Licenciement dans les 9 mois suivant un accouchement",
+  "Mutation du conjoint"
+ ],
+ "rejection_reasons": [
+  "Ancienneté insuffisante : moins de 12 mois de travail sur les 18 derniers",
+  "Démission sans motif valable — délai d’attente de 90 jours",
+  "Absence de pointage à l’agence de l’emploi",
+  "Refus d’un emploi convenable proposé par l’agence",
+  "Âge hors de la fourchette 20–67 ans",
+  "Congé sans solde à l’initiative du salarié",
+  "Travail comme indépendant (ossèk) sans statut de salarié",
+  "Retour au travail chez le même employeur, même pour quelques jours",
+  "Demande déposée plus de 12 mois après la première visite à l’agence"
+ ],
+ "documents": [
+  "Formulaire de demande d’allocation de chômage (formulaire BL/1500)",
+  "Attestation de l’employeur sur la période de travail et le salaire",
+  "Bulletins de salaire des 12 derniers mois (obligatoirement le dernier mois)",
+  "Attestation indiquant le motif et la date de fin de travail, signée et tamponnée",
+  "Pièce d’identité avec son annexe",
+  "Coordonnées bancaires (RIB)",
+  "En cas de motif valable de départ — les justificatifs correspondants"
+ ],
+ "timeline": [
+  {
+   "step_ru": "Confirmation d’inscription au Service de l’emploi",
+   "when_ru": "SMS ou courrier juste après le dépôt"
+  },
+  {
+   "step_ru": "Appel d’un agent du Service, ouverture du dossier",
+   "when_ru": "en général quelques jours ; sans nouvelles sous une semaine — aller sur place"
+  },
+  {
+   "step_ru": "Première visite à l’agence",
+   "when_ru": "obligatoire dans les 15 jours après le dépôt en ligne"
+  },
+  {
+   "step_ru": "Décision du Bitouah Leumi",
+   "when_ru": "30–45 jours après le dépôt de la demande"
+  },
+  {
+   "step_ru": "Premier versement",
+   "when_ru": "10–15 jours après l’approbation, date variable"
+  },
+  {
+   "step_ru": "Versements suivants",
+   "when_ru": "vers le 12 de chaque mois"
+  },
+  {
+   "step_ru": "Restitution des 5 jours d’attente",
+   "when_ru": "en fin de période, si vous n’avez pas retrouvé d’emploi"
+  }
+ ],
+ "deductions": [
+  "Impôt sur le revenu par tranches (exonération possible sur demande)",
+  "Cotisation au Bitouah Leumi — forfait de 48 ₪ par mois",
+  "Cotisation assurance maladie — selon le montant de l’allocation"
+ ],
+ "verify_before_publish": [
+  "Taux pour les moins de 28 ans : vérifié sur Kol Zkhout ; revérifier au changement d’année",
+  "Restitution des 5 jours d’attente en fin de période : confirmé par la formulation de l’article 179(hé), mais pas décrit explicitement sur btl.gov.il — en cas de litige, se référer à la loi"
+ ],
+ "sources": [
+  {
+   "name": "Bitouah Leumi — allocation de chômage",
+   "url": "https://www.btl.gov.il/benefits/Unemployment/Pages/default.aspx",
+   "type": "official",
+   "role": "règles, taux, plafonds"
+  },
+  {
+   "name": "Bitouah Leumi — formulaire en ligne unifié (annonce du 03.08.2023)",
+   "url": "https://www.btl.gov.il/About/news/Pages/ArchiveFolder/2024/TofesAhudAvtala.aspx",
+   "type": "official",
+   "role": "confirmation de l’unique formulaire pour les deux organismes"
+  },
+  {
+   "name": "Bitouah Leumi — montants de l’allocation",
+   "url": "https://www.btl.gov.il/benefits/Unemployment/Pages/%D7%A9%D7%99%D7%A2%D7%95%D7%A8%D7%99%20%D7%93%D7%9E%D7%99%20%D7%90%D7%91%D7%98%D7%9C%D7%94.aspx",
+   "type": "official",
+   "role": "tableau des pourcentages par tranche"
+  },
+  {
+   "name": "Kol Zkhout — allocations de chômage",
+   "url": "https://www.kolzchut.org.il/he/%D7%93%D7%9E%D7%99_%D7%90%D7%91%D7%98%D7%9C%D7%94",
+   "type": "reference",
+   "role": "source de secours pour les taux et plafonds"
+  },
+  {
+   "name": "Service de l’emploi (Taasuka)",
+   "url": "https://www.taasuka.gov.il/",
+   "type": "official",
+   "role": "inscription et pointage"
+  },
+  {
+   "name": "data.gov.il — données ouvertes du Bitouah Leumi",
+   "url": "https://data.gov.il/dataset/288",
+   "type": "official",
+   "role": "salaire minimum, taux de cotisations"
+  },
+  {
+   "name": "Bureau central des statistiques (CBS)",
+   "url": "https://www.cbs.gov.il/",
+   "type": "official",
+   "role": "salaire moyen du pays"
+  }
+ ],
+ "macro": {
+  "minimum_wage_monthly": 6443.85,
+  "minimum_wage_hourly": 35.4,
+  "minimum_wage_since": "2026-04-01"
+ },
+ "auto": {
+  "last_run": "2026-09-07T10:43:07+00:00",
+  "ok": false,
+  "sources_used": [],
+  "notes": [],
+  "warnings": [
+   "Bitouah Leumi inaccessible (’latin-1’ codec can’t encode characters in position 77-84: ordinal not in range(256)).",
+   "Kol Zkhout (secours) inaccessible (’latin-1’ codec can’t encode characters in position 77-84: ordinal not in range(256)).",
+   "Toutes les sources de taux sont inaccessibles — dernières valeurs enregistrées utilisées.",
+   "Salaire minimum inaccessible (’latin-1’ codec can’t encode characters in position 77-84: ordinal not in range(256))."
+  ]
+ },
+ "organizations": [
+  {
+   "key": "employer",
+   "name_ru": "L’employeur",
+   "name_he": "מעסיק",
+   "tr": "maassik",
+   "role_ru": "Délivre les documents et transmet les données de salaire. Toute la chaîne commence par lui.",
+   "url": null
+  },
+  {
+   "key": "taasuka",
+   "name_ru": "Le Service de l’emploi",
+   "name_he": "שירות התעסוקה",
+   "tr": "chérout ha-taasuka",
+   "role_ru": "Organisme distinct rattaché au ministère du Travail. Vous y êtes inscrit comme demandeur d’emploi et les pointages y sont enregistrés. Il ne verse pas d’argent, mais sans lui pas d’allocations.",
+   "url": "https://www.taasuka.gov.il/"
+  },
+  {
+   "key": "both",
+   "name_ru": "Le formulaire unifié",
+   "name_he": "טופס אחוד מקוון",
+   "tr": "tofes ihoud mekouvan",
+   "role_ru": "Depuis 2023, plus besoin de déposer les documents en deux endroits : un seul formulaire en ligne sur le portail MyGov part à la fois au Service de l’emploi et au Bitouah Leumi.",
+   "url": "https://www.gov.il/he/multiservice/unemployment-payment-and-job-seeking"
+  },
+  {
+   "key": "btl",
+   "name_ru": "L’Institut national d’assurance",
+   "name_he": "המוסד לביטוח לאומי",
+   "tr": "bitouah leoumi",
+   "role_ru": "Établissement public autonome. Examine la demande et verse l’argent. Reçoit les données de pointage du Service de l’emploi.",
+   "url": "https://www.btl.gov.il/"
+  }
+ ],
+ "forms": [
+  {
+   "code": "טופס אחוד מקוון",
+   "code_ru": "Formulaire en ligne unifié",
+   "name_ru": "Inscription au Service de l’emploi + demande d’allocation en une seule action",
+   "who_ru": "rempli par le salarié",
+   "to_ru": "directement aux deux organismes",
+   "required": true,
+   "note_ru": "En service depuis août 2023. Un seul formulaire sur le portail MyGov via l’identification nationale — les données partent automatiquement au Service de l’emploi et au Bitouah Leumi. La date de dépôt vaut à la fois date d’inscription au Service et date d’ouverture du droit. Condition : se présenter à l’agence dans les 15 jours suivant le dépôt.",
+   "url": "https://www.gov.il/he/multiservice/unemployment-payment-and-job-seeking"
+  },
+  {
+   "code": "בל/1500",
+   "code_ru": "BL/1500",
+   "name_ru": "Demande d’allocation de chômage",
+   "who_ru": "rempli par le salarié",
+   "to_ru": "Bitouah Leumi",
+   "required": true,
+   "note_ru": "Le document principal. Se dépose en ligne dans l’espace personnel. On ne peut pas lui substituer une simple attestation 1514 — la demande doit être remplie.",
+   "url": "https://www.btl.gov.il/%D7%98%D7%A4%D7%A1%D7%99%D7%9D%20%D7%95%D7%90%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D/Documents/T1500.pdf"
+  },
+  {
+   "code": "טופס 100",
+   "code_ru": "Formulaire 100 (tofes 100)",
+   "name_ru": "Transmission électronique des données de salaire",
+   "who_ru": "transmise par l’employeur, par voie électronique",
+   "to_ru": "directement au Bitouah Leumi",
+   "required": true,
+   "note_ru": "Ce n’est PAS un formulaire qu’on vous remet en main propre. Depuis octobre 2021, tous les employeurs doivent transmettre chaque mois, avant le 15, les données de chaque salarié. Pour l’allocation, il faut que la date et le motif de fin de travail figurent dans la transmission. Le Bitouah Leumi le dit clairement : « c’est votre employeur qui doit transmettre le formulaire 100 ; vous n’avez qu’à vérifier qu’il l’a fait ». Il existe aussi une version imprimée annuelle du formulaire 100 — on peut la demander à l’employeur pour les 7 dernières années, mais elle sert au rapprochement des cotisations, pas à l’allocation.",
+   "url": "https://www.btl.gov.il/About/faq/Corona/Avtala/Pages/tofes-100.aspx"
+  },
+  {
+   "code": "בל/1514",
+   "code_ru": "BL/1514",
+   "name_ru": "Attestation de l’employeur sur la période de travail et le salaire",
+   "who_ru": "remplie et signée par l’employeur",
+   "to_ru": "Bitouah Leumi, via le salarié",
+   "required": false,
+   "note_ru": "Nécessaire seulement si l’employeur N’A PAS transmis le formulaire 100. Ce sont les pages 5–6 du formulaire 1500, disponible aussi en formulaire séparé.",
+   "url": null
+  },
+  {
+   "code": "מכתב פיטורים",
+   "code_ru": "Lettre de fin de travail",
+   "name_ru": "C’est aussi l’attestation de période de travail — en général un seul document",
+   "who_ru": "délivrée par l’employeur",
+   "to_ru": "Bitouah Leumi",
+   "required": true,
+   "note_ru": "Doit contenir : le motif de fin de travail (licenciement, démission, HALAT, retraite), la date exacte de fin, les dates de début et de fin des relations de travail, signature et tampon. L’employeur doit la remettre sous 14 jours, ou 7 jours sur demande écrite.",
+   "url": null
+  },
+  {
+   "code": "טופס 161",
+   "code_ru": "Formulaire 161",
+   "name_ru": "Avis de départ de l’entreprise (pas pour l’allocation)",
+   "who_ru": "rempli par l’employeur, partie B par le salarié",
+   "to_ru": "Administration fiscale, copie pour vous",
+   "required": false,
+   "note_ru": "Sans rapport avec l’allocation — cela concerne l’indemnité de licenciement. Mais à récupérer tout de suite, tant que le contact avec l’employeur est facile.",
+   "url": "https://www.gov.il/he/departments/israel_tax_authority"
+  },
+  {
+   "code": "תלושי שכר",
+   "code_ru": "Bulletins de salaire",
+   "name_ru": "Tloushim des 18 derniers mois",
+   "who_ru": "chez le salarié",
+   "to_ru": "Bitouah Leumi, si pas de formulaire 100",
+   "required": false,
+   "note_ru": "Le bulletin du dernier mois de travail est obligatoire. Le nombre de jours travaillés doit y être visible.",
+   "url": null
+  },
+  {
+   "code": "אישור פתיחת תיק",
+   "code_ru": "Confirmation d’ouverture de dossier",
+   "name_ru": "Inscription au Service de l’emploi",
+   "who_ru": "délivrée par le Service de l’emploi",
+   "to_ru": "jointe à la demande",
+   "required": true,
+   "note_ru": "Sans inscription au Service, la demande sera rejetée — c’est écrit noir sur blanc sur le formulaire 1500.",
+   "url": "https://www.taasuka.gov.il/"
+  },
+  {
+   "code": "תעודת שחרור",
+   "code_ru": "Attestation de démobilisation",
+   "name_ru": "Teoudat shihrour ou attestation de fin de service national",
+   "who_ru": "chez le salarié",
+   "to_ru": "Bitouah Leumi",
+   "required": false,
+   "note_ru": "Pour ceux démobilisés au cours des dix-huit derniers mois : donne droit à des conditions d’ancienneté préférentielles.",
+   "url": null
+  }
+ ],
+ "journey": [
+  {
+   "n": 0,
+   "org": "employer",
+   "title_ru": "Vous avez reçu l’avis de licenciement",
+   "when_ru": "jour zéro",
+   "what_ru": "Avant tout, rassemblez les documents tant que vous êtes encore formellement salarié — c’est plus rapide et plus simple. La liste de ce qu’il faut demander se trouve juste en dessous.",
+   "warn_ru": "Seule précaution : ne signez pas de renonciation à réclamations en échange du solde de tout compte. La loi ne l’exige pas, et cette signature peut vous priver d’une partie de l’argent."
+  },
+  {
+   "n": 1,
+   "org": "employer",
+   "title_ru": "Récupérer les documents chez l’employeur",
+   "when_ru": "tout de suite et dans les 14 jours",
+   "what_ru": "Lettre de fin de travail avec motif et date, attestation de période de travail, formulaire 161, dernier bulletin de salaire, solde de tout compte.",
+   "warn_ru": "Mieux vaut faire la demande par écrit — le délai de remise de l’attestation passe alors de 14 à 7 jours."
+  },
+  {
+   "n": 2,
+   "org": "employer",
+   "title_ru": "Vérifier le formulaire 100",
+   "when_ru": "le jour même",
+   "what_ru": "Une seule question à la comptabilité : les données de salaire avec la date et le motif de fin de travail ont-elles été transmises au Bitouah Leumi ? Si oui — pas besoin de joindre les bulletins. Si non — demandez l’attestation BL/1514.",
+   "warn_ru": "C’est la cause la plus fréquente de demandes bloquées pendant des semaines."
+  },
+  {
+   "n": 3,
+   "org": "both",
+   "title_ru": "Déposer le formulaire en ligne unifié",
+   "when_ru": "dans les 7 jours suivant la fin de travail",
+   "what_ru": "Un seul formulaire sur le portail MyGov vous inscrit au Service de l’emploi et dépose simultanément la demande d’allocation au Bitouah Leumi. La date de dépôt devient à la fois date d’inscription et date d’ouverture du droit.",
+   "warn_ru": "Après le dépôt, il faut se présenter à l’agence dans les 15 jours — mettez un rappel."
+  },
+  {
+   "n": 4,
+   "org": "taasuka",
+   "title_ru": "Se présenter à l’agence et venir aux pointages",
+   "when_ru": "dans les 15 jours après le dépôt, puis selon le calendrier",
+   "what_ru": "Le Service transmet chaque mois au Bitouah Leumi le nombre de jours pointés. C’est sur ce rapport que l’argent est calculé.",
+   "warn_ru": "Un pointage manqué = pas de versement pour ce jour : gardez le calendrier sous la main. Refuser un emploi convenable proposé par l’agence est interdit — cela influe aussi sur les versements."
+  },
+  {
+   "n": 5,
+   "org": "btl",
+   "title_ru": "Attendre la décision et le versement",
+   "when_ru": "décision 30–45 jours, argent 10–15 jours de plus",
+   "what_ru": "Vous recevrez un avis avec le montant journalier et le nombre de jours. Ensuite, versements mensuels selon les pointages. Surveillez votre espace personnel : s’il manque quelque chose, une demande y apparaîtra.",
+   "warn_ru": "En cas de refus, un recours est possible. Souvent, le refus est levé par l’envoi des documents manquants."
+  }
+ ],
+ "parallel_rights": [
+  {
+   "name_ru": "Pitsouïm — indemnité de licenciement",
+   "name_he": "פיצויי פיטורים",
+   "tr": "pitsouï pitourim",
+   "note_ru": "En général un mois de salaire par année de travail. Se traite via le formulaire 161, pas via le Bitouah Leumi."
+  },
+  {
+   "name_ru": "Libération des avoirs d’indemnité en caisse de retraite",
+   "name_he": "שחרור כספי פיצויים",
+   "tr": "shihrour kesfé pitsouïm",
+   "note_ru": "L’employeur doit informer la caisse sous 15 jours qu’il ne prétend pas à cet argent."
+  },
+  {
+   "name_ru": "Dméï avraa — jours de convalescence",
+   "name_he": "דמי הבראה",
+   "tr": "dméï avraa",
+   "note_ru": "Inclus dans le solde de tout compte si non versés."
+  },
+  {
+   "name_ru": "Indemnité de congés non pris",
+   "name_he": "פדיון חופשה",
+   "tr": "pidyon houfcha",
+   "note_ru": "Obligatoirement versée lors du solde."
+  },
+  {
+   "name_ru": "Avta’hat ahnassa — revenu minimum garanti",
+   "name_he": "הבטחת הכנסה",
+   "tr": "avta’hat ahnassa",
+   "note_ru": "Si les jours d’avtala sont épuisés ou que l’allocation n’est pas due. Démarche séparée auprès du Bitouah Leumi."
+  }
+ ],
+ "links": [
+  {
+   "title_ru": "Formulaire unifié : inscription + demande d’allocation en une action",
+   "url": "https://www.gov.il/he/multiservice/unemployment-payment-and-job-seeking"
+  },
+  {
+   "title_ru": "Service de l’emploi — inscription comme demandeur d’emploi",
+   "url": "https://www.taasuka.gov.il/"
+  },
+  {
+   "title_ru": "Bitouah Leumi — rubrique allocation de chômage",
+   "url": "https://www.btl.gov.il/benefits/Unemployment/Pages/default.aspx"
+  },
+  {
+   "title_ru": "Formulaire de demande BL/1500 (PDF)",
+   "url": "https://www.btl.gov.il/%D7%98%D7%A4%D7%A1%D7%99%D7%9D%20%D7%95%D7%90%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D/Documents/T1500.pdf"
+  },
+  {
+   "title_ru": "Kol Zkhout — attestation de période de travail, obligations de l’employeur",
+   "url": "https://www.kolzchut.org.il/he/%D7%90%D7%99%D7%A9%D7%95%D7%A8_%D7%A2%D7%9C_%D7%AA%D7%A7%D7%95%D7%A4%D7%AA_%D7%94%D7%A2%D7%91%D7%95%D7%93%D7%94"
+  },
+  {
+   "title_ru": "Kol Zkhout — allocation de chômage",
+   "url": "https://www.kolzchut.org.il/he/%D7%93%D7%9E%D7%99_%D7%90%D7%91%D7%98%D7%9C%D7%94"
+  },
+  {
+   "title_ru": "Administration fiscale — formulaire 161 et fiscalité de l’indemnité",
+   "url": "https://www.gov.il/he/departments/israel_tax_authority"
+  },
+  {
+   "title_ru": "Bitouah Leumi — qu’est-ce que le formulaire 100 et qui le transmet",
+   "url": "https://www.btl.gov.il/About/faq/Corona/Avtala/Pages/tofes-100.aspx"
+  }
+ ],
+ "employer_checklist": [
+  {
+   "item_ru": "Lettre de fin de travail avec toutes les données",
+   "he": "מכתב פיטורים / אישור על תקופת העבודה",
+   "tr": "michtav pitourim",
+   "why_ru": "En général un seul document. Il doit contenir : le motif de fin de travail, la date exacte de fin, les dates de début et de fin des relations de travail, signature et tampon. L’employeur est légalement tenu de la remettre — que vous ayez été licencié ou que vous soyez parti de vous-même.",
+   "deadline_ru": "14 jours après le dernier jour de travail, ou 7 jours sur demande écrite",
+   "critical": true
+  },
+  {
+   "item_ru": "Confirmation de transmission du formulaire 100",
+   "he": "אישור שידור טופס 100",
+   "tr": "",
+   "why_ru": "Posez la question directe à la comptabilité : les données de salaire avec date et motif de fin de travail ont-elles été transmises ? C’est la première cause des demandes qui traînent.",
+   "deadline_ru": "à vérifier tout de suite ; transmission avant le 15 du mois",
+   "critical": true
+  },
+  {
+   "item_ru": "Attestation BL/1514 — si le formulaire 100 n’a pas été transmis",
+   "he": "אישור מעסיק בל/1514",
+   "tr": "",
+   "why_ru": "Solution de repli : l’employeur remplit et signe l’attestation de période de travail et de salaire.",
+   "deadline_ru": "seulement en l’absence de formulaire 100",
+   "critical": false
+  },
+  {
+   "item_ru": "Formulaire 161 (sans rapport avec l’allocation, mais à récupérer)",
+   "he": "טופס 161",
+   "tr": "tofes méa chichim vé-éhad",
+   "why_ru": "Sans rapport avec l’avtala — cela concerne l’indemnité de licenciement et sa fiscalité. Mais récupérez-le au même moment, tant que vous êtes en contact avec l’employeur : sans lui, le retrait de l’indemnité est imposé à un taux majoré.",
+   "deadline_ru": "l’employeur doit le remettre, avant le 15 du mois suivant",
+   "critical": false
+  },
+  {
+   "item_ru": "Le dernier bulletin de salaire",
+   "he": "תלוש שכר אחרון",
+   "tr": "tlouch sahar a’harone",
+   "why_ru": "Obligatoire si les données sont soumises manuellement. Le nombre de jours travaillés doit y être visible.",
+   "deadline_ru": "avec le solde de tout compte",
+   "critical": false
+  },
+  {
+   "item_ru": "Le solde de tout compte",
+   "he": "גמר חשבון",
+   "tr": "guémar heshbone",
+   "why_ru": "Indemnité de licenciement, congés non pris, jours de convalescence. Vérifiez que tout est compté.",
+   "deadline_ru": "le jour de fin de travail ou à la paie suivante",
+   "critical": true
+  },
+  {
+   "item_ru": "Avis à la caisse de retraite pour libérer les avoirs",
+   "he": "שחרור כספי פיצויים",
+   "tr": "",
+   "why_ru": "L’employeur doit informer la caisse qu’il ne prétend pas à l’argent de l’indemnité, sinon vous ne pourrez pas en disposer.",
+   "deadline_ru": "15 jours après la date de fin de travail",
+   "critical": false
+  }
+ ],
+ "data_policy": {
+  "summary_ru": "Toutes les données proviennent de sources officielles publiées et d’API ouvertes. Les requêtes sont rares, honnêtement identifiées, robots.txt respecté.",
+  "principles_ru": [
+   "Seules des pages publiques et des API ouvertes, sans authentification ni contournement de protections",
+   "Le bot s’identifie honnêtement dans le User-Agent et indique un contact",
+   "Fréquence : d’une fois par jour à une fois par semaine, charge négligeable",
+   "robots.txt respecté, y compris Crawl-delay",
+   "Aucune donnée personnelle n’est collectée",
+   "Chaque source est indiquée sur la page avec lien vers l’original"
+  ],
+  "sources_licensing_ru": [
+   "data.gov.il — portail public de données ouvertes, libre utilisation",
+   "api.cbs.gov.il — API ouvert du Bureau central des statistiques",
+   "ArcGIS FeatureServer du ministère de la Construction — service REST public avec CORS ouvert",
+   "btl.gov.il — pages publiques d’information ; robots.txt ne ferme que les sections techniques",
+   "Kol-Zchut — contenus sous licence Creative Commons, source mentionnée lors de l’utilisation"
+  ],
+  "not_done_ru": [
+   "Pas de contournement de captchas, d’authentification ni de limites payantes",
+   "Pas d’extraction massive de bases ni de charge notable",
+   "Pas de copie des textes d’autres sites — seuls des indicateurs chiffrés (faits) sont repris",
+   "Aucune donnée d’utilisateur n’est collectée"
+  ]
+ }
+}

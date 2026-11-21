@@ -603,9 +603,9 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
     <span class="hero-veil" aria-hidden="true"></span>
     <div class="hero-badge"><span class="pulse-dot" aria-hidden="true"></span><span data-i18n="hero_badge">LIVE · données mises à jour automatiquement · 20 novembre 2026</span></div>
     <div class="hero-chips">
-      <div class="glass-chip"><b>3,50%</b><span data-i18n="chip1_l">taux de Bank Israel</span><i class="chip-trend">▲ 0.25</i></div>
-      <div class="glass-chip"><b>7,85 ₪</b><span data-i18n="chip2_l">essence 95</span><i class="chip-trend">▲ 6.8%</i></div>
-      <div class="glass-chip"><b>3,27 ₪</b><span data-i18n="chip3_l">USD/₪</span><i class="chip-trend chip-down">▼ 0.4%</i></div>
+      <div class="glass-chip"><b id="chipRate">3,50%</b><span data-i18n="chip1_l">taux de Bank Israel</span><i class="chip-trend" id="chipRateT">▲ 0.25</i></div>
+      <div class="glass-chip"><b id="chipFuel">7,85 ₪</b><span data-i18n="chip2_l">essence 95</span><i class="chip-trend" id="chipFuelT">▲ 6.8%</i></div>
+      <div class="glass-chip"><b id="chipUsd">3,27 ₪</b><span data-i18n="chip3_l">USD/₪</span><i class="chip-trend chip-down" id="chipUsdT">▼ 0.4%</i></div>
     </div>
   </div>
   <div class="wrap hero-body">
@@ -618,9 +618,9 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
         <button class="btn btn-ghost btn-lg" id="heroPlannerBtn"><span data-ico="target" data-size="18"><svg class="ic " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><circle cx="12" cy="12" r="4.5"></circle><circle cx="12" cy="12" r="1"></circle></svg></span><span data-i18n="cta_goal">Objectif financier</span></button>
       </div>
       <dl class="hero-stats">
-        <div><dt data-count="32">30</dt><dd data-i18n="stat1">calculateurs</dd></div>
+        <div><dt data-count="32">31</dt><dd data-i18n="stat1">calculateurs</dd></div>
         <div><dt data-count="67" data-suffix=" 000+">64 000+</dt><dd data-i18n="stat2">combinaisons de mashkanta</dd></div>
-        <div><dt data-count="160" data-suffix="+">152+</dt><dd data-i18n="stat3">devises dans le convertisseur</dd></div>
+        <div><dt data-count="160" data-suffix="+">153+</dt><dd data-i18n="stat3">devises dans le convertisseur</dd></div>
         <div><dt data-count="61">58</dt><dd data-i18n="stat4">alertes cyber décortiquées</dd></div>
       </dl>
     </div>
@@ -788,7 +788,7 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
       </div>
       <div class="chart-rings">
         <div class="ring-card"><div class="ring" data-ring="37" data-ring-label="1,1%" data-ring-subkey="ring1_s"><svg viewBox="0 0 100 100"><circle class="ring-bg" cx="50" cy="50" r="42"></circle><circle class="ring-fg" cx="50" cy="50" r="42" style="stroke-dashoffset: 166.3;"></circle></svg><div class="ring-val">0,8%</div></div><b data-i18n="ring1_l">Inflation · <span>cible ≤ 3 %</span></b></div>
-        <div class="ring-card"><div class="ring" data-ring="58" data-ring-label="5,0%" data-ring-subkey="ring2_s"><svg viewBox="0 0 100 100"><circle class="ring-bg" cx="50" cy="50" r="42"></circle><circle class="ring-fg ring-blue" cx="50" cy="50" r="42" style="stroke-dashoffset: 110.9;"></circle></svg><div class="ring-val">3,4%</div></div><b data-i18n="ring2_l">Prime · <span>après la hausse</span></b></div>
+        <div class="ring-card"><div class="ring" data-ring="58" data-ring-label="5,0%" data-ring-subkey="ring2_s"><svg viewBox="0 0 100 100"><circle class="ring-bg" cx="50" cy="50" r="42"></circle><circle class="ring-fg ring-blue" cx="50" cy="50" r="42" style="stroke-dashoffset: 110.9;"></circle></svg><div class="ring-val">3,5%</div></div><b data-i18n="ring2_l">Prime · <span>après la hausse</span></b></div>
         <div class="ring-card"><div class="ring" data-ring="30" data-ring-label="+1,2%" data-ring-subkey="ring3_s"><svg viewBox="0 0 100 100"><circle class="ring-bg" cx="50" cy="50" r="42"></circle><circle class="ring-fg ring-green" cx="50" cy="50" r="42" style="stroke-dashoffset: 184.8;"></circle></svg><div class="ring-val">+0,8%</div></div><b data-i18n="ring3_l">Loyer annuel · <span>moyenne nationale</span></b></div>
       </div>
     </div>
@@ -1478,7 +1478,7 @@ const I18N = {
   hdr_all: { ru:'Все калькуляторы', fr:'Catalogue', en:'All calculators' },
   lang_title: { ru:'Язык', fr:'Langue', en:'Language' },
   theme_title: { ru:'Светлая / тёмная тема', fr:'Thème clair / sombre', en:'Light / dark theme' },
-  hero_badge: { ru:'LIVE · данные обновляются автоматически · 20 ноября 2026', fr:'LIVE · données mises à jour automatiquement · 20 novembre 2026', en:'LIVE · data updates automatically · Nov 20, 2026' },
+  hero_badge: { ru:'LIVE · данные обновляются автоматически · {date}', fr:'LIVE · données mises à jour automatiquement · {date}', en:'LIVE · data updates automatically · {date}' },
   hero_h1_a: { ru:'Финансы Израиля —', fr:'Les finances en Israël —', en:'Israel’s finances —' },
   hero_h1_b: { ru:'просто, честно, красиво', fr:'simples, honnêtes, élégantes', en:'simple, honest, beautiful' },
   hero_sub: { ru:'32 бесплатных калькулятора, живое табло экономики и словарь, который объясняет банкиров лучше банкиров. Считаем в вашем браузере — ничего не отправляем и не сохраняем.', fr:"32 calculateurs gratuits, un tableau de bord économique en direct et un glossaire qui explique les banquiers mieux qu'eux-mêmes. Tout se calcule dans votre navigateur — rien n'est envoyé ni stocké.", en:'32 free calculators, a live economic dashboard and a glossary that explains bankers better than bankers. Everything runs in your browser — nothing is sent or stored.' },
@@ -1827,6 +1827,167 @@ function applyStatic(){
   $$('.lang-seg-btn, .lang-opt, .mm-lang .chip').forEach(b => b.classList.toggle('active', b.dataset.lang === curLang));
   syncCalcCollapse();
 }
+let LIVE_ISO = '2026-11-20';
+const MONTHS_D = {
+  ru: ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'],
+  fr: ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'],
+  en: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+};
+const MONTHS_N = {
+  ru: ['январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь'],
+  fr: ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'],
+  en: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+};
+function fmtLiveDate(iso){
+  const p = String(iso || '').split('-');
+  if (p.length !== 3) return '';
+  const d = +p[2], m = +p[1], y = p[0];
+  if (!m || m > 12) return '';
+  return curLang === 'en' ? MONTHS_D.en[m-1] + ' ' + d + ', ' + y : d + ' ' + MONTHS_D[curLang][m-1] + ' ' + y;
+}
+function fmtDec(x, dec){
+  const s = (Math.round(x * 100) / 100).toFixed(dec == null ? 2 : dec);
+  return curLang === 'en' ? s : s.replace('.', ',');
+}
+function fmtTri(n){
+  const ru = String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0');
+  const en = String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return { ru: ru + ' ₪', fr: ru + ' ₪', en: en + ' ₪' };
+}
+function renderBadge(){
+  const el = document.querySelector('[data-i18n="hero_badge"]');
+  if (el) el.textContent = L('hero_badge').replace('{date}', fmtLiveDate(LIVE_ISO) || '20.11.2026');
+}
+async function fetchLive(){
+  if (typeof fetch !== 'function') return;
+  try {
+    const r = await fetch('data/tablo.json', { cache: 'no-cache' });
+    if (!r.ok) return;
+    applyLive(await r.json());
+  } catch (e) { /* офлайн/превью — остаётся встроенный снапшот */ }
+}
+function applyLive(j){
+  try {
+    if (j.updated) LIVE_ISO = j.updated;
+    const small = '<small>%</small>';
+    const b = j.boi || {};
+    if (typeof b.rate === 'number'){
+      const rate = b.rate * 100, prev = (b.prev_rate != null ? b.prev_rate : b.rate) * 100;
+      const d = +(rate - prev).toFixed(2);
+      const sgn = d > 0 ? '▲ +' : d < 0 ? '▼ ' : '';
+      const dv = fmtDec(Math.abs(d), 2);
+      TABLO[0].val = { ru: fmtDec(rate) + small, fr: fmtDec(rate) + small, en: fmtDec(rate) + small };
+      TABLO[0].trend = sgn + dv;
+      TABLO[0].up = d > 0; TABLO[0].flat = d === 0;
+      const cdt = b.changed || b.asof || '';
+      const dmy = cdt ? cdt.slice(8,10) + '.' + cdt.slice(5,7) : '';
+      const enD = cdt ? MONTHS_D.en[+cdt.slice(5,7)-1] + ' ' + +cdt.slice(8,10) : '';
+      TABLO[0].note = {
+        ru: 'Прайм ' + fmtDec((b.prime || 0) * 100) + '% · с ' + dmy,
+        fr: 'Prime ' + fmtDec((b.prime || 0) * 100) + ' % · depuis le ' + dmy,
+        en: 'Prime ' + fmtDec((b.prime || 0) * 100) + '% · since ' + enD
+      };
+      const sp = TABLO[0].spark; if (sp.length) sp[sp.length - 1] = rate;
+      if (typeof RATE_24 !== 'undefined' && RATE_24.length) RATE_24[RATE_24.length - 1] = rate;
+      TICKER[0].v = fmtDec(rate) + '%';
+      TICKER[0].cls = d > 0 ? 'up' : d < 0 ? 'down' : '';
+      TICKER[0].d = { ru: sgn + dv, fr: sgn + dv, en: sgn + dv };
+      const cr = $('#chipRate'), ct = $('#chipRateT');
+      if (cr) cr.textContent = fmtDec(rate) + '%';
+      if (ct) ct.textContent = sgn + dv;
+    }
+    const c = j.cpi || {};
+    if (typeof c.yoy === 'number'){
+      const y = c.yoy * 100, m = (c.mom != null ? c.mom : 0) * 100;
+      const sgn = m > 0 ? '▲ +' : m < 0 ? '▼ ' : '';
+      TABLO[1].val = { ru: fmtDec(y,1) + small, fr: fmtDec(y,1) + small, en: fmtDec(y,1) + small };
+      TABLO[1].trend = sgn + fmtDec(Math.abs(m),1) + '%';
+      TABLO[1].up = m > 0; TABLO[1].flat = m === 0;
+      const per = String(c.period || '');
+      const mi = per ? +per.slice(5,7) - 1 : -1;
+      if (mi >= 0) TABLO[1].note = {
+        ru: 'цель 1–3% · ' + MONTHS_N.ru[mi],
+        fr: 'cible 1–3 % · ' + MONTHS_N.fr[mi],
+        en: 'target 1–3% · ' + MONTHS_N.en[mi]
+      };
+      TICKER[1].v = fmtDec(y,1) + '%';
+      TICKER[1].cls = m > 0 ? 'up' : m < 0 ? 'down' : '';
+      TICKER[1].d = { ru: sgn + fmtDec(Math.abs(m),1), fr: sgn + fmtDec(Math.abs(m),1), en: sgn + fmtDec(Math.abs(m),1) };
+    }
+    const fx = j.fx || {};
+    [['official','USD',2],['official','EUR',3]].forEach(function(a){
+      const kk = a[0], cur = a[1], idx = a[2];
+      const o = fx[kk] || {}, pv = (fx.prev || {})[kk] || {};
+      const v = o[cur], pr = pv[cur];
+      if (typeof v !== 'number') return;
+      const val = fmtDec(v, 2) + ' ₪';
+      TABLO[idx].val = { ru: val, fr: val, en: val };
+      TICKER[idx].v = { ru: val, fr: val, en: val };
+      if (typeof pr === 'number' && Math.abs(pr - v) > 1e-9){
+        const p = (v / pr - 1) * 100;
+        const sgn = p > 0 ? '▲ +' : '▼ ';
+        TABLO[idx].trend = sgn + fmtDec(Math.abs(p),1) + '%';
+        TABLO[idx].up = p > 0; TABLO[idx].flat = false;
+        TICKER[idx].cls = p > 0 ? 'up' : 'down';
+        TICKER[idx].d = { ru: sgn + fmtDec(Math.abs(p),1) + '%', fr: sgn + fmtDec(Math.abs(p),1) + ' %', en: sgn + fmtDec(Math.abs(p),1) + '%' };
+        if (cur === 'USD'){ const t = $('#chipUsdT'); if (t) t.textContent = sgn + fmtDec(Math.abs(p),1) + '%'; }
+      }
+      if (cur === 'USD'){ const e2 = $('#chipUsd'); if (e2) e2.textContent = val; }
+    });
+    const w = j.wage || {};
+    if (typeof w.min_monthly === 'number'){
+      const tri = fmtTri(w.min_monthly);
+      TABLO[4].val = tri; TICKER[4].v = tri;
+      const s = String(w.since || '');
+      if (s.length === 10){
+        const dmy = s.slice(8,10) + '.' + s.slice(5,7) + '.' + s.slice(0,4);
+        TABLO[4].note = {
+          ru: 'с ' + dmy,
+          fr: 'depuis le ' + dmy,
+          en: 'since ' + MONTHS_D.en[+s.slice(5,7)-1] + ' ' + +s.slice(8,10) + ', ' + s.slice(0,4)
+        };
+      }
+    }
+    const f = j.fuel || {};
+    if (typeof f.price_95 === 'number' && typeof f.prev_price === 'number'){
+      const v = f.price_95, p = (v / f.prev_price - 1) * 100;
+      const sgn = p >= 0 ? '▲ +' : '▼ ';
+      const val = fmtDec(v, 2) + ' ₪';
+      TABLO[6].val = { ru: val, fr: val, en: val };
+      TABLO[6].trend = sgn + fmtDec(Math.abs(p),1) + '%';
+      TABLO[6].up = p > 0;
+      const mm = String(f.period || '').match(/(\d{2}\.\d{2})/);
+      const dmy = mm ? mm[1] : '';
+      const enM = dmy ? MONTHS_D.en[+dmy.slice(3,5)-1] + ' ' + +dmy.slice(0,2) : '';
+      TABLO[6].note = {
+        ru: '+' + fmtDec(v - f.prev_price, 2) + ' ₪ с ' + dmy,
+        fr: '+' + fmtDec(v - f.prev_price, 2) + ' ₪ depuis le ' + dmy,
+        en: '+' + fmtDec(v - f.prev_price, 2) + ' ₪ since ' + enM
+      };
+      TICKER[6].v = { ru: val, fr: val, en: val };
+      TICKER[6].cls = p > 0 ? 'up' : 'down';
+      TICKER[6].d = { ru: sgn + fmtDec(Math.abs(p),1) + '%', fr: sgn + fmtDec(Math.abs(p),1) + ' %', en: sgn + fmtDec(Math.abs(p),1) + '%' };
+      const cf = $('#chipFuel'), ct2 = $('#chipFuelT');
+      if (cf) cf.textContent = val;
+      if (ct2) ct2.textContent = sgn + fmtDec(Math.abs(p),1) + '%';
+    }
+    const rb = j.rent_by_city || {};
+    if (typeof rb.national_avg === 'number'){
+      const tri = fmtTri(rb.national_avg);
+      TABLO[7].val = tri; TICKER[7].v = tri;
+      if (typeof rb.yoy === 'number'){
+        const y = rb.yoy * 100, sgn = y >= 0 ? '▲ +' : '▼ ';
+        TABLO[7].trend = sgn + fmtDec(Math.abs(y),1) + '%';
+        TABLO[7].up = y > 0;
+        TICKER[7].cls = y > 0 ? 'up' : 'down';
+        TICKER[7].d = { ru: sgn + fmtDec(Math.abs(y),1) + '%', fr: sgn + fmtDec(Math.abs(y),1) + ' %', en: sgn + fmtDec(Math.abs(y),1) + '%' };
+      }
+    }
+    renderBadge(); renderDash(); renderTicker();
+    const cAcc = $('#chartAcc');
+    if (cAcc && cAcc.dataset.drawn) renderRateChart();
+  } catch (e) { /* тихо: остаётся встроенный снапшот */ }
+}
 function sparkPath(vals, w, h){
   const min = Math.min(...vals), max = Math.max(...vals), rng = (max - min) || 1;
   const pts = vals.map((v,i) => [i * (w / (vals.length - 1)), h - 4 - ((v-min)/rng)*(h-10)]);
@@ -2171,6 +2332,7 @@ function initTilt(){
 function renderAll(){
   renderDash(); renderTicker(); renderPayments(); renderChips(); renderCalcs(); renderSolutions(); renderCyber();
   renderRateChart(); renderRings();
+  renderBadge();
 }
 function setLang(l){
   if (['ru','fr','en'].indexOf(l) === -1) return;
@@ -2190,6 +2352,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (cAcc) cAcc.addEventListener('toggle', () => { if (cAcc.open && !cAcc.dataset.drawn){ cAcc.dataset.drawn = '1'; renderRateChart(); } });
   renderAll(); bindChips(); initSub(); calcPlan();
   observeReveals(); initParallax(); initTilt();
+  fetchLive();
   const root = document.documentElement;
   const tt = $('#themeToggle');
   const syncTheme = () => tt.innerHTML = root.dataset.theme === 'light' ? ico('sun',17) : ico('moon',17);
