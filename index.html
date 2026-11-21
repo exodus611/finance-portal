@@ -1453,7 +1453,7 @@ function applyLive(j){
       TICKER[0].d = { ru: sgn + dv, fr: sgn + dv, en: sgn + dv };
       const cr = $('#chipRate'), ct = $('#chipRateT');
       if (cr) cr.textContent = fmtDec(rate) + '%';
-      if (ct) ct.textContent = sgn + dv;
+      if (ct){ ct.textContent = sgn + dv; ct.classList.toggle('chip-down', d < 0); }
     }
     const c = j.cpi || {};
     if (typeof c.yoy === 'number'){
@@ -1489,7 +1489,7 @@ function applyLive(j){
         TABLO[idx].up = p > 0; TABLO[idx].flat = false;
         TICKER[idx].cls = p > 0 ? 'up' : 'down';
         TICKER[idx].d = { ru: sgn + fmtDec(Math.abs(p),1) + '%', fr: sgn + fmtDec(Math.abs(p),1) + ' %', en: sgn + fmtDec(Math.abs(p),1) + '%' };
-        if (cur === 'USD'){ const t = $('#chipUsdT'); if (t) t.textContent = sgn + fmtDec(Math.abs(p),1) + '%'; }
+        if (cur === 'USD'){ const t = $('#chipUsdT'); if (t){ t.textContent = sgn + fmtDec(Math.abs(p),1) + '%'; t.classList.toggle('chip-down', p < 0); } }
       }
       if (cur === 'USD'){ const e2 = $('#chipUsd'); if (e2) e2.textContent = val; }
     });
@@ -1528,7 +1528,7 @@ function applyLive(j){
       TICKER[6].d = { ru: sgn + fmtDec(Math.abs(p),1) + '%', fr: sgn + fmtDec(Math.abs(p),1) + ' %', en: sgn + fmtDec(Math.abs(p),1) + '%' };
       const cf = $('#chipFuel'), ct2 = $('#chipFuelT');
       if (cf) cf.textContent = val;
-      if (ct2) ct2.textContent = sgn + fmtDec(Math.abs(p),1) + '%';
+      if (ct2){ ct2.textContent = sgn + fmtDec(Math.abs(p),1) + '%'; ct2.classList.toggle('chip-down', p < 0); }
     }
     const rb = j.rent_by_city || {};
     if (typeof rb.national_avg === 'number'){
