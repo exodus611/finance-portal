@@ -1280,7 +1280,9 @@ const I18N = {
   hdr_all: { ru:'Все калькуляторы', fr:'Catalogue', en:'All calculators' },
   lang_title: { ru:'Язык', fr:'Langue', en:'Language' },
   theme_title: { ru:'Светлая / тёмная тема', fr:'Thème clair / sombre', en:'Light / dark theme' },
-  hero_badge: { ru:'LIVE · данные обновляются автоматически · {date}', fr:'LIVE · données mises à jour automatiquement · {date}', en:'LIVE · data updates automatically · {date}' },
+  hero_badge: { ru:'Проверка данных: {date}', fr:'Vérification des données : {date}', en:'Data checked: {date}' },
+  hero_partial: { ru:'Проверка: {date} · часть источников недоступна', fr:'Vérification : {date} · certaines sources indisponibles', en:'Checked: {date} · some sources unavailable' },
+  hero_unavailable: { ru:'Дата проверки недоступна · показаны сохранённые данные', fr:'Date de vérification indisponible · données enregistrées', en:'Check date unavailable · showing saved data' },
   hero_h1_a: { ru:'Финансы Израиля —', fr:'Les finances en Israël —', en:'Israel’s finances —' },
   hero_h1_b: { ru:'просто, честно, красиво', fr:'simples, honnêtes, élégantes', en:'simple, honest, beautiful' },
   hero_sub: { ru:'32 бесплатных калькулятора, живое табло экономики и словарь, который объясняет банкиров лучше банкиров. Считаем в вашем браузере — ничего не отправляем и не сохраняем.', fr:"32 calculateurs gratuits, un tableau de bord économique en direct et un glossaire qui explique les banquiers mieux qu'eux-mêmes. Tout se calcule dans votre navigateur — rien n'est envoyé ni stocké.", en:'32 free calculators, a live economic dashboard and a glossary that explains bankers better than bankers. Everything runs in your browser — nothing is sent or stored.' },
@@ -1629,7 +1631,8 @@ function applyStatic(){
   $$('.lang-seg-btn, .lang-opt, .mm-lang .chip').forEach(b => b.classList.toggle('active', b.dataset.lang === curLang));
   syncCalcCollapse();
 }
-let LIVE_ISO = '2026-11-21';
+let LIVE_ISO = '';
+let LIVE_PARTIAL = false;
 const MONTHS_D = {
   ru: ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'],
   fr: ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'],
@@ -1658,7 +1661,7 @@ function fmtTri(n){
 }
 function renderBadge(){
   const el = document.querySelector('[data-i18n="hero_badge"]');
-  if (el) el.textContent = L('hero_badge').replace('{date}', fmtLiveDate(LIVE_ISO) || '21.11.2026');
+  if (el) el.textContent = LIVE_ISO ? L(LIVE_PARTIAL ? 'hero_partial' : 'hero_badge').replace('{date}', fmtLiveDate(LIVE_ISO)) : L('hero_unavailable');
 }
 async function fetchLive(){
   if (typeof fetch !== 'function') return;
@@ -1670,7 +1673,11 @@ async function fetchLive(){
 }
 function applyLive(j){
   try {
-    if (j.updated) LIVE_ISO = j.updated;
+    const checked = j.auto && j.auto.last_run ? new Date(j.auto.last_run) : null;
+    if (checked && !isNaN(checked.getTime())) {
+      LIVE_ISO = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Jerusalem', year: 'numeric', month: '2-digit', day: '2-digit' }).format(checked);
+      LIVE_PARTIAL = j.auto.ok !== true;
+    }
     const small = '<small>%</small>';
     const b = j.boi || {};
     if (typeof b.rate === 'number'){
@@ -1729,6 +1736,10 @@ function applyLive(j){
       if (typeof v !== 'number') return;
       const val = fmtDec(v, 2) + ' ₪';
       TABLO[idx].val = { ru: val, fr: val, en: val };
+      if (fx.official_date) {
+        const date = fx.official_date.slice(8,10) + '.' + fx.official_date.slice(5,7) + '.' + fx.official_date.slice(0,4);
+        TABLO[idx].note = { ru:'Курс Банка Израиля · ' + date, fr:'Banque d’Israël · ' + date, en:'Bank of Israel · ' + date };
+      }
       if (TABLO[idx].spark.length) TABLO[idx].spark[TABLO[idx].spark.length - 1] = v;
       TICKER[idx].v = { ru: val, fr: val, en: val };
       if (typeof pr === 'number' && Math.abs(pr - v) > 1e-9){
