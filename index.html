@@ -557,6 +557,221 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
   .calc-title{font-size:13.5px}
 }
 
+
+/* Redesign: editorial hierarchy, same ShekelPRO palette and working sections. */
+.hero h1{color:#f5f7fc} html[data-theme="light"] .hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.5)} html[data-theme="light"] .hero .trust-item{color:#d2d9e5}
+
+html{scroll-behavior:auto!important} *{animation:none!important;transition:none!important} .reveal,.zoom-img{opacity:1!important;transform:none!important} .scroll-progress{display:none!important}
+:focus-visible{outline:3px solid #ffd66c!important;outline-offset:4px!important}
+.wrap{max-width:1320px;padding-left:32px;padding-right:32px}
+.site-header{background:#070d1c!important}.header-in{min-height:80px}.brand-name{font-size:23px}.top-nav{gap:26px}
+.hero{background:#070d1c;padding:0 0 35px}.hero-media{position:absolute;top:0;right:0;width:57%;height:100%;max-height:670px}.hero-photo{object-position:center;opacity:.8}.hero-veil{background:linear-gradient(90deg,#070d1c 0%,rgba(7,13,28,.45) 40%,rgba(7,13,28,.08) 100%),linear-gradient(0deg,#070d1c 0%,transparent 38%)}
+.hero-body{min-height:560px;display:flex;align-items:center;padding-top:70px;padding-bottom:60px}.hero-copy{position:relative;z-index:6;max-width:780px}.hero h1{font-size:clamp(58px,6.5vw,92px);line-height:1.02;letter-spacing:-.045em;max-width:800px}.hero-sub{font-size:18px;line-height:1.65;max-width:560px;margin:24px 0 30px;color:#c0c9db}.hero-cta{margin-bottom:42px}.hero-cta .btn{min-height:56px;padding:15px 23px}.hero-stats{gap:36px}.hero-stats dt{font-size:30px}.hero-badge{top:30px;left:auto;right:32px}.hero-chips{left:auto;right:32px;bottom:38px;transform:none;width:420px}.glass-chip{background:rgba(7,13,28,.9);border-color:rgba(232,182,76,.3);padding:13px}.trustbar{margin-top:0;padding-top:25px;color:#d2d9e5}
+.section{padding:76px 0}.section-head{margin-bottom:32px}.section-head.center{align-items:flex-start;text-align:left}.section h2{font-size:clamp(34px,4vw,54px);line-height:1.08;letter-spacing:-.035em}.section-sub{line-height:1.6}.kicker{letter-spacing:.16em}.calc-grid{grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:12px}.calc-card{min-height:180px;padding:22px;border-radius:12px}.calc-card:hover{transform:none}.calc-card::before,.btn-gold::after{display:none}.ticker-track{animation:none!important}.ticker{overflow:auto}.btn-gold{background:#efc35f;color:#171306;box-shadow:none}.btn-gold:hover{transform:none;background:#ffdc83}.btn-ghost:hover{transform:none}
+@media(max-width:760px){.wrap{padding-left:20px;padding-right:20px}.header-in{min-height:68px}.hero{padding:0 0 26px}.hero-media{position:relative;width:100%;height:230px;max-height:none}.hero-veil{background:linear-gradient(0deg,#070d1c 0%,transparent 70%)}.hero-badge{top:14px;left:14px;right:auto}.hero-chips{width:calc(100% - 28px);left:14px;right:auto;bottom:10px;gap:6px}.glass-chip{padding:8px}.hero-body{display:block;min-height:0;padding-top:22px;padding-bottom:0}.hero h1{font-size:clamp(42px,11vw,60px);line-height:1.04}.hero-sub{font-size:16px;margin:18px 0 24px}.hero-cta{margin-bottom:28px}.hero-cta .btn{width:100%}.hero-stats{gap:18px 22px}.hero-stats dt{font-size:26px}.trustbar{margin-top:25px}.section{padding:48px 0}.calc-grid{grid-template-columns:1fr}.calc-card{min-height:150px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+
+/* Editorial surface system: warm paper, ink and the brand gold. */
+.site-header .wrap{max-width:1440px}.top-nav{gap:2px}.top-nav a{padding-left:10px;padding-right:10px}.brand-tag{display:none}
+.hero-badge,.hero-chips{z-index:6}.hero-chips .glass-chip{opacity:1}
+main > .section{--bg:#f7f5ef;--bg2:#eeeae0;--panel:#fffefa;--panel-strong:#f3ede0;--text:#101b30;--muted:#596475;--line:rgba(15,28,48,.14);--gold:#956719;--gold-deep:#77500d;color:var(--text);background:#f7f5ef;border-color:var(--line)}
+main > .section.section-alt{background:#eeeae0}
+main > .section .btn-ghost{color:#18243a;border-color:rgba(20,32,48,.28);background:transparent}
+main > .section .btn-ghost:hover{background:#e8e1d4}
+main > .section .btn-gold{color:#211704;background:#edc45e}
+main > .section .kicker{color:#8e671d;font-weight:800}
+#dashboard .dash-card{background:#fffefa;padding:22px;border-radius:4px;box-shadow:none}
+#dashboard .dash-card.gold{background:#ebd59e}
+#dashboard .dash-lbl{font-size:12px;color:#566171} #dashboard .dash-val{font-size:30px;color:#101b30}
+#payments .pay-card{background:#fffefa;padding:22px;border-radius:4px}
+#calc{background:#f7f5ef} #calc .section-head{border-top:1px solid #bdad8b;padding-top:28px}
+#calc .calc-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:#cfc9bb;border:1px solid #cfc9bb}
+#calc .calc-card{background:#fffefa;border:0;border-radius:0;min-height:220px;padding:26px;box-shadow:none;color:#101b30}
+#calc .calc-card:hover{background:#f5eddc} #calc .calc-icon{border-radius:50%;width:44px;height:44px;color:#805b18}
+#calc .calc-title{font-size:19px;margin-top:12px} #calc .calc-desc{font-size:14px;line-height:1.5;color:#596475} #calc .calc-go{color:#79540f}
+#calc .search-box input{background:#fffefa;color:#101b30;border-color:#bcb6a8}
+#calc .chip{color:#3d4858;background:#fffefa;border-color:#c8c2b5} #calc .chip.active{background:#18243a;color:#fff;box-shadow:none}
+#pension-band .pen-band,#solutions .sol-feature{background:#fffefa}
+@media(max-width:760px){.header-in{gap:5px}.brand-name{font-size:19px}.header-actions{gap:5px;margin-left:auto}.header-actions .lang-seg-btn{padding-left:3px;padding-right:3px}.hero-chips .glass-chip span{font-size:9px}.hero-chips .glass-chip b{font-size:14px} #calc .calc-grid{grid-template-columns:1fr} #calc .calc-card{min-height:170px;padding:20px} #dashboard .dash-card{padding:14px} #dashboard .dash-val{font-size:22px} }
+
+/* The economy board is a distinct, readable financial instrument. */
+#dashboard{--text:#f5f2e9;--muted:#a6b5c8;--line:rgba(203,217,232,.16);--panel:#132238;--panel-strong:#182b42;--gold:#efc96e;background:#0d1b2c!important;color:var(--text)}
+#dashboard .section-head{border-top:1px solid #405065;padding-top:28px}
+#dashboard .section-head .btn-ghost{color:#f6e7c3;border:1px solid #8190a0}
+#dashboard .section-head .kicker{color:#efc96e}
+#dashboard .dash-grid{gap:12px;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:1fr}
+#dashboard .dash-card,#dashboard .dash-card.gold{background:#182a3e;border:1px solid #38495b;border-radius:16px;padding:22px;min-height:190px;box-shadow:none}
+#dashboard .dash-card.gold{background:#24364a;border-color:#b49350}
+#dashboard .dash-top{align-items:flex-start;min-height:34px;gap:9px}
+#dashboard .dash-ico-sm{color:#f2cb78} #dashboard .dash-lbl{font-size:12px;letter-spacing:.02em;color:#c1ccda}
+#dashboard .dash-val{font-family:var(--font-display);color:#fff;font-weight:600;font-size:34px;letter-spacing:-.02em;margin-top:17px}
+#dashboard .dash-note{color:#b8c4d2;font-size:12px;margin-top:8px}
+#dashboard .dash-trend{font-size:11px;padding:4px 8px}
+/* These unlabeled sparklines have no dates or source; avoid implying precision. */
+#dashboard .dash-chart{display:none}
+#dashboard .sec-acc{background:#182a3e;margin-top:16px;border-radius:16px}
+#dashboard .sec-acc>summary{padding:20px 22px;color:#fff}
+#dashboard .chart-band{padding:26px;gap:24px;background:#132238;border:0}
+#dashboard .chart-main h3{color:#fff;font-size:22px}
+#dashboard .chart-main p,#dashboard .chart-legend{color:#c4ced9}
+#dashboard .chart-box{background:#0e1b2c;border:1px solid #34485b;border-radius:12px;padding:16px;margin-top:18px}
+#dashboard .ring-card{background:#1d3147;border:1px solid #41566a;border-radius:12px;color:#fff}
+#dashboard .chart-band .rate-line{filter:none}
+#calc .calc-grid{gap:14px;background:transparent;border:0}
+#calc .calc-card{border:1px solid #d9d2c4;border-radius:14px;box-shadow:0 8px 26px rgba(30,35,42,.045)}
+#calc .calc-card:hover{border-color:#bc9147;box-shadow:0 12px 32px rgba(30,35,42,.10)}
+#payments .pay-card{border-radius:14px;border:1px solid #d3ccbd}
+@media (prefers-reduced-motion:no-preference){
+ .wave-l{animation:wave-a 11s linear infinite!important}.wave-d{animation:wave-b 17s linear infinite!important}
+ .ticker-track{animation:ticker 36s linear infinite!important}.ticker:hover .ticker-track{animation-play-state:paused!important}
+ .ticker{overflow:hidden}
+}
+@media(max-width:760px){#dashboard .dash-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#dashboard .dash-card,#dashboard .dash-card.gold{padding:14px;min-height:160px;border-radius:12px}#dashboard .dash-val{font-size:25px;margin-top:12px}#dashboard .dash-lbl{font-size:11px;min-width:0;overflow-wrap:anywhere}#dashboard .dash-note{font-size:11px}#dashboard .dash-trend{font-size:10px;padding:3px 5px}#dashboard .dash-top{gap:5px}#dashboard .dash-ico-sm{display:none}#dashboard .chart-band{padding:16px}#dashboard .chart-box{padding:6px}}
+
+/* Restored source sparklines, individually drawn and legible. */
+#dashboard .dash-card,#dashboard .dash-card.gold{min-height:250px;display:flex;flex-direction:column}
+#dashboard .dash-chart{display:block;position:relative;overflow:hidden;margin:18px 0 0;padding:0;background:transparent;border:0;border-radius:0}
+#dashboard .dash-spark{height:54px;overflow:visible}
+#dashboard .spark-grid{fill:none;stroke:#91a5b7;stroke-opacity:.14;stroke-width:.45;vector-effect:non-scaling-stroke}
+#dashboard .spark-line{stroke:#edc777;stroke-width:2.5;filter:none}
+#dashboard .spark-end{fill:#ffe2a2;stroke:#e5b74f;stroke-width:1;vector-effect:non-scaling-stroke}
+#dashboard .spark-caption{font-size:10px;line-height:1.3;color:#aab9c8;margin-top:7px}
+.ticker{background:#15253a;border-color:#3c4d5f;padding:15px 0}.ticker-item{color:#c5d1df}.ticker-item b{color:#f5d687;font-size:15px}
+@media(prefers-reduced-motion:no-preference){
+ #dashboard .dash-card.in .spark-line{animation:chart-draw 1.5s ease-out both!important}
+ @keyframes chart-draw{from{opacity:.2}to{opacity:1}}
+}
+@media(max-width:760px){#dashboard .dash-card,#dashboard .dash-card.gold{min-height:220px}#dashboard .dash-chart{margin-top:12px}#dashboard .dash-spark{height:42px}#dashboard .spark-caption{font-size:9px}}
+
+/* Interactive, continuous mini charts */
+#dashboard .dash-card,#dashboard .dash-card.gold{min-height:292px}
+#dashboard .dash-chart{height:64px;margin-top:16px;touch-action:pan-y;cursor:crosshair;overflow:visible}
+#dashboard .dash-spark{height:100%;width:100%;overflow:visible}
+#dashboard .spark-line{stroke:#f2c972;stroke-width:2.25;stroke-dasharray:none!important;stroke-dashoffset:0!important;opacity:1;animation:none!important}
+#dashboard .spark-end{fill:#fff8e2;stroke:#e2b655;stroke-width:1.5}
+#dashboard .spark-guide{stroke:#f2c972;stroke-opacity:.38;stroke-width:1;stroke-dasharray:3 3;vector-effect:non-scaling-stroke}
+#dashboard .spark-readout{display:flex;justify-content:space-between;align-items:center;gap:8px;color:#b6c5d3;font-size:10px;margin-top:8px}
+#dashboard .spark-readout strong{color:#ffe2a4;font-size:12px}
+#dashboard .spark-range{display:block;width:100%;height:14px;margin:6px 0 0;accent-color:#e9be65;cursor:pointer}
+/* Dark mode is dark throughout, not just the hero and dashboard. */
+html:not([data-theme="light"]) main > .section:not(#dashboard){--bg:#0d1728;--bg2:#101e30;--panel:#17263a;--panel-strong:#20334a;--text:#f2f5fa;--muted:#b7c3d2;--line:rgba(211,224,239,.16);--gold:#e9c574;--gold-deep:#e9c574;background:#0d1728!important;color:var(--text)}
+html:not([data-theme="light"]) main > .section.section-alt:not(#dashboard){background:#122236!important}
+html:not([data-theme="light"]) main > .section .btn-ghost{color:#f5ead0;border-color:#6a7887}
+html:not([data-theme="light"]) #calc .calc-card,html:not([data-theme="light"]) #payments .pay-card,html:not([data-theme="light"]) #pension-band .pen-band,html:not([data-theme="light"]) #solutions .sol-feature{background:#192a3f;color:#f2f5fa;border-color:#405167}
+html:not([data-theme="light"]) #calc .calc-card:hover{background:#263a51}
+html:not([data-theme="light"]) #calc .calc-desc{color:#bbc8d6}html:not([data-theme="light"]) #calc .calc-go{color:#f0c978}
+html:not([data-theme="light"]) #calc .calc-icon{color:#efc772}html:not([data-theme="light"]) #calc .chip{background:#192a3f;color:#e1e8ef;border-color:#526276}html:not([data-theme="light"]) #calc .chip.active{background:#eac16a;color:#142035}
+html:not([data-theme="light"]) #calc .search-box input{background:#192a3f;color:#fff;border-color:#526276}
+html:not([data-theme="light"]) main > .section .kicker{color:#e9c574}
+/* Light mode has its own light header, hero and economy board. */
+html[data-theme="light"] .site-header,html[data-theme="light"] .site-header.scrolled{background:#f9f7f1!important;border-color:#dcd4c7}
+html[data-theme="light"] .site-header .brand,html[data-theme="light"] .site-header .top-nav a{color:#17243a}
+html[data-theme="light"] .theme-toggle{background:#fff;border-color:#c5bdae;color:#17243a}
+html[data-theme="light"] .burger span{background:#17243a}
+html[data-theme="light"] .hero{background:#f7f5ef}html[data-theme="light"] .hero h1{color:#132138}
+html[data-theme="light"] .hero-sub{color:#47586c}html[data-theme="light"] .hero .trust-item{color:#35475b}
+html[data-theme="light"] .hero-veil{background:linear-gradient(90deg,#f7f5ef 0%,rgba(247,245,239,.32) 47%,rgba(247,245,239,.03) 100%),linear-gradient(0deg,#f7f5ef 0%,transparent 40%)}
+html[data-theme="light"] .hero .btn-ghost{color:#19293c;border-color:#9aa5af;background:#ffffffb8}
+html[data-theme="light"] .ticker{background:#e5e0d5;border-color:#cbc1b1}html[data-theme="light"] .ticker-item{color:#40536a}html[data-theme="light"] .ticker-item b{color:#62440c}
+html[data-theme="light"] #dashboard{--text:#13233a;--muted:#526477;--line:#d8d4c9;--panel:#fff;--panel-strong:#f0eee7;--gold:#8d6419;background:#eeeae1!important;color:#13233a}
+html[data-theme="light"] #dashboard .dash-card,html[data-theme="light"] #dashboard .dash-card.gold{background:#fffefa;border-color:#d7d1c4}
+html[data-theme="light"] #dashboard .dash-card.gold{background:#fbf2df;border-color:#d1ae6c}
+html[data-theme="light"] #dashboard .dash-lbl,html[data-theme="light"] #dashboard .dash-note,html[data-theme="light"] #dashboard .spark-readout{color:#536476}
+html[data-theme="light"] #dashboard .dash-val,html[data-theme="light"] #dashboard .spark-readout strong{color:#17243a}
+html[data-theme="light"] #dashboard .spark-line{stroke:#af7b19}html[data-theme="light"] #dashboard .spark-guide{stroke:#96701f}html[data-theme="light"] #dashboard .spark-grid{stroke:#66788a;stroke-opacity:.2}
+html[data-theme="light"] #dashboard .sec-acc,html[data-theme="light"] #dashboard .chart-band{background:#fffefa;color:#13233a}
+html[data-theme="light"] #dashboard .sec-acc>summary,html[data-theme="light"] #dashboard .chart-main h3{color:#13233a}
+html[data-theme="light"] #dashboard .chart-main p,html[data-theme="light"] #dashboard .chart-legend{color:#536476}
+html[data-theme="light"] #dashboard .chart-box{background:#f8f6f0;border-color:#d8d2c6}html[data-theme="light"] #dashboard .ring-card{background:#f1eee6;border-color:#ded8cc;color:#13233a}
+html[data-theme="light"] #dashboard .section-head .btn-ghost{color:#17243a;border-color:#9aa3a8}html[data-theme="light"] #dashboard .section-head .kicker{color:#866019}
+@media(max-width:760px){#dashboard .dash-card,#dashboard .dash-card.gold{min-height:255px}#dashboard .dash-chart{height:49px}html[data-theme="light"] .hero-veil{background:linear-gradient(0deg,#f7f5ef 0%,transparent 70%)}}
+
+#dashboard .spark-range{appearance:none;-webkit-appearance:none;background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;width:100%;height:20px;margin:5px 0 0}
+#dashboard .spark-range::-webkit-slider-runnable-track{height:3px;border-radius:5px;background:#5c7082}
+#dashboard .spark-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:13px;height:13px;border:2px solid #f1c66e;border-radius:50%;background:#15263a;margin-top:-5px;box-shadow:none}
+#dashboard .spark-range::-moz-range-track{height:3px;border-radius:5px;background:#5c7082}
+#dashboard .spark-range::-moz-range-thumb{width:10px;height:10px;border:2px solid #f1c66e;border-radius:50%;background:#15263a}
+html[data-theme="light"] #dashboard .spark-range::-webkit-slider-thumb{background:#fff;border-color:#a8781c}
+html[data-theme="light"] #dashboard .spark-range::-moz-range-thumb{background:#fff;border-color:#a8781c}
+@media(max-width:760px){#dashboard .dash-top{flex-wrap:wrap;align-content:flex-start}#dashboard .dash-lbl{flex:1 1 80px}#dashboard .dash-trend{margin-left:0}#dashboard .dash-card,#dashboard .dash-card.gold{min-height:270px}}
+
+/* Compact data board: trend is a quiet detail rather than a second control panel. */
+#dashboard .section-head{margin-bottom:20px}
+#dashboard .dash-disclaimer{color:var(--muted);font-size:12px;line-height:1.5;margin:0 0 16px}
+#dashboard .dash-grid{gap:10px}
+#dashboard .dash-card,#dashboard .dash-card.gold{min-height:0;padding:15px 17px 13px;border-radius:12px;gap:0}
+#dashboard .dash-top{min-height:28px;margin-bottom:4px}
+#dashboard .dash-lbl{font-size:11px;min-width:0;overflow-wrap:anywhere}#dashboard .dash-trend{font-size:10px;padding:3px 7px}
+#dashboard .dash-val{font-size:26px;line-height:1.15;margin-top:9px}
+#dashboard .dash-note{font-size:11px;margin-top:4px;min-height:16px}
+#dashboard .dash-chart{height:34px;margin:8px 0 0;cursor:crosshair}
+#dashboard .dash-spark{height:100%}
+#dashboard .spark-grid{stroke-opacity:.09}
+#dashboard .spark-line{stroke-width:2}
+#dashboard .spark-readout{font-size:10px;margin-top:2px;line-height:1.3}
+#dashboard .spark-readout strong{font-size:11px}
+#dashboard .spark-range{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+#dashboard .dash-card:focus-within{outline:3px solid #e9ba57;outline-offset:2px}
+#dashboard .dash-card:focus-within .dash-chart{background:rgba(232,190,99,.06);border-radius:4px}
+@media(max-width:760px){#dashboard .dash-grid{gap:8px}#dashboard .dash-card,#dashboard .dash-card.gold{min-height:0;padding:12px 12px 10px}#dashboard .dash-top{min-height:37px;flex-wrap:nowrap}#dashboard .dash-lbl{flex:1 1 auto;font-size:10px;line-height:1.25}#dashboard .dash-trend{font-size:9px;white-space:nowrap;padding:3px 5px}#dashboard .dash-val{font-size:22px;margin-top:4px}#dashboard .dash-note{font-size:10px;min-height:14px}#dashboard .dash-chart{height:28px;margin-top:7px}#dashboard .spark-readout{font-size:9px}#dashboard .spark-readout strong{font-size:10px}}
+
+/* Discrete observation plots, rather than decorative sparklines. */
+#dashboard .dash-card,#dashboard .dash-card.gold{padding:16px;min-height:0}
+#dashboard .dash-plot{margin-top:12px;padding:10px 11px 8px;background:#101e30;border:1px solid #35495e;border-radius:10px}
+#dashboard .plot-meta,#dashboard .plot-footer{display:flex;justify-content:space-between;align-items:center;gap:6px}
+#dashboard .plot-meta span,#dashboard .plot-footer{font:700 9px/1.3 system-ui,sans-serif;letter-spacing:.06em;color:#9caec1}
+#dashboard .plot-meta strong{font:700 13px/1.2 system-ui,sans-serif;color:#f5d996;white-space:nowrap}
+#dashboard .dash-chart{height:70px;margin:3px 0 2px;cursor:crosshair;touch-action:pan-y}
+#dashboard .dash-spark{display:block;width:100%;height:100%;overflow:visible}
+#dashboard .plot-grid{fill:none;stroke:#9aabba;stroke-opacity:.16;stroke-width:.65;vector-effect:non-scaling-stroke}
+#dashboard .plot-connector{fill:none;stroke:#d4b778;stroke-opacity:.55;stroke-width:1.2;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+#dashboard .plot-point{fill:#c8ad71;stroke:#101e30;stroke-width:1.4;vector-effect:non-scaling-stroke}
+#dashboard .spark-guide{stroke:#d4b778;stroke-opacity:.45;stroke-width:1;stroke-dasharray:2 3;vector-effect:non-scaling-stroke}
+#dashboard .spark-end{fill:#f5d287;stroke:#102033;stroke-width:2;vector-effect:non-scaling-stroke}
+#dashboard .plot-footer b{color:#dfebf4}
+html[data-theme="light"] #dashboard .dash-plot{background:#f5f2ea;border-color:#e1d8c9}
+html[data-theme="light"] #dashboard .plot-meta span,html[data-theme="light"] #dashboard .plot-footer{color:#6c7680}
+html[data-theme="light"] #dashboard .plot-meta strong,html[data-theme="light"] #dashboard .plot-footer b{color:#233249}
+html[data-theme="light"] #dashboard .plot-connector{stroke:#9d711f;stroke-opacity:.6}
+html[data-theme="light"] #dashboard .plot-point{fill:#a47b2d;stroke:#f5f2ea}
+html[data-theme="light"] #dashboard .spark-end{fill:#8d6014;stroke:#fffefa}
+@media(max-width:760px){#dashboard .dash-card,#dashboard .dash-card.gold{padding:11px}#dashboard .dash-plot{padding:8px 7px 6px;margin-top:9px}#dashboard .dash-chart{height:50px}#dashboard .plot-meta span,#dashboard .plot-footer{font-size:8px;letter-spacing:0}#dashboard .plot-meta strong{font-size:11px}}
+#dashboard .plot-meta{justify-content:flex-end}
+#dashboard .plot-footer{justify-content:flex-end}
+
+/* Compact reading rhythm and native, keyboard-operable section accordions. */
+.hero-body{min-height:440px;padding-top:55px;padding-bottom:38px}
+.hero h1{font-size:clamp(43px,4.7vw,68px);line-height:1.08;letter-spacing:-.035em;max-width:690px}
+.hero-sub{font-size:16px;line-height:1.55;margin:16px 0 20px;max-width:530px}
+.hero-cta{margin-bottom:25px}.hero-cta .btn{min-height:46px;padding:11px 17px;font-size:12px}.hero-stats dt{font-size:24px}.hero-stats dd{font-size:11px}
+.section{padding:45px 0}.section h2{font-size:clamp(27px,2.8vw,38px);line-height:1.15;letter-spacing:-.025em}.section-sub{font-size:14px;margin-top:8px;line-height:1.5}
+.section-head{margin-bottom:20px}.section .kicker{font-size:10px;margin-bottom:8px}
+#calc .calc-card{min-height:175px;padding:18px}.calc-title{font-size:16px!important}.calc-desc{font-size:13px!important}
+.section:has(> .wrap > .page-fold){padding:8px 0}
+.page-fold{border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow:hidden}
+.page-fold>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:62px;padding:15px 20px;color:var(--text);font-size:18px;line-height:1.3;font-weight:700}
+.page-fold>summary::-webkit-details-marker{display:none}.page-fold>summary:hover{background:rgba(216,178,103,.08)}
+.fold-symbol{width:30px;height:30px;flex:none;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;font-size:20px;font-weight:400;color:var(--gold)}
+.fold-symbol::before{content:'+'}.page-fold[open]>.fold-content{border-top:1px solid var(--line);padding:24px 20px}.page-fold[open]>summary .fold-symbol::before{content:'−'}
+#payments .fold-content .section-head h2,#payments .fold-content .section-head .kicker,#solutions .fold-content .section-head h2,#solutions .fold-content .section-head .kicker,#cyber .fold-content .cyber-head h2,#faq .fold-content .section-head,#subscribe .fold-content .sub-card h2,#pension-band .fold-content .pen-copy h2{display:none}
+#solutions .fold-content .section-head{margin-bottom:8px}#subscribe .sub-card{padding:22px}#pension-band .pen-band{border-radius:12px}
+#dashboard .dash-disclaimer{font-size:11px}
+@media(max-width:760px){.hero-body{min-height:0;padding-top:20px;padding-bottom:0}.hero h1{font-size:clamp(35px,9vw,43px)}.hero-sub{font-size:15px;line-height:1.5;margin:15px 0 20px}.hero-cta{margin-bottom:24px}.hero-stats dt{font-size:22px}.section{padding:32px 0}.section h2{font-size:26px}.page-fold>summary{font-size:16px;min-height:56px;padding:12px 14px}.page-fold[open]>.fold-content{padding:16px 12px}.section:has(> .wrap > .page-fold){padding:6px 0}#calc .calc-card{min-height:145px;padding:16px}.calc-title{font-size:15px!important}.calc-desc{font-size:12px!important}}
+
+#pikadonRateWrap[hidden]{display:none!important}#pikadonRateWrap{margin:15px 0}#pikadonRateWrap label{display:block;margin-bottom:7px;font-weight:700;font-size:14px}.rate-input-wrap{display:flex;align-items:center;gap:10px}.rate-input-wrap input{width:130px;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:var(--panel-strong);color:var(--text);font:inherit}.rate-input-wrap span{font-weight:700}#pikadonRateHelp{font-size:12px;color:var(--muted);line-height:1.45;margin:7px 0}
+.pension-language-note{font-size:12px;line-height:1.45;color:var(--muted);margin-top:8px}.pension-language-note[hidden]{display:none}
+
+/* Gentle breathing and pointer-responsive movement for the original hero photo. */
+@media (prefers-reduced-motion:no-preference){
+ .hero-photo{will-change:transform;transform-origin:50% 50%;animation:hero-photo-float 8s ease-in-out infinite!important}
+ @keyframes hero-photo-float{
+  0%{transform:translate3d(calc(var(--photo-x, 0px) - 0.5%),calc(var(--photo-y, 0px) + 0.3%),0) scale(1.04)}
+  50%{transform:translate3d(calc(var(--photo-x, 0px) + 0.6%),calc(var(--photo-y, 0px) - 0.8%),0) scale(1.18)}
+  100%{transform:translate3d(calc(var(--photo-x, 0px) - 0.5%),calc(var(--photo-y, 0px) + 0.3%),0) scale(1.04)}
+ }
+}
+@media (prefers-reduced-motion:reduce){.hero-photo{animation:none!important;transform:none!important}}
 </style>
 </head>
 <body>
@@ -565,17 +780,17 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
 <!-- ══════════ ХЕДЕР ══════════ -->
 <header class="site-header" id="siteHeader">
   <div class="wrap header-in">
-    <a class="brand" href="index.html" aria-label="ShekelPRO — на главную">
+    <a class="brand" href="https://exodus611.github.io/finance-portal/index.html" aria-label="ShekelPRO — на главную">
       <svg class="brand-icon" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="rgba(232,182,76,.12)"/><circle cx="32" cy="32" r="21" fill="none" stroke="currentColor" stroke-width="3"/><path d="M38 22c-2-2-4-3-6-3-4 0-7 3-7 6.5 0 8 14 5 14 13 0 4-3 7-7 7-3 0-5.5-1.5-7-4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><path d="M32 14v6M32 44v6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
       <span class="brand-name">Shekel<b>PRO</b></span>
       <span class="brand-tag" data-i18n="brand_tag"></span>
     </a>
     <nav class="top-nav" id="topNav" aria-label="Основная навигация">
       <a href="#calc" data-i18n="nav_calc"></a>
-      <a href="tablo.html"><span data-i18n="nav_tablo"></span> <span class="live-dot" aria-hidden="true"></span></a>
-      <a href="payments.html" data-i18n="nav_pay"></a>
-      <a href="cyber.html" data-i18n="nav_cyber"></a>
-      <a href="slovar.html" data-i18n="nav_slovar"></a>
+      <a href="https://exodus611.github.io/finance-portal/tablo.html"><span data-i18n="nav_tablo"></span> <span class="live-dot" aria-hidden="true"></span></a>
+      <a href="https://exodus611.github.io/finance-portal/payments.html" data-i18n="nav_pay"></a>
+      <a href="https://exodus611.github.io/finance-portal/cyber.html" data-i18n="nav_cyber"></a>
+      <a href="https://exodus611.github.io/finance-portal/slovar.html" data-i18n="nav_slovar"></a>
     </nav>
     <div class="header-actions">
       <div class="lang-wrap lang-seg" role="group" aria-label="Language" data-i18n-title="lang_title">
@@ -595,11 +810,11 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
       <button class="chip" data-lang="en">EN</button>
     </div>
     <a href="#calc" data-i18n="nav_calc"></a>
-    <a href="tablo.html" data-i18n="nav_tablo"></a>
-    <a href="payments.html" data-i18n="nav_pay"></a>
-    <a href="cyber.html" data-i18n="nav_cyber"></a>
-    <a href="slovar.html" data-i18n="nav_slovar"></a>
-    <a href="valuta.html" data-i18n="nav_valuta"></a>
+    <a href="https://exodus611.github.io/finance-portal/tablo.html" data-i18n="nav_tablo"></a>
+    <a href="https://exodus611.github.io/finance-portal/payments.html" data-i18n="nav_pay"></a>
+    <a href="https://exodus611.github.io/finance-portal/cyber.html" data-i18n="nav_cyber"></a>
+    <a href="https://exodus611.github.io/finance-portal/slovar.html" data-i18n="nav_slovar"></a>
+    <a href="https://exodus611.github.io/finance-portal/valuta.html" data-i18n="nav_valuta"></a>
   </div>
 </header>
 
@@ -625,7 +840,7 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
       <p class="hero-sub" data-i18n="hero_sub"></p>
       <div class="hero-cta">
         <a class="btn btn-gold btn-lg" href="#calc"><span data-ico="grid" data-size="18"></span><span data-i18n="cta_calc"></span></a>
-        <a class="btn btn-ghost btn-lg" href="tablo.html"><span data-ico="chart" data-size="18"></span><span data-i18n="cta_tablo"></span></a>
+        <a class="btn btn-ghost btn-lg" href="https://exodus611.github.io/finance-portal/tablo.html"><span data-ico="chart" data-size="18"></span><span data-i18n="cta_tablo"></span></a>
         <button class="btn btn-ghost btn-lg" id="heroPlannerBtn"><span data-ico="target" data-size="18"></span><span data-i18n="cta_goal"></span></button>
       </div>
       <dl class="hero-stats">
@@ -658,8 +873,9 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
         <h2 data-i18n="sec_dash_h"></h2>
         <p class="section-sub" data-i18n="sec_dash_s"></p>
       </div>
-      <a class="btn btn-ghost" href="tablo.html" data-i18n="btn_more"></a>
+      <a class="btn btn-ghost" href="https://exodus611.github.io/finance-portal/tablo.html" data-i18n="btn_more"></a>
     </div>
+    <p class="dash-disclaimer" data-i18n="dash_graph_note"></p>
     <div class="dash-grid" id="dashGrid"></div>
     <details class="sec-acc" id="chartAcc">
       <summary><span data-ico="chart" data-size="18"></span><span data-i18n="acc_chart"></span><span class="acc-badge">24 <span data-i18n="chart_months"></span></span><span class="acc-chev" data-ico="chevron" data-size="16"></span></summary>
@@ -681,7 +897,7 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
       </div>
       <div class="chart-rings">
         <div class="ring-card"><div class="ring" data-ring="37" data-ring-label="1,1%" data-ring-subkey="ring1_s"><svg viewBox="0 0 100 100"><circle class="ring-bg" cx="50" cy="50" r="42"/><circle class="ring-fg" cx="50" cy="50" r="42"/></svg><div class="ring-val">0%</div></div><b data-i18n="ring1_l"></b></div>
-        <div class="ring-card"><div class="ring" data-ring="58" data-ring-label="5,0%" data-ring-subkey="ring2_s"><svg viewBox="0 0 100 100"><circle class="ring-bg" cx="50" cy="50" r="42"/><circle class="ring-fg ring-blue" cx="50" cy="50" r="42"/></svg><div class="ring-val">0%</div></div><b data-i18n="ring2_l"></b></div>
+        <div class="ring-card"><div class="ring" data-ring="58" data-ring-label="4,75%" data-ring-subkey="ring2_s"><svg viewBox="0 0 100 100"><circle class="ring-bg" cx="50" cy="50" r="42"/><circle class="ring-fg ring-blue" cx="50" cy="50" r="42"/></svg><div class="ring-val">0%</div></div><b data-i18n="ring2_l"></b></div>
         <div class="ring-card"><div class="ring" data-ring="30" data-ring-label="+1,2%" data-ring-subkey="ring3_s"><svg viewBox="0 0 100 100"><circle class="ring-bg" cx="50" cy="50" r="42"/><circle class="ring-fg ring-green" cx="50" cy="50" r="42"/></svg><div class="ring-val">0%</div></div><b data-i18n="ring3_l"></b></div>
       </div>
     </div>
@@ -692,16 +908,19 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
 <!-- ══════════ ДАТЫ ВЫПЛАТ ══════════ -->
 <section class="section section-alt" id="payments">
   <div class="wrap">
+    <details class="page-fold"><summary><span class="fold-title" data-i18n="sec_pay_h"></span><span class="fold-symbol" aria-hidden="true"></span></summary><div class="fold-content">
+
     <div class="section-head">
       <div>
         <div class="kicker" data-i18n="sec_pay_kicker"></div>
         <h2 data-i18n="sec_pay_h"></h2>
         <p class="section-sub" data-i18n="sec_pay_s"></p>
       </div>
-      <a class="btn btn-ghost" href="payments.html" data-i18n="btn_calendar"></a>
+      <a class="btn btn-ghost" href="https://exodus611.github.io/finance-portal/payments.html" data-i18n="btn_calendar"></a>
     </div>
     <div class="pay-grid" id="payGrid"></div>
     <p class="foot-note" data-i18n="pay_remind_hint"></p>
+      </div></details>
   </div>
 </section>
 
@@ -747,6 +966,11 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
           <option value="yeled" data-i18n="goal3"></option>
           <option value="havraa" data-i18n="goal4"></option>
         </select>
+        <div id="pikadonRateWrap" hidden>
+          <label for="pikadonRate" data-i18n="plan_pik_rate"></label>
+          <div class="rate-input-wrap"><input id="pikadonRate" type="number" inputmode="decimal" min="0" max="100" step="0.01" placeholder="4.5" aria-describedby="pikadonRateHelp"><span aria-hidden="true">%</span></div>
+          <p id="pikadonRateHelp" data-i18n="plan_pik_help"></p>
+        </div>
         <div class="lbl-row"><span data-i18n="plan_month"></span><b id="monthVal">250 ₪</b></div>
         <input type="range" id="monthRange" min="50" max="2000" step="50" value="250" aria-label="Сумма в месяц">
         <div class="lbl-row"><span data-i18n="plan_years"></span><b id="yearVal">6 лет</b></div>
@@ -766,6 +990,8 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
 <!-- ══════════ ПЕНСИОННЫЙ БАННЕР ══════════ -->
 <section class="section" id="pension-band">
   <div class="wrap">
+    <details class="page-fold"><summary><span class="fold-title" data-i18n="sec_pen_h"></span><span class="fold-symbol" aria-hidden="true"></span></summary><div class="fold-content">
+
     <div class="pen-band reveal">
       <div class="pen-visual" data-plx="-0.06">
         <div class="photo-frame zoom-img"><img src="data:image/webp;base64,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" alt=""></div>
@@ -777,17 +1003,20 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
         <h2 data-i18n="sec_pen_h"></h2>
         <p class="section-sub" data-i18n="sec_pen_s"></p>
         <div class="pen-actions">
-          <a class="btn btn-gold" id="pensionCalcLink" href="pension-calc.html" data-i18n="pen_b1"></a>
-          <a class="btn btn-ghost" href="pension-gap.html" data-i18n="pen_b2"></a>
+          <a class="btn btn-gold" id="pensionCalcLink" href="https://exodus611.github.io/finance-portal/pension-calc.html" data-i18n="pen_b1"></a>
+          <a class="btn btn-ghost" href="https://exodus611.github.io/finance-portal/pension-gap.html" data-i18n="pen_b2"></a>
         </div>
       </div>
     </div>
+      </div></details>
   </div>
 </section>
 
 <!-- ══════════ РЕШЕНИЯ И ИНДИКАТОРЫ ══════════ -->
 <section class="section" id="solutions">
   <div class="wrap">
+    <details class="page-fold"><summary><span class="fold-title" data-i18n="sec_sol_h"></span><span class="fold-symbol" aria-hidden="true"></span></summary><div class="fold-content">
+
     <div class="section-head">
       <div>
         <div class="kicker" data-i18n="sec_sol_kicker"></div>
@@ -804,20 +1033,22 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
         <h3 data-i18n="feat_h"></h3>
         <p data-i18n="feat_p"></p>
         <div class="feat-chips">
-          <span class="feat-chip"><b>3,50%</b><span data-i18n="feat_c1"></span></span>
-          <span class="feat-chip"><b>5,00%</b><span data-i18n="feat_c2"></span></span>
-          <span class="feat-chip"><b>19.11</b><span data-i18n="feat_c3"></span></span>
+          <span class="feat-chip"><b id="featureRate">3,25%</b><span data-i18n="feat_c1"></span></span>
+          <span class="feat-chip"><b id="featurePrime">4,75%</b><span data-i18n="feat_c2"></span></span>
         </div>
-        <a class="btn btn-gold" href="mashkanta.html" data-i18n="feat_btn"></a>
+        <a class="btn btn-gold" href="https://exodus611.github.io/finance-portal/mashkanta.html" data-i18n="feat_btn"></a>
       </div>
     </div>
     <div class="sol-grid" id="solGrid"></div>
+      </div></details>
   </div>
 </section>
 
 <!-- ══════════ КИБЕРЩИТ ══════════ -->
 <section class="section section-alt" id="cyber">
   <div class="wrap">
+    <details class="page-fold"><summary><span class="fold-title" data-i18n="sec_cyber_h"></span><span class="fold-symbol" aria-hidden="true"></span></summary><div class="fold-content">
+
     <div class="cyber-card">
       <div class="cyber-head">
         <span class="cyber-shield" data-ico="shield" data-size="30"></span>
@@ -825,7 +1056,7 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
           <h2 data-i18n="sec_cyber_h"></h2>
           <p data-i18n="sec_cyber_s"></p>
         </div>
-        <a class="btn btn-ghost" href="cyber.html" data-i18n="btn_cyber_all"></a>
+        <a class="btn btn-ghost" href="https://exodus611.github.io/finance-portal/cyber.html" data-i18n="btn_cyber_all"></a>
       </div>
       <details class="sec-acc acc-flat" id="cyberAcc">
         <summary><span data-ico="shield" data-size="17"></span><span data-i18n="acc_cyber"></span><span class="acc-badge">61</span><span class="acc-chev" data-ico="chevron" data-size="16"></span></summary>
@@ -837,6 +1068,7 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
         <p class="foot-note" data-i18n="cyber_note"></p>
       </details>
     </div>
+      </div></details>
   </div>
 </section>
 
@@ -850,13 +1082,13 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
         <div class="guide-num" aria-hidden="true">בנק ישראל</div>
         <h3 data-i18n="g1_h"></h3>
         <p data-i18n="g1_p"></p>
-        <div class="guide-actions"><a class="btn btn-ghost btn-sm" href="slovar.html" data-i18n="g1_b1"></a><a class="btn btn-gold btn-sm" href="salary.html" data-i18n="g1_b2"></a></div>
+        <div class="guide-actions"><a class="btn btn-ghost btn-sm" href="https://exodus611.github.io/finance-portal/slovar.html" data-i18n="g1_b1"></a><a class="btn btn-gold btn-sm" href="https://exodus611.github.io/finance-portal/salary.html" data-i18n="g1_b2"></a></div>
       </article>
       <article class="guide-card">
         <div class="guide-num" aria-hidden="true">דירה</div>
         <h3 data-i18n="g2_h"></h3>
         <p data-i18n="g2_p"></p>
-        <div class="guide-actions"><a class="btn btn-gold btn-sm" href="mashkanta.html" data-i18n="g2_b1"></a><a class="btn btn-ghost btn-sm" href="mas-rehisha.html" data-i18n="g2_b2"></a></div>
+        <div class="guide-actions"><a class="btn btn-gold btn-sm" href="https://exodus611.github.io/finance-portal/mashkanta.html" data-i18n="g2_b1"></a><a class="btn btn-ghost btn-sm" href="https://exodus611.github.io/finance-portal/mas-rehisha.html" data-i18n="g2_b2"></a></div>
         <ul class="guide-tips">
           <li data-i18n="tip1"></li>
           <li data-i18n="tip2"></li>
@@ -868,8 +1100,8 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
       </article>
     </div>
     <div class="article-row">
-      <a class="article-mini" href="article_minus.html"><b data-i18n="a1_t"></b><span data-i18n="a1_s"></span></a>
-      <a class="article-mini" href="article_budget_leaks.html"><b data-i18n="a2_t"></b><span data-i18n="a2_s"></span></a>
+      <a class="article-mini" href="https://exodus611.github.io/finance-portal/article_minus.html"><b data-i18n="a1_t"></b><span data-i18n="a1_s"></span></a>
+      <a class="article-mini" href="https://exodus611.github.io/finance-portal/article_budget_leaks.html"><b data-i18n="a2_t"></b><span data-i18n="a2_s"></span></a>
     </div>
     </details>
   </div>
@@ -878,21 +1110,21 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
 <!-- ══════════ ПОДПИСКА (СВОЯ ФИЧА) ══════════ -->
 <section class="section" id="subscribe">
   <div class="wrap">
+    <details class="page-fold"><summary><span class="fold-title" data-i18n="sub_h"></span><span class="fold-symbol" aria-hidden="true"></span></summary><div class="fold-content">
+
     <div class="sub-card">
       <h2><span class="h2-ic" data-ico="mail" data-size="30"></span><span data-i18n="sub_h"></span></h2>
-      <p data-i18n="sub_s"></p>
-      <form class="sub-form" id="subForm" novalidate>
-        <input type="email" id="subEmail" data-i18n-ph="sub_ph" required aria-label="Email для подписки">
-        <button class="btn btn-gold" type="submit" data-i18n="sub_btn"></button>
-      </form>
-      <p class="sub-note" id="subNote" data-i18n="sub_note"></p>
+      <p data-i18n="sub_unavailable"></p>
     </div>
+      </div></details>
   </div>
 </section>
 
 <!-- ══════════ FAQ ══════════ -->
 <section class="section section-alt" id="faq">
   <div class="wrap faq-wrap">
+    <details class="page-fold"><summary><span class="fold-title" data-i18n="faq_h"></span><span class="fold-symbol" aria-hidden="true"></span></summary><div class="fold-content">
+
     <div class="section-head center"><div>
       <div class="kicker">FAQ</div>
       <h2 data-i18n="faq_h"></h2>
@@ -904,6 +1136,7 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
       <details><summary><span data-i18n="faq_q4"></span><span class="faq-x" aria-hidden="true"></span></summary><p data-i18n="faq_a4"></p></details>
       <details><summary><span data-i18n="faq_q5"></span><span class="faq-x" aria-hidden="true"></span></summary><p data-i18n="faq_a5"></p></details>
     </div>
+      </div></details>
   </div>
 </section>
 </main>
@@ -912,7 +1145,7 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
 <footer class="site-footer">
   <div class="wrap foot-grid">
     <div class="foot-brand">
-      <a class="brand" href="index.html">
+      <a class="brand" href="https://exodus611.github.io/finance-portal/index.html">
         <svg class="brand-icon" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="rgba(232,182,76,.12)"/><circle cx="32" cy="32" r="21" fill="none" stroke="currentColor" stroke-width="3"/><path d="M38 22c-2-2-4-3-6-3-4 0-7 3-7 6.5 0 8 14 5 14 13 0 4-3 7-7 7-3 0-5.5-1.5-7-4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><path d="M32 14v6M32 44v6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
         <span class="brand-name">Shekel<b>PRO</b></span>
       </a>
@@ -920,13 +1153,13 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
       <p class="foot-mini" data-i18n="foot_mini"></p>
     </div>
     <nav class="foot-col" aria-label="Калькуляторы"><h4 data-i18n="foot_pop"></h4>
-      <a href="salary.html" data-i18n="f_salary"></a><a href="mashkanta.html" data-i18n="f_mashkanta"></a><a href="avtala.html" data-i18n="f_avtala"></a><a href="arnona.html" data-i18n="f_arnona"></a><a href="valuta.html" data-i18n="f_valuta"></a>
+      <a href="https://exodus611.github.io/finance-portal/salary.html" data-i18n="f_salary"></a><a href="https://exodus611.github.io/finance-portal/mashkanta.html" data-i18n="f_mashkanta"></a><a href="https://exodus611.github.io/finance-portal/avtala.html" data-i18n="f_avtala"></a><a href="https://exodus611.github.io/finance-portal/arnona.html" data-i18n="f_arnona"></a><a href="https://exodus611.github.io/finance-portal/valuta.html" data-i18n="f_valuta"></a>
     </nav>
     <nav class="foot-col" aria-label="Сервисы"><h4 data-i18n="foot_serv"></h4>
-      <a href="tablo.html" data-i18n="f_tablo"></a><a href="payments.html" data-i18n="f_payments"></a><a href="cyber.html" data-i18n="f_cyber"></a><a href="slovar.html" data-i18n="f_slovar"></a><a href="nko.html" data-i18n="f_nko"></a>
+      <a href="https://exodus611.github.io/finance-portal/tablo.html" data-i18n="f_tablo"></a><a href="https://exodus611.github.io/finance-portal/payments.html" data-i18n="f_payments"></a><a href="https://exodus611.github.io/finance-portal/cyber.html" data-i18n="f_cyber"></a><a href="https://exodus611.github.io/finance-portal/slovar.html" data-i18n="f_slovar"></a><a href="https://exodus611.github.io/finance-portal/nko.html" data-i18n="f_nko"></a>
     </nav>
     <nav class="foot-col" aria-label="Информация"><h4 data-i18n="foot_about"></h4>
-      <a href="#faq" data-i18n="f_faq"></a><a href="#subscribe" data-i18n="f_sub"></a><a href="#planner" data-i18n="f_goal"></a><a href="proverka-specialista.html" data-i18n="f_proverka"></a>
+      <a href="#faq" data-i18n="f_faq"></a><a href="#subscribe" data-i18n="f_sub"></a><a href="#planner" data-i18n="f_goal"></a><a href="https://exodus611.github.io/finance-portal/proverka-specialista.html" data-i18n="f_proverka"></a>
     </nav>
   </div>
   <button class="to-top" id="toTop" aria-label="Наверх"><span data-ico="up" data-size="18"></span></button>
@@ -1084,7 +1317,7 @@ const I18N = {
   calc_go: { ru:'Открыть →', fr:'Ouvrir →', en:'Open →' },
   calcs_more: { ru:'Показать все 32 калькулятора', fr:'Voir les 32 calculateurs', en:'Show all 32 calculators' },
   calcs_less: { ru:'Свернуть каталог', fr:'Réduire le catalogue', en:'Collapse catalog' },
-  acc_chart: { ru:'График ставки: 24 месяца решений', fr:'Le taux : 24 mois de décisions', en:'Rate chart: 24 months of decisions' },
+  acc_chart: { ru:'График ставки: ряд исходной страницы', fr:'Le taux : 24 mois de décisions', en:'Rate chart: 24 months of decisions' },
   acc_plan: { ru:'Финансовая цель — планировщик накоплений', fr:'Objectif financier — planificateur', en:'Financial goal — savings planner' },
   acc_cyber: { ru:'Киберщит: свежие предупреждения и разборы', fr:'CyberBouclier : alertes et analyses', en:'CyberShield: latest alerts & breakdowns' },
   acc_guide: { ru:'Гиды: банковская система и машканта', fr:'Guides : système bancaire et mashkanta', en:'Guides: banking system & mashkanta' },
@@ -1095,7 +1328,10 @@ const I18N = {
   plan_month: { ru:'Сумма в месяц', fr:'Montant mensuel', en:'Monthly amount' },
   plan_years: { ru:'Срок', fr:'Durée', en:'Term' },
   goal1: { ru:'Керен хишталмут — льгота через 6 лет', fr:'Keren hishtalmut — avantage après 6 ans', en:'Keren hishtalmut — tax-free after 6 years' },
-  goal2: { ru:'Пикадон — копить под 4,5%', fr:'Pikadon — épargner à 4,5 %', en:'Pikadon — save at 4.5%' },
+  goal2: { ru:'Пикадон — депозит', fr:'Pikadon — dépôt', en:'Pikadon — deposit' },
+  plan_pik_rate: {ru:'Годовая ставка депозита, %', fr:'Taux annuel du dépôt, %', en:'Annual deposit rate, %'},
+  plan_pik_help: {ru:'Введите ставку вашего банка. Расчёт предполагает фиксированную номинальную ставку и налог 15% на проценты; условия банка могут отличаться.', fr:'Saisissez le taux de votre banque. Le calcul suppose un taux nominal fixe et 15 % d’impôt sur les intérêts ; les conditions peuvent varier.', en:'Enter your bank’s rate. The estimate assumes a fixed nominal rate and 15% tax on interest; bank terms may differ.'},
+  plan_pik_error: {ru:'Укажите годовую ставку от 0 до 100%.', fr:'Saisissez un taux annuel entre 0 et 100 %.', en:'Enter an annual rate between 0 and 100%.'},
   goal3: { ru:'Накопления ребёнку к 18 годам', fr:'Épargne enfant jusqu’à 18 ans', en:'Savings for your child by age 18' },
   goal4: { ru:'Оздоровительные — максимальная доплата', fr:'Convalescence — montant maximal', en:'Convalescence pay — maximum top-up' },
   r_months: { ru:'мес', fr:'mois', en:'mo' },
@@ -1126,6 +1362,7 @@ const I18N = {
   a2_t: { ru:'4 дыры в бюджете', fr:'4 fuites dans le budget', en:'4 budget leaks' },
   a2_s: { ru:'Комиссии, забытые платежи, связь и электричество', fr:'Commissions, paiements oubliés, télécoms et électricité', en:'Fees, forgotten payments, telecoms and electricity' },
   sub_h: { ru:'Раз в месяц — самое важное', fr:'Une fois par mois — l’essentiel', en:'Once a month — the essentials' },
+  sub_unavailable: { ru:'Подписка временно недоступна.', fr:'L’abonnement est temporairement indisponible.', en:'Newsletter signup is temporarily unavailable.' },
   sub_s: { ru:'Короткое письмо: новая ставка, свежие пособия, изменения в налогах. Без спама и рекламы — отписка в один клик.', fr:'Un e-mail court : nouveau taux, prestations actualisées, changements fiscaux. Sans spam ni publicité — désinscription en un clic.', en:'A short email: the new rate, updated benefits, tax changes. No spam, no ads — unsubscribe in one click.' },
   sub_ph: { ru:'ваш@email.com', fr:'votre@email.com', en:'you@email.com' },
   sub_btn: { ru:'Подписаться', fr:'S’abonner', en:'Subscribe' },
@@ -1175,18 +1412,19 @@ const I18N = {
   fab_title: { ru:'Мой финансовый план', fr:'Mon plan financier', en:'My financial plan' },
   to_top: { ru:'Наверх', fr:'Haut de page', en:'Back to top' },
   cyber_link: { ru:'Оригинал, перевод и разбор ▸', fr:'Original, traduction et analyse ▸', en:'Original, translation & breakdown ▸' },
-  sec_chart_h: { ru:'Ставка Банка Израиля: 24 месяца решений', fr:'Le taux de Bank Israel : 24 mois de décisions', en:'Bank of Israel rate: 24 months of decisions' },
-  sec_chart_s: { ru:'Живая история: пик 5,50% — и плавный спуск к 3,50%. Каждый узел — решение комитета.', fr:'L’historique en direct : pic de 5,50 %, puis une descente en douceur vers 3,50 %. Chaque nœud = une décision du comité.', en:'A living history: a 5.50% peak and a smooth glide down to 3.50%. Every node is a committee decision.' },
+  dash_graph_note: { ru:'Схематичные ряды исходной страницы без дат: нажмите на график, чтобы посмотреть значения точек. Текущий показатель может отличаться от ряда.', fr:'Graphiques indicatifs : données de la page source sans dates. Parcourez la ligne pour voir les points.', en:'Illustrative charts: undated data from the original page. Move along a line to inspect its points.' },
+  sec_chart_h: { ru:'Ставка Банка Израиля: ряд исходной страницы', fr:'Le taux de Bank Israel : 24 mois de décisions', en:'Bank of Israel rate: 24 months of decisions' },
+  sec_chart_s: { ru:'Последняя точка соответствует ставке на табло. Предыдущие значения — ряд исходной страницы без подтверждённых дат.', fr:'Le dernier point correspond au tableau. Les valeurs précédentes proviennent de la page source sans dates vérifiées.', en:'The latest point matches the dashboard. Earlier points come from the original page without verified dates.' },
   chart_months: { ru:'мес', fr:'mois', en:'mo' },
-  chart_now: { ru:'сейчас 3,50%', fr:'actuel 3,50 %', en:'now 3.50%' },
-  chart_peak: { ru:'пик 5,50%', fr:'pic 5,50 %', en:'peak 5.50%' },
+  chart_now: { ru:'сейчас 3,25%', fr:'actuel 3,25 %', en:'now 3.25%' },
+  chart_peak: { ru:'максимум ряда 5,50%', fr:'maximum de la série 5,50 %', en:'series high 5.50%' },
   chart_hint: { ru:'наведите курсор на график', fr:'survolez le graphique', en:'hover the chart' },
   chart_tip_at: { ru:'Ставка', fr:'Taux', en:'Rate' },
   ring1_l: { ru:'Инфляция · <span>цель ≤ 3%</span>', fr:'Inflation · <span>cible ≤ 3 %</span>', en:'Inflation · <span>target ≤ 3%</span>' },
-  ring2_l: { ru:'Прайм · <span>после повышения</span>', fr:'Prime · <span>après la hausse</span>', en:'Prime · <span>after the hike</span>' },
+  ring2_l: { ru:'Прайм · <span>по табло</span>', fr:'Prime · <span>du tableau</span>', en:'Prime · <span>dashboard</span>' },
   ring3_l: { ru:'Аренда за год · <span>средняя по стране</span>', fr:'Loyer annuel · <span>moyenne nationale</span>', en:'Yearly rent · <span>national average</span>' },
   ring1_s: { ru:'цель ≤ 3%', fr:'cible ≤ 3 %', en:'target ≤ 3%' },
-  ring2_s: { ru:'после повышения', fr:'après la hausse', en:'after the hike' },
+  ring2_s: { ru:'по табло', fr:'du tableau', en:'dashboard' },
   ring3_s: { ru:'средняя по стране', fr:'moyenne nationale', en:'national average' },
   sec_pen_kicker: { ru:'Спокойная пенсия', fr:'Retraite sereine', en:'A calm retirement' },
   sec_pen_h: { ru:'Пенсия <span class="grad-gold">без тревоги</span>', fr:'Une retraite <span class="grad-gold">sans angoisse</span>', en:'Retirement <span class="grad-gold">without the worry</span>' },
@@ -1195,9 +1433,9 @@ const I18N = {
   pen_chip2: { ru:'к зачислению — 161д', fr:'crédité — 161d', en:'credited — 161d' },
   pen_b1: { ru:'Калькулятор накоплений →', fr:'Calculateur d’épargne →', en:'Savings calculator →' },
   pen_b2: { ru:'Хватит ли на пенсии?', fr:'Ma retraite suffira-t-elle ?', en:'Will my pension be enough?' },
-  feat_tag: { ru:'РЕШЕНИЕ 19.11 · ПОВЫШЕНА', fr:'DÉCISION 19.11 · HAUSSE', en:'NOV 19 DECISION · RAISED' },
-  feat_h: { ru:'Ставка выросла до 3,50% — что делать с машкантой прямо сейчас', fr:'Le taux monte à 3,50 % — que faire de sa mashkanta maintenant', en:'The rate is up to 3.50% — what to do about your mashkanta now' },
-  feat_p: { ru:'Прайм 5,00% бьёт по треку «прайм+» уже в следующем месяце. Запустите автоподбор: 67 000 комбинаций найдут микс, который переживёт стресс-тест +1%.', fr:'Le Prime à 5,00 % frappe le tahalich « Prime+ » dès le mois prochain. Lancez la sélection automatique : 67 000 combinaisons trouveront le mix qui résiste au test +1 %.', en:'Prime at 5.00% hits the “prime+” track next month already. Run auto-pick: 67,000 combinations will find a mix that survives a +1% stress test.' },
+  feat_tag: { ru:'МАШКАНТА И СТАВКА', fr:'MASHKANTA ET TAUX', en:'MASHKANTA AND THE RATE' },
+  feat_h: { ru:'Как ставка влияет на вашу машканту', fr:'Comment le taux influe sur votre mashkanta', en:'How the rate affects your mashkanta' },
+  feat_p: { ru:'Проверьте платёж по ипотеке и стресс-тест при изменении ставки. Прайм зависит от ставки Банка Израиля.', fr:'Vérifiez les mensualités et le test de résistance aux variations de taux. Le Prime dépend du taux de la Banque d’Israël.', en:'Check your mortgage payment and stress-test changes in rates. Prime depends on the Bank of Israel rate.' },
   feat_c1: { ru:'ставка', fr:'taux', en:'rate' },
   feat_c2: { ru:'прайм', fr:'prime', en:'prime' },
   feat_c3: { ru:'решение', fr:'décision', en:'decision' },
@@ -1213,13 +1451,13 @@ const TABLO = [
     name:{ ru:'Инфляция (мадад)', fr:'Inflation (madad)', en:'Inflation (CPI)' },
     val:{ ru:'1,1<small>%</small>', fr:'1,1<small>%</small>', en:'1.1<small>%</small>' },
     note:{ ru:'цель 1–3% · октябрь', fr:'cible 1–3 % · octobre', en:'target 1–3% · October' }, trend:'▼ −0.1%' },
-  { icon:'dollar', up:false, spark:[3.4,3.38,3.36,3.31,3.3,3.29,3.28,3.27],
+  { icon:'dollar', up:false, spark:[3.4,3.38,3.36,3.31,3.3,3.29,3.28,3.326],
     name:{ ru:'USD / ₪', fr:'USD / ₪', en:'USD / ₪' },
-    val:{ ru:'3,27<small> ₪</small>', fr:'3,27<small> ₪</small>', en:'3.27<small> ₪</small>' },
+    val:{ ru:'3,33<small> ₪</small>', fr:'3,33<small> ₪</small>', en:'3.33<small> ₪</small>' },
     note:{ ru:'курс Банка Израиля', fr:'cours de la Banque d’Israël', en:'Bank of Israel rate' }, trend:'▼ −0.4%' },
-  { icon:'euro', up:true, spark:[3.5,3.52,3.51,3.53,3.55,3.56,3.58],
+  { icon:'euro', up:true, spark:[3.5,3.52,3.51,3.53,3.55,3.56,3.6503],
     name:{ ru:'EUR / ₪', fr:'EUR / ₪', en:'EUR / ₪' },
-    val:{ ru:'3,58<small> ₪</small>', fr:'3,58<small> ₪</small>', en:'3.58<small> ₪</small>' },
+    val:{ ru:'3,65<small> ₪</small>', fr:'3,65<small> ₪</small>', en:'3.65<small> ₪</small>' },
     note:{ ru:'курс Банка Израиля', fr:'cours de la Banque d’Israël', en:'Bank of Israel rate' }, trend:'▲ +0.2%' },
   { icon:'wallet', flat:true, spark:[5899,5969,6039,6139,6444],
     name:{ ru:'Минимальная зарплата', fr:'Salaire minimum', en:'Minimum wage' },
@@ -1299,7 +1537,7 @@ const CALCS = [
   { id:'keren-hishtalmut', icon:'grad', cat:'salary', hot:74, t:{ ru:'Фонд повышения квалификации', fr:'Fonds de formation', en:'Advanced-training fund' }, d:{ ru:'Рост фонда без налога — с правильными двумя потолками для самозанятых', fr:'Croissance sans impôt — avec les deux bons plafonds pour les indépendants', en:'Growth without tax — with the right two caps for the self-employed' } },
   { id:'nekudot-zikuy', icon:'star', cat:'salary', hot:69, t:{ ru:'Некудот зикуй', fr:'Nekoudot zikouï', en:'Nekudot zikuy' }, d:{ ru:'Сколько баллов вам положено и сколько это в шекелях', fr:'Combien de points vous sont dus et leur valeur en shékels', en:'How many points you’re owed and what they’re worth in shekels' } },
   { id:'keren-kaspit', icon:'calculator', cat:'pension', hot:67, t:{ ru:'Керен каспит: налог', fr:'Keren kaspit : impôt', en:'Keren kaspit: tax' }, d:{ ru:'Доход за 1–2 года, инфляция, налог 25% и сумма чистыми', fr:'Gain sur 1–2 ans, inflation, impôt de 25 % et net final', en:'1–2 year gain, inflation, 25% tax and the net amount' } },
-  { id:'pikadon-vs-keren', icon:'swap', cat:'pension', hot:66, t:{ ru:'Пикадон vs керен каспит', fr:'Pikadon ou keren kaspit', en:'Pikadon vs keren kaspit' }, d:{ ru:'Банк даёт 4,5%, фонд 3,5% — что выгоднее чистыми', fr:'La banque offre 4,5 %, le fonds 3,5 % — qui gagne net', en:'Bank pays 4.5%, fund 3.5% — which nets more' } },
+  { id:'pikadon-vs-keren', icon:'swap', cat:'pension', hot:66, t:{ ru:'Пикадон vs керен каспит', fr:'Pikadon ou keren kaspit', en:'Pikadon vs keren kaspit' }, d:{ ru:'Сравните депозит и фонд с учётом доходности и налогов', fr:'Comparez dépôt et fonds selon le rendement et les impôts', en:'Compare deposit and fund returns after tax' } },
   { id:'valuta', icon:'globe', cat:'econ', hot:91, t:{ ru:'Курс валют', fr:'Taux de change', en:'Exchange rates' }, d:{ ru:'Конвертер, корзина валют, график за год, официальный vs рыночный', fr:'Convertisseur, panier de devises, graphique annuel, officiel vs réel', en:'Converter, currency basket, one-year chart, official vs market' } },
   { id:'tablo', icon:'chart', cat:'econ', hot:83, t:{ ru:'Экономика сегодня', fr:'L’économie du jour', en:'Economy today' }, d:{ ru:'Ставка, мадад, курсы валют, минималка — живое табло', fr:'Taux, madad, devises, salaire minimum — tableau en direct', en:'Rate, CPI, currencies, minimum wage — live dashboard' } },
   { id:'benzin', icon:'fuel', cat:'econ', hot:79, t:{ ru:'Цена на бензин', fr:'Prix de l’essence', en:'Petrol price' }, d:{ ru:'Из чего складывается литр, доля государства, сравнение с Европой', fr:'Décomposition du litre, part de l’État, comparaison européenne', en:'What makes up a litre, the state’s cut, Europe comparison' } },
@@ -1309,11 +1547,6 @@ const CALCS = [
   { id:'proverka-specialista', icon:'badge', cat:'guide', hot:61, t:{ ru:'Проверка специалиста', fr:'Vérifier un professionnel', en:'Check a professional' }, d:{ ru:'Врач, адвокат, маклер, CPA — проверка лицензии по официальным реестрам', fr:'Médecin, avocat, agent immobilier, CPA — licence vérifiée via les registres officiels', en:'Doctor, lawyer, agent, CPA — verify licences in official registries' } }
 ];
 const SOLUTIONS = [
-  { tag:'up', icon:'bank', date:'19.11.2026', link:'mashkanta.html',
-    tagText:{ ru:'ПОВЫШЕНА 0.25%', fr:'HAUSSE 0.25%', en:'RAISED 0.25%' },
-    t:{ ru:'Банк Израиля поднял ставку до 3,50%', fr:'La Banque d’Israël relève le taux à 3,50 %', en:'Bank of Israel raises the rate to 3.50%' },
-    p:{ ru:'Решение от 19 ноября. Прайм теперь 5,00% — платёж по треку «прайм+» вырос. Проверьте стресс-тест: потянет ли бюджет +1%.', fr:'Décision du 19 novembre. Le Prime passe à 5,00 % : la mensualité des prêts « Prime+ » augmente. Refaites le test de résistance : +1 % tient-il dans votre budget ?', en:'Decided Nov 19. Prime is now 5.00% — “prime+” track payments went up. Re-run the stress test: does +1% still fit your budget?' },
-    linkText:{ ru:'Машканта →', fr:'Mashkanta →', en:'Mashkanta →' } },
   { tag:'up', icon:'fuel', date:'05.11.2026', link:'benzin.html',
     tagText:{ ru:'БЕНЗИН +6.8%', fr:'ESSENCE +6.8%', en:'PETROL +6.8%' },
     t:{ ru:'Бензин 95 — 7,85 ₪ за литр', fr:'Essence 95 — 7,85 ₪ le litre', en:'Petrol 95 — ₪7.85 a litre' },
@@ -1362,7 +1595,7 @@ const GOALS = {
     hint:{ ru:'Государство откладывает 58 ₪/мес + ваши взносы под ~3,5%.', fr:'L’État verse 58 ₪/mois + vos versements à ≈ 3,5 %.', en:'The state puts in ₪58/month plus your deposits at ~3.5%.' } },
   pikadon: { rate:0.045, tax:0.15,
     name:{ ru:'Пикадон (депозит)', fr:'Pikadon (dépôt)', en:'Pikadon (deposit)' },
-    hint:{ ru:'Депозит до 4,5%; налог на процент у банка — 15%.', fr:'Dépôt jusqu’à 4,5 % ; impôt de 15 % sur les intérêts bancaires.', en:'Deposit up to 4.5%; 15% tax on bank interest.' } }
+    hint:{ ru:'Ставка введена вами; налог 15% — модельное допущение. Проверьте условия конкретного депозита.', fr:'Taux saisi par vous ; impôt de 15 % supposé. Vérifiez les conditions du dépôt.', en:'Your entered rate; 15% tax is an assumption. Check the deposit terms.' } }
 };
 const $ = s => document.querySelector(s);
 const $$ = s => document.querySelectorAll(s);
@@ -1430,7 +1663,7 @@ function renderBadge(){
 async function fetchLive(){
   if (typeof fetch !== 'function') return;
   try {
-    const r = await fetch('data/tablo.json', { cache: 'no-cache' });
+    const r = await fetch('https://exodus611.github.io/finance-portal/data/tablo.json', { cache: 'no-cache' });
     if (!r.ok) return;
     applyLive(await r.json());
   } catch (e) { /* офлайн/превью — остаётся встроенный снапшот */ }
@@ -1461,6 +1694,11 @@ function applyLive(j){
       TICKER[0].v = fmtDec(rate) + '%';
       TICKER[0].cls = d > 0 ? 'up' : d < 0 ? 'down' : '';
       TICKER[0].d = { ru: sgn + dv, fr: sgn + dv, en: sgn + dv };
+      const featureRate = $('#featureRate'), featurePrime = $('#featurePrime');
+      if (featureRate) featureRate.textContent = fmtDec(rate) + '%';
+      if (featurePrime && typeof b.prime === 'number') featurePrime.textContent = fmtDec(b.prime * 100) + '%';
+      const primeRing = document.querySelector('[data-ring-subkey="ring2_s"]');
+      if (primeRing && typeof b.prime === 'number') { primeRing.dataset.ringLabel = fmtDec(b.prime * 100) + '%'; renderRings(); }
       const cr = $('#chipRate'), ct = $('#chipRateT');
       if (cr) cr.textContent = fmtDec(rate) + '%';
       if (ct){ ct.textContent = sgn + dv; ct.classList.toggle('chip-down', d < 0); }
@@ -1491,6 +1729,7 @@ function applyLive(j){
       if (typeof v !== 'number') return;
       const val = fmtDec(v, 2) + ' ₪';
       TABLO[idx].val = { ru: val, fr: val, en: val };
+      if (TABLO[idx].spark.length) TABLO[idx].spark[TABLO[idx].spark.length - 1] = v;
       TICKER[idx].v = { ru: val, fr: val, en: val };
       if (typeof pr === 'number' && Math.abs(pr - v) > 1e-9){
         const p = (v / pr - 1) * 100;
@@ -1572,25 +1811,50 @@ function sparkPath(vals, w, h){
 }
 function renderDash(){
   const el = $('#dashGrid'); if (!el) return;
-  el.innerHTML = TABLO.map(c => {
+  el.innerHTML = TABLO.map((c, i) => {
     const sp = c.spark, n = sp.length;
     const min = Math.min(...sp), max = Math.max(...sp), rng = (max - min) || 1;
-    const yLast = 34 - 4 - ((sp[n-1] - min) / rng) * (34 - 10);
+    const pointXY = (v, j) => [8 + j * 184 / (n - 1), 55 - (v - min) / rng * 42];
+    const points = sp.map((v, j) => pointXY(v, j));
+    const [xLast, yLast] = points[n-1];
+    const unit = i < 2 ? '%' : '₪';
     return `
     <div class="dash-card reveal${c.gold ? ' gold' : ''}">
       <div class="dash-top"><span class="dash-ico-sm">${ico(c.icon, 13)}</span><span class="dash-lbl">${tx(c.name)}</span><span class="dash-trend ${c.flat ? 'trend-flat' : (c.up ? 'trend-up' : 'trend-down')}">${tx(c.trend)}</span></div>
       <div class="dash-val">${tx(c.val)}</div>
       <div class="dash-note">${tx(c.note)}</div>
-      <div class="dash-chart" aria-hidden="true">
-        <svg class="dash-spark" viewBox="0 0 100 34" preserveAspectRatio="none">
-          <defs><linearGradient id="sparkGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(232,182,76,.13)"/><stop offset="1" stop-color="rgba(232,182,76,0)"/></linearGradient></defs>
-          <path class="spark-area" d="${sparkPath(sp,100,34)} L 100 34 L 0 34 Z"/>
-          <path class="spark-line" d="${sparkPath(sp,100,34)}"/>
-        </svg>
-        <i class="spark-dot" style="left:97.5%;top:${(yLast / 34 * 100).toFixed(1)}%"></i>
+      <div class="dash-plot">
+        <div class="plot-meta"><strong class="spark-value">${String(sp[n-1]).replace('.', curLang === 'en' ? '.' : ',')} ${unit}</strong></div>
+        <div class="dash-chart" aria-hidden="true">
+          <svg class="dash-spark" viewBox="0 0 200 68" preserveAspectRatio="xMidYMid meet">
+            <path class="plot-grid" d="M8 13 H192 M8 34 H192 M8 55 H192"/>
+            <polyline class="plot-connector" points="${points.map(p => p.map(v => v.toFixed(2)).join(',')).join(' ')}"/>
+            ${points.map((p, j) => `<circle class="plot-point" cx="${p[0].toFixed(2)}" cy="${p[1].toFixed(2)}" r="2.7" data-point="${j}"/>`).join('')}
+            <line class="spark-guide" x1="${xLast.toFixed(2)}" y1="5" x2="${xLast.toFixed(2)}" y2="62"/><circle class="spark-end" cx="${xLast.toFixed(2)}" cy="${yLast.toFixed(2)}" r="4.1"/>
+          </svg>
+        </div>
+        <div class="plot-footer"><span>${curLang === 'ru' ? 'ТОЧКА' : 'POINT'} <b class="spark-index">${n} / ${n}</b></span></div>
       </div>
+      <input class="spark-range" type="range" min="0" max="${n-1}" value="${n-1}" step="1" data-spark-index="${i}" aria-label="${tx(c.name).replace(/<[^>]*>/g,'')} — ${curLang === 'ru' ? 'выбрать точку графика' : curLang === 'fr' ? 'choisir un point du graphique' : 'select a chart point'}">
     </div>`;
   }).join('');
+  el.querySelectorAll('.spark-range').forEach(input => {
+    const card = input.closest('.dash-card'), chart = card.querySelector('.dash-chart');
+    const vals = TABLO[Number(input.dataset.sparkIndex)].spark;
+    const update = () => {
+      const idx = Number(input.value), value = vals[idx], min = Math.min(...vals), max = Math.max(...vals);
+      const x = 8 + idx * 184 / (vals.length - 1), y = 55 - (value - min) / ((max - min) || 1) * 42;
+      const dot = card.querySelector('.spark-end'), guide = card.querySelector('.spark-guide');
+      dot.setAttribute('cx', x); dot.setAttribute('cy', y); guide.setAttribute('x1', x); guide.setAttribute('x2', x);
+      card.querySelector('.spark-index').textContent = (idx + 1) + ' / ' + vals.length;
+      card.querySelector('.spark-value').textContent = new Intl.NumberFormat(curLang === 'en' ? 'en-US' : 'ru-RU', {maximumFractionDigits:2}).format(value) + (Number(input.dataset.sparkIndex) < 2 ? ' %' : ' ₪');
+      input.setAttribute('aria-valuetext', (idx + 1) + ' / ' + vals.length + ': ' + String(value));
+    };
+    input.addEventListener('input', update); update();
+    chart.addEventListener('pointerdown', e => { chart.setPointerCapture(e.pointerId); pick(e); });
+    chart.addEventListener('pointermove', e => { if (e.pointerType === 'mouse' || e.buttons) pick(e); });
+    function pick(e){ const svg = chart.querySelector('svg'), point = svg.createSVGPoint(); point.x=e.clientX; point.y=e.clientY; const pos=point.matrixTransform(svg.getScreenCTM().inverse()); input.value = Math.max(0, Math.min(vals.length-1, Math.round((pos.x-8)/184*(vals.length-1)))); update(); }
+  });
 }
 function renderTicker(){
   const el = $('#tickerTrack'); if (!el) return;
@@ -1688,6 +1952,8 @@ function renderRateChart(){
   const box = $('#rateChart'); if (!box) return;
   const W = 600, H = 150, PADL = 30, PADR = 12, PADT = 10, PADB = 20;
   const vals = RATE_24, n = vals.length;
+  const nowLabel = document.querySelector('[data-i18n="chart_now"]');
+  if (nowLabel) nowLabel.textContent = (curLang === 'ru' ? 'сейчас ' : curLang === 'fr' ? 'actuel ' : 'now ') + fmtDec(vals[n-1]) + '%';
   const min = 3, max = 6;
   const x = i => PADL + i * (W - PADL - PADR) / (n - 1);
   const y = v => PADT + (1 - (v - min) / (max - min)) * (H - PADT - PADB);
@@ -1698,7 +1964,7 @@ function renderRateChart(){
   const grid = [3,4,5,6].map(v =>
     `<line class="chart-grid-l" x1="${PADL}" y1="${y(v).toFixed(1)}" x2="${W-PADR}" y2="${y(v).toFixed(1)}"/><text class="chart-ylab" x="${PADL-6}" y="${(y(v)+3).toFixed(1)}" text-anchor="end">${v}%</text>`).join('');
   const ylab = { ru:['2025','2026'], fr:['2025','2026'], en:['2025','2026'] }[curLang];
-  const years = `<text class="chart-year" x="${x(2)}" y="${H-8}" text-anchor="middle">${ylab[0]}</text><text class="chart-year" x="${x(14)}" y="${H-8}" text-anchor="middle">${ylab[1]}</text>`;
+  const years = '';
   box.innerHTML = `
     <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Bank rate chart">
       <defs>
@@ -1764,7 +2030,8 @@ function renderRings(){
     const t0 = performance.now();
     (function tick(t){
       const p = Math.min(1, (t - t0) / 1200), e2 = 1 - Math.pow(1 - p, 3);
-      const out = curLang === 'en' ? (target * e2).toFixed(1) : (target * e2).toFixed(1).replace('.', ',');
+      const digits = (label.split(/[,.]/)[1] || '').replace(/[^0-9]/g, '').length;
+      const out = curLang === 'en' ? (target * e2).toFixed(digits) : (target * e2).toFixed(digits).replace('.', ',');
       val.textContent = prefix + out + '%';
       if (p < 1) requestAnimationFrame(tick);
     })(t0);
@@ -1797,9 +2064,17 @@ function calcPlan(){
   const sel = $('#goalSelect'), mr = $('#monthRange'), yr = $('#yearRange');
   if (!sel || !mr || !yr) return;
   const g = GOALS[sel.value];
+  const rateInput = $('#pikadonRate'), rateWrap = $('#pikadonRateWrap');
+  const isPikadon = sel.value === 'pikadon';
+  rateWrap.hidden = !isPikadon;
+  const validRate = rateInput.value.trim() !== '' && rateInput.validity.valid && Number.isFinite(Number(rateInput.value));
+  const rate = isPikadon && validRate ? Number(rateInput.value) / 100 : g.rate;
   const m = +mr.value, yrs = +yr.value, months = yrs * 12;
+  $('#monthVal').textContent = fmt(m) + ' ₪';
+  $('#yearVal').textContent = yrs + ' ' + yearWord(yrs);
+  if (isPikadon && !validRate) { $('#plannerResult').textContent = L('plan_pik_error'); return; }
   let sum = 0;
-  for (let i = 1; i <= months; i++) sum = (sum + m) * (1 + g.rate / 12);
+  for (let i = 1; i <= months; i++) sum = (sum + m) * (1 + rate / 12);
   const invested = m * months;
   const tax = (sum - invested) * (g.tax || 0);
   const net = sum - tax;
@@ -1899,7 +2174,8 @@ function initTilt(){
   }, { passive:true });
 }
 function renderAll(){
-  const pensionLink = $('#pensionCalcLink'); if (pensionLink) pensionLink.href = u('pension-calc.html');
+  const pensionLink = $('#pensionCalcLink');
+  if (pensionLink) pensionLink.href = u('pension-calc.html');
   renderDash(); renderTicker(); renderPayments(); renderChips(); renderCalcs(); renderSolutions(); renderCyber();
   renderRateChart(); renderRings();
   renderBadge();
@@ -1914,14 +2190,47 @@ function setLang(l){
   const menu = $('#langMenu'); if (menu) menu.hidden = true;
   const lb = $('#langBtn'); if (lb) lb.setAttribute('aria-expanded', 'false');
 }
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a || a.getAttribute('href').length < 2) return;
+  const target = document.getElementById(a.getAttribute('href').slice(1));
+  const fold = target && target.querySelector(':scope > .wrap > .page-fold');
+  if (fold) fold.open = true;
+});
+window.addEventListener('hashchange', () => {
+  const target = document.getElementById(location.hash.slice(1));
+  const fold = target && target.querySelector(':scope > .wrap > .page-fold');
+  if (fold) fold.open = true;
+});
+function initHeroPhotoMotion(){
+  const hero = document.querySelector('.hero-media'), photo = hero && hero.querySelector('.hero-photo');
+  if (!hero || !photo || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  let x=0, y=0, targetX=0, targetY=0, frame=0;
+  function animate(){
+    frame=0;
+    if (motion.matches){ photo.style.removeProperty('--photo-x'); photo.style.removeProperty('--photo-y'); return; }
+    x += (targetX-x)*0.08; y += (targetY-y)*0.08;
+    photo.style.setProperty('--photo-x', x.toFixed(2)+'px'); photo.style.setProperty('--photo-y', y.toFixed(2)+'px');
+    if (Math.abs(targetX-x) > .03 || Math.abs(targetY-y) > .03) frame=requestAnimationFrame(animate);
+  }
+  function run(){ if (!frame && !motion.matches) frame=requestAnimationFrame(animate); }
+  hero.addEventListener('pointermove', e => { if (e.pointerType !== 'mouse') return; const r=hero.getBoundingClientRect(); targetX=((e.clientX-r.left)/r.width-.5)*12; targetY=((e.clientY-r.top)/r.height-.5)*8; run(); });
+  hero.addEventListener('pointerleave', () => { targetX=targetY=0; run(); });
+  motion.addEventListener('change', () => { if (motion.matches) { if (frame) cancelAnimationFrame(frame); frame=0; photo.style.removeProperty('--photo-x'); photo.style.removeProperty('--photo-y'); } });
+}
 document.addEventListener('DOMContentLoaded', () => {
+  initHeroPhotoMotion();
+  const hashTarget = document.getElementById(location.hash.slice(1));
+  const hashFold = hashTarget && hashTarget.querySelector(':scope > .wrap > .page-fold');
+  if (hashFold) hashFold.open = true;
   curLang = LS.get('shekelpro_lang') || 'ru';
   initIcons();
   applyStatic();
   const cAcc = $('#chartAcc');
   if (cAcc) cAcc.addEventListener('toggle', () => { if (cAcc.open && !cAcc.dataset.drawn){ cAcc.dataset.drawn = '1'; renderRateChart(); } });
-  renderAll(); bindChips(); initSub(); calcPlan();
-  observeReveals(); initParallax(); initTilt();
+  renderAll(); bindChips();  calcPlan();
+  observeReveals();
   fetchLive();
   const root = document.documentElement;
   const tt = $('#themeToggle');
@@ -1985,7 +2294,7 @@ document.addEventListener('DOMContentLoaded', () => {
     card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
     card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
   }, { passive:true });
-  ['#goalSelect', '#monthRange', '#yearRange'].forEach(s => {
+  ['#goalSelect', '#monthRange', '#yearRange', '#pikadonRate'].forEach(s => {
     const el = $(s);
     if (el){ el.addEventListener('input', calcPlan); el.addEventListener('change', calcPlan); }
   });
@@ -2009,10 +2318,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const pg = $('#planModalGo'); if (pg) pg.addEventListener('click', () => closeAll());
   const hs = $('.hero-stats');
   if (hs){
-    if ('IntersectionObserver' in window){
-      const co = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting){ $$('.hero-stats dt').forEach(animateCount); co.disconnect(); } }), { threshold:.4 });
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { $$('.hero-stats dt').forEach(el => el.textContent = el.dataset.count + (el.dataset.suffix || '')); }
+    else if ('IntersectionObserver' in window){
+      const co = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting){ $$('.hero-stats dt').forEach(el => { if (matchMedia('(prefers-reduced-motion: reduce)').matches) el.textContent = el.dataset.count + (el.dataset.suffix || ''); else animateCount(el); }); co.disconnect(); } }), { threshold:.4 });
       co.observe(hs);
-    } else $$('.hero-stats dt').forEach(animateCount);
+    } else $$('.hero-stats dt').forEach(el => { if (matchMedia('(prefers-reduced-motion: reduce)').matches) el.textContent = el.dataset.count + (el.dataset.suffix || ''); else animateCount(el); });
   }
   setTimeout(() => $$('.reveal:not(.in), .zoom-img:not(.in)').forEach(e => e.classList.add('in')), 1200);
 });
