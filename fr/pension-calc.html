@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#08775a" name="theme-color"/>
+<link href="../favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="../apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;rect width='100' height='100' rx='24' fill='%2308775a'/&gt;&lt;text x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='900' fill='white' text-anchor='middle'&gt;₪&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
+<title>Calcul de l’épargne retraite et des prestations 2026 — Portail financier d’Israël</title>
+<meta content="index, follow" name="robots"/>
+<meta content="Estimation de l’épargne retraite et des prestations en Israël : mikadem, Ezrah Vatik, impôts et Kibua Zkhuyot." name="description"/>
+<link href="https://exodus611.github.io/finance-portal/fr/pension-calc.html" rel="canonical"/>
+<style>
+:root{
+  --ink:#15251f;--muted:#5a6660;--paper:#f4f1e9;--card:#fffdf8;--line:#ddd6c7;
+  --green:#08775a;--green2:#0d9671;--green-light:#e8f5f1;--gold:#c29b52;--gold-light:#fdf8ec;
+  --red:#b84b3e;--red-light:#fdf1ef;--blue:#2b6cb0;--blue-light:#ebf4ff;--purple:#7857b8;
+  --shadow:0 10px 28px rgba(26,45,37,.06);--shadow-sm:0 2px 8px rgba(26,45,37,.04);--r:14px;
+}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.4;overflow-x:hidden}
+button,input,select{font:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.shell{width:min(820px,calc(100% - 18px));margin:auto;padding-bottom:32px}
+
+/* Top Header */
+.top{padding:10px 0}
+.topbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:850;text-decoration:none;color:inherit}
+.mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--green2),var(--green) 70%);color:#fff;display:grid;place-items:center;font-size:20px;font-weight:900;box-shadow:0 4px 12px rgba(8,119,90,.25)}
+a.back{font-size:11.5px;font-weight:800;color:var(--green);text-decoration:none}
+
+/* Hero Compact */
+.hero{padding:10px 0 6px;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:5px;background:var(--green-light);color:var(--green);padding:3px 10px;border-radius:16px;font-size:11px;font-weight:800;letter-spacing:.03em;margin-bottom:6px;border:1px solid rgba(8,119,90,.2)}
+.hero h1{font-size:clamp(19px,3.2vw,27px);line-height:1.2;letter-spacing:-.02em;margin:0 0 4px}
+.hero p{font-size:12.5px;color:var(--muted);max-width:620px;margin:0 auto}
+
+/* Compact Cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:10px 0;box-shadow:var(--shadow)}
+@media(max-width:480px){.card{padding:12px 10px;margin:8px 0;border-radius:12px}}
+.card-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.step-num{width:26px;height:26px;border-radius:8px;background:var(--green);color:#fff;font-weight:900;display:grid;place-items:center;font-size:12.5px;flex-shrink:0}
+.card-header h2{margin:0;font-size:15px;font-weight:800}
+.card-header p{margin:1px 0 0;font-size:11px;color:var(--muted)}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px}
+@media(max-width:640px){.grid2,.grid3{grid-template-columns:1fr}}
+
+.field{display:flex;flex-direction:column;gap:3px}
+.field label{font-size:11.5px;font-weight:750;color:var(--ink)}
+.field .desc{font-size:10.5px;color:var(--muted);line-height:1.2}
+.input-wrap{position:relative;display:flex;align-items:center}
+.input-wrap input,.input-wrap select{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:13.5px;color:var(--ink);transition:border-color .15s}
+.input-wrap input:focus,.input-wrap select:focus{border-color:var(--green);outline:none}
+.input-wrap .suffix{position:absolute;right:8px;color:var(--muted);font-size:11.5px;pointer-events:none;font-weight:700}
+
+/* Segment Control */
+.seg-control{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:3px;background:var(--paper);padding:2px;border-radius:9px;border:1px solid var(--line)}
+.seg-btn{border:none;background:transparent;padding:6px 6px;border-radius:7px;font-size:11.5px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .15s;text-align:center}
+.seg-btn.active{background:#fff;color:var(--green);box-shadow:0 1px 4px rgba(0,0,0,.08);font-weight:850}
+
+/* Age Interactive Selector Box */
+.age-selector-box{background:linear-gradient(135deg,#f0f9f5,#e5f4ee);border:1.5px solid var(--green);border-radius:12px;padding:12px;margin-top:10px}
+.age-quick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:5px;margin-top:8px}
+.age-btn{background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:6px 4px;font-size:11.5px;font-weight:800;color:var(--ink);cursor:pointer;transition:all .15s;text-align:center;box-shadow:var(--shadow-sm)}
+.age-btn:hover{border-color:var(--green);color:var(--green)}
+.age-btn.active{background:var(--green);color:#fff;border-color:var(--green);box-shadow:0 3px 8px rgba(8,119,90,.25)}
+
+/* Clear Structured Age Status Banners */
+.age-hint-box{border-radius:10px;padding:9px 12px;margin-top:8px;font-size:11.5px;line-height:1.45;border:1px solid transparent}
+.age-hint-early{background:#fff8f7;border-color:rgba(184,75,62,.3);color:#78261e}
+.age-hint-official{background:#f0f9f5;border-color:rgba(8,119,90,.3);color:#06543f}
+.age-hint-defer{background:#fdfbf2;border-color:rgba(194,155,82,.35);color:#6e5118}
+.age-hint-title{font-weight:850;margin-bottom:4px;font-size:12px}
+.age-hint-text{font-size:11px;line-height:1.45;opacity:.95}
+
+/* Result Dashboard */
+.dash-card{background:linear-gradient(145deg,#075e47,#0a7a5d);color:#fff;border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(8,119,90,.22);margin:14px 0}
+@media(max-width:480px){.dash-card{padding:14px 10px;border-radius:12px}}
+.dash-total{text-align:center;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.15);margin-bottom:12px}
+.dash-total .caption{font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:.05em;opacity:.85}
+.dash-total .sum{font-size:clamp(26px,4.5vw,38px);font-weight:900;line-height:1.1;margin:4px 0 2px;letter-spacing:-.03em}
+.dash-total .sub{font-size:11.5px;opacity:.9;line-height:1.35}
+
+.dash-breakdown{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px}
+@media(max-width:640px){.dash-breakdown{grid-template-columns:1fr}}
+.dash-item{background:rgba(255,255,255,.1);border-radius:10px;padding:10px;backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.12)}
+.dash-item .lbl{font-size:10.5px;opacity:.85;margin-bottom:2px}
+.dash-item .val{font-size:16px;font-weight:850}
+.dash-item .subval{font-size:10px;opacity:.8;margin-top:2px}
+
+/* Scenario Table & Responsive Scroll */
+.table-scroll-wrap{position:relative;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;border:1px solid var(--line);margin:10px 0;background:#fff}
+.scroll-hint{font-size:10.5px;color:var(--muted);margin-bottom:3px;font-weight:750;display:flex;justify-content:space-between;align-items:center}
+
+.scenario-table{width:100%;min-width:600px;border-collapse:collapse;font-size:11.5px;text-align:left}
+.scenario-table th{background:var(--paper);padding:7px 8px;font-weight:800;border-bottom:1.5px solid var(--line);font-size:11px;color:var(--ink);white-space:nowrap}
+.scenario-table td{padding:7px 8px;border-bottom:1px solid var(--line);white-space:nowrap;cursor:pointer}
+.scenario-table tr:hover td{background:rgba(8,119,90,.04)}
+.scenario-table tr.highlight td{background:var(--green-light);font-weight:800;border-left:3px solid var(--green)}
+
+.notice-box{padding:9px 11px;border-radius:9px;font-size:11.5px;line-height:1.4;margin:8px 0}
+.notice-green{background:var(--green-light);border:1px solid rgba(8,119,90,.25);color:var(--green)}
+.notice-gold{background:var(--gold-light);border:1px solid rgba(194,155,82,.3);color:#7a5c1e}
+.notice-red{background:var(--red-light);border:1px solid rgba(184,75,62,.3);color:var(--red)}
+.notice-blue{background:var(--blue-light);border:1px solid rgba(43,108,176,.25);color:var(--blue)}
+
+.print-btn{background:#fff;color:var(--green);border:none;padding:8px 14px;border-radius:8px;font-size:11.5px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:5px;box-shadow:0 3px 10px rgba(0,0,0,.1);transition:transform .1s}
+.print-btn:active{transform:scale(.98)}
+
+.custom-checkbox{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;background:#fff;border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:border-color .15s}
+.custom-checkbox:hover{border-color:var(--green)}
+.custom-checkbox input{margin-top:2px;cursor:pointer;accent-color:var(--green);width:15px;height:15px}
+.custom-checkbox.disabled{opacity:.55;background:#f0ede6;border-color:#d8d0c0;cursor:not-allowed;pointer-events:none}
+
+.kibua-badge-lock{display:inline-flex;align-items:center;gap:4px;background:var(--red-light);color:var(--red);border:1px solid rgba(184,75,62,.3);border-radius:6px;padding:2px 7px;font-size:10.5px;font-weight:800;margin-left:6px}
+.kibua-badge-ok{display:inline-flex;align-items:center;gap:4px;background:var(--green-light);color:var(--green);border:1px solid rgba(8,119,90,.3);border-radius:6px;padding:2px 7px;font-size:10.5px;font-weight:800;margin-left:6px}
+
+/* Modern Collapsible Accordions */
+details.accord-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin:10px 0;box-shadow:var(--shadow-sm);overflow:hidden;transition:all .15s ease}
+details.accord-card summary{padding:11px 14px;font-size:12.5px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;background:#fcfbf8;color:var(--ink);list-style:none}
+details.accord-card summary::-webkit-details-marker{display:none}
+details.accord-card summary::after{content:'▼';font-size:10px;color:var(--muted);transition:transform .2s ease}
+details.accord-card[open] summary::after{transform:rotate(180deg)}
+details.accord-card[open] summary{border-bottom:1px solid var(--line);background:#f6f4ee}
+details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-height:1.55;color:var(--ink)}
+
+/* Disclaimer Accordion */
+.disclaimer-accord{background:#faf8f5;border-left:4px solid var(--muted)}
+.disclaimer-accord summary{color:var(--muted);font-size:12px}
+.disclaimer-accord .accord-content{color:var(--muted);font-size:11px}
+
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculateur de retraite en Israël", "url": "https://exodus611.github.io/finance-portal/fr/pension-calc.html", "description": "Estimation de l’épargne retraite et des prestations en Israël.", "applicationCategory": "FinanceApplication", "operatingSystem": "All", "inLanguage": "fr"}</script>
+<link href="../polish.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="shell" id="main-content">
+<header class="top">
+<div class="topbar">
+<a class="logo" href="index.html">
+<div class="mark">₪</div>
+<div>
+<div style="font-size:14px;font-weight:900">Portail financier d’Israël</div>
+<div style="font-size:11px;color:var(--muted)">Retraite · 2026</div>
+</div>
+</a>
+<div style="display:flex;align-items:center;gap:8px">
+<a class="back" href="index.html">← Accueil</a>
+</div>
+</div>
+</header>
+<div class="hero">
+<div class="badge">⚖️ Références : Autorité des marchés de capitaux et Bituach Leumi (assurance nationale)</div>
+<h1>Calcul de l’épargne et des prestations de retraite 2026</h1>
+<p>Estimation : mikadem, allocation Ezrah Vatik du Bituach Leumi, cotisations santé en retraite anticipée (article 345b) et avantages Kibua Zkhuyot (161d).</p>
+<p>Estimation indicative : les résultats et la traduction doivent être vérifiés auprès du fonds de pension ou d’un conseiller agréé.</p></div>
+<!-- ШАГ 1: Личные данные -> затем Возраст выхода -->
+<div class="card">
+<div class="card-header">
+<div class="step-num">1</div>
+<div>
+<h2>Données personnelles et âge de départ à la retraite</h2>
+<p>Indiquez vos paramètres, puis choisissez l’âge de départ prévu (à partir de 60 ans).</p>
+</div>
+</div>
+<!-- 1.1 Личные параметры заявителя -->
+<div class="grid3">
+<div class="field">
+<label>Sexe du demandeur</label>
+<div class="seg-control" id="gender-seg">
+<button class="seg-btn active" onclick="setGender('m')" type="button">👨 Homme</button>
+<button class="seg-btn" onclick="setGender('f')" type="button">👩 Femme</button>
+</div>
+<span class="desc" id="official-age-label">Âge légal : 67 ans</span>
+</div>
+<div class="field">
+<label>Année de naissance (שנת לידה)</label>
+<div class="input-wrap">
+<input id="user-birth-year" max="1975" min="1940" oninput="onBirthYearChange()" step="1" type="number" value="1966"/>
+<span class="suffix">an</span>
+</div>
+<span class="desc" id="cur-age-calc-hint">Âge actuel : environ 60 ans</span>
+</div>
+<div class="field">
+<label>Situation familiale</label>
+<div class="seg-control" id="marital-seg">
+<button class="seg-btn" onclick="setMarital('married')" type="button">💍 Marié(e)</button>
+<button class="seg-btn active" onclick="setMarital('single')" type="button">👤 Célibataire</button>
+</div>
+<span class="desc">Célibataire : aucune couverture de réversion ; le coefficient de conversion est inférieur.</span>
+</div>
+</div>
+<div class="field" id="spouse-age-wrap" style="display:none;margin-bottom:8px">
+<label>Année de naissance du conjoint ou de la conjointe</label>
+<div class="input-wrap">
+<input id="spouse-birth-year" max="1985" min="1935" oninput="calc()" step="1" type="number" value="1966"/>
+<span class="suffix">an</span>
+</div>
+<span class="desc" id="spouse-diff-hint" style="color:var(--green);font-weight:700">Les conjoints sont nés la même année</span>
+</div>
+<!-- 1.2 Планируемый возраст выхода на пенсию (from 60 years) -->
+<div class="age-selector-box">
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+<div>
+<label style="font-size:12.5px;font-weight:850;color:var(--green)">🎯 Âge de départ prévu (à partir de 60 ans) :</label>
+<div style="font-size:11px;color:var(--muted)">En Israël, la retraite anticipée est permise à partir de 60 ans :</div>
+</div>
+<div class="input-wrap" style="width:115px">
+<input id="ret-age" max="80" min="60" oninput="onRetAgeChange()" step="0.25" style="font-size:16px;font-weight:900;color:var(--green);text-align:center;border:2px solid var(--green)" type="number" value="63"/>
+<span class="suffix" style="font-weight:900;color:var(--green)">ans</span>
+</div>
+</div>
+<!-- Кнопки быстрого выбора возраста выхода (динамически адаптируются) -->
+<div class="age-quick-grid" id="quick-buttons-container">
+<!-- Генерируется JS -->
+</div>
+<!-- Строка с Микадемом -->
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;margin-top:8px;padding-top:6px;border-top:1px solid rgba(8,119,90,.15)">
+<span style="font-size:12px;font-weight:800;color:var(--ink)">
+          Coefficient de conversion (mikadem) : <b id="top-mikadem-val" style="font-size:14px;color:var(--green);background:#fff;padding:2px 7px;border-radius:6px;border:1px solid var(--green)">183.61</b>
+</span>
+<span style="font-size:11px;color:var(--muted)">
+          Pension pour 100 000 ₪ : <b id="top-pension-per-100k" style="color:var(--ink);font-size:12px">545 ₪ / mois</b>
+</span>
+</div>
+<!-- ЧЕТКОЕ СТРУКТУРИРОВАННОЕ ОБЪЯСНЕНИЕ ВЫБРАННОГО ВОЗРАСТА -->
+<div class="age-hint-box age-hint-early" id="ret-age-hint-wrap">
+<!-- Заполняется JS -->
+</div>
+</div>
+</div>
+<!-- ШАГ 2: Пенсионные накопления -->
+<div class="card">
+<div class="card-header">
+<div class="step-num">2</div>
+<div>
+<h2>Épargne retraite (צבירה פנסיונית)</h2>
+<p>Montant dans le fonds de pension, bituach menahalim ou kupat gemel</p>
+</div>
+</div>
+<div class="grid2">
+<div class="field">
+<label>Épargne au moment du départ à la retraite</label>
+<div class="input-wrap">
+<input id="cur-capital" min="0" oninput="calc()" placeholder="1 000 000" step="10000" type="number" value="1000000"/>
+<span class="suffix">₪</span>
+</div>
+<span class="desc">D’après le relevé annuel du fonds de pension (סך החיסכון)</span>
+</div>
+<div class="field">
+<label>Capitalisation / retrait en capital (היוון קצבה)</label>
+<div class="input-wrap">
+<input id="lump-sum" min="0" oninput="calc()" placeholder="0" step="10000" type="number" value="0"/>
+<span class="suffix">₪ en une fois</span>
+</div>
+<span class="desc">Montant retiré immédiatement (réduit la pension mensuelle)</span>
+</div>
+</div>
+</div>
+<!-- ШАГ 3: Пособие по старости «Эзрах Ватик» (Битуах Леуми) -->
+<div class="card" id="btl-step-card">
+<div class="card-header">
+<div class="step-num">3</div>
+<div>
+<div style="display:flex;align-items:center;flex-wrap:wrap;gap:6px">
+<h2>Allocation de vieillesse « Ezrah Vatik » (Bituach Leumi – קצבת אזרח ותיק)</h2>
+<span class="kibua-badge-lock" id="btl-status-badge">🔒 Non disponible avant 67 ans</span>
+</div>
+<p>Versée à partir de l’âge légal de départ à la retraite (« Gil Prisha »)</p>
+</div>
+</div>
+<!-- Заблокированное уведомление при раннем выходе -->
+<div class="notice-box notice-red" id="btl-early-lock-msg" style="display:none">
+      🔒 <b>ALLOCATION DE VIEILLESSE (« EZRAH VATIK ») BLOQUÉE JUSQU’À <span id="btl-lock-age-lbl">67 ANS</span>:</b><br/>
+      En cas de retraite anticipée, avant l’âge légal, le Bituach Leumi <b>ne verse pas</b> l’allocation de vieillesse (0 ₪). La saisie de l’ancienneté et le calcul de l’allocation sont activés à l’âge légal.
+    </div>
+<div class="grid2" id="btl-inputs-grid">
+<div class="field">
+<label>Années d’assurance en Israël à l’âge légal</label>
+<div class="input-wrap">
+<input id="israel-seniority" max="50" min="0" oninput="calc()" placeholder="0" step="1" type="number" value="10"/>
+<span class="suffix">ans</span>
+</div>
+<span class="desc" id="seniority-bonus-desc">Majoration d’ancienneté (tossefet vetek) : +0 %</span>
+</div>
+<div class="field">
+<label>Âge à l’arrivée en Israël (alya)</label>
+<div class="input-wrap">
+<input id="aliyah-age" max="80" min="0" oninput="calc()" placeholder="0" step="1" type="number" value="0"/>
+<span class="suffix">ans</span>
+</div>
+<span class="desc" id="aliyah-status-desc">0 – né en Israël ou alya précoce</span>
+</div>
+</div>
+<div class="notice-box notice-green" id="btl-active-msg" style="display:none">
+      ✅ <b>Allocation Ezrah Vatik active :</b> Montant de base + majoration d’ancienneté (+2 % par année au-delà de 10 ans, jusqu’à +50 %) + majoration pour report (+5 % par an).
+    </div>
+<div class="notice-box notice-gold" id="low-income-alert" style="display:none">
+      💡 <b>Droits particuliers des olim ayant peu d’ancienneté :</b> Si les revenus totaux sont inférieurs au minimum garanti (environ 4 200 ₪ pour une personne / 6 400 ₪ pour un couple), le Bituach Leumi verse un complément : <b>Complément social (ashlamat akhnasa)</b>.
+    </div>
+</div>
+<!-- ШАГ 4: Выбор пенсионного трека и гарантий семье -->
+<div class="card">
+<div class="card-header">
+<div class="step-num">4</div>
+<div>
+<h2>Parcours de pension et mikadem (מקדם המרה)</h2>
+<p>Coefficient de conversion selon l’âge et la protection familiale</p>
+</div>
+</div>
+<div class="grid2">
+<div class="field">
+<label>Pension de réversion pour le conjoint ou la conjointe (פנסיית שארים)</label>
+<div class="input-wrap">
+<select id="spouse-pension-pct" onchange="calc()">
+<option selected="" value="0">0 % (sans pension de réversion / célibataires)</option>
+<option value="60">60 % de la pension à vie (parcours standard)</option>
+<option value="100">100 % de la pension à vie (maximum)</option>
+<option value="30">30 % de la pension à vie</option>
+</select>
+</div>
+<span class="desc">Versement à vie au conjoint ou à la conjointe</span>
+</div>
+<div class="field">
+<label>Période de versement garantie (הבטחת תשלומים)</label>
+<div class="input-wrap">
+<select id="guarantee-months" onchange="calc()">
+<option selected="" value="0">0 mois (sans garantie / pension personnelle maximale)</option>
+<option value="240">240 mois (20 ans de garantie pour les héritiers)</option>
+<option value="180">180 mois (15 ans)</option>
+<option value="120">120 mois (10 ans)</option>
+<option value="60">60 mois (5 ans)</option>
+</select>
+</div>
+<span class="desc">Le solde est garanti aux héritiers</span>
+</div>
+</div>
+<div class="notice-box notice-blue" id="mikadem-explain-box">
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px">
+<div>
+<span style="font-size:11.5px">Âge choisi : <b id="dyn-ret-age-label">63 ans</b></span> · 
+          <span style="font-size:12px;font-weight:800">Mikadem : </span>
+<span id="mikadem-val" style="font-size:16px;font-weight:900;color:#1a365d;background:#fff;padding:1px 8px;border-radius:6px;border:1px solid #90cdf4;display:inline-block">183.61</span>
+</div>
+<div>
+<span style="font-size:11px">Pension pour 100 000 ₪ : <b id="pension-per-100k" style="font-size:13px;color:#1a365d">545 ₪ / mois</b></span>
+</div>
+</div>
+</div>
+<!-- Возможность ручного ввода микадема из пенсионного отчета -->
+<div style="margin-top:8px">
+<label class="custom-checkbox">
+<input id="custom-mikadem-toggle" onchange="toggleCustomMikadem()" type="checkbox"/>
+<div>
+<b style="font-size:11.5px;color:var(--ink)">Saisir le mikadem exact (indiqué sur le relevé annuel personnel du fonds)</b>
+<div style="font-size:10.5px;color:var(--muted)">À utiliser si le fonds a fixé un coefficient individuel garanti.</div>
+</div>
+</label>
+<div id="custom-mikadem-wrap" style="display:none;margin-top:6px;width:160px">
+<div class="input-wrap">
+<input id="custom-mikadem-input" max="300" min="100" oninput="calc()" placeholder="183.61" step="0.01" type="number"/>
+<span class="suffix">coef.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ШАГ 5: Налоговый статус: КИБУА ЗХУЙОТ (Форма 161д) -->
+<div class="card" style="border: 1.5px solid var(--gold)">
+<div class="card-header" style="border-bottom-color: rgba(194,155,82,.4)">
+<div class="step-num" style="background:var(--gold)">5</div>
+<div>
+<h2 style="color:#7a5c1e">Statut du Kibua Zkhuyot (טופס 161ד) et des pitsouim</h2>
+<p>⚖️ <b>Article 9a du code des impôts :</b> L’enveloppe d’exonération n’est accessible qu’à l’âge légal (67 ans pour les hommes / 62 à 65 ans pour les femmes).</p>
+</div>
+</div>
+<div style="margin-bottom:8px">
+<label class="custom-checkbox" id="kibua-checkbox-label">
+<input checked="" id="kibua-done" onchange="calc()" type="checkbox"/>
+<div>
+<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px">
+<b style="font-size:11.5px;color:var(--ink)">Effectuer le « Kibua Zkhuyot » (formulaire 161d)</b>
+<span class="kibua-badge-ok" id="kibua-status-badge">✅ Disponible</span>
+</div>
+<div id="kibua-subdesc" style="font-size:10.5px;color:var(--muted);margin-top:2px">
+            Ouvre droit à une enveloppe exonérée pouvant atteindre environ 4 950 ₪ par mois, à partir de l’âge légal.
+          </div>
+</div>
+</label>
+</div>
+<div class="grid2" id="severance-block">
+<div class="field">
+<label>Avez-vous retiré des pitsouim exonérés d’impôt au cours des 32 dernières années ?</label>
+<div class="seg-control" id="severance-seg">
+<button class="seg-btn active" onclick="setSeverance(false)" type="button">❌ Non (exonération complète)</button>
+<button class="seg-btn" onclick="setSeverance(true)" type="button">⚠️ Oui</button>
+</div>
+<span class="desc">Les pitsouim retirés réduisent l’enveloppe d’exonération de la pension</span>
+</div>
+<div class="field" id="severance-sum-wrap" style="display:none">
+<label>Montant des pitsouim exonérés retirés</label>
+<div class="input-wrap">
+<input id="severance-sum" min="0" oninput="calc()" placeholder="0" step="5000" type="number" value="0"/>
+<span class="suffix">₪</span>
+</div>
+<span class="desc">Chaque 1 ₪ de pitsouim réduit le capital exonéré de 1,35 ₪</span>
+</div>
+</div>
+<div class="notice-box notice-gold" id="kibua-age-warning" style="display:none">
+      🔒 <b>LE KIBUA ZKHUYOT EST BLOQUÉ PAR LA LOI JUSQU’À <span id="kibua-lock-off-age">67 ANS</span>):</b><br/>
+      • <b>Impôt sur le revenu :</b> Avant l’âge légal <i>(סעיף 9א לפקודת מס הכנסה)</i> remplir le formulaire 161d <b>est impossible</b> – La pension est soumise à l’impôt sur le revenu ordinaire.<br/>
+      • <b>Bituach Leumi et santé :</b> Le fonds de pension, selon la loi <i>(article 345b)</i> doit prélever 3,49 % à 11,79 %. L’exonération intervient à l’âge légal.
+    </div>
+<div class="notice-box notice-red" id="kibua-warning" style="display:none">
+      🚨 <b>Attention :</b> Sans formulaire 161d après l’âge légal, le fonds prélèvera l’impôt sur toute la pension sans appliquer l’avantage.
+    </div>
+<div class="notice-box notice-green" id="kibua-success">
+      ✅ <b>À partir de l’âge légal avec le formulaire 161d :</b> Exonération maximale d’impôt sur le revenu (0 ₪) et exonération des cotisations Bituach Leumi.
+    </div>
+</div>
+<!-- ДАШБОРД РЕЗУЛЬТАТОВ (КОМПАКТНЫЙ) -->
+<div class="dash-card" id="results-dash">
+<div class="dash-total">
+<div class="caption">PENSION NETTE TOTALE VERSÉE SUR LE COMPTE (נטו לחשבון הבנק)</div>
+<div class="sum" id="total-net-sum">0 ₪</div>
+<div class="sub" id="total-gross-sub">Brut : 0 ₪ · Retenues : 0 ₪</div>
+</div>
+<div class="dash-breakdown">
+<div class="dash-item">
+<div class="lbl">🏦 Fonds de pension (brut)</div>
+<div class="val" id="res-fund-pension">0 ₪</div>
+<div class="subval" id="res-capital-at-ret">Capital : 0 ₪</div>
+</div>
+<div class="dash-item">
+<div class="lbl">📉 Impôts et cotisations sociales sur la pension</div>
+<div class="val" id="res-total-deductions" style="color:#ffb3ba">0 ₪</div>
+<div class="subval" id="res-deductions-details">Impôt : 0 ₪ · Bituach : 0 ₪</div>
+</div>
+<div class="dash-item">
+<div class="lbl">🏛️ Allocation « Ezrah Vatik » (Bituach Leumi)</div>
+<div class="val" id="res-btl-sum">0 ₪</div>
+<div class="subval" id="res-btl-details">Base + ancienneté 0 %</div>
+</div>
+</div>
+<div style="text-align:center">
+<button class="print-btn" onclick="window.print()">🖨️ Imprimer / Enregistrer en PDF</button>
+</div>
+</div>
+<!-- СРАВНЕНИЕ СЦЕНАРИЕВ (НАЧИНАЯ С 60 ЛЕТ) -->
+<div class="card">
+<div class="card-header">
+<div class="step-num">💡</div>
+<div>
+<h2>Comparaison des scénarios : à quel âge partir à la retraite ?</h2>
+<p>Cliquez sur une ligne pour choisir immédiatement cet âge</p>
+</div>
+</div>
+<div class="scroll-hint">
+<span>👆 Cliquez sur une ligne pour choisir</span>
+<span>↔️ Faites défiler vers la droite</span>
+</div>
+<div class="table-scroll-wrap">
+<table class="scenario-table" id="scenarios-table">
+<thead>
+<tr>
+<th>Âge</th>
+<th>Mikadem</th>
+<th>Capital</th>
+<th>Pension du fonds</th>
+<th>Impôt sur le revenu</th>
+<th>Bituach / santé</th>
+<th>Allocation « Ezrah Vatik »</th>
+<th>TOTAL NET</th>
+</tr>
+</thead>
+<tbody id="scenarios-body">
+<!-- Заполняется JS -->
+</tbody>
+</table>
+</div>
+<div class="notice-box notice-green">
+      📌 <b>Conclusion du conseiller retraite :</b> Reporter le départ anticipé (60–63 ans) jusqu’à l’âge légal peut apporter quatre avantages : <b>Kibua Zkhuyot (0 impôt)</b>, <b>0 ₪ de cotisations Bituach Leumi et de taxe santé</b>, <b>allocation de vieillesse « Ezrah Vatik »</b> et <b>réduction du mikadem</b>.
+    </div>
+</div>
+<!-- ГАРМОШКА: ОФИЦИАЛЬНЫЕ ПРАВИЛА И ЗАКОНОДАТЕЛЬСТВО -->
+<details class="accord-card">
+<summary>📖 Règles : fiscalité des pensions, Kibua Zkhuyot et cotisations Bituach Leumi (art. 345b et 9a)</summary>
+<div class="accord-content">
+<ol style="padding-left:16px;margin:0 0 8px">
+<li><b>Cotisations Bituach Leumi et santé (article 345b de la loi sur l’assurance nationale) :</b>
+<ul style="padding-left:14px;margin:3px 0">
+<li><b>En cas de retraite anticipée (60–66 ans) :</b> le fonds de pension, selon la loi <i>(סעיף 345ב לחוק הביטוח הלאומי)</i> doit retenir les cotisations d’assurance nationale et la taxe santé sur la pension (3,49 % jusqu’à 7 522 ₪ et 11,79 % au-delà).</li>
+<li><b>À partir de l’âge légal (67 ans pour les hommes / 62 à 65 ans pour les femmes) :</b> s’applique une <b>exonération de 100 % des cotisations Bituach Leumi et de la taxe santé</b> sur les versements du fonds. L’assurance santé (environ 223 ₪) est déduite de l’allocation de vieillesse publique ; la pension du fonds est versée sans ces retenues.</li>
+</ul>
+</li>
+<li><b>Impôt sur le revenu (mas akhnasa – art. 9a) :</b>
+<ul style="padding-left:14px;margin:3px 0">
+<li><b>Avant l’âge légal :</b> la pension est imposée comme un revenu ordinaire, sans enveloppe d’exonération Kibua Zkhuyot.</li>
+<li><b>À partir de l’âge légal :</b> le retraité remplit le formulaire 161d (*טופס 161ד*) et bénéficie d’une enveloppe exonérée jusqu’à <b>4 950 ₪ / mois</b>, réduisant l’impôt sur le revenu à <b>0 ₪</b>.</li>
+</ul>
+</li>
+<li><b>Règle des 32 ans (נוסחת השילוב) :</b> L’administration fiscale examine les indemnités de départ (pitsouim) retirées en exonération d’impôt durant les 32 dernières années. Chaque 1 ₪ retiré réduit le capital exonéré de 1,35 ₪.</li>
+</ol>
+</div>
+</details>
+<!-- ГАРМОШКА: ДИСКЛЕЙМЕР -->
+<details class="accord-card disclaimer-accord">
+<summary>🛡️ Mentions légales et avertissement</summary>
+<div class="accord-content">
+<p style="margin:0 0 6px">
+<b>1. Ceci n’est pas un conseil individuel :</b> Ce calculateur est fourni à titre informatif et ne constitue pas un conseil personnalisé en investissement, retraite ou fiscalité. <i>(חוק הפיקוח על שירותים פיננסיים, התשס"ה-2005)</i>.
+      </p>
+<p style="margin:0 0 6px">
+<b>2. Calculs définitifs :</b> Le montant réel de la pension et la valeur actuarielle sont déterminés par le fonds de pension lors de la demande, sur la base de son règlement en vigueur <i>(תקנון קרן הפנסיה)</i> et de la situation familiale.
+      </p>
+<p style="margin:0">
+<b>3. Recommandation :</b> Avant toute décision relative à la retraite ou à la capitalisation <i>(היוון)</i> ou à la renonciation aux garanties, il est recommandé de consulter un conseiller retraite agréé <i>(יועץ פנסיוני מורשה)</i>.
+      </p>
+</div>
+</details>
+</div>
+<nav aria-label="Related calculators" id="rel-links" style="width:min(760px,calc(100% - 28px));margin:8px auto 0;padding:16px 0"><div style="font-size:12px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">À lire aussi</div><a href="pension-gap.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Écart de retraite</a><a href="keren-hishtalmut.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Keren Hishtalmout</a><a href="salary.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Vérifier les retenues sur la pension</a><a href="siud.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Sioud – aide aux personnes âgées</a></nav>
+<script>
+/* ==========================================================================
+   ISRAEL PENSION ADVISOR CALCULATION ENGINE (2026)
+   Exact Actuarial & Tax Standard (Capital Market Authority & BTL 345b)
+   ========================================================================== */
+
+const CURRENT_YEAR = 2026;
+
+// Эталонная актуарная база Микадема для одиноких (минимальный возраст 60 years)
+const MALE_BASE_TABLE = {
+  60: 194.81, 61: 191.13, 62: 187.45, 63: 183.61, 64: 179.60,
+  65: 175.60, 66: 171.37, 67: 167.14, 68: 162.70, 69: 158.18, 70: 153.65,
+  71: 149.15, 72: 144.65, 73: 140.15, 74: 135.65, 75: 131.15
+};
+
+const FEMALE_BASE_TABLE = {
+  60: 207.00, 61: 203.46, 62: 199.92, 63: 196.21, 64: 192.33,
+  65: 188.45, 66: 184.33, 67: 180.21, 68: 175.90, 69: 171.45, 70: 167.00,
+  71: 162.50, 72: 158.00, 73: 153.50, 74: 149.00, 75: 144.50
+};
+
+// Официальная таблица ступеней реформы для женщин (תיקון מס' 8 לחוק גיל פרישה)
+function getFemaleOfficialAgeByYear(birthYear){
+  if(birthYear <= 1959) return { age: 62.0, label: "62 ans" };
+  if(birthYear === 1960) return { age: 62 + 4/12, label: "62 ans et 4 mois" };
+  if(birthYear === 1961) return { age: 62 + 8/12, label: "62 ans et 8 mois" };
+  if(birthYear === 1962) return { age: 63.0, label: "63 ans" };
+  if(birthYear === 1963) return { age: 63 + 3/12, label: "63 ans et 3 mois" };
+  if(birthYear === 1964) return { age: 63 + 6/12, label: "63 ans et 6 mois" };
+  if(birthYear === 1965) return { age: 63 + 9/12, label: "63 ans et 9 mois" };
+  if(birthYear === 1966) return { age: 64.0, label: "64 ans" };
+  if(birthYear === 1967) return { age: 64 + 3/12, label: "64 ans et 3 mois" };
+  if(birthYear === 1968) return { age: 64 + 6/12, label: "64 ans et 6 mois" };
+  if(birthYear === 1969) return { age: 64 + 9/12, label: "64 ans et 9 mois" };
+  return { age: 65.0, label: "65 ans" };
+}
+
+let state = {
+  gender: 'm',
+  marital: 'single',
+  withdrewSeverance: false
+};
+
+function onBirthYearChange(){
+  if(state.gender === 'f') {
+    updateFemaleOfficialAge();
+  }
+  updateQuickButtons();
+  calc();
+}
+
+function updateQuickButtons(){
+  const userBirthYear = parseInt(document.getElementById('user-birth-year').value) || 1966;
+  const offData = state.gender === 'm' ? { age: 67, label: '67 ans' } : getFemaleOfficialAgeByYear(userBirthYear);
+  const container = document.getElementById('quick-buttons-container');
+  
+  let ages = state.gender === 'm' ? [60, 62, 63, 65, 67, 70] : [60, 62, 63, Math.round(offData.age), 65, 70];
+  ages = [...new Set(ages)].sort((a,b) => a - b);
+
+  container.innerHTML = ages.map(age => {
+    const isOff = Math.abs(age - offData.age) < 0.2;
+    const label = isOff ? `${Math.round(age)} ans (légal)` : `${age} ans`;
+    return `<button type="button" class="age-btn" data-age="${age}" onclick="setQuickRetAge(${age})">${label}</button>`;
+  }).join('');
+
+  const curRet = parseFloat(document.getElementById('ret-age').value) || 63;
+  updateQuickChips(curRet);
+}
+
+function onRetAgeChange(){
+  let retVal = parseFloat(document.getElementById('ret-age').value) || 63;
+  if(retVal < 60) retVal = 60;
+  updateQuickChips(retVal);
+  calc();
+}
+
+function setQuickRetAge(age){
+  if(age < 60) age = 60;
+  document.getElementById('ret-age').value = age;
+  updateQuickChips(age);
+  calc();
+}
+
+function updateQuickChips(age){
+  document.querySelectorAll('.age-quick-grid .age-btn').forEach(btn => {
+    const btnAge = parseFloat(btn.getAttribute('data-age') || btn.textContent);
+    btn.classList.toggle('active', Math.abs(btnAge - age) < 0.2);
+  });
+}
+
+function updateFemaleOfficialAge(){
+  const bYear = parseInt(document.getElementById('user-birth-year').value) || 1966;
+  const data = getFemaleOfficialAgeByYear(bYear);
+  document.getElementById('official-age-label').textContent = `Âge légal : ${data.label}`;
+}
+
+function setGender(g){
+  state.gender = g;
+  document.querySelectorAll('#gender-seg .seg-btn').forEach((b, idx) => {
+    b.classList.toggle('active', (g==='m' && idx===0) || (g==='f' && idx===1));
+  });
+
+  if(g === 'f') {
+    updateFemaleOfficialAge();
+  } else {
+    document.getElementById('official-age-label').textContent = 'Âge légal : 67 ans';
+  }
+  updateQuickButtons();
+  calc();
+}
+
+function setMarital(m){
+  state.marital = m;
+  document.querySelectorAll('#marital-seg .seg-btn').forEach((b, idx) => {
+    b.classList.toggle('active', (m==='married' && idx===0) || (m==='single' && idx===1));
+  });
+  document.getElementById('spouse-age-wrap').style.display = (m==='married') ? 'flex' : 'none';
+  
+  if(m === 'single') {
+    document.getElementById('spouse-pension-pct').value = '0';
+    document.getElementById('guarantee-months').value = '0';
+  } else {
+    document.getElementById('spouse-pension-pct').value = '60';
+    document.getElementById('guarantee-months').value = '240';
+  }
+  calc();
+}
+
+function setSeverance(val){
+  state.withdrewSeverance = val;
+  document.querySelectorAll('#severance-seg .seg-btn').forEach((b, idx) => {
+    b.classList.toggle('active', (!val && idx===0) || (val && idx===1));
+  });
+  document.getElementById('severance-sum-wrap').style.display = val ? 'flex' : 'none';
+  calc();
+}
+
+function toggleCustomMikadem(){
+  const isCustom = document.getElementById('custom-mikadem-toggle').checked;
+  document.getElementById('custom-mikadem-wrap').style.display = isCustom ? 'block' : 'none';
+  calc();
+}
+
+/* Точный расчет Микадема (from 60 years) */
+function getMikadem(retAge, gender, isMarried, spousePct, guaranteeMonths, spouseAgeDiffYears){
+  const isCustom = document.getElementById('custom-mikadem-toggle') && document.getElementById('custom-mikadem-toggle').checked;
+  const customVal = parseFloat(document.getElementById('custom-mikadem-input') ? document.getElementById('custom-mikadem-input').value : 0);
+  if(isCustom && customVal >= 100) {
+    return customVal;
+  }
+
+  const tbl = (gender === 'm') ? MALE_BASE_TABLE : FEMALE_BASE_TABLE;
+  let base = 0;
+
+  if(retAge in tbl) {
+    base = tbl[retAge];
+  } else if(retAge < 60) {
+    base = tbl[60] + (60 - retAge) * 3.8;
+  } else if(retAge > 75) {
+    base = tbl[75] - (retAge - 75) * 4.5;
+  } else {
+    const floorA = Math.floor(retAge);
+    const ceilA = floorA + 1;
+    const frac = retAge - floorA;
+    const baseFloor = tbl[floorA] || tbl[60];
+    const baseCeil = tbl[ceilA] || tbl[70];
+    base = baseFloor * (1 - frac) + baseCeil * frac;
+  }
+
+  if(!isMarried || spousePct === 0) {
+    let gAdj = 0;
+    if(guaranteeMonths === 240) gAdj = 12.0;
+    else if(guaranteeMonths === 180) gAdj = 8.0;
+    else if(guaranteeMonths === 120) gAdj = 5.0;
+    else if(guaranteeMonths === 60) gAdj = 2.0;
+    return base + gAdj;
+  } else {
+    let sAdj = 0;
+    if(spousePct === 60) sAdj = 22.0;
+    else if(spousePct === 100) sAdj = 34.0;
+    else if(spousePct === 30) sAdj = 11.0;
+
+    let gAdj = 0;
+    if(guaranteeMonths === 240) gAdj = 6.0;
+    else if(guaranteeMonths === 180) gAdj = 4.0;
+    else if(guaranteeMonths === 120) gAdj = 2.0;
+
+    let diffAdj = (spouseAgeDiffYears - 3) * 0.75;
+    return base + sAdj + gAdj + diffAdj;
+  }
+}
+
+/* Расчет пособия «Эзрах Ватик» Битуах Леуми */
+function getBtlAllowance(retAge, gender, seniority, aliyahAge, marital, userBirthYear){
+  const officialAge = (gender === 'm') ? 67.0 : getFemaleOfficialAgeByYear(userBirthYear).age;
+  
+  if(retAge < officialAge - 0.05) {
+    return { btlTotal: 0, isEligible: false, base: 0, seniorityAdd: 0, deferralAdd: 0, officialAge };
+  }
+
+  let base = (marital === 'married') ? 2610 : 1736;
+  let extraYears = Math.max(0, seniority - 10);
+  let seniorityPct = Math.min(50, extraYears * 2);
+  let seniorityAdd = base * (seniorityPct / 100);
+
+  let deferralYears = Math.max(0, Math.floor(retAge - officialAge));
+  let deferralPct = Math.min(25, deferralYears * 5);
+  let deferralAdd = (base + seniorityAdd) * (deferralPct / 100);
+
+  let btlTotal = base + seniorityAdd + deferralAdd;
+
+  return {
+    btlTotal: Math.round(btlTotal),
+    isEligible: true,
+    base: base,
+    seniorityPct: seniorityPct,
+    seniorityAdd: Math.round(seniorityAdd),
+    deferralPct: deferralPct,
+    deferralAdd: Math.round(deferralAdd),
+    officialAge
+  };
+}
+
+/* Удержания Битуах Леуми и Дмей Бриаут (ст. 345б) */
+function calcBtlHealthDeductions(grossPension, retAge, officialAge){
+  if(retAge >= officialAge - 0.01) {
+    return { btl: 0, health: 0, total: 0, isExempt: true };
+  }
+
+  const threshold = 7522;
+  let btl = 0;
+  let health = 0;
+
+  if(grossPension <= threshold) {
+    btl = grossPension * 0.0039;
+    health = grossPension * 0.0310;
+  } else {
+    btl = (threshold * 0.0039) + ((grossPension - threshold) * 0.0679);
+    health = (threshold * 0.0310) + ((grossPension - threshold) * 0.0500);
+  }
+
+  return {
+    btl: Math.round(btl),
+    health: Math.round(health),
+    total: Math.round(btl + health),
+    isExempt: false
+  };
+}
+
+/* Расчет подоходного налога (Мас Ахнаса — ст. 9а) */
+function calcPensionTax(grossPension, retAge, officialAge, gender, isKibuaDone, withdrewSeverance, severanceSum){
+  let exemptCeiling = 0;
+  const isEligibleForKibua = (retAge >= officialAge - 0.01);
+
+  if(isEligibleForKibua && isKibuaDone) {
+    exemptCeiling = 4950;
+    if(withdrewSeverance && severanceSum > 0) {
+      const monthlyPenalty = (severanceSum * 1.35) / 180;
+      exemptCeiling = Math.max(0, exemptCeiling - monthlyPenalty);
+    }
+  }
+
+  let taxableGross = Math.max(0, grossPension - exemptCeiling);
+  if(taxableGross <= 0) return { tax: 0, exemptCeiling: Math.round(exemptCeiling), isEligibleForKibua };
+
+  let rawTax = 0;
+  if(taxableGross <= 7010) {
+    rawTax = taxableGross * 0.10;
+  } else if(taxableGross <= 10060) {
+    rawTax = 7010 * 0.10 + (taxableGross - 7010) * 0.14;
+  } else if(taxableGross <= 16150) {
+    rawTax = 7010 * 0.10 + (10060 - 7010) * 0.14 + (taxableGross - 10060) * 0.20;
+  } else if(taxableGross <= 22440) {
+    rawTax = 7010 * 0.10 + (10060 - 7010) * 0.14 + (16150 - 10060) * 0.20 + (taxableGross - 16150) * 0.31;
+  } else if(taxableGross <= 46690) {
+    rawTax = 7010 * 0.10 + (10060 - 7010) * 0.14 + (16150 - 10060) * 0.20 + (22440 - 16150) * 0.31 + (taxableGross - 22440) * 0.35;
+  } else {
+    rawTax = 7010 * 0.10 + (10060 - 7010) * 0.14 + (16150 - 10060) * 0.20 + (22440 - 16150) * 0.31 + (46690 - 22440) * 0.35 + (taxableGross - 46690) * 0.47;
+  }
+
+  const creditPointsVal = (gender === 'm' ? 2.25 : 2.75) * 242;
+  const finalTax = Math.max(0, rawTax - creditPointsVal);
+
+  return { tax: Math.round(finalTax), exemptCeiling: Math.round(exemptCeiling), isEligibleForKibua };
+}
+
+function fmt(num){
+  return Math.round(num).toLocaleString('fr-FR');
+}
+
+function selectScenarioAge(age){
+  if(age < 60) age = 60;
+  document.getElementById('ret-age').value = age;
+  updateQuickChips(age);
+  calc();
+  window.scrollTo({ top: document.querySelector('.age-selector-box').offsetTop - 20, behavior: 'smooth' });
+}
+
+function calc(){
+  const userBirthYear = parseInt(document.getElementById('user-birth-year').value) || 1966;
+  const curAgeEst = CURRENT_YEAR - userBirthYear;
+  document.getElementById('cur-age-calc-hint').textContent = `Âge actuel : ~${curAgeEst} ans`;
+
+  let retAge = parseFloat(document.getElementById('ret-age').value) || 63;
+  if(retAge < 60) retAge = 60;
+
+  const curCapital = parseFloat(document.getElementById('cur-capital').value) || 0;
+  const lumpSum = parseFloat(document.getElementById('lump-sum').value) || 0;
+  const seniority = parseInt(document.getElementById('israel-seniority').value) || 0;
+  const aliyahAge = parseInt(document.getElementById('aliyah-age').value) || 0;
+  const isMarried = (state.marital === 'married');
+  const spousePct = isMarried ? (parseInt(document.getElementById('spouse-pension-pct').value) || 60) : 0;
+  const guaranteeMonths = parseInt(document.getElementById('guarantee-months').value) || 0;
+
+  const spouseBirthYear = parseInt(document.getElementById('spouse-birth-year').value) || userBirthYear;
+  const spouseDiffYears = spouseBirthYear - userBirthYear;
+
+  let spouseText = '';
+  if(spouseDiffYears === 0) {
+    spouseText = `Conjoints nés la même année (${spouseBirthYear})`;
+  } else if(spouseDiffYears > 0) {
+    spouseText = `Conjoint(e) plus jeune de ${spouseDiffYears} ans (né(e) en ${spouseBirthYear})`;
+  } else {
+    spouseText = `Conjoint(e) plus âgé(e) de ${Math.abs(spouseDiffYears)} ans (né(e) en ${spouseBirthYear})`;
+  }
+  document.getElementById('spouse-diff-hint').textContent = spouseText;
+
+  const offAgeData = state.gender === 'm' ? { age: 67, label: '67 ans' } : getFemaleOfficialAgeByYear(userBirthYear);
+  const officialAge = offAgeData.age;
+  const offAgeLabel = offAgeData.label;
+
+  const isEarlyRetirement = (retAge < officialAge - 0.05);
+
+  // ШАГ 3: БЛОКИРОВКА ПОСОБИЯ «ЭЗРАХ ВАТИК» БИТУАХ ЛЕУМИ ПРИ РАННЕМ ВЫХОДЕ
+  const btlBadge = document.getElementById('btl-status-badge');
+  const btlEarlyLockMsg = document.getElementById('btl-early-lock-msg');
+  const btlLockAgeLbl = document.getElementById('btl-lock-age-lbl');
+  const btlInputsGrid = document.getElementById('btl-inputs-grid');
+  const btlActiveMsg = document.getElementById('btl-active-msg');
+  const seniorityInput = document.getElementById('israel-seniority');
+  const aliyahInput = document.getElementById('aliyah-age');
+
+  if(isEarlyRetirement) {
+    btlBadge.className = 'kibua-badge-lock';
+    btlBadge.innerHTML = '🔒 Bloqué (à partir de ' + offAgeLabel + ')';
+    btlEarlyLockMsg.style.display = 'block';
+    btlLockAgeLbl.textContent = offAgeLabel;
+    btlInputsGrid.style.opacity = '0.45';
+    btlInputsGrid.style.pointerEvents = 'none';
+    seniorityInput.disabled = true;
+    aliyahInput.disabled = true;
+    btlActiveMsg.style.display = 'none';
+  } else {
+    btlBadge.className = 'kibua-badge-ok';
+    btlBadge.innerHTML = '✅ Disponible (à partir de ' + offAgeLabel + ')';
+    btlEarlyLockMsg.style.display = 'none';
+    btlInputsGrid.style.opacity = '1';
+    btlInputsGrid.style.pointerEvents = 'auto';
+    seniorityInput.disabled = false;
+    aliyahInput.disabled = false;
+    btlActiveMsg.style.display = 'block';
+  }
+
+  // ШАГ 5: БЛОКИРОВКА КИБУА ЗХУЙОТ (161д)
+  const kibuaCheckbox = document.getElementById('kibua-done');
+  const kibuaLabel = document.getElementById('kibua-checkbox-label');
+  const kibuaBadge = document.getElementById('kibua-status-badge');
+  const kibuaSubdesc = document.getElementById('kibua-subdesc');
+  const severanceBlock = document.getElementById('severance-block');
+  const kibuaLockOffAge = document.getElementById('kibua-lock-off-age');
+
+  if(isEarlyRetirement) {
+    kibuaCheckbox.checked = false;
+    kibuaCheckbox.disabled = true;
+    kibuaLabel.classList.add('disabled');
+    kibuaBadge.className = 'kibua-badge-lock';
+    kibuaBadge.innerHTML = '🔒 Bloqué (à partir de ' + offAgeLabel + ')';
+    kibuaSubdesc.innerHTML = '<span style=\"color:var(--red);font-weight:700\">❌ Non disponible en cas de retraite anticipée (' + retAge + ' ans).</span> Selon la loi (article 9a), le formulaire 161d devient disponible à partir de ' + offAgeLabel + '.';
+    severanceBlock.style.opacity = '0.4';
+    severanceBlock.style.pointerEvents = 'none';
+    document.getElementById('kibua-age-warning').style.display = 'block';
+    if(kibuaLockOffAge) kibuaLockOffAge.textContent = offAgeLabel;
+    document.getElementById('kibua-warning').style.display = 'none';
+    document.getElementById('kibua-success').style.display = 'none';
+  } else {
+    kibuaCheckbox.disabled = false;
+    kibuaLabel.classList.remove('disabled');
+    kibuaBadge.className = 'kibua-badge-ok';
+    kibuaBadge.innerHTML = '✅ Disponible (à partir de ' + offAgeLabel + ')';
+    kibuaSubdesc.innerHTML = 'Ouvre droit à une enveloppe exonérée pouvant atteindre environ 4 950 ₪ par mois.';
+    severanceBlock.style.opacity = '1';
+    severanceBlock.style.pointerEvents = 'auto';
+    document.getElementById('kibua-age-warning').style.display = 'none';
+    document.getElementById('kibua-warning').style.display = kibuaCheckbox.checked ? 'none' : 'block';
+    document.getElementById('kibua-success').style.display = kibuaCheckbox.checked ? 'block' : 'none';
+  }
+
+  const isKibuaDone = kibuaCheckbox.checked && !isEarlyRetirement;
+  const severanceSum = state.withdrewSeverance ? (parseFloat(document.getElementById('severance-sum').value) || 0) : 0;
+
+  const effectiveCapital = Math.max(0, curCapital - lumpSum);
+  const mikadem = getMikadem(retAge, state.gender, isMarried, spousePct, guaranteeMonths, spouseDiffYears);
+  const fundPensionGross = Math.round(effectiveCapital / mikadem);
+
+  const btl = getBtlAllowance(retAge, state.gender, seniority, aliyahAge, state.marital, userBirthYear);
+  
+  // Подоходный налог (Мас Ахнаса)
+  const taxRes = calcPensionTax(fundPensionGross, retAge, officialAge, state.gender, isKibuaDone, state.withdrewSeverance, severanceSum);
+  const pensionTax = taxRes.tax;
+
+  // Битуах Леуми и Здоровье с ранней пенсии (ст. 345б)
+  const btlHealth = calcBtlHealthDeductions(fundPensionGross, retAge, officialAge);
+  
+  const totalDeductions = pensionTax + btlHealth.total;
+  const fundPensionNet = Math.max(0, fundPensionGross - totalDeductions);
+
+  const totalNet = fundPensionNet + btl.btlTotal;
+  const totalGross = fundPensionGross + btl.btlTotal;
+
+  document.getElementById('total-net-sum').textContent = fmt(totalNet) + '₪ / mois';
+  
+  let deductionsNote = '';
+  if(isEarlyRetirement) {
+    deductionsNote = `Retenues : -${fmt(totalDeductions)} ₪ (impôt : ${fmt(pensionTax)} ₪ · cotisations/santé : ${fmt(btlHealth.total)} ₪)`;
+  } else if(totalDeductions === 0) {
+    deductionsNote = `Exonération fiscale à 100 % (à partir de ${offAgeLabel} avec Kibua Zkhuyot)`;
+  } else {
+    deductionsNote = `Impôt sur le revenu : ${fmt(pensionTax)} ₪ (Bituach/santé : 0 ₪)`;
+  }
+
+  document.getElementById('total-gross-sub').textContent = `Brut : ${fmt(totalGross)} ₪ · ${deductionsNote}`;
+
+  document.getElementById('res-fund-pension').textContent = fmt(fundPensionGross) + '₪ / mois';
+  document.getElementById('res-capital-at-ret').textContent = `Capital : ${fmt(curCapital)} ₪`;
+
+  document.getElementById('res-total-deductions').textContent = totalDeductions > 0 ? `-${fmt(totalDeductions)} ₪ / mois` : '0 ₪ (exonéré)';
+  document.getElementById('res-deductions-details').textContent = isEarlyRetirement 
+    ? `Impôt : ${fmt(pensionTax)} ₪ · cotisations + santé : ${fmt(btlHealth.total)} ₪`
+    : `Dès ${offAgeLabel}, cotisations = 0 ₪ · impôt = ${fmt(pensionTax)} ₪`;
+
+  if(btl.isEligible) {
+    document.getElementById('res-btl-sum').textContent = fmt(btl.btlTotal) + '₪ / mois';
+    document.getElementById('res-btl-details').textContent = `Base : ${fmt(btl.base)} ₪ + ancienneté : +${btl.seniorityPct}%`;
+  } else {
+    document.getElementById('res-btl-sum').textContent = `0 ₪ (jusqu’à ${offAgeLabel})`;
+    document.getElementById('res-btl-details').textContent = 'La prestation Ezrah Vatik commencera à partir de l’âge légal';
+  }
+
+  // Обновление Микадема в шаге 1 и 4
+  document.getElementById('top-mikadem-val').textContent = mikadem.toFixed(2);
+  const immediatePer100k = Math.round(100000 / mikadem);
+  if(document.getElementById('top-pension-per-100k')) {
+    document.getElementById('top-pension-per-100k').textContent = fmt(immediatePer100k) + '₪ / mois';
+  }
+
+  document.getElementById('dyn-ret-age-label').textContent = retAge + ' ans';
+  document.getElementById('mikadem-val').textContent = mikadem.toFixed(2);
+  document.getElementById('pension-per-100k').textContent = fmt(immediatePer100k) + '₪ / mois';
+
+  // ЧЕТКОЕ СТРУКТУРИРОВАННОЕ ОБЪЯСНЕНИЕ В ШАГЕ 1
+  const ageHintWrap = document.getElementById('ret-age-hint-wrap');
+  if(ageHintWrap) {
+    if(retAge < officialAge - 0.1) {
+      ageHintWrap.className = 'age-hint-box age-hint-early';
+      ageHintWrap.innerHTML = `
+        <div class="age-hint-title">⚠️ Retraite anticipée (${retAge} ans ; âge légal ${offAgeLabel}):</div>
+        <div class="age-hint-text">
+          • <b>Allocation de vieillesse (« Ezrah Vatik ») :</b> Le Bituach Leumi commencera les versements à partir de <b>${offAgeLabel}</b>.<br>
+          • <b>Retenues du fonds de pension :</b> Jusqu’à ${offAgeLabel}, l’impôt ordinaire et les cotisations sociales et santé sont prélevés sur la pension (article 345b).
+        </div>
+      `;
+    } else if(retAge > officialAge + 0.1) {
+      const deferYears = Math.floor(retAge - officialAge);
+      const deferBonus = Math.min(25, deferYears * 5);
+      ageHintWrap.className = 'age-hint-box age-hint-defer';
+      ageHintWrap.innerHTML = `
+        <div class="age-hint-title">🌟 Retraite différée (${retAge} ans):</div>
+        <div class="age-hint-text">
+          • <b>Majoration pour report (« Ezrah Vatik ») :</b> Le Bituach Leumi ajoute +${deferBonus}% (+5 % par an) à l’allocation reportée après ${offAgeLabel}.<br>
+          • <b>Pension maximale :</b> Un mikadem réduit (${mikadem.toFixed(2)}) augmente la pension mensuelle.
+        </div>
+      `;
+    } else {
+      ageHintWrap.className = 'age-hint-box age-hint-official';
+      ageHintWrap.innerHTML = `
+        <div class="age-hint-title">✅ Âge légal de la retraite (« Gil Prisha Mezake » – ${offAgeLabel}):</div>
+        <div class="age-hint-text">
+          • <b>Allocation de vieillesse :</b> Le Bituach Leumi commence à verser l’allocation Ezrah Vatik.<br>
+          • <b>Avantages fiscaux :</b> L’exonération liée au formulaire 161d (Kibua Zkhuyot) et l’exonération des cotisations Bituach Leumi sur la pension du fonds prennent effet.
+        </div>
+      `;
+    }
+  }
+
+  const senBonus = Math.min(50, Math.max(0, seniority - 10) * 2);
+  document.getElementById('seniority-bonus-desc').textContent = `Majoration d’ancienneté de l’allocation Ezrah Vatik : +${senBonus}%`;
+  
+  if(aliyahAge >= 60 || seniority < 10) {
+    document.getElementById('low-income-alert').style.display = 'block';
+  } else {
+    document.getElementById('low-income-alert').style.display = 'none';
+  }
+
+  renderScenarios(curCapital, seniority, aliyahAge, isMarried, spousePct, guaranteeMonths, spouseDiffYears, isKibuaDone, severanceSum, retAge, userBirthYear, officialAge);
+}
+
+function renderScenarios(curCapital, seniority, aliyahAge, isMarried, spousePct, guaranteeMonths, spouseDiffYears, isKibuaDone, severanceSum, selectedRetAge, userBirthYear, officialAge){
+  const tbody = document.getElementById('scenarios-body');
+  tbody.innerHTML = '';
+
+  let testAges = [60, 62, 63, 65, officialAge, 70];
+  if(state.gender === 'f') {
+    testAges.push(64);
+  }
+  if(!testAges.includes(selectedRetAge) && selectedRetAge >= 60) {
+    testAges.push(selectedRetAge);
+  }
+  testAges = [...new Set(testAges)].filter(a => a >= 60).sort((a,b) => a - b);
+
+  testAges.forEach(age => {
+    const mik = getMikadem(age, state.gender, isMarried, spousePct, guaranteeMonths, spouseDiffYears);
+    const fundGross = Math.round(curCapital / mik);
+    const btlObj = getBtlAllowance(age, state.gender, seniority, aliyahAge, state.marital, userBirthYear);
+    
+    // В таблице сценариев для возрастов >= officialAge кибуа применяется автоматически
+    const isKibuaForAge = (age >= officialAge - 0.05);
+    const taxRes = calcPensionTax(fundGross, age, officialAge, state.gender, isKibuaForAge, state.withdrewSeverance, severanceSum);
+    const btlHealth = calcBtlHealthDeductions(fundGross, age, officialAge);
+    
+    const totalDeds = taxRes.tax + btlHealth.total;
+    const net = (fundGross - totalDeds) + btlObj.btlTotal;
+
+    const tr = document.createElement('tr');
+    if(Math.abs(age - selectedRetAge) < 0.2) tr.classList.add('highlight');
+    tr.onclick = () => selectScenarioAge(age);
+
+    const isOff = Math.abs(age - officialAge) < 0.1;
+    const ageLabel = Number.isInteger(age) ? `${age} ans` : `${Math.floor(age)} ans et ${Math.round((age%1)*12)} mois`;
+
+    let taxCol = taxRes.tax === 0 ? `<span style="color:var(--green)">0 ₪</span>` : `<span style="color:var(--red)">-${fmt(taxRes.tax)} ₪</span>`;
+    let btlHealthCol = btlHealth.total === 0 ? `<span style="color:var(--green)">0 ₪</span>` : `<span style="color:var(--red)">-${fmt(btlHealth.total)} ₪</span>`;
+
+    tr.innerHTML = `
+      <td><b>${ageLabel}</b> ${isOff ? '⚖️' : ''} ${Math.abs(age - selectedRetAge) < 0.2 ? '★' : ''}</td>
+      <td><b style="color:#2b6cb0;font-size:12px">${mik.toFixed(2)}</b></td>
+      <td>${fmt(curCapital)} ₪</td>
+      <td>${fmt(fundGross)} ₪</td>
+      <td>${taxCol}</td>
+      <td>${btlHealthCol}</td>
+      <td>${btlObj.isEligible ? fmt(btlObj.btlTotal) + ' ₪' : `<span style="color:var(--muted)">0 ₪ (jusqu’à ${Math.floor(officialAge)})</span>`}</td>
+      <td><b style="color:var(--green)">${fmt(net)} ₪/mois</b></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateQuickButtons();
+  calc();
+});
+</script>
+<footer class="shell" style="padding:26px 0 50px;color:var(--muted);font-size:11px;text-align:center">Finances claires en Israël · épargne retraite · ne constitue pas un conseil financier · <a href="contact.html" style="color:var(--green);font-weight:800;text-decoration:none">Nous écrire</a> · <a href="about.html" style="color:var(--green);font-weight:800;text-decoration:none">À propos</a> · <a href="changelog.html" style="color:var(--green);font-weight:800;text-decoration:none">Nouveautés</a></footer>
+<style>
+.langpill{position:fixed;bottom:14px;right:14px;z-index:99999;display:flex;gap:14px;padding:7px 14px;border-radius:999px;background:rgba(6,11,24,.62);border:1px solid rgba(232,182,76,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:Georgia,serif}
+.langpill a{color:rgba(232,238,250,.65);text-decoration:none;font-size:11.5px;letter-spacing:.14em;font-weight:600;position:relative;padding:2px 0}
+.langpill a.on{color:#e8b64c}
+.langpill a.on::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-3px;width:4px;height:4px;border-radius:50%;background:#e8b64c}
+</style>
+<div class="langpill"><a href="../pension-calc.html">RU</a><a aria-current="page" class="on" href="pension-calc.html">FR</a><a href="../en/pension-calc.html">EN</a></div><script>
+// Temporarily transfer the form when changing language; delete it on arrival.
+(function(){
+  const key='pension-language-transfer-v1';
+  const ids=['user-birth-year','spouse-birth-year','ret-age','cur-capital','lump-sum','israel-seniority','aliyah-age','spouse-pension-pct','guarantee-months','custom-mikadem-toggle','custom-mikadem-input','kibua-done','severance-sum'];
+  document.addEventListener('DOMContentLoaded', function(){
+    try {
+      const raw=sessionStorage.getItem(key); sessionStorage.removeItem(key);
+      if(raw){
+        const saved=JSON.parse(raw);
+        if(saved.state){ setGender(saved.state.gender === 'f' ? 'f' : 'm'); setMarital(saved.state.marital === 'married' ? 'married' : 'single'); setSeverance(Boolean(saved.state.withdrewSeverance)); }
+        ids.forEach(id=>{ const el=document.getElementById(id), v=saved.fields && saved.fields[id]; if(!el || v===undefined) return; if(el.type==='checkbox') el.checked=Boolean(v); else el.value=String(v); });
+        toggleCustomMikadem(); updateQuickButtons(); updateQuickChips(parseFloat(document.getElementById('ret-age').value)||63); calc();
+      }
+    } catch(e){ try { sessionStorage.removeItem(key); } catch(_) {} }
+    document.querySelectorAll('.langpill a').forEach(a=>a.addEventListener('click',function(){
+      if(a.classList.contains('on')) return;
+      try {
+        const fields={}; ids.forEach(id=>{const el=document.getElementById(id);if(el) fields[id]=el.type==='checkbox'?el.checked:el.value;});
+        sessionStorage.setItem(key,JSON.stringify({state:{gender:state.gender,marital:state.marital,withdrewSeverance:state.withdrewSeverance},fields}));
+      } catch(e) { /* Navigation remains usable if storage is unavailable. */ }
+    }));
+  });
+})();
+</script>
+</body>
+</html>

@@ -1151,5 +1151,30 @@ document.addEventListener('DOMContentLoaded', () => {
 .langpill a.on{color:#e8b64c}
 .langpill a.on::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-3px;width:4px;height:4px;border-radius:50%;background:#e8b64c}
 </style>
-<div class="langpill"><a class="on" href="pension-calc.html">RU</a><a href="fr/">FR</a><a href="en/pension-calc.html">EN</a></div></body>
+<div class="langpill"><a class="on" href="pension-calc.html">RU</a><a href="fr/pension-calc.html">FR</a><a href="en/pension-calc.html">EN</a></div><script>
+// Temporarily transfer the form when changing language; delete it on arrival.
+(function(){
+  const key='pension-language-transfer-v1';
+  const ids=['user-birth-year','spouse-birth-year','ret-age','cur-capital','lump-sum','israel-seniority','aliyah-age','spouse-pension-pct','guarantee-months','custom-mikadem-toggle','custom-mikadem-input','kibua-done','severance-sum'];
+  document.addEventListener('DOMContentLoaded', function(){
+    try {
+      const raw=sessionStorage.getItem(key); sessionStorage.removeItem(key);
+      if(raw){
+        const saved=JSON.parse(raw);
+        if(saved.state){ setGender(saved.state.gender === 'f' ? 'f' : 'm'); setMarital(saved.state.marital === 'married' ? 'married' : 'single'); setSeverance(Boolean(saved.state.withdrewSeverance)); }
+        ids.forEach(id=>{ const el=document.getElementById(id), v=saved.fields && saved.fields[id]; if(!el || v===undefined) return; if(el.type==='checkbox') el.checked=Boolean(v); else el.value=String(v); });
+        toggleCustomMikadem(); updateQuickButtons(); updateQuickChips(parseFloat(document.getElementById('ret-age').value)||63); calc();
+      }
+    } catch(e){ try { sessionStorage.removeItem(key); } catch(_) {} }
+    document.querySelectorAll('.langpill a').forEach(a=>a.addEventListener('click',function(){
+      if(a.classList.contains('on')) return;
+      try {
+        const fields={}; ids.forEach(id=>{const el=document.getElementById(id);if(el) fields[id]=el.type==='checkbox'?el.checked:el.value;});
+        sessionStorage.setItem(key,JSON.stringify({state:{gender:state.gender,marital:state.marital,withdrewSeverance:state.withdrewSeverance},fields}));
+      } catch(e) { /* Navigation remains usable if storage is unavailable. */ }
+    }));
+  });
+})();
+</script>
+</body>
 </html>

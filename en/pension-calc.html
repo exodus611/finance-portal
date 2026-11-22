@@ -188,7 +188,7 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
         <label>Year of birth (שנת לידה)</label>
         <div class="input-wrap">
           <input type="number" id="user-birth-year" value="1966" min="1940" max="1975" step="1" oninput="onBirthYearChange()">
-          <span class=\"suffix\">y.</span>
+          <span class="suffix">y.</span>
         </div>
         <span class="desc" id="cur-age-calc-hint">Current age: ~60 years old</span>
       </div>
@@ -207,7 +207,7 @@ details.accord-card .accord-content{padding:12px 14px;font-size:11.5px;line-heig
       <label>Year of birth of spouse</label>
       <div class="input-wrap">
         <input type="number" id="spouse-birth-year" value="1966" min="1935" max="1985" step="1" oninput="calc()">
-        <span class=\"suffix\">y.</span>
+        <span class="suffix">y.</span>
       </div>
       <span class="desc" id="spouse-diff-hint" style="color:var(--green);font-weight:700">Spouses born in the same year</span>
     </div>
@@ -631,7 +631,7 @@ function updateQuickButtons(){
 
   container.innerHTML = ages.map(age => {
     const isOff = Math.abs(age - offData.age) < 0.2;
-    const label = isOff ? `0 years (official)` : (age === 62 || age === 63 ? `0 years` : `0 years`);
+    const label = isOff ? `${Math.round(age)} years (official)` : `${age} years`;
     return `<button type="button" class="age-btn" data-age="${age}" onclick="setQuickRetAge(${age})">${label}</button>`;
   }).join('');
 
@@ -663,7 +663,7 @@ function updateQuickChips(age){
 function updateFemaleOfficialAge(){
   const bYear = parseInt(document.getElementById('user-birth-year').value) || 1966;
   const data = getFemaleOfficialAgeByYear(bYear);
-  document.getElementById('official-age-label').textContent = `Official age: 0`;
+  document.getElementById('official-age-label').textContent = `Official age: ${data.label}`;
 }
 
 function setGender(g){
@@ -871,7 +871,7 @@ function selectScenarioAge(age){
 function calc(){
   const userBirthYear = parseInt(document.getElementById('user-birth-year').value) || 1966;
   const curAgeEst = CURRENT_YEAR - userBirthYear;
-  document.getElementById('cur-age-calc-hint').textContent = `Current age: ~0 years`;
+  document.getElementById('cur-age-calc-hint').textContent = `Current age: ~${curAgeEst} years`;
 
   let retAge = parseFloat(document.getElementById('ret-age').value) || 63;
   if(retAge < 60) retAge = 60;
@@ -889,11 +889,11 @@ function calc(){
 
   let spouseText = '';
   if(spouseDiffYears === 0) {
-    spouseText = `Spouses born in the same year (born 0)`;
+    spouseText = `Spouses born in the same year (born ${spouseBirthYear})`;
   } else if(spouseDiffYears > 0) {
-    spouseText = `Spouse is 0 years younger (1 year of birth)`;
+    spouseText = `Spouse is ${spouseDiffYears} years younger (born ${spouseBirthYear})`;
   } else {
-    spouseText = `Spouse is 0 years older (1 year of birth)`;
+    spouseText = `Spouse is ${Math.abs(spouseDiffYears)} years older (born ${spouseBirthYear})`;
   }
   document.getElementById('spouse-diff-hint').textContent = spouseText;
 
@@ -993,28 +993,28 @@ function calc(){
   
   let deductionsNote = '';
   if(isEarlyRetirement) {
-    deductionsNote = `Deductions: - 0 ₪ (Income: 1 ₪ · Social Security/Health: 2 ₪)`;
+    deductionsNote = `Deductions: -${fmt(totalDeductions)} ₪ (Income tax: ${fmt(pensionTax)} ₪ · Social Security/Health: ${fmt(btlHealth.total)} ₪)`;
   } else if(totalDeductions === 0) {
-    deductionsNote = `100% tax exemption (from 0 and Kibua Zhuyot)`;
+    deductionsNote = `100% tax exemption (from ${offAgeLabel} with Kibua Zhuyot)`;
   } else {
-    deductionsNote = `Income tax: 0 ₪ (Bituah/Health: 0 ₪)`;
+    deductionsNote = `Income tax: ${fmt(pensionTax)} ₪ (Bituach/Health: 0 ₪)`;
   }
 
-  document.getElementById('total-gross-sub').textContent = `Gross: 0 ₪ 1`;
+  document.getElementById('total-gross-sub').textContent = `Gross: ${fmt(totalGross)} ₪ · ${deductionsNote}`;
 
   document.getElementById('res-fund-pension').textContent = fmt(fundPensionGross) + '₪ / month';
-  document.getElementById('res-capital-at-ret').textContent = `Capital: 0 ₪`;
+  document.getElementById('res-capital-at-ret').textContent = `Capital: ${fmt(curCapital)} ₪`;
 
-  document.getElementById('res-total-deductions').textContent = totalDeductions > 0 ? `- 0 ₪ / month` : '0 ₪ (exempt)';
+  document.getElementById('res-total-deductions').textContent = totalDeductions > 0 ? `-${fmt(totalDeductions)} ₪ / month` : '0 ₪ (exempt)';
   document.getElementById('res-deductions-details').textContent = isEarlyRetirement 
-    ? `Tax: 0 ₪ · Social Security + Health: 1 ₪`
-    : `From 0 social insurance = 0 ₪ Tax = 1 ₪`;
+    ? `Tax: ${fmt(pensionTax)} ₪ · Social Security + Health: ${fmt(btlHealth.total)} ₪`
+    : `From ${offAgeLabel}, social insurance = 0 ₪ · Tax = ${fmt(pensionTax)} ₪`;
 
   if(btl.isEligible) {
     document.getElementById('res-btl-sum').textContent = fmt(btl.btlTotal) + '₪ / month';
-    document.getElementById('res-btl-details').textContent = `Base: 0 ₪ + experience: + 1%`;
+    document.getElementById('res-btl-details').textContent = `Base: ${fmt(btl.base)} ₪ + seniority: +${btl.seniorityPct}%`;
   } else {
-    document.getElementById('res-btl-sum').textContent = `0 ₪ (up to 0)`;
+    document.getElementById('res-btl-sum').textContent = `0 ₪ (until ${offAgeLabel})`;
     document.getElementById('res-btl-details').textContent = 'The Ezrach Vatik benefit will begin at the official age';
   }
 
@@ -1025,7 +1025,7 @@ function calc(){
     document.getElementById('top-pension-per-100k').textContent = fmt(immediatePer100k) + '₪ / month';
   }
 
-  document.getElementById('dyn-ret-age-label').textContent = retAge + 'years';
+  document.getElementById('dyn-ret-age-label').textContent = retAge + ' years';
   document.getElementById('mikadem-val').textContent = mikadem.toFixed(2);
   document.getElementById('pension-per-100k').textContent = fmt(immediatePer100k) + '₪ / month';
 
@@ -1035,10 +1035,10 @@ function calc(){
     if(retAge < officialAge - 0.1) {
       ageHintWrap.className = 'age-hint-box age-hint-early';
       ageHintWrap.innerHTML = `
-        <div class="age-hint-title">⚠️ Early retirement (0 years with official age 1):</div>
+        <div class="age-hint-title">⚠️ Early retirement (${retAge} years; official age ${offAgeLabel}):</div>
         <div class="age-hint-text">
           • <b>Old age benefit (“Ezrach Vatik”):</b> Payments from Bituach Leumi will begin only upon reaching <b>${offAgeLabel}</b>.<br>
-          • <b>Deductions from the pension fund:</b> Up to 0, standard income tax and health care/social security contributions are withheld from the pension (Article 345b).
+          • <b>Deductions from the pension fund:</b> Until ${offAgeLabel}, standard income tax and health care/social security contributions are withheld from the pension (Article 345b).
         </div>
       `;
     } else if(retAge > officialAge + 0.1) {
@@ -1046,16 +1046,16 @@ function calc(){
       const deferBonus = Math.min(25, deferYears * 5);
       ageHintWrap.className = 'age-hint-box age-hint-defer';
       ageHintWrap.innerHTML = `
-        <div class="age-hint-title">🌟 Delayed retirement (0 years):</div>
+        <div class="age-hint-title">🌟 Delayed retirement (${retAge} years):</div>
         <div class="age-hint-text">
-          • <b>Bonus for deferment (“Ezrach Vatik”):</b> Bituach Leumi charges +0% (+5% for each year) to the benefit for deferment after 1 .<br>
-          • <b>Maximum pension:</b> The reduced divisor (mikadem = 0) provides the maximum monthly payout.
+          • <b>Bonus for deferment (“Ezrach Vatik”):</b> Bituach Leumi adds +${deferBonus}% (+5% for each year) to the benefit for deferral after ${offAgeLabel}.<br>
+          • <b>Maximum pension:</b> The reduced divisor (mikadem = ${mikadem.toFixed(2)}) provides the maximum monthly payout.
         </div>
       `;
     } else {
       ageHintWrap.className = 'age-hint-box age-hint-official';
       ageHintWrap.innerHTML = `
-        <div class="age-hint-title">✅ Official retirement age (“Gil Prisha Mezake” - 0):</div>
+        <div class="age-hint-title">✅ Official retirement age (“Gil Prisha Mezake” - ${offAgeLabel}):</div>
         <div class="age-hint-text">
           • <b>Old age benefit:</b> Bituach Leumi begins monthly payment of Ezrach Vatik benefits.<br>
           • <b>Tax benefits:</b> A 100% exemption from income tax on form 161d (Kibua Zhuyot) and a complete exemption from Bituach Leumi (National Insurance) contributions from the fund\'s pension come into force.
@@ -1065,7 +1065,7 @@ function calc(){
   }
 
   const senBonus = Math.min(50, Math.max(0, seniority - 10) * 2);
-  document.getElementById('seniority-bonus-desc').textContent = `Supplement to the Ezrach Vatik benefit for length of service: + 0%`;
+  document.getElementById('seniority-bonus-desc').textContent = `Supplement to the Ezrach Vatik benefit for length of service: +${senBonus}%`;
   
   if(aliyahAge >= 60 || seniority < 10) {
     document.getElementById('low-income-alert').style.display = 'block';
@@ -1107,7 +1107,7 @@ function renderScenarios(curCapital, seniority, aliyahAge, isMarried, spousePct,
     tr.onclick = () => selectScenarioAge(age);
 
     const isOff = Math.abs(age - officialAge) < 0.1;
-    const ageLabel = Number.isInteger(age) ? `0 years` : `0 years and 1 month`;
+    const ageLabel = Number.isInteger(age) ? `${age} years` : `${Math.floor(age)} years and ${Math.round((age%1)*12)} months`;
 
     let taxCol = taxRes.tax === 0 ? `<span style="color:var(--green)">0 ₪</span>` : `<span style="color:var(--red)">-${fmt(taxRes.tax)} ₪</span>`;
     let btlHealthCol = btlHealth.total === 0 ? `<span style="color:var(--green)">0 ₪</span>` : `<span style="color:var(--red)">-${fmt(btlHealth.total)} ₪</span>`;
@@ -1119,8 +1119,8 @@ function renderScenarios(curCapital, seniority, aliyahAge, isMarried, spousePct,
       <td>${fmt(fundGross)} ₪</td>
       <td>${taxCol}</td>
       <td>${btlHealthCol}</td>
-      <td>${btlObj.isEligible ? fmt(btlObj.btlTotal) + ' ₪' : `<span style="color:var(--muted)">0 ₪ (up to 0)</span>`}</td>
-      <td><b style="color:var(--green)">0 ₪/month</b></td>
+      <td>${btlObj.isEligible ? fmt(btlObj.btlTotal) + ' ₪' : `<span style="color:var(--muted)">0 ₪ (until ${Math.floor(officialAge)})</span>`}</td>
+      <td><b style="color:var(--green)">${fmt(net)} ₪/month</b></td>
     `;
     tbody.appendChild(tr);
   });
@@ -1140,5 +1140,30 @@ document.addEventListener('DOMContentLoaded', () => {
 .langpill a.on{color:#e8b64c}
 .langpill a.on::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-3px;width:4px;height:4px;border-radius:50%;background:#e8b64c}
 </style>
-<div class="langpill"><a href="../pension-calc.html">RU</a><a href="../fr/">FR</a><a class="on" href="pension-calc.html">EN</a></div></body>
+<div class="langpill"><a href="../pension-calc.html">RU</a><a href="../fr/pension-calc.html">FR</a><a class="on" href="pension-calc.html">EN</a></div><script>
+// Temporarily transfer the form when changing language; delete it on arrival.
+(function(){
+  const key='pension-language-transfer-v1';
+  const ids=['user-birth-year','spouse-birth-year','ret-age','cur-capital','lump-sum','israel-seniority','aliyah-age','spouse-pension-pct','guarantee-months','custom-mikadem-toggle','custom-mikadem-input','kibua-done','severance-sum'];
+  document.addEventListener('DOMContentLoaded', function(){
+    try {
+      const raw=sessionStorage.getItem(key); sessionStorage.removeItem(key);
+      if(raw){
+        const saved=JSON.parse(raw);
+        if(saved.state){ setGender(saved.state.gender === 'f' ? 'f' : 'm'); setMarital(saved.state.marital === 'married' ? 'married' : 'single'); setSeverance(Boolean(saved.state.withdrewSeverance)); }
+        ids.forEach(id=>{ const el=document.getElementById(id), v=saved.fields && saved.fields[id]; if(!el || v===undefined) return; if(el.type==='checkbox') el.checked=Boolean(v); else el.value=String(v); });
+        toggleCustomMikadem(); updateQuickButtons(); updateQuickChips(parseFloat(document.getElementById('ret-age').value)||63); calc();
+      }
+    } catch(e){ try { sessionStorage.removeItem(key); } catch(_) {} }
+    document.querySelectorAll('.langpill a').forEach(a=>a.addEventListener('click',function(){
+      if(a.classList.contains('on')) return;
+      try {
+        const fields={}; ids.forEach(id=>{const el=document.getElementById(id);if(el) fields[id]=el.type==='checkbox'?el.checked:el.value;});
+        sessionStorage.setItem(key,JSON.stringify({state:{gender:state.gender,marital:state.marital,withdrewSeverance:state.withdrewSeverance},fields}));
+      } catch(e) { /* Navigation remains usable if storage is unavailable. */ }
+    }));
+  });
+})();
+</script>
+</body>
 </html>

@@ -777,7 +777,7 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
         <h2 data-i18n="sec_pen_h"></h2>
         <p class="section-sub" data-i18n="sec_pen_s"></p>
         <div class="pen-actions">
-          <a class="btn btn-gold" href="pension-calc.html" data-i18n="pen_b1"></a>
+          <a class="btn btn-gold" id="pensionCalcLink" href="pension-calc.html" data-i18n="pen_b1"></a>
           <a class="btn btn-ghost" href="pension-gap.html" data-i18n="pen_b2"></a>
         </div>
       </div>
@@ -968,7 +968,7 @@ html[data-theme="light"] .site-footer{background:#e6eaf3}
 window.__SHEKEL_BOOTED__ = true;
 const BASE = 'https://exodus611.github.io/finance-portal/';
 let curLang = 'ru';
-const FR_OK = new Set(['arnona','ashlamat-ahnasa','auto','avtahat-ahnasa','avtala','havraa','hisahon-yeled','keren-hishtalmut','kredit','maanak-avoda','mas-rehisha','mas-shevach','mashkanta','nekudot-zikuy','payments','pension-gap','salary','siud','slovar','tablo','valuta']);
+const FR_OK = new Set(['arnona','ashlamat-ahnasa','auto','avtahat-ahnasa','avtala','havraa','hisahon-yeled','keren-hishtalmut','kredit','maanak-avoda','mas-rehisha','mas-shevach','mashkanta','nekudot-zikuy','payments','pension-gap','pension-calc','salary','siud','slovar','tablo','valuta']);
 const u = f => {
   const s = String(f);
   if (s.includes('/') || !/\.html$/.test(s)) return BASE + s;
@@ -1899,6 +1899,7 @@ function initTilt(){
   }, { passive:true });
 }
 function renderAll(){
+  const pensionLink = $('#pensionCalcLink'); if (pensionLink) pensionLink.href = u('pension-calc.html');
   renderDash(); renderTicker(); renderPayments(); renderChips(); renderCalcs(); renderSolutions(); renderCyber();
   renderRateChart(); renderRings();
   renderBadge();
