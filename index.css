@@ -34,21 +34,21 @@
 }
 :root{
   --bg:#070d1c;
-  --bg2:var(--bg2);
+  --bg2:#0a1224;
   --panel:rgba(255,255,255,.045);
   --panel-strong:rgba(255,255,255,.075);
   --line:rgba(255,255,255,.09);
-  --text:var(--text);
-  --muted:var(--muted);
+  --text:#eef2fb;
+  --muted:#9aa7bd;
   --gold:#e8b64c;
-  --gold2:var(--gold2);
-  --gold-deep:var(--gold-deep);
+  --gold2:#f6d387;
+  --gold-deep:#c99a35;
   --polish-accent:var(--gold-deep);
   --grad-gold:linear-gradient(92deg,var(--gold2) 0%,var(--gold) 45%,#d49c2f 100%);
   --grad-btn:linear-gradient(135deg,#f0c565,#dca437);
-  --green:var(--green);
-  --red:var(--red);
-  --blue:var(--blue);
+  --green:#4fd58d;
+  --red:#ff6b7a;
+  --blue:#5ea2ff;
   --radius:18px;
   --shadow-lg:0 24px 60px rgba(2,6,18,.55);
   --glow:0 0 0 1px rgba(232,182,76,.28),0 8px 40px rgba(232,182,76,.16);
