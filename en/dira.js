@@ -68,9 +68,9 @@
   function stepState(dateStr, today) {
     var dd = new Date(dateStr);
     var diff = daysBetween(today, dd);
-    if (diff < 0) return { cls: "past", tail: Math.abs(diff) + " " + pluralRu(Math.abs(diff), "день", "дня", "дней") + " назад" };
+    if (diff < 0) return { cls: "past", tail: Math.abs(diff) + (Math.abs(diff) === 1 ? " day ago" : " days ago") };
     if (diff === 0) return { cls: "now", tail: "Today" };
-    return { cls: "next", tail: "through" + diff + " " + pluralRu(diff, "день", "дня", "дней") };
+    return { cls: "next", tail: "in " + diff + (diff === 1 ? " day" : " days") };
   }
 
   /* ---------- отрисовка ---------- */
@@ -309,7 +309,7 @@
     var inline = document.getElementById("dh-data");
     if (inline) { try { boot(JSON.parse(inline.textContent)); return; } catch (e) {} }
     if (window.fetch) {
-      fetch("data/dira.json").then(function (r) { return r.json(); }).then(boot).catch(function () {});
+      fetch("../data/dira-en.json").then(function (r) { return r.json(); }).then(boot).catch(function () {});
     }
   }
 

@@ -370,7 +370,7 @@
     var shareNote = $("#arn-share-note");
     if (shareNote) {
       if (share < 1) {
-        shareNote.textContent = "The apartment is larger" + limit + "m², so the calculation was made only for the part of the bill falling on the first" + limit + "m².";
+        shareNote.textContent = "The apartment is larger than " + limit + " m², so the calculation was made only for the part of the bill falling on the first " + limit + " m².";
         shareNote.style.display = "";
       } else {
         shareNote.style.display = "none";
@@ -405,11 +405,11 @@
       return;
     }
     var m = res.windowLeft;
-    valEl.textContent = m + " " + pluralRu(m, "месяц", "месяца", "месяцев");
+    valEl.textContent = m + " " + (m === 1 ? "month" : "months");
     if (capEl) {
       capEl.textContent = "remains to apply. Discount is given on" + b +
-        " " + pluralRu(b, "месяц", "месяца", "месяцев") + " из " + w + ", а прошло уже " +
-        res.passed + " " + pluralRu(res.passed, "месяц", "месяца", "месяцев") + ".";
+        " " + (b === 1 ? "month" : "months") + " of " + w + ", of which " +
+        res.passed + " " + (res.passed === 1 ? "month has" : "months have") + " already passed.";
     }
     if (barEl) barEl.style.width = Math.max(0, Math.min(100, (res.passed / w) * 100)) + "%";
   }
@@ -453,7 +453,7 @@
       try { boot(JSON.parse(inline.textContent)); return; } catch (e) {}
     }
     if (window.fetch) {
-      fetch("data/arnona.json")
+      fetch("../data/arnona-en.json")
         .then(function (r) { return r.json(); })
         .then(boot)
         .catch(function () {});

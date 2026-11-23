@@ -68,7 +68,7 @@ function childPointsForRecipient(age, recipientGender, isSeparated, isCustodial)
   } else {
     // Раздельно проживающие: опекун получает ОБЕ доли, второй родитель — только свою
     if(isCustodial) return {points: share.mother+share.father, note: share.note+'(guardian receives both shares)', uncertain: share.uncertain};
-    return {points: recipientGender==='w'?share.mother:share.father, note: share.note+' (только своя доля)', uncertain: share.uncertain};
+    return {points: recipientGender==='w'?share.mother:share.father, note: share.note+' (own share only)', uncertain: share.uncertain};
   }
 }
 

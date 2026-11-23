@@ -287,8 +287,8 @@ function calc(){
   s.ranked.forEach(function(x,i){
     var used=x.repaid>0;
     h+='<div class="rank"><div class="rnum'+(used?'':' off')+'">'+(i+1)+'</div><div class="info">'+
-       '<b>'+x.d.n+'</b><div>rate'+x.r.rate+'%'+(x.d.linked?' + мадад '+R.cpi+'% = <strong>'+x.eff.toFixed(2)+'%</strong> реальных':'')+
-       (x.d.free?'· no penalty':'· fine ~'+fmt(x.fee||0)+' ₪')+'</div></div>'+
+       '<b>'+x.d.n+'</b><div>rate'+x.r.rate+'%'+(x.d.linked?' + CPI '+R.cpi+'% = <strong>'+x.eff.toFixed(2)+'%</strong> real':'')+
+       (x.d.free?'· no penalty':'· fee ~'+fmt(x.fee||0)+' ₪')+'</div></div>'+
        '<div style="text-align:right;font-size:13px;'+(used?'font-weight:800;color:var(--green)':'color:var(--muted)')+'">'+
        (used?fmt(x.repaid)+' ₪':'wasn\'t enough')+'</div></div>';
   });
