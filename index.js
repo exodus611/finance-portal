@@ -1022,16 +1022,52 @@ function renderSolutions(){
     </div>`).join('');
   observeReveals();
 }
+const CYBER_KIND = {
+  sms: { icon: 'msg', label: { ru: 'SMS / ссылка', fr: 'SMS / lien', en: 'SMS / link' } },
+  call: { icon: 'phone', label: { ru: 'Звонок', fr: 'Appel', en: 'Call' } },
+  web: { icon: 'globe', label: { ru: 'Сайт / фишинг', fr: 'Site / phishing', en: 'Website / phishing' } }
+};
+function cyberCard(c, href){
+  return `
+    <a class="cyber-item reveal" href="${href}">
+      <div class="cyber-top"><span class="cyber-kind">${ico(c.icon,14)} ${c.kind}</span><span class="cyber-date">${c.date}</span></div>
+      <h3>${c.t}</h3>
+      <p>${c.p}</p>
+      <span class="cyber-link">${L('cyber_link')}</span>
+    </a>`;
+}
 function renderCyber(){
   const el = $('#cyberGrid'); if (!el) return;
-  el.innerHTML = CYBER.map(c => `
-    <div class="cyber-item reveal">
-      <div class="cyber-top"><span class="cyber-kind">${ico(c.icon,14)} ${tx(c.kind)}</span><span class="cyber-date">${c.date}</span></div>
-      <h3>${tx(c.t)}</h3>
-      <p>${tx(c.p)}</p>
-      <span class="cyber-link">${L('cyber_link')}</span>
-    </div>`).join('');
+  el.innerHTML = CYBER.map(c => cyberCard(
+    { icon: c.icon, kind: tx(c.kind), date: c.date, t: tx(c.t), p: tx(c.p) }, 'cyber.html')).join('');
   observeReveals();
+  renderCyberLive();
+}
+async function renderCyberLive(){
+  const el = $('#cyberGrid'); if (!el || typeof fetch !== 'function') return;
+  try {
+    const base = 'https://exodus611.github.io/finance-portal/data/';
+    const [rs, ri] = await Promise.all([
+      fetch(base + 'scams.json', { cache: 'no-cache' }),
+      fetch(base + 'scams_i18n.json').catch(() => null)
+    ]);
+    if (!rs.ok) return;
+    const sj = await rs.json();
+    const ij = ri && ri.ok ? await ri.json() : {};
+    const tr = ij[curLang] || {};
+    const items = (sj.warnings || []).slice(0, 3).map(w => {
+      const t = curLang === 'ru' ? null : tr[String(w.id)];
+      const kind = CYBER_KIND[w.type] || CYBER_KIND.web;
+      const parts = String(w.date || '').split('-');
+      return { icon: kind.icon, kind: tx(kind.label),
+               date: parts.length === 3 ? parts[2] + '.' + parts[1] : (w.date || ''),
+               t: t ? t.t : w.title, p: t ? t.s : w.summary, id: w.id };
+    });
+    if (items.length) {
+      el.innerHTML = items.map(c => cyberCard(c, 'cyber.html#w' + c.id)).join('');
+      observeReveals();
+    }
+  } catch (e) { /* остаются статичные карточки */ }
 }
 let coinTimer = null;
 function calcPlan(){

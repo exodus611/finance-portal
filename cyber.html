@@ -7,11 +7,16 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308775a'/><text x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='900' fill='white' text-anchor='middle'>₪</text></svg>">
 <title>Киберщит: защита от телефонных и SMS-мошенников в Израиле | 2026</title>
 <meta name="robots" content="index, follow">
-<meta name="description" content="Официальные предупреждения Национального киберштаба Израиля. Примеры мошеннических SMS, звонков якобы от банков, Битуах Леуми и почты, и как себя защитить.">
+<meta name="description" content="Официальные предупреждения Национального киберштаба Израиля: все разобранные схемы мошеннических SMS, звонков и фишинговых сайтов с поиском и фильтрами.">
 <link rel="canonical" href="https://exodus611.github.io/finance-portal/cyber.html">
+<link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/cyber.html">
+<link rel="alternate" hreflang="en" href="https://exodus611.github.io/finance-portal/en/cyber.html">
+<link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/cyber.html">
+<link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/cyber.html">
 <style>
 :root{--ink:#15251f;--muted:#5a6660;--paper:#f4f1e9;--card:#fffdf8;--line:#ddd6c7;--green:#08775a;--red:#c2452e;--shadow:0 16px 40px rgba(26,45,37,.08);--r:16px}
 *{box-sizing:border-box}
+html,body{overflow-x:clip}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
 .shell{max-width:960px;margin:auto;padding:0 20px}
 header{padding:18px 0;border-bottom:1px solid var(--line);background:#fffdf8}
@@ -23,21 +28,43 @@ h1{font-size:clamp(26px,4vw,36px);line-height:1.2;margin:0 0 12px;letter-spacing
 .hotline-card{background:linear-gradient(135deg,#c2452e,#9e3220);color:#fff;border-radius:var(--r);padding:22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin:24px 0 32px;box-shadow:0 10px 24px rgba(194,69,46,.3)}
 .hotline-num{font-size:36px;font-weight:900;letter-spacing:.04em;background:#fff;color:var(--red);padding:4px 18px;border-radius:12px;display:inline-block}
 .filters{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
-.filter-btn{padding:8px 16px;border-radius:20px;border:1px solid var(--line);background:#fff;cursor:pointer;font-weight:700;font-size:13px;color:var(--ink);transition:all .15s}
+.filter-btn{padding:8px 16px;border-radius:20px;border:1px solid var(--line);background:#fff;cursor:pointer;font-weight:700;font-size:13px;color:var(--ink);transition:all .15s;min-height:44px}
 .filter-btn.active{background:var(--green);color:#fff;border-color:var(--green)}
 .scam-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;margin-bottom:16px;box-shadow:var(--shadow)}
 .scam-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px;flex-wrap:wrap}
 .scam-badge{font-size:11px;font-weight:800;padding:3px 8px;border-radius:6px}
 .badge-call{background:#fee2e2;color:#991b1b}
 .badge-sms{background:#e0e7ff;color:#3730a3}
-.badge-mail{background:#fef3c7;color:#92400e}
-.quote-box{background:#f3f4f6;border-inline-start:4px solid #9ca3af;padding:12px 14px;border-radius:0 8px 8px 0;font-size:13px;font-family:monospace;margin:12px 0}
+.badge-web{background:#fef3c7;color:#92400e}
+.scam-card h3{margin:2px 0 8px;font-size:17px;overflow-wrap:anywhere}
+.scam-sum{font-size:13.5px;color:var(--muted);margin:0}
+.scam-date{font-size:12px;color:var(--muted);white-space:nowrap}
+.scam-pending{font-size:12.5px;color:var(--red);font-weight:600}
+.scam-toggle{margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-weight:700;font-size:13px;cursor:pointer;color:var(--green);min-height:44px;font-family:inherit}
+.scam-toggle:hover{border-color:var(--green)}
+.scam-detail{margin-top:6px}
+.detail-block{margin-top:14px}
+.detail-block h4{margin:0 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--green)}
+.detail-block p{margin:0;font-size:13.5px;overflow-wrap:anywhere}
+.detail-block.todo{background:#eaf6f0;border:1px solid #b9d8ca;border-radius:8px;padding:12px 14px}
+.detail-block.todo ul{margin:0;padding-left:18px;font-size:13px;color:#065f46}
+.scam-src{font-size:12.5px;margin:14px 0 0}
+.scam-src a{color:var(--green);font-weight:700}
+.scam-flash{outline:2px solid var(--green);outline-offset:2px}
+#scam-search{width:100%;padding:13px 16px;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:15px;font-family:inherit;margin-bottom:14px}
+#scam-count{font-size:13px;color:var(--muted);margin:0 0 14px}
+#scam-more{display:block;margin:6px auto 4px;background:var(--green);color:#fff;border:none;border-radius:999px;padding:12px 28px;font-weight:800;font-size:14px;cursor:pointer;min-height:44px;font-family:inherit}
+.quote-box{background:#f3f4f6;border-inline-start:4px solid #9ca3af;padding:12px 14px;border-radius:0 8px 8px 0;font-size:13px;font-family:monospace;margin:12px 0;overflow-wrap:anywhere;white-space:pre-wrap}
 .action-box{background:#eaf6f0;border:1px solid #b9d8ca;border-radius:8px;padding:12px 14px;font-size:13px;color:#065f46}
 footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;font-size:13px;color:var(--muted);margin-top:40px}
+.langpill{position:fixed;bottom:14px;right:14px;z-index:99999;display:flex;gap:14px;padding:7px 14px;border-radius:999px;background:rgba(6,11,24,.78);border:1px solid rgba(232,182,76,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:Georgia,serif}
+.langpill a{color:rgba(232,238,250,.65);text-decoration:none;font-size:11.5px;letter-spacing:.14em;font-weight:600;position:relative;padding:2px 0}
+.langpill a.on{color:#e8b64c}
+.langpill a.on::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-3px;width:4px;height:4px;border-radius:50%;background:#e8b64c}
 </style>
 <link rel="stylesheet" href="polish.css">
 </head>
-<body>
+<body data-base="">
 <header>
   <div class="shell nav">
     <a href="index.html" class="logo">
@@ -53,7 +80,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;font-si
 <main class="shell content">
   <div style="font-size:11.5px;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">Официальный агрегатор безопасности</div>
   <h1>🛡️ Киберщит: защита от финансовых мошенников в Израиле</h1>
-  <p style="font-size:15px;color:var(--muted);margin:0">Сводка актуальных схем обмана по данным Национального управления кибербезопасности Израиля (מערך הסייבר הלאומי). Примеры реальных SMS, звонков и фишинговых сайтов.</p>
+  <p style="font-size:15px;color:var(--muted);margin:0">Все официальные предупреждения Национального управления кибербезопасности Израиля (מערך הסייבר הלאומי) — с оригиналом, переводом и разбором. Ищите по словам и фильтруйте по типу: SMS, звонки, сайты.</p>
 
   <div class="hotline-card">
     <div>
@@ -63,55 +90,49 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;font-si
     <div class="hotline-num">📞 119</div>
   </div>
 
+  <h2 id="archive-h">Архив предупреждений</h2>
+  <input type="search" id="scam-search" aria-label="Поиск по предупреждениям" autocomplete="off">
+  <div class="filters" id="scam-filters"></div>
+  <p id="scam-count" role="status"></p>
+  <div id="scam-feed"></div>
+  <button type="button" id="scam-more" style="display:none">Показать ещё</button>
+
   <h2>Типичные схемы мошенников и как их распознать</h2>
-  
-  <div class="filters">
-    <button class="filter-btn active" onclick="filterType('all', this)">Все схемы</button>
-    <button class="filter-btn" onclick="filterType('call', this)">📞 Звонки от «банков» и «полиции»</button>
-    <button class="filter-btn" onclick="filterType('sms', this)">📲 SMS с посылками и штрафами</button>
-    <button class="filter-btn" onclick="filterType('btl', this)">🏛️ Битуах Леуми / Налоги</button>
+  <div class="scam-card">
+    <div class="scam-head">
+      <div>
+        <h3 style="margin:0 0 4px;font-size:17px">📞 Звонок от «русскоязычной службы безопасности банка»</h3>
+        <div style="font-size:12px;color:var(--muted)">Имитация звонков Leumi, Hapoalim, Discount, Mizrahi</div>
+      </div>
+      <span class="scam-badge badge-call">ЗВОНОК</span>
+    </div>
+    <p style="font-size:13.5px;margin:0 0 8px">Звонящий представляется сотрудником службы безопасности, сообщает о «подозрительном переводе в Дубай или за границу» и требует перевести деньги на «безопасный счёт» или назвать одноразовый SMS-код.</p>
+    <div class="action-box"><b>Как действовать:</b> Настоящий банк <u>никогда</u> не просит переводить деньги на другие счета и никогда не запрашивает SMS-коды по телефону. Сразу кладите трубку и перезванивайте в свой банк по номеру с обратной стороны вашей карты (*5522, *2424 и т.д.).</div>
   </div>
 
-  <div id="scam-feed">
-    <!-- Card 1 -->
-    <div class="scam-card" data-type="call">
-      <div class="scam-head">
-        <div>
-          <h3 style="margin:0 0 4px;font-size:17px">📞 Звонок от «русскоязычной службы безопасности банка»</h3>
-          <div style="font-size:12px;color:var(--muted)">Имитация звонков Leumi, Hapoalim, Discount, Mizrahi</div>
-        </div>
-        <span class="scam-badge badge-call">ЗВОНОК</span>
+  <div class="scam-card">
+    <div class="scam-head">
+      <div>
+        <h3 style="margin:0 0 4px;font-size:17px">📲 SMS от «Почты Израиля» (Doar Israel) с оплатой пошлины</h3>
+        <div style="font-size:12px;color:var(--muted)">Фальшивая ссылка на оплату 12–35 шекелей</div>
       </div>
-      <p style="font-size:13.5px;margin:0 0 8px">Звонящий представляется сотрудником службы безопасности, сообщает о «подозрительном переводе в Дубай или за границу» и требует перевести деньги на «безопасный счёт» или назвать одноразовый SMS-код.</p>
-      <div class="action-box"><b>Как действовать:</b> Настоящий банк <u>никогда</u> не просит переводить деньги на другие счета и никогда не запрашивает SMS-коды по телефону. Сразу кладите трубку и перезванивайте в свой банк по номеру с обратной стороны вашей карты (*5522, *2424 и т.д.).</div>
+      <span class="scam-badge badge-sms">SMS</span>
     </div>
+    <p style="font-size:13.5px;margin:0 0 8px">Приходит сообщение о задержанной посылке с ссылкой на поддельный сайт, где требуют ввести номер кредитной карты и CVV-код.</p>
+    <div class="quote-box">«Ваша посылка IL983421 задержана на таможне. Оплатите 14.80 ₪ для доставки: israel-post-pay.cc»</div>
+    <div class="action-box"><b>Как действовать:</b> Проверяйте статус посылок только на официальном сайте <b>israelpost.co.il</b>. Государственные домены Израиля заканчиваются только на <code>.gov.il</code> или <code>.co.il</code>.</div>
+  </div>
 
-    <!-- Card 2 -->
-    <div class="scam-card" data-type="sms">
-      <div class="scam-head">
-        <div>
-          <h3 style="margin:0 0 4px;font-size:17px">📲 SMS от «Почты Израиля» (Doar Israel) с оплатой пошлины</h3>
-          <div style="font-size:12px;color:var(--muted)">Фальшивая ссылка на оплату 12–35 шекелей</div>
-        </div>
-        <span class="scam-badge badge-sms">SMS</span>
+  <div class="scam-card">
+    <div class="scam-head">
+      <div>
+        <h3 style="margin:0 0 4px;font-size:17px">🏛️ «Возврат налога» или «Выплата от Битуах Леуми»</h3>
+        <div style="font-size:12px;color:var(--muted)">Фишинг личного кабинета госструктур</div>
       </div>
-      <p style="font-size:13.5px;margin:0 0 8px">Приходит сообщение о задержанной посылке с ссылкой на поддельный сайт, где требуют ввести номер кредитной карты и CVV-код.</p>
-      <div class="quote-box">«Ваша посылка IL983421 задержана на таможне. Оплатите 14.80 ₪ для доставки: israel-post-pay.cc»</div>
-      <div class="action-box"><b>Как действовать:</b> Проверяйте статус посылок только на официальном сайте <b>israelpost.co.il</b>. Государственные домены Израиля заканчиваются только на <code>.gov.il</code> или <code>.co.il</code>.</div>
+      <span class="scam-badge badge-web">ГОСПОРТАЛ</span>
     </div>
-
-    <!-- Card 3 -->
-    <div class="scam-card" data-type="btl">
-      <div class="scam-head">
-        <div>
-          <h3 style="margin:0 0 4px;font-size:17px">🏛️ «Возврат налога» или «Выплата от Битуах Леуми»</h3>
-          <div style="font-size:12px;color:var(--muted)">Фишинг личного кабинета госструктур</div>
-        </div>
-        <span class="scam-badge badge-mail">ГОСПОРТАЛ</span>
-      </div>
-      <p style="font-size:13.5px;margin:0 0 8px">Сообщение о якобы положенном возврате 1,200–4,500 ₪ с предложением «подтвердить банковские реквизиты» по ссылке.</p>
-      <div class="action-box"><b>Как действовать:</b> Битуах Леуми и Налоговая служба переводят деньги напрямую на счёт, зарегистрированный в вашей системе. Вход в личный кабинет осуществляется только через правительственный портал <b>gov.il</b>.</div>
-    </div>
+    <p style="font-size:13.5px;margin:0 0 8px">Сообщение о якобы положенном возврате 1,200–4,500 ₪ с предложением «подтвердить банковские реквизиты» по ссылке.</p>
+    <div class="action-box"><b>Как действовать:</b> Битуах Леуми и Налоговая служба переводят деньги напрямую на счёт, зарегистрированный в вашей системе. Вход в личный кабинет осуществляется только через правительственный портал <b>gov.il</b>.</div>
   </div>
 
   <h2>Золотые правила финансовой безопасности в Израиле</h2>
@@ -132,29 +153,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;font-si
   </div>
 </footer>
 
-<script>
-function filterType(type, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  const cards = document.querySelectorAll('#scam-feed .scam-card');
-  cards.forEach(card => {
-    if (type === 'all' || card.getAttribute('data-type') === type) {
-      card.style.display = 'block';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-}
-</script>
-
-
-
-<style>
-.langpill{position:fixed;bottom:14px;right:14px;z-index:99999;display:flex;gap:14px;padding:7px 14px;border-radius:999px;background:rgba(6,11,24,.78);border:1px solid rgba(232,182,76,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:Georgia,serif}
-.langpill a{color:rgba(232,238,250,.65);text-decoration:none;font-size:11.5px;letter-spacing:.14em;font-weight:600;position:relative;padding:2px 0}
-.langpill a.on{color:#e8b64c}
-.langpill a.on::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-3px;width:4px;height:4px;border-radius:50%;background:#e8b64c}
-</style>
-<div class="langpill"><a class="on" href="cyber.html">RU</a><a href="fr/">FR</a><a href="en/cyber.html">EN</a></div><script src="language-nav.js" defer></script>
+<script src="cyber.js" defer></script>
+<div class="langpill"><a class="on" href="cyber.html">RU</a><a href="fr/cyber.html">FR</a><a href="en/cyber.html">EN</a></div><script src="language-nav.js" defer></script>
 </body>
 </html>

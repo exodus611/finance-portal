@@ -394,6 +394,9 @@ html[data-theme="light"] .pen-float{background:rgba(255,255,255,.9)}
 .cyber-head p{color:var(--muted);font-size:14.5px;max-width:640px}
 .cyber-shield{width:62px;height:62px;border-radius:18px;background:rgba(94,162,255,.14);border:1px solid rgba(94,162,255,.4);display:flex;align-items:center;justify-content:center;color:var(--blue);flex:none}
 .cyber-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(285px,100%),1fr));gap:16px;position:relative;z-index:1}
+a.cyber-item{text-decoration:none;color:inherit}
+.cyber-item{min-width:0}
+.cyber-item h3,.cyber-item p{overflow-wrap:anywhere}
 .cyber-item{border-radius:16px;padding:19px;background:rgba(7,13,28,.55);border:1px solid var(--line);display:flex;flex-direction:column;gap:9px;transition:border-color .2s,transform .2s}
 html[data-theme="light"] .cyber-item{background:rgba(255,255,255,.75)}
 .cyber-item:hover{border-color:rgba(94,162,255,.5);transform:translateY(-3px)}
