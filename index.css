@@ -253,8 +253,8 @@ html[data-theme="light"] .dash-chart{background:rgba(15,30,60,.05)}
 .search-row{display:flex;gap:12px;margin-bottom:18px;flex-wrap:wrap}
 .search-box{position:relative;flex:1;min-width:240px}
 .search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:19px;color:var(--muted)}
-#calcSearch{width:100%;padding:14px 18px 14px 46px;border-radius:14px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:15px;font-family:inherit;outline:none;transition:.2s}
-#calcSearch:focus{border-color:rgba(232,182,76,.55);box-shadow:var(--glow)}
+#calcSearch,#heroSearch{width:100%;padding:14px 18px 14px 46px;border-radius:14px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:15px;font-family:inherit;outline:none;transition:.2s}
+#calcSearch:focus,#heroSearch:focus{border-color:rgba(232,182,76,.55);box-shadow:var(--glow)}
 .filter-chips{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}
 .chip{padding:9px 17px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--muted);font-size:13.5px;font-weight:700;transition:.2s;display:inline-flex;align-items:center;gap:8px}
 .chip:hover{color:var(--text);border-color:rgba(232,182,76,.4)}
