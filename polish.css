@@ -88,11 +88,11 @@ table,
 /* ---------- 3. Взаимодействие ---------- */
 
 /* Мягкое выделение текста в цвете сайта */
-::selection { background: rgba(8, 119, 90, .18); }
+::selection { background: color-mix(in srgb, var(--polish-accent, #08775a) 18%, transparent); }
 
 /* На телефоне тап не заливает элемент серым прямоугольником */
 a, button, summary, label, input, select {
-  -webkit-tap-highlight-color: rgba(8, 119, 90, .14);
+  -webkit-tap-highlight-color: color-mix(in srgb, var(--polish-accent, #08775a) 14%, transparent);
 }
 
 /* Видимый фокус — только для клавиатуры, мышь не «подсвечивает» лишнее */
@@ -103,7 +103,7 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid #08775a;
+  outline: 2px solid var(--polish-accent, #08775a);
   outline-offset: 2px;
   border-radius: 8px;
 }
@@ -119,7 +119,7 @@ img, svg, iframe, video { max-width: 100%; }
 body { overflow-wrap: break-word; }
 
 /* Элементы форм, ссылки-сноски и подсветка — в цвете сайта */
-input, select, textarea { accent-color: #08775a; }
+input, select, textarea { accent-color: var(--polish-accent, #08775a); }
 hr { border: 0; border-top: 1px solid var(--line, #ddd6c7); margin: 20px 0; }
 mark { background: rgba(194, 155, 82, .28); color: inherit; border-radius: 3px; padding: 0 2px; }
 abbr[title] { text-decoration: underline dotted; cursor: help; }
@@ -145,7 +145,7 @@ abbr[title] { text-decoration: underline dotted; cursor: help; }
 .table-scroll-wrap,
 .tablewrap {
   scrollbar-width: thin;
-  scrollbar-color: rgba(8, 119, 90, .35) transparent;
+  scrollbar-color: color-mix(in srgb, var(--polish-accent, #08775a) 35%, transparent) transparent;
   overscroll-behavior-x: contain;
 }
 .table-scroll::-webkit-scrollbar,
@@ -157,7 +157,7 @@ abbr[title] { text-decoration: underline dotted; cursor: help; }
 .table-scroll::-webkit-scrollbar-thumb,
 .table-scroll-wrap::-webkit-scrollbar-thumb,
 .tablewrap::-webkit-scrollbar-thumb {
-  background: rgba(8, 119, 90, .3);
+  background: color-mix(in srgb, var(--polish-accent, #08775a) 30%, transparent);
   border-radius: 8px;
 }
 

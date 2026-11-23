@@ -1189,7 +1189,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.documentElement;
   const tt = $('#themeToggle');
   const syncTheme = () => tt.innerHTML = root.dataset.theme === 'light' ? ico('sun',17) : ico('moon',17);
-  if (LS.get('shekelpro_theme') === 'light') root.dataset.theme = 'light';
+  const savedTheme = LS.get('shekelpro_theme');
+  if (savedTheme) root.dataset.theme = savedTheme;
+  else if (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches) root.dataset.theme = 'light';
   syncTheme();
   tt.addEventListener('click', () => {
     root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
