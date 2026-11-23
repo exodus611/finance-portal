@@ -1178,7 +1178,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hashTarget = document.getElementById(location.hash.slice(1));
   const hashFold = hashTarget && hashTarget.querySelector(':scope > .wrap > .page-fold');
   if (hashFold) hashFold.open = true;
-  curLang = LS.get('shekelpro_lang') || 'ru';
+  curLang = LS.get('shekelpro_lang') || window.__SHEKEL_DEFAULT_LANG__ || 'ru';
   initIcons();
   applyStatic();
   const cAcc = $('#chartAcc');
