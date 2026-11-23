@@ -1,0 +1,1176 @@
+{
+ "meta": {
+  "title": "Dira BeHanaha : ce qui se passe maintenant",
+  "subtitle": "Le programme d’État de logement à prix réduit. État actuel, ce qui se prépare, et où les chances étaient réellement",
+  "updated": "2026-11-23",
+  "updated_human": "23 novembre 2026",
+  "program_ru": "Dira BeHanaha",
+  "program_he": "דירה בהנחה",
+  "program_desc": "Un appartement en dessous du prix du marché, de l’État. Le terrain est attribué au promoteur à un prix réduit, et il doit vendre les appartements à un prix fixé. Qui obtient un logement est décidé par tirage au sort."
+ },
+ "status": {
+  "lottery_number": 11,
+  "lottery_name": "11e tirage",
+  "dates": {
+   "announced": "2026-03-25",
+   "eligibility_deadline": "2026-04-30",
+   "registration_opened": "2026-04-15",
+   "registration_closed": "2026-06-22",
+   "draw_date": "2026-07-26",
+   "notifications_started": "2026-08-02",
+   "results_phase_ends": "2026-09-15"
+  },
+  "phases": [
+   {
+    "id": "announced",
+    "label": "Annoncé",
+    "desc": "le ministère a publié les conditions et la liste des villes",
+    "date_key": "announced"
+   },
+   {
+    "id": "cert",
+    "label": "Date limite du certificat",
+    "desc": "dernier jour pour déposer les documents du certificat d’éligibilité",
+    "date_key": "eligibility_deadline"
+   },
+   {
+    "id": "open",
+    "label": "Inscriptions ouvertes",
+    "desc": "les candidatures ont ouvert sur le site du ministère",
+    "date_key": "registration_opened"
+   },
+   {
+    "id": "closed",
+    "label": "Inscriptions closes",
+    "desc": "les candidatures ne sont plus acceptées",
+    "date_key": "registration_closed"
+   },
+   {
+    "id": "draw",
+    "label": "Tirage au sort",
+    "desc": "tirage informatisé parmi les candidats",
+    "date_key": "draw_date"
+   },
+   {
+    "id": "notify",
+    "label": "Envoi des résultats",
+    "desc": "les gagnants reçoivent des notifications",
+    "date_key": "notifications_started"
+   },
+   {
+    "id": "end",
+    "label": "Fin de l’étape",
+    "desc": "fin de la phase des résultats",
+    "date_key": "results_phase_ends"
+   }
+  ],
+  "states": {
+   "before": {
+    "title": "Tirage annoncé, inscriptions pas encore ouvertes",
+    "tone": "wait",
+    "body": "Les conditions sont publiées, mais les candidatures n’ont pas commencé. C’est le meilleur moment pour obtenir le certificat d’éligibilité."
+   },
+   "open": {
+    "title": "Les candidatures sont ouvertes",
+    "tone": "go",
+    "body": "Vous pouvez candidater dès maintenant sur le site du ministère de la Construction."
+   },
+   "closed": {
+    "title": "Candidatures closes, le tirage se prépare",
+    "tone": "wait",
+    "body": "Vous ne pouvez plus candidater à ce tirage. Nous attendons la date du tirage."
+   },
+   "draw": {
+    "title": "Le tirage a eu lieu",
+    "tone": "wait",
+    "body": "Le tirage est terminé ; les résultats sont en cours de traitement."
+   },
+   "notify": {
+    "title": "Les résultats sont en cours d’envoi",
+    "tone": "info",
+    "body": "Les gagnants reçoivent des notifications. Vous ne pouvez plus candidater à ce tirage."
+   },
+   "done": {
+    "title": "Étape terminée",
+    "tone": "off",
+    "body": "Ce tirage est entièrement terminé. Le suivant n’a pas encore été annoncé."
+   }
+  },
+  "numbers": {
+   "units": 7922,
+   "settlements": 19,
+   "sub_lotteries": 82,
+   "households": 114848,
+   "reservist_share": 0.6
+  }
+ },
+ "live": {
+  "title": "Ce qui se passe avec les projets en ce moment",
+  "lead": "Ces chiffres se mettent à jour automatiquement depuis le registre du ministère de la Construction.",
+  "cards": [
+   {
+    "id": "open",
+    "label": "Inscriptions ouvertes",
+    "unit": "projets",
+    "hint": "vous pouvez déposer vos documents"
+   },
+   {
+    "id": "closed",
+    "label": "Inscriptions closes, en attente du tirage",
+    "unit": "projets",
+    "hint": "candidatures recueillies, le tirage est à venir"
+   },
+   {
+    "id": "future",
+    "label": "En préparation de lancement",
+    "unit": "projets",
+    "hint": "les inscriptions n’ont pas encore ouvert"
+   }
+  ],
+  "open_projects": 0,
+  "closed_projects": 38,
+  "closed_units": 1545
+ },
+ "future": {
+  "title": "Ce qui se prépare",
+  "lead": "Projets pour lesquels les inscriptions n’ont pas encore ouvert. Les dates n’ont pas été annoncées, mais les villes sont déjà connues — donc il y a le temps de se préparer.",
+  "explain": "Si une ville qui vous convient figure sur la liste, il est judicieux de préparer le certificat d’éligibilité à l’avance : il prend jusqu’à trente jours et est valable un an. Au moment de l’ouverture des inscriptions, tout sera prêt.",
+  "note_dev": "« Promoteur sélectionné » signifie que le projet est plus avancé et a plus de chances d’atteindre les inscriptions plus tôt.",
+  "cities": [
+   {
+    "city": "Kiryat Ata",
+    "city_he": "קרית אתא",
+    "projects": 5,
+    "units": 978,
+    "developer_chosen": 0,
+    "price_per_meter": 8577
+   },
+   {
+    "city": "Tibériade",
+    "city_he": "טבריה",
+    "projects": 4,
+    "units": 531,
+    "developer_chosen": 0,
+    "price_per_meter": null
+   },
+   {
+    "city": "Ofakim",
+    "city_he": "אופקים",
+    "projects": 8,
+    "units": 522,
+    "developer_chosen": 0,
+    "price_per_meter": null
+   },
+   {
+    "city": "Ramla",
+    "city_he": "רמלה",
+    "projects": 1,
+    "units": 390,
+    "developer_chosen": 0,
+    "price_per_meter": null
+   },
+   {
+    "city": "Ashdod",
+    "city_he": "אשדוד",
+    "projects": 2,
+    "units": 370,
+    "developer_chosen": 0,
+    "price_per_meter": null
+   },
+   {
+    "city": "Kfar Kanna",
+    "city_he": "כפר כנא",
+    "projects": 5,
+    "units": 291,
+    "developer_chosen": 0,
+    "price_per_meter": null
+   },
+   {
+    "city": "Netanya",
+    "city_he": "נתניה",
+    "projects": 4,
+    "units": 236,
+    "developer_chosen": 0,
+    "price_per_meter": null
+   },
+   {
+    "city": "Mashhad",
+    "city_he": "משהד",
+    "projects": 5,
+    "units": 230,
+    "developer_chosen": 0,
+    "price_per_meter": null
+   },
+   {
+    "city": "Bnei Ayish",
+    "city_he": "בני עי\"ש",
+    "projects": 3,
+    "units": 180,
+    "developer_chosen": 0,
+    "price_per_meter": null
+   },
+   {
+    "city": "Umm al-Fahm",
+    "city_he": "אם אל-פחם",
+    "projects": 2,
+    "units": 152,
+    "developer_chosen": 2,
+    "price_per_meter": 8332
+   },
+   {
+    "city": "Nazareth",
+    "city_he": "נצרת",
+    "projects": 4,
+    "units": 122,
+    "developer_chosen": 4,
+    "price_per_meter": null
+   },
+   {
+    "city": "Rishon LeZion",
+    "city_he": "ראשון לציון",
+    "projects": 2,
+    "units": 94,
+    "developer_chosen": 1,
+    "price_per_meter": null
+   },
+   {
+    "city": "Abu Ghosh",
+    "city_he": "אבו גוש",
+    "projects": 2,
+    "units": 65,
+    "developer_chosen": 0,
+    "price_per_meter": null
+   },
+   {
+    "city": "Tur'an",
+    "city_he": "טרעאן",
+    "projects": 1,
+    "units": 60,
+    "developer_chosen": 1,
+    "price_per_meter": null
+   },
+   {
+    "city": "Ness Ziona",
+    "city_he": "נס ציונה",
+    "projects": 1,
+    "units": 54,
+    "developer_chosen": 0,
+    "price_per_meter": null
+   },
+   {
+    "city": "Ashkelon",
+    "city_he": "אשקלון",
+    "projects": 2,
+    "units": 54,
+    "developer_chosen": 0,
+    "price_per_meter": null
+   },
+   {
+    "city": "Efrat",
+    "city_he": "אפרתה",
+    "projects": 1,
+    "units": 44,
+    "developer_chosen": 0,
+    "price_per_meter": null
+   },
+   {
+    "city": "Ariel",
+    "city_he": "אריאל",
+    "projects": 1,
+    "units": 40,
+    "developer_chosen": 1,
+    "price_per_meter": 9500
+   },
+   {
+    "city": "Ein Naqquba",
+    "city_he": "עין נקובא",
+    "projects": 2,
+    "units": 39,
+    "developer_chosen": 0,
+    "price_per_meter": null
+   },
+   {
+    "city": "Jérusalem",
+    "city_he": "ירושלים",
+    "projects": 1,
+    "units": 36,
+    "developer_chosen": 0,
+    "price_per_meter": null
+   },
+   {
+    "city": "Isfiya",
+    "city_he": "עספיא",
+    "projects": 2,
+    "units": 26,
+    "developer_chosen": 0,
+    "price_per_meter": null
+   },
+   {
+    "city": "Afoula",
+    "city_he": "עפולה",
+    "projects": 1,
+    "units": 12,
+    "developer_chosen": 1,
+    "price_per_meter": 8247
+   },
+   {
+    "city": "Ramat HaSharon",
+    "city_he": "רמת השרון",
+    "projects": 4,
+    "units": 4,
+    "developer_chosen": 0,
+    "price_per_meter": null
+   }
+  ],
+  "total_units": 4530,
+  "total_projects": 63,
+  "total_cities": 23
+ },
+ "archive": {
+  "title": "Où les chances étaient-elles réellement",
+  "lead": "Un récapitulatif des tirages sur cinq ans, de 2021 à 2025. Il montre combien il y avait de demandes par appartement dans chaque ville.",
+  "explain": "C’est la seule chose que vous pouvez influencer. L’éligibilité, le nombre d’appartements et la date du tirage ne se choisissent pas — mais la ville, oui. La différence entre les villes est énorme.",
+  "caution": "Une famille candidate à plusieurs projets à la fois : ce n’est donc pas « tant de familles par place », mais un indicateur de charge. Et ce n’est pas une prévision : chaque tirage a son propre ensemble de villes et de conditions. Mais l’ordre de grandeur se répète d’année en année.",
+  "cities": [
+   {
+    "city": "Katzrin",
+    "city_he": "קצרין",
+    "lotteries": 1,
+    "units": 702,
+    "applications": 3965,
+    "per_unit": 6,
+    "price_per_meter": 7366
+   },
+   {
+    "city": "Umm al-Fahm",
+    "city_he": "אם אל-פחם",
+    "lotteries": 7,
+    "units": 682,
+    "applications": 5276,
+    "per_unit": 8,
+    "price_per_meter": 8332
+   },
+   {
+    "city": "Kafr Qasim",
+    "city_he": "כפר קאסם",
+    "lotteries": 2,
+    "units": 151,
+    "applications": 1152,
+    "per_unit": 8,
+    "price_per_meter": 11244
+   },
+   {
+    "city": "Toutes localités",
+    "city_he": "כלל הישובים",
+    "lotteries": 1,
+    "units": 1000,
+    "applications": 20818,
+    "per_unit": 21,
+    "price_per_meter": null
+   },
+   {
+    "city": "Dimona",
+    "city_he": "דימונה",
+    "lotteries": 28,
+    "units": 1773,
+    "applications": 61916,
+    "per_unit": 35,
+    "price_per_meter": 5342
+   },
+   {
+    "city": "Acre",
+    "city_he": "עכו",
+    "lotteries": 15,
+    "units": 1037,
+    "applications": 46808,
+    "per_unit": 45,
+    "price_per_meter": 6271
+   },
+   {
+    "city": "Nof HaGalil",
+    "city_he": "נוף הגליל",
+    "lotteries": 10,
+    "units": 1433,
+    "applications": 71567,
+    "per_unit": 50,
+    "price_per_meter": 11250
+   },
+   {
+    "city": "Nazareth",
+    "city_he": "נצרת",
+    "lotteries": 16,
+    "units": 439,
+    "applications": 21858,
+    "per_unit": 50,
+    "price_per_meter": 6060
+   },
+   {
+    "city": "Kiryat Bialik",
+    "city_he": "קרית ביאליק",
+    "lotteries": 3,
+    "units": 380,
+    "applications": 22587,
+    "per_unit": 59,
+    "price_per_meter": 8128
+   },
+   {
+    "city": "Emmanuel",
+    "city_he": "עמנואל",
+    "lotteries": 11,
+    "units": 584,
+    "applications": 34433,
+    "per_unit": 59,
+    "price_per_meter": 7160
+   },
+   {
+    "city": "Beit She'an",
+    "city_he": "בית שאן",
+    "lotteries": 17,
+    "units": 843,
+    "applications": 57511,
+    "per_unit": 68,
+    "price_per_meter": 4945
+   },
+   {
+    "city": "Tirat Carmel",
+    "city_he": "טירת כרמל",
+    "lotteries": 4,
+    "units": 351,
+    "applications": 23770,
+    "per_unit": 68,
+    "price_per_meter": 9798
+   },
+   {
+    "city": "Karmiel",
+    "city_he": "כרמיאל",
+    "lotteries": 8,
+    "units": 425,
+    "applications": 30832,
+    "per_unit": 73,
+    "price_per_meter": 7716
+   },
+   {
+    "city": "Kiryat Ekron",
+    "city_he": "קרית עקרון",
+    "lotteries": 3,
+    "units": 486,
+    "applications": 39307,
+    "per_unit": 81,
+    "price_per_meter": 13351
+   },
+   {
+    "city": "Haïfa",
+    "city_he": "חיפה",
+    "lotteries": 14,
+    "units": 2884,
+    "applications": 249782,
+    "per_unit": 87,
+    "price_per_meter": 11792
+   },
+   {
+    "city": "Kiryat Shmona",
+    "city_he": "קרית שמונה",
+    "lotteries": 8,
+    "units": 187,
+    "applications": 16269,
+    "per_unit": 87,
+    "price_per_meter": 6194
+   },
+   {
+    "city": "Bat Hefer",
+    "city_he": "בת חפר",
+    "lotteries": 3,
+    "units": 299,
+    "applications": 26502,
+    "per_unit": 89,
+    "price_per_meter": 6257
+   },
+   {
+    "city": "Nahariya",
+    "city_he": "נהריה",
+    "lotteries": 11,
+    "units": 691,
+    "applications": 62854,
+    "per_unit": 91,
+    "price_per_meter": 7194
+   },
+   {
+    "city": "Bat Yam",
+    "city_he": "בת ים",
+    "lotteries": 1,
+    "units": 232,
+    "applications": 21406,
+    "per_unit": 92,
+    "price_per_meter": 18053
+   },
+   {
+    "city": "Harish",
+    "city_he": "חריש",
+    "lotteries": 4,
+    "units": 500,
+    "applications": 47861,
+    "per_unit": 96,
+    "price_per_meter": 10865
+   },
+   {
+    "city": "Bnei Brak",
+    "city_he": "בני ברק",
+    "lotteries": 2,
+    "units": 289,
+    "applications": 28677,
+    "per_unit": 99,
+    "price_per_meter": 12150
+   },
+   {
+    "city": "Ma'alot-Tarshiha",
+    "city_he": "מעלות-תרשיחא",
+    "lotteries": 4,
+    "units": 173,
+    "applications": 17341,
+    "per_unit": 100,
+    "price_per_meter": 6565
+   },
+   {
+    "city": "Geva Binyamin",
+    "city_he": "גבע בנימין",
+    "lotteries": 6,
+    "units": 160,
+    "applications": 16108,
+    "per_unit": 101,
+    "price_per_meter": 7573
+   },
+   {
+    "city": "Rehasim",
+    "city_he": "רכסים",
+    "lotteries": 10,
+    "units": 770,
+    "applications": 79060,
+    "per_unit": 103,
+    "price_per_meter": 8684
+   },
+   {
+    "city": "Or Akiva",
+    "city_he": "אור עקיבא",
+    "lotteries": 9,
+    "units": 555,
+    "applications": 57344,
+    "per_unit": 103,
+    "price_per_meter": 8626
+   },
+   {
+    "city": "Yavne",
+    "city_he": "יבנה",
+    "lotteries": 3,
+    "units": 451,
+    "applications": 51113,
+    "per_unit": 113,
+    "price_per_meter": 14759
+   },
+   {
+    "city": "Lod",
+    "city_he": "לוד",
+    "lotteries": 20,
+    "units": 2221,
+    "applications": 251429,
+    "per_unit": 113,
+    "price_per_meter": 10687
+   },
+   {
+    "city": "Ramla",
+    "city_he": "רמלה",
+    "lotteries": 3,
+    "units": 177,
+    "applications": 22882,
+    "per_unit": 129,
+    "price_per_meter": 10602
+   },
+   {
+    "city": "Migdal HaEmek",
+    "city_he": "מגדל העמק",
+    "lotteries": 18,
+    "units": 849,
+    "applications": 110375,
+    "per_unit": 130,
+    "price_per_meter": 7524
+   },
+   {
+    "city": "Tibériade",
+    "city_he": "טבריה",
+    "lotteries": 11,
+    "units": 676,
+    "applications": 93904,
+    "per_unit": 139,
+    "price_per_meter": 6813
+   },
+   {
+    "city": "Eilat",
+    "city_he": "אילת",
+    "lotteries": 22,
+    "units": 858,
+    "applications": 130086,
+    "per_unit": 152,
+    "price_per_meter": 10495
+   },
+   {
+    "city": "El'ad",
+    "city_he": "אלעד",
+    "lotteries": 23,
+    "units": 2677,
+    "applications": 432309,
+    "per_unit": 161,
+    "price_per_meter": 13789
+   },
+   {
+    "city": "Sderot",
+    "city_he": "שדרות",
+    "lotteries": 20,
+    "units": 1342,
+    "applications": 218509,
+    "per_unit": 163,
+    "price_per_meter": 7066
+   },
+   {
+    "city": "Ashdod",
+    "city_he": "אשדוד",
+    "lotteries": 12,
+    "units": 1529,
+    "applications": 292728,
+    "per_unit": 191,
+    "price_per_meter": 12757
+   },
+   {
+    "city": "Ofakim",
+    "city_he": "אופקים",
+    "lotteries": 48,
+    "units": 3384,
+    "applications": 650993,
+    "per_unit": 192,
+    "price_per_meter": 6920
+   },
+   {
+    "city": "Beer-Sheva",
+    "city_he": "באר שבע",
+    "lotteries": 28,
+    "units": 1775,
+    "applications": 349015,
+    "per_unit": 197,
+    "price_per_meter": 8851
+   },
+   {
+    "city": "Yehud",
+    "city_he": "יהוד",
+    "lotteries": 5,
+    "units": 702,
+    "applications": 145662,
+    "per_unit": 207,
+    "price_per_meter": 18723
+   },
+   {
+    "city": "Beit Shemesh",
+    "city_he": "בית שמש",
+    "lotteries": 23,
+    "units": 2921,
+    "applications": 605706,
+    "per_unit": 207,
+    "price_per_meter": 11796
+   },
+   {
+    "city": "Safed",
+    "city_he": "צפת",
+    "lotteries": 7,
+    "units": 271,
+    "applications": 58369,
+    "per_unit": 215,
+    "price_per_meter": 6740
+   },
+   {
+    "city": "Kiryat Gat",
+    "city_he": "קרית גת",
+    "lotteries": 30,
+    "units": 3734,
+    "applications": 814198,
+    "per_unit": 218,
+    "price_per_meter": 10746
+   },
+   {
+    "city": "Bnei Ayish",
+    "city_he": "בני עי\"ש",
+    "lotteries": 19,
+    "units": 1446,
+    "applications": 327190,
+    "per_unit": 226,
+    "price_per_meter": 12665
+   },
+   {
+    "city": "Tel Aviv",
+    "city_he": "תל אביב -יפו",
+    "lotteries": 2,
+    "units": 234,
+    "applications": 52927,
+    "per_unit": 226,
+    "price_per_meter": 15200
+   },
+   {
+    "city": "Kadima-Tzoran",
+    "city_he": "קדימה-צורן",
+    "lotteries": 3,
+    "units": 261,
+    "applications": 63731,
+    "per_unit": 244,
+    "price_per_meter": 18527
+   },
+   {
+    "city": "Gan Yavne",
+    "city_he": "גן יבנה",
+    "lotteries": 3,
+    "units": 161,
+    "applications": 42222,
+    "per_unit": 262,
+    "price_per_meter": 8264
+   },
+   {
+    "city": "Jérusalem",
+    "city_he": "ירושלים",
+    "lotteries": 21,
+    "units": 1176,
+    "applications": 317781,
+    "per_unit": 270,
+    "price_per_meter": 14654
+   },
+   {
+    "city": "Rosh HaAyin",
+    "city_he": "ראש העין",
+    "lotteries": 10,
+    "units": 1058,
+    "applications": 286232,
+    "per_unit": 271,
+    "price_per_meter": 9799
+   },
+   {
+    "city": "Petah Tikva",
+    "city_he": "פתח תקוה",
+    "lotteries": 10,
+    "units": 1355,
+    "applications": 395451,
+    "per_unit": 292,
+    "price_per_meter": 14968
+   },
+   {
+    "city": "Afoula",
+    "city_he": "עפולה",
+    "lotteries": 10,
+    "units": 258,
+    "applications": 81192,
+    "per_unit": 315,
+    "price_per_meter": 6818
+   },
+   {
+    "city": "Netanya",
+    "city_he": "נתניה",
+    "lotteries": 19,
+    "units": 1058,
+    "applications": 381819,
+    "per_unit": 361,
+    "price_per_meter": 15071
+   },
+   {
+    "city": "Tzur Hadassah",
+    "city_he": "צור הדסה",
+    "lotteries": 8,
+    "units": 238,
+    "applications": 96998,
+    "per_unit": 408,
+    "price_per_meter": 13854
+   },
+   {
+    "city": "Be'er Ya'akov",
+    "city_he": "באר יעקב",
+    "lotteries": 18,
+    "units": 1466,
+    "applications": 601627,
+    "per_unit": 410,
+    "price_per_meter": 13438
+   },
+   {
+    "city": "Modi'in",
+    "city_he": "מודיעין",
+    "lotteries": 14,
+    "units": 383,
+    "applications": 168814,
+    "per_unit": 441,
+    "price_per_meter": 11513
+   },
+   {
+    "city": "Ashkelon",
+    "city_he": "אשקלון",
+    "lotteries": 63,
+    "units": 2735,
+    "applications": 1240852,
+    "per_unit": 454,
+    "price_per_meter": 9059
+   },
+   {
+    "city": "Or Yehuda",
+    "city_he": "אור יהודה",
+    "lotteries": 6,
+    "units": 324,
+    "applications": 150453,
+    "per_unit": 464,
+    "price_per_meter": 9755
+   },
+   {
+    "city": "Ramat Gan",
+    "city_he": "רמת גן",
+    "lotteries": 5,
+    "units": 414,
+    "applications": 198847,
+    "per_unit": 480,
+    "price_per_meter": 13991
+   },
+   {
+    "city": "Rehovot",
+    "city_he": "רחובות",
+    "lotteries": 12,
+    "units": 906,
+    "applications": 452123,
+    "per_unit": 499,
+    "price_per_meter": 15556
+   },
+   {
+    "city": "Kfar Saba",
+    "city_he": "כפר סבא",
+    "lotteries": 8,
+    "units": 598,
+    "applications": 301356,
+    "per_unit": 504,
+    "price_per_meter": 17268
+   },
+   {
+    "city": "Rishon LeZion",
+    "city_he": "ראשון לציון",
+    "lotteries": 25,
+    "units": 1355,
+    "applications": 770556,
+    "per_unit": 569,
+    "price_per_meter": 14810
+   }
+  ],
+  "years": [
+   {
+    "year": 2021,
+    "lotteries": 85,
+    "units": 2186,
+    "applications": 461201,
+    "per_unit": 211,
+    "cities": 33
+   },
+   {
+    "year": 2022,
+    "lotteries": 355,
+    "units": 20609,
+    "applications": 3641846,
+    "per_unit": 177,
+    "cities": 65
+   },
+   {
+    "year": 2023,
+    "lotteries": 135,
+    "units": 14743,
+    "applications": 2726174,
+    "per_unit": 185,
+    "cities": 33
+   },
+   {
+    "year": 2024,
+    "lotteries": 186,
+    "units": 16298,
+    "applications": 3742279,
+    "per_unit": 230,
+    "cities": 40
+   },
+   {
+    "year": 2025,
+    "lotteries": 58,
+    "units": 3925,
+    "applications": 1128738,
+    "per_unit": 288,
+    "cities": 15
+   }
+  ],
+  "years_note": "Moins d’appartements sont proposés et plus de gens en veulent — la charge augmente d’année en année."
+ },
+ "next": {
+  "title": "Le prochain tirage",
+  "number": 12,
+  "status_text": "Pas encore de dates",
+  "body": "Il n’y a pas encore eu d’annonce officielle d’un douzième tirage. Selon la direction du ministère de la Construction, environ dix mille appartements sont attendus.",
+  "expected_cities": [
+   "Rehovot",
+   "Petah Tikva",
+   "Kfar Saba",
+   "Rishon LeZion",
+   "Netanya"
+  ],
+  "expected_units": 10000,
+  "prepare_title": "Ce que vous pouvez faire à l’avance",
+  "prepare": [
+   "Vérifiez si vous remplissez les conditions de participation.",
+   "Préparez le certificat d’éligibilité. Il prend jusqu’à trente jours et est valable un an.",
+   "Regardez les listes de villes ci-dessus et décidez quelles orientations vous conviennent.",
+   "Suivez les annonces sur le site du ministère de la Construction."
+  ]
+ },
+ "official": {
+  "title": "Où candidater",
+  "lead": "L’inscription se fait uniquement sur le site de l’État.",
+  "links": [
+   {
+    "name": "Site du programme : projets et inscription",
+    "url": "https://dira.moch.gov.il/ProjectsList",
+    "primary": true
+   },
+   {
+    "name": "Carte des projets du ministère de la Construction",
+    "url": "https://www.gov.il/he/departments/ministry_of_construction_and_housing"
+   },
+   {
+    "name": "Ministère de la Construction et du Logement",
+    "url": "https://www.gov.il/he/departments/ministry_of_construction_and_housing"
+   },
+   {
+    "name": "Autorité foncière d’Israël (Israel Land Authority)",
+    "url": "https://www.gov.il/he/departments/israel_land_authority"
+   }
+  ],
+  "cert_title": "Certificat d’éligibilité",
+  "cert_ru": "teudat zkaut",
+  "cert_he": "תעודת זכאות",
+  "cert_body": "Délivré par des sociétés autorisées : « Milgam », « Alonim », « Maof ». Il prend jusqu’à trente jours et est valable un an.",
+  "cert_url": "https://www.shikun-maof.co.il/criteria/"
+ },
+ "glossary": [
+  {
+   "ru": "dira behanaha",
+   "he": "דירה בהנחה",
+   "desc": "un appartement avec remise, le nom du programme d’État"
+  },
+  {
+   "ru": "mehir lemishtaken",
+   "he": "מחיר למשתכן",
+   "desc": "l’ancien nom du même programme"
+  },
+  {
+   "ru": "teudat zkaut",
+   "he": "תעודת זכאות",
+   "desc": "certificat d’éligibilité à participer"
+  },
+  {
+   "ru": "hagrala",
+   "he": "הגרלה",
+   "desc": "le tirage au sort"
+  },
+  {
+   "ru": "hasrey dira",
+   "he": "חסרי דירה",
+   "desc": "ceux qui ne possèdent pas de logement"
+  },
+  {
+   "ru": "bney makom",
+   "he": "בני מקום",
+   "desc": "les résidents locaux, qui ont un quota séparé"
+  },
+  {
+   "ru": "meshaprey diyur",
+   "he": "משפרי דיור",
+   "desc": "ceux qui améliorent leurs conditions de logement"
+  },
+  {
+   "ru": "misrad habinui vehashikun",
+   "he": "משרד הבינוי והשיכון",
+   "desc": "le ministère de la Construction et du Logement"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Registre des projets du ministère de la Construction",
+   "note": "composition des projets, villes, appartements, prix"
+  },
+  {
+   "name": "Récapitulatif des tirages du programme",
+   "note": "archive des résultats depuis 2016"
+  },
+  {
+   "name": "Banque d’Israël",
+   "note": "le taux directeur"
+  },
+  {
+   "name": "Bureau central des statistiques",
+   "note": "indice des coûts de construction"
+  }
+ ],
+ "disclaimer": "Cette page rassemble des informations de sources publiques de l’État. Les candidatures, les vérifications d’éligibilité et toutes les décisions du programme se font uniquement via les services de l’État. Les calculs sont effectués directement sur votre appareil.",
+ "_city_names": {
+  "אופקים": "Ofakim",
+  "קרית אתא": "Kiryat Ata",
+  "משהד": "Mashhad",
+  "כפר כנא": "Kfar Kanna",
+  "נצרת": "Nazareth",
+  "טבריה": "Tibériade",
+  "נתניה": "Netanya",
+  "רמת השרון": "Ramat HaSharon",
+  "בני עי\"ש": "Bnei Ayish",
+  "עספיא": "Isfiya",
+  "ראשון לציון": "Rishon LeZion",
+  "אשדוד": "Ashdod",
+  "בית שמש": "Beit Shemesh",
+  "שוהם": "Shoham",
+  "קרית גת": "Kiryat Gat",
+  "ירושלים": "Jérusalem",
+  "חריש": "Harish",
+  "מודיעין": "Modi'in",
+  "נחף": "Nahf",
+  "חיפה": "Haïfa",
+  "אשקלון": "Ashkelon",
+  "אלעד": "El'ad",
+  "לוד": "Lod",
+  "באר שבע": "Beer-Sheva",
+  "דימונה": "Dimona",
+  "באר יעקב": "Be'er Ya'akov",
+  "נוף הגליל": "Nof HaGalil",
+  "פתח תקוה": "Petah Tikva",
+  "עכו": "Acre",
+  "צפת": "Safed",
+  "כרמיאל": "Karmiel",
+  "מגדל העמק": "Migdal HaEmek",
+  "יבנה": "Yavne",
+  "רחובות": "Rehovot",
+  "חדרה": "Hadera",
+  "רמלה": "Ramla",
+  "עפולה": "Afoula",
+  "קרית שמונה": "Kiryat Shmona",
+  "שדרות": "Sderot",
+  "נתיבות": "Netivot",
+  "אור עקיבא": "Or Akiva",
+  "טירת כרמל": "Tirat Carmel",
+  "קרית מלאכי": "Kiryat Malakhi",
+  "ערד": "Arad",
+  "בית שאן": "Beit She'an",
+  "מעלות תרשיחא": "Ma'alot-Tarshiha",
+  "טמרה": "Tamra",
+  "סחנין": "Sakhnin",
+  "שפרעם": "Shefa-Amr",
+  "רהט": "Rahat",
+  "בת ים": "Bat Yam",
+  "חולון": "Holon",
+  "קרית ים": "Kiryat Yam",
+  "קרית מוצקין": "Kiryat Motzkin",
+  "נשר": "Nesher",
+  "אום אל-פחם": "Umm al-Fahm",
+  "אבו גוש": "Abu Ghosh",
+  "טורעאן": "Tur'an",
+  "קרית ביאליק": "Kiryat Bialik",
+  "עראבה": "Arraba",
+  "כפר קאסם": "Kafr Qasim",
+  "ראש העין": "Rosh HaAyin",
+  "אריאל": "Ariel",
+  "קצרין": "Katzrin",
+  "יקנעם עילית": "Yokneam Illit",
+  "גדרה": "Gedera",
+  "כפר יונה": "Kfar Yona",
+  "אור יהודה": "Or Yehuda",
+  "נס ציונה": "Ness Ziona",
+  "קרית אונו": "Kiryat Ono",
+  "רמת גן": "Ramat Gan",
+  "כפר סבא": "Kfar Saba",
+  "מבשרת ציון": "Mevaseret Zion",
+  "בית אל": "Beit El",
+  "אלפי מנשה": "Alfei Menashe",
+  "ביתר עלית": "Beitar Illit",
+  "עמנואל": "Emmanuel",
+  "כלל הישובים": "All localities",
+  "סח'נין": "Sakhnin",
+  "כפר ברא": "Kfar Bara",
+  "דיר חנא": "Deir Hanna",
+  "דיר אל-אסד": "Deir al-Asad",
+  "אכסאל": "Iksal",
+  "מעלה אפרים": "Ma'ale Efraim",
+  "ג'סר א-זרקא": "Jisr a-Zarqa",
+  "טרעאן": "Tur'an",
+  "אם אל-פחם": "Umm al-Fahm",
+  "קרית עקרון": "Kiryat Ekron",
+  "בת חפר": "Bat Hefer",
+  "נהריה": "Nahariya",
+  "בני ברק": "Bnei Brak",
+  "מעלות-תרשיחא": "Ma'alot-Tarshiha",
+  "גבע בנימין": "Geva Binyamin",
+  "אפרתה": "Efrat",
+  "עין נקובא": "Ein Naqquba",
+  "מודיעין עילית": "Modi'in Illit",
+  "קרית ארבע": "Kiryat Arba",
+  "אלקנה": "Elkana",
+  "כוכב יאיר": "Kokhav Ya'ir",
+  "אבן יהודה": "Even Yehuda",
+  "זכרון יעקב": "Zikhron Ya'akov",
+  "פרדס חנה כרכור": "Pardes Hanna-Karkur",
+  "בנימינה": "Binyamina",
+  "קדימה צורן": "Kadima-Tzoran",
+  "להבים": "Lehavim",
+  "עומר": "Omer",
+  "מיתר": "Metar",
+  "שדרות ": "Sderot",
+  "נתיבות ": "Netivot",
+  "גן יבנה": "Gan Yavne",
+  "מזכרת בתיה": "Mazkeret Batya",
+  "קרית טבעון": "Kiryat Tiv'on",
+  "רכסים": "Rehasim",
+  "אלפי מנשה ": "Alfei Menashe",
+  "אליכין": "Elyakhin",
+  "תל אביב -יפו": "Tel Aviv",
+  "תל אביב": "Tel Aviv",
+  "הרצליה": "Herzliya",
+  "רעננה": "Ra'anana",
+  "גבעתיים": "Givatayim",
+  "הוד השרון": "Hod HaSharon",
+  "יהוד": "Yehud",
+  "סביון": "Savyon",
+  "אור עקיבא ": "Or Akiva",
+  "טייבה": "Tayibe",
+  "טירה": "Tira",
+  "באקה אל-גרביה": "Baqa al-Gharbiyye",
+  "ג'לג'וליה": "Jaljulia",
+  "קלנסווה": "Qalansuwa",
+  "כפר קרע": "Kafr Qara",
+  "מגאר": "Maghar",
+  "יפיע": "Yafia",
+  "עילוט": "Ilut",
+  "ריינה": "Reineh",
+  "כאבול": "Kabul",
+  "שעב": "Sha'ab",
+  "בענה": "Bi'ina",
+  "נחף ": "Nahf",
+  "ירכא": "Yarka",
+  "אבו סנאן": "Abu Snan",
+  "ג'דיידה מכר": "Jadeidi-Makr",
+  "כפר יאסיף": "Kafr Yasif",
+  "פקיעין": "Peki'in",
+  "חורפיש": "Hurfeish",
+  "בית ג'ן": "Beit Jann",
+  "דאלית אל כרמל": "Daliyat al-Karmel",
+  "אכסאל ": "Iksal",
+  "זרזיר": "Zarzir",
+  "בסמת טבעון": "Basmat Tab'un",
+  "אילת": "Eilat",
+  "קדימה-צורן": "Kadima-Tzoran",
+  "צור הדסה": "Tzur Hadassah"
+ },
+ "_run": {
+  "last_run": "2026-11-23T16:01:39",
+  "ok": false,
+  "notes": [
+   "Реестр проектов: 2551 записей, 23 городов в подготовке."
+  ],
+  "warnings": [
+   "Сводка розыгрышей недоступна (invalid literal for int() with base 10: '1/27'). Прежние данные сохранены."
+  ]
+ }
+}
