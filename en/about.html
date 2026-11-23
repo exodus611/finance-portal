@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08775a">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308775a'/><text x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='900' fill='white' text-anchor='middle'>₪</text></svg>">
+<title>About — Clear Finance in Israel</title>
+<meta name="robots" content="index, follow">
+<meta name="description" content="About the independent Clear Finance in Israel project: privacy principles, primary data sources and an open calculation methodology.">
+<link rel="canonical" href="https://exodus611.github.io/finance-portal/en/about.html">
+<link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/about.html">
+<link rel="alternate" hreflang="fr" href="https://exodus611.github.io/finance-portal/fr/about.html">
+<link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/about.html">
+<style>
+:root{--ink:#15251f;--muted:#5a6660;--paper:#f4f1e9;--card:#fffdf8;--line:#ddd6c7;--green:#08775a;--green2:#0d9671;--shadow:0 16px 40px rgba(26,45,37,.08);--r:16px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
+.shell{max-width:860px;margin:auto;padding:0 20px}
+header{padding:20px 0;border-bottom:1px solid var(--line);background:#fffdf8}
+.nav{display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:900;font-size:16px}
+.mark{width:38px;height:38px;border-radius:10px;background:var(--green);color:#fff;display:grid;place-items:center;font-size:20px}
+.content{padding:40px 0}
+h1{font-size:clamp(28px,4vw,38px);line-height:1.15;margin:0 0 14px;letter-spacing:-.02em}
+h2{font-size:22px;margin:32px 0 12px;color:var(--green)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;margin:20px 0;box-shadow:var(--shadow)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:20px 0}
+.badge{display:inline-block;background:#eaf6f0;color:var(--green);font-weight:800;font-size:11px;padding:3px 8px;border-radius:6px;margin-bottom:8px}
+footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;font-size:13px;color:var(--muted)}
+</style>
+<link rel="stylesheet" href="../polish.css">
+</head>
+<body>
+<header>
+  <div class="shell nav">
+    <a href="index.html" class="logo">
+      <div class="mark">₪</div>
+      <span>Clear Finance in Israel</span>
+    </a>
+    <a href="index.html" style="color:var(--green);font-weight:800;text-decoration:none;font-size:13px">← Home</a>
+  </div>
+</header>
+
+<main class="shell content">
+  <span class="badge">INDEPENDENT PROJECT</span>
+  <h1>The numbers of life in Israel — honestly, openly, with no hidden commissions</h1>
+  <p style="font-size:16px;color:var(--muted)">We built the Clear Finance portal so that everyone in Israel — from a new immigrant to a lifelong resident — has a reliable, free tool to work out their own money, without banks or middlemen pushing products.</p>
+
+  <h2>The project's 3 key principles</h2>
+  <div class="grid">
+    <div class="card" style="margin:0">
+      <div style="font-size:28px;margin-bottom:10px">🔒</div>
+      <h3 style="margin:0 0 8px;font-size:16px">100% data privacy</h3>
+      <p style="margin:0;font-size:13.5px;color:var(--muted)">Every calculator (salary, mashkanta, pension) runs entirely in your browser, on your device. Your income, savings and personal data are never sent anywhere or stored on servers.</p>
+    </div>
+    <div class="card" style="margin:0">
+      <div style="font-size:28px;margin-bottom:10px">🏛️</div>
+      <h3 style="margin:0 0 8px;font-size:16px">Official data gateways</h3>
+      <p style="margin:0;font-size:13.5px;color:var(--muted)">We never invent numbers. Rates update directly from the Bank of Israel API, benefit dates from Bituach Leumi, inflation from the CBS, fuel prices from the Ministry of Energy.</p>
+    </div>
+    <div class="card" style="margin:0">
+      <div style="font-size:28px;margin-bottom:10px">⚖️</div>
+      <h3 style="margin:0 0 8px;font-size:16px">Complete independence</h3>
+      <p style="margin:0;font-size:13.5px;color:var(--muted)">We are not a bank, broker or insurance agency, and there are no paid loan recommendations here. The goal is to give you an exact calculation so the decision stays yours.</p>
+    </div>
+  </div>
+
+  <h2>Where our data comes from</h2>
+  <div class="card">
+    <ul style="margin:0;padding-left:20px;font-size:14px;display:flex;flex-direction:column;gap:10px">
+      <li><b>Policy rate and Prime:</b> The Bank of Israel open gateway (<i>Bank of Israel API — GetInterest</i>).</li>
+      <li><b>Consumer price index (Madad) and construction index:</b> Central Bureau of Statistics (<i>CBS API</i>).</li>
+      <li><b>Payment dates and benefits:</b> National Insurance Institute (<i>Bituach Leumi — btl.gov.il</i>).</li>
+      <li><b>Petrol 95 prices:</b> Orders of the Fuel Administration of the government of Israel.</li>
+      <li><b>Fraud warnings:</b> Israel National Cyber Directorate (<i>Cyber Directorate</i>).</li>
+    </ul>
+  </div>
+
+  <h2>Contact us</h2>
+  <p style="font-size:14px;color:var(--muted)">Found an inaccuracy in a formula, a law has changed, or want to suggest a new calculator? Write to us via the <a href="contact.html" style="color:var(--green);font-weight:700">Контактов</a>.</p>
+</main>
+
+<footer>
+  <div class="shell">
+    Clear Finance in Israel · 2026 · An independent information portal
+  </div>
+</footer>
+</body>
+</html>
