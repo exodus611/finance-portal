@@ -811,3 +811,5 @@ html[data-theme="light"] .glass-chip b{color:#77500d}
 .sp-foot a{color:var(--gold);font-weight:700;text-decoration:none}
 .sp-foot a:hover{text-decoration:underline}
 @media(max-width:640px){.sp-card{padding:17px}.sp-only{display:none}.sp-ico{font-size:25px}}
+.fold-content .sp-card{border:0;background:none;box-shadow:none;padding:2px}
+.sp-section:has(> .wrap > .page-fold){padding:8px 0}

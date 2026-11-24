@@ -1278,31 +1278,37 @@ const SP_ABROAD = [
   { k:['швейцар','цюрих','женев','лозанн','switzerland','suisse','zurich','geneva','genève'], c:{ ru:'в Швейцарии', fr:'en Suisse', en:'in Switzerland' }, n:{ ru:'Швейцария', fr:'Suisse', en:'Switzerland' } },
   { k:['чехи','прага','czech','tchéquie','prague'], c:{ ru:'в Чехии', fr:'en Tchéquie', en:'in Czechia' }, n:{ ru:'Чехия', fr:'Tchéquie', en:'Czechia' } }
 ];
+function spHas(q, kw){
+  const esc = String(kw).toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp('(^|[^\\p{L}])' + esc, 'u').test(q);
+}
 function spFindAbroad(q){
   q = (q || '').toLowerCase();
   if (q.indexOf('израил') !== -1 || q.indexOf('israel') !== -1 || q.indexOf('israël') !== -1) return null;
-  for (const P of SP_ABROAD) for (const kw of P.k) if (q.indexOf(kw) !== -1) return P;
+  const IL = ['тель-авив','тель авив','иерусалим','хайф','беэр-шев','беэр шев','нетани','ашдод','ашкелон','ришон','петах-тиква','петах тиква','холон','бат-ям','бат ям','рамат-ган','бней-брак','эйлат','акко','назарет','нацерет','твери','цфат','герцли','раанан','кфар-саб','хадер','реховот','афула','кармиэль','модиин','tel aviv','jerusalem','haifa','netanya','ashdod','ashkelon','rishon','petah tikva','holon','bat yam','ramat gan','eilat','akko','acre','nazareth','tiberias','safed','herzliya','raanana','hadera','rehovot','tel-aviv','jérusalem','haïfa'];
+  for (const c of IL) if (spHas(q, c)) return null;
+  for (const P of SP_ABROAD) for (const kw of P.k) if (spHas(q, kw)) return P;
   return null;
 }
 const SP_CATS = [
   { c:'any', ico:'🌍', name:{ ru:'Любой / авто', fr:'Tous / auto', en:'Any / auto' }, k:[] },
   { c:'med', ico:'🩺', name:{ ru:'Врач / медицина', fr:'Médecin / santé', en:'Doctor / medical' },
-    k:['врач','доктор','хирург','стоматолог','дантист','ортодонт','дерматолог','гинеколог','кардиолог','невролог','терапевт','педиатр','офтальмолог','уролог','эндокринолог','онколог','психиатр','лор','отоларинголог','ортопед','гастроэнтеролог','ревматолог','аллерголог','нефролог','пульмонолог','акушер','психолог','психотерапевт','физиотерапевт','логопед','диетолог','клиник','больниц','doctor','dentist','surgeon','cardiologist','neurologist','pediatrician','dermatologist','gynecologist','psychologist','clinic','médecin','docteur','dentiste','chirurgien','cardiologue','neurologue','pédiatre','dermatologue','gynécologue','psychologue','clinique'] },
+    k:['врач','доктор','хирург','стоматолог','дантист','ортодонт','дерматолог','гинеколог','кардиолог','невролог','терапевт','педиатр','офтальмолог','уролог','эндокринолог','онколог','психиатр','лор','отоларинголог','ортопед','гастроэнтеролог','ревматолог','аллерголог','нефролог','пульмонолог','акушер','психолог','психотерапевт','физиотерапевт','логопед','диетолог','клиник','больниц','зубн','мрт','узи','doctor','dentist','surgeon','cardiologist','neurologist','pediatrician','dermatologist','gynecologist','psychologist','clinic','médecin','docteur','dentiste','chirurgien','cardiologue','neurologue','pédiatre','dermatologue','gynécologue','psychologue','clinique'] },
   { c:'law', ico:'⚖️', name:{ ru:'Адвокат / нотариус', fr:'Avocat / notaire', en:'Lawyer / notary' },
-    k:['адвокат','юрист','нотариус','патент','lawyer','attorney','notary','avocat','notaire','juriste'] },
+    k:['адвокат','юрист','нотариус','патент','суд','lawyer','attorney','notary','avocat','notaire','juriste'] },
   { c:'fin', ico:'💳', name:{ ru:'Налоги / пенсия / страховка', fr:'Impôts / pension / assurance', en:'Tax / pension / insurance' },
-    k:['бухгалтер','cpa','роэ хешбон','налоговый консульт','инвестиционн','страховой агент','пенсионный консультант','финансовый консультант','брокер','ипотечный консульт','accountant','tax advisor','insurance agent','financial advisor','broker','comptable','conseiller fiscal','agent d’assurance','conseiller financier','courtier'] },
+    k:['бухгалтер','cpa','роэ хешбон','налог','страхов','пенсион','инвестиционн','финансовый консультант','брокер','ипотечный консульт','accountant','tax advisor','insurance agent','financial advisor','broker','comptable','conseiller fiscal','agent d’assurance','conseiller financier','courtier'] },
   { c:'real', ico:'🏠', name:{ ru:'Маклер / оценщик', fr:'Agent immobilier / expert', en:'Real-estate agent / appraiser' },
-    k:['маклер','риелтор','риэлтор','риэлтер','риелт','оценщик','недвижимост','метавех','шамаи','real estate','realtor','appraiser','immobilier','agent immobilier','expert immobilier'] },
+    k:['маклер','риелтор','риэлтор','риэлтер','риелт','оценщик','оценк','квартир','недвижимост','метавех','шамаи','real estate','realtor','appraiser','apartment','immobilier','agent immobilier','expert immobilier','appartement'] },
   { c:'biz', ico:'🔧', name:{ ru:'Мастер / сервис / фирма', fr:'Artisan / service / entreprise', en:'Handyman / service / company' },
-    k:['мастер','сервис','ремонт','слесарь','электрик','сантехник','организаци','фирм','компани','подрядчик','няня','репетитор','переводчик','ателье','клининг','handyman','repair','plumber','electrician','cleaning','tutor','nanny','plombier','électricien','réparation','ménage','nounou'] },
+    k:['мастер','сервис','ремонт','слесарь','электрик','сантехник','организаци','фирм','компани','подрядчик','няня','репетитор','переводчик','ателье','клининг','парикмахер','косметолог','маникюр','педикюр','грумер','массажист','фотограф','ветеринар','диджей','ведущ','handyman','repair','plumber','electrician','cleaning','tutor','nanny','hairdresser','barber','photographer','veterinarian','groomer','plombier','électricien','réparation','ménage','nounou','coiffeur','photographe','vétérinaire','toiletteur'] },
   { c:'shop', ico:'🛒', name:{ ru:'Магазин / товар', fr:'Magasin / produit', en:'Shop / product' },
     k:['магазин','купить','товар','цветочн','салон','кафе','ресторан','отель','аптек','бутик','рынок','супермаркет','shop','store','buy','cafe','restaurant','hotel','pharmacy','magasin','acheter','café','hôtel','pharmacie'] }
 ];
 let spManualCat = null;
 function spDetectCat(q){
   q = ' ' + (q || '').toLowerCase() + ' ';
-  for (let i = 1; i < SP_CATS.length; i++) for (const kw of SP_CATS[i].k) if (q.indexOf(kw) !== -1) return SP_CATS[i].c;
+  for (let i = 1; i < SP_CATS.length; i++) for (const kw of SP_CATS[i].k) if (spHas(q, kw)) return SP_CATS[i].c;
   return 'any';
 }
 function spCurrentCat(){
