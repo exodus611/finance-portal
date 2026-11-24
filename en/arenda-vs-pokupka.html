@@ -109,7 +109,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 <link rel="stylesheet" href="../polish.css">
 </head>
 <body><noscript><div style="background:#fff6f4;border-bottom:2px solid #b84b3e;color:#b84b3e;text-align:center;padding:12px;font-family:sans-serif;font-size:13px">For calculators to work, JavaScript must be enabled in the browser.</div></noscript>
-<header class="top"><div class="shell topbar"><div class="logo"><span class="mark">⚖️</span><span>Clear finances in Israel</span></div><a class="back" href="index.html">← Home</a><select onchange="if(this.value)location.href=this.value" style="font-size:11.5px;font-weight:700;color:var(--green);border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:#fff;margin-inline-start:8px;cursor:pointer"><option value="">All calculators ▾</option><option value="salary.html">💰 Salary</option><option value="mashkanta.html">🏠 Mortgage</option><option value="auto.html">🚗 Car</option><option value="kredit.html">💳 Credit</option><option value="mihzur-mashkanta.html">🔄 Refinancing</option><option value="siluk-mukdam.html">💎 Redemption vs investment</option><option value="mas-rehisha.html">🏛️ Mas rehisha</option><option value="mas-shevach.html">📉 Mas Shevah</option><option value="pension-gap.html">🧓 Pension gap</option><option value="keren-hishtalmut.html">🎓 Skills Development Fund</option><option value="nekudot-zikuy.html">🎯 Nekudot zikui</option><option value="valuta.html">💱 Exchange rates</option><option value="pikadon-vs-keren.html">🏦 Deposit vs Severance fund</option><option value="tablo.html">📊 Economy today</option><option value="benzin.html">⛽ Gasoline price</option><option value="arnona.html">🏛️ Discount on Arnona</option><option value="dira.html">🏗️ Dira be-chanaha</option><option value="avtala.html">📋 Dmei avtala</option>
+<header class="top"><div class="shell topbar"><div class="logo"><span class="mark">⚖️</span><span>Clear finances in Israel</span></div><a class="back" href="index.html">← Home</a><select onchange="if(this.value)location.href=this.value" style="font-size:11.5px;font-weight:700;color:var(--green);border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:#fff;margin-inline-start:8px;cursor:pointer"><option value="">All calculators ▾</option><option value="salary.html">💰 Salary</option><option value="mashkanta.html">🏠 Mortgage</option><option value="auto.html">🚗 Car</option><option value="kredit.html">💳 Credit</option><option value="mihzur-mashkanta.html">🔄 Refinancing</option><option value="siluk-mukdam.html">💎 Redemption vs investment</option><option value="mas-rehisha.html">🏛️ Mas rehisha</option><option value="mas-shevach.html">📉 Mas Shevah</option><option value="pension-gap.html">🧓 Pension gap</option><option value="keren-hishtalmut.html">🎓 Skills Development Fund</option><option value="nekudot-zikuy.html">🎯 Nekudot zikui</option><option value="valuta.html">💱 Exchange rates</option><option value="pikadon-vs-keren.html">🏦 Deposit vs Money market fund</option><option value="tablo.html">📊 Economy today</option><option value="benzin.html">⛽ Gasoline price</option><option value="arnona.html">🏛️ Discount on Arnona</option><option value="dira.html">🏗️ Dira be-chanaha</option><option value="avtala.html">📋 Dmei avtala</option>
 <option value="havraa.html">🏖️ Wellness</option><option value="hisahon-yeled.html">👶 Savings for a child</option><option value="nko.html">🤝 Charitable NGOs</option><option value="slovar.html">📖 Glossary of terms</option></select></div></header>
 <section class="hero shell"><div class="eyebrow">Rent or purchase</div><h1>Rent and invest, or buy with a mortgage?</h1><p>We compare not payments, but how much capital will accumulate in N years in each of the two scenarios.</p><p style="margin-top:10px"><span style="background:#eaf6f0;color:var(--green);border-radius:20px;padding:5px 12px;font-size:11.5px;font-weight:700">✓ The model is relevant for 2026</span></p></section>
 
@@ -283,9 +283,9 @@ function calc(){
   const banner = $('winnerBanner');
   const diff = Math.abs(r.buyEquity - r.rentEquity);
   if(r.buyEquity > r.rentEquity){
-    banner.innerHTML = `After 0 years, <b>purchase</b> is more profitable than renting by 1 ₪ of accumulated capital`;
+    banner.innerHTML = `After ${horizon} years, <b>purchase</b> is more profitable than renting by ${fmt(diff)} ₪ of accumulated capital`;
   } else {
-    banner.innerHTML = `After 0 years, <b>rent with investment</b> is more profitable than buying for 1 ₪ of accumulated capital`;
+    banner.innerHTML = `After ${horizon} years, <b>rent with investment</b> is more profitable than buying by ${fmt(diff)} ₪ of accumulated capital`;
   }
 
   const offsets = [5,10,15,20,25,30];
@@ -300,7 +300,7 @@ function calc(){
     lastLeader = leader;
     const tr = document.createElement('tr');
     if(y===horizon) tr.className='crossover';
-    tr.innerHTML = `<td>0 years</td><td>${fmt(rr.buyEquity)} ₪</td><td>${fmt(rr.rentEquity)} ₪</td><td>${leader}</td>`;
+    tr.innerHTML = `<td>${y} years</td><td>${fmt(rr.buyEquity)} ₪</td><td>${fmt(rr.rentEquity)} ₪</td><td>${leader}</td>`;
     tbody.appendChild(tr);
     chartPoints.push({y, buy:rr.buyEquity, rent:rr.rentEquity});
   });
@@ -316,7 +316,7 @@ function runAndShowModal(){
   showResultModal(
     winner,
     fmt(diff)+' ₪',
-    `Difference in accumulated capital after 0 years`,
+    `Difference in accumulated capital after ${horizon} years`,
     [['Capital upon purchase', fmt(r.buyEquity)+' ₪'], ['Capital on lease', fmt(r.rentEquity)+' ₪']],
     '📊 See by year',
     ()=>setActiveView('result')

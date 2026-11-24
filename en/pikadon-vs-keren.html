@@ -4,15 +4,15 @@
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta name="theme-color" content="#08775a">
-<title>Deposit or Severance fund - which is more profitable: calculator 2026</title>
+<title>Deposit or Money market fund - which is more profitable: calculator 2026</title>
 <link rel="canonical" href="https://exodus611.github.io/finance-portal/en/pikadon-vs-keren.html">
 <link rel="alternate" hreflang="ru" href="https://exodus611.github.io/finance-portal/pikadon-vs-keren.html">
 <link rel="alternate" hreflang="en" href="https://exodus611.github.io/finance-portal/en/pikadon-vs-keren.html">
 <link rel="alternate" hreflang="x-default" href="https://exodus611.github.io/finance-portal/pikadon-vs-keren.html">
-<meta name="description" content="The bank gives 4.5%, and Severance fund 3.5% - which is actually more profitable? The calculator considers net, taking into account different taxes: 15% nominally in picadon versus 25% on real profit in the fund.">
+<meta name="description" content="The bank gives 4.5%, and Money market fund 3.5% - which is actually more profitable? The calculator considers net, taking into account different taxes: 15% nominally in picadon versus 25% on real profit in the fund.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Deposit or Severance fund - which is actually more profitable?">
+<meta property="og:title" content="Deposit or Money market fund - which is actually more profitable?">
 <meta property="og:description" content="The bank promises 4.5%, the fund 3.5% - but the opposite may come out clean. We assume with a tax of 15% nominal versus 25% real and taking into account inflation.">
 <meta property="og:url" content="https://exodus611.github.io/finance-portal/pikadon-vs-keren.html">
 <meta property="og:image" content="https://exodus611.github.io/finance-portal/og-cover.png">
@@ -125,7 +125,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 <main>
 <section class="hero shell">
 <div class="eyebrow">Where to put free money</div>
-<h1>Deposit or Severance fund (<span lang="he" dir="rtl">פיקדון או קרן כספית</span>)?</h1>
+<h1>Deposit or Money market fund (<span lang="he" dir="rtl">פיקדון או קרן כספית</span>)?</h1>
 <p>The bank says 4.5%, the fund - 3.5%, and it seems that the choice is obvious. But they calculate tax differently, and the net result may be reversed. Do the math on your numbers.</p>
 </section>
 
@@ -146,7 +146,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 <div class="grid">
 <div class="field"><label>Picadon rate (annual)</label><div class="wrap"><input type="number" id="depRate" value="4.5" min="0" max="30" step="0.05"><span>%</span></div>
 <p class="hint">What the bank promises for a closed deposit</p></div>
-<div class="field"><label>Profitability of Severance fund (annual)</label><div class="wrap"><input type="number" id="fundRate" value="3.5" min="0" max="30" step="0.05"><span>%</span></div>
+<div class="field"><label>Profitability of Money market fund (annual)</label><div class="wrap"><input type="number" id="fundRate" value="3.5" min="0" max="30" step="0.05"><span>%</span></div>
 <p class="hint" id="fundHint">Not guaranteed. Usually follows the Bank of Israel rate</p></div>
 <div class="field"><label>Fund commission (dmei nikhul)</label><div class="wrap"><input type="number" id="fee" value="0.15" min="0" max="3" step="0.01"><span>%</span></div>
 <p class="hint">In Keren Caspit it is usually 0.05–0.25% per year. Deposit has no commission</p></div>
@@ -179,7 +179,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 
 <div class="opt" id="optFund">
 <div class="tag" id="tagFund" style="display:none">More profitable</div>
-<h3>Severance fund</h3><span class="he" lang="he" dir="rtl">קרן כספית</span>
+<h3>Money market fund</h3><span class="he" lang="he" dir="rtl">קרן כספית</span>
 <div class="net" id="fundNet">—</div>
 <div class="netlbl">in hand after tax</div>
 <div class="rows">
@@ -192,7 +192,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 
 <div class="chart">
 <div class="bar-row"><div class="bar-name">Deposit</div><div class="bar-track"><div class="bar-fill" id="barDep" style="background:linear-gradient(90deg,#30779a,#5b9cc0);width:0"></div><span class="bar-val" id="barDepV"></span></div></div>
-<div class="bar-row"><div class="bar-name">Severance fund</div><div class="bar-track"><div class="bar-fill" id="barFund" style="background:linear-gradient(90deg,#0d9671,#08775a);width:0"></div><span class="bar-val" id="barFundV"></span></div></div>
+<div class="bar-row"><div class="bar-name">Money market fund</div><div class="bar-track"><div class="bar-fill" id="barFund" style="background:linear-gradient(90deg,#0d9671,#08775a);width:0"></div><span class="bar-val" id="barFundV"></span></div></div>
 </div>
 
 <div class="flip" id="flip"></div>
@@ -204,7 +204,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 <div class="title"><span class="num">4</span><div><h2>The main thing is what is hidden behind the percentages</h2><p>Three things that make the 4.5 vs 3.5 comparison mean nothing on its own</p></div></div>
 
 <details open><summary>The tax is calculated from a different base - this is the whole trick</summary><div class="detail">
-Tax in picadon <b>15% is taken from the entire accrued amount</b>, regardless of inflation. In Severance fund the rate is higher - <b>25%</b>, but they take it <b>only from real profit</b>, that is, from what remains over the growth of the consumer price index (<span class="term" lang="he" dir="rtl">מדד המחירים לצרכן</span>).<br><br>
+Tax in picadon <b>15% is taken from the entire accrued amount</b>, regardless of inflation. In Money market fund the rate is higher - <b>25%</b>, but they take it <b>only from real profit</b>, that is, from what remains over the growth of the consumer price index (<span class="term" lang="he" dir="rtl">מדד המחירים לצרכן</span>).<br><br>
 Hence the rule: the higher the inflation, the more the fund wins. With inflation equal to the fund's return, the fund's tax is completely zeroed out - there is nothing to pay. And Deposit continues to pay 15% of each shekel of interest, even if this interest simply compensated for the rise in cost of living.<br><br>
 <b>The opposite situation is deflation.</b> If the index did not rise during the period, but fell, the benefit does not turn into a bonus: the law in this case considers all nominal profit to be real and taxes it at the same 25%. That is, a negative madad does not reduce the tax base below what is actually earned. The calculator takes this into account - try putting inflation with a minus sign.
 </div></details>
@@ -215,8 +215,8 @@ Keren Caspit is sold on any trading day, money usually arrives within one busine
 </div></details>
 
 <details><summary>Guarantee vs. Appraisal: An Important Difference in Risk</summary><div class="detail">
-Deposit rate <b>fixed by agreement</b> - the bank is obliged to pay it. Yield Severance fund <b>not guaranteed</b>: This is a valuation based on the fund holding short government securities (<span class="term" lang="he" dir="rtl">מק״מ</span>) and deposits. If the Bank of Israel lowers the rate, the fund's profitability will go down along with it - and your already opened picadon will retain its interest.<br><br>
-The opposite is also true: if the rate rises, the fund will react quickly, and the picadon will remain on the old conditions until the end of the term. The risk of losing an investment in Severance fund is extremely low, but formally it is not zero and the deposit is not insured by the state like a bank deposit.
+Deposit rate <b>fixed by agreement</b> - the bank is obliged to pay it. Yield Money market fund <b>not guaranteed</b>: This is a valuation based on the fund holding short government securities (<span class="term" lang="he" dir="rtl">מק״מ</span>) and deposits. If the Bank of Israel lowers the rate, the fund's profitability will go down along with it - and your already opened picadon will retain its interest.<br><br>
+The opposite is also true: if the rate rises, the fund will react quickly, and the picadon will remain on the old conditions until the end of the term. The risk of losing an investment in Money market fund is extremely low, but formally it is not zero and the deposit is not insured by the state like a bank deposit.
 </div></details>
 
 <details><summary>US citizens - special caution</summary><div class="detail">
@@ -224,7 +224,7 @@ For US tax residents, Israeli funds may be subject to PFIC treatment with heavy 
 </div></details>
 
 <div class="cmp-wrap"><table class="cmp">
-<tr><th>What are we comparing?</th><th>Deposit <span lang="he" dir="rtl">פיקדון</span></th><th>Severance fund <span lang="he" dir="rtl">קרן כספית</span></th></tr>
+<tr><th>What are we comparing?</th><th>Deposit <span lang="he" dir="rtl">פיקדון</span></th><th>Money market fund <span lang="he" dir="rtl">קרן כספית</span></th></tr>
 <tr><td>Tax</td><td>15% of all profits</td><td>25%, but only on profits above inflation</td></tr>
 <tr><td>Profitability</td><td>Fixed in the contract</td><td>Not guaranteed, follows the Bank of Israel rate</td></tr>
 <tr><td>Commission</td><td>none</td><td>0.05–0.25% per year</td></tr>
@@ -237,9 +237,9 @@ For US tax residents, Israeli funds may be subject to PFIC treatment with heavy 
 
 <div class="disclaimer"><b>This is an estimate and not a recommendation.</b> Just so you don't get a false sense of precision, here's what the model simplifies.<br><br>
 <b>We calculate using compound interest</b> with annual capitalization, and a specific bank can charge differently - monthly, by “steps” or at a promotional rate only for the first period. Ask your bank for the actual formula.<br><br>
-<b>Both rates are considered constant for the entire term.</b> In real life, the Severance fund yield follows the Bank of Israel rate and changes even tomorrow, and inflation for the year rarely coincides with the forecast. On the contrary, your picadon bet is fixed - this is the difference in risk. Therefore, look not only at the result, but at the “breaking point” line: it shows how stable the conclusion is.<br><br>
+<b>Both rates are considered constant for the entire term.</b> In real life, the Money market fund yield follows the Bank of Israel rate and changes even tomorrow, and inflation for the year rarely coincides with the forecast. On the contrary, your picadon bet is fixed - this is the difference in risk. Therefore, look not only at the result, but at the “breaking point” line: it shows how stable the conclusion is.<br><br>
 <b>Fund tax is paid upon sale</b>, and not annually - over long periods this gives a small additional benefit due to deferment, which the model does not consider. Also not taken into account are possible commissions on your brokerage account, the offset of losses against profits, and special tax benefits (for example, for low-income seniors under Section 125D).<br><br>
-Severance fund's profitability is not guaranteed. Before making a decision, check the actual conditions at the bank and the parameters of a particular fund - and if the amount is large, it makes sense to ask an accountant.</div>
+Money market fund's profitability is not guaranteed. Before making a decision, check the actual conditions at the bank and the parameters of a particular fund - and if the amount is large, it makes sense to ask an accountant.</div>
 
 <p style="text-align:center;font-size:13px;margin:0 0 26px"><a href="valuta.html" style="color:var(--green);font-weight:800;text-decoration:none">Exchange rates →</a> &nbsp;·&nbsp; <a href="tablo.html" style="color:var(--green);font-weight:800;text-decoration:none">Bet and madad today →</a> &nbsp;·&nbsp; <a href="slovar.html" style="color:var(--green);font-weight:800;text-decoration:none">Glossary of terms →</a></p>
 
@@ -247,12 +247,12 @@ Severance fund's profitability is not guaranteed. Before making a decision, chec
 </main>
 
 <nav id="rel-links" aria-label="Related calculators" style="width:min(760px,calc(100% - 28px));margin:8px auto 0;padding:16px 0"><div style="font-size:12px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Read also</div><a href="keren-hishtalmut.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Keren Ishtalmut</a><a href="hisahon-yeled.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Savings for a child</a><a href="siluk-mukdam.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Early repayment</a><a href="valuta.html" style="display:inline-block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--green);text-decoration:none;margin:0 6px 8px 0">Exchange rates</a></nav>
-<footer class="shell footer">Clear finance in Israel · comparison of Deposit and Severance fund · information project, not investment advice · <a href="contact.html" style="color:var(--green);font-weight:800;text-decoration:none">Write to us</a> · <a href="about.html" style="color:var(--green);font-weight:800;text-decoration:none">About the project</a></footer>
+<footer class="shell footer">Clear finance in Israel · comparison of Deposit and Money market fund · information project, not investment advice · <a href="contact.html" style="color:var(--green);font-weight:800;text-decoration:none">Write to us</a> · <a href="about.html" style="color:var(--green);font-weight:800;text-decoration:none">About the project</a></footer>
 
 <script>
 (function(){
   var DEP_TAX=0.15;   // picadon: 15% from nominal profit
-  var FUND_TAX=0.25;  // Severance fund: 25% с РЕАЛЬНОЙ прибыли (сверх мадада)
+  var FUND_TAX=0.25;  // Money market fund: 25% с РЕАЛЬНОЙ прибыли (сверх мадада)
 
   function el(id){return document.getElementById(id)}
   function num(id){var v=parseFloat(el(id).value);return isNaN(v)?0:v}
@@ -321,7 +321,7 @@ Severance fund's profitability is not guaranteed. Before making a decision, chec
       el('who').textContent='Almost equally';
       el('diff').textContent='The difference is smaller'+money(Math.abs(diff))+'— it’s not mathematics that decides, but convenience: whether you need money ahead of schedule.';
     } else {
-      el('who').textContent=depWins?'More profitable picadon in a jar':'More profitable Severance fund';
+      el('who').textContent=depWins?'More profitable picadon in a jar':'More profitable Money market fund';
       el('diff').textContent='Difference for'+months+'month:'+money(Math.abs(diff))+
         ' ('+pct(Math.abs(depEff-fundEff))+'per annum)';
     }
@@ -350,19 +350,19 @@ Severance fund's profitability is not guaranteed. Before making a decision, chec
     } else if(flipAt!==null){
       flipEl.style.display='block';
       flipEl.innerHTML='<b>Breaking point.</b> With inflation around <b>'+pct(flipAt)+'</b> per year the result is compared,'+
-        'and higher - it becomes more profitable'+(depWins?'Severance fund':'picadon')+'. '+
+        'and higher - it becomes more profitable'+(depWins?'Money market fund':'picadon')+'. '+
         'Now you have'+pct(infl*100)+'.';
     } else {
       flipEl.style.display='block';
       flipEl.innerHTML='<b>The conclusion is stable.</b> Within a reasonable inflation range (0–12%), the winner does not change:'+
-        (depWins?'picadon remains more profitable':'Severance fund remains more profitable')+'.';
+        (depWins?'picadon remains more profitable':'Money market fund remains more profitable')+'.';
     }
 
     // Пояснение про реальную покупательную способность
     var realDep=depNet-inflAmount, realFund=fundNet-inflAmount;
     el('realNote').innerHTML='<b>What about purchasing power?</b> Inflation over this period “eats up” approximately'+
       money(inflAmount)+'from your amount. Taking it into account, the picadon leaves'+
-      (realDep>=0?'plus':'minus')+money(Math.abs(realDep))+', Severance fund -'+
+      (realDep>=0?'plus':'minus')+money(Math.abs(realDep))+', Money market fund -'+
       (realFund>=0?'plus':'minus')+money(Math.abs(realFund))+
       '. If both values ​​are negative, money loses real value in both options - the only question is where it loses less.';
   }
@@ -378,7 +378,7 @@ Severance fund's profitability is not guaranteed. Before making a decision, chec
       var boi=j.boi.rate*100;
       // Керен каспит обычно идёт около ставки Банка Израиля.
       el('fundRate').value=(Math.round(boi*100)/100);
-      el('fundHint').textContent='The current Bank of Israel rate is substituted'+pct(boi)+'— Severance fund usually stays near her';
+      el('fundHint').textContent='The current Bank of Israel rate is substituted'+pct(boi)+'— Money market fund usually stays near her';
       note.push('Bank of Israel rate'+pct(boi));
     }
     if(j.cpi&&typeof j.cpi.yoy==='number'){
