@@ -839,15 +839,17 @@ const SCENARIOS = {
 };
 // HOT badge is scarce by design: only the four most popular calculators.
 const HOT_BADGE = new Set([...CALCS].sort((a,b) => b.hot - a.hot).slice(0,4).map(c => c.id));
-let calcExpanded = false;
-function syncCalcCollapse(){
-  const grid = $('#calcGrid'), btn = $('#calcMoreBtn'), lbl = $('#calcMoreLbl');
-  if (!grid || !btn) return;
-  const filtered = curCat !== 'all' || curScenario !== '' || curQuery.trim() !== '';
-  const many = grid.children.length > 8;
-  btn.parentElement.hidden = filtered || !many;
-  grid.classList.toggle('collapsed', !calcExpanded && !filtered && many);
-  if (lbl) lbl.textContent = L(calcExpanded ? 'calcs_less' : 'calcs_more');
+// Калькуляторы систематизированы аккордеонами по категориям: открыто только
+// «Популярное», остальное сложено — без длинной простыни на главной.
+const calcOpen = new Set(['hot']);
+function bindCalcAccs(box){
+  if (!box || box.dataset.bound) return;
+  box.dataset.bound = '1';
+  box.addEventListener('toggle', e => {
+    const d = e.target.closest && e.target.closest('details[data-cat]');
+    if (!d) return;
+    if (d.open) calcOpen.add(d.dataset.cat); else calcOpen.delete(d.dataset.cat);
+  }, true);
 }
 function renderChips(){
   const el = $('#filterChips'); if (!el) return;
@@ -879,24 +881,38 @@ function bindChips(){
   });
 }
 function renderCalcs(){
-  const grid = $('#calcGrid'), empty = $('#emptyNote'); if (!grid) return;
+  const box = $('#calcAccs'), empty = $('#emptyNote'); if (!box) return;
+  bindCalcAccs(box);
   const q = curQuery.trim().toLowerCase();
-  const list = CALCS.filter(c => {
-    const okCat = curCat === 'all' || (curCat === 'hot' ? c.hot >= 85 : c.cat === curCat);
-    const okScenario = !curScenario || SCENARIOS[curScenario].ids.includes(c.id);
-    const okQ = !q || matchCalc(c, q);
-    return okCat && okScenario && okQ;
-  }).sort((a,b) => b.hot - a.hot);
-  grid.innerHTML = list.map(c => `
+  const filtering = !!q || !!curScenario;
+  const match = c => (!curScenario || SCENARIOS[curScenario].ids.includes(c.id)) && (!q || matchCalc(c, q));
+  const card = c => `
     <a class="calc-card reveal" href="${u(c.id + '.html')}">
       ${HOT_BADGE.has(c.id) ? '<span class="hot-tag" style="position:absolute;top:14px;right:14px">HOT</span>' : ''}
       <span class="calc-icon">${ico(c.icon, 24)}</span>
       <span class="calc-title">${tx(c.t)}</span>
       <span class="calc-desc">${tx(c.d)}</span>
       <span class="calc-go">${L('calc_go')}</span>
-    </a>`).join('');
-  if (empty) empty.hidden = list.length > 0;
-  syncCalcCollapse();
+    </a>`;
+  // Порядок полок: сначала зарплата и жильё (самое ходовое), потом пенсия,
+  // авто/кредиты, экономика и справочники. «Популярное» — витрина сверху,
+  // при поиске/сценарии прячется, чтобы карточки не двоились.
+  const GROUPS = ['hot','salary','home','pension','auto','econ','guide'];
+  let total = 0;
+  box.innerHTML = GROUPS.map(k => {
+    if (k === 'hot' && filtering) return '';
+    const items = CALCS.filter(c => (k === 'hot' ? c.hot >= 85 : c.cat === k) && match(c))
+      .sort((a,b) => b.hot - a.hot);
+    const shown = k === 'hot' ? items.slice(0, 8) : items;
+    if (!shown.length) return '';
+    total += shown.length;
+    const open = filtering || calcOpen.has(k);
+    return `<details class="sec-acc calc-acc" data-cat="${k}"${open ? ' open' : ''}>
+      <summary>${ico(CATS[k].i, 18)}<span>${tx(CATS[k].l)}</span><span class="acc-badge">${shown.length}</span><span class="acc-chev">${ico('chevron', 16)}</span></summary>
+      <div class="sec-acc-in"><div class="calc-grid">${shown.map(card).join('')}</div></div>
+    </details>`;
+  }).join('');
+  if (empty) empty.hidden = total > 0;
   const cc = $('#calcCount');
   if (cc) cc.innerHTML = L('calc_count').replace('{n}', CALCS.length);
   observeReveals();
@@ -1584,13 +1600,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     document.addEventListener('click', e => { if (!e.target.closest('.hero-search')) closeHero(); });
   }
-  const cmb = $('#calcMoreBtn');
-  if (cmb) cmb.addEventListener('click', () => {
-    calcExpanded = !calcExpanded;
-    cmb.classList.toggle('open', calcExpanded);
-    syncCalcCollapse();
-    observeReveals();
-  });
   document.addEventListener('mousemove', e => {
     const card = e.target.closest('.calc-card'); if (!card) return;
     const r = card.getBoundingClientRect();

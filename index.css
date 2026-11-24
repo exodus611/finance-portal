@@ -274,6 +274,8 @@ html[data-theme="light"] .dash-chart{background:rgba(15,30,60,.05)}
 .sec-acc[open] .acc-chev{transform:rotate(180deg)}
 .sec-acc[open]>summary{border-bottom:1px solid var(--line)}
 .sec-acc .sec-acc-in{padding-top:16px}
+.calc-acc{margin:0 0 12px}
+.calc-acc .sec-acc-in{padding:16px}
 .acc-flat{background:transparent;border:none;border-radius:0}
 .acc-flat>summary{padding:12px 2px;font-size:14.5px}
 .acc-flat[open]>summary{border-bottom:1px solid var(--line)}
