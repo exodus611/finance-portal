@@ -1,6 +1,11 @@
 {
  "_comment": "EN/FR translations for scams.json warnings (t=title, s=summary, n=what to notice), keyed by warning id; todo_en/todo_fr translate what_not_to_do lists keyed by the joined Russian list. New bot warnings fall back to Russian until translated. Maintained manually; coverage guarded by scripts/test_cyber.py.",
  "en": {
+  "448": {
+   "t": "Israel's National Cyber Directorate warns of fake messages posing as the police",
+   "s": "The Israel National Cyber Directorate warns of phishing messages that impersonate the police and demand payment of a non-existent traffic fine via a link. The scammers threaten additional fines to make the victim act quickly.",
+   "n": "Red flags: the message claims to be from the Israel Police but contains a payment link and threatens extra fines — official bodies do not send such notices via random messages with links. A report number in the message does not prove authenticity — it can be invented or copied. Pressure to pay urgently is a classic scammer trick to stop you checking. The link leads not to the official gov.il site but to a third-party resource. Personal data, card details or verification codes are also requested, which is never required when paying through the official portal."
+  },
   "447": {
    "t": "Israel's National Cyber Directorate warns of a malicious app posing as the Tax Authority",
    "s": "Scammers send messages with a link to a fake site imitating Google Play, offering a “Tax Authority” Android app. Once installed and granted permissions, it can give attackers access to messages, verification codes, the camera, and remote control of the device.",
@@ -308,6 +313,11 @@
   }
  },
  "fr": {
+  "448": {
+   "t": "La Direction nationale de la cybersécurité met en garde contre de faux messages se faisant passer pour la police",
+   "s": "La Direction nationale de la cybersécurité d’Israël met en garde contre des messages de phishing qui se font passer pour la police et exigent le paiement par lien d’une amende routière inexistante. Les escrocs menacent d’amendes supplémentaires pour pousser la victime à agir vite.",
+   "n": "Signaux d’alerte : le message prétend venir de la police israélienne mais contient un lien de paiement et menace d’amendes supplémentaires — les organismes officiels n’envoient pas de telles notifications par messages aléatoires avec liens. Un numéro de rapport dans le message ne prouve pas son authenticité — il peut être inventé ou copié. La pression à payer en urgence est un classique des escrocs pour empêcher toute vérification. Le lien mène non pas au site officiel gov.il mais à un site tiers. Des données personnelles, de carte ou des codes de confirmation sont aussi demandés, ce qui n’est jamais requis pour payer via le portail officiel."
+  },
   "447": {
    "t": "La Direction nationale de la cybersécurité met en garde contre une application malveillante se faisant passer pour l'Autorité fiscale",
    "s": "Des escrocs envoient des messages avec un lien vers un faux site imitant Google Play, proposant une application « Autorité fiscale » pour Android. Une fois installée et autorisée, elle peut donner accès aux messages, codes de confirmation, à la caméra et au contrôle à distance de l'appareil.",
@@ -633,10 +643,10 @@
    "If genuinely in doubt — contact 119 instead of handling it yourself"
   ],
   "Не переходить по ссылкам и не открывать вложения из подозрительных сообщений\nНе сообщать пароли, коды подтверждения или данные карты по телефону/в сообщении\nПроверять любые начисления и требования оплаты напрямую через официальный сайт или приложение\nПри подозрении на мошенничество — обратиться на горячую линию 119 Национального управления кибербезопасности": [
-   "Do not follow links or open attachments from suspicious messages",
-   "Do not share passwords, confirmation codes or card data by phone/message",
-   "Check any charges and payment demands directly via the official site or app",
-   "If you suspect fraud — call the National Cyber Directorate hotline 119"
+   "Do not follow links or open attachments in suspicious messages",
+   "Do not share passwords, verification codes or card details by phone or in a message",
+   "Check any charges and payment demands directly via the official website or app",
+   "If you suspect fraud, contact the National Cyber Directorate hotline at 119"
   ],
   "Не переходить по ссылке в SMS о «неудачной доставке», если вы не ждали посылку\nПроверять статус доставки только на официальном сайте/в приложении Почты Израиля напрямую\nВнимательно проверять точный адрес сайта перед тем, как что-либо вводить": [
    "Do not follow the link in an SMS about a “failed delivery” if you were not expecting a parcel",
@@ -683,10 +693,10 @@
    "En cas de doute réel — contactez le 119 au lieu de gérer seul"
   ],
   "Не переходить по ссылкам и не открывать вложения из подозрительных сообщений\nНе сообщать пароли, коды подтверждения или данные карты по телефону/в сообщении\nПроверять любые начисления и требования оплаты напрямую через официальный сайт или приложение\nПри подозрении на мошенничество — обратиться на горячую линию 119 Национального управления кибербезопасности": [
-   "Ne suivez pas les liens et n'ouvrez pas les pièces jointes de messages suspects",
-   "Ne communiquez jamais mots de passe, codes de confirmation ou données de carte par téléphone/message",
-   "Vérifiez toute facturation ou demande de paiement directement sur le site ou l'application officielle",
-   "En cas de suspicion de fraude — appelez la hotline 119 de la Direction nationale de la cybersécurité"
+   "Ne cliquez pas sur les liens et n’ouvrez pas les pièces jointes de messages suspects",
+   "Ne communiquez jamais mots de passe, codes de confirmation ou données de carte par téléphone ou par message",
+   "Vérifiez tout débit et toute demande de paiement directement sur le site ou l’application officiels",
+   "En cas de soupçon de fraude, contactez la hotline 119 de la Direction nationale de la cybersécurité"
   ],
   "Не переходить по ссылке в SMS о «неудачной доставке», если вы не ждали посылку\nПроверять статус доставки только на официальном сайте/в приложении Почты Израиля напрямую\nВнимательно проверять точный адрес сайта перед тем, как что-либо вводить": [
    "Ne suivez pas le lien d'un SMS de « livraison échouée » si vous n'attendiez pas de colis",
