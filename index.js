@@ -89,17 +89,17 @@ const I18N = {
   hero_unavailable: { ru:'Дата проверки недоступна · показаны сохранённые данные', fr:'Date de vérification indisponible · données enregistrées', en:'Check date unavailable · showing saved data' },
   cyber_alert_new: { ru:'Киберщит: новое предупреждение', fr:'CyberBouclier : nouvelle alerte', en:'Cyber Shield: new warning' },
   cyber_alert_close: { ru:'Закрыть', fr:'Fermer', en:'Close' },
-  sp_h: { ru:'Smart Prompt — умный запрос для поиска специалиста', fr:'Smart Prompt — demande intelligente pour trouver un spécialiste', en:'Smart Prompt — a smart request to find a specialist' },
-  sp_s: { ru:'Опишите, кто и где нужен, — соберём точный запрос под специальность и страну. Вставьте его в свою нейросеть (ChatGPT, Gemini, Claude): она найдёт варианты и проверит лицензию по официальным реестрам.', fr:'Décrivez qui vous cherchez et où — nous composons une demande précise selon la spécialité et le pays. Collez-la dans votre IA (ChatGPT, Gemini, Claude) : elle trouvera des options et vérifiera la licence dans les registres officiels.', en:'Describe who you need and where — we will build a precise request for that specialty and country. Paste it into your AI (ChatGPT, Gemini, Claude): it will find options and verify the licence in official registries.' },
+  sp_h: { ru:'Smart Prompt для вашего ИИ — умный запрос для любого поиска', fr:'Smart Prompt pour votre IA — une demande intelligente pour toute recherche', en:'Smart Prompt for your AI — a smart request for any search' },
+  sp_s: { ru:'Напишите обычными словами, что нужно найти, — специалиста, товар, отель или поездку, работу, информацию или простое объяснение сложной темы. Соберём точный умный запрос и вставим его в вашу нейросеть (ChatGPT, Gemini, Claude): она найдёт варианты по реальным источникам, а для специалистов ещё и проверит лицензию по официальным реестрам.', fr:'Écrivez avec vos mots ce qu’il faut trouver — un spécialiste, un produit, un hôtel ou un voyage, un emploi, une information ou une explication simple d’un sujet compliqué. Nous composons une demande intelligente précise pour votre IA (ChatGPT, Gemini, Claude) : elle trouvera des options dans des sources réelles et, pour les spécialistes, vérifiera aussi la licence dans les registres officiels.', en:'Write in your own words what you need to find — a specialist, a product, a hotel or trip, a job, information, or a simple explanation of a hard topic. We will build a precise smart request for your AI (ChatGPT, Gemini, Claude): it will find options from real sources and, for specialists, also verify the licence in official registries.' },
   sp_only: { ru:'★ Только у нас', fr:'★ Exclusif', en:'★ Only here' },
-  sp_ph: { ru:'например: детский стоматолог в Тель-Авиве, русскоговорящий\nили: кардиолог в Берлине, Германия\nили: русскоязычный адвокат в Хайфе', fr:'ex. : dentiste pour enfants à Tel-Aviv, russophone\nou : cardiologue à Berlin, Allemagne\nou : avocat russophone à Haïfa', en:'e.g.: children’s dentist in Tel Aviv, Russian-speaking\nor: cardiologist in Paris, France\nor: Russian-speaking lawyer in Haifa' },
+  sp_ph: { ru:'например: детский стоматолог в Тель-Авиве, русскоговорящий\nили: недорогой отель во Флоренции на 3 ночи\nили: сравнить цены на телефон с хорошей камерой\nили: объясни простыми словами, что такое кэрен иштальмут', fr:'ex. : dentiste pour enfants à Tel-Aviv, russophone\nou : hôtel pas cher à Florence pour 3 nuits\nou : comparer les prix d’un téléphone avec un bon appareil photo\nou : explique simplement ce qu’est un keren hishtalmut', en:'e.g.: children’s dentist in Tel Aviv, Russian-speaking\nor: cheap hotel in Florence for 3 nights\nor: compare prices of a phone with a good camera\nor: explain in simple words what a keren hishtalmut is' },
   sp_copy: { ru:'🧠 Собрать и скопировать запрос', fr:'🧠 Composer et copier la demande', en:'🧠 Build & copy the request' },
   sp_clear: { ru:'Очистить поле', fr:'Effacer', en:'Clear the field' },
   sp_gemini: { ru:'Gemini — в 2 шага', fr:'Gemini — en 2 étapes', en:'Gemini — in 2 steps' },
   sp_step2: { ru:'✓ Скопировано! Теперь открыть Gemini', fr:'✓ Copié ! Ouvrir Gemini', en:'✓ Copied! Now open Gemini' },
   sp_copied: { ru:'✓ Запрос скопирован! Вставьте его в чат со своей нейросетью — кнопки ChatGPT и Claude выше подставят его сами, для Gemini нажмите её кнопку ещё раз.', fr:'✓ Demande copiée ! Collez-la dans votre IA — ChatGPT et Claude ci-dessus l’insèrent automatiquement ; pour Gemini, cliquez encore son bouton.', en:'✓ Request copied! Paste it into your AI chat — ChatGPT and Claude above insert it automatically; for Gemini, click its button once more.' },
-  sp_note: { ru:'⚠️ Отвечает ваша нейросеть, не наш сайт: обязательно проверяйте лицензию по ссылкам на официальные реестры из ответа. Раздел определяется автоматически по тексту, но можно выбрать вручную.', fr:'⚠️ C’est votre IA qui répond, pas notre site : vérifiez toujours la licence via les liens vers les registres officiels de la réponse. La rubrique est détectée automatiquement, ou choisie à la main.', en:'⚠️ Your AI answers, not our site: always verify the licence via the official-registry links in its answer. The section is detected automatically, or pick it manually.' },
-  sp_manual: { ru:'Или проверьте лицензию специалиста вручную по официальным реестрам →', fr:'Ou vérifiez la licence du spécialiste manuellement dans les registres officiels →', en:'Or verify a specialist’s licence manually in the official registries →' },
+  sp_note: { ru:'⚠️ Отвечает ваша нейросеть, не наш сайт: проверяйте факты, цены и лицензии по ссылкам на источники из ответа — нейросеть может ошибаться. Тип поиска определяется автоматически по тексту, но можно выбрать кнопками выше.', fr:'⚠️ C’est votre IA qui répond, pas notre site : vérifiez les faits, les prix et les licences via les liens sources de la réponse — une IA peut se tromper. Le type de recherche est détecté automatiquement, ou choisi avec les boutons ci-dessus.', en:'⚠️ Your AI answers, not our site: check facts, prices and licences via the source links in its answer — an AI can make mistakes. The search type is detected automatically, or pick it with the buttons above.' },
+  sp_manual: { ru:'А лицензию специалиста можно проверить вручную по официальным реестрам →', fr:'Et la licence d’un spécialiste peut être vérifiée manuellement dans les registres officiels →', en:'And a specialist’s licence can be checked manually in the official registries →' },
   hero_h1_a: { ru:'Финансы Израиля —', fr:'Les finances en Israël —', en:'Israel’s finances —' },
   hero_h1_b: { ru:'просто, честно, красиво', fr:'simples, honnêtes, élégantes', en:'simple, honest, beautiful' },
   hero_sub: { ru:'32 бесплатных калькулятора, живое табло экономики и словарь, который объясняет банкиров лучше банкиров. Считаем в вашем браузере — ничего не отправляем и не сохраняем.', fr:"32 calculateurs gratuits, un tableau de bord économique en direct et un glossaire qui explique les banquiers mieux qu'eux-mêmes. Tout se calcule dans votre navigateur — rien n'est envoyé ni stocké.", en:'32 free calculators, a live economic dashboard and a glossary that explains bankers better than bankers. Everything runs in your browser — nothing is sent or stored.' },
@@ -1255,7 +1255,7 @@ function renderCyberAlert(sj){
   } catch (e) { /* плашка не критична */ }
 }
 
-/* ════════ SMART PROMPT v3: умный запрос для поиска специалиста ════════ */
+/* ════════ SMART PROMPT v4: умный запрос для вашего ИИ под любой поиск ════════ */
 const SP_ABROAD = [
   { k:['герман','берлин','мюнхен','гамбург','франкфурт','кёльн','дюссельдорф','german','berlin','munich','hamburg','frankfurt','allemagne'], c:{ ru:'в Германии', fr:'en Allemagne', en:'in Germany' }, n:{ ru:'Германия', fr:'Allemagne', en:'Germany' } },
   { k:['великобритан','англи','лондон','манчестер','бирмингем','эдинбург','шотланд','britain','england','london','manchester','royaume-uni'], c:{ ru:'в Великобритании', fr:'au Royaume-Uni', en:'in the UK' }, n:{ ru:'Великобритания', fr:'Royaume-Uni', en:'UK' } },
@@ -1302,13 +1302,27 @@ const SP_CATS = [
     k:['маклер','риелтор','риэлтор','риэлтер','риелт','оценщик','оценк','квартир','недвижимост','метавех','шамаи','real estate','realtor','appraiser','apartment','immobilier','agent immobilier','expert immobilier','appartement'] },
   { c:'biz', ico:'🔧', name:{ ru:'Мастер / сервис / фирма', fr:'Artisan / service / entreprise', en:'Handyman / service / company' },
     k:['мастер','сервис','ремонт','слесарь','электрик','сантехник','организаци','фирм','компани','подрядчик','няня','репетитор','переводчик','ателье','клининг','парикмахер','косметолог','маникюр','педикюр','грумер','массажист','фотограф','ветеринар','диджей','ведущ','handyman','repair','plumber','electrician','cleaning','tutor','nanny','hairdresser','barber','photographer','veterinarian','groomer','plombier','électricien','réparation','ménage','nounou','coiffeur','photographe','vétérinaire','toiletteur'] },
-  { c:'shop', ico:'🛒', name:{ ru:'Магазин / товар', fr:'Magasin / produit', en:'Shop / product' },
-    k:['магазин','купить','товар','цветочн','салон','кафе','ресторан','отель','аптек','бутик','рынок','супермаркет','shop','store','buy','cafe','restaurant','hotel','pharmacy','magasin','acheter','café','hôtel','pharmacie'] }
+  { c:'shop', ico:'🛒', name:{ ru:'Товары / цены / места', fr:'Produits / prix / adresses', en:'Products / prices / places' },
+    k:['магазин','купить','товар','цветочн','салон','кафе','ресторан','аптек','бутик','рынок','супермаркет','сравнить цены','сравни цены','сравнить цен','цена на','сколько стоит','где купить','доставк','телефон','смартфон','ноутбук','планшет','наушник','телевизор','холодильн','стиральн','посудомоеч','кондиционер','shop','store','buy','price comparison','compare prices','delivery','phone','laptop','cafe','restaurant','pharmacy','magasin','acheter','comparer les prix','livraison','téléphone','café','pharmacie'] },
+  { c:'travel', ico:'✈️', name:{ ru:'Путешествия / отели', fr:'Voyages / hôtels', en:'Travel / hotels' },
+    k:['отел','гостиниц','авиабилет','билет в','билет на','билеты','перелет','перелёт','авиарейс','экскурс','путешеств','отпуск','достопримечател','что посмотреть','тур в','туры','поездк','hotel','flight','flights','travel','trip','tour','excursion','vacation','hôtel','billet d’avion','avion','voyage','excursion'] },
+  { c:'work', ico:'💼', name:{ ru:'Работа / вакансии', fr:'Emploi / offres', en:'Jobs / vacancies' },
+    k:['ваканс','резюме','ищу работу','ищем работу','поиск работы','подработ','трудоустрой','vacancy','vacancies','resume','job search','looking for a job','offre d’emploi','recherche d’emploi','cherche un emploi','cv'] },
+  { c:'study', ico:'📚', name:{ ru:'Объяснить / учёба', fr:'Expliquer / étudier', en:'Explain / study' },
+    k:['объясн','разъясн','что такое','что значит','как понять','простыми словами','простыми понятными словами','научи','урок','экзамен','домашн','задани','переведи текст','explain','what is','what does','in simple words','teach me','lesson','homework','explique','qu’est-ce','que signifie','en mots simples','leçon','expliquer'] },
+  { c:'info', ico:'ℹ️', name:{ ru:'Информация / факты', fr:'Infos / faits', en:'Information / facts' },
+    k:['новост','последние события','свежие данные','актуальн','прогноз','статистик','правда ли','проверь факт','официальную информацию','когда будет','news','latest','forecast','statistics','is it true','actualités','dernières nouvelles','prévisions','statistiques','est-ce vrai'] }
 ];
 let spManualCat = null;
 function spDetectCat(q){
   q = ' ' + (q || '').toLowerCase() + ' ';
-  for (let i = 1; i < SP_CATS.length; i++) for (const kw of SP_CATS[i].k) if (spHas(q, kw)) return SP_CATS[i].c;
+  // Приоритет не по порядку кнопок: явный замысел (вакансия, «объясни»,
+  // отель/поездка) важнее темы — «вакансии бухгалтера» это работа, а не налоги.
+  const ORDER = ['work','study','med','law','fin','real','biz','travel','shop','info'];
+  for (const code of ORDER) {
+    const cat = SP_CATS.find(c => c.c === code);
+    if (cat) for (const kw of cat.k) if (spHas(q, kw)) return cat.c;
+  }
   return 'any';
 }
 function spCurrentCat(){
@@ -1356,15 +1370,45 @@ function spBuildPrompt(Q){
     }[cat][curLang];
     const regLine = { ru:'Добавь строку «Лицензия/реестр: [номер или статус] — [полная ссылка на реестр]». Без подтверждения в реестре не называй специалиста лицензированным и не включай его.', fr:'Ajoute une ligne « Licence/registre : [numéro ou statut] — [lien complet vers le registre] ». Sans confirmation au registre, ne le dis pas licencié et ne l’inclus pas.', en:'Add a line "Licence/registry: [number or status] — [full registry link]". Without registry confirmation, do not call them licensed and do not include them.' }[curLang];
     body = [intro, reg, fields + ' ' + regLine, end].join('\n');
-  } else if (cat === 'biz' || cat === 'shop') {
+  } else if (cat === 'biz') {
     body = [{
-      ru:'Это запрос о мастере, сервисе, организации или товаре. Проверяй официальный сайт или карточку организации и актуальность контакта. Не выдумывай адреса, телефоны, часы работы и цены.',
-      fr:'Demande sur un artisan, un service, une organisation ou un produit. Vérifie le site officiel ou la fiche de l’organisation et l’actualité du contact. N’invente ni adresses, ni téléphones, ni horaires, ni prix.',
-      en:'This is a request about a handyman, service, organisation or product. Verify the official website or listing and that the contact is current. Do not invent addresses, phones, opening hours or prices.'
+      ru:'Это запрос о мастере, сервисе или услуге. Проверяй официальный сайт или карточку организации и актуальность контакта. Не выдумывай адреса, телефоны, часы работы и цены: цену пиши только если она есть на сайте или в карточке, иначе — «цену уточнять».',
+      fr:'Demande sur un artisan, un service ou une prestation. Vérifie le site officiel ou la fiche de l’organisation et l’actualité du contact. N’invente ni adresses, ni téléphones, ni horaires, ni prix : donne un prix seulement s’il figure sur le site ou la fiche, sinon « prix à demander ».',
+      en:'This is a request about a handyman, service or provider. Verify the official website or listing and that the contact is current. Do not invent addresses, phones, opening hours or prices: give a price only if it is on the website or listing, otherwise write "ask for the price".'
     }[curLang], fields, end].join('\n');
+  } else if (cat === 'shop') {
+    body = [{
+      ru:'Это поиск товара, цены или места (магазин, кафе, аптека и т.п.). Найди реальные варианты в продаже или реальные места и сравни их: что это, главные характеристики или особенности, цена (только с источника, с валютой) и где именно купить/найти — магазин или сайт. Отдельно отметь доставку в город пользователя, если она подтверждена. Не выдумывай цены, скидки, наличие и характеристики: чего нет в источнике — так и пиши «не указано».',
+      fr:'C’est une recherche de produit, de prix ou d’adresse (magasin, café, pharmacie…). Trouve des options réelles en vente ou des lieux réels et compare-les : ce que c’est, caractéristiques principales, prix (uniquement depuis la source, avec la devise) et où acheter/trouver exactement. Signale à part la livraison vers la ville de l’utilisateur si elle est confirmée. N’invente ni prix, ni remises, ni stock, ni caractéristiques : ce qui n’est pas dans la source — écris « non indiqué ».',
+      en:'This is a search for a product, price or place (shop, cafe, pharmacy, etc.). Find real items for sale or real places and compare them: what it is, key features, price (only from the source, with currency) and exactly where to buy/find it. Note delivery to the user’s city separately if confirmed. Do not invent prices, discounts, stock or features: whatever the source does not say — write "not stated".'
+    }[curLang], fields, end].join('\n');
+  } else if (cat === 'travel') {
+    body = [{
+      ru:'Это поиск для поездки: отель, билеты, тур, экскурсия или «что посмотреть». Учитывай даты, число людей и бюджет только если пользователь их указал — сам не додумывай. Давай реальные варианты с районом/расположением и ссылкой на официальный сайт или страницу бронирования. Цены, расписание рейсов и наличие мест пиши только с источника и помечай, что цена могла измениться; не выдумывай цены «примерно». В конце добавь короткий список: что проверить перед оплатой (даты, возврат, виза/документы, багаж).',
+      fr:'C’est une recherche de voyage : hôtel, billets, circuit, excursion ou « que voir ». Ne tiens compte des dates, du nombre de personnes et du budget que si l’utilisateur les a donnés — ne les invente pas. Donne des options réelles avec le quartier/l’emplacement et un lien vers le site officiel ou la page de réservation. Prix, horaires de vols et disponibilités uniquement depuis la source, en notant que le prix peut changer ; n’invente pas de prix « approximatifs ». Termine par une courte liste : à vérifier avant de payer (dates, annulation, visa/documents, bagages).',
+      en:'This is a travel search: hotel, tickets, tour, excursion or "what to see". Use dates, number of people and budget only if the user gave them — do not make them up. Give real options with the area/location and a link to the official site or booking page. Prices, flight schedules and availability only from the source, noting the price may have changed; do not invent "approximate" prices. End with a short checklist: what to verify before paying (dates, cancellation, visa/documents, baggage).'
+    }[curLang], fields, end].join('\n');
+  } else if (cat === 'work') {
+    body = [{
+      ru:'Это поиск работы или вакансий. Давай только реальные опубликованные вакансии: должность, работодатель, город или «удалённо», главные требования, зарплата — только если она указана в самой вакансии, дата публикации и прямая ссылка на вакансию. Не выдумывай работодателей, зарплаты и контакты. Если свежих вакансий по запросу не нашлось — честно напиши об этом и подскажи, на каких сайтах искать дальше.',
+      fr:'C’est une recherche d’emploi ou d’offres. Donne uniquement des offres réellement publiées : poste, employeur, ville ou « à distance », exigences principales, salaire — uniquement s’il figure dans l’offre, date de publication et lien direct vers l’offre. N’invente ni employeurs, ni salaires, ni contacts. Si aucune offre récente ne correspond — dis-le honnêtement et suggère où chercher ensuite.',
+      en:'This is a job/vacancy search. Give only real published vacancies: title, employer, city or "remote", main requirements, salary — only if stated in the vacancy itself, publication date and a direct link to the vacancy. Do not invent employers, salaries or contacts. If no fresh matching vacancies are found — say so honestly and suggest where to search next.'
+    }[curLang], fields, end].join('\n');
+  } else if (cat === 'study') {
+    body = [{
+      ru:'Пользователь просит объяснить или научить. Объясняй простыми словами, как человеку без специальной подготовки: сначала ответ в 2–3 предложениях, потом по шагам, с одним понятным примером из жизни. Сложные термины сразу расшифровывай простыми словами в скобках. Не усложняй и не уходи в сторону. В конце одной строкой предложи, что можно разобрать дальше, если непонятно.',
+      fr:'L’utilisateur demande une explication ou un apprentissage. Explique en mots simples, pour une personne sans formation spéciale : d’abord la réponse en 2–3 phrases, puis étape par étape, avec un exemple concret de la vie quotidienne. Explique aussitôt les termes compliqués en mots simples entre parenthèses. Ne complique pas et ne t’écarte pas du sujet. Termine par une ligne proposant quoi détailler ensuite si ce n’est pas clair.',
+      en:'The user asks for an explanation or teaching. Explain in simple words, for a person with no special background: first the answer in 2–3 sentences, then step by step, with one clear everyday example. Explain hard terms right away in simple words in brackets. Keep it simple and stay on topic. End with one line offering what to break down next if anything is unclear.'
+    }[curLang]].join('\n');
+  } else if (cat === 'info') {
+    body = [{
+      ru:'Это запрос информации или фактов. Отвечай по официальным и первоисточникам (госсайты, официальная статистика, первоисточник новости), а не по пересказам. Каждый важный факт подтверждай полной ссылкой на источник отдельной строкой и указывай дату, к которой относится информация. Отделяй подтверждённые факты от мнений и прогнозов. Если источники противоречат друг другу или свежих данных нет — прямо напиши об этом, ничего не додумывай.',
+      fr:'C’est une demande d’information ou de faits. Réponds à partir de sources officielles et primaires (sites gouvernementaux, statistiques officielles, source première de l’actualité), pas de résumés de seconde main. Confirme chaque fait important par le lien complet de la source sur une ligne séparée et donne la date de l’information. Sépare les faits confirmés des opinions et des prévisions. Si les sources se contredisent ou s’il n’y a pas de données récentes — dis-le franchement, n’invente rien.',
+      en:'This is an information/facts request. Answer from official and primary sources (government sites, official statistics, the original news source), not second-hand retellings. Back every important fact with the full source URL on its own line and give the date the information refers to. Separate confirmed facts from opinions and forecasts. If sources contradict each other or there is no fresh data — say so plainly, invent nothing.'
+    }[curLang]].join('\n');
   } else {
     body = [{
-      ru:'Определи профессию и страну из запроса. Сначала выясни, какой официальный орган, палата или госреестр этой страны выдаёт лицензию на данную профессию, и проверь специалиста именно в нём. Если госреестра у профессии нет — прямо напиши об этом и опирайся на официальный сайт организации и отзывы. Не применяй правила одной страны к другой.',
+      ru:'Определи профессию и страну из запроса, если это поиск специалиста; если это товар, поездка, работа, информация или объяснение темы — определи тип поиска и действуй по нему. Для специалиста сначала выясни, какой официальный орган, палата или госреестр этой страны выдаёт лицензию на данную профессию, и проверь специалиста именно в нём. Если госреестра у профессии нет — прямо напиши об этом и опирайся на официальный сайт организации и отзывы. Для любого типа поиска давай только подтверждённые источники с полными ссылками и не выдумывай цены, контакты и факты. Не применяй правила одной страны к другой.',
       fr:'Déduis la profession et le pays de la demande. Trouve d’abord quel organisme officiel, ordre ou registre d’État de ce pays délivre la licence pour cette profession, et vérifie-y le spécialiste. S’il n’y a pas de registre d’État, dis-le et appuie-toi sur le site officiel et les avis. N’applique pas les règles d’un pays à un autre.',
       en:'Infer the profession and country from the request. First find which official body, chamber or state registry of that country licenses this profession, and verify the specialist there. If the profession has no state registry, say so and rely on the official website and reviews. Do not apply one country’s rules to another.'
     }[curLang], fields + ' ' + ({ ru:'Если реестр существует — добавь строку «Лицензия/реестр: [номер/статус] — [ссылка]».', fr:'Si un registre existe — ajoute « Licence/registre : [numéro/statut] — [lien] ».', en:'If a registry exists — add "Licence/registry: [number/status] — [link]".' }[curLang]), end].join('\n');
@@ -1379,7 +1423,7 @@ function spRender(){
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'sp-chip'; b.dataset.cat = c.c;
     b.textContent = c.ico + ' ' + (c.name[curLang] || c.name.ru);
-    b.addEventListener('click', () => { spManualCat = (c.id === 'any') ? null : c.id; spRender(); });
+    b.addEventListener('click', () => { spManualCat = (c.c === 'any') ? null : c.c; spRender(); });
     box.appendChild(b);
   });
   spUpdate();
@@ -1395,11 +1439,11 @@ function spUpdate(){
     else {
       const cat = SP_CATS.find(c => c.c === active);
       const place = spFindAbroad(q);
-      const T = { ru:['Раздел: ','Регион: ','Израиль'], fr:['Rubrique : ','Région : ','Israël'], en:['Section: ','Region: ','Israel'] }[curLang];
+      const T = { ru:['Тип поиска: ','Регион: ','Израиль'], fr:['Type : ','Région : ','Israël'], en:['Search type: ','Region: ','Israel'] }[curLang];
       hint.textContent = T[0] + (cat ? cat.ico + ' ' + (cat.name[curLang] || cat.name.ru) : active) + ' · ' + T[1] + (place ? '🌍 ' + (place.n[curLang] || place.n.ru) : '🇮🇱 ' + T[2]) + (/русск|русско|russian|russophone/i.test(q) ? ' · 🗣' : '');
     }
   }
-  const prompt = spBuildPrompt(q || (curLang === 'fr' ? 'décris qui tu cherches et où (profession, ville, pays)' : curLang === 'en' ? 'describe who you need and where (profession, city, country)' : 'укажи, кто и где нужен (профессия, город, страна)'));
+  const prompt = spBuildPrompt(q || (curLang === 'fr' ? 'décris ce qu’il faut trouver (spécialiste, produit, voyage, emploi ou sujet — avec tes mots)' : curLang === 'en' ? 'describe what you need to find (specialist, product, trip, job or topic — in your own words)' : 'опиши, что нужно найти (специалист, товар, поездка, работа или тема — обычными словами)'));
   const enc = encodeURIComponent(prompt);
   const cg = $('#spChatgpt'), cl = $('#spClaude');
   if (cg) cg.href = 'https://chatgpt.com/?q=' + enc;
@@ -1423,7 +1467,7 @@ function spInit(){
   const showCopied = () => { if (copied){ copied.hidden = false; setTimeout(() => { copied.hidden = true; }, 6000); } };
   const copyBtn = $('#spCopy');
   if (copyBtn) copyBtn.addEventListener('click', () => {
-    const q = ta.value.trim() || (curLang === 'fr' ? 'décris qui tu cherches et où (profession, ville, pays)' : curLang === 'en' ? 'describe who you need and where (profession, city, country)' : 'укажи, кто и где нужен (профессия, город, страна)');
+    const q = ta.value.trim() || (curLang === 'fr' ? 'décris ce qu’il faut trouver (spécialiste, produit, voyage, emploi ou sujet — avec tes mots)' : curLang === 'en' ? 'describe what you need to find (specialist, product, trip, job or topic — in your own words)' : 'опиши, что нужно найти (специалист, товар, поездка, работа или тема — обычными словами)');
     spCopyText(spBuildPrompt(q), showCopied);
   });
   const clearBtn = $('#spClear');
