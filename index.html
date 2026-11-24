@@ -158,6 +158,46 @@
   <div class="ticker-track" id="tickerTrack"></div>
 </div>
 
+<!-- ══════════ КАЛЬКУЛЯТОРЫ ══════════ -->
+<section class="section" id="calc">
+  <div class="wrap">
+    <div class="section-head center">
+      <div>
+        <div class="kicker" data-i18n="sec_calc_kicker"></div>
+        <h2 data-i18n="sec_calc_h"></h2>
+        <p class="section-sub" id="calcCount"></p>
+      </div>
+    </div>
+    <div class="search-row">
+      <div class="search-box">
+        <span class="search-icon" data-ico="search" data-size="19"></span>
+        <input type="search" id="calcSearch" data-i18n-ph="search_ph" aria-label="Поиск по калькуляторам">
+      </div>
+      <button class="btn btn-gold" id="plannerBtn2"><span data-ico="target" data-size="17"></span><span data-i18n="btn_plan2"></span></button>
+    </div>
+    <div class="scenario-chips" id="scenarioChips" aria-label="Сценарии: с чего начать"></div>
+    <noscript>
+  <div style="max-width:820px;margin:0 auto 18px;padding:18px 20px;border:1px solid rgba(232,182,76,.35);border-radius:16px;line-height:1.9">
+    <b>Калькуляторы ShekelPRO</b> (полный интерактив требует включённого JavaScript):<br>
+    <a href="https://exodus611.github.io/finance-portal/salary.html">Зарплата брутто-нетто</a> ·
+    <a href="https://exodus611.github.io/finance-portal/mashkanta.html">Машканта</a> ·
+    <a href="https://exodus611.github.io/finance-portal/maanak-avoda.html">Маанак авода</a> ·
+    <a href="https://exodus611.github.io/finance-portal/avtala.html">Дмей автала</a> ·
+    <a href="https://exodus611.github.io/finance-portal/payments.html">Даты выплат Битуах Леуми</a> ·
+    <a href="https://exodus611.github.io/finance-portal/pension-calc.html">Пенсионные накопления</a> ·
+    <a href="https://exodus611.github.io/finance-portal/pension-gap.html">Пенсионный разрыв</a> ·
+    <a href="https://exodus611.github.io/finance-portal/valuta.html">Курс валют</a> ·
+    <a href="https://exodus611.github.io/finance-portal/tablo.html">Экономика сегодня</a> ·
+    <a href="https://exodus611.github.io/finance-portal/mas-rehisha.html">Мас рехиша</a> ·
+    <a href="https://exodus611.github.io/finance-portal/arnona.html">Скидка на арнону</a> ·
+    <a href="https://exodus611.github.io/finance-portal/slovar.html">Словарь терминов</a>
+  </div>
+</noscript>
+<div id="calcAccs"></div>
+    <p class="empty-note" id="emptyNote" hidden data-i18n="empty_note"></p>
+  </div>
+</section>
+
 <!-- ══════════ SMART PROMPT ══════════ -->
 <section class="section sp-section" id="smartprompt">
   <div class="wrap">
@@ -248,46 +288,6 @@
     <div class="pay-grid" id="payGrid"></div>
     <p class="foot-note" data-i18n="pay_remind_hint"></p>
       </div></details>
-  </div>
-</section>
-
-<!-- ══════════ КАЛЬКУЛЯТОРЫ ══════════ -->
-<section class="section" id="calc">
-  <div class="wrap">
-    <div class="section-head center">
-      <div>
-        <div class="kicker" data-i18n="sec_calc_kicker"></div>
-        <h2 data-i18n="sec_calc_h"></h2>
-        <p class="section-sub" id="calcCount"></p>
-      </div>
-    </div>
-    <div class="search-row">
-      <div class="search-box">
-        <span class="search-icon" data-ico="search" data-size="19"></span>
-        <input type="search" id="calcSearch" data-i18n-ph="search_ph" aria-label="Поиск по калькуляторам">
-      </div>
-      <button class="btn btn-gold" id="plannerBtn2"><span data-ico="target" data-size="17"></span><span data-i18n="btn_plan2"></span></button>
-    </div>
-    <div class="scenario-chips" id="scenarioChips" aria-label="Сценарии: с чего начать"></div>
-    <noscript>
-  <div style="max-width:820px;margin:0 auto 18px;padding:18px 20px;border:1px solid rgba(232,182,76,.35);border-radius:16px;line-height:1.9">
-    <b>Калькуляторы ShekelPRO</b> (полный интерактив требует включённого JavaScript):<br>
-    <a href="https://exodus611.github.io/finance-portal/salary.html">Зарплата брутто-нетто</a> ·
-    <a href="https://exodus611.github.io/finance-portal/mashkanta.html">Машканта</a> ·
-    <a href="https://exodus611.github.io/finance-portal/maanak-avoda.html">Маанак авода</a> ·
-    <a href="https://exodus611.github.io/finance-portal/avtala.html">Дмей автала</a> ·
-    <a href="https://exodus611.github.io/finance-portal/payments.html">Даты выплат Битуах Леуми</a> ·
-    <a href="https://exodus611.github.io/finance-portal/pension-calc.html">Пенсионные накопления</a> ·
-    <a href="https://exodus611.github.io/finance-portal/pension-gap.html">Пенсионный разрыв</a> ·
-    <a href="https://exodus611.github.io/finance-portal/valuta.html">Курс валют</a> ·
-    <a href="https://exodus611.github.io/finance-portal/tablo.html">Экономика сегодня</a> ·
-    <a href="https://exodus611.github.io/finance-portal/mas-rehisha.html">Мас рехиша</a> ·
-    <a href="https://exodus611.github.io/finance-portal/arnona.html">Скидка на арнону</a> ·
-    <a href="https://exodus611.github.io/finance-portal/slovar.html">Словарь терминов</a>
-  </div>
-</noscript>
-<div id="calcAccs"></div>
-    <p class="empty-note" id="emptyNote" hidden data-i18n="empty_note"></p>
   </div>
 </section>
 
