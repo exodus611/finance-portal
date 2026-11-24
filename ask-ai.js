@@ -125,11 +125,21 @@
 
   var UI = {
     ru: { title: 'Не нашли ответ? Спросите у своего ИИ', sub: 'Откроется ваш личный ChatGPT, Claude или Gemini с уже готовым вопросом по этой теме. Сайт ничего не отправляет и ни за что не платит — вопрос задаёте вы из своего аккаунта.',
-      chatgpt: 'ChatGPT', claude: 'Claude', gemini: 'Gemini — скопировать вопрос', copied: '✓ Вопрос скопирован — вставьте его в Gemini', copy: 'Скопировать вопрос' },
+      chatgpt: 'ChatGPT — вопрос вставится сам', claude: 'Claude — вопрос вставится сам', gemini: 'Gemini — в 2 шага', copy: 'Просто скопировать вопрос', copied: '✓ Вопрос скопирован',
+      note: 'ChatGPT и Claude подставят вопрос автоматически. Gemini не разрешает сайтам вставлять вопрос за вас, поэтому там два шага — кнопка всё подскажет.',
+      step2: '✓ Шаг 1 готов: вопрос скопирован. Нажмите ещё раз — откроется Gemini',
+      hint: 'Когда Gemini откроется: нажмите на поле ввода внизу экрана, вставьте вопрос (на компьютере — Ctrl+V, на телефоне — удерживайте поле и выберите «Вставить») и нажмите стрелку «Отправить». Это всё — дальше отвечаете уже в своём Gemini.' },
     fr: { title: 'Pas trouvé la réponse ? Demandez à votre IA', sub: 'Votre ChatGPT, Claude ou Gemini personnel s’ouvrira avec une question déjà prête sur ce sujet. Le site n’envoie rien et ne paie rien — c’est vous qui posez la question depuis votre compte.',
-      chatgpt: 'ChatGPT', claude: 'Claude', gemini: 'Gemini — copier la question', copied: '✓ Question copiée — collez-la dans Gemini', copy: 'Copier la question' },
+      chatgpt: 'ChatGPT — question insérée automatiquement', claude: 'Claude — question insérée automatiquement', gemini: 'Gemini — en 2 étapes', copy: 'Juste copier la question',
+      copied: '✓ Question copiée',
+      note: 'ChatGPT et Claude insèrent la question automatiquement. Gemini ne permet pas aux sites de l’insérer pour vous : il y a donc deux étapes — le bouton vous guidera.',
+      step2: '✓ Étape 1 faite : question copiée. Cliquez encore une fois — Gemini s’ouvrira',
+      hint: 'Quand Gemini s’ouvrira : touchez le champ de saisie en bas de l’écran, collez la question (sur ordinateur — Ctrl+V, sur téléphone — appui long puis « Coller ») et appuyez sur la flèche d’envoi. C’est tout — vous continuez ensuite dans votre Gemini.' },
     en: { title: 'Didn’t find the answer? Ask your own AI', sub: 'Your personal ChatGPT, Claude or Gemini will open with a ready-made question on this topic. The site sends nothing and pays for nothing — you ask from your own account.',
-      chatgpt: 'ChatGPT', claude: 'Claude', gemini: 'Gemini — copy the question', copied: '✓ Question copied — paste it into Gemini', copy: 'Copy the question' }
+      chatgpt: 'ChatGPT — question inserted for you', claude: 'Claude — question inserted for you', gemini: 'Gemini — in 2 steps', copy: 'Just copy the question', copied: '✓ Question copied',
+      note: 'ChatGPT and Claude insert the question automatically. Gemini does not let websites insert it for you, so it takes two steps — the button will guide you.',
+      step2: '✓ Step 1 done: question copied. Click once more — Gemini will open',
+      hint: 'When Gemini opens: tap the input field at the bottom of the screen, paste the question (on a computer — Ctrl+V, on a phone — long-press the field and choose “Paste”) and press the send arrow. That’s it — you continue in your own Gemini.' }
   }[lang];
 
   var style = document.createElement('style');
@@ -155,7 +165,7 @@
     '<a class="ask-ai-alt" target="_blank" rel="noopener" href="https://claude.ai/new?q=' + enc + '">' + UI.claude + ' →</a>' +
     '<button type="button" class="ask-ai-alt" id="ask-ai-gemini">' + UI.gemini + '</button>' +
     '<button type="button" class="ask-ai-alt" id="ask-ai-copy">' + UI.copy + '</button>' +
-    '</div></div>';
+    '</div><p id="ask-ai-note" style="margin:14px 0 0;font-size:12.5px">' + UI.note + '</p></div>';
 
   var footer = document.querySelector('footer');
   if (footer && footer.parentNode) footer.parentNode.insertBefore(block, footer);
@@ -177,9 +187,23 @@
       document.body.removeChild(ta);
     }
   }
-  document.getElementById('ask-ai-copy').addEventListener('click', function () { copyPrompt(this); });
-  document.getElementById('ask-ai-gemini').addEventListener('click', function () {
-    copyPrompt(this);
-    window.open('https://gemini.google.com/app', '_blank', 'noopener');
+  document.getElementById('ask-ai-copy').addEventListener('click', function () {
+    copyPrompt(null);
+    this.textContent = UI.copied;
+    this.classList.add('ask-ai-done');
+  });
+  var geminiBtn = document.getElementById('ask-ai-gemini');
+  var geminiStep = 1;
+  geminiBtn.addEventListener('click', function () {
+    if (geminiStep === 1) {
+      copyPrompt(null);
+      geminiStep = 2;
+      geminiBtn.textContent = UI.step2;
+      geminiBtn.classList.add('ask-ai-done');
+      var note = document.getElementById('ask-ai-note');
+      if (note) note.textContent = UI.hint;
+    } else {
+      window.open('https://gemini.google.com/app', '_blank', 'noopener');
+    }
   });
 })();
