@@ -49,11 +49,20 @@
 </script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070d1c'/%3E%3Ccircle cx='32' cy='32' r='21' fill='none' stroke='%23e8b64c' stroke-width='3'/%3E%3Cpath d='M38 22c-2-2-4-3-6-3-4 0-7 3-7 6.5 0 8 14 5 14 13 0 4-3 7-7 7-3 0-5.5-1.5-7-4' fill='none' stroke='%23e8b64c' stroke-width='3.4' stroke-linecap='round'/%3E%3Cpath d='M32 14v6M32 44v6' stroke='%23e8b64c' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/playfair-display-600-cyrillic-normal.woff2">
-<link rel="stylesheet" href="index.css?v=20261123.5">
-<link rel="stylesheet" href="polish.css?v=20261123.5">
+<link rel="stylesheet" href="index.css?v=20261124.1">
+<link rel="stylesheet" href="polish.css?v=20261124.1">
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ══════════ КИБЕРЩИТ: НОВОЕ ПРЕДУПРЕЖДЕНИЕ ══════════ -->
+<div class="cyber-alert" id="cyberAlert" hidden>
+  <div class="wrap cyber-alert-in">
+    <span class="cyber-alert-ico" data-ico="shield" data-size="19"></span>
+    <a class="cyber-alert-link" id="cyberAlertLink" href="cyber.html"><b data-i18n="cyber_alert_new"></b><span id="cyberAlertText"></span></a>
+    <button class="cyber-alert-x" id="cyberAlertClose" data-i18n-title="cyber_alert_close" aria-label="Close">✕</button>
+  </div>
+</div>
 
 <!-- ══════════ ХЕДЕР ══════════ -->
 <header class="site-header" id="siteHeader">
@@ -148,6 +157,37 @@
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track" id="tickerTrack"></div>
 </div>
+
+<!-- ══════════ SMART PROMPT ══════════ -->
+<section class="section sp-section" id="smartprompt">
+  <div class="wrap">
+    <div class="sp-card reveal">
+      <div class="sp-head">
+        <span class="sp-ico" aria-hidden="true">🧠</span>
+        <div class="sp-head-text">
+          <h2 data-i18n="sp_h"></h2>
+          <p data-i18n="sp_s"></p>
+        </div>
+        <span class="sp-only" data-i18n="sp_only"></span>
+      </div>
+      <div class="sp-chips" id="spChips"></div>
+      <textarea id="spQuery" rows="3" data-i18n-ph="sp_ph" aria-label="Smart Prompt"></textarea>
+      <p class="sp-hint" id="spHint" aria-live="polite"></p>
+      <div class="sp-btns">
+        <button class="btn btn-gold" id="spCopy" data-i18n="sp_copy"></button>
+        <button class="btn btn-ghost" id="spClear" data-i18n="sp_clear"></button>
+        <a class="btn btn-ghost" id="spChatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT →</a>
+        <a class="btn btn-ghost" id="spClaude" href="https://claude.ai/new" target="_blank" rel="noopener">Claude →</a>
+        <button class="btn btn-ghost" id="spGemini" data-i18n="sp_gemini"></button>
+      </div>
+      <p class="sp-copied" id="spCopied" data-i18n="sp_copied" hidden></p>
+      <div class="sp-foot">
+        <span data-i18n="sp_note"></span>
+        <a href="proverka-specialista.html" data-i18n="sp_manual"></a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══════════ ТАБЛО ══════════ -->
 <section class="section" id="dashboard">
@@ -364,7 +404,7 @@
         <a class="btn btn-ghost" href="cyber.html" data-i18n="btn_cyber_all"></a>
       </div>
       <details class="sec-acc acc-flat" id="cyberAcc">
-        <summary><span data-ico="shield" data-size="17"></span><span data-i18n="acc_cyber"></span><span class="acc-badge">61</span><span class="acc-chev" data-ico="chevron" data-size="16"></span></summary>
+        <summary><span data-ico="shield" data-size="17"></span><span data-i18n="acc_cyber"></span><span class="acc-badge">62</span><span class="acc-chev" data-ico="chevron" data-size="16"></span></summary>
         <div class="cyber-grid" id="cyberGrid"></div>
         <div class="cyber-visual zoom-img" aria-hidden="true" data-plx="-0.07">
           <img loading="lazy" decoding="async" src="img/home-photo-3.webp" width="520" height="283" alt="">
@@ -485,6 +525,6 @@
 
 <a class="fab" id="plannerFab" href="#planner" data-i18n-title="fab_title" aria-label="Открыть планировщик финансовой цели"><span data-ico="target" data-size="24"></span></a>
 
-<script src="index.js?v=20261123.5" defer></script>
+<script src="index.js?v=20261124.1" defer></script>
 <script src="ask-ai.js"></script></body>
 </html>

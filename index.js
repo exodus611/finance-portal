@@ -87,6 +87,19 @@ const I18N = {
   hero_badge: { ru:'Проверка данных: {date}', fr:'Vérification des données : {date}', en:'Data checked: {date}' },
   hero_partial: { ru:'Проверка: {date} · часть источников недоступна', fr:'Vérification : {date} · certaines sources indisponibles', en:'Checked: {date} · some sources unavailable' },
   hero_unavailable: { ru:'Дата проверки недоступна · показаны сохранённые данные', fr:'Date de vérification indisponible · données enregistrées', en:'Check date unavailable · showing saved data' },
+  cyber_alert_new: { ru:'Киберщит: новое предупреждение', fr:'CyberBouclier : nouvelle alerte', en:'Cyber Shield: new warning' },
+  cyber_alert_close: { ru:'Закрыть', fr:'Fermer', en:'Close' },
+  sp_h: { ru:'Smart Prompt — умный запрос для поиска специалиста', fr:'Smart Prompt — demande intelligente pour trouver un spécialiste', en:'Smart Prompt — a smart request to find a specialist' },
+  sp_s: { ru:'Опишите, кто и где нужен, — соберём точный запрос под специальность и страну. Вставьте его в свою нейросеть (ChatGPT, Gemini, Claude): она найдёт варианты и проверит лицензию по официальным реестрам.', fr:'Décrivez qui vous cherchez et où — nous composons une demande précise selon la spécialité et le pays. Collez-la dans votre IA (ChatGPT, Gemini, Claude) : elle trouvera des options et vérifiera la licence dans les registres officiels.', en:'Describe who you need and where — we will build a precise request for that specialty and country. Paste it into your AI (ChatGPT, Gemini, Claude): it will find options and verify the licence in official registries.' },
+  sp_only: { ru:'★ Только у нас', fr:'★ Exclusif', en:'★ Only here' },
+  sp_ph: { ru:'например: детский стоматолог в Тель-Авиве, русскоговорящий\nили: кардиолог в Берлине, Германия\nили: русскоязычный адвокат в Хайфе', fr:'ex. : dentiste pour enfants à Tel-Aviv, russophone\nou : cardiologue à Berlin, Allemagne\nou : avocat russophone à Haïfa', en:'e.g.: children’s dentist in Tel Aviv, Russian-speaking\nor: cardiologist in Paris, France\nor: Russian-speaking lawyer in Haifa' },
+  sp_copy: { ru:'🧠 Собрать и скопировать запрос', fr:'🧠 Composer et copier la demande', en:'🧠 Build & copy the request' },
+  sp_clear: { ru:'Очистить поле', fr:'Effacer', en:'Clear the field' },
+  sp_gemini: { ru:'Gemini — в 2 шага', fr:'Gemini — en 2 étapes', en:'Gemini — in 2 steps' },
+  sp_step2: { ru:'✓ Скопировано! Теперь открыть Gemini', fr:'✓ Copié ! Ouvrir Gemini', en:'✓ Copied! Now open Gemini' },
+  sp_copied: { ru:'✓ Запрос скопирован! Вставьте его в чат со своей нейросетью — кнопки ChatGPT и Claude выше подставят его сами, для Gemini нажмите её кнопку ещё раз.', fr:'✓ Demande copiée ! Collez-la dans votre IA — ChatGPT et Claude ci-dessus l’insèrent automatiquement ; pour Gemini, cliquez encore son bouton.', en:'✓ Request copied! Paste it into your AI chat — ChatGPT and Claude above insert it automatically; for Gemini, click its button once more.' },
+  sp_note: { ru:'⚠️ Отвечает ваша нейросеть, не наш сайт: обязательно проверяйте лицензию по ссылкам на официальные реестры из ответа. Раздел определяется автоматически по тексту, но можно выбрать вручную.', fr:'⚠️ C’est votre IA qui répond, pas notre site : vérifiez toujours la licence via les liens vers les registres officiels de la réponse. La rubrique est détectée automatiquement, ou choisie à la main.', en:'⚠️ Your AI answers, not our site: always verify the licence via the official-registry links in its answer. The section is detected automatically, or pick it manually.' },
+  sp_manual: { ru:'Или проверьте лицензию специалиста вручную по официальным реестрам →', fr:'Ou vérifiez la licence du spécialiste manuellement dans les registres officiels →', en:'Or verify a specialist’s licence manually in the official registries →' },
   hero_h1_a: { ru:'Финансы Израиля —', fr:'Les finances en Israël —', en:'Israel’s finances —' },
   hero_h1_b: { ru:'просто, честно, красиво', fr:'simples, honnêtes, élégantes', en:'simple, honest, beautiful' },
   hero_sub: { ru:'32 бесплатных калькулятора, живое табло экономики и словарь, который объясняет банкиров лучше банкиров. Считаем в вашем браузере — ничего не отправляем и не сохраняем.', fr:"32 calculateurs gratuits, un tableau de bord économique en direct et un glossaire qui explique les banquiers mieux qu'eux-mêmes. Tout se calcule dans votre navigateur — rien n'est envoyé ni stocké.", en:'32 free calculators, a live economic dashboard and a glossary that explains bankers better than bankers. Everything runs in your browser — nothing is sent or stored.' },
@@ -469,6 +482,9 @@ async function fetchLive(){
         if (cyberEl && sj && Array.isArray(sj.warnings)){
           cyberEl.dataset.count = String(sj.warnings.length);
           cyberEl.textContent = String(sj.warnings.length) + (cyberEl.dataset.suffix || '');
+          const accBadge = document.querySelector('#cyberAcc .acc-badge');
+          if (accBadge) accBadge.textContent = String(sj.warnings.length);
+          renderCyberAlert(sj);
         }
       }
     } catch (e) { /* остаётся значение из каталога */ }
@@ -1169,6 +1185,7 @@ function renderAll(){
   renderDash(); renderTicker(); renderPayments(); renderChips(); renderScenarios(); renderCalcs(); renderSolutions(); renderCyber();
   renderRateChart(); renderRings();
   renderBadge();
+  if (typeof spRender === 'function') spRender();
 }
 function setLang(l){
   if (['ru','fr','en'].indexOf(l) === -1) return;
@@ -1209,6 +1226,215 @@ function initHeroPhotoMotion(){
   hero.addEventListener('pointerleave', () => { targetX=targetY=0; run(); });
   motion.addEventListener('change', () => { if (motion.matches) { if (frame) cancelAnimationFrame(frame); frame=0; photo.style.removeProperty('--photo-x'); photo.style.removeProperty('--photo-y'); } });
 }
+/* ════════ КИБЕРЩИТ: плашка о новом предупреждении наверху ════════ */
+function renderCyberAlert(sj){
+  try {
+    const list = (sj && sj.warnings) || [];
+    if (!list.length) return;
+    const latest = list.reduce((a, b) => (String(a.date) > String(b.date) ? a : b));
+    const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Jerusalem', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+    const age = Math.round((new Date(today) - new Date(latest.date)) / 864e5);
+    if (!(age >= 0 && age <= 3)) return;
+    if (LS.get('shekelpro_cyber_dismissed') === String(latest.id)) return;
+    const bar = $('#cyberAlert'); if (!bar) return;
+    const link = $('#cyberAlertLink');
+    if (link) link.href = u('cyber.html') + '#' + latest.id;
+    const txt = $('#cyberAlertText');
+    const setTitle = t => { if (txt) txt.textContent = ' — ' + t + ' · ' + fmtLiveDate(latest.date); };
+    setTitle(latest.title || '');
+    if (curLang !== 'ru') {
+      fetch('https://exodus611.github.io/finance-portal/data/scams_i18n.json', { cache: 'no-cache' })
+        .then(r => (r.ok ? r.json() : null))
+        .then(j => { const tr = j && j[curLang] && j[curLang][String(latest.id)]; if (tr && tr.t) setTitle(tr.t); })
+        .catch(() => {});
+    }
+    bar.hidden = false;
+    $$('a[href$="cyber.html"]').forEach(a => a.classList.add('nav-new'));
+    const close = $('#cyberAlertClose');
+    if (close) close.addEventListener('click', () => { bar.hidden = true; LS.set('shekelpro_cyber_dismissed', String(latest.id)); });
+  } catch (e) { /* плашка не критична */ }
+}
+
+/* ════════ SMART PROMPT v3: умный запрос для поиска специалиста ════════ */
+const SP_ABROAD = [
+  { k:['герман','берлин','мюнхен','гамбург','франкфурт','кёльн','дюссельдорф','german','berlin','munich','hamburg','frankfurt','allemagne'], c:{ ru:'в Германии', fr:'en Allemagne', en:'in Germany' }, n:{ ru:'Германия', fr:'Allemagne', en:'Germany' } },
+  { k:['великобритан','англи','лондон','манчестер','бирмингем','эдинбург','шотланд','britain','england','london','manchester','royaume-uni'], c:{ ru:'в Великобритании', fr:'au Royaume-Uni', en:'in the UK' }, n:{ ru:'Великобритания', fr:'Royaume-Uni', en:'UK' } },
+  { k:['сша','америк','нью-йорк','нью йорк','лос-анджелес','майами','чикаго','бостон','сан-франциско','usa','america','new york','los angeles','miami','chicago','boston','états-unis'], c:{ ru:'в США', fr:'aux États-Unis', en:'in the USA' }, n:{ ru:'США', fr:'États-Unis', en:'USA' } },
+  { k:['канад','торонто','монреал','ванкувер','canada','toronto','montreal','montréal','vancouver'], c:{ ru:'в Канаде', fr:'au Canada', en:'in Canada' }, n:{ ru:'Канада', fr:'Canada', en:'Canada' } },
+  { k:['франц','париж','марсел','лион','ницц','france','paris','marseille','lyon','nice'], c:{ ru:'во Франции', fr:'en France', en:'in France' }, n:{ ru:'Франция', fr:'France', en:'France' } },
+  { k:['испан','мадрид','барселон','валенси','малаг','spain','espagne','madrid','barcelona','barcelone'], c:{ ru:'в Испании', fr:'en Espagne', en:'in Spain' }, n:{ ru:'Испания', fr:'Espagne', en:'Spain' } },
+  { k:['итали','рим','милан','неапол','флоренц','венеци','italy','italie','rome','roma','milan'], c:{ ru:'в Италии', fr:'en Italie', en:'in Italy' }, n:{ ru:'Италия', fr:'Italie', en:'Italy' } },
+  { k:['кипр','ларнак','лимасол','никоси','пафос','cyprus','chypre'], c:{ ru:'на Кипре', fr:'à Chypre', en:'in Cyprus' }, n:{ ru:'Кипр', fr:'Chypre', en:'Cyprus' } },
+  { k:['грец','афин','салоник','greece','grèce','athens','athènes'], c:{ ru:'в Греции', fr:'en Grèce', en:'in Greece' }, n:{ ru:'Греция', fr:'Grèce', en:'Greece' } },
+  { k:['росси','москв','петербург','екатеринбург','новосибирск','russia','russie','moscow','moscou'], c:{ ru:'в России', fr:'en Russie', en:'in Russia' }, n:{ ru:'Россия', fr:'Russie', en:'Russia' } },
+  { k:['украин','киев','одесс','харьков','львов','ukraine','kyiv','kiev','odessa'], c:{ ru:'в Украине', fr:'en Ukraine', en:'in Ukraine' }, n:{ ru:'Украина', fr:'Ukraine', en:'Ukraine' } },
+  { k:['нидерланд','голланд','амстердам','netherlands','amsterdam','pays-bas'], c:{ ru:'в Нидерландах', fr:'aux Pays-Bas', en:'in the Netherlands' }, n:{ ru:'Нидерланды', fr:'Pays-Bas', en:'Netherlands' } },
+  { k:['польш','варшав','краков','poland','pologne','warsaw','varsovie'], c:{ ru:'в Польше', fr:'en Pologne', en:'in Poland' }, n:{ ru:'Польша', fr:'Pologne', en:'Poland' } },
+  { k:['грузи','тбилиси','батуми','georgia','géorgie','tbilisi'], c:{ ru:'в Грузии', fr:'en Géorgie', en:'in Georgia' }, n:{ ru:'Грузия', fr:'Géorgie', en:'Georgia' } },
+  { k:['турци','стамбул','анталь','turkey','turquie','istanbul'], c:{ ru:'в Турции', fr:'en Turquie', en:'in Turkey' }, n:{ ru:'Турция', fr:'Turquie', en:'Turkey' } },
+  { k:['оаэ','дубай','эмират','абу-даби','dubai','dubaï','emirates','émirats'], c:{ ru:'в ОАЭ', fr:'aux Émirats', en:'in the UAE' }, n:{ ru:'ОАЭ', fr:'Émirats', en:'UAE' } },
+  { k:['португал','лиссабон','порту','portugal','lisbon','lisbonne'], c:{ ru:'в Португалии', fr:'au Portugal', en:'in Portugal' }, n:{ ru:'Португалия', fr:'Portugal', en:'Portugal' } },
+  { k:['австри','вена','austria','autriche','vienna','vienne'], c:{ ru:'в Австрии', fr:'en Autriche', en:'in Austria' }, n:{ ru:'Австрия', fr:'Autriche', en:'Austria' } },
+  { k:['швейцар','цюрих','женев','лозанн','switzerland','suisse','zurich','geneva','genève'], c:{ ru:'в Швейцарии', fr:'en Suisse', en:'in Switzerland' }, n:{ ru:'Швейцария', fr:'Suisse', en:'Switzerland' } },
+  { k:['чехи','прага','czech','tchéquie','prague'], c:{ ru:'в Чехии', fr:'en Tchéquie', en:'in Czechia' }, n:{ ru:'Чехия', fr:'Tchéquie', en:'Czechia' } }
+];
+function spFindAbroad(q){
+  q = (q || '').toLowerCase();
+  if (q.indexOf('израил') !== -1 || q.indexOf('israel') !== -1 || q.indexOf('israël') !== -1) return null;
+  for (const P of SP_ABROAD) for (const kw of P.k) if (q.indexOf(kw) !== -1) return P;
+  return null;
+}
+const SP_CATS = [
+  { c:'any', ico:'🌍', name:{ ru:'Любой / авто', fr:'Tous / auto', en:'Any / auto' }, k:[] },
+  { c:'med', ico:'🩺', name:{ ru:'Врач / медицина', fr:'Médecin / santé', en:'Doctor / medical' },
+    k:['врач','доктор','хирург','стоматолог','дантист','ортодонт','дерматолог','гинеколог','кардиолог','невролог','терапевт','педиатр','офтальмолог','уролог','эндокринолог','онколог','психиатр','лор','отоларинголог','ортопед','гастроэнтеролог','ревматолог','аллерголог','нефролог','пульмонолог','акушер','психолог','психотерапевт','физиотерапевт','логопед','диетолог','клиник','больниц','doctor','dentist','surgeon','cardiologist','neurologist','pediatrician','dermatologist','gynecologist','psychologist','clinic','médecin','docteur','dentiste','chirurgien','cardiologue','neurologue','pédiatre','dermatologue','gynécologue','psychologue','clinique'] },
+  { c:'law', ico:'⚖️', name:{ ru:'Адвокат / нотариус', fr:'Avocat / notaire', en:'Lawyer / notary' },
+    k:['адвокат','юрист','нотариус','патент','lawyer','attorney','notary','avocat','notaire','juriste'] },
+  { c:'fin', ico:'💳', name:{ ru:'Налоги / пенсия / страховка', fr:'Impôts / pension / assurance', en:'Tax / pension / insurance' },
+    k:['бухгалтер','cpa','роэ хешбон','налоговый консульт','инвестиционн','страховой агент','пенсионный консультант','финансовый консультант','брокер','ипотечный консульт','accountant','tax advisor','insurance agent','financial advisor','broker','comptable','conseiller fiscal','agent d’assurance','conseiller financier','courtier'] },
+  { c:'real', ico:'🏠', name:{ ru:'Маклер / оценщик', fr:'Agent immobilier / expert', en:'Real-estate agent / appraiser' },
+    k:['маклер','риелтор','риэлтор','риэлтер','риелт','оценщик','недвижимост','метавех','шамаи','real estate','realtor','appraiser','immobilier','agent immobilier','expert immobilier'] },
+  { c:'biz', ico:'🔧', name:{ ru:'Мастер / сервис / фирма', fr:'Artisan / service / entreprise', en:'Handyman / service / company' },
+    k:['мастер','сервис','ремонт','слесарь','электрик','сантехник','организаци','фирм','компани','подрядчик','няня','репетитор','переводчик','ателье','клининг','handyman','repair','plumber','electrician','cleaning','tutor','nanny','plombier','électricien','réparation','ménage','nounou'] },
+  { c:'shop', ico:'🛒', name:{ ru:'Магазин / товар', fr:'Magasin / produit', en:'Shop / product' },
+    k:['магазин','купить','товар','цветочн','салон','кафе','ресторан','отель','аптек','бутик','рынок','супермаркет','shop','store','buy','cafe','restaurant','hotel','pharmacy','magasin','acheter','café','hôtel','pharmacie'] }
+];
+let spManualCat = null;
+function spDetectCat(q){
+  q = ' ' + (q || '').toLowerCase() + ' ';
+  for (let i = 1; i < SP_CATS.length; i++) for (const kw of SP_CATS[i].k) if (q.indexOf(kw) !== -1) return SP_CATS[i].c;
+  return 'any';
+}
+function spCurrentCat(){
+  const ta = $('#spQuery');
+  return spManualCat || spDetectCat(ta ? ta.value : '');
+}
+const SP_REG = {
+  med: { israel:{ ru:'Подтверждай лицензию и специальность ТОЛЬКО в реестре Минздрава Израиля: https://www.gov.il/en/service/licensed-medical-practitioners', fr:'Confirme la licence et la spécialité UNIQUEMENT dans le registre du ministère israélien de la Santé : https://www.gov.il/en/service/licensed-medical-practitioners', en:'Verify the licence and specialty ONLY in the Israel Ministry of Health registry: https://www.gov.il/en/service/licensed-medical-practitioners' },
+    abroad:{ ru:'Подтверждай лицензию и специальность ТОЛЬКО в официальном медицинском реестре/коллегии врачей этой страны (США — совет врачей штата / FSMB DocInfo; Великобритания — GMC gmc-uk.org; Германия — Ärztekammer; Франция — Ordre des Médecins; Канада — коллегия провинции). Сначала найди официальный реестр нужной страны.', fr:'Confirme la licence et la spécialité UNIQUEMENT dans le registre médical officiel du pays (USA — board de l’État / FSMB DocInfo ; Royaume-Uni — GMC gmc-uk.org ; Allemagne — Ärztekammer ; France — Ordre des Médecins ; Canada — collège provincial). Trouve d’abord le registre officiel du pays.', en:'Verify the licence and specialty ONLY in that country’s official medical registry/board (USA — state medical board / FSMB DocInfo; UK — GMC gmc-uk.org; Germany — Ärztekammer; France — Ordre des Médecins; Canada — provincial college). Find the country’s official registry first.' } },
+  law: { israel:{ ru:'Израиль: адвокаты — реестр Коллегии адвокатов Israel Bar Association (israelbar.org.il); нотариусы и патентные поверенные — data.gov.il.', fr:'Israël : avocats — registre de l’Israel Bar Association (israelbar.org.il) ; notaires et conseils en brevets — data.gov.il.', en:'Israel: lawyers — Israel Bar Association registry (israelbar.org.il); notaries and patent attorneys — data.gov.il.' },
+    abroad:{ ru:'Подтверждай статус в официальной адвокатской/нотариальной палате этой страны (США — bar association штата; Великобритания — Law Society / Notaries Society; Германия — Rechtsanwaltskammer; Франция — barreau / Chambre des notaires).', fr:'Confirme le statut auprès du barreau / de la chambre notariale officielle du pays (USA — bar de l’État ; Royaume-Uni — Law Society ; Allemagne — Rechtsanwaltskammer ; France — barreau / Chambre des notaires).', en:'Verify status with that country’s official bar/notarial chamber (USA — state bar; UK — Law Society / Notaries Society; Germany — Rechtsanwaltskammer; France — barreau / Chambre des notaires).' } },
+  fin: { israel:{ ru:'Израиль: CPA и налоговые консультанты — data.gov.il и Совет налоговых консультантов (tac.gov.il); инвестиционные консультанты — Управление ценных бумаг ISA (investors.isa.gov.il); страховые и пенсионные агенты — Управление рынка капитала (gov.il).', fr:'Israël : CPA et conseillers fiscaux — data.gov.il et Conseil des conseillers fiscaux (tac.gov.il) ; conseillers en investissement — Autorité des valeurs ISA (investors.isa.gov.il) ; agents d’assurance et de pension — Autorité des marchés de capitaux (gov.il).', en:'Israel: CPAs and tax advisors — data.gov.il and the Tax Advisors Council (tac.gov.il); investment advisors — Israel Securities Authority (investors.isa.gov.il); insurance and pension agents — Capital Market Authority (gov.il).' },
+    abroad:{ ru:'Проверяй статус в официальном регуляторе/реестре этой страны (США: CPA — совет штата, инвестсоветники — SEC, брокеры — FINRA BrokerCheck; Великобритания — FCA Register; Германия — Steuerberaterkammer / BaFin; Франция — AMF / OEC).', fr:'Vérifie le statut auprès du régulateur officiel du pays (USA : CPA — board de l’État, conseillers — SEC, courtiers — FINRA BrokerCheck ; Royaume-Uni — FCA Register ; Allemagne — Steuerberaterkammer / BaFin ; France — AMF / OEC).', en:'Verify status with that country’s official regulator/registry (USA: CPA — state board, investment advisors — SEC, brokers — FINRA BrokerCheck; UK — FCA Register; Germany — Steuerberaterkammer / BaFin; France — AMF / OEC).' } },
+  real: { israel:{ ru:'Израиль: маклеры (метавхим), оценщики (шамаим) и нотариусы — открытые реестры на data.gov.il.', fr:'Israël : agents immobiliers (metavhim), experts (shamaïm) et notaires — registres ouverts sur data.gov.il.', en:'Israel: real-estate brokers (metavhim), appraisers (shamaim) and notaries — open registries at data.gov.il.' },
+    abroad:{ ru:'Ищи официальный реестр риелторов/оценщиков этой страны (США — комиссия штата / NAR; Великобритания — RICS / Propertymark; Франция — FNAIM / notaires). Если деятельность не лицензируется — так и напиши.', fr:'Cherche le registre officiel des agents/experts du pays (USA — commission d’État / NAR ; Royaume-Uni — RICS / Propertymark ; France — FNAIM / notaires). Si l’activité n’est pas licenciée, dis-le.', en:'Find that country’s official broker/appraiser registry (USA — state commission / NAR; UK — RICS / Propertymark; France — FNAIM / notaries). If the activity is not licensed there, say so.' } }
+};
+function spBuildPrompt(Q){
+  const cat = spCurrentCat();
+  const place = spFindAbroad(Q);
+  const ruSpeaking = /русск|русско|russian|russophone/i.test(Q);
+  const loc = place ? place.c[curLang] : (curLang === 'fr' ? 'en Israël' : curLang === 'en' ? 'in Israel' : 'в Израиле');
+  const head = {
+    ru: `Запрос пользователя: «${Q}»\nСтрана и регион: ${place ? place.n.ru : 'Израиль'}. Отвечай на языке запроса пользователя, названия и термины на местном языке давай в скобках.`,
+    fr: `Demande de l’utilisateur : « ${Q} »\nPays et région : ${place ? place.n.fr : 'Israël'}. Réponds dans la langue de la demande, avec les noms et termes locaux entre parenthèses.`,
+    en: `User request: "${Q}"\nCountry and region: ${place ? place.n.en : 'Israel'}. Answer in the language of the request, with local names and terms in brackets.`
+  }[curLang];
+  const fields = {
+    ru: 'Для каждого варианта дай коротко (не более 5 строк): имя/название; специальность/что это; город и адрес (если подтверждены); один контакт; прямая полная ссылка на профиль/источник (полный URL отдельной строкой, без markdown-ссылок). Если есть отзывы — отдельной строкой «Рейтинг: X/5, Y отзывов — [полный URL страницы отзывов]». Неподтверждённые поля не выдумывай.',
+    fr: 'Pour chaque option, donne brièvement (5 lignes max) : nom ; spécialité ; ville et adresse (si confirmées) ; un contact ; l’URL complète du profil/de la source sur une ligne séparée (sans liens markdown). S’il y a des avis — une ligne « Note : X/5, Y avis — [URL complète de la page d’avis] ». N’invente aucun champ non confirmé.',
+    en: 'For each option give briefly (max 5 lines): name; specialty/what it is; city and address (if confirmed); one contact; the full direct URL of the profile/source on its own line (no markdown links). If there are reviews — a separate line "Rating: X/5, Y reviews — [full URL of the reviews page]". Do not invent unconfirmed fields.'
+  }[curLang];
+  const end = {
+    ru: 'Начни сразу с пункта 1. В конце одной строкой напиши: «Показаны только варианты, подтверждённые по доступным источникам».',
+    fr: 'Commence directement au point 1. Termine par une ligne : « Seules les options confirmées par des sources disponibles sont affichées ».',
+    en: 'Start right away with item 1. End with one line: "Only options confirmed by available sources are shown".'
+  }[curLang];
+  let body;
+  if (cat === 'med' || cat === 'law' || cat === 'fin' || cat === 'real') {
+    const reg = SP_REG[cat][place ? 'abroad' : 'israel'][curLang];
+    const intro = {
+      med:{ ru:'Это запрос о ВРАЧАХ и медработниках. Выдавай только конкретных людей-врачей, а не больницы и клиники (если пользователь сам не просил клинику). Узкую специализацию указывай только при подтверждении профилем или реестром.', fr:'Demande sur des MÉDECINS et professionnels de santé. Donne uniquement des médecins précis, pas des hôpitaux ou cliniques (sauf si demandé). N’indique une spécialisation étroite que si le profil ou le registre la confirme.', en:'This is a request about DOCTORS and medical professionals. Give specific individual doctors only, not hospitals or clinics (unless the user asked for a clinic). State a narrow specialty only if confirmed by the profile or registry.' },
+      law:{ ru:'Это запрос о ЮРИСТАХ: адвокат, нотариус, патентный поверенный.', fr:'Demande sur des JURISTES : avocat, notaire, conseil en brevets.', en:'This is a request about LEGAL professionals: lawyer, notary, patent attorney.' },
+      fin:{ ru:'Это запрос о ФИНАНСОВЫХ / НАЛОГОВЫХ / СТРАХОВЫХ / ПЕНСИОННЫХ специалистах.', fr:'Demande sur des spécialistes FINANCE / IMPÔTS / ASSURANCE / PENSION.', en:'This is a request about FINANCIAL / TAX / INSURANCE / PENSION specialists.' },
+      real:{ ru:'Это запрос о СПЕЦИАЛИСТАХ ПО НЕДВИЖИМОСТИ: маклер/риелтор, оценщик.', fr:'Demande sur des professionnels de l’IMMOBILIER : agent, expert.', en:'This is a request about REAL-ESTATE professionals: broker/agent, appraiser.' }
+    }[cat][curLang];
+    const regLine = { ru:'Добавь строку «Лицензия/реестр: [номер или статус] — [полная ссылка на реестр]». Без подтверждения в реестре не называй специалиста лицензированным и не включай его.', fr:'Ajoute une ligne « Licence/registre : [numéro ou statut] — [lien complet vers le registre] ». Sans confirmation au registre, ne le dis pas licencié et ne l’inclus pas.', en:'Add a line "Licence/registry: [number or status] — [full registry link]". Without registry confirmation, do not call them licensed and do not include them.' }[curLang];
+    body = [intro, reg, fields + ' ' + regLine, end].join('\n');
+  } else if (cat === 'biz' || cat === 'shop') {
+    body = [{
+      ru:'Это запрос о мастере, сервисе, организации или товаре. Проверяй официальный сайт или карточку организации и актуальность контакта. Не выдумывай адреса, телефоны, часы работы и цены.',
+      fr:'Demande sur un artisan, un service, une organisation ou un produit. Vérifie le site officiel ou la fiche de l’organisation et l’actualité du contact. N’invente ni adresses, ni téléphones, ni horaires, ni prix.',
+      en:'This is a request about a handyman, service, organisation or product. Verify the official website or listing and that the contact is current. Do not invent addresses, phones, opening hours or prices.'
+    }[curLang], fields, end].join('\n');
+  } else {
+    body = [{
+      ru:'Определи профессию и страну из запроса. Сначала выясни, какой официальный орган, палата или госреестр этой страны выдаёт лицензию на данную профессию, и проверь специалиста именно в нём. Если госреестра у профессии нет — прямо напиши об этом и опирайся на официальный сайт организации и отзывы. Не применяй правила одной страны к другой.',
+      fr:'Déduis la profession et le pays de la demande. Trouve d’abord quel organisme officiel, ordre ou registre d’État de ce pays délivre la licence pour cette profession, et vérifie-y le spécialiste. S’il n’y a pas de registre d’État, dis-le et appuie-toi sur le site officiel et les avis. N’applique pas les règles d’un pays à un autre.',
+      en:'Infer the profession and country from the request. First find which official body, chamber or state registry of that country licenses this profession, and verify the specialist there. If the profession has no state registry, say so and rely on the official website and reviews. Do not apply one country’s rules to another.'
+    }[curLang], fields + ' ' + ({ ru:'Если реестр существует — добавь строку «Лицензия/реестр: [номер/статус] — [ссылка]».', fr:'Si un registre existe — ajoute « Licence/registre : [numéro/statut] — [lien] ».', en:'If a registry exists — add "Licence/registry: [number/status] — [link]".' }[curLang]), end].join('\n');
+  }
+  if (ruSpeaking) body += '\n' + { ru:'Пользователь просит русскоязычного специалиста: помечай русскоязычность только при явном указании в профиле.', fr:'L’utilisateur demande un spécialiste russophone : ne signale la langue russe que si le profil l’indique explicitement.', en:'The user asks for a Russian-speaking specialist: mark Russian-speaking only if the profile states it explicitly.' }[curLang];
+  return head + '\n\n' + body;
+}
+function spRender(){
+  const box = $('#spChips'); if (!box) return;
+  box.innerHTML = '';
+  SP_CATS.forEach(c => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'sp-chip'; b.dataset.cat = c.c;
+    b.textContent = c.ico + ' ' + (c.name[curLang] || c.name.ru);
+    b.addEventListener('click', () => { spManualCat = (c.id === 'any') ? null : c.id; spRender(); });
+    box.appendChild(b);
+  });
+  spUpdate();
+}
+function spUpdate(){
+  const ta = $('#spQuery'); if (!ta) return;
+  const active = spCurrentCat();
+  $$('#spChips .sp-chip').forEach(b => b.classList.toggle('on', b.dataset.cat === active));
+  const q = ta.value.trim();
+  const hint = $('#spHint');
+  if (hint) {
+    if (!q) hint.textContent = '';
+    else {
+      const cat = SP_CATS.find(c => c.c === active);
+      const place = spFindAbroad(q);
+      const T = { ru:['Раздел: ','Регион: ','Израиль'], fr:['Rubrique : ','Région : ','Israël'], en:['Section: ','Region: ','Israel'] }[curLang];
+      hint.textContent = T[0] + (cat ? cat.ico + ' ' + (cat.name[curLang] || cat.name.ru) : active) + ' · ' + T[1] + (place ? '🌍 ' + (place.n[curLang] || place.n.ru) : '🇮🇱 ' + T[2]) + (/русск|русско|russian|russophone/i.test(q) ? ' · 🗣' : '');
+    }
+  }
+  const prompt = spBuildPrompt(q || (curLang === 'fr' ? 'décris qui tu cherches et où (profession, ville, pays)' : curLang === 'en' ? 'describe who you need and where (profession, city, country)' : 'укажи, кто и где нужен (профессия, город, страна)'));
+  const enc = encodeURIComponent(prompt);
+  const cg = $('#spChatgpt'), cl = $('#spClaude');
+  if (cg) cg.href = 'https://chatgpt.com/?q=' + enc;
+  if (cl) cl.href = 'https://claude.ai/new?q=' + enc;
+}
+function spCopyText(text, done){
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, () => spLegacyCopy(text, done));
+  else spLegacyCopy(text, done);
+}
+function spLegacyCopy(text, done){
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); done(); } catch (e) {}
+  document.body.removeChild(ta);
+}
+function spInit(){
+  const ta = $('#spQuery'); if (!ta) return;
+  ta.addEventListener('input', () => { spUpdate(); });
+  const copied = $('#spCopied');
+  const showCopied = () => { if (copied){ copied.hidden = false; setTimeout(() => { copied.hidden = true; }, 6000); } };
+  const copyBtn = $('#spCopy');
+  if (copyBtn) copyBtn.addEventListener('click', () => {
+    const q = ta.value.trim() || (curLang === 'fr' ? 'décris qui tu cherches et où (profession, ville, pays)' : curLang === 'en' ? 'describe who you need and where (profession, city, country)' : 'укажи, кто и где нужен (профессия, город, страна)');
+    spCopyText(spBuildPrompt(q), showCopied);
+  });
+  const clearBtn = $('#spClear');
+  if (clearBtn) clearBtn.addEventListener('click', () => { ta.value = ''; spManualCat = null; spRender(); ta.focus(); });
+  const gem = $('#spGemini');
+  if (gem) {
+    let step = 1;
+    gem.addEventListener('click', () => {
+      if (step === 1) {
+        const q = ta.value.trim() || '—';
+        spCopyText(spBuildPrompt(q), () => { gem.textContent = L('sp_step2'); gem.classList.add('on'); step = 2; showCopied(); });
+      } else window.open('https://gemini.google.com/app', '_blank', 'noopener');
+    });
+  }
+  spRender();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initHeroPhotoMotion();
   const hashTarget = document.getElementById(location.hash.slice(1));
@@ -1220,6 +1446,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const cAcc = $('#chartAcc');
   if (cAcc) cAcc.addEventListener('toggle', () => { if (cAcc.open && !cAcc.dataset.drawn){ cAcc.dataset.drawn = '1'; renderRateChart(); } });
   renderAll(); bindChips();  calcPlan();
+  spInit();
   observeReveals();
   fetchLive();
   const root = document.documentElement;

@@ -774,3 +774,40 @@ html[data-theme="light"] #dashboard .spark-end{fill:#8d6014;stroke:#fffefa}
 .chart-data table{border-collapse:collapse;margin-top:6px}
 .chart-data th,.chart-data td{border:1px solid var(--line);padding:5px 12px;text-align:left}
 html[data-theme="light"] .glass-chip b{color:#77500d}
+
+/* ════════ КИБЕРЩИТ: плашка о новом предупреждении ════════ */
+.cyber-alert{background:linear-gradient(90deg,rgba(193,80,69,.20),rgba(232,182,76,.14));border-bottom:1px solid rgba(232,182,76,.45)}
+.cyber-alert-in{display:flex;align-items:center;gap:12px;padding:10px 0}
+.cyber-alert-ico{color:var(--gold);display:inline-flex;flex:0 0 auto}
+.cyber-alert-link{flex:1;min-width:0;color:var(--text);text-decoration:none;font-size:13.5px;line-height:1.4}
+.cyber-alert-link:hover{text-decoration:underline}
+.cyber-alert-link b{color:var(--gold2,#f6d387)}
+.cyber-alert-x{flex:0 0 auto;background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:14px}
+.cyber-alert-x:hover{color:var(--text);border-color:var(--gold)}
+.top-nav a.nav-new,.mobile-menu a.nav-new{position:relative}
+.top-nav a.nav-new::after,.mobile-menu a.nav-new::after{content:'';position:absolute;top:2px;inset-inline-end:-2px;width:8px;height:8px;border-radius:50%;background:#e0574d;box-shadow:0 0 0 3px rgba(224,87,77,.25)}
+
+/* ════════ SMART PROMPT ════════ */
+.sp-section{padding:30px 0 6px}
+.sp-card{border:1px solid var(--line-gold,rgba(232,182,76,.35));border-radius:20px;padding:24px;background:linear-gradient(160deg,rgba(232,182,76,.06),rgba(255,255,255,.02));box-shadow:var(--shadow)}
+.sp-head{display:flex;gap:15px;align-items:flex-start}
+.sp-ico{font-size:32px;line-height:1.1}
+.sp-head-text{flex:1;min-width:0}
+.sp-head h2{margin:0 0 7px;font-size:clamp(19px,2.4vw,24px)}
+.sp-head p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.55}
+.sp-only{flex:0 0 auto;font-size:10px;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:#221703;background:var(--grad-gold,linear-gradient(120deg,#f6d387,#c9962e));border-radius:20px;padding:5px 11px}
+.sp-chips{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 10px}
+.sp-chip{cursor:pointer;font:inherit;font-size:11.5px;font-weight:700;padding:8px 12px;border-radius:20px;border:1px solid var(--line);background:transparent;color:var(--text)}
+.sp-chip:hover{border-color:var(--gold)}
+.sp-chip.on{background:var(--grad-gold,linear-gradient(120deg,#f6d387,#c9962e));color:#221703;border-color:transparent}
+#spQuery{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font:inherit;font-size:14.5px;line-height:1.5;background:rgba(255,255,255,.04);color:var(--text);resize:vertical;box-sizing:border-box}
+#spQuery:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,182,76,.18)}
+.sp-hint{min-height:18px;margin:8px 0 0;font-size:12px;font-weight:700;color:var(--gold)}
+.sp-btns{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+.sp-btns .btn{cursor:pointer}
+#spGemini.on{border-color:var(--gold);color:var(--gold2,#f6d387)}
+.sp-copied{margin:10px 0 0;color:#4fd38d;font-weight:700;font-size:13px}
+.sp-foot{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted);line-height:1.55;display:flex;flex-direction:column;gap:7px}
+.sp-foot a{color:var(--gold);font-weight:700;text-decoration:none}
+.sp-foot a:hover{text-decoration:underline}
+@media(max-width:640px){.sp-card{padding:17px}.sp-only{display:none}.sp-ico{font-size:25px}}
