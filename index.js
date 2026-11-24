@@ -434,7 +434,6 @@ function applyStatic(){
   document.title = L('meta_title');
   const lc = $('#langCur'); if (lc) lc.textContent = curLang.toUpperCase();
   $$('.lang-seg-btn, .lang-opt, .mm-lang .chip').forEach(b => b.classList.toggle('active', b.dataset.lang === curLang));
-  syncCalcCollapse();
 }
 let LIVE_ISO = '';
 let LIVE_PARTIAL = false;
