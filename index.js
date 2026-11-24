@@ -369,8 +369,8 @@ const CYBER = [
 const TICKER = [
   { icon:'bank', v:'3,25%', cls:'down', d:{ ru:'▼ 0.25', fr:'▼ 0.25', en:'▼ 0.25' }, n:{ ru:'Ставка Банка Израиля', fr:'Taux Bank Israel', en:'BoI rate' } },
   { icon:'pie', v:'1,1%', cls:'down', d:{ ru:'▼ 0,1% за мес.', fr:'▼ 0,1 % /mois', en:'▼ 0.1% m/m' }, n:{ ru:'Мадад (год)', fr:'Madad (an)', en:'CPI (year)' } },
-  { icon:'dollar', v:'3,35 ₪', cls:'down', d:{ ru:'▼ 0.2%', fr:'▼ 0.1 %', en:'▼ 0.1%' }, n:{ ru:'USD/₪', fr:'USD/₪', en:'USD/₪' } },
-  { icon:'euro', v:'3,66 ₪', cls:'down', d:{ ru:'▼ 0.4%', fr:'▲ 0.1 %', en:'▲ 0.1%' }, n:{ ru:'EUR/₪', fr:'EUR/₪', en:'EUR/₪' } },
+  { icon:'dollar', v:'3,35 ₪', cls:'up', d:{ ru:'▲ 0.9%', fr:'▼ 0.1 %', en:'▼ 0.1%' }, n:{ ru:'USD/₪', fr:'USD/₪', en:'USD/₪' } },
+  { icon:'euro', v:'3,66 ₪', cls:'up', d:{ ru:'▲ 1%', fr:'▲ 0.1 %', en:'▲ 0.1%' }, n:{ ru:'EUR/₪', fr:'EUR/₪', en:'EUR/₪' } },
   { icon:'wallet', v:{ ru:'6 444 ₪', fr:'6 444 ₪', en:'6,444 ₪' }, cls:'', d:null, n:{ ru:'Минимальная зарплата', fr:'Salaire minimum', en:'Minimum wage' } },
   { icon:'briefcase', v:{ ru:'14 515 ₪', fr:'14 515 ₪', en:'14,515 ₪' }, cls:'up', d:{ ru:'▲ 3.8%', fr:'▲ 3.8 %', en:'▲ 3.8%' }, n:{ ru:'Средняя зарплата', fr:'Salaire moyen', en:'Average wage' } },
   { icon:'fuel', v:{ ru:'7,85 ₪', fr:'7,85 ₪', en:'7.85 ₪' }, cls:'up', d:{ ru:'▲ 6.8%', fr:'▲ 6.8 %', en:'▲ 6.8%' }, n:{ ru:'Бензин 95', fr:'Essence 95', en:'Petrol 95' } },
