@@ -815,3 +815,42 @@ html[data-theme="light"] .glass-chip b{color:#77500d}
 @media(max-width:640px){.sp-card{padding:17px}.sp-only{display:none}.sp-ico{font-size:25px}}
 .fold-content .sp-card{border:0;background:none;box-shadow:none;padding:2px}
 .sp-section:has(> .wrap > .page-fold){padding:8px 0}
+
+/* ═══ Табло v2: компактные плашки, живой график, ничего лишнего (2026-11-25) ═══ */
+#dashboard .dash-grid{gap:10px;grid-template-columns:repeat(4,minmax(0,1fr))}
+#dashboard .dash-card,#dashboard .dash-card.gold{padding:13px 15px 11px;border-radius:14px;min-height:0;background:linear-gradient(165deg,rgba(255,255,255,.055),rgba(255,255,255,0) 58%),#182a3e;transition:transform .22s,border-color .22s,box-shadow .22s}
+#dashboard .dash-card:hover{transform:translateY(-3px);border-color:rgba(242,201,114,.55);box-shadow:0 10px 26px rgba(0,0,0,.28)}
+#dashboard .dash-top{min-height:24px;margin-bottom:2px}
+#dashboard .dash-val{font-size:24px;margin-top:5px}
+#dashboard .dash-note{font-size:11px;margin-top:3px;min-height:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#dashboard .dash-plot{margin-top:9px;padding:8px 10px 6px;border-radius:10px}
+#dashboard .dash-chart{height:30px;margin-top:4px}
+#dashboard .spark-area{fill:rgba(242,201,114,.12);stroke:none}
+#dashboard .plot-connector{stroke:#f2c972;stroke-opacity:.95;stroke-width:1.6}
+#dashboard .spark-range{height:15px;margin-top:1px}
+#dashboard .chart-band{grid-template-columns:1fr;padding:18px;gap:14px}
+#dashboard .chart-box{padding:10px 12px;margin-top:12px}
+#dashboard .chart-box svg{height:132px}
+#dashboard .chart-rings{flex-direction:row;gap:10px}
+#dashboard .ring-card{flex:1;padding:8px 12px}
+#dashboard .ring{width:44px;height:44px}
+@media(prefers-reduced-motion:no-preference){
+  #dashboard .dash-card.in .plot-connector{stroke-dasharray:100;animation:spark-draw 1.15s ease-out both}
+  @keyframes spark-draw{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+}
+html[data-theme="light"] #dashboard .dash-card,html[data-theme="light"] #dashboard .dash-card.gold{background:linear-gradient(165deg,rgba(141,100,25,.07),rgba(255,255,255,0) 58%),#fffefa}
+html[data-theme="light"] #dashboard .spark-area{fill:rgba(157,113,31,.12)}
+@media(max-width:760px){
+  #dashboard .dash-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  #dashboard .dash-card,#dashboard .dash-card.gold{padding:10px 11px 8px;border-radius:12px}
+  #dashboard .dash-card:first-child{grid-column:1/-1}
+  #dashboard .dash-card:first-child .dash-val{font-size:27px}
+  #dashboard .dash-val{font-size:19px;margin-top:3px}
+  #dashboard .dash-lbl{font-size:10px}
+  #dashboard .dash-note{font-size:10px;-webkit-line-clamp:1}
+  #dashboard .dash-plot{margin-top:7px;padding:6px 8px 4px}
+  #dashboard .dash-chart{height:24px}
+  #dashboard .dash-card:first-child .dash-chart{height:32px}
+  #dashboard .chart-box svg{height:104px}
+  #dashboard .chart-rings{flex-direction:column}
+}

@@ -710,7 +710,8 @@ function renderDash(){
         <div class="dash-chart" aria-hidden="true">
           <svg class="dash-spark" viewBox="0 0 200 68" preserveAspectRatio="xMidYMid meet">
             <path class="plot-grid" d="M8 13 H192 M8 34 H192 M8 55 H192"/>
-            <polyline class="plot-connector" points="${points.map(p => p.map(v => v.toFixed(2)).join(',')).join(' ')}"/>
+            <path class="spark-area" d="M${points.map(p => p.map(v => v.toFixed(2)).join(' ')).join(' L')} L192 62 L8 62 Z"/>
+            <polyline class="plot-connector" pathLength="100" points="${points.map(p => p.map(v => v.toFixed(2)).join(',')).join(' ')}"/>
             ${points.map((p, j) => `<circle class="plot-point" cx="${p[0].toFixed(2)}" cy="${p[1].toFixed(2)}" r="2.7" data-point="${j}"/>`).join('')}
             <line class="spark-guide" x1="${xLast.toFixed(2)}" y1="5" x2="${xLast.toFixed(2)}" y2="62"/><circle class="spark-end" cx="${xLast.toFixed(2)}" cy="${yLast.toFixed(2)}" r="4.1"/>
           </svg>
