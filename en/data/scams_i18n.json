@@ -1,0 +1,727 @@
+{
+ "_comment": "EN/FR translations for scams.json warnings (t=title, s=summary, n=what to notice), keyed by warning id; todo_en/todo_fr translate what_not_to_do lists keyed by the joined Russian list. New bot warnings fall back to Russian until translated. Maintained manually; coverage guarded by scripts/test_cyber.py.",
+ "en": {
+  "448": {
+   "t": "Israel's National Cyber Directorate warns of fake messages posing as the police",
+   "s": "The Israel National Cyber Directorate warns of phishing messages that impersonate the police and demand payment of a non-existent traffic fine via a link. The scammers threaten additional fines to make the victim act quickly.",
+   "n": "Red flags: the message claims to be from the Israel Police but contains a payment link and threatens extra fines — official bodies do not send such notices via random messages with links. A report number in the message does not prove authenticity — it can be invented or copied. Pressure to pay urgently is a classic scammer trick to stop you checking. The link leads not to the official gov.il site but to a third-party resource. Personal data, card details or verification codes are also requested, which is never required when paying through the official portal."
+  },
+  "447": {
+   "t": "Israel's National Cyber Directorate warns of a malicious app posing as the Tax Authority",
+   "s": "Scammers send messages with a link to a fake site imitating Google Play, offering a “Tax Authority” Android app. Once installed and granted permissions, it can give attackers access to messages, verification codes, the camera, and remote control of the device.",
+   "n": "Red flags: the app link arrives in a message instead of the official Google Play; the site imitates Google Play but is not it. Government bodies never distribute apps via message links. After installation the app requests access to SMS, codes and the camera — unusual for a tax app — and asks to install from an unknown source."
+  },
+  "446": {
+   "t": "Podcast: how tech support led to the creation of cyber weapons",
+   "s": "Israel's National Cyber Directorate released a podcast on how remote tech-support technology became the basis for offensive cyber tools (NSO), and discusses the ethical boundaries. This is educational material, not a fraud alert.",
+   "n": "The post contains no calls to action, phishing links or requests for data — it is an official post linking to Spotify. It is a podcast, not a fraud warning; the source is the official National Cyber Directorate channel."
+  },
+  "443": {
+   "t": "Israel Cyber Directorate: fake Yad2 via a suspicious app",
+   "s": "The National Cyber Directorate warns of a scam mailing impersonating Yad2: the message leads to a fake app-store site offering to download and install a suspicious app from an unknown source.",
+   "n": "Red flags: a message “from Yad2” demanding you complete an order/delivery creates urgency; the link goes to a fake store site with fake ratings and download counts; you are asked to confirm installation from an unknown source — a direct sign of malware. Check the permissions the app requests."
+  },
+  "444": {
+   "t": "Israel's Cyber Directorate: malicious app disguised as Yad2",
+   "s": "The National Cyber Directorate warns of a malicious app masquerading as Yad2, spread via messages linking to a fake app store. After installation it requests access to contacts, the camera and other device data.",
+   "n": "The “Yad2” message leads not to the official app store but to a fake site imitating one, with ratings and a download counter for credibility. You are then asked to allow installation from an unknown source, bypassing standard protections. The app then requests contacts and camera access a classifieds service does not need."
+  },
+  "442": {
+   "t": "Israel: half of residents hit by cyber threats in a year — check your links",
+   "s": "The National Cyber Directorate reports that half of Israelis were affected by cyberattacks in a year, and presents the new “Click Check” service for checking suspicious links without opening them. Most people know the threats, but only a third can check links and just 10% report suspicious messages.",
+   "n": "This is an official notice, not a specific scam message. Be wary of any suspicious SMS or messenger link: unknown sender, urgent call to click, promised benefit or threat of blocking. Check that the address matches the official cyber.gov.il domain, and use “Click Check” at cyber.gov.il/clickcheck to test a link without opening it."
+  },
+  "438": {
+   "t": "Israel's National Cyber Directorate offers free security tools for business",
+   "s": "The National Cyber Directorate announces free targeted alerts and security tools for businesses on its official portal, and invites business owners to explore them.",
+   "n": "This is an official government post, not a scam. But scammers imitate such announcements — check that the link leads to the real cyber.gov.il domain (not lookalikes like cyber-gov-il.com), that no personal data, passwords or payment are requested, and that there are no third-party download links."
+  },
+  "439": {
+   "t": "Iran is developing AI for cyberattacks, warns Israel's National Cyber Directorate",
+   "s": "National Cyber Directorate head Yossi Karadi warned that Iran is trying to use artificial intelligence for cyberattacks, and noted the strategic threat of a “war of attrition” where attacks pile up faster than organisations can recover.",
+   "n": "This is an official warning, not a scam. Beware imitations: phishing letters or calls citing a “Cyber Directorate warning” that demand urgent action — clicking a link, sharing data, installing “security” software. Real warnings are published on official government sites and never require immediate action via links."
+  },
+  "441": {
+   "t": "Cyber threat: robots in the physical world at risk of hijacking",
+   "s": "The National Cyber Directorate warns that as robots enter the physical world, cyberattacks could cause real physical danger. The question is how to keep control of the machines.",
+   "n": "This is an official warning, not a typical scam. The risk: networked, remotely controlled robots can be hijacked. Vulnerability signs: missing security updates, weak passwords, open control ports. Treat “robot hack” videos critically — they demonstrate risk, not a call to action."
+  },
+  "432": {
+   "t": "Israel's Cyber Directorate simulated a screen hack in Tel Aviv",
+   "s": "To open National Cyber Protection Week, the National Cyber Directorate simulated a hacker takeover of digital screens in Tel Aviv, showing how easily a cyberattack can enter everyday life, and invites the public to the national cyber portal.",
+   "n": "The “HACKED” text on screens was an official simulation, not a real attack. Do not panic or follow unknown links that may circulate around such an event. Official explanations appear on official resources such as portal.cyber.gov.il. Urgent action demands or data requests “from the Directorate” are signs of fraud."
+  },
+  "433": {
+   "t": "Israelis warned: voting for a “dancer” steals your WhatsApp",
+   "s": "Scammers send requests to vote for a “talented ballerina” via a link that asks you to link your WhatsApp account. This gives attackers access to your chats and lets them send messages in your name.",
+   "n": "Red flags: 1) being asked to link WhatsApp (enter a code or scan a QR) to vote — legitimate contests do not work this way; 2) the link leads to a third-party site; 3) the message may come from a friend whose account was compromised — verify via another channel; 4) an emotional hook (“the most talented ballerina”) lowers your guard."
+  },
+  "435": {
+   "t": "Check suspicious links with “Click Check” on Israel's cyber portal",
+   "s": "The National Cyber Directorate urges checking suspicious links via the official “Click Check” service at portal.cyber.gov.il before opening them — parcel notices, payment demands and similar messages are typical bait.",
+   "n": "Typical phishing bait: a parcel notice, a payment request, a vague sense something is wrong. Red flags: an unexpected message with a link, urgent payment or parcel claims, an unknown sender. The official checking domain is portal.cyber.gov.il; similar-looking addresses with typos or other domains should alarm you."
+  },
+  "436": {
+   "t": "Israel's Cyber Directorate: fewer passwords and document copies — protection against leaks and fraud",
+   "s": "The National Cyber Directorate presented a digital identity strategy: a single sign-in for government and private services and a national digital wallet for documents, to reduce sharing of ID copies and the risk of leaks, forgery and fraud.",
+   "n": "This is an official information post, not an attack warning. Beware imitations: a link “from the Cyber Directorate” urging you to urgently download a “national digital wallet” or enter ID details or passwords is phishing. The real project is open for comments on the official site until 30.11.2026 — only via the gov.il domain."
+  },
+  "437": {
+   "t": "National Cyber Directorate warns of a fake WhatsApp message",
+   "s": "The National Cyber Directorate warns of a false message spreading on WhatsApp that may cause panic. It is not an official warning and should not be forwarded.",
+   "n": "Red flags: the message arrives via WhatsApp rather than official Home Front or Cyber Directorate channels; it can cause panic but has no official confirmation; it urges you to forward it — typical of viral fakes. Official bodies never ask to relay warnings through messengers."
+  },
+  "431": {
+   "t": "Israel's Cyber Directorate: HACKED text on billboards is a known incident",
+   "s": "The National Cyber Directorate confirmed it is aware of the HACKED text appearing on billboards and promised details later, thanking citizens for their vigilance.",
+   "n": "What should alarm you is not the Directorate's message but the situation: HACKED text on street billboards may indicate compromised outdoor-advertising systems. Do not interact with such screens, do not draw conclusions from one word, and follow official Cyber Directorate explanations."
+  },
+  "428": {
+   "t": "Fake podcast about Israel's cybersecurity",
+   "s": "A post announces a National Cyber Directorate podcast and the Cyber Week conference, but spreads via a suspicious link and may be phishing.",
+   "n": "The link leads to Spotify with tracking parameters (utm_source=copy-link), typical of mass mailings. Name-dropping senior figures (Prof. Ben-Israel, Gen. Karadi) builds trust; emojis and “get an inside look” push you to click. Official Directorate accounts usually do not post such links, and the reactions look artificially boosted."
+  },
+  "430": {
+   "t": "Israel's National Cyber Directorate launched a portal with free security tools",
+   "s": "The National Cyber Directorate presented an official portal with free tools for checking suspicious links, learning to spot phishing and assessing your security level, at portal.cyber.gov.il.",
+   "n": "This is an official government post, not a scam. Scammers may imitate such announcements: here the portal.cyber.gov.il domain (gov.il) confirms authenticity. Fake copies use lookalike domains (e.g. cyber.gov.il.portal.com), shortened links, or requests for personal data or payment. The real portal is free."
+  },
+  "426": {
+   "t": "Israel's Cyber Directorate: automated calls in the name of Google",
+   "s": "The National Cyber Directorate warns of fraudulent automated calls in English posing as a Google account-hack warning and demanding urgent action. Do not follow the call's instructions — check your account yourself and report such calls to 119.",
+   "n": "Red flags: an automated English voice claiming to be Google security; claims that your account phone number was changed or activity came from Tehran (Iran), creating false urgency; being asked to press digits, share passwords or codes, or call a number given in the message. Real Google never calls with such warnings and never asks for passwords or codes. A call alone does not mean you were hacked."
+  },
+  "427": {
+   "t": "Israel warns: scammers use AI to fake online stores",
+   "s": "The National Cyber Directorate warns that scammers use AI to create convincing fake online stores. Check sellers carefully, never share card details or verification codes, and track deliveries only on official websites.",
+   "n": "Red flags: unusually low prices and pressure to pay immediately; arriving at the store via a message/ad link rather than directly; no information about the store owner; being asked in chat for card details, a password or a code; parcel notices linking to non-official delivery sites. AI makes fakes look polished — do not trust looks alone."
+  },
+  "425": {
+   "t": "Israel's Cyber Directorate: protecting election systems — not a fraud alert",
+   "s": "An official National Cyber Directorate post about protecting election-related systems and preparing for voting day. It contains no warning about a specific fraud or attack.",
+   "n": "The post itself asks for nothing — no links, attachments or data requests. Beware imitations: if a similar text arrives via messenger or social media from an unknown account urging you to click, “check your voter status”, enter card details or forward an SMS code, that is phishing. Check the sender matches the official account."
+  },
+  "424": {
+   "t": "Israel launches “Election Shield” to protect digital systems",
+   "s": "The National Cyber Directorate and the Central Elections Committee announced the “Election Shield” operation to protect election digital systems. Check information only on official sites, beware alarming links, and report hacked sites to 119.",
+   "n": "The warning comes from an official source. Beware fake messages or sites imitating official election resources: SMS/messenger links that rush or frighten you into urgent action (“check your vote was not deleted”). Signs: unofficial domain, no connection to the Elections Committee or Cyber Directorate sites, grammar errors. Do not share unverified screenshots; if a site looks hacked, close it and report to 119."
+  },
+  "423": {
+   "t": "Israel Cyber Directorate warns of fraud in the name of Binance and other platforms",
+   "s": "The National Cyber Directorate warns of scam calls and SMS impersonating Binance and other well-known platforms to steal personal and account data. Do not call back, never share passwords or codes, and check your account only via official apps or sites.",
+   "n": "Red flags: 1) the message appears inside an existing conversation thread — scammers can spoof or inject threads; 2) claims of an “unusual login” create panic; 3) redirection to a phone number where email, financial accounts or logins are requested — real companies never ask this by phone; 4) requests for passwords, codes or account data; 5) being asked to press digits or confirm actions on a call you did not initiate."
+  },
+  "422": {
+   "t": "Microsoft: Israel ranks second worldwide for cyberattacks, threats growing",
+   "s": "A Microsoft report ranks Israel second in the world for cyberattacks. The National Cyber Directorate head warns that threats are growing and AI accelerates attacks, so defences must keep evolving.",
+   "n": "This is an official Cyber Directorate post, not a scam. Beware imitations: a similar text from an unknown messenger/social account urging you to click a link, install a “security tool” or share personal data is fraud. Signs: unofficial sender, shortened links, urgent demands, requests for passwords or card data, language errors."
+  },
+  "421": {
+   "t": "Israel Cyber Directorate: a podcast on cyber intelligence — not a fraud alert",
+   "s": "This is not a fraud warning but an announcement of a National Cyber Directorate podcast about cyberspace as an intelligence and operational tool. It contains no call to action, phishing links or requests for personal data.",
+   "n": "Note the mismatch: material presented like a fraud warning contains no scam scheme, no links to click and no data requests. The only link leads to Spotify and looks like a normal podcast link. There are no forgery signs in the text itself — it is an official information post."
+  },
+  "417": {
+   "t": "Israel's Cyber Directorate launched a podcast about cyber warfare",
+   "s": "The National Cyber Directorate announced a new podcast, “Without a Single Shot”, about cyber warfare and readiness. In the first episode, director Yossi Karadi discusses threats to infrastructure and the need to prepare.",
+   "n": "This is an official post, not a scam. Authenticity signs: the link leads to the legitimate open.spotify.com domain, real officials are named (Shay Gal, Yossi Karadi), and the wording matches official Israeli agencies. Nothing asks for personal data, shortened links, prizes or threats. Still, always verify the link really goes to spotify.com, not a lookalike."
+  },
+  "419": {
+   "t": "Phishing posing as a Booking hotel reservation confirmation",
+   "s": "Scammers send phishing messages linking to a fake Booking site asking you to confirm a hotel reservation. Some messages include real booking details, making them more convincing.",
+   "n": "Red flags: being asked to confirm a booking via a link to a site merely imitating Booking. Even real stay dates and booking numbers (possibly from data leaks) do not prove the sender is genuine. Signs: a domain that is not booking.com, shortened or suspicious links, urgency pressure. Never follow the link — check the booking only in the official app or site."
+  },
+  "416": {
+   "t": "Israel Cyber Directorate teases an upcoming fraud warning",
+   "s": "The National Cyber Directorate published a teaser post hinting at a forthcoming fraud warning. It contains no details, but draws attention to the upcoming message.",
+   "n": "As a teaser, the post contains no specific fraud signs. Stay alert if similar messages come from unknown senders or ask you to click links or provide personal data. Official Directorate channels usually publish warnings with concrete examples and instructions."
+  },
+  "414": {
+   "t": "Cyber Directorate head: “We are in a technological earthquake — defence must change”",
+   "s": "Against the backdrop of alarming AI progress in autonomous attacks, the National Cyber Directorate head gathered Israeli cyber-industry leaders before Rosh Hashanah and presented plans for the coming years.",
+   "n": "This is an official informational post by the National Cyber Directorate, not a fraud warning. If a similar message arrives from a non-official channel asking you to click links, download files or share personal data, treat it as phishing and verify on the Directorate's official pages."
+  },
+  "415": {
+   "t": "Israel Cyber Directorate: forecasts for the year 5787",
+   "s": "The National Cyber Directorate published experts' forecasts for the coming year. This is an official informational message, not a warning about a specific scam attack.",
+   "n": "The post is an official Directorate message with no fraud signs. Beware imitations adding phishing links or attachments: be suspicious if it arrives outside official channels (private messages or SMS), urges you to click or download, or requests personal data. Here it is simply a video announcement and greeting, matching official style; verified social pages confirm the source."
+  },
+  "413": {
+   "t": "Israel's Cyber Directorate warns of fake traffic-fine SMS",
+   "s": "The National Cyber Directorate warns of scam SMS that look like traffic-fine notices and are used to steal personal and bank-card data. Check fines only on the official police site; if you entered card data, contact your card company urgently.",
+   "n": "Be suspicious of the SMS itself: official fine notices arrive by post or via official government services, not as unexpected texts. Scammers exploit fear and urgency to make you click and “pay the fine”, harvesting personal and card data. Signs: unknown sender, unofficial site link, urgent payment demand, card-data request. Block and delete such messages."
+  },
+  "412": {
+   "t": "Do not follow suspicious links in the name of the Tax Authority",
+   "s": "The Cyber Directorate warns of phishing messages masquerading as the Tax Authority and suggests checking suspicious links via the official service.",
+   "n": "Red flags: 1) a suspicious message or link supposedly from the Tax Authority; 2) calls to click or enter personal data; 3) possible grammar errors or an unusual sender address; 4) an unexpected message from a government body demanding urgent action."
+  },
+  "411": {
+   "t": "Warning about a phishing event in the name of Israel's Cyber Directorate",
+   "s": "A post invites you to a cybersecurity event but shows fraud signs: an unusual date (2026), strange symbols and no official details.",
+   "n": "Red flags: 1) the event date 10.9.2026 looks unrealistic for a “in three days” announcement; 2) a “❤1” symbol at the end, uncharacteristic of official messages; 3) no concrete details (venue, time, registration) or links to official sources; 4) the tone imitates official messages but contains oddities that give away the fake."
+  },
+  "410": {
+   "t": "Check whether you are alone at home: a fraud warning",
+   "s": "An official-looking Israel cyber warning about possible fraud involving cameras or surveillance. It urges you to check whether someone is watching you and to follow a link for recommendations.",
+   "n": "Be wary of the post itself: it imitates an official message but has an unusual call to action and a link. Signs: emojis (👀) and smileys (💯❤) in an official message, short text without specifics, a link to a government site but with a suspicious path (/iot070926). Scammers often build fake pages resembling official ones to steal data or infect devices."
+  },
+  "409": {
+   "t": "Safety in WhatsApp groups: 6 tips from Israel's Cyber Directorate",
+   "s": "The National Cyber Directorate warns about risks in WhatsApp groups and gives 6 simple tips to improve security.",
+   "n": "This is general security advice, not a specific scam scheme. Still, WhatsApp groups are used for phishing, malicious links and information gathering. Check who is added to a group, do not follow suspicious links and never share confidential data in groups."
+  },
+  "408": {
+   "t": "Caution: a ticket scam can lead to hijacking your mobile number",
+   "s": "Scammers post fake ads about free tickets on social media and trick victims into revealing an SMS confirmation code, which they use to take control of the victim's mobile number.",
+   "n": "Red flags: 1) overly tempting offers (free tickets or perks) in the name of well-known companies on Facebook/Instagram; 2) being asked to share an SMS confirmation code after leaving your details; 3) a mismatch between the SMS content and what the person says (the code may be for a SIM swap or number transfer); 4) pressure and urgency so you cannot think."
+  },
+  "407": {
+   "t": "New cyber-protection system for business: strengthening the supply chain",
+   "s": "Israel's National Cyber Directorate launches a new system to assess and strengthen cyber protection in supply chains. Businesses and suppliers are invited to register to raise their security level.",
+   "n": "Check the link's authenticity: scammers create phishing sites imitating the official gov.il portal. Verify the domain (must be gov.il) and HTTPS. Beware messages creating urgency or demanding immediate registration — official notices do not ask for personal data via links."
+  },
+  "404": {
+   "t": "Smartwatches can track you: how to protect yourself from cyber spying",
+   "s": "Smartwatches and fitness trackers can be used to track movements and intercept data via Bluetooth. Update devices, choose reputable manufacturers, turn Bluetooth off when not needed, and check connected devices.",
+   "n": "Red flags: 1) unusual watch/tracker behaviour — fast battery drain, frequent connection drops, unknown devices in the Bluetooth list; 2) pairing requests from unknown devices; 3) someone staying suspiciously close in crowded places, possibly intercepting the signal; 4) missing firmware updates or outdated models without modern security protocols."
+  },
+  "405": {
+   "t": "Cyberattack on a hospital: lessons for executives",
+   "s": "A post describes a cyberattack on a medical centre and urges executives to prepare for such incidents, asking not “if” but “when”.",
+   "n": "This is informational material about a cyberattack, not a fraud warning. For executives: the attack targeted a medical institution, underlining the vulnerability of critical infrastructure. A specific date, hospital name and video links could be mimicked by scammers for phishing — verify the source and do not follow suspicious links."
+  },
+  "402": {
+   "t": "Cybersecurity: how to defend against indirect injection in AI assistants",
+   "s": "Scammers can embed hidden instructions in content an AI assistant processes, making it perform malicious actions. Limit the AI's permissions and require manual confirmation for sensitive operations.",
+   "n": "Watch for unexpected AI-assistant behaviour: if after summarising a page it tries to send an email, change settings or request data access, that may be an indirect prompt injection. Be alert to hidden instructions on web pages or in documents that are invisible in normal view but interpreted by the AI."
+  },
+  "400": {
+   "t": "Mass SMS with OTP codes: not a hack, but be careful",
+   "s": "Receiving mass OTP codes without requesting them is not a hack but an attack using legitimate services. The main danger is entering a code on a phishing site, which can lead to account takeover.",
+   "n": "Red flags: 1) dozens of OTP SMS arriving unrequested; 2) any attempt to get you to enter these codes on a site or share them; 3) suspicious sites or apps requesting an OTP code after such a flood; 4) if the messages continue for a long time, it may be a targeted attack."
+  },
+  "379": {
+   "t": "Cybersecurity: no ceasefire in cyberspace",
+   "s": "The National Cyber Directorate head warns that cyberattacks continue even during a ceasefire and have doubled in number. He stresses balancing cyber-defence investment with business needs, and the role of AI and quantum computing in new threats.",
+   "n": "This is a general statement about rising attacks during a ceasefire, not a specific scam warning. In such periods scammers become more active: watch for suspicious messages exploiting ceasefire, war or emergency themes, and phishing via email, SMS or fake sites. Stay extra vigilant."
+  },
+  "381": {
+   "t": "Talk to your parents and grandparents before scammers do",
+   "s": "Scammers target Russian-speaking elderly people in Israel, posing as relatives, the bank or the police, sometimes using AI voice imitation. Talk to your elderly relatives and remind them of the rules: stop, hang up, verify.",
+   "n": "Red flags: 1) a call from a “relative” asking for money or urgent help, especially if the voice sounds familiar but slightly distorted (possibly AI); 2) a “bank” or “police” call demanding immediate action, transfers or codes; 3) pressure, urgency, and forbidding you to pause or check; 4) requests to keep the conversation secret; 5) unusual contact channels (messengers, unofficial numbers)."
+  },
+  "383": {
+   "t": "Warning about WordPress site hacks: urgent measures",
+   "s": "The National Cyber Directorate warns of mass hacks of WordPress sites running PHP, Nginx and MySQL. Site owners should urgently update components, enable two-factor authentication and restrict admin access.",
+   "n": "This is a real-threat warning, not phishing. But: 1) scammers imitate such messages — verify the sender address and links; 2) naming specific technologies (WordPress, PHP, Nginx, MySQL) is typical of targeted attacks, and scammers copy such wording in fake warnings to push malicious links; 3) links must lead to official sites only; 4) if it arrives by email or messenger, do not click — go to the Cyber Directorate site yourself."
+  },
+  "387": {
+   "t": "Caution: gifts and links in games can be a data-theft trap",
+   "s": "Scammers in online games lure children with free gifts, coins or links that can steal passwords, payment data and personal information. Parents should discuss safe gaming rules with their children.",
+   "n": "Red flags: promises of free gifts, coins or harmless links in games that may lead to phishing sites or malware downloads; unexpected messages from strangers in games offering to follow a link or enter data for a reward."
+  },
+  "388": {
+   "t": "ClickFix scam: do not copy code and do not press Win+R",
+   "s": "Scammers hack sites (including WordPress) and show fake error or verification messages asking users to copy code and run it via Win+R. This installs malware that steals passwords and data.",
+   "n": "Red flags: 1) an unexpected error, human-verification or update message on a site, especially one asking you to copy code; 2) instructions to open the Run window with Windows+R; 3) being told to paste code and press Enter — the classic ClickFix sign. The attack runs on hacked sites that may look legitimate."
+  },
+  "389": {
+   "t": "Caution: targeted phishing — verify the sender",
+   "s": "Scammers use targeted phishing, gathering information about the victim and posing as a trusted person to extract data. Verify messages via another channel and never share passwords.",
+   "n": "Red flags: an unexpected message from an acquaintance or organisation that feels personal; a request to follow a link or provide a password/code; a sense of urgency or oddness. Verify the sender via another channel (e.g. call them) and never share sensitive data."
+  },
+  "391": {
+   "t": "LockBit attacks on Israeli organisations: how to reduce the risk",
+   "s": "The National Cyber Directorate warns of a wave of LockBit ransomware attacks on organisations, using phishing, stolen passwords and vulnerabilities, with protection and response recommendations.",
+   "n": "Red flags: 1) unexpected emails or messages asking you to click a link or open an attachment, especially if they look like official notices; 2) urgent demands such as changing a password or verifying an account; 3) suspicious URLs that differ from official domains; 4) messages saying your files are encrypted with a crypto ransom demand; 5) unusual system behaviour — slowdowns or files with a .lockbit extension."
+  },
+  "393": {
+   "t": "Warning about a phishing campaign imitating SharePoint documents",
+   "s": "Scammers send phishing emails in the name of SharePoint asking you to open a financial document. The link leads to a fake Microsoft sign-in page that steals credentials and confirmation codes, allowing mailbox takeover.",
+   "n": "Red flags: 1) an unexpected email with a document (invoice, report, payment file) from a familiar sender asking you to open it; 2) the link leads to a Microsoft sign-in page but the address differs from the official one; 3) requests to enter a password and confirmation code on a suspicious page; 4) the email may come from a hacked mailbox, so even a familiar address proves nothing; 5) being asked to copy a confirmation code — real services never ask you to copy codes manually."
+  },
+  "394": {
+   "t": "Caution: fake messages after connecting to Wi-Fi on holiday",
+   "s": "Scammers use fake pages after connecting to public Wi-Fi to trick users into installing malware or entering passwords. Ignore such messages and take no action.",
+   "n": "Be suspicious of any message appearing right after connecting to Wi-Fi, especially if it demands installing updates or software, running commands or entering a password. Legitimate networks never ask for this. Also check the page address, spelling errors and unusual pop-ups."
+  },
+  "395": {
+   "t": "Warning about phishing emails in the name of the Tax Authority",
+   "s": "Scammers send phishing emails in the name of the Tax Authority demanding payment of a debt. The link leads to a fake payment page that steals personal and credit-card data.",
+   "n": "Red flags: 1) an unexpected email from the Tax Authority demanding debt payment, especially if you expect no debts; 2) the link leads to a page imitating a government site but with an address that may differ from the official gov.il; 3) requests for personal and card data on such a page — a clear phishing sign; 4) official bodies do not demand payment via email links — check debts via your personal account on the official site."
+  },
+  "396": {
+   "t": "Telegram safety: how to protect yourself from scammers",
+   "s": "Israel's Cyber Directorate warns about fraud on Telegram: fake accounts, suspicious links and data-theft attempts, and gives simple rules for safe use.",
+   "n": "Red flags: 1) messages from unknown or suspicious contacts that look official; 2) links to sites asking for your password or account data; 3) sudden requests to follow a link or download a file; 4) signs that a friend's or official's account was hacked (unusual style, urgency)."
+  },
+  "397": {
+   "t": "National Cyber Protection Week in Israel: 8–12 November",
+   "s": "An official announcement of National Cyber Protection Week in Israel, 8–12 November, with events and practical tools to raise cyber awareness.",
+   "n": "This is an official government announcement with no fraud signs. Note the link: it leads to the official gov.il site, confirming authenticity. If a link were altered or led to a third-party resource, that could indicate phishing. Verify dates and details on the official site."
+  },
+  "398": {
+   "t": "Caution: fake invitation to meet Israel's cybersecurity chief",
+   "s": "Scammers send fake invitations to a meeting with Israel's cybersecurity chief, using a phishing form to collect data.",
+   "n": "Warning: the link leads to forms.monday.com, not an official Israeli government site (e.g. gov.il). The form requests personal data — typical phishing. The date 25.8.26 also looks unrealistic. Official invitations from government bodies come from official domains and do not require filling in third-party forms."
+  },
+  "399": {
+   "t": "Warning about phishing attacks on journalists and public figures in Israel",
+   "s": "Israeli security services warn of growing phishing attacks on journalists and public figures. Stay vigilant, do not follow suspicious links, enable two-factor authentication and report suspicious attempts.",
+   "n": "The attacks target journalists and public figures. Attackers use message links leading to fake sign-in pages, often under the pretext of joining a video call. Watch for unexpected messages asking for a password or code, even if they look like video-call invitations. Verify the sender's address and use additional channels to confirm identity."
+  },
+  "voice-relative-trouble": {
+   "t": "“A relative in trouble” — a voice scam targeting Russian speakers",
+   "s": "Official agency confirmation: scammers deliberately call elderly Russian speakers, posing as a relative, the bank or the police — sometimes faking a familiar voice with AI.",
+   "n": "The agency states it plainly: elderly Russian speakers are targeted deliberately, not by chance. A phone voice can sound very much like a real relative — AI can imitate a voice from a short recording (e.g. a social-media video)."
+  },
+  "sms-govil-thread": {
+   "t": "A fake SMS “embeds itself” into the real GOV.IL conversation",
+   "s": "An official warning about a technical trick: a fraudulent SMS asking for payment appears in the SAME conversation thread as real GOV.IL messages — due to how some phones display SMS, not because GOV.IL was hacked.",
+   "n": "The trap is precisely that the message looks “native” — it lands in one chat with real government SMS. Appearing in that thread does NOT prove a message is genuine."
+  },
+  "sms-fake-bamba": {
+   "t": "Fake “win 500 ₪” giveaway in the name of a famous brand",
+   "s": "A phishing message masquerades as a promotion by a famous snack brand, promising a 500-shekel gift certificate.",
+   "n": "Signs from the agency's own list: a promise of a big prize, a short survey or “giveaway”, a demand to share the link in WhatsApp/Messenger, and a link to an unofficial site address. If it looks too good — it is most likely phishing."
+  },
+  "sms-pango-thread": {
+   "t": "Fake SMS in the name of the Pango parking app — also inside the real thread",
+   "s": "Another case of the same trick: a phishing message in the name of the popular parking-payment app appears inside the real conversation with that app.",
+   "n": "Even if a message looks plausible and sits in the right chat, that does not prove it is genuine. The only reliable check is to open the app yourself — never via the link."
+  },
+  "sms-israel-post": {
+   "t": "Fake Israel Post site steals data while you type",
+   "s": "A particularly dangerous scheme: a fake copy of the Israel Post site steals entered data in real time, before you even press “send”.",
+   "n": "Even typing data on a fake page is already a risk — pressing “send” is not required. Before entering anything, check the exact site address; if in doubt, verify the link on sites like scanmysms.com."
+  },
+  "extortion-camera": {
+   "t": "“I hacked your computer” — email extortion",
+   "s": "A mass mailing threatens to publish compromising video allegedly recorded via your webcam and demands a ransom.",
+   "n": "This is a classic scattergun scam — sent to millions of addresses indiscriminately. Nobody actually hacked your device or recorded video. The goal is to trigger panic and shame so you pay without thinking."
+  },
+  "sms-fake-invoice": {
+   "t": "Fake “invoice” email with a hidden remote-access program",
+   "s": "An email allegedly from a well-known invoicing service, with a link to “download the invoice” — in reality the link installs remote-access software on your computer.",
+   "n": "Remote-access software is not malicious in itself — tech support uses it too. The danger is that it is installed by deception, via an email you did not expect."
+  },
+  "sms-fake-domain": {
+   "t": "A real example of a fake website address in an SMS",
+   "s": "A documented case: an SMS with a vague “bureaucratic” text and a link to an obviously fake website address.",
+   "n": "Look at the address itself: “trsom.xyz” has nothing to do with real government sites (those end in .gov.il), and the “.xyz” ending is almost never used by official Israeli institutions. The name “trsom” is meaningless, and the text is vague — it names no real agency."
+  }
+ },
+ "fr": {
+  "448": {
+   "t": "La Direction nationale de la cybersécurité met en garde contre de faux messages se faisant passer pour la police",
+   "s": "La Direction nationale de la cybersécurité d’Israël met en garde contre des messages de phishing qui se font passer pour la police et exigent le paiement par lien d’une amende routière inexistante. Les escrocs menacent d’amendes supplémentaires pour pousser la victime à agir vite.",
+   "n": "Signaux d’alerte : le message prétend venir de la police israélienne mais contient un lien de paiement et menace d’amendes supplémentaires — les organismes officiels n’envoient pas de telles notifications par messages aléatoires avec liens. Un numéro de rapport dans le message ne prouve pas son authenticité — il peut être inventé ou copié. La pression à payer en urgence est un classique des escrocs pour empêcher toute vérification. Le lien mène non pas au site officiel gov.il mais à un site tiers. Des données personnelles, de carte ou des codes de confirmation sont aussi demandés, ce qui n’est jamais requis pour payer via le portail officiel."
+  },
+  "447": {
+   "t": "La Direction nationale de la cybersécurité met en garde contre une application malveillante se faisant passer pour l'Autorité fiscale",
+   "s": "Des escrocs envoient des messages avec un lien vers un faux site imitant Google Play, proposant une application « Autorité fiscale » pour Android. Une fois installée et autorisée, elle peut donner accès aux messages, codes de confirmation, à la caméra et au contrôle à distance de l'appareil.",
+   "n": "Signaux d'alerte : le lien arrive dans un message au lieu du Google Play officiel ; le site imite Google Play sans l'être. Les organismes publics ne diffusent jamais leurs applications via des liens dans des messages. L'application demande l'accès aux SMS, codes et caméra — inhabituel pour un service fiscal — et une installation depuis une source inconnue."
+  },
+  "446": {
+   "t": "Podcast : comment le support technique a conduit à la création de cyber-armes",
+   "s": "La Direction nationale de la cybersécurité a publié un podcast sur la façon dont la technologie d'assistance à distance est devenue la base d'outils cyber offensifs (NSO), et discute des limites éthiques. C'est un contenu éducatif, pas une alerte fraude.",
+   "n": "Le message ne contient ni appel à l'action, ni lien de phishing, ni demande de données — c'est une publication officielle avec un lien Spotify. Il s'agit d'un podcast et non d'une alerte ; la source est le canal officiel de la Direction nationale de la cybersécurité."
+  },
+  "443": {
+   "t": "Cybersécurité israélienne : faux Yad2 via une application suspecte",
+   "s": "La Direction nationale de la cybersécurité met en garde contre un envoi frauduleux se faisant passer pour Yad2 : le message mène à un faux site de boutique d'applications proposant d'installer une application suspecte depuis une source inconnue.",
+   "n": "Signaux d'alerte : un message « de Yad2 » exigeant de finaliser commande et livraison crée un sentiment d'urgence ; le lien mène à un faux site de boutique avec de faux avis et compteurs de téléchargements ; on vous demande de confirmer une installation depuis une source inconnue — signe direct de logiciel malveillant. Vérifiez les autorisations demandées."
+  },
+  "444": {
+   "t": "Direction de la cybersécurité : application malveillante déguisée en Yad2",
+   "s": "La Direction nationale de la cybersécurité met en garde contre une application malveillante se faisant passer pour Yad2, diffusée via des messages menant à une fausse boutique d'applications. Une fois installée, elle demande l'accès aux contacts, à la caméra et à d'autres données.",
+   "n": "Le message « Yad2 » mène non pas à la boutique officielle, mais à un faux site qui l'imite avec avis et compteur de téléchargements pour paraître crédible. On demande ensuite d'autoriser l'installation depuis une source inconnue, contournant les protections. L'application réclame ensuite contacts et caméra, inutiles pour un service de petites annonces."
+  },
+  "442": {
+   "t": "Israël : la moitié des habitants touchés par des cybermenaces en un an — vérifiez vos liens",
+   "s": "La Direction nationale de la cybersécurité indique que la moitié des Israéliens ont été touchés par des cyberattaques en un an et présente le nouveau service « Click Check » pour vérifier les liens suspects sans les ouvrir. La plupart connaissent les menaces, mais un tiers seulement sait vérifier les liens et 10 % signalent les messages suspects.",
+   "n": "Il s'agit d'un avis officiel, pas d'un message frauduleux précis. Méfiez-vous de tout SMS ou lien suspect : expéditeur inconnu, incitation urgente à cliquer, promesse de gain ou menace de blocage. Vérifiez que l'adresse correspond au domaine officiel cyber.gov.il et utilisez « Click Check » sur cyber.gov.il/clickcheck pour tester un lien sans l'ouvrir."
+  },
+  "438": {
+   "t": "La Direction nationale de la cybersécurité offre des outils de protection gratuits aux entreprises",
+   "s": "La Direction nationale de la cybersécurité annonce des alertes ciblées et des outils de sécurité gratuits pour les entreprises sur son portail officiel et invite les dirigeants à les découvrir.",
+   "n": "C'est une publication officielle d'un organisme d'État, pas une escroquerie. Mais les escrocs imitent ce type d'annonces : vérifiez que le lien mène au vrai domaine cyber.gov.il (et non à des imitations comme cyber-gov-il.com), qu'aucune donnée personnelle, mot de passe ou paiement n'est demandé, et qu'il n'y a pas de liens de téléchargement tiers."
+  },
+  "439": {
+   "t": "L'Iran développe l'IA pour des cyberattaques, avertit la Direction nationale de la cybersécurité",
+   "s": "Le directeur de la Direction nationale de la cybersécurité, Yossi Karadi, a averti que l'Iran tente d'utiliser l'intelligence artificielle pour des cyberattaques, évoquant une « guerre d'usure » où les attaques s'accumulent plus vite que les organisations ne peuvent s'en remettre.",
+   "n": "C'est un avertissement officiel, pas une escroquerie. Méfiez-vous des imitations : lettres ou appels citant un « avertissement de la Direction » exigeant une action urgente — cliquer, communiquer des données, installer un « logiciel de protection ». Les vrais avertissements sont publiés sur les sites officiels et n'exigent jamais d'action immédiate via des liens."
+  },
+  "441": {
+   "t": "Cybermenace : les robots dans le monde physique risquent d'être piratés",
+   "s": "La Direction nationale de la cybersécurité avertit qu'avec l'arrivée des robots dans le monde physique, les cyberattaques pourraient causer de réels dangers physiques. La question : garder le contrôle des machines.",
+   "n": "C'est un avertissement officiel, pas une escroquerie classique. Le risque : des robots connectés et contrôlés à distance peuvent être détournés. Signes de vulnérabilité : absence de mises à jour de sécurité, mots de passe faibles, ports de contrôle ouverts. Regardez les vidéos de « piratage de robots » avec esprit critique — elles démontrent un risque, pas un appel à l'action."
+  },
+  "432": {
+   "t": "La Direction de la cybersécurité a simulé un piratage d'écrans à Tel Aviv",
+   "s": "Pour ouvrir la Semaine nationale de la cyberprotection, la Direction nationale de la cybersécurité a simulé la prise de contrôle d'écrans numériques à Tel Aviv, montrant comme une cyberattaque peut facilement entrer dans le quotidien, et invite le public sur le portail national.",
+   "n": "Le texte « HACKED » sur les écrans était une simulation officielle, pas une attaque réelle. Ne paniquez pas et ne suivez pas les liens inconnus qui peuvent circuler autour d'un tel événement. Les explications officielles paraissent sur des ressources comme portal.cyber.gov.il. Toute demande d'action urgente ou de données « de la part de la Direction » est un signe de fraude."
+  },
+  "433": {
+   "t": "Avertissement : voter pour une « danseuse » vole votre WhatsApp",
+   "s": "Des escrocs envoient des demandes de vote pour une « talentueuse ballerine » via un lien demandant de lier votre compte WhatsApp. Cela donne aux attaquants accès à vos conversations et leur permet d'envoyer des messages en votre nom.",
+   "n": "Signaux d'alerte : 1) on vous demande de lier WhatsApp (code ou QR) pour voter — les concours légitimes ne fonctionnent pas ainsi ; 2) le lien mène à un site tiers ; 3) le message peut venir d'un ami dont le compte a été compromis — vérifiez par un autre canal ; 4) un appât émotionnel (« la plus talentueuse ballerine ») baisse votre vigilance."
+  },
+  "435": {
+   "t": "Vérifiez les liens suspects avec « Click Check » sur le portail cyber israélien",
+   "s": "La Direction nationale de la cybersécurité recommande de vérifier les liens suspects via le service officiel « Click Check » sur portal.cyber.gov.il avant de les ouvrir — avis de colis, demandes de paiement et messages similaires sont des appâts typiques.",
+   "n": "Appâts typiques : avis de colis, demande de paiement, vague impression que quelque chose cloche. Signaux d'alerte : message inattendu avec un lien, demande urgente de paiement ou de retrait de colis, expéditeur inconnu. Le domaine officiel de vérification est portal.cyber.gov.il ; les adresses similaires avec fautes ou autres domaines doivent alerter."
+  },
+  "436": {
+   "t": "Direction de la cybersécurité : moins de mots de passe et de copies de documents — une protection contre fuites et fraudes",
+   "s": "La Direction nationale de la cybersécurité a présenté une stratégie d'identité numérique : connexion unique pour services publics et privés et portefeuille numérique national pour les documents, afin de réduire le partage de copies de pièces d'identité et les risques de fuites, falsifications et fraudes.",
+   "n": "C'est une publication d'information officielle, pas une alerte d'attaque. Méfiez-vous des imitations : un lien « de la Direction » vous pressant de télécharger un « portefeuille numérique national » ou de saisir pièce d'identité ou mots de passe est du phishing. Le vrai projet est ouvert aux commentaires sur le site officiel jusqu'au 30.11.2026 — uniquement via le domaine gov.il."
+  },
+  "437": {
+   "t": "La Direction nationale de la cybersécurité met en garde contre un faux message WhatsApp",
+   "s": "La Direction nationale de la cybersécurité met en garde contre un faux message diffusé sur WhatsApp pouvant semer la panique. Ce n'est pas un avertissement officiel et il ne doit pas être transféré.",
+   "n": "Signaux d'alerte : le message arrive via WhatsApp et non par les canaux officiels (Défense passive / Direction de la cybersécurité) ; il peut semer la panique sans confirmation officielle ; il incite à le transférer — typique des faux viraux. Les organismes officiels ne demandent jamais de relayer des alertes par messagerie."
+  },
+  "431": {
+   "t": "Direction de la cybersécurité : le texte HACKED sur les panneaux est un incident connu",
+   "s": "La Direction nationale de la cybersécurité a confirmé être au courant de l'apparition du texte HACKED sur des panneaux publicitaires et a promis des détails ultérieurs, remerciant les citoyens pour leur vigilance.",
+   "n": "Ce qui doit alerter, ce n'est pas le message de la Direction mais la situation : un texte HACKED sur des panneaux extérieurs peut indiquer un piratage des systèmes de publicité. N'interagissez pas avec ces écrans, ne tirez pas de conclusions d'un seul mot et suivez les explications officielles de la Direction de la cybersécurité."
+  },
+  "428": {
+   "t": "Faux podcast sur la cybersécurité israélienne",
+   "s": "Un message annonce un podcast de la Direction nationale de la cybersécurité et la conférence Cyber Week, mais il se diffuse via un lien suspect et peut être du phishing.",
+   "n": "Le lien mène à Spotify avec des paramètres de suivi (utm_source=copy-link), typiques des envois de masse. Citer des personnalités (prof. Ben-Israël, gén. Karadi) crée la confiance ; emojis et « découvrez les coulisses » poussent au clic. Les comptes officiels de la Direction ne publient habituellement pas ce type de liens, et les réactions semblent gonflées artificiellement."
+  },
+  "430": {
+   "t": "La Direction nationale de la cybersécurité a lancé un portail d'outils de protection gratuits",
+   "s": "La Direction nationale de la cybersécurité a présenté un portail officiel avec des outils gratuits pour vérifier les liens suspects, apprendre à repérer le phishing et évaluer son niveau de protection, sur portal.cyber.gov.il.",
+   "n": "C'est une publication officielle d'un organisme d'État, pas une escroquerie. Les escrocs peuvent imiter de telles annonces : ici, le domaine portal.cyber.gov.il (gov.il) confirme l'authenticité. Les fausses copies utilisent des domaines ressemblants (ex. cyber.gov.il.portal.com), des liens raccourcis ou demandent données personnelles ou paiement. Le vrai portail est gratuit."
+  },
+  "426": {
+   "t": "Direction de la cybersécurité : appels automatiques au nom de Google",
+   "s": "La Direction nationale de la cybersécurité met en garde contre des appels automatiques frauduleux en anglais se faisant passer pour une alerte de piratage de compte Google et exigeant une action urgente. Ne suivez pas les instructions : vérifiez vous-même votre compte et signalez ces appels au 119.",
+   "n": "Signaux d'alerte : voix automatique en anglais prétendant être la sécurité Google ; affirmation que le numéro de téléphone du compte a changé ou qu'une activité vient de Tehran (Iran), créant une fausse urgence ; demande d'appuyer sur des touches, de communiquer mots de passe ou codes, ou de rappeler un numéro donné dans le message. Le vrai Google n'appelle jamais ainsi et ne demande ni mots de passe ni codes. Un appel ne signifie pas un piratage."
+  },
+  "427": {
+   "t": "Israël avertit : les escrocs utilisent l'IA pour créer de fausses boutiques en ligne",
+   "s": "La Direction nationale de la cybersécurité avertit que les escrocs utilisent l'IA pour créer de fausses boutiques en ligne convaincantes. Vérifiez les vendeurs, ne communiquez jamais coordonnées de carte ni codes, et suivez vos livraisons uniquement sur les sites officiels.",
+   "n": "Signaux d'alerte : prix anormalement bas et pression pour payer immédiatement ; arrivée sur la boutique via un lien de message ou de publicité plutôt qu'en accès direct ; aucune information sur le propriétaire ; demande en chat des coordonnées de carte, d'un mot de passe ou d'un code ; avis de colis menant à des sites non officiels. L'IA rend les faux très soignés — ne vous fiez pas aux apparences."
+  },
+  "425": {
+   "t": "Direction de la cybersécurité : protection des systèmes électoraux — pas une alerte fraude",
+   "s": "Une publication officielle de la Direction nationale de la cybersécurité sur la protection des systèmes liés aux élections et la préparation du jour du vote. Elle ne contient aucun avertissement de fraude ou d'attaque précise.",
+   "n": "La publication elle-même ne demande rien — ni liens, ni pièces jointes, ni données. Méfiez-vous des imitations : si un texte similaire arrive par messagerie ou réseau social depuis un compte inconnu en incitant à cliquer, « vérifier votre statut d'électeur », saisir une carte bancaire ou transférer un code SMS, c'est du phishing. Vérifiez que l'expéditeur correspond au compte officiel."
+  },
+  "424": {
+   "t": "Israël lance le « Bouclier électoral » pour protéger les systèmes numériques",
+   "s": "La Direction nationale de la cybersécurité et la Commission électorale centrale ont annoncé l'opération « Bouclier électoral » pour protéger les systèmes numériques des élections. Ne consultez que les sites officiels, méfiez-vous des liens alarmants et signalez les sites piratés au 119.",
+   "n": "L'avertissement vient d'une source officielle. Méfiez-vous des faux messages ou sites imitant les ressources électorales officielles : liens SMS/messagerie qui pressent ou effraient (« vérifiez que votre vote n'a pas été supprimé »). Signes : domaine non officiel, aucun lien avec les sites de la Commission électorale ou de la Direction, fautes de grammaire. Ne partagez pas de captures non vérifiées ; si un site semble piraté, fermez-le et signalez-le au 119."
+  },
+  "423": {
+   "t": "La Direction de la cybersécurité met en garde contre la fraude au nom de Binance et d'autres plateformes",
+   "s": "La Direction nationale de la cybersécurité met en garde contre des appels et SMS frauduleux se faisant passer pour Binance et d'autres plateformes connues afin de voler données personnelles et de compte. Ne rappelez pas, ne communiquez jamais mots de passe ni codes, et vérifiez votre compte uniquement via les applications ou sites officiels.",
+   "n": "Signaux d'alerte : 1) le message apparaît dans un fil de discussion existant — les escrocs peuvent usurper ou s'infiltrer dans les fils ; 2) l'annonce d'une « connexion inhabituelle » crée la panique ; 3) redirection vers un numéro où l'on demande e-mail, comptes financiers ou identifiants — les vraies entreprises ne demandent jamais cela par téléphone ; 4) demandes de mots de passe, codes ou données de compte ; 5) demande d'appuyer sur des touches lors d'un appel que vous n'avez pas initié."
+  },
+  "422": {
+   "t": "Microsoft : Israël deuxième au monde pour les cyberattaques, les menaces augmentent",
+   "s": "Un rapport Microsoft place Israël au deuxième rang mondial pour les cyberattaques. Le directeur de la Direction nationale de la cybersécurité avertit que les menaces croissent et que l'IA accélère les attaques, la défense doit donc évoluer en permanence.",
+   "n": "C'est une publication officielle de la Direction, pas une escroquerie. Méfiez-vous des imitations : un texte similaire envoyé par un compte inconnu sur messagerie ou réseau social, incitant à cliquer, installer un « outil de protection » ou communiquer des données personnelles, est une fraude. Signes : expéditeur non officiel, liens raccourcis, demandes urgentes, mots de passe ou données de carte, fautes de langue."
+  },
+  "421": {
+   "t": "Cybersécurité israélienne : un podcast sur le cyber-renseignement — pas une alerte fraude",
+   "s": "Ce n'est pas une alerte fraude mais l'annonce d'un podcast de la Direction nationale de la cybersécurité sur le cyberespace comme outil de renseignement et d'opérations. Aucun appel à l'action, lien de phishing ou demande de données personnelles.",
+   "n": "Notez le décalage : un contenu présenté comme une alerte fraude ne contient ni schéma d'escroquerie, ni lien à suivre, ni demande de données. Le seul lien mène à Spotify et ressemble à un lien de podcast ordinaire. Aucun signe de falsification dans le texte : c'est une publication d'information officielle."
+  },
+  "417": {
+   "t": "La Direction nationale de la cybersécurité a lancé un podcast sur la cyberguerre",
+   "s": "La Direction nationale de la cybersécurité a annoncé un nouveau podcast, « Sans un seul tir », sur la cyberguerre et la préparation. Dans le premier épisode, le directeur Yossi Karadi discute des menaces sur les infrastructures et de la nécessité de se préparer.",
+   "n": "C'est une publication officielle, pas une escroquerie. Signes d'authenticité : le lien mène au domaine légitime open.spotify.com, des responsables réels sont nommés (Shay Gal, Yossi Karadi), les formulations correspondent aux administrations israéliennes. Aucune demande de données personnelles, de lien raccourci, de gain ou de menace. Vérifiez toutefois que le lien mène bien à spotify.com et non à une imitation."
+  },
+  "419": {
+   "t": "Phishing se faisant passer pour une confirmation de réservation Booking",
+   "s": "Des escrocs envoient des messages de phishing avec un lien vers un faux site Booking demandant de confirmer une réservation d'hôtel. Certains messages incluent de vrais détails de réservation, ce qui les rend plus convaincants.",
+   "n": "Signaux d'alerte : on vous demande de confirmer une réservation via un lien vers un site qui imite seulement Booking. Même avec de vraies dates et un vrai numéro de réservation (peut-être issus de fuites de données), l'expéditeur n'est pas forcément authentique. Signes : domaine différent de booking.com, liens raccourcis ou suspects, pression d'urgence. Ne suivez jamais le lien — vérifiez la réservation uniquement dans l'application ou le site officiel."
+  },
+  "416": {
+   "t": "La Direction de la cybersécurité annonce une prochaine alerte fraude",
+   "s": "La Direction nationale de la cybersécurité a publié un message teaser annonçant une prochaine alerte fraude. Il ne contient pas de détails mais attire l'attention sur le message à venir.",
+   "n": "Étant un teaser, le message ne contient pas de signes précis de fraude. Restez vigilant si des messages similaires proviennent d'expéditeurs inconnus ou demandent de cliquer sur des liens ou de fournir des données personnelles. Les canaux officiels de la Direction publient habituellement des alertes avec exemples concrets et instructions."
+  },
+  "414": {
+   "t": "Le chef de la Direction cyber : « Nous sommes en plein tremblement de terre technologique — la défense doit changer »",
+   "s": "Sur fond de progrès inquiétants de l'IA dans les attaques autonomes, le directeur de la Direction nationale de la cybersécurité a réuni les dirigeants de l'industrie cyber israélienne avant Rosh Hashanah et présenté les plans pour les années à venir.",
+   "n": "C'est une publication d'information officielle de la Direction, pas une alerte fraude. Si un message similaire arrive d'un canal non officiel en demandant de cliquer, télécharger ou communiquer des données personnelles, considérez-le comme du phishing et vérifiez sur les pages officielles de la Direction."
+  },
+  "415": {
+   "t": "Direction de la cybersécurité : prévisions pour l'année 5787",
+   "s": "La Direction nationale de la cybersécurité a publié les prévisions d'experts pour l'année à venir. C'est un message d'information officiel, pas une alerte sur une attaque précise.",
+   "n": "Le message est officiel et ne contient aucun signe de fraude. Méfiez-vous des imitations ajoutant liens de phishing ou pièces jointes : suspectez tout message reçu hors des canaux officiels (messages privés ou SMS), incitant à cliquer ou télécharger, ou demandant des données personnelles. Ici, il s'agit simplement d'une annonce vidéo et de vœux, conformes au style officiel ; les pages sociales vérifiées confirment la source."
+  },
+  "413": {
+   "t": "La Direction de la cybersécurité met en garde contre de faux SMS d'amendes routières",
+   "s": "La Direction nationale de la cybersécurité met en garde contre des SMS frauduleux ressemblant à des avis d'amendes routières, utilisés pour voler données personnelles et bancaires. Vérifiez les amendes uniquement sur le site officiel de la police ; si vous avez saisi vos données de carte, contactez d'urgence votre compagnie de carte.",
+   "n": "Méfiez-vous du SMS lui-même : les avis officiels d'amendes arrivent par courrier ou via les services publics officiels, pas par texto inattendu. Les escrocs jouent sur la peur et l'urgence pour vous faire cliquer et « payer l'amende », récupérant données personnelles et de carte. Signes : expéditeur inconnu, lien vers un site non officiel, paiement urgent exigé, demande de données de carte. Bloquez et supprimez ces messages."
+  },
+  "412": {
+   "t": "Ne suivez pas les liens suspects au nom de l'Autorité fiscale",
+   "s": "La Direction de la cybersécurité met en garde contre des messages de phishing se faisant passer pour l'Autorité fiscale et propose de vérifier les liens suspects via le service officiel.",
+   "n": "Signaux d'alerte : 1) un message ou lien suspect prétendument de l'Autorité fiscale ; 2) incitation à cliquer ou saisir des données personnelles ; 3) fautes possibles ou adresse d'expéditeur inhabituelle ; 4) un message inattendu d'un organisme public exigeant une action urgente."
+  },
+  "411": {
+   "t": "Alerte sur un événement de phishing au nom de la cybersécurité israélienne",
+   "s": "Un message invite à un événement de cybersécurité mais présente des signes de fraude : date inhabituelle (2026), symboles étranges et aucun détail officiel.",
+   "n": "Signaux d'alerte : 1) la date du 10.9.2026 semble irréaliste pour une annonce « dans trois jours » ; 2) un symbole « ❤1 » à la fin, inhabituel dans les messages officiels ; 3) aucun détail concret (lieu, heure, inscription) ni lien vers des sources officielles ; 4) le ton imite les messages officiels mais contient des bizarreries révélant le faux."
+  },
+  "410": {
+   "t": "Vérifiez si vous êtes seul à la maison : une alerte fraude",
+   "s": "Un avertissement cyber israélien d'apparence officielle sur une possible fraude liée aux caméras ou à la surveillance. Il incite à vérifier si quelqu'un vous observe et à suivre un lien pour des recommandations.",
+   "n": "Méfiez-vous du message lui-même : il imite un message officiel mais contient un appel à l'action inhabituel et un lien. Signes : emojis (👀) et smileys (💯❤) dans un message officiel, texte court sans précisions, lien vers un site gouvernemental mais avec un chemin suspect (/iot070926). Les escrocs créent souvent de fausses pages ressemblant aux officielles pour voler des données ou infecter les appareils."
+  },
+  "409": {
+   "t": "Sécurité dans les groupes WhatsApp : 6 conseils de la Direction cyber israélienne",
+   "s": "La Direction nationale de la cybersécurité met en garde contre les risques des groupes WhatsApp et donne 6 conseils simples pour améliorer la sécurité.",
+   "n": "Il s'agit de recommandations générales, pas d'un schéma précis. Néanmoins, les groupes WhatsApp servent au phishing, à la diffusion de liens malveillants et à la collecte d'informations. Vérifiez qui est ajouté au groupe, ne suivez pas les liens suspects et ne partagez jamais de données confidentielles dans les groupes."
+  },
+  "408": {
+   "t": "Attention : une escroquerie aux billets peut mener au piratage de votre numéro de mobile",
+   "s": "Des escrocs publient sur les réseaux sociaux de fausses annonces de billets gratuits et amènent leurs victimes à révéler un code de confirmation SMS, utilisé pour prendre le contrôle de leur numéro de mobile.",
+   "n": "Signaux d'alerte : 1) offres trop alléchantes (billets gratuits ou avantages) au nom d'entreprises connues sur Facebook/Instagram ; 2) demande de communiquer un code SMS après avoir laissé vos coordonnées ; 3) décalage entre le contenu du SMS et les dires de l'interlocuteur (le code peut servir à un changement de SIM ou un transfert de numéro) ; 4) pression et urgence pour vous empêcher de réfléchir."
+  },
+  "407": {
+   "t": "Nouveau système de cyberprotection pour les entreprises : renforcer la chaîne d'approvisionnement",
+   "s": "La Direction nationale de la cybersécurité lance un nouveau système pour évaluer et renforcer la cyberprotection dans les chaînes d'approvisionnement. Entreprises et fournisseurs sont invités à s'inscrire pour élever leur niveau de sécurité.",
+   "n": "Vérifiez l'authenticité du lien : les escrocs créent des sites de phishing imitant le portail officiel gov.il. Contrôlez le domaine (doit être gov.il) et le HTTPS. Méfiez-vous des messages créant l'urgence ou exigeant une inscription immédiate — les avis officiels ne demandent pas de données personnelles via des liens."
+  },
+  "404": {
+   "t": "Les montres connectées peuvent vous suivre : comment se protéger du cyber-espionnage",
+   "s": "Montres connectées et bracelets fitness peuvent servir à suivre vos déplacements et intercepter des données via Bluetooth. Mettez les appareils à jour, choisissez des fabricants reconnus, désactivez le Bluetooth quand il est inutile et vérifiez les appareils connectés.",
+   "n": "Signaux d'alerte : 1) comportement inhabituel de la montre ou du bracelet — batterie qui fond, connexions instables, appareils inconnus dans la liste Bluetooth ; 2) demandes d'appairage d'appareils inconnus ; 3) une personne restant anormalement près de vous dans un lieu bondé, possiblement pour intercepter le signal ; 4) absence de mises à jour du firmware ou modèles obsolètes sans protocoles de sécurité modernes."
+  },
+  "405": {
+   "t": "Cyberattaque contre un hôpital : leçons pour les dirigeants",
+   "s": "Un article raconte une cyberattaque contre un centre médical et invite les dirigeants à se préparer à de tels incidents, en posant la question non pas « si » mais « quand ».",
+   "n": "C'est un contenu d'information sur une cyberattaque, pas une alerte fraude. Pour les dirigeants : l'attaque visait un établissement médical, soulignant la vulnérabilité des infrastructures critiques. Date précise, nom d'hôpital et liens vidéo peuvent être imités par des escrocs pour du phishing — vérifiez la source et ne suivez pas les liens suspects."
+  },
+  "402": {
+   "t": "Cybersécurité : se défendre contre l'injection indirecte dans les assistants IA",
+   "s": "Des escrocs peuvent intégrer des instructions cachées dans le contenu traité par un assistant IA pour lui faire exécuter des actions malveillantes. Limitez les droits de l'IA et exigez une confirmation manuelle pour les opérations sensibles.",
+   "n": "Surveillez les comportements inattendus de l'assistant IA : s'il tente, après un résumé de page, d'envoyer un e-mail, de modifier des réglages ou de demander l'accès à des données, il peut s'agir d'une injection indirecte de prompt. Méfiez-vous aussi des instructions cachées dans les pages web ou documents, invisibles à l'œil mais interprétées par l'IA."
+  },
+  "400": {
+   "t": "SMS massifs avec codes OTP : ce n'est pas un piratage, mais soyez prudents",
+   "s": "Recevoir en masse des codes OTP sans les avoir demandés n'est pas un piratage mais une attaque utilisant des services légitimes. Le principal danger : saisir un code sur un site de phishing, ce qui peut mener à la prise de contrôle du compte.",
+   "n": "Signaux d'alerte : 1) des dizaines de SMS OTP reçus sans demande ; 2) toute tentative de vous faire saisir ces codes sur un site ou de les communiquer ; 3) sites ou applications suspects demandant un code OTP après un tel flot ; 4) si les messages durent longtemps, il peut s'agir d'une attaque ciblée."
+  },
+  "379": {
+   "t": "Cybersécurité : pas de cessez-le-feu dans le cyberespace",
+   "s": "Le directeur de la Direction nationale de la cybersécurité avertit que les cyberattaques se poursuivent même pendant un cessez-le-feu et ont doublé. Il souligne l'équilibre entre investissements de cyberdéfense et besoins des entreprises, ainsi que le rôle de l'IA et de l'informatique quantique dans les nouvelles menaces.",
+   "n": "C'est une déclaration générale sur la hausse des attaques pendant un cessez-le-feu, pas une alerte précise. En de telles périodes, les escrocs redoublent d'activité : attention aux messages suspects exploitant les thèmes du cessez-le-feu, de la guerre ou des urgences, et au phishing par e-mail, SMS ou faux sites. Vigilance accrue."
+  },
+  "381": {
+   "t": "Parlez à vos parents et grands-parents avant que les escrocs ne le fassent",
+   "s": "Les escrocs ciblent les personnes âgées russophones en Israël, se faisant passer pour un proche, la banque ou la police, parfois avec imitation de voix par IA. Parlez à vos proches âgés et rappelez les règles : s'arrêter, raccrocher, vérifier.",
+   "n": "Signaux d'alerte : 1) un appel d'un « proche » demandant de l'argent ou une aide urgente, surtout si la voix semble familière mais légèrement déformée (IA possible) ; 2) un appel de la « banque » ou de la « police » exigeant une action immédiate, des virements ou des codes ; 3) pression, urgence, interdiction de faire une pause ou de vérifier ; 4) demande de garder la conversation secrète ; 5) canaux inhabituels (messageries, numéros non officiels)."
+  },
+  "383": {
+   "t": "Alerte sur des piratages de sites WordPress : mesures urgentes",
+   "s": "La Direction nationale de la cybersécurité met en garde contre des piratages massifs de sites WordPress fonctionnant avec PHP, Nginx et MySQL. Les propriétaires doivent mettre à jour d'urgence les composants, activer la double authentification et restreindre l'accès à l'administration.",
+   "n": "C'est une alerte de menace réelle, pas du phishing. Mais : 1) les escrocs imitent ce type de messages — vérifiez l'adresse de l'expéditeur et les liens ; 2) citer des technologies précises (WordPress, PHP, Nginx, MySQL) est typique des attaques ciblées, et les escrocs copient ces formulations dans de fausses alertes pour pousser des liens malveillants ; 3) les liens doivent mener uniquement à des sites officiels ; 4) si le message arrive par e-mail ou messagerie, ne cliquez pas — rendez-vous vous-même sur le site de la Direction."
+  },
+  "387": {
+   "t": "Attention : cadeaux et liens dans les jeux peuvent être un piège à données",
+   "s": "Dans les jeux en ligne, des escrocs attirent les enfants avec des cadeaux gratuits, des pièces ou des liens pouvant voler mots de passe, données de paiement et informations personnelles. Les parents devraient discuter des règles de jeu en sécurité avec leurs enfants.",
+   "n": "Signaux d'alerte : promesses de cadeaux gratuits, de pièces ou de liens anodins dans les jeux pouvant mener à des sites de phishing ou des téléchargements malveillants ; messages inattendus d'inconnus dans les jeux proposant de suivre un lien ou de saisir des données contre une récompense."
+  },
+  "388": {
+   "t": "Escroquerie ClickFix : ne copiez pas de code et n'appuyez pas sur Win+R",
+   "s": "Des escrocs piratent des sites (y compris WordPress) et affichent de faux messages d'erreur ou de vérification demandant de copier du code et de l'exécuter via Win+R. Cela installe un logiciel malveillant qui vole mots de passe et données.",
+   "n": "Signaux d'alerte : 1) un message inattendu d'erreur, de vérification humaine ou de mise à jour sur un site, surtout s'il demande de copier du code ; 2) l'instruction d'ouvrir la fenêtre Exécuter avec Windows+R ; 3) l'injonction de coller le code et d'appuyer sur Entrée — le signe classique du ClickFix. L'attaque se déroule sur des sites piratés pouvant sembler légitimes."
+  },
+  "389": {
+   "t": "Attention : phishing ciblé — vérifiez l'expéditeur",
+   "s": "Les escrocs utilisent le phishing ciblé, recueillant des informations sur la victime et se faisant passer pour une personne de confiance afin d'extorquer des données. Vérifiez les messages par un autre canal et ne communiquez jamais vos mots de passe.",
+   "n": "Signaux d'alerte : un message inattendu d'une connaissance ou d'une organisation à l'air personnel ; une demande de suivre un lien ou de fournir mot de passe/code ; un sentiment d'urgence ou d'étrangeté. Vérifiez l'expéditeur par un autre canal (appelez-le, par exemple) et ne communiquez jamais de données sensibles."
+  },
+  "391": {
+   "t": "Attaques LockBit contre des organisations israéliennes : comment réduire le risque",
+   "s": "La Direction nationale de la cybersécurité met en garde contre une vague d'attaques du rançongiciel LockBit contre des organisations, utilisant phishing, mots de passe volés et vulnérabilités, avec des recommandations de protection et de réaction.",
+   "n": "Signaux d'alerte : 1) e-mails ou messages inattendus demandant de cliquer ou d'ouvrir une pièce jointe, surtout s'ils ressemblent à des avis officiels ; 2) demandes urgentes comme changer un mot de passe ou vérifier un compte ; 3) URL suspectes différentes des domaines officiels ; 4) messages annonçant que vos fichiers sont chiffrés avec demande de rançon en cryptomonnaie ; 5) comportement système inhabituel — ralentissements ou fichiers avec extension .lockbit."
+  },
+  "393": {
+   "t": "Alerte sur une campagne de phishing imitant des documents SharePoint",
+   "s": "Des escrocs envoient des e-mails de phishing au nom de SharePoint demandant d'ouvrir un document financier. Le lien mène à une fausse page de connexion Microsoft qui vole identifiants et codes de confirmation, permettant la prise de contrôle de la messagerie.",
+   "n": "Signaux d'alerte : 1) un e-mail inattendu avec un document (facture, rapport, paiement) d'un expéditeur connu vous demandant de l'ouvrir ; 2) le lien mène à une page de connexion Microsoft mais l'adresse diffère de l'officielle ; 3) demandes de saisir mot de passe et code sur une page suspecte ; 4) l'e-mail peut provenir d'une boîte piratée, donc même une adresse familière ne prouve rien ; 5) on vous demande de copier un code de confirmation — les vrais services ne demandent jamais de copier les codes manuellement."
+  },
+  "394": {
+   "t": "Attention : faux messages après connexion au Wi-Fi en vacances",
+   "s": "Des escrocs utilisent de fausses pages après la connexion à un Wi-Fi public pour amener les utilisateurs à installer des logiciels malveillants ou à saisir leurs mots de passe. Ignorez ces messages et n'entreprenez rien.",
+   "n": "Méfiez-vous de tout message apparaissant juste après la connexion au Wi-Fi, surtout s'il exige d'installer des mises à jour ou des logiciels, d'exécuter des commandes ou de saisir un mot de passe. Les réseaux légitimes ne demandent jamais cela. Vérifiez aussi l'adresse de la page, les fautes d'orthographe et les fenêtres pop-up inhabituelles."
+  },
+  "395": {
+   "t": "Alerte sur des e-mails de phishing au nom de l'Autorité fiscale",
+   "s": "Des escrocs envoient des e-mails de phishing au nom de l'Autorité fiscale exigeant le paiement d'une dette. Le lien mène à une fausse page de paiement qui vole données personnelles et de cartes bancaires.",
+   "n": "Signaux d'alerte : 1) un e-mail inattendu de l'Autorité fiscale exigeant le paiement d'une dette, surtout si vous n'en attendez aucune ; 2) le lien mène à une page imitant un site gouvernemental mais dont l'adresse peut différer du gov.il officiel ; 3) demandes de données personnelles et de carte sur une telle page — signe clair de phishing ; 4) les organismes officiels n'exigent pas de paiement via un lien d'e-mail — vérifiez vos dettes via votre espace personnel sur le site officiel."
+  },
+  "396": {
+   "t": "Sécurité sur Telegram : comment se protéger des escrocs",
+   "s": "La Direction de la cybersécurité met en garde contre la fraude sur Telegram : faux comptes, liens suspects et tentatives de vol de données, et donne des règles simples d'utilisation en sécurité.",
+   "n": "Signaux d'alerte : 1) messages de contacts inconnus ou suspects à l'apparence officielle ; 2) liens vers des sites demandant mot de passe ou données de compte ; 3) demandes soudaines de suivre un lien ou de télécharger un fichier ; 4) signes de piratage du compte d'un ami ou d'un officiel (style inhabituel, urgence)."
+  },
+  "397": {
+   "t": "Semaine nationale de la cyberprotection en Israël : 8–12 novembre",
+   "s": "Annonce officielle de la Semaine nationale de la cyberprotection en Israël, du 8 au 12 novembre, avec des événements et des outils pratiques pour élever la culture cyber.",
+   "n": "C'est une annonce officielle d'un organisme d'État, sans signe de fraude. Notez le lien : il mène au site officiel gov.il, ce qui confirme l'authenticité. Si un lien était modifié ou menait à une ressource tierce, cela pourrait indiquer du phishing. Vérifiez dates et détails sur le site officiel."
+  },
+  "398": {
+   "t": "Attention : fausse invitation à rencontrer le chef de la cybersécurité israélienne",
+   "s": "Des escrocs envoient de fausses invitations à une rencontre avec le chef de la cybersécurité israélienne, utilisant un formulaire de phishing pour collecter des données.",
+   "n": "Attention : le lien mène à forms.monday.com et non à un site officiel du gouvernement israélien (par ex. gov.il). Le formulaire demande des données personnelles — typique du phishing. La date 25.8.26 semble aussi irréaliste. Les invitations officielles d'organismes publics proviennent de domaines officiels et n'exigent pas de formulaires tiers."
+  },
+  "399": {
+   "t": "Alerte sur des attaques de phishing contre journalistes et personnalités publiques en Israël",
+   "s": "Les services de sécurité israéliens avertissent d'une hausse des attaques de phishing contre journalistes et personnalités publiques. Restez vigilants, ne suivez pas les liens suspects, activez la double authentification et signalez les tentatives suspectes.",
+   "n": "Les attaques ciblent journalistes et personnalités publiques. Les attaquants utilisent des liens menant à de fausses pages de connexion, souvent sous prétexte de rejoindre un appel vidéo. Attention aux messages inattendus demandant mot de passe ou code, même s'ils ressemblent à des invitations vidéo. Vérifiez l'adresse de l'expéditeur et utilisez d'autres canaux pour confirmer l'identité."
+  },
+  "voice-relative-trouble": {
+   "t": "« Un proche en détresse » — une arnaque vocale visant les russophones",
+   "s": "Confirmation officielle de l'agence : des escrocs appellent délibérément des personnes âgées russophones en se faisant passer pour un proche, la banque ou la police — parfois en imitant une voix familière grâce à l'IA.",
+   "n": "L'agence le dit clairement : les personnes âgées russophones sont ciblées délibérément, pas par hasard. Une voix au téléphone peut ressembler très fort à celle d'un vrai proche — l'IA sait imiter une voix à partir d'un court enregistrement (par exemple une vidéo sur les réseaux sociaux)."
+  },
+  "sms-govil-thread": {
+   "t": "Un faux SMS « s'intègre » à la vraie conversation GOV.IL",
+   "s": "Avertissement officiel sur une astuce technique : un SMS frauduleux demandant un paiement apparaît dans LA MÊME conversation que les vrais messages GOV.IL — en raison de l'affichage des SMS sur certains téléphones, et non d'un piratage de GOV.IL.",
+   "n": "Le piège est justement que le message semble « natif » — il tombe dans le même fil que de vrais SMS gouvernementaux. Le fait d'apparaître dans ce fil ne PROUVE PAS qu'un message est authentique."
+  },
+  "sms-fake-bamba": {
+   "t": "Faux jeu-concours « gagnez 500 ₪ » au nom d'une marque célèbre",
+   "s": "Un message de phishing se fait passer pour une promotion d'une marque de snacks connue, promettant un bon cadeau de 500 shekels.",
+   "n": "Signes tirés de la liste de l'agence elle-même : promesse d'un gros prix, court sondage ou « tirage au sort », demande de partager le lien sur WhatsApp/Messenger, lien vers une adresse non officielle. Si cela semble trop beau — c'est très probablement du phishing."
+  },
+  "sms-pango-thread": {
+   "t": "Faux SMS au nom de l'application de stationnement Pango — aussi dans le vrai fil",
+   "s": "Un autre cas de la même astuce : un message de phishing au nom de la populaire application de paiement de stationnement apparaît dans la vraie conversation avec cette application.",
+   "n": "Même si un message semble plausible et se trouve dans le bon fil, cela ne prouve pas son authenticité. Le seul moyen fiable de vérifier : ouvrir l'application vous-même, jamais via le lien."
+  },
+  "sms-israel-post": {
+   "t": "Un faux site de la Poste israélienne vole vos données pendant que vous tapez",
+   "s": "Un schéma particulièrement dangereux : une copie du site de la Poste israélienne vole les données saisies en temps réel, avant même que vous appuyiez sur « envoyer ».",
+   "n": "Le simple fait de taper des données sur une fausse page est déjà un risque — nul besoin d'appuyer sur « envoyer ». Avant toute saisie, vérifiez l'adresse exacte du site ; en cas de doute, contrôlez le lien sur des sites comme scanmysms.com."
+  },
+  "extortion-camera": {
+   "t": "« J'ai piraté votre ordinateur » — extorsion par e-mail",
+   "s": "Un envoi de masse menace de publier une vidéo compromettante prétendument enregistrée via votre webcam et exige une rançon.",
+   "n": "C'est une arnaque classique « à l'aveugle » — envoyée à des millions d'adresses sans distinction. Personne n'a réellement piraté votre appareil ni enregistré de vidéo. Le but : provoquer panique et honte pour vous faire payer sans réfléchir."
+  },
+  "sms-fake-invoice": {
+   "t": "Faux e-mail « facture » avec un programme d'accès à distance caché",
+   "s": "Un e-mail prétendument d'un service de facturation connu, avec un lien pour « télécharger la facture » — en réalité, le lien installe un logiciel d'accès à distance sur votre ordinateur.",
+   "n": "Un logiciel d'accès à distance n'est pas malveillant en soi — le support technique l'utilise aussi. Le danger est qu'on l'installe par tromperie, via un e-mail que vous n'attendiez pas."
+  },
+  "sms-fake-domain": {
+   "t": "Un exemple réel de fausse adresse de site dans un SMS",
+   "s": "Un cas documenté : un SMS au texte « bureaucratique » vague et un lien vers une adresse de site manifestement fausse.",
+   "n": "Regardez l'adresse elle-même : « trsom.xyz » n'a rien à voir avec les vrais sites gouvernementaux (qui se terminent en .gov.il), et la terminaison « .xyz » n'est presque jamais utilisée par les institutions officielles israéliennes. Le nom « trsom » n'a aucun sens, et le texte est vague — il ne nomme aucun organisme réel."
+  }
+ },
+ "todo_en": {
+  "Внимательно проверять письма про счета/накладные, особенно если вы их не ждали\nНе переходить по ссылкам и не скачивать файлы из подозрительных писем\nНе подтверждать установку программ удалённого доступа из непрошеных писем\nДержать антивирус и систему обновлёнными": [
+   "Carefully check emails about invoices/bills, especially if you did not expect them",
+   "Do not follow links or download files from suspicious emails",
+   "Do not confirm installation of remote-access software from unsolicited emails",
+   "Keep your antivirus and system up to date"
+  ],
+  "Не вводить личные данные или данные карты\nНе делиться подозрительной ссылкой с другими\nЗаходить только на официальные сайты и в официальные приложения бренда напрямую": [
+   "Do not enter personal or card data",
+   "Do not share the suspicious link with others",
+   "Go only to the brand's official sites and apps, directly"
+  ],
+  "Не переходить по приложенным ссылкам\nНе переводить оплату, сколько бы ни угрожали — оплата только провоцирует новые требования\nНе вступать в переписку — сохранить письмо как доказательство, заблокировать отправителя\nПри реальных сомнениях — обратиться в 119, а не решать вопрос самостоятельно": [
+   "Do not follow the attached links",
+   "Do not pay, however much they threaten — paying only provokes new demands",
+   "Do not engage in correspondence — keep the email as evidence and block the sender",
+   "If genuinely in doubt — contact 119 instead of handling it yourself"
+  ],
+  "Не переходить по ссылкам и не открывать вложения из подозрительных сообщений\nНе сообщать пароли, коды подтверждения или данные карты по телефону/в сообщении\nПроверять любые начисления и требования оплаты напрямую через официальный сайт или приложение\nПри подозрении на мошенничество — обратиться на горячую линию 119 Национального управления кибербезопасности": [
+   "Do not follow links or open attachments in suspicious messages",
+   "Do not share passwords, verification codes or card details by phone or in a message",
+   "Check any charges and payment demands directly via the official website or app",
+   "If you suspect fraud, contact the National Cyber Directorate hotline at 119"
+  ],
+  "Не переходить по ссылке в SMS о «неудачной доставке», если вы не ждали посылку\nПроверять статус доставки только на официальном сайте/в приложении Почты Израиля напрямую\nВнимательно проверять точный адрес сайта перед тем, как что-либо вводить": [
+   "Do not follow the link in an SMS about a “failed delivery” if you were not expecting a parcel",
+   "Check delivery status only on the official Israel Post site/app, directly",
+   "Carefully verify the exact site address before entering anything"
+  ],
+  "Не переходить по ссылке из SMS, даже если она в правильном чате\nПроверять начисления только через само приложение или официальный сайт": [
+   "Do not follow the link from the SMS, even if it is in the right chat",
+   "Check charges only via the app itself or the official site"
+  ],
+  "Не переходить по ссылке, даже если сообщение в одной переписке с настоящими госсообщениями\nЛюбую оплату делать только через прямой вход на официальный сайт, не по ссылке из SMS\nНе вводить личные данные или данные карты по ссылке": [
+   "Do not follow the link, even if the message sits in one thread with real government messages",
+   "Make any payment only by entering the official site directly, never via an SMS link",
+   "Do not enter personal or card data via the link"
+  ],
+  "Остановиться, положить трубку — не принимать решение под давлением и спешкой\nПерезвонить родственнику напрямую по уже сохранённому номеру, а не по тому, с которого звонили\nИспользовать заранее оговорённое в семье кодовое слово\nНикогда не переводить деньги во время самого звонка": [
+   "Stop and hang up — do not decide under pressure and in a hurry",
+   "Call the relative back directly on the already saved number, not the one that called you",
+   "Use a family code word agreed in advance",
+   "Never transfer money during the call itself"
+  ],
+  "Проверять адрес сайта внимательно — настоящие госсайты Израиля заканчиваются на .gov.il\nНе переходить по ссылке, если сообщение расплывчато и не называет конкретное ведомство\nЗаходить на нужный сайт напрямую через поиск": [
+   "Check the site address carefully — real Israeli government sites end in .gov.il",
+   "Do not follow the link if the message is vague and names no specific agency",
+   "Go to the needed site directly via search"
+  ]
+ },
+ "todo_fr": {
+  "Внимательно проверять письма про счета/накладные, особенно если вы их не ждали\nНе переходить по ссылкам и не скачивать файлы из подозрительных писем\nНе подтверждать установку программ удалённого доступа из непрошеных писем\nДержать антивирус и систему обновлёнными": [
+   "Examinez attentivement les e-mails de factures, surtout si vous ne les attendiez pas",
+   "Ne suivez pas les liens et ne téléchargez pas les fichiers d'e-mails suspects",
+   "Ne confirmez pas l'installation de logiciels d'accès à distance depuis des e-mails non sollicités",
+   "Maintenez antivirus et système à jour"
+  ],
+  "Не вводить личные данные или данные карты\nНе делиться подозрительной ссылкой с другими\nЗаходить только на официальные сайты и в официальные приложения бренда напрямую": [
+   "Ne saisissez ni données personnelles ni données de carte",
+   "Ne partagez pas le lien suspect avec d'autres",
+   "Allez uniquement sur les sites et applications officiels de la marque, en accès direct"
+  ],
+  "Не переходить по приложенным ссылкам\nНе переводить оплату, сколько бы ни угрожали — оплата только провоцирует новые требования\nНе вступать в переписку — сохранить письмо как доказательство, заблокировать отправителя\nПри реальных сомнениях — обратиться в 119, а не решать вопрос самостоятельно": [
+   "Ne suivez pas les liens joints",
+   "Ne payez pas, quelles que soient les menaces — payer ne fait qu'encourager de nouvelles exigences",
+   "Ne répondez pas — conservez l'e-mail comme preuve et bloquez l'expéditeur",
+   "En cas de doute réel — contactez le 119 au lieu de gérer seul"
+  ],
+  "Не переходить по ссылкам и не открывать вложения из подозрительных сообщений\nНе сообщать пароли, коды подтверждения или данные карты по телефону/в сообщении\nПроверять любые начисления и требования оплаты напрямую через официальный сайт или приложение\nПри подозрении на мошенничество — обратиться на горячую линию 119 Национального управления кибербезопасности": [
+   "Ne cliquez pas sur les liens et n’ouvrez pas les pièces jointes de messages suspects",
+   "Ne communiquez jamais mots de passe, codes de confirmation ou données de carte par téléphone ou par message",
+   "Vérifiez tout débit et toute demande de paiement directement sur le site ou l’application officiels",
+   "En cas de soupçon de fraude, contactez la hotline 119 de la Direction nationale de la cybersécurité"
+  ],
+  "Не переходить по ссылке в SMS о «неудачной доставке», если вы не ждали посылку\nПроверять статус доставки только на официальном сайте/в приложении Почты Израиля напрямую\nВнимательно проверять точный адрес сайта перед тем, как что-либо вводить": [
+   "Ne suivez pas le lien d'un SMS de « livraison échouée » si vous n'attendiez pas de colis",
+   "Vérifiez le suivi uniquement sur le site/l'application officielle de la Poste israélienne, en accès direct",
+   "Vérifiez attentivement l'adresse exacte du site avant toute saisie"
+  ],
+  "Не переходить по ссылке из SMS, даже если она в правильном чате\nПроверять начисления только через само приложение или официальный сайт": [
+   "Ne suivez pas le lien du SMS, même s'il se trouve dans le bon fil",
+   "Vérifiez les facturations uniquement via l'application elle-même ou le site officiel"
+  ],
+  "Не переходить по ссылке, даже если сообщение в одной переписке с настоящими госсообщениями\nЛюбую оплату делать только через прямой вход на официальный сайт, не по ссылке из SMS\nНе вводить личные данные или данные карты по ссылке": [
+   "Ne suivez pas le lien, même si le message se trouve dans le même fil que de vrais messages gouvernementaux",
+   "Effectuez tout paiement uniquement en entrant directement sur le site officiel, jamais via un lien SMS",
+   "Ne saisissez ni données personnelles ni données de carte via le lien"
+  ],
+  "Остановиться, положить трубку — не принимать решение под давлением и спешкой\nПерезвонить родственнику напрямую по уже сохранённому номеру, а не по тому, с которого звонили\nИспользовать заранее оговорённое в семье кодовое слово\nНикогда не переводить деньги во время самого звонка": [
+   "Arrêtez-vous et raccrochez — ne décidez jamais sous pression et dans l'urgence",
+   "Rappelez le proche directement au numéro déjà enregistré, pas à celui qui vous a appelé",
+   "Utilisez un mot de code familial convenu à l'avance",
+   "Ne transférez jamais d'argent pendant l'appel lui-même"
+  ],
+  "Проверять адрес сайта внимательно — настоящие госсайты Израиля заканчиваются на .gov.il\nНе переходить по ссылке, если сообщение расплывчато и не называет конкретное ведомство\nЗаходить на нужный сайт напрямую через поиск": [
+   "Vérifiez attentivement l'adresse du site — les vrais sites gouvernementaux israéliens se terminent en .gov.il",
+   "Ne suivez pas le lien si le message est vague et ne nomme aucun organisme précis",
+   "Accédez au site voulu directement via la recherche"
+  ]
+ }
+}

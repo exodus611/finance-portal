@@ -838,9 +838,10 @@ const SCENARIOS = {
 };
 // HOT badge is scarce by design: only the four most popular calculators.
 const HOT_BADGE = new Set([...CALCS].sort((a,b) => b.hot - a.hot).slice(0,4).map(c => c.id));
-// Калькуляторы систематизированы аккордеонами по категориям: открыто только
-// «Популярное», остальное сложено — без длинной простыни на главной.
-const calcOpen = new Set(['hot']);
+// Калькуляторы систематизированы аккордеонами по категориям: по умолчанию
+// закрыты ВСЕ полки, включая «Популярное» (решение владельца 2026-11-25) —
+// видна компактная карта категорий, а не раскрытая простыня.
+const calcOpen = new Set();
 function bindCalcAccs(box){
   if (!box || box.dataset.bound) return;
   box.dataset.bound = '1';

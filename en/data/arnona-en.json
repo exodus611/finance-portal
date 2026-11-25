@@ -1,0 +1,614 @@
+{
+ "meta": {
+  "title": "Arnona discount: who is entitled to it by law",
+  "subtitle": "What the law allows, which article establishes it, and what you need to do",
+  "updated": "2026-08-04",
+  "updated_human": "August 4, 2026",
+  "year": 2026,
+  "note": "Data updated from official sources. The amounts below are the upper limits set by the state."
+ },
+ "hierarchy": {
+  "intro": "The arnona discount rests on three different levels. It is important not to confuse them: the percentages live not in the law itself but in a by-law, and the final figure is set by your city hall.",
+  "levels": [
+   {
+    "n": "1",
+    "kind": "Law",
+    "name_ru": "Hok haesderim bemeshek hamedina",
+    "name_he": "חוק ההסדרים במשק המדינה (תיקוני חקיקה להשגת יעדי התקציב), התשנ״ג–1992",
+    "article": "article 12(b)",
+    "what": "Gives the Minister of the Interior the power to set the rules and the maximum discount amounts. The law itself contains no percentages."
+   },
+   {
+    "n": "2",
+    "kind": "By-law",
+    "name_ru": "Takanot haesderim bemeshek hamedina (hanaha me-arnona)",
+    "name_he": "תקנות הסדרים במשק המדינה (הנחה מארנונה), התשנ״ג–1993",
+    "article": "article 2 onwards",
+    "what": "Lists all the categories and the maximum discount amounts. This is the main document the whole page is based on."
+   },
+   {
+    "n": "3",
+    "kind": "Your city hall's order",
+    "name_ru": "Tzav arnona",
+    "name_he": "צו ארנונה",
+    "article": "adopted every year",
+    "what": "The city hall sets the rate per square metre and names the exact discount percentage within the permitted ceiling."
+   }
+  ]
+ },
+ "key_warning": {
+  "title": "The most important thing: “up to 90%” and “90%” are not the same thing",
+  "quote_he": "מועצה רשאית לקבוע הנחה… הנחה שאינה עולה על 90 אחוזים",
+  "quote_ru": "“The council may establish a discount... a discount not exceeding 90 percent”",
+  "body": [
+   "The word “rashait” (רשאית) means “may”, not “must”. And “she-eina ola al” (שאינה עולה על) means “not exceeding”.",
+   "This means the percentage shown is an upper limit, not a promised amount. The final figure is set by the city hall in its tzav arnona (צו ארנונה) for the current year.",
+   "That is why this page says “up to” everywhere. To find the exact figure for your city, ask the arnona collection department or look at the tzav arnona on the city hall website."
+  ],
+  "exception": "A separate case is the elderly. Their discount also rests on a standalone law, Hok haezrahim havatikim (חוק האזרחים הוותיקים, 1999), article 9(g) — the rules there are stricter and include an income test."
+ },
+ "ole": {
+  "title": "If you are a new immigrant (oleh)",
+  "lead": "This is the simplest case of all. There is no income test, no committee convenes, and the decision does not depend on anyone's discretion: either you are within the deadline or you are not.",
+  "name_ru": "oleh",
+  "name_he": "עולה",
+  "ceiling_percent": 90,
+  "area_limit_m2": 100,
+  "months_benefit": 12,
+  "months_window": 24,
+  "article": "2(א)(6)(א) и 2(א)(6)(ב)",
+  "rule": "A discount of up to 90 percent on the first 100 square metres of the apartment, for 12 months out of the first 24.",
+  "start_from": [
+   "from the day of registration in the population registry as an oleh under the Law of Return (חוק השבות, 1950),",
+   "or from the day you receive the ezrah oleh certificate (אזרח עולה) at the Ministry of Aliyah and Integration."
+  ],
+  "documents": [
+   "ID card together with the sefah insert (ספח) showing the address — a copy.",
+   "Teudat oleh (תעודת עולה) from the Ministry of the Interior, or the ezrah oleh certificate (אזרח עולה) from the Ministry of Aliyah and Integration — a copy.",
+   "If you previously lived in another city — a certificate from there that you did not receive the immigrant discount there.",
+   "If the apartment is rented — a valid rental agreement."
+  ],
+  "renter_note": "The discount goes to the mahzik benekhes (מחזיק בנכס) — the person who actually holds the apartment and in whose name the arnona account is opened. You do not need to be the owner. A rented apartment is a common case; the city hall will simply ask to see the rental agreement.",
+  "dependent": {
+   "title": "A special case: an immigrant dependent on outside help",
+   "ceiling_percent": 80,
+   "article": "2(א)(6א)",
+   "rule": "Up to 80 percent on the entire area of the apartment, with no time limit.",
+   "condition": "For those whom Bituach Leumi (ביטוח לאומי) has confirmed as entitled to a special immigrant benefit or to a gimlat siud (גמלת סיעוד) for an immigrant.",
+   "document": "A fresh entitlement certificate from Bituach Leumi (ביטוח לאומי)."
+  }
+ },
+ "calc": {
+  "title": "Estimate the amount",
+  "lead": "Take the amount straight from your arnona bill — then the calculation uses your real figures, not averages.",
+  "disclaimer": "This is a calculation based on the law's upper limit, not a promise. How much your city hall will grant is written in its tzav arnona (צו ארנונה) for this year.",
+  "period_options": [
+   {
+    "id": "month",
+    "label": "per month",
+    "months": 1
+   },
+   {
+    "id": "bimonth",
+    "label": "per two months",
+    "months": 2
+   },
+   {
+    "id": "year",
+    "label": "per year",
+    "months": 12
+   }
+  ],
+  "area_note": "If the apartment is larger than 100 square metres, the discount is calculated only on the part of the bill that falls on the first 100 metres."
+ },
+ "categories": [
+  {
+   "article": "2(א)(1)(א)",
+   "who": "An elderly person receiving an old-age pension, a survivors' benefit, a dependants' benefit, or a work-injury benefit",
+   "term_ru": "ezrah vatik",
+   "term_he": "אזרח ותיק",
+   "ceiling": "up to 25%",
+   "limits": "100 square metres",
+   "effort": "справка",
+   "note": "There is an income test under the separate law on senior citizens."
+  },
+  {
+   "article": "2(א)(1)(ב)",
+   "who": "An elderly person who also receives an income-support benefit",
+   "term_ru": "avtahat ahnasa",
+   "term_he": "הבטחת הכנסה",
+   "ceiling": "up to 100%",
+   "limits": "100 square metres",
+   "effort": "справка",
+   "note": "The largest discount among those for the elderly."
+  },
+  {
+   "article": "2(א)(2)(א)",
+   "who": "A disabled person receiving a full monthly benefit, with earning-capacity loss of 75 percent or more",
+   "term_ru": "nekhe",
+   "term_he": "נכה",
+   "ceiling": "up to 80%",
+   "limits": "—",
+   "effort": "справка",
+   "note": "Certificate from Bituach Leumi (ביטוח לאומי)."
+  },
+  {
+   "article": "2(א)(2)(ב)",
+   "who": "A disabled person who, before pension age, was permanently assigned an earning-capacity loss of 75 percent or more",
+   "term_ru": "nekhe",
+   "term_he": "נכה",
+   "ceiling": "up to 80%",
+   "limits": "—",
+   "effort": "справка",
+   "note": ""
+  },
+  {
+   "article": "2(א)(3)",
+   "who": "A person with a confirmed medical disability of 90 percent or more",
+   "term_ru": "nekhe",
+   "term_he": "נכה",
+   "ceiling": "up to 40%",
+   "limits": "—",
+   "effort": "справка",
+   "note": ""
+  },
+  {
+   "article": "2(א)(4)",
+   "who": "A Prisoner of Zion and family members, and recipients of benefits for Nazi persecution — from Germany, the Netherlands, Austria, Belgium",
+   "term_ru": "asir Tzion",
+   "term_he": "אסיר ציון",
+   "ceiling": "up to 66%",
+   "limits": "70 square metres, or 90 if more than four people live together",
+   "effort": "справка",
+   "note": ""
+  },
+  {
+   "article": "2(א)(5)",
+   "who": "A person holding a certificate of blindness",
+   "term_ru": "teudat iver",
+   "term_he": "תעודת עיוור",
+   "ceiling": "up to 90%",
+   "limits": "—",
+   "effort": "один документ",
+   "note": ""
+  },
+  {
+   "article": "2(א)(6)",
+   "who": "A new immigrant under the Law of Return, or a holder of the immigrant-citizen certificate",
+   "term_ru": "oleh",
+   "term_he": "עולה",
+   "ceiling": "up to 90%",
+   "limits": "100 square metres, 12 months out of the first 24",
+   "effort": "один документ",
+   "note": "No income test. The simplest procedure of all."
+  },
+  {
+   "article": "2(א)(6א)",
+   "who": "A new immigrant dependent on outside help",
+   "term_ru": "oleh talui beezrat hazulat",
+   "term_he": "עולה התלוי בעזרת הזולת",
+   "ceiling": "up to 80%",
+   "limits": "the entire area, with no time limit",
+   "effort": "справка",
+   "note": ""
+  },
+  {
+   "article": "2(א)(6ב)",
+   "who": "A person who served in the South Lebanon Army, and their spouse",
+   "term_ru": "ish TZADAL",
+   "term_he": "איש צד״ל",
+   "ceiling": "up to 90%",
+   "limits": "100 square metres, 12 months out of the first 36",
+   "effort": "справка",
+   "note": ""
+  },
+  {
+   "article": "2(א)(7)(ג)",
+   "who": "A recipient of a long-term care benefit",
+   "term_ru": "gimlat siud",
+   "term_he": "גמלת סיעוד",
+   "ceiling": "up to 70%",
+   "limits": "—",
+   "effort": "справка",
+   "note": ""
+  },
+  {
+   "article": "2(א)(8)",
+   "who": "A person with a low average monthly income — the amount depends on the income and the number of people living in the apartment",
+   "term_ru": "ahnasa nemuha",
+   "term_he": "הכנסה נמוכה",
+   "ceiling": "by table, up to 90%",
+   "limits": "—",
+   "effort": "комиссия",
+   "note": "The most laborious procedure: income certificates for 12 months for everyone living in the apartment, decided by the discounts committee."
+  },
+  {
+   "article": "2(א)(10)",
+   "who": "A single parent of a child under 18, or under 21 if the child lives with the parent and serves in the army",
+   "term_ru": "hore yahid",
+   "term_he": "הורה יחיד",
+   "ceiling": "up to 20%",
+   "limits": "—",
+   "effort": "справка",
+   "note": ""
+  },
+  {
+   "article": "2(א)(11)",
+   "who": "A family with a disabled child receiving the corresponding benefit",
+   "term_ru": "yeled nekhe",
+   "term_he": "ילד נכה",
+   "ceiling": "up to 33%",
+   "limits": "100 square metres",
+   "effort": "справка",
+   "note": ""
+  },
+  {
+   "article": "3ו",
+   "who": "An active reservist",
+   "term_ru": "hayal miluim pail",
+   "term_he": "חייל מילואים פעיל",
+   "ceiling": "up to 5%",
+   "limits": "—",
+   "effort": "один документ",
+   "note": "The city hall grants this discount at its discretion; it is not obliged to. An active-reservist certificate is required."
+  },
+  {
+   "article": "3ז",
+   "who": "A commander in active reserve service",
+   "term_ru": "mefaked miluim pail",
+   "term_he": "מפקד מילואים פעיל",
+   "ceiling": "separate arrangement",
+   "limits": "—",
+   "effort": "один документ",
+   "note": ""
+  },
+  {
+   "article": "3ב",
+   "who": "Residents of Kiryat Shmona and Shlomi",
+   "term_ru": "",
+   "term_he": "",
+   "ceiling": "separate arrangement",
+   "limits": "—",
+   "effort": "справка",
+   "note": ""
+  },
+  {
+   "article": "3ג",
+   "who": "Residents of Beersheba",
+   "term_ru": "otef Aza",
+   "term_he": "עוטף עזה",
+   "ceiling": "separate arrangement",
+   "limits": "—",
+   "effort": "справка",
+   "note": ""
+  },
+  {
+   "article": "14ה",
+   "who": "Soldiers harmed in war, police officers and their family members",
+   "term_ru": "",
+   "term_he": "",
+   "ceiling": "separate arrangement",
+   "limits": "there is a limit for large apartments under article 14(vav)",
+   "effort": "справка",
+   "note": ""
+  },
+  {
+   "article": "12",
+   "who": "The first owner of a new empty building that is not in use",
+   "term_ru": "binyan hadash rek",
+   "term_he": "בניין חדש ריק",
+   "ceiling": "up to 100%",
+   "limits": "up to 12 consecutive months",
+   "effort": "справка",
+   "note": "After 12 months, a further discount may be possible under article 13."
+  },
+  {
+   "article": "13",
+   "who": "An empty property that is not in use",
+   "term_ru": "nekhes rek",
+   "term_he": "נכס ריק",
+   "ceiling": "separate arrangement",
+   "limits": "—",
+   "effort": "справка",
+   "note": ""
+  }
+ ],
+ "effort_legend": [
+  {
+   "id": "один документ",
+   "label": "One document",
+   "desc": "Just attach a copy of the certificate. Income is not checked and no committee convenes."
+  },
+  {
+   "id": "справка",
+   "label": "A certificate is needed",
+   "desc": "You will need a fresh certificate from the agency — most often from Bituach Leumi (ביטוח לאומי)."
+  },
+  {
+   "id": "комиссия",
+   "label": "A committee decides",
+   "desc": "Income certificates for 12 months are required for everyone living in the apartment. The decision is made by the vaadat hanahot (ועדת הנחות) — the discounts committee — and the outcome is not known in advance."
+  }
+ ],
+ "income_table": {
+  "title": "Income thresholds for the largest discount",
+  "article": "2(א)(8), Приложение первое",
+  "year": 2026,
+  "ceiling": "up to 90%",
+  "indexation": "The amounts are revised on 1 January each year according to changes in the minimum wage — comparing its value on 20 May of the two preceding years. The updated table is published by the Director General of the Ministry of the Interior.",
+  "change_2026": "From 2026, the average monthly income is calculated only as an average over 12 months. The option to choose a 3-month average has been abolished.",
+  "rows": [
+   {
+    "people": "1 person",
+    "income": "up to ₪3,513"
+   },
+   {
+    "people": "2 people",
+    "income": "up to ₪5,621"
+   },
+   {
+    "people": "3 people",
+    "income": "up to ₪7,449"
+   },
+   {
+    "people": "4 people",
+    "income": "up to ₪8,996"
+   },
+   {
+    "people": "5 people",
+    "income": "up to ₪10,541"
+   },
+   {
+    "people": "6 people",
+    "income": "up to ₪11,948"
+   },
+   {
+    "people": "7 people",
+    "income": "up to ₪13,352"
+   },
+   {
+    "people": "8 people",
+    "income": "up to ₪14,618"
+   },
+   {
+    "people": "9 people",
+    "income": "up to ₪15,743"
+   }
+  ],
+  "note": "For the smaller discount levels — 70, 50 and 30 percent — the income thresholds are higher. For a family of 10 or more, a fixed amount per additional person is added to the 9-person threshold."
+ },
+ "common_rules": [
+  {
+   "article": "17",
+   "title": "Discounts do not add up",
+   "name_ru": "meniat kefel hahanaha",
+   "name_he": "מניעת כפל ההנחה",
+   "body": "If you qualify on several grounds at once, only one discount is granted. It makes sense to check in advance which one is more beneficial and to apply for that one."
+  },
+  {
+   "article": "16",
+   "title": "A debt cancels a discount already received",
+   "name_ru": "bitul hahanaha",
+   "name_he": "ביטול ההנחה",
+   "body": "If the remaining arnona for the year is not paid by 31 December, the discount is cancelled retroactively and the amount returns as debt with surcharges. Few people know this, and it also affects those who already received the discount. A reminder set for December is all it takes."
+  },
+  {
+   "article": "—",
+   "title": "The discount is granted for one apartment",
+   "name_ru": "",
+   "name_he": "",
+   "body": "Only for the home where you actually live and in whose name the arnona account is opened."
+  },
+  {
+   "article": "20, 21",
+   "title": "There are application deadlines",
+   "name_ru": "",
+   "name_he": "",
+   "body": "The procedure and deadlines for applying are set out in articles 20 and 21. In some cities the discount may also be granted retroactively — each has its own rules, so it is worth asking."
+  }
+ ],
+ "steps": {
+  "title": "What to do, step by step",
+  "items": [
+   {
+    "n": "1",
+    "title": "Look at your bill",
+    "body": "Find in your arnona bill the area you are charged for and the amount. If the area on the bill is larger than your actual apartment, that is a separate reason to appeal — see the section on disagreement."
+   },
+   {
+    "n": "2",
+    "title": "Determine your ground",
+    "body": "From the table above, find the article you fall under. If several apply, choose the one with the larger amount, because only one discount is granted."
+   },
+   {
+    "n": "3",
+    "title": "Gather the documents",
+    "body": "For a new immigrant this is the ID card with its insert, the ha teudat haoleh (תעודת עולה), and the rental agreement if the apartment is rented. For other grounds, a fresh certificate from the agency is usually required."
+   },
+   {
+    "n": "4",
+    "title": "Submit the application",
+    "body": "Apply to your city hall's arnona collection department — ha agaf legviyat arnona (אגף לגביית ארנונה). In many cities the form can be downloaded in advance or the application submitted via their website."
+   },
+   {
+    "n": "5",
+    "title": "Wait for the answer and check the bill",
+    "body": "When the next bill arrives, check whether a discount line has appeared in it. If not, you can ask the same department what stage the application is at."
+   }
+  ]
+ },
+ "appeal": {
+  "title": "If you disagree with the calculation",
+  "lead": "You can object, for example, if the bill shows an area larger than the real one, or the payer recorded is not the person living in the apartment. The deadlines are strict, so do not delay.",
+  "warning": "Filing an objection does not exempt you from paying the arnona. You must keep paying while the case is being examined.",
+  "steps": [
+   {
+    "n": "1",
+    "name_ru": "hasaga",
+    "name_he": "השגה",
+    "title": "Objection to the city treasurer",
+    "days": "90 days from receiving the bill"
+   },
+   {
+    "n": "2",
+    "name_ru": "",
+    "name_he": "",
+    "title": "Reply of the head of the arnona department",
+    "days": "60 days, or 90 if extended. If there is no reply in time, the objection is considered accepted"
+   },
+   {
+    "n": "3",
+    "name_ru": "irar",
+    "name_he": "ערר",
+    "title": "Complaint to the appeals committee at the city hall",
+    "days": "30 days from receiving the reply"
+   },
+   {
+    "n": "4",
+    "name_ru": "",
+    "name_he": "",
+    "title": "Application to the administrative court",
+    "days": "against the committee's decision"
+   }
+  ]
+ },
+ "faq": [
+  {
+   "q": "I rent an apartment. Is the discount for me or the landlord?",
+   "a": "The discount goes to the person who actually holds the apartment and in whose name the arnona account is opened — in Hebrew, mahzik benekhes (מחזיק בנכס). If the account has been transferred to you, you apply, and the city hall will ask to see the rental agreement. If the account stayed in the landlord's name, the discount on your ground cannot be arranged."
+  },
+  {
+   "q": "Why does it say “up to 90%” everywhere and not just “90%”?",
+   "a": "Because that is how the by-law itself is written: “a discount not exceeding 90 percent”. The state sets the upper limit, and the exact figure is named by the city hall in its tzav arnona (צו ארנונה). It may differ from city to city."
+  },
+  {
+   "q": "Can the city hall refuse to give an immigrant the discount at all?",
+   "a": "The list of categories is closed and set by the state, and the city hall cannot remove immigrants from it. But it determines the exact percentage within the ceiling. Ask for the exact figure for your city at the arnona collection department."
+  },
+  {
+   "q": "I qualify on two grounds at once. Will they be added together?",
+   "a": "No. Article 17 expressly forbids it — one discount is granted. So it is worth calculating in advance which one is more beneficial."
+  },
+  {
+   "q": "I missed the immigrant discount deadline. What now?",
+   "a": "All is not lost: other grounds remain. Look at the table — a discount based on income, age, disability, or as a single parent may apply. And in some cities the discount is granted retroactively; each has its own rules, so it is worth asking."
+  },
+  {
+   "q": "How much trouble is it, really?",
+   "a": "It varies, and the table marks it. For a new immigrant — one application and a copy of the certificate; nobody checks income. The income-based discount is more complicated: certificates for 12 months for everyone living there, and a committee decides."
+  },
+  {
+   "q": "Can the discount be taken away?",
+   "a": "Yes, under article 16 — if the remaining arnona for the year is not paid by 31 December. The discount is then cancelled retroactively. Just set a reminder for December and check that no debts remain."
+  },
+  {
+   "q": "Where can I see my city's tzav arnona?",
+   "a": "On the city hall website, usually in the arnona section. It shows both the rate per square metre and the discount amounts for the current year. If you cannot find it, call the arnona collection department and ask."
+  }
+ ],
+ "glossary": [
+  {
+   "ru": "arnona",
+   "he": "ארנונה",
+   "desc": "the municipal property tax paid for the use of a home"
+  },
+  {
+   "ru": "hanaha me-arnona",
+   "he": "הנחה מארנונה",
+   "desc": "a discount on the arnona"
+  },
+  {
+   "ru": "tzav arnona",
+   "he": "צו ארנונה",
+   "desc": "the city hall's annual order with the rates and discount amounts"
+  },
+  {
+   "ru": "mahzik benekhes",
+   "he": "מחזיק בנכס",
+   "desc": "the person who actually holds the apartment — not necessarily the owner"
+  },
+  {
+   "ru": "teudat oleh",
+   "he": "תעודת עולה",
+   "desc": "the new immigrant certificate"
+  },
+  {
+   "ru": "ezrah oleh",
+   "he": "אזרח עולה",
+   "desc": "the immigrant-citizen status and the corresponding certificate"
+  },
+  {
+   "ru": "sefah",
+   "he": "ספח",
+   "desc": "the insert to the ID card where the address is recorded"
+  },
+  {
+   "ru": "agaf legviyat arnona",
+   "he": "אגף לגביית ארנונה",
+   "desc": "the arnona collection department at the city hall — where the application is submitted"
+  },
+  {
+   "ru": "vaadat hanahot",
+   "he": "ועדת הנחות",
+   "desc": "the discounts committee, which examines income-based applications"
+  },
+  {
+   "ru": "hasaga",
+   "he": "השגה",
+   "desc": "an objection to the arnona calculation, submitted to the city treasurer"
+  },
+  {
+   "ru": "irar",
+   "he": "ערר",
+   "desc": "a complaint to the appeals committee"
+  },
+  {
+   "ru": "Bituach Leumi",
+   "he": "ביטוח לאומי",
+   "desc": "the National Insurance Institute"
+  },
+  {
+   "ru": "avtahat ahnasa",
+   "he": "הבטחת הכנסה",
+   "desc": "the income-support benefit"
+  },
+  {
+   "ru": "gimlat siud",
+   "he": "גמלת סיעוד",
+   "desc": "the long-term care benefit"
+  },
+  {
+   "ru": "ezrah vatik",
+   "he": "אזרח ותיק",
+   "desc": "a senior citizen"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Text of the by-law on arnona discounts",
+   "he": "תקנות הסדרים במשק המדינה (הנחה מארנונה), התשנ״ג–1993",
+   "url": "https://he.wikisource.org/wiki/תקנות_הסדרים_במשק_המדינה_(הנחה_מארנונה)"
+  },
+  {
+   "name": "Ministry of the Interior, section on taxes and discounts",
+   "he": "משרד הפנים",
+   "url": "https://www.gov.il/he/departments/guides/tax?chapterIndex=2"
+  },
+  {
+   "name": "Kol Zchut: arnona discount for new immigrants",
+   "he": "כל-זכות",
+   "url": "https://www.kolzchut.org.il/he/הנחה_בארנונה_לעולים_חדשים"
+  },
+  {
+   "name": "Kol Zchut: arnona discount for low income",
+   "he": "כל-זכות",
+   "url": "https://www.kolzchut.org.il/he/הנחה_בארנונה_לבעלי_הכנסה_נמוכה"
+  },
+  {
+   "name": "List of all local authorities",
+   "he": "רשימת הרשויות המקומיות",
+   "url": "https://www.masham.org.il/רשויות-מקומיות/"
+  }
+ ],
+ "disclaimer": "This page collects what is established by the law and the by-law, with references to specific articles. It is not advice and not a promise of a specific amount: the decision on your application is made by the city hall. Calculations are performed right on your device; no data is sent anywhere or stored."
+}
