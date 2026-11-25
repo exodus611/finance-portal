@@ -5,20 +5,20 @@
  "cpi_index": 105.2,
  "cpi_annual_pct": 1.1,
  "fx": {
-  "USD": 3.345,
-  "GBP": 4.3757,
-  "JPY": 0.021009,
-  "EUR": 3.6627,
-  "AUD": 2.2201,
-  "CAD": 2.3332,
-  "DKK": 0.49,
-  "NOK": 0.341,
-  "ZAR": 0.1905,
-  "SEK": 0.3262,
-  "CHF": 3.9864,
-  "JOD": 4.7173,
+  "USD": 3.326,
+  "GBP": 4.3604,
+  "JPY": 0.020908,
+  "EUR": 3.6503,
+  "AUD": 2.2183,
+  "CAD": 2.322,
+  "DKK": 0.4883,
+  "NOK": 0.3401,
+  "ZAR": 0.1904,
+  "SEK": 0.3264,
+  "CHF": 3.9477,
+  "JOD": 4.6915,
   "LBP": 4e-05,
-  "EGP": 0.0617
+  "EGP": 0.0618
  },
  "manual": {
   "avg_mortgage_rate_by_term": {
@@ -33,13 +33,11 @@
   "_checked": "2026-07-24"
  },
  "errors": {},
- "updated": "2026-11-25",
+ "updated": "2026-11-20T15:44:40.714594+00:00",
  "updated_sources_ok": "3/3",
  "_seed_note": "Initial file with verified values ​​as of the creation date. Then it is updated automatically via GitHub Actions (scripts/update-rates.py), except for the manual block - update it manually once a month.",
- "boi_rate_updated": "2026-11-24",
- "cpi_updated": "2026-10",
- "fx_updated": "2026-11-24",
- "last_interest_date": "2026-08-31T16:00:00Z",
- "derived_from": "data/tablo.json",
- "tablo_updated": "2026-11-25"
+ "boi_rate_updated": "2026-11-20T15:44:40.714594+00:00",
+ "cpi_updated": "2026-11-20T15:44:40.714594+00:00",
+ "fx_updated": "2026-11-20T15:44:40.714594+00:00",
+ "last_interest_date": "2026-08-31T16:00:00Z"
 }
