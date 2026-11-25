@@ -1,7 +1,7 @@
 {
   "source_ru": "Банк Израиля (SDMX): середина коридора депозитного и кредитного окон",
   "source_url": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0",
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "monthly": [
     {
       "period": "2024-12",
