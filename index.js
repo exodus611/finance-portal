@@ -1534,8 +1534,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const tt = $('#themeToggle');
   const syncTheme = () => tt.innerHTML = root.dataset.theme === 'light' ? ico('sun',17) : ico('moon',17);
   const savedTheme = LS.get('shekelpro_theme');
+  // Дефолт — тёмная тема (решение владельца 2026-11-25: светлая сливается
+  // с плашками). Светлая — только если пользователь сам её выбрал кнопкой.
   if (savedTheme) root.dataset.theme = savedTheme;
-  else if (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches) root.dataset.theme = 'light';
+  else root.dataset.theme = 'dark';
   syncTheme();
   tt.addEventListener('click', () => {
     root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';

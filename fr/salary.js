@@ -798,11 +798,10 @@ document.querySelectorAll('.acc-head').forEach(h => {
 });
 
 const themeToggle = document.getElementById('themeToggle');
-let savedTheme = 'light';
+let savedTheme = 'dark'; // дефолт — тёмная тема (владелец, 2026-11-25)
 try {
   const stored = localStorage.getItem('theme');
   if (stored) savedTheme = stored;
-  else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) savedTheme = 'dark';
 } catch (e) {}
 document.body.setAttribute('data-theme', savedTheme);
 if (themeToggle) {
