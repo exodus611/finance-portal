@@ -896,3 +896,22 @@ html[data-theme="light"] #dashboard .spark-area{fill:rgba(157,113,31,.12)}
   #dashboard .chart-box svg{height:72px}
   #dashboard .chart-rings{flex-direction:column;gap:7px}
 }
+
+/* ═══ Компактная шапка (2026-11-25, владелец: «занимает треть экрана») ═══ */
+.header-in{height:54px;min-height:54px;gap:10px}
+.brand{gap:8px}
+.brand-icon{width:27px;height:27px}
+.brand-name{font-size:19px}
+.header-actions{gap:6px}
+.theme-toggle{width:33px;height:33px;border-radius:9px}
+.cyber-head-btn{width:33px;height:33px;border-radius:9px}
+.burger{width:35px;height:33px;border-radius:9px}
+.top-nav a{padding-top:6px;padding-bottom:6px}
+@media(max-width:760px){
+  .header-in{height:48px;min-height:48px;gap:7px}
+  .brand-icon{width:24px;height:24px}
+  .brand-name{font-size:16.5px}
+  .theme-toggle{width:31px;height:31px}
+  .cyber-head-btn{width:31px;height:31px}
+  .burger{width:33px;height:31px}
+}
