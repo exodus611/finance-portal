@@ -915,3 +915,24 @@ html[data-theme="light"] #dashboard .spark-area{fill:rgba(157,113,31,.12)}
   .cyber-head-btn{width:31px;height:31px}
   .burger{width:33px;height:31px}
 }
+
+/* ═══ Шапка v2: ещё мельче, строго одна строка (2026-11-25) ═══ */
+.header-in{height:50px;min-height:50px;flex-wrap:nowrap}
+.brand-icon{width:25px;height:25px}
+.brand-name{font-size:18px}
+.theme-toggle,.cyber-head-btn{width:30px;height:30px}
+.burger{width:32px;height:30px}
+.cyber-alert-in{padding:6px 0;gap:9px}
+.cyber-alert-link{font-size:12.5px}
+@media(max-width:760px){
+  .header-in{height:44px;min-height:44px;gap:6px}
+  .brand{gap:6px}
+  .brand-icon{width:21px;height:21px}
+  .brand-name{font-size:15px}
+  .header-actions{gap:4px}
+  .theme-toggle,.cyber-head-btn{width:28px;height:28px;border-radius:8px}
+  .burger{width:30px;height:28px;border-radius:8px}
+  .header-actions .lang-seg-btn{font-size:9.5px;letter-spacing:.06em;padding:2px 1px}
+  .cyber-alert-in{padding:5px 0}
+  .cyber-alert-link{font-size:12px}
+}
