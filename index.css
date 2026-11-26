@@ -786,6 +786,10 @@ html[data-theme="light"] .glass-chip b{color:#77500d}
 .cyber-alert-link b{color:var(--gold2,#f6d387)}
 .cyber-alert-x{flex:0 0 auto;background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:14px}
 .cyber-alert-x:hover{color:var(--text);border-color:var(--gold)}
+/* Постоянная кнопка Киберщита в шапке: видна всегда, бейдж — непрочитанные важные */
+.cyber-head-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;border:1px solid var(--line);color:var(--gold);background:rgba(232,182,76,.07);text-decoration:none;flex:0 0 auto}
+.cyber-head-btn:hover{border-color:var(--gold);background:rgba(232,182,76,.14)}
+.cyber-head-badge{position:absolute;top:-6px;inset-inline-end:-6px;min-width:17px;height:17px;padding:0 4px;border-radius:999px;background:#e0574d;color:#fff;font-size:10px;font-weight:800;line-height:17px;text-align:center;box-shadow:0 0 0 2px rgba(224,87,77,.30)}
 .top-nav a.nav-new,.mobile-menu a.nav-new{position:relative}
 .top-nav a.nav-new::after,.mobile-menu a.nav-new::after{content:'';position:absolute;top:2px;inset-inline-end:-2px;width:8px;height:8px;border-radius:50%;background:#e0574d;box-shadow:0 0 0 3px rgba(224,87,77,.25)}
 

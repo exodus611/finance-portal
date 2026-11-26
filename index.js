@@ -88,6 +88,9 @@ const I18N = {
   hero_partial: { ru:'Проверка: {date} · часть источников недоступна', fr:'Vérification : {date} · certaines sources indisponibles', en:'Checked: {date} · some sources unavailable' },
   hero_unavailable: { ru:'Дата проверки недоступна · показаны сохранённые данные', fr:'Date de vérification indisponible · données enregistrées', en:'Check date unavailable · showing saved data' },
   cyber_alert_new: { ru:'Киберщит: новое предупреждение', fr:'CyberBouclier : nouvelle alerte', en:'Cyber Shield: new warning' },
+  cyber_alert_important: { ru:'Киберщит: важное предупреждение', fr:'CyberBouclier : alerte importante', en:'Cyber Shield: important warning' },
+  cyber_more_important: { ru:'и ещё {n} важных — посмотрите, пожалуйста', fr:'et encore {n} importantes — jetez-y un œil', en:'and {n} more important ones — please take a look' },
+  cyber_head: { ru:'Киберщит: предупреждения о мошенниках', fr:'CyberBouclier : alertes fraude', en:'Cyber Shield: fraud warnings' },
   cyber_alert_close: { ru:'Закрыть', fr:'Fermer', en:'Close' },
   sp_h: { ru:'Smart Prompt для вашего ИИ — умный запрос для любого поиска', fr:'Smart Prompt pour votre IA — une demande intelligente pour toute recherche', en:'Smart Prompt for your AI — a smart request for any search' },
   sp_s: { ru:'Напишите обычными словами, что нужно, — найти специалиста, товар, отель, работу или информацию, объяснить сложную тему — или чтобы нейросеть сама что-то сделала: дизайн, текст, план, сайт. Соберём точный умный запрос и вставим его в вашу нейросеть (ChatGPT, Gemini, Claude): она найдёт варианты по реальным источникам, а для специалистов ещё и проверит лицензию по официальным реестрам.', fr:'Écrivez avec vos mots ce qu’il vous faut — trouver un spécialiste, un produit, un hôtel, un emploi ou une information, expliquer un sujet compliqué — ou demander à l’IA de faire quelque chose elle-même : un design, un texte, un plan, un site. Nous composons une demande intelligente précise pour votre IA (ChatGPT, Gemini, Claude) : elle trouvera des options dans des sources réelles et, pour les spécialistes, vérifiera aussi la licence dans les registres officiels.', en:'Write in your own words what you need — to find a specialist, a product, a hotel, a job or information, to explain a hard topic — or to have the AI make something itself: a design, a text, a plan, a website. We will build a precise smart request for your AI (ChatGPT, Gemini, Claude): it will find options from real sources and, for specialists, also verify the licence in official registries.' },
@@ -1244,31 +1247,86 @@ function initHeroPhotoMotion(){
   motion.addEventListener('change', () => { if (motion.matches) { if (frame) cancelAnimationFrame(frame); frame=0; photo.style.removeProperty('--photo-x'); photo.style.removeProperty('--photo-y'); } });
 }
 /* ════════ КИБЕРЩИТ: плашка о новом предупреждении наверху ════════ */
+// Важность предупреждения Киберщита: SMS/звонки и явный фишинг — важные
+// (висят, пока человек не прочитает); образовательные посты и подкасты — обычные.
+function cyberIsImportant(w){
+  const t = String((w && w.title) || '').toLowerCase();
+  if (/нет предупреждения|не является|подкаст|podcast|not a fraud|pas une alerte/.test(t)) return false;
+  if (w && (w.type === 'sms' || w.type === 'call')) return true;
+  return /предупрежд|мошенн|фишинг|вредонос|поддел|фальшив|phishing|fake|malicious|fraud|arnaque|malveillant/.test(t);
+}
+function cyberReadSet(){
+  try {
+    const arr = JSON.parse(LS.get('shekelpro_cyber_read') || '[]');
+    const set = new Set(Array.isArray(arr) ? arr.map(String) : []);
+    const old = LS.get('shekelpro_cyber_dismissed'); if (old) set.add(String(old));
+    return set;
+  } catch (e) { return new Set(); }
+}
+function cyberMarkRead(ids){
+  try {
+    const set = cyberReadSet();
+    ids.forEach(id => set.add(String(id)));
+    LS.set('shekelpro_cyber_read', JSON.stringify([...set].slice(-300)));
+  } catch (e) {}
+}
 function renderCyberAlert(sj){
   try {
-    const list = (sj && sj.warnings) || [];
+    const list = ((sj && sj.warnings) || []).slice().sort((a, b) => String(b.date).localeCompare(String(a.date)));
     if (!list.length) return;
-    const latest = list.reduce((a, b) => (String(a.date) > String(b.date) ? a : b));
+    const read = cyberReadSet();
+    const unreadImportant = list.filter(w => cyberIsImportant(w) && !read.has(String(w.id)));
+    // Постоянная кнопка в шапке: бейдж с числом непрочитанных важных.
+    const badge = $('#cyberHeadBadge');
+    if (badge) {
+      badge.hidden = unreadImportant.length === 0;
+      badge.textContent = unreadImportant.length ? String(unreadImportant.length) : '';
+    }
+    const headBtn = $('#cyberHeadBtn');
+    if (headBtn && !headBtn.dataset.bound) {
+      headBtn.dataset.bound = '1';
+      headBtn.addEventListener('click', () => cyberMarkRead(unreadImportant.map(w => w.id)));
+    }
     const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Jerusalem', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
-    const age = Math.round((new Date(today) - new Date(latest.date)) / 864e5);
-    if (!(age >= 0 && age <= 3)) return;
-    if (LS.get('shekelpro_cyber_dismissed') === String(latest.id)) return;
+    const ageDays = w => Math.round((new Date(today) - new Date(w.date)) / 864e5);
+    // Важные висят без срока, пока не прочитаны; обычные — только свежие (≤3 дней)
+    // и не перебивают важные.
+    let shown = null, important = false;
+    if (unreadImportant.length) { shown = unreadImportant[0]; important = true; }
+    else {
+      shown = list.find(w => !cyberIsImportant(w) && !read.has(String(w.id)) && ageDays(w) >= 0 && ageDays(w) <= 3) || null;
+    }
     const bar = $('#cyberAlert'); if (!bar) return;
+    if (!shown) { bar.hidden = true; return; }
     const link = $('#cyberAlertLink');
-    if (link) link.href = u('cyber.html') + '#' + latest.id;
+    if (link) {
+      link.href = u('cyber.html') + '#' + shown.id;
+      if (!link.dataset.bound) {
+        link.dataset.bound = '1';
+        link.addEventListener('click', () => { cyberMarkRead([shown.id]); });
+      }
+    }
+    const bold = bar.querySelector('.cyber-alert-link b');
+    if (bold) bold.textContent = L(important ? 'cyber_alert_important' : 'cyber_alert_new');
     const txt = $('#cyberAlertText');
-    const setTitle = t => { if (txt) txt.textContent = ' — ' + t + ' · ' + fmtLiveDate(latest.date); };
-    setTitle(latest.title || '');
-    if (curLang !== 'ru') {
+    const more = important && unreadImportant.length > 1
+      ? ' · ' + L('cyber_more_important').replace('{n}', String(unreadImportant.length - 1)) : '';
+    const setTitle = t => { if (txt) txt.textContent = (t ? ' — ' + t : '') + ' · ' + fmtLiveDate(shown.date) + more; };
+    if (curLang === 'ru') setTitle(shown.title || '');
+    else {
+      setTitle('');
       fetch('https://exodus611.github.io/finance-portal/data/scams_i18n.json', { cache: 'no-cache' })
         .then(r => (r.ok ? r.json() : null))
-        .then(j => { const tr = j && j[curLang] && j[curLang][String(latest.id)]; if (tr && tr.t) setTitle(tr.t); })
+        .then(j => { const tr = j && j[curLang] && j[curLang][String(shown.id)]; if (tr && tr.t) setTitle(tr.t); })
         .catch(() => {});
     }
     bar.hidden = false;
-    $$('a[href$="cyber.html"]').forEach(a => a.classList.add('nav-new'));
+    if (unreadImportant.length) $$('a[href$="cyber.html"]').forEach(a => a.classList.add('nav-new'));
     const close = $('#cyberAlertClose');
-    if (close) close.addEventListener('click', () => { bar.hidden = true; LS.set('shekelpro_cyber_dismissed', String(latest.id)); });
+    if (close && !close.dataset.bound) {
+      close.dataset.bound = '1';
+      close.addEventListener('click', () => { cyberMarkRead([shown.id]); renderCyberAlert(sj); });
+    }
   } catch (e) { /* плашка не критична */ }
 }
 
