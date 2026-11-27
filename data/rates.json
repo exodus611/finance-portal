@@ -33,7 +33,7 @@
     "_checked": "2026-07-24"
   },
   "errors": {},
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "updated_sources_ok": "3/3",
   "_seed_note": "Начальный файл с проверенными значениями на дату создания. Далее обновляется автоматически через GitHub Actions (scripts/update-rates.py), кроме блока manual — его обновлять руками раз в месяц.",
   "boi_rate_updated": "2026-11-26",
@@ -41,5 +41,5 @@
   "fx_updated": "2026-11-26",
   "last_interest_date": "2026-08-31T16:00:00Z",
   "derived_from": "data/tablo.json",
-  "tablo_updated": "2026-11-26"
+  "tablo_updated": "2026-11-27"
 }
