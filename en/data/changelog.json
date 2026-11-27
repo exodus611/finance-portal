@@ -14,19 +14,14 @@
     {
      "href": "payments.html",
      "ru": "Даты выплат Битуах Леуми",
-     "fr": "Version russe de la page",
-     "en": "Bituach Leumi payment dates"
+     "fr": "Version russe de la page"
     },
     {
      "href": "fr/payments.html",
      "ru": "Французская версия страницы",
-     "fr": "Dates des paiements du Bitouah Leumi",
-     "en": "French version of the page"
+     "fr": "Dates des paiements du Bitouah Leumi"
     }
-   ],
-   "tag_en": "design",
-   "en_title": "Extraordinary payments are now more compact: each payment is an expandable block",
-   "en_text": "The “Extraordinary and one-off payments” section took up too much space: every payment was shown in full. Now each payment is an expandable block (accordion). Collapsed, you see the essentials: the name, the status with a date (“expected 28.10.2026 · in 14 days”), a short amount and who is entitled; one tap opens the details — when, to whom, for what, how to receive it, and a link to the source. The explanations under the list (early payments, arrears for the past, how to learn about new payments) have also become expandable. The section is several times shorter, especially on a phone. A link like payments.html#extra-heating-elderly opens the exact payment right away."
+   ]
   },
   {
    "date": "2026-10-14",
@@ -40,19 +35,14 @@
     {
      "href": "payments.html",
      "ru": "Даты выплат Битуах Леуми",
-     "fr": "Version russe de la page",
-     "en": "Bituach Leumi payment dates"
+     "fr": "Version russe de la page"
     },
     {
      "href": "fr/payments.html",
      "ru": "Французская версия страницы",
-     "fr": "Dates des paiements du Bitouah Leumi",
-     "en": "French version of the page"
+     "fr": "Dates des paiements du Bitouah Leumi"
     }
-   ],
-   "tag_en": "auto-update",
-   "en_title": "Extraordinary payments now update themselves: amounts, dates and new Bituach Leumi announcements",
-   "en_text": "The “Extraordinary and one-off payments” section no longer needs manual upkeep. Twice a day the site checks amounts and dates itself against the official Bituach Leumi pages (in January, when the amounts change, the page will update itself), reads new announcements and the “State of emergency” section, and adds new payments. A new payment is published only after a strict check: every figure and date must be found verbatim in the announcement text, and the link must lead only to the Bituach Leumi site. Such cards are marked “added automatically” with a link to the source. The cards themselves move through “expected → paid → next payment in such-and-such a month next year”; one-off payments hide themselves when the deadline has passed or the Bituach Leumi page has been deleted. Once a week the model's work is tested on a real sample: if something breaks, new payments are not published and the site keeps the last verified data."
+   ]
   },
   {
    "date": "2026-10-14",
@@ -66,19 +56,14 @@
     {
      "href": "payments.html",
      "ru": "Даты выплат Битуах Леуми",
-     "fr": "Version russe de la page",
-     "en": "Bituach Leumi payment dates"
+     "fr": "Version russe de la page"
     },
     {
      "href": "fr/payments.html",
      "ru": "Французская версия страницы",
-     "fr": "Dates des paiements du Bitouah Leumi",
-     "en": "French version of the page"
+     "fr": "Dates des paiements du Bitouah Leumi"
     }
-   ],
-   "tag_en": "payments",
-   "en_title": "Bituach Leumi payments: a new section on extraordinary payments — to whom, when, how much and for what",
-   "en_text": "A section “Extraordinary and one-off payments” has appeared on the payment-dates page: a heating grant for the elderly (664 ₪ per family, expected 28 October), a heating grant for victims of terror attacks (from 993 to 8,984 ₪, in November), a special payment for workers aged 67+ who lost their job because of the war (up to 137 ₪ per day, applications open), and a school grant (1,204 ₪ per child, paid 11 August). For each payment it says who is entitled, when it arrives, how much and for what, how to receive it, with a link to the official Bituach Leumi source; dates and amounts were checked on 14 October. The explanations on the page were also fixed: long-term benefits arrive on the 28th (not “around the 22nd”), unemployment around the 12th, and when a date falls on a Friday, Saturday or holiday, the money arrives earlier. The FAQ markup was fixed too: because of an extra character, search engines could not read it before."
+   ]
   },
   {
    "date": "2026-09-27",
@@ -92,19 +77,14 @@
     {
      "href": "index.html",
      "ru": "Главная страница",
-     "fr": "Page d’accueil",
-     "en": "Homepage"
+     "fr": "Page d’accueil"
     },
     {
      "href": "tablo.html",
      "ru": "Экономика сегодня",
-     "fr": "L’économie aujourd’hui",
-     "en": "Economy today"
+     "fr": "L’économie aujourd’hui"
     }
-   ],
-   "tag_en": "fonts",
-   "en_title": "The Inter font now lives on the site itself — pages look the same on all devices",
-   "en_text": "The pages asked for the Inter font, but almost nowhere was it actually loaded: only six pages fetched it from the internet; the rest opened in whatever system font a person had — which is why the same site looked different on different phones and computers. Now Inter is connected locally, from our own domain: four files (Latin, extended Latin for French, Cyrillic, extended Cyrillic), and one file covers all weights from thin to extra-bold. There are no more requests to external services for the font — the page does not wait for someone else's servers and does not hand them visitor data. The external Inter connections were removed from tablo and valuta (and their French versions). Hebrew is deliberately left on the system font: it is used on the site for short terms, and the page weighs less."
+   ]
   },
   {
    "date": "2026-09-27",
@@ -118,19 +98,14 @@
     {
      "href": "cyber.html",
      "ru": "Киберщит (было дублирование)",
-     "fr": "Bouclier cyber (corrigé)",
-     "en": "CyberShield (fixed)"
+     "fr": "Bouclier cyber (corrigé)"
     },
     {
      "href": "changelog.html",
      "ru": "Весь журнал изменений",
-     "fr": "Tout le journal",
-     "en": "The whole changelog"
+     "fr": "Tout le journal"
     }
-   ],
-   "tag_en": "design",
-   "en_title": "A single styling layer for all pages, and fixes where pages looked broken",
-   "en_text": "First, what looked like breakage was fixed. The CyberShield page served its content twice: the file had been glued together from two copies, with “ype html” sticking out of the text. At the bottom of the French arnona page a scrap of markup with a link hung loose. On the maanak avoda, payment-dates and pension-savings pages (and their French versions) there was no footer — the page simply stopped. Then the common part: a polish.css file appeared, connected last on all pages. It does not repaint what the pages themselves do, but adds even font rendering, neat heading wraps, tabular digits (amounts in tables no longer “breathe”), green checkboxes and switches instead of blue system ones, thin scrollbars, a visible focus when tabbing with the keyboard, and respect for the system “reduce motion” setting; printing drops the extra navigation. Twelve pages gained a theme-color — on a phone the browser header takes the site's colour. Eleven over-long headings were shortened so they are not cut off in search and tabs. In the changelog, heading nesting was corrected. Tables on phones were checked: wide ones scroll and do not stick out of the screen."
+   ]
   },
   {
    "date": "2026-09-27",
@@ -144,19 +119,14 @@
     {
      "href": "pension-calc.html",
      "ru": "Калькулятор пенсионных накоплений",
-     "fr": "Version russe (calculateur)",
-     "en": "Pension savings calculator"
+     "fr": "Version russe (calculateur)"
     },
     {
      "href": "pension-gap.html",
      "ru": "Пенсионный разрыв",
-     "fr": "Écart de retraite",
-     "en": "Pension gap"
+     "fr": "Écart de retraite"
     }
-   ],
-   "tag_en": "access",
-   "en_title": "The pension savings calculator is open to everyone: no password needed",
-   "en_text": "The page was closed with a password and marked with a lock in the menu — so the calculation of pension, mikadem, the Ezrah Vatik allowance and Kibua Zkhuyot was unavailable without a code. The lock is removed: the calculator opens right away, like the site's other 24 calculators. The “(PRO)” and “🔒 PIN” marks disappeared from the homepage — in their place the usual “calculator” badge, like the neighbouring cards. The locks inside the calculation itself stayed, but they mean something else: they show that the old-age allowance and tax benefits are legally unavailable before the official retirement age. Formulas, mikadem tables and amounts were not changed."
+   ]
   },
   {
    "date": "2026-09-17",
@@ -170,20 +140,15 @@
     {
      "href": "avtahat-ahnasa.html",
      "ru": "Страница пособия",
-     "fr": "Version russe",
-     "en": "Income support (avtahat ahnasa)"
+     "fr": "Version russe"
     },
     {
      "href": "fr/avtahat-ahnasa.html",
      "ru": "Французская версия",
-     "fr": "Allocation de subsistance",
-     "en": "French version"
+     "fr": "Allocation de subsistance"
     }
    ],
-   "fr_only": false,
-   "tag_en": "design",
-   "en_title": "The avtahat ahnasa page is styled like the rest: cards, tables and steps instead of sheets of text",
-   "en_text": "The first version of the page came out “newspaper-like”: long paragraphs without frames, plain lists, bare tables. Now everything follows the same template as the income-supplement page: every data block sits in a card, wide tables sit in a card with horizontal scrolling on a phone, the filing procedure is numbered steps, and top and bottom have link-button cards. The five topics that were lists (who is refused, income, property, trips, comparing the names) became tables of two or three columns: “Situation → What Bituach Leumi checks”. A helper block “do I fall under the residency exception” was added: you enter months of residency and years since aliyah — and get the conclusion for your case. Content and amounts were not changed."
+   "fr_only": false
   },
   {
    "date": "2026-09-17",
@@ -197,20 +162,15 @@
     {
      "href": "avtahat-ahnasa.html",
      "ru": "Страница пособия",
-     "fr": "Version russe",
-     "en": "Income support (avtahat ahnasa)"
+     "fr": "Version russe"
     },
     {
      "href": "fr/avtahat-ahnasa.html",
      "ru": "Французская версия",
-     "fr": "Allocation de subsistance",
-     "en": "French version"
+     "fr": "Allocation de subsistance"
     }
    ],
-   "fr_only": false,
-   "tag_en": "edit",
-   "en_title": "The avtahat ahnasa page rewritten in the common format and put on the main board",
-   "en_text": "The page about the minimum-income allowance fell out of the site's general look: it had none of the usual calculation steps, and the text came out heavy — long sentences, needless digressions, typos in places (for example “self-employed” with a Latin letter slipped inside the word). What was done: the calculator was brought to the common “Step 1. Who you are in Bituach Leumi's records” and “Step 2. What comes out” format, quick income-substitution buttons appeared, sections were renamed to the common style, long sentences were broken into short ones, typos fixed. All amounts are the same — the official table from 01.01.2026 has not changed. Most importantly, the page's tile got the “popular” flag and now stands on the homepage right below the income-supplement tile — before that it sat outside the front board and could only be found by scrolling the list."
+   "fr_only": false
   },
   {
    "date": "2026-09-17",
@@ -224,20 +184,15 @@
     {
      "href": "avtahat-ahnasa.html",
      "ru": "Пособие по прожиточному минимуму",
-     "fr": "Version russe",
-     "en": "Income support (avtahat ahnasa)"
+     "fr": "Version russe"
     },
     {
      "href": "fr/avtahat-ahnasa.html",
      "ru": "Французская версия",
-     "fr": "Allocation de subsistance",
-     "en": "French version"
+     "fr": "Allocation de subsistance"
     }
    ],
-   "fr_only": false,
-   "tag_en": "new page",
-   "en_title": "Avtahat ahnasa — a new page: the minimum-income allowance with its own table of amounts",
-   "en_text": "Avtahat ahnasa (הבטחת הכנסה) was mentioned on the site only as a paragraph inside the income-supplement page — there was no separate page, and nowhere to find it. Now it is a full page: the official table of amounts from 01.01.2026 across three age groups and six family compositions, the work-income boundary at which the right to a partial payment remains, an eligibility check with your own figures, the 24-month residency condition with exceptions for new immigrants (12 months in the first 5 years after aliyah), the income and property test (savings, real estate, car), deductions from the allowance, forms בל/5619 and בל/430, payment dates and the rules for travelling abroad. Tiles appeared on both homepages, plus links from the “Do not confuse” section and from the glossary."
+   "fr_only": false
   },
   {
    "date": "2026-09-17",
@@ -251,26 +206,20 @@
     {
      "href": "ashlamat-ahnasa.html",
      "ru": "Таблица сравнения (русский)",
-     "fr": "Version russe",
-     "en": "Income supplement (ashlamat ahnasa)"
+     "fr": "Version russe"
     },
     {
      "href": "fr/ashlamat-ahnasa.html",
      "ru": "Французская версия",
-     "fr": "Tableau comparatif (français)",
-     "en": "French version"
+     "fr": "Tableau comparatif (français)"
     },
     {
      "href": "slovar.html",
      "ru": "Словарь терминов",
-     "fr": "Glossaire",
-     "en": "Glossary of terms"
+     "fr": "Glossaire"
     }
    ],
-   "fr_only": false,
-   "tag_en": "explainer",
-   "en_title": "Explained: ashlamat ahnasa and avtahat ahnasa are different payments",
-   "en_text": "The two names sound alike, and readers confuse them constantly — yet their forms, thresholds and conditions differ. A comparison table was added: how the partial allowance (a top-up to the minimum on top of an already-granted pension, salary or unemployment) differs from the full one (for those with neither income nor the right to other payments), the 2026 amounts for both, the 24-month residence-in-Israel requirement for avtahat ahnasa, and a hint “how to quickly understand your case”. Both terms were added to the dictionary in Russian and French, and the Russian dictionary gained a “Bituach Leumi” category (it did not exist before — the Russian version of the dictionary lagged behind the French one)."
+   "fr_only": false
   },
   {
    "date": "2026-09-17",
@@ -284,14 +233,10 @@
     {
      "href": "index.html",
      "ru": "Русская главная — раздел про пенсии",
-     "fr": "Accueil russe — thèmes retraite",
-     "en": "Homepage"
+     "fr": "Accueil russe — thèmes retraite"
     }
    ],
-   "fr_only": false,
-   "tag_en": "navigation",
-   "en_title": "The income-supplement calculator appeared in the homepage list",
-   "en_text": "The page and calculator were ready earlier, but not a single link from the Russian homepage led to them — they could only be found from articles. Now there is a “Social supplement to a pension” tile in the pension-topics section next to siud."
+   "fr_only": false
   },
   {
    "date": "2026-09-17",
@@ -305,20 +250,15 @@
     {
      "href": "ashlamat-ahnasa.html",
      "ru": "Калькулятор и раздел (русский)",
-     "fr": "Version russe",
-     "en": "Income supplement (ashlamat ahnasa)"
+     "fr": "Version russe"
     },
     {
      "href": "fr/ashlamat-ahnasa.html",
      "ru": "Французская версия",
-     "fr": "Simulateur et section (français)",
-     "en": "French version"
+     "fr": "Simulateur et section (français)"
     }
    ],
-   "fr_only": false,
-   "tag_en": "verified against source",
-   "en_title": "Savings and the supplement: the official Bituach Leumi mechanics from 01.01.2026 added",
-   "en_text": "Before, the page only said “savings above the threshold — a check is needed”. Now the mechanics themselves are described and calculated in the calculator: on the amount above the exempt 41,528 ₪ (single) or 62,292 ₪ (couple), the institute computes a notional income at the average rate of 4.17% per year divided by 12; from 103,327 ₪ the calculation is tiered (family composition, age, size). Added: additional real estate — 3% for residential, 5% for commercial, with tiers above 292,931 ₪. Worked example: 100,000 ₪ for a single person → 203 ₪ of notional income per month."
+   "fr_only": false
   },
   {
    "date": "2026-09-17",
@@ -332,14 +272,10 @@
     {
      "href": "fr/siud.html",
      "ru": "Французская страница про сиюд",
-     "fr": "La page sioud en français",
-     "en": "The siud page in French"
+     "fr": "La page sioud en français"
     }
    ],
-   "fr_only": false,
-   "tag_en": "French version",
-   "en_title": "A new French page: siud — the long-term care allowance for the elderly",
-   "en_text": "Before this, the French pages sent the reader to the Russian version of the topic. Now siud has a full French page: 6 levels with care hours and amounts, an income test (100% / 50% / no right), four conditions, step-by-step filing with phone numbers, a comparison with the “special services” allowance and with private long-term care insurance, and an FAQ. Data: Bituach Leumi, in force from 01.04.2026."
+   "fr_only": false
   },
   {
    "date": "2026-09-17",
@@ -353,14 +289,10 @@
     {
      "href": "arnona.html",
      "ru": "Пример: арнона",
-     "fr": "Exemple : arnona",
-     "en": "Example: arnona"
+     "fr": "Exemple : arnona"
     }
    ],
-   "fr_only": false,
-   "tag_en": "mobile",
-   "en_title": "Tables no longer spill off the phone screen",
-   "en_text": "Wide tables (three columns and more) on a narrow screen scroll horizontally inside their own block. Where a table already fit, nothing changed visually."
+   "fr_only": false
   },
   {
    "date": "2026-09-17",
@@ -374,14 +306,10 @@
     {
      "href": "sitemap.xml",
      "ru": "Карта сайта (61 адрес)",
-     "fr": "Plan du site (61 adresses)",
-     "en": "Sitemap (61 addresses)"
+     "fr": "Plan du site (61 adresses)"
     }
    ],
-   "fr_only": false,
-   "tag_en": "indexing",
-   "en_title": "New pages submitted to search engines",
-   "en_text": "Bing, Yandex, Seznam and Naver are notified automatically (IndexNow): all 61 addresses from the sitemap were submitted, and at each update the submission repeats only for new pages. For Google, indexing is requested manually in Search Console — the address list by priority was compiled separately."
+   "fr_only": false
   },
   {
    "date": "2026-09-17",
@@ -395,14 +323,10 @@
     {
      "href": "fr/changelog.html",
      "ru": "Проверить на французской странице",
-     "fr": "Vérifier sur une page française",
-     "en": "Check on a French page"
+     "fr": "Vérifier sur une page française"
     }
    ],
-   "fr_only": false,
-   "tag_en": "fix",
-   "en_title": "The FR→RU language switch fixed",
-   "en_text": "On the French pages the RU button led to the same French page — there was no way back to the Russian version (switching the other way worked). Fixed on all 23 French pages; where a Russian version of the topic does not exist, the button leads to the Russian homepage and says so."
+   "fr_only": false
   },
   {
    "date": "2026-09-17",
@@ -416,14 +340,10 @@
     {
      "href": "fr/retraite-france-israel.html",
      "ru": "Открыть страницу",
-     "fr": "Ouvrir la page",
-     "en": "Open the page"
+     "fr": "Ouvrir la page"
     }
    ],
-   "fr_only": true,
-   "tag_en": "new page",
-   "en_title": "A French pension for an Israeli resident: who taxes it, and how",
-   "en_text": "A French pension for a person living in Israel is a separate topic with its own rules: Article 18 of the treaty (a private pension is taxed only in the country of residence), Article 19 (a civil servant's pension stays in France), the double exemption of the first 10 years after aliyah, and taxation in Israel after them. On the page: an analysis from primary sources, a calculator of French withholding tax (2026 scale), and a three-question situation finder."
+   "fr_only": true
   },
   {
    "date": "2026-09-17",
@@ -437,19 +357,14 @@
     {
      "href": "contact.html",
      "ru": "Русская форма",
-     "fr": "Formulaire russe",
-     "en": "Contact form"
+     "fr": "Formulaire russe"
     },
     {
      "href": "fr/contact.html",
      "ru": "Французская форма",
-     "fr": "Formulaire français",
-     "en": "French form"
+     "fr": "Formulaire français"
     }
-   ],
-   "tag_en": "feedback forms",
-   "en_title": "Messages from the form now actually arrive",
-   "en_text": "Before, the form held an unfilled placeholder, and the fallback led to a Telegram channel you cannot write to. Now the form on both contact pages (Russian and French) really sends the message, with bot protection; a hidden trap cuts off automatic spam, and if the service is unavailable, the text is shown in a field for copying, so nothing is lost."
+   ]
   },
   {
    "date": "2026-09-17",
@@ -463,19 +378,14 @@
     {
      "href": "index.html",
      "ru": "Главная (развернуть «Календарь решений и выплат»)",
-     "fr": "Accueil (déplier le calendrier)",
-     "en": "Homepage"
+     "fr": "Accueil (déplier le calendrier)"
     },
     {
      "href": "fr/index.html",
      "ru": "Французская главная",
-     "fr": "Accueil français",
-     "en": "French homepage"
+     "fr": "Accueil français"
     }
-   ],
-   "tag_en": "payment calendar",
-   "en_title": "Payment dates in the homepage calendar are now visible to search engines",
-   "en_text": "The calendar (Bituach Leumi payment dates, the Bank of Israel rate decision, the price index, the gasoline price revision) is drawn in the browser from data files — the source HTML contained no dates at all, so a search engine could not see them. Now the dates are written into the markup on both homepages, and a special test cross-checks the static text against what the browser sees: a mismatch stops the auto-update."
+   ]
   },
   {
    "date": "2026-09-17",
@@ -489,19 +399,14 @@
     {
      "href": "ashlamat-ahnasa.html",
      "ru": "Русская версия",
-     "fr": "Version russe",
-     "en": "Income supplement (ashlamat ahnasa)"
+     "fr": "Version russe"
     },
     {
      "href": "fr/ashlamat-ahnasa.html",
      "ru": "Французская версия",
-     "fr": "Version française",
-     "en": "French version"
+     "fr": "Version française"
     }
-   ],
-   "tag_en": "calculator",
-   "en_title": "Bituach Leumi income-supplement calculator (Hebrew: ashlamat ahnasa)",
-   "en_text": "How much Bituach Leumi tops up an old-age pension: 2026 ceilings by age and family composition, income and savings thresholds, a separate eligibility check for a partial pension. Russian and French versions exist — not machine translation."
+   ]
   },
   {
    "date": "2026-09-17",
@@ -515,20 +420,15 @@
     {
      "href": "fr/slovar.html",
      "ru": "Словарь (по-французски)",
-     "fr": "Glossaire",
-     "en": "Glossary"
+     "fr": "Glossaire"
     },
     {
      "href": "fr/about.html",
      "ru": "О проекте",
-     "fr": "À propos",
-     "en": "About the project"
+     "fr": "À propos"
     }
    ],
-   "fr_only": true,
-   "tag_en": "French track",
-   "en_title": "French pages: a glossary of terms, “About the project”, “Contacts”",
-   "en_text": "38 terms in five categories (Bituach Leumi, taxes, banking, work, pension) with the Hebrew original — so you can read letters from the tax office and Bituach Leumi with understanding. Plus the “About the project” and “Contacts” pages and its own social-media image."
+   "fr_only": true
   },
   {
    "date": "2026-09-17",
@@ -542,13 +442,9 @@
     {
      "href": "tablo.html",
      "ru": "Табло индексов",
-     "fr": "Tableau de bord",
-     "en": "Economy today"
+     "fr": "Tableau de bord"
     }
-   ],
-   "tag_en": "live data",
-   "en_title": "A calendar of decisions and payments on the homepage (RU + FR)",
-   "en_text": "One request to the data files instead of four duplicates: the Bank of Israel rate and the prime, annual inflation, the price of gasoline 95, upcoming payments — with an automatic “in how many days” recalculation. Nothing is hardcoded into the markup, so the page does not go stale between auto-updates."
+   ]
   }
  ]
 }
