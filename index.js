@@ -491,6 +491,16 @@ async function fetchLive(){
       }
     } catch (e) { /* остаётся значение из каталога */ }
     try {
+      const rp = await fetch('https://exodus611.github.io/finance-portal/data/payments.json', { cache: 'no-cache' });
+      if (rp.ok) {
+        const pj = await rp.json();
+        const BY_HE = { 'קצבת ילדים': 'children', 'קצבאות ארוכות מועד': 'long_term', 'דמי אבטלה': 'unemployment', 'דמי ביטוח לאומי': 'self_employed' };
+        let changed = false;
+        PAYMENTS.forEach(p => { const k = BY_HE[p.he]; if (k && pj[k]) { p.exactISO = pj[k]; changed = true; } });
+        if (changed) renderPayments();
+      }
+    } catch (e) { /* остаются номинальные дни */ }
+    try {
       const rh = await fetch('https://exodus611.github.io/finance-portal/data/rate_history.json', { cache: 'no-cache' });
       if (rh.ok){
         const hj = await rh.json();
@@ -770,9 +780,22 @@ function payBadgeText(days){
   if (days === 1) return { ru:'завтра', fr:'demain', en:'tomorrow' };
   return { ru:'через ' + days + ' дн.', fr:'dans ' + days + ' jours', en:'in ' + days + ' days' };
 }
+function exactNext(p){
+  // Точная официальная дата из data/payments.json важнее номинального дня
+  // месяца: Битуах Леуми переносит выплаты с Шаббата (28/11/2026 -> 29/11).
+  if (!p.exactISO) return nextMonthly(p.day);
+  const parts = new Intl.DateTimeFormat('en-CA', { timeZone:'Asia/Jerusalem', year:'numeric', month:'2-digit', day:'2-digit' }).formatToParts(new Date());
+  const g = {}; parts.forEach(x => { g[x.type] = +x.value; });
+  const todayUTC = Date.UTC(g.year, g.month - 1, g.day);
+  const d = p.exactISO.split('-').map(Number);
+  const cand = Date.UTC(d[0], d[1] - 1, d[2]);
+  if (cand < todayUTC) return nextMonthly(p.day); // официальная дата прошла, файл ещё не обновился
+  const pad = n => String(n).padStart(2, '0');
+  return { iso: p.exactISO, display: pad(d[2]) + '.' + pad(d[1]) + '.' + d[0], days: Math.round((cand - todayUTC) / 86400000) };
+}
 function renderPayments(){
   const el = $('#payGrid'); if (!el) return;
-  PAY_RENDERED = PAYMENTS.map(p => Object.assign({}, p, nextMonthly(p.day))).sort((a, b) => a.days - b.days);
+  PAY_RENDERED = PAYMENTS.map(p => Object.assign({}, p, exactNext(p))).sort((a, b) => a.days - b.days);
   el.innerHTML = PAY_RENDERED.map((p,i) => `
     <div class="pay-card reveal${p.days === 0 ? ' is-today' : ''}">
       <div class="pay-top"><span class="pay-emoji">${ico(p.icon, 24)}</span><span class="pay-badge ${p.days === 0 ? 'badge-today' : 'badge-soon'}">${tx(payBadgeText(p.days))}</span></div>

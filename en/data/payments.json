@@ -2,7 +2,7 @@
  "unemployment": "2026-11-12",
  "self_employed": "2026-11-15",
  "children": "2026-11-20",
- "long_term": "2026-11-28",
+ "long_term": "2026-11-29",
  "long_term_items": [
   {
    "ru": "Old age benefit",
@@ -50,6 +50,6 @@
   }
  ],
  "month_label": "2026-11",
- "updated": "2026-11-05",
+ "updated": "2026-11-27",
  "source_url": "https://www.btl.gov.il/Pages/BenefitsPaymentDates.aspx"
 }

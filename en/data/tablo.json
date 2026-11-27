@@ -1,14 +1,14 @@
 {
  "_comment": "Scoreboard data. Filled with scripts/update.py from official sources.",
- "updated": "2026-11-21",
+ "updated": "2026-11-27",
  "updated_by": "auto",
  "boi": {
   "rate": 0.0325,
   "prime": 0.0475,
-  "asof": "2026-11-21",
-  "next_decision": "2026-10-19",
+  "asof": "2026-11-26",
+  "next_decision": "2027-01-04",
   "prev_rate": 0.035,
-  "changed": "2026-11-21",
+  "changed": "2026-09-03",
   "corridor": {
    "deposit": 0.0275,
    "lending": 0.0375
@@ -33,39 +33,44 @@
   "min_hourly": 35.4,
   "since": "2026-04-01",
   "avg_monthly": 13316,
-  "avg_note_ru": "national average for calculating benefits"
+  "avg_note_ru": "national average for calculating benefits",
+  "avg_cbs_monthly": 14515,
+  "avg_cbs_period": "2026-09",
+  "avg_cbs_yoy": 0.038,
+  "avg_cbs_scope_ru": "средняя зарплата работников-израильтян, предварительная оценка ЦСУ",
+  "avg_cbs_source_ru": "ЦСУ Израиля, оценка за сентябрь 2026, опубликовано 04.11.2026"
  },
  "fx": {
   "market": {
-   "USD": 3.3018,
-   "EUR": 3.6231,
-   "RUB": 0.0402,
-   "UAH": 0.0727,
-   "GBP": 4.3285
+   "USD": 3.3166,
+   "EUR": 3.6394,
+   "RUB": 0.0404,
+   "UAH": 0.0739,
+   "GBP": 4.3472
   },
   "official": {
-   "USD": 3.326,
-   "GBP": 4.3604,
-   "JPY": 0.0209,
-   "EUR": 3.6503,
-   "AUD": 2.2183,
-   "CAD": 2.322,
-   "DKK": 0.4883,
-   "NOK": 0.3401,
-   "ZAR": 0.1904,
-   "SEK": 0.3264,
-   "CHF": 3.9477,
-   "JOD": 4.6915,
-   "LBP": 0.0,
-   "EGP": 0.0618
+   "USD": 3.334,
+   "GBP": 4.3695,
+   "JPY": 0.020932,
+   "EUR": 3.6594,
+   "AUD": 2.2114,
+   "CAD": 2.3426,
+   "DKK": 0.4896,
+   "NOK": 0.3415,
+   "ZAR": 0.1899,
+   "SEK": 0.3266,
+   "CHF": 3.9957,
+   "JOD": 4.7024,
+   "LBP": 4e-05,
+   "EGP": 0.0608
   },
-  "official_date": "2026-11-20",
+  "official_date": "2026-11-26",
   "prev": {
-   "USD": 3.3018,
-   "EUR": 3.6231,
-   "RUB": 0.0402,
-   "UAH": 0.0727,
-   "GBP": 4.3285
+   "USD": 3.3661,
+   "EUR": 3.6878,
+   "RUB": 0.0408,
+   "UAH": 0.0745,
+   "GBP": 4.4079
   }
  },
  "explain": {
@@ -134,15 +139,14 @@
   }
  ],
  "auto": {
-  "last_run": "2026-11-21T14:21:33+00:00",
+  "last_run": "2026-11-27T00:56:36+00:00",
   "ok": true,
   "notes": [
-   "Ставка БИ: 3.50% → 3.25%",
    "cpi: 1.1% per annum (2026-10)",
    "construction: 3.9% per annum (2026-10)",
    "housing: -1.5% per annum (2026-08)",
-   "Market rates updated (USD 3.3018)",
-   "Official exchange rate for 2026-11-20"
+   "Рыночные курсы обновлены (USD 3.3166)",
+   "Официальный курс БИ на 2026-11-26"
   ],
   "warnings": []
  },
